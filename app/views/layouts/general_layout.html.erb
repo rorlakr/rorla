@@ -1,0 +1,12 @@
+<%= content_for :devise do %>
+<div class='row'>
+  <div class='col-md-9'>
+    <%= yield %>
+  </div>
+  <div class='col-md-13'>
+    <p>sidebar</p>
+  </div>
+</div>
+<% end %>
+
+<%= render template: "layouts/application" %>

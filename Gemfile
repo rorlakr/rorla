@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap-sass', '~> 3.1.1'
+gem 'simple_form'
+gem 'devise'
+gem 'rolify'
+gem 'authority'
+gem 'jquery-turbolinks'
+gem 'letter_opener', group: :development
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
