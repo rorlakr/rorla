@@ -10,6 +10,10 @@
 #  published_at :datetime
 #  hit          :integer          default(0)
 #  deleted_at   :datetime
+#  bulletin_id  :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#  picture      :string(255)
 #
 
 class Post < ActiveRecord::Base
