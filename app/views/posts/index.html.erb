@@ -1,0 +1,6 @@
+<%= render "posts/post_types/#{@bulletin.post_type}" %>
+
+<% if user_signed_in? && current_user.can_create?(Post, for: @bulletin) %>
+<hr>
+<%= link_to('New Post', new_bulletin_post_path, class: 'btn btn-default') %>
+<% end %>

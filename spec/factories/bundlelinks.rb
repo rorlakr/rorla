@@ -11,10 +11,15 @@
 #  updated_at  :datetime
 #
 
-class Bundlelink < ActiveRecord::Base
-  belongs_to :writer, class_name: 'User'
-  has_many :favlinks, dependent: :nullify
+# Read about factories at https://github.com/thoughtbot/factory_girl
 
-  validates :title, presence: true
-  validates :writer_id, presence: true
+FactoryGirl.define do
+  factory :bundlelink do
+    title "MyString"
+    description "MyText"
+    writer
+    factory :bundlelink_not_shared do
+      shared false
+    end
+  end
 end

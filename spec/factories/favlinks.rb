@@ -13,13 +13,19 @@
 #  updated_at    :datetime
 #
 
-class Favlink < ActiveRecord::Base
-  belongs_to :writer, class_name: 'User'
-  belongs_to :bundlelink
+# Read about factories at https://github.com/thoughtbot/factory_girl
 
-  validates :title, presence: true
-  validates :writer_id, presence: true
-  validates :linkurl, presence: true
-  validates :linkurl,
-            :format => {:with => URI::regexp, :message => 'Incorrect URL format!'}
+FactoryGirl.define do
+  factory :favlink do
+    title "MyString"
+    description "MyText"
+    linkurl "http:/a/aaa.com/ssss/asdfasdf"
+    writer
+    factory :favlink_not_shared do
+      shared false
+    end
+    factory :favlink_bundled do
+      bundlelink
+    end
+  end
 end

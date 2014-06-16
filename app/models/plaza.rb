@@ -12,4 +12,5 @@
 
 class Plaza < ActiveRecord::Base
   belongs_to :postitable, polymorphic: true
+  default_scope { order(created_at: :desc)}
 end

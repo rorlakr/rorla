@@ -1,0 +1,19 @@
+<%= simple_form_for([@post.bulletin, @post]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    <%= f.input :title, input_html:{ class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :content, input_html:{ class: 'form-control', rows: 5} %>
+  </div>
+  <%= image_tag(@post.picture_url) if @post.picture? %>
+  <% if @post.bulletin.post_type == "gallery" %>
+    <div class="form-group">
+      <%= f.input :picture, as: :file, input_html:{ class: 'form-control' } %>
+      <%= f.hidden_field :picture_cache %>
+    </div>
+  <% end %>
+
+  <%= f.button :submit, class: 'btn btn-default' %>
+<% end %>
