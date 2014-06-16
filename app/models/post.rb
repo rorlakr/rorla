@@ -3,8 +3,6 @@
 # Table name: posts
 #
 #  id           :integer          not null, primary key
-#  created_at   :datetime
-#  updated_at   :datetime
 #  title        :string(255)
 #  content      :text
 #  writer_id    :integer
@@ -15,8 +13,11 @@
 #
 
 class Post < ActiveRecord::Base
-  has_one :plaza, :as => :postitable, :dependent => :destroy
-  has_many :comments, :as => :commentable, :dependent => :destroy
+
+  resourcify
+  include Authority::Abilities
+
+  default_scope { order(created_at: :desc)}
 
   validates :title, presence: true, :length => { :minimum => 3, :maximum => 255 }
   validates :content, presence: true, :length => { :minimum => 0, :maximum => 10000 }
@@ -25,6 +26,12 @@ class Post < ActiveRecord::Base
 
   after_create :set_plaza_post
 
+  has_one :plaza, :as => :postitable, :dependent => :destroy
+  has_many :comments, :as => :commentable, :dependent => :destroy
+  belongs_to :bulletin
+  belongs_to :writer, class_name: "User"
+
+  mount_uploader :picture, PictureUploader
 
   private
 

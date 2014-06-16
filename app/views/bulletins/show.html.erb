@@ -1,0 +1,25 @@
+<h2>Bulletin</h2>
+
+<table class='table table-bordered'>
+  <tr>
+    <th>Title</th>
+    <td><%= @bulletin.title %></td>
+  </tr>
+  <tr>
+    <th>Description</th>
+    <td><%= @bulletin.description %></td>
+  </tr>
+  <tr>
+    <th>Post Type</th>
+    <td><%= @bulletin.post_type %></td>
+  </tr>
+  <tr>
+    <th>Created at</th>
+    <td><%= @bulletin.created_at %></td>
+  </tr>
+</table>
+
+<hr>
+
+<%= link_to 'Edit', edit_bulletin_path(@bulletin), class: 'btn btn-default' %>
+<%= link_to 'Back', bulletins_path, class: 'btn btn-default' %>

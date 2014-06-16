@@ -10,10 +10,11 @@
 #  post_type   :string(255)      default("general")
 #
 
-class Bulletin < ActiveRecord::Base
-  extend FriendlyId
-  friendly_id :title
-  validates_length_of :title, maximum: 64
-  validates_uniqueness_of :title
-  has_many :posts, dependent: :nullify
+# Read about factories at https://github.com/thoughtbot/factory_girl
+
+FactoryGirl.define do
+  factory :bulletin do
+    title "자유게시판"
+    description "누구나 게시 열람할 수 있습니다."
+  end
 end
