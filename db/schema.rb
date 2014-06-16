@@ -11,7 +11,115 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140614084355) do
+ActiveRecord::Schema.define(version: 20140616231331) do
+
+  create_table "answers", force: true do |t|
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "question_id"
+    t.integer  "user_id"
+  end
+
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
+  add_index "answers", ["user_id"], name: "index_answers_on_user_id"
+
+  create_table "bulletins", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bulletins", ["title"], name: "index_bulletins_on_title", unique: true
+
+  create_table "bundlelinks", force: true do |t|
+    t.string   "title",                      null: false
+    t.text     "description"
+    t.integer  "writer_id",                  null: false
+    t.boolean  "shared",      default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bundlelinks", ["writer_id"], name: "index_bundlelinks_on_writer_id"
+
+  create_table "comments", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "content"
+    t.integer  "writer_id"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+  end
+
+  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
+  add_index "comments", ["writer_id"], name: "index_comments_on_writer_id"
+
+  create_table "events", force: true do |t|
+    t.string   "name"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "location"
+    t.string   "fb_event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "description"
+    t.decimal  "latitude",     precision: 10, scale: 6
+    t.decimal  "longitude",    precision: 10, scale: 6
+    t.datetime "updated_time"
+    t.text     "material"
+    t.boolean  "modifiable",                            default: false
+  end
+
+  create_table "favlinks", force: true do |t|
+    t.string   "title",                        null: false
+    t.text     "description"
+    t.string   "linkurl",                      null: false
+    t.integer  "writer_id"
+    t.boolean  "shared",        default: true
+    t.integer  "bundlelink_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "favlinks", ["bundlelink_id"], name: "index_favlinks_on_bundlelink_id"
+  add_index "favlinks", ["writer_id"], name: "index_favlinks_on_writer_id"
+
+  create_table "plazas", force: true do |t|
+    t.integer  "postitable_id"
+    t.string   "postitable_type"
+    t.boolean  "visible"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "plazas", ["postitable_id", "postitable_type"], name: "index_plazas_on_postitable_id_and_postitable_type"
+
+  create_table "posts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.text     "content"
+    t.integer  "writer_id"
+    t.boolean  "published",    default: false
+    t.datetime "published_at"
+    t.integer  "hit",          default: 0
+    t.datetime "deleted_at"
+    t.integer  "bulletin_id"
+  end
+
+  add_index "posts", ["writer_id"], name: "index_posts_on_writer_id"
+
+  create_table "questions", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "questions", ["user_id"], name: "index_questions_on_user_id"
 
   create_table "roles", force: true do |t|
     t.string   "name"
