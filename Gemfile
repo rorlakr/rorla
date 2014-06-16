@@ -6,12 +6,12 @@ gem 'devise'
 gem 'rolify'
 gem 'authority'
 gem 'jquery-turbolinks'
+gem 'carrierwave'
 
 group :development do
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'letter_opener'
 end
 
 group :development, :test do
@@ -21,6 +21,7 @@ group :development, :test do
   gem 'guard-rspec', require: false
   gem 'spring'
   gem "spring-commands-rspec"
+  gem 'letter_opener'
 end
 
 group :test do
