@@ -1,0 +1,31 @@
+#favlinks {
+
+}
+.favlink {
+  border:1px solid #eaeaea;
+  border-radius: 5px;
+  padding: 1em;
+  margin-bottom:1em;
+  .linkurl {
+  }
+  .title {
+    h4 { margin:0;}
+    background-color: #def1f8;
+    padding:.5em .5em;
+
+  }
+  .description {
+
+  }
+  .writer {
+    color:#a8a8a8;
+  }
+  .actions {
+    text-align: right;
+  }
+  .capture_loc img {
+    border:1px solid #eaeaea;
+    padding:5px;
+    box-shadow: 0px 0px 5px #888888;
+  }
+}

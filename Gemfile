@@ -9,6 +9,7 @@ gem 'jquery-turbolinks'
 gem 'friendly_id'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'webshots', github: 'rorlab/webshots'
 
 group :development do
   gem 'annotate'
