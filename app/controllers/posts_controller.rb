@@ -27,6 +27,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+    authorize_action_for Post, for: @bulletin
     @post = @bulletin.posts.new(post_params)
     @post.writer = current_user
 
