@@ -18,6 +18,10 @@ module ApplicationHelper
     "<span class='glyphicon glyphicon-#{shape}'></span>".html_safe
   end
 
+  def icon_button(shape)
+    "<span class='label label-default'><span class='glyphicon glyphicon-#{shape}'></span></span>".html_safe
+  end
+
   def active_menu(target_controller)
     "class=#{controller_name == target_controller ? 'active' : ''}"
   end

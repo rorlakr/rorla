@@ -6,12 +6,15 @@ gem 'devise'
 gem 'rolify'
 gem 'authority'
 gem 'jquery-turbolinks'
+gem 'friendly_id'
 gem 'carrierwave'
+gem 'mini_magick'
 
 group :development do
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rails-erd'
 end
 
 group :development, :test do
@@ -28,8 +31,12 @@ group :test do
   gem "faker", "~> 1.1.2"
   gem "capybara", "~> 2.1.0"
   gem "database_cleaner", "~> 1.0.1"
-  gem "shoulda-matchers"
+  gem "launchy", "~> 2.4.2"
+  gem "selenium-webdriver", "~> 2.35.1"
+  gem 'shoulda-matchers', require: false
+  gem 'simplecov', :require => false
 end
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'

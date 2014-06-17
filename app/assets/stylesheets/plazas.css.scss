@@ -1,10 +1,23 @@
 #plazas {
   overflow: auto;
-}
-.plaza {
-  overflow: auto;
-  border: 1px solid #eaeaea;
-  border-radius: 5px;
-  margin:1em 0;
-  padding:.5em;
+  .plaza {
+    overflow: auto;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    margin:1em 0;
+    padding:.5em;
+    .general, .blog, .gallery{
+      // border:1px solid #eaeaea;
+      .title h4 {
+        margin:0 0 5px 0;
+      }
+      .author {
+        border-top:1px solid #eaeaea;
+        margin-top:.5em;
+      }
+      .actions {
+        text-align: right;
+      }
+    }
+  }
 }
