@@ -1,0 +1,19 @@
+<div class='gallery'>
+  <div class="media">
+    <%= link_to(image_tag(post.picture_url(:thumb_plaza), class:'media-object'), [post.bulletin, post], class:'pull-left') if post.picture? %>
+    <div class="media-body">
+      <h4 class="media-heading"><%= post.title %></h4>
+      <div class='info'>
+        <div class='content'><%= truncate post.content, length:100 %></div>
+        <div class='author'><%= t('authored_html', who: post.writer.email, ago: time_ago_in_words(post.created_at)) %></div>
+        <div class='actions'>
+          <%= link_to icon_button('eye-open'), [post.bulletin, post] %>
+          <% if user_signed_in? %>
+            <%= link_to icon_button('edit'), edit_bulletin_post_path(post.bulletin, post) if current_user.can_update? post %>
+            <%= link_to icon_button('trash'), [post.bulletin, post], method: :delete, data: { confirm: 'Are you sure?' } if current_user.can_delete? post %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

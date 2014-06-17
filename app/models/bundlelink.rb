@@ -3,9 +3,9 @@
 # Table name: bundlelinks
 #
 #  id          :integer          not null, primary key
-#  title       :string(255)
+#  title       :string(255)      not null
 #  description :text
-#  writer_id   :integer
+#  writer_id   :integer          not null
 #  shared      :boolean          default(TRUE)
 #  created_at  :datetime
 #  updated_at  :datetime
