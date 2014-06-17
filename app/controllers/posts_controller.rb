@@ -16,6 +16,7 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+    authorize_action_for Post, for: @bulletin
     @post = @bulletin.posts.new
   end
 
