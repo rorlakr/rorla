@@ -6,7 +6,37 @@ gem 'devise'
 gem 'rolify'
 gem 'authority'
 gem 'jquery-turbolinks'
-gem 'letter_opener', group: :development
+gem 'friendly_id'
+gem 'carrierwave'
+gem 'mini_magick'
+
+group :development do
+  gem 'annotate'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'rails-erd'
+end
+
+group :development, :test do
+  gem "rspec-rails", "~> 2.14.0"
+  gem "factory_girl_rails", "~> 4.2.1"
+  gem 'guard', '~> 2'
+  gem 'guard-rspec', require: false
+  gem 'spring'
+  gem "spring-commands-rspec"
+  gem 'letter_opener'
+end
+
+group :test do
+  gem "faker", "~> 1.1.2"
+  gem "capybara", "~> 2.1.0"
+  gem "database_cleaner", "~> 1.0.1"
+  gem "launchy", "~> 2.4.2"
+  gem "selenium-webdriver", "~> 2.35.1"
+  gem 'shoulda-matchers', require: false
+  gem 'simplecov', :require => false
+end
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
@@ -31,7 +61,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+# gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

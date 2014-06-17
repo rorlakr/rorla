@@ -1,0 +1,17 @@
+<%= form_for(@plaza) do |f| %>
+  <% if @plaza.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plaza.errors.count, "error") %> prohibited this plaza from being saved:</h2>
+
+      <ul>
+      <% @plaza.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
