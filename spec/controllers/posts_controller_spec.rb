@@ -10,7 +10,7 @@ describe PostsController do
     @bulletin = create(:bulletin)
   end
 
-  let(:bulletin_post_create) { create(:bulletin_post, bulletin: @bulletin) }
+  let(:bulletin_post_create) { create(:bulletin_post, bulletin: @bulletin, writer: @current_user) }
   let(:valid_attributes) { attributes_for(:bulletin_post, bulletin: @bulletin) }
   let(:invalid_attributes) { attributes_for(:post, title: nil, content: nil) }
   let(:valid_session) do
@@ -67,7 +67,7 @@ describe PostsController do
   describe 'PATCH #update' do
     context "1) params가 유효할 때" do
       it "> 요청한 post를 업데이트한다." do
-        patch :update, {bulletin_id: @bulletin, id: bulletin_post_create, post: attributes_for(:bulletin_post, title: "Wonderfulday isn't it?", content: "Yes!!!")}, valid_session
+        patch :update, { bulletin_id: @bulletin, id: bulletin_post_create, post: attributes_for(:bulletin_post, title: "Wonderfulday isn't it?", content: "Yes!!!") }, valid_session
         bulletin_post_create.reload
         expect(bulletin_post_create.title).to eq("Wonderfulday isn't it?")
         expect(bulletin_post_create.content).to eq("Yes!!!")
