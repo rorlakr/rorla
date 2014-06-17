@@ -1,0 +1,16 @@
+<div class='favlink'>
+  <div class='title'><h4><%= favlink.title %></h4></div>
+  <div class='linkurl'><%= favlink.linkurl %></div>
+  <div class='description'><%= truncate favlink.description, length: 100 %></div>
+  <div class='writer'><%= t('authored_html', who: favlink.writer.email, ago: time_ago_in_words(favlink.created_at)) %></div>
+  <div class='actions'>
+    <%= link_to icon_button('eye-open'), favlink %>
+    <%= link_to icon_button('edit'), edit_favlink_path(favlink) %>
+    <%= link_to icon_button('trash'), favlink, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+  <div class='capture_loc'>
+  <% if favlink.capture_loc %>
+    <%= link_to image_tag('/uploads/capture_loc/' + favlink.capture_loc, width: '20%'), favlink.linkurl %>
+  <% end %>
+  </div>
+</div>
