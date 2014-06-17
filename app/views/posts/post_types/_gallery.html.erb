@@ -1,0 +1,23 @@
+<h2><%= params[:bulletin_id] %> <small><%= link_to '설정', edit_bulletin_path(params[:bulletin_id])%></small></h2>
+
+<div id="posts">
+  <% @posts.each do | post | %>
+    <div class='col-lg-3 col-md-3 col-xs-6  picture'>
+      <div class='gallery'>
+        <div class='image'><%= link_to(image_tag(post.picture_url(:thumb)), [post.bulletin, post]) if post.picture? %></div>
+        <div class='title'><%= post.title %></div>
+        <div class='content'>
+          <span class='hidden-xs'><%= truncate post.content %></span>
+          <span class='actions'>
+            <%= link_to "<span class='glyphicon glyphicon-eye-open'></span>".html_safe, [post.bulletin, post] %>
+            <% if user_signed_in? %>
+              <%= link_to "<span class='glyphicon glyphicon-edit'></span>".html_safe, edit_bulletin_post_path(post.bulletin, post) if current_user.can_update? post %>
+              <%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, [post.bulletin, post], method: :delete, data: { confirm: 'Are you sure?' } if current_user.can_delete? post %>
+            <% end %>
+          </span>
+
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,6 +1,19 @@
-class Bulletin < ActiveRecord::Base
-  has_many :posts
+# == Schema Information
+#
+# Table name: bulletins
+#
+#  id          :integer          not null, primary key
+#  title       :string(255)
+#  description :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#  post_type   :string(255)      default("general")
+#
 
+class Bulletin < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title
   validates_length_of :title, maximum: 64
   validates_uniqueness_of :title
+  has_many :posts, dependent: :nullify
 end

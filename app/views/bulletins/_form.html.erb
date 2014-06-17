@@ -1,0 +1,23 @@
+<%= simple_form_for(@bulletin) do |f| %>
+  <% if @bulletin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bulletin.errors.count, "error") %> prohibited this bulletin from being saved:</h2>
+
+      <ul>
+      <% @bulletin.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.input :title, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :description, input_html: { class: 'form-control', rows: 10 } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :post_type, collection: [ ['게시판', 'general'], ['블로그', 'blog'], ['갤러리', 'gallery']], input_html:{ class:'form-control'} %>
+  </div>
+  <%= f.button :submit, class: 'btn btn-default' %>
+<% end %>

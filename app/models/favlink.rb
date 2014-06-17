@@ -21,6 +21,5 @@ class Favlink < ActiveRecord::Base
   validates :writer_id, presence: true
   validates :linkurl, presence: true
   validates :linkurl,
-            :format => {:with => URI::regexp,
-            :message => 'Incorrect URL format!'}
+            :format => {:with => URI::regexp, :message => 'Incorrect URL format!'}
 end
