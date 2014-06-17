@@ -11,6 +11,7 @@
 #  bundlelink_id :integer
 #  created_at    :datetime
 #  updated_at    :datetime
+#  capture_loc   :string(255)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
