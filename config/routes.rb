@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "welcome#index"
   devise_for :users
   resources :plazas
+  resources :favlinks
   resources :bulletins do
     resources :posts
   end
