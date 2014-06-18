@@ -28,10 +28,9 @@ class FavlinksController < ApplicationController
   def create
     @favlink = Favlink.new(favlink_params)
     @favlink.writer = current_user
-    @favlink.capture_loc = save_capture_image(@favlink.linkurl)
+    @favlink.capture_loc = rand_str
     respond_to do |format|
       if @favlink.save
-
         format.html { redirect_to @favlink, notice: 'Favlink was successfully created.' }
         format.json { render :show, status: :created, location: @favlink }
       else
@@ -45,7 +44,7 @@ class FavlinksController < ApplicationController
   # PATCH/PUT /favlinks/1.json
   def update
     authorize_action_for @favlink
-    @favlink.capture_loc = save_capture_image(@favlink.linkurl)
+    @favlink.capture_loc = rand_str if @favlink.capture_loc.blank?
     respond_to do |format|
       if @favlink.update(favlink_params)
         format.html { redirect_to @favlink, notice: 'Favlink was successfully updated.' }
@@ -79,10 +78,8 @@ class FavlinksController < ApplicationController
       params.require(:favlink).permit(:title, :description, :linkurl, :shared)
     end
 
-    def save_capture_image(linkurl)
-      tmp_capture_loc = Webshots::Processor.url_to_png linkurl
-      capture_loc = tmp_capture_loc.split('/').last
-      FileUtils.mv(tmp_capture_loc, 'public/uploads/capture_loc/' + capture_loc)
-      capture_loc
+    def rand_str(len=20)
+      rand(36**len).to_s(36) + ".png"
     end
+
 end
