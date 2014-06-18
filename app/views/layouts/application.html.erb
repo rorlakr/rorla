@@ -39,6 +39,7 @@
               <li class="<%= params[:bulletin_id] == '갤러리' ? 'active' : '' %>"><%= link_to '갤러리', bulletin_posts_path('갤러리') %></li>
             </ul>
           </li>
+          <li <%= active_menu('favlinks') %>><%= link_to "Favlinks", favlinks_path %></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>

@@ -9,8 +9,6 @@
     <%= link_to icon_button('trash'), favlink, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
   <div class='capture_loc'>
-  <% if favlink.capture_loc %>
-    <%= link_to image_tag('/uploads/capture_loc/' + favlink.capture_loc, width: '20%'), favlink.linkurl %>
-  <% end %>
+  <%= link_to image_tag(favlink.capture_image(action_name), width: (action_name == 'show' ? '100%' : "")), favlink.linkurl %>
   </div>
 </div>
