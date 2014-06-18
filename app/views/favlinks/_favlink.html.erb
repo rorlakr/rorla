@@ -1,14 +1,27 @@
 <div class='favlink'>
-  <div class='title'><h4><%= favlink.title %></h4></div>
+  <div class='title'><h4><%= link_to icon('link') + " " + favlink.title, favlink.linkurl, style:'display:block;' %></h4></div>
   <div class='linkurl'><%= favlink.linkurl %></div>
-  <div class='description'><%= truncate favlink.description, length: 100 %></div>
   <div class='writer'><%= t('authored_html', who: favlink.writer.email, ago: time_ago_in_words(favlink.created_at)) %></div>
   <div class='actions'>
-    <%= link_to icon_button('eye-open'), favlink %>
+    <%= link_to icon_button('eye-open'), favlink unless action_name == 'show' %>
     <%= link_to icon_button('edit'), edit_favlink_path(favlink) %>
     <%= link_to icon_button('trash'), favlink, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
-  <div class='capture_loc'>
-  <%= link_to image_tag(favlink.capture_image(action_name), width: (action_name == 'show' ? '100%' : "")), favlink.linkurl %>
-  </div>
+  <% if action_name == 'show' %>
+    <div class='capture_loc'>
+    <%= link_to image_tag(favlink.capture_image(action_name), width: (action_name == 'show' ? '100%' : "")), favlink.linkurl, class: "thumbnail" %>
+    </div>
+    <div class='description' style='margin-top: 1em;'><%= simple_format favlink.description %></div>
+  <% else %>
+    <div class='row'>
+      <div class='col-md-3'>
+        <div class='capture_loc'>
+        <%= link_to image_tag(favlink.capture_image(action_name), width: (action_name == 'show' ? '100%' : "")), favlink_path(favlink), class: "thumbnail" %>
+        </div>
+      </div>
+      <div class='col-md-9'>
+        <div class='description'><%= truncate favlink.description, length: 100 %></div>
+      </div>
+    </div>
+  <% end %>
 </div>

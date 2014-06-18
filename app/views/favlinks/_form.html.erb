@@ -6,7 +6,7 @@
   </div>
   <% if @favlink.persisted? %>
   <div class="form-group">
-  <%= link_to image_tag(@favlink.capture_image(:thumb), width: '100%', class: 'shadow_image'), @favlink.linkurl %>
+  <%= link_to image_tag(@favlink.capture_image(action_name), width: (action_name == 'show' ? '100%' : ""), class: 'shadow_image'), @favlink.linkurl %>
   </div>
   <% end %>
   <div class="form-group">
