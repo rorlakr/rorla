@@ -4,11 +4,11 @@
   <div class="form-group">
     <%= f.input :linkurl, placeholder: 'http://', input_html: { class: 'form-control' } %>
   </div>
+  <% if @favlink.persisted? %>
   <div class="form-group">
-    <%= image_tag @favlink.capture_loc %>
-    <%= f.input :capture_loc, input_html: { class: 'form-control' } %>
+  <%= link_to image_tag(@favlink.capture_image(:thumb), width: '100%', class: 'shadow_image'), @favlink.linkurl %>
   </div>
-
+  <% end %>
   <div class="form-group">
     <%= f.input :title, input_html: { class: 'form-control' } %>
   </div>

@@ -29,4 +29,28 @@ class Favlink < ActiveRecord::Base
   validates :linkurl, presence: true
   validates :linkurl,
             :format => {:with => URI::regexp, :message => 'Incorrect URL format!'}
+  after_save :save_capture_image
+  after_destroy :delete_capture_image
+
+  def capture_image(action)
+    kind = action == 'show' ? "" : "thumb_"
+    "/uploads/capture_loc/#{id}/#{kind}#{capture_loc}"
+  end
+
+  private
+
+  def delete_capture_image
+    FileUtils.rm_rf("public/uploads/capture_loc/#{id}")
+  end
+
+  def save_capture_image
+    tmp_capture_loc = Webshots::Processor.url_to_png linkurl, { 'height' => 768, 'width' => 1024}
+    # capture_loc = tmp_capture_loc.split('/').last
+    FileUtils.mkdir("public/uploads/capture_loc/#{id}") unless Dir.exists?("public/uploads/capture_loc/#{id}")
+    FileUtils.rm_rf(Dir.glob("public/uploads/capture_loc/#{id}/*"))
+    image = MiniMagick::Image.open(tmp_capture_loc)
+    image.resize "200x150"
+    image.write  "public/uploads/capture_loc/#{id}/thumb_#{capture_loc}"
+    FileUtils.mv(tmp_capture_loc, "public/uploads/capture_loc/#{id}/#{capture_loc}")
+  end
 end
