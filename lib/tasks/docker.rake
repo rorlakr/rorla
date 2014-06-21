@@ -6,7 +6,7 @@ def add_enviroment
 end
 
 def build_name(tag)
-  "seapy/rorla:#{tag}"
+  "rorla/rorla:#{tag}"
 end
 
 def docker_console(tag)
