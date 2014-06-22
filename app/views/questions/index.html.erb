@@ -1,18 +1,17 @@
-<h1>Listing questions</h1>
-
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th colspan="3">질문</th>
     </tr>
   </thead>
 
   <tbody>
     <% @questions.each do |question| %>
-      <tr>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tr class="item-<%= question.id %>">
+        <td><%= question.title %></td>
+        <td><%= link_to 'Show', question, class: "btn btn-default" %></td>
+        <td><%= link_to '수정', edit_question_path(question), class: "btn btn-default" %></td>
+        <td><%= link_to '삭제', question, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -20,4 +19,4 @@
 
 <br>
 
-<%= link_to 'New Question', new_question_path %>
+<%= link_to '질문 등록', new_question_path, class: 'btn btn-default' %>

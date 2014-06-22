@@ -31,6 +31,7 @@ end
 group :test do
   gem "faker", "~> 1.1.2"
   gem "capybara", "~> 2.1.0"
+  gem 'capybara-webkit'
   gem "database_cleaner", "~> 1.0.1"
   gem "launchy", "~> 2.4.2"
   gem "selenium-webdriver", "~> 2.35.1"
