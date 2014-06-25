@@ -38,7 +38,6 @@ ADD . /app
 RUN bundle install --without development test
 
 # Run docker-sample-project
-ENV SECRET_KEY_BASE hellodocker
 ENV RAILS_ENV production
 EXPOSE 80
 CMD foreman start -f Procfile
