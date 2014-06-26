@@ -20,13 +20,13 @@ RUN apt-get install -qq -y nodejs
 RUN gem install foreman --no-ri --no-rdoc
 
 # Install the latest postgresql lib for pg gem
-RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" > /etc/apt/sources.list.d/pgdg.list && \
-    apt-get update && \
-    DEBIAN_FRONTEND=noninteractive \
-    apt-get install -y --force-yes libpq-dev
+# RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" > /etc/apt/sources.list.d/pgdg.list && \
+#     apt-get update && \
+#     DEBIAN_FRONTEND=noninteractive \
+#     apt-get install -y --force-yes libpq-dev
 
 # Install for mysql gem
-# RUN apt-get install -qq -y mysql-server mysql-client libmysqlclient-dev
+RUN apt-get install -qq -y mysql-server mysql-client libmysqlclient-dev
 
 # Install rails app
 WORKDIR /app
@@ -38,7 +38,6 @@ ADD . /app
 RUN bundle install --without development test
 
 # Run docker-sample-project
-ENV SECRET_KEY_BASE hellodocker
 ENV RAILS_ENV production
 EXPOSE 80
 CMD foreman start -f Procfile
