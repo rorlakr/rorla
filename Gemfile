@@ -11,6 +11,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'webshots', github: 'rorlab/webshots'
 gem 'rails_12factor', group: :production
+gem 'mysql2', group: :production
 
 group :development do
   gem 'annotate'

@@ -1,8 +1,17 @@
 def add_enviroment
   envs = []
-  envs << "-e DATABASE_URL=\"#{ENV['RORLA_DATABASE_URL']}\""
   envs << "-e SECRET_KEY_BASE=\"#{ENV['RORLA_SECRET_KEY_BASE']}\""
   envs.join(' ')
+end
+
+def add_link
+  links = []
+  links << "--link mysql:mysql"
+  links.join(' ')
+end
+
+def add_option
+  "#{add_link} #{add_enviroment}"
 end
 
 def build_name(tag)
@@ -10,7 +19,7 @@ def build_name(tag)
 end
 
 def docker_console(tag)
-  "docker run -i -t --rm #{add_enviroment} #{build_name(tag)}"
+  "docker run -i -t --rm #{add_option} #{build_name(tag)}"
 end
 
 namespace :docker do
@@ -22,10 +31,10 @@ namespace :docker do
     system("docker build --force-rm -t #{build_name(tag)} .")
   end
 
-  desc "도커 컨테이너 시작 명령어 출력. RORLA_DATABASE_URL, RORLA_SECRET_KEY_BASE 환경변수 설정필요"
+  desc "도커 컨테이너 시작 명령어 출력. RORLA_SECRET_KEY_BASE 환경변수 설정필요"
   task :start, [:tag] => [:environment] do |t, args|
     tag = args[:tag]
-    command = "docker run --name #{tag} #{add_enviroment} -d -p 80:80 #{build_name(tag)}"
+    command = "docker run --name #{tag} #{add_option} -d -p 80:80 #{build_name(tag)}"
     puts command
   end
 
