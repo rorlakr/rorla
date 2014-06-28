@@ -11,7 +11,7 @@ feature '질문을 관리한다.' do
     create(:question,
           id: 1,
           title: 'I have Question',
-          content: 'I have Question. If you..',
+          content: 'If you..',
           user_id: @user.id)
 
     create(:question,
@@ -31,6 +31,15 @@ feature '질문을 관리한다.' do
     expect(page).to have_content('I have Question')
   end
 
+  scenario '질문 내용을 본다.' do
+    within('.item-1') do
+      click_link '보기'
+    end
+
+    expect(page).to have_content('I have Question')
+    expect(page).to have_content('If you..')
+  end
+
   scenario '질문을 등록한다.' do
     click_link '질문 등록'
 
@@ -48,7 +57,7 @@ feature '질문을 관리한다.' do
     end
 
     expect(find_field('질문').value).to eq('I have Question')
-    expect(find_field('내용').value).to eq('I have Question. If you..')
+    expect(find_field('내용').value).to eq('If you..')
 
     fill_in '질문', with: '한글로 질문'
 

@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+<p>질문 : <%= @question.title %></p>
+<p>내용 : <%= @question.content %></p>
+
+<%= link_to 'Edit', edit_question_path(@question), class: 'btn btn-default' %>
+<%= link_to 'Back', questions_path, class: 'btn btn-default' %>
