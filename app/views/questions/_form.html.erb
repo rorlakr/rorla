@@ -1,21 +1,21 @@
 <%= simple_form_for(@question) do |f| %>
   <% if @question.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
-
       <ul>
-      <% @question.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% @question.errors.messages.each do |field, messages| %>
+        <% messages.each do |message| %>
+          <li><%= t("labels.question.#{field}") %><%= message %></li>
+        <% end %>
       <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="form-group">
-    <%= f.input :title, label: "질문", input_html: {class: 'form-control'} %>
+    <%= f.input :title, label: t("labels.question.title"), input_html: {class: 'form-control'} %>
   </div>
   <div class="form-group">
-    <%= f.input :content, label: "내용", input_html: {class: 'form-control', rows: '3'} %>
+    <%= f.input :content, label: t("labels.question.content"), input_html: {class: 'form-control', rows: '3'} %>
   </div>
 
   <%= f.button :submit, class: "btn btn-primary" %>
