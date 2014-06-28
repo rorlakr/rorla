@@ -23,7 +23,7 @@ MySQL DB는 Docker 공식 저장소의 것을 사용하고 어플리케이션에
 MySQL 컨테이너 실행
 
 ```bash
-docker run --name mysql -e MYSQL_ROOT_PASSWORD=yourpassword -d mysql
+docker run --name mysql -e MYSQL_USERNAME="admin" -e MYSQL_PASS="yourpassword" -d tutum/mysql
 ```
 
 MySQL 컨테이너와 어플리케이션 컨테이너의 연결
@@ -43,7 +43,8 @@ docker run --link mysql:mysql 블라블라
 ????_NAME=/sharp_franklin/mysql2
 ????_PORT_3306_TCP_ADDR=172.17.0.2
 ????_PORT_3306_TCP_PORT=3306
-????_ENV_MYSQL_ROOT_PASSWORD=yourpassword
+????_ENV_MYSQL_USERNAME=admin
+????_ENV_MYSQL_PASS=yourpassword
 ????_PORT_3306_TCP_PROTO=tcp
 ????_PORT=tcp://172.17.0.2:3306
 ```
