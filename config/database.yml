@@ -28,5 +28,5 @@ production:
   host: <%= ENV['MYSQL_PORT_3306_TCP_ADDR'] %>
   port: <%= ENV['MYSQL_PORT_3306_TCP_PORT'] %>
   database: rorla_production
-  username: root
-  password: <%= ENV['MYSQL_ENV_MYSQL_ROOT_PASSWORD'] %>
+  username: <%= ENV['MYSQL_ENV_MYSQL_USERNAME'] %>
+  password: <%= ENV['MYSQL_ENV_MYSQL_PASS'] %>
