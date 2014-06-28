@@ -4,5 +4,7 @@
 <p>내용 : <%= @question.content %></p>
 
 <%= link_to '목록보기', questions_path, class: 'btn btn-default' %>
-<%= link_to '수정', edit_question_path(@question), class: 'btn btn-default' %>
-<%= link_to '삭제', @question, method: :delete, data: {confirm: "삭제하시겠습니까?"}, class: 'btn btn-danger' %>
+<% if current_user == @question.user %>
+  <%= link_to '수정', edit_question_path(@question), class: 'btn btn-default' %>
+  <%= link_to '삭제', @question, method: :delete, data: {confirm: "삭제하시겠습니까?"}, class: 'btn btn-danger' %>
+<% end %>
