@@ -34,9 +34,7 @@ feature '질문을 관리한다.', js: true do
   end
 
   scenario '질문 내용을 본다.' do
-    within('.item-1') do
-      click_link '보기'
-    end
+    click_link 'I have Question'
 
     expect(page).to have_content('I have Question')
     expect(page).to have_content('If you..')
@@ -54,9 +52,7 @@ feature '질문을 관리한다.', js: true do
   end
 
   scenario '질문을 수정한다.' do
-    within('.item-1') do
-      click_link '보기'
-    end
+    click_link 'I have Question'
 
     click_link '수정'
 
@@ -72,9 +68,7 @@ feature '질문을 관리한다.', js: true do
   end
 
   scenario '질문 정보를 입력하지 않아 수정에 실패한다.' do
-    within('.item-1') do
-      click_link '보기'
-    end
+    click_link 'I have Question'
 
     click_link '수정'
 
@@ -89,9 +83,7 @@ feature '질문을 관리한다.', js: true do
   end
 
   scenario '질문을 삭제한다.' do
-    within('.item-1') do
-      click_link '보기'
-    end
+    click_link 'I have Question'
 
     page.driver.accept_js_confirms!
 
@@ -101,9 +93,7 @@ feature '질문을 관리한다.', js: true do
   end
 
   scenario '질문을 삭제하지 않는다.' do
-    within('.item-1') do
-      click_link '보기'
-    end
+    click_link 'I have Question'
 
     page.driver.dismiss_js_confirms!
 
@@ -111,7 +101,5 @@ feature '질문을 관리한다.', js: true do
 
     expect(page).to have_content('I have Question')
   end
-
-
 
 end

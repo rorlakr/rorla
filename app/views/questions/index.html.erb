@@ -8,8 +8,7 @@
   <tbody>
     <% @questions.each do |question| %>
       <tr class="item-<%= question.id %>">
-        <td><%= question.title %></td>
-        <td><%= link_to '보기', question, class: "btn btn-default" %></td>
+        <td><%= link_to question.title, question %></td>
       </tr>
     <% end %>
   </tbody>
