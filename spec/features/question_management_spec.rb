@@ -20,6 +20,12 @@ feature '질문을 관리한다.', js: true do
           content: '???',
           user_id: @user.id)
 
+    create(:question,
+          id: 3,
+          title: '다른 사람이 작성한 질문?',
+          content: '물론 확인 가능합니다.',
+          user_id: 2)
+
     login_as(@user)
 
     visit '/'
@@ -31,6 +37,8 @@ feature '질문을 관리한다.', js: true do
 
   scenario '질문 목록을 본다.' do
     expect(page).to have_content('I have Question')
+    expect(page).to have_content('이거슨 좋은것.')
+    expect(page).to have_content('다른 사람이 작성한 질문?')
   end
 
   scenario '질문 내용을 본다.' do
@@ -38,6 +46,15 @@ feature '질문을 관리한다.', js: true do
 
     expect(page).to have_content('I have Question')
     expect(page).to have_content('If you..')
+
+    click_link '목록보기'
+
+    click_link '다른 사람이 작성한 질문?'
+
+    expect(page).to have_content('다른 사람이 작성한 질문?')
+    expect(page).to have_content('물론 확인 가능합니다.')
+    expect(page).to_not have_content('수정')
+    expect(page).to_not have_content('삭제')
   end
 
   scenario '질문을 등록한다.' do
