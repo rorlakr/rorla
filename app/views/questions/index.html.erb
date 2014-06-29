@@ -8,10 +8,7 @@
   <tbody>
     <% @questions.each do |question| %>
       <tr class="item-<%= question.id %>">
-        <td><%= question.title %></td>
-        <td><%= link_to 'Show', question, class: "btn btn-default" %></td>
-        <td><%= link_to '수정', edit_question_path(question), class: "btn btn-default" %></td>
-        <td><%= link_to '삭제', question, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <td><%= link_to question.title, question %></td>
       </tr>
     <% end %>
   </tbody>

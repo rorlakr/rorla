@@ -2,14 +2,14 @@ require 'spec_helper'
 
 describe QuestionsController do
 
-  let(:question) { create(:question) }
+  let(:question) { create(:question, user_id: 1) }
   let(:valid_attributes) { attributes_for(:question) }
   let(:invalid_attributes) { attributes_for(:question, title: nil) }
 
   describe 'User 로그인' do
     context "> 로그인 상태" do
       before :each do
-        current_user = create(:user)
+        current_user = create(:user, id: 1)
         current_user.confirm!
         sign_in current_user
       end

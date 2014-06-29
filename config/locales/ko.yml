@@ -1,4 +1,11 @@
 ko:
+  labels:
+    question:
+      title: 제목
+      content: 내용
+    answer:
+      content: 답변
+
   date:
     abbr_day_names:
     - 일
