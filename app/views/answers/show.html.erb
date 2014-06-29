@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_answer_path(@answer) %> |
-<%= link_to 'Back', answers_path %>
+<h2><%= @question.title %></h2>
+<p><%= @question.content %></p>
+
+<hr />
+
+<p><%= @answer.content %></p>
+
+<hr />
+
+<%= link_to '수정', edit_question_answer_path(@question, @answer), class: "btn btn-default" %>
+<%= link_to '삭제', [@question, @answer], method: :delete, data: {confirm: "삭제하시겠습니까?"}, class: 'btn btn-danger' %>
+<%= link_to 'Back', question_path(@question) %>
