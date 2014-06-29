@@ -1,17 +1,19 @@
-<%= form_for(@answer) do |f| %>
+<%= simple_form_for([@question, @answer]) do |f| %>
   <% if @answer.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
-
       <ul>
-      <% @answer.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% @answer.errors.messages.each do |field, messages| %>
+        <% messages.each do |message| %>
+          <li><%= t("labels.answer.#{field}") %><%= message %></li>
+        <% end %>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.input :content, label: t("labels.answer.content"), input_html: {class: 'form-control', rows: '3'} %>
   </div>
+
+  <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
