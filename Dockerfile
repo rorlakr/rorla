@@ -5,7 +5,7 @@ MAINTAINER seapy(iamseapy@gmail.com)
 RUN apt-get update
 
 # Install basic packages
-RUN apt-get -qq -y install git curl build-essential openssl libssl-dev python-software-properties python g++ make 
+RUN apt-get -qq -y install git curl build-essential openssl libssl-dev python-software-properties python g++ make
 
 # Install Ruby 2.1
 RUN apt-get -qq -y install python-software-properties
@@ -14,9 +14,13 @@ RUN apt-get update
 RUN apt-get -qq -y install ruby2.1 ruby2.1-dev
 RUN gem install bundler --no-ri --no-rdoc
 
-# Install packages 
+# Install packages
 RUN apt-get install -qq -y libsqlite3-dev
 RUN apt-get install -qq -y nodejs
+RUN apt-get install npm -y
+RUN ln -s /usr/bin/nodejs /usr/bin/node
+RUN npm install -g phantomjs
+RUN apt-get install libfreetype6 libfontconfig -y
 RUN gem install foreman --no-ri --no-rdoc
 
 # Install the latest postgresql lib for pg gem
