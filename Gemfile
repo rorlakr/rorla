@@ -18,6 +18,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rails-erd'
+  gem 'docker_alias', '~> 0.0.2'
 end
 
 group :development, :test do
