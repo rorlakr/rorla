@@ -29,7 +29,7 @@ class Favlink < ActiveRecord::Base
   validates :linkurl, presence: true
   validates :linkurl,
             :format => {:with => URI::regexp, :message => 'Incorrect URL format!'}
-  after_save :save_capture_image
+  after_save :save_capture_image, if: Proc.new { |link| link.linkurl_changed? }
   after_destroy :delete_capture_image
 
   def capture_image(action)
