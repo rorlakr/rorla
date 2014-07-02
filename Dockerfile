@@ -17,10 +17,6 @@ RUN gem install bundler --no-ri --no-rdoc
 # Install packages
 RUN apt-get install -qq -y libsqlite3-dev
 RUN apt-get install -qq -y nodejs
-RUN apt-get install npm -y
-RUN ln -s /usr/bin/nodejs /usr/bin/node
-RUN npm install -g phantomjs
-RUN apt-get install libfreetype6 libfontconfig -y
 RUN gem install foreman --no-ri --no-rdoc
 
 # Install the latest postgresql lib for pg gem
@@ -35,7 +31,7 @@ RUN apt-get install -qq -y mysql-server mysql-client libmysqlclient-dev
 # Install rails app
 WORKDIR /app
 ## 캐쉬 방지용 echo. rake 에서 sed 이용해서 문자열 치환
-RUN echo "CACHE_BUSTER_1403337385"
+RUN echo "CACHE_BUSTER_1403340279"
 ## 현재 폴더의 파일을 Add
 ADD . /app
 

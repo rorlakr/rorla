@@ -1,0 +1,27 @@
+<h1>Listing bundlelinks</h1>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bundlelinks.each do |bundlelink| %>
+      <tr>
+        <td><%= bundlelink.title %></td>
+        <td>
+          <%= link_to 'Show', bundlelink %>
+          <%= link_to 'Edit', edit_bundlelink_path(bundlelink) %>
+          <%= link_to 'Destroy', bundlelink, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bundlelink', new_bundlelink_path %>
