@@ -1,5 +1,18 @@
 <% if controller_name == "favlinks" %>
+  <% bundles = Bundlelink.all %>
   <div style="text-align:center;margin-top:5em;">
     <%= link_to 'New Favlink', new_favlink_path, class: 'well btn btn-default' %>
+  </div>
+
+  <p><%= link_to "My Links", '#' %></p>
+  <div class='row'>
+    <div class='col-md-12'>
+    <p><%= link_to "Bundlelinks :", bundlelinks_path %></p>
+    <ul>
+    <% bundles.each do |bundle| %>
+      <li><%= link_to bundle.title, bundlelink_favlinks_path(bundle)%></li>
+    <% end %>
+    </ul>
+    </div>
   </div>
 <% end %>

@@ -1,11 +1,12 @@
 class FavlinksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_bundlelink, only: [:index]
   before_action :set_favlink, only: [:show, :edit, :update, :destroy]
 
   # GET /favlinks
   # GET /favlinks.json
   def index
-    @favlinks = Favlink.all
+
   end
 
   # GET /favlinks/1
@@ -26,8 +27,8 @@ class FavlinksController < ApplicationController
   # POST /favlinks
   # POST /favlinks.json
   def create
-    @favlink = Favlink.new(favlink_params)
-    @favlink.writer = current_user
+    @favlink = current_user.favlinks.new(favlink_params)
+    # @favlink.writer = current_user
     @favlink.capture_loc = rand_str
     respond_to do |format|
       if @favlink.save
@@ -68,6 +69,16 @@ class FavlinksController < ApplicationController
   end
 
   private
+
+    def set_bundlelink
+      if params[:bundle_id]
+        # @bundlelink = Bundlelink.find(params[:bundlelink_id])
+        @favlinks = @bundlelink.favlinks
+      else
+        @favlinks = Favlink.all
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_favlink
       @favlink = Favlink.find(params[:id])
