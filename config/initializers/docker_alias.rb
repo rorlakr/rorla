@@ -4,7 +4,7 @@ DockerAlias.configure do |config|
   config.options = ['--link mysql:mysql']
   config.enviroments = {
     'SECRET_KEY_BASE'   => ENV['RORLA_SECRET_KEY_BASE'],
-    'MANDRILL_USERNAME' => ENV['MANDRILL_USERNAME']
+    'MANDRILL_USERNAME' => ENV['MANDRILL_USERNAME'],
     'MANDRILL_APIKEY'   => ENV['MANDRILL_APIKEY'],
     'RORLA_HOST'        => ENV['RORLA_HOST']
   }
