@@ -1,3 +1,18 @@
+# 개발환경 설정시 유의
+
+## capybara-webkit
+
+`capybara-webkit` gem 설치를 위해서는 관련 라이브러리가 필요하다.
+
+[capybara-webkit 설치하기 문서](https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit)
+
+맥에서는 다음과 같이 설치
+
+```shell
+$ brew update
+$ brew install qt
+```
+
 # Docker 사용법
 
 ## 사전 환경설정
