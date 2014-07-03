@@ -18,3 +18,5 @@
 /public/uploads/**/*
 
 .ruby-version
+
+/.env
