@@ -9,4 +9,4 @@ DockerAlias.configure do |config|
     'RORLA_HOST'        => ENV['RORLA_HOST']
   }
   config.port_maps = ['80:80']
-end
+end if defined?(DockerAlias)
