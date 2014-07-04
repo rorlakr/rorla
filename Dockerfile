@@ -7,6 +7,9 @@ RUN apt-get update
 # Install basic packages
 RUN apt-get -qq -y install git curl build-essential openssl libssl-dev python-software-properties python g++ make
 
+# Install imagemagick
+RUN sudo apt-get install libmagickwand-dev imagemagick -y
+
 # Install Ruby 2.1
 RUN apt-get -qq -y install python-software-properties
 RUN apt-add-repository ppa:brightbox/ruby-ng
@@ -31,7 +34,7 @@ RUN apt-get install -qq -y mysql-server mysql-client libmysqlclient-dev
 # Install rails app
 WORKDIR /app
 ## 캐쉬 방지용 echo. rake 에서 sed 이용해서 문자열 치환
-RUN echo "CACHE_BUSTER_1403340279"
+RUN echo "CACHE_BUSTER_1404445723"
 ## 현재 폴더의 파일을 Add
 ADD . /app
 
