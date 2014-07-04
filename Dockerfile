@@ -34,7 +34,7 @@ RUN apt-get install -qq -y mysql-server mysql-client libmysqlclient-dev
 # Install rails app
 WORKDIR /app
 ## 캐쉬 방지용 echo. rake 에서 sed 이용해서 문자열 치환
-RUN echo "CACHE_BUSTER_1404445723"
+RUN echo "CACHE_BUSTER_1404448349"
 ## 현재 폴더의 파일을 Add
 ADD . /app
 
