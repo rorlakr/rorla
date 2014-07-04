@@ -1,19 +1,36 @@
+# 개발환경 설정시 유의
+
+## capybara-webkit
+
+`capybara-webkit` gem 설치를 위해서는 관련 라이브러리가 필요하다.
+
+[capybara-webkit 설치하기 문서](https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit)
+
+맥에서는 다음과 같이 설치
+
+```shell
+$ brew update
+$ brew install qt
+```
+
 # Docker 사용법
 
 ## 사전 환경설정
 
-DB 마이그레이션이나 컨테이너 실행 할때 환경변수를 설정하면 해당 값이 포함되서 출력됩니다.
-로컬 컴퓨터의 `.profile`, `.bashrc`등에 다음과 같이 운영환경의 환경변수를 설정합니다.
+`docker_alias` 젬을 이용해서 DB 마이그레이션이나 컨테이너 실행 할때 환경변수를 설정하면 해당 값이 포함되서 출력됩니다.
+`.env` 파일에 다음과 같이 추가하고 실행하기 전에 `source .env`를 실행하여 환경변수를 설정합니다.
 
 ```bash
-export RORLA_SECRET_KEY_BASE='test'
+export RORLA_SECRET_KEY_BASE=afkd83
+export MANDRILL_USERNAME=email@email.com
+export MANDRILL_APIKEY=Wk39
+export RORLA_HOST=rorla.rorlab.org
 ```
-
 
 ## 이미지 build
 
 ```bash
-$ bin/rake docker:build[태그이름]
+$ bin/rake dockera:build
 ```
 
 ## MySQL DB 서버 구동
@@ -52,20 +69,23 @@ docker run --link mysql:mysql 블라블라
 ### DB 생성
 
 ```bash
-$ docker run -i -t --rm --link mysql:mysql -e SECRET_KEY_BASE="test" rorla/rorla:태그이름 bundle exec rake db:create
+$ bin/rake dockera:db:create
 ```
+
+출력된 명령어를 운영서버에서 붙여넣기
 
 ## DB 마이그레이션
 
 ```bash
-$ bin/rake docker:migrate[태그이름]
-$ docker run -i -t --rm --link mysql:mysql -e SECRET_KEY_BASE="test" rorla/rorla:태그이름 bundle exec rake db:migrate
+$ bin/rake dockera:db:migrate
 ```
+
+출력된 명령어를 운영서버에서 붙여넣기
 
 ### DB 시드 데이터 적용
 
 ```bash
-$ docker run -i -t --rm --link mysql:mysql -e SECRET_KEY_BASE="test" rorla/rorla:태그이름 bundle exec rake db:seed
+$ bin/rake dockera:db:seed
 ```
 
 출력된 명령어를 운영서버에서 붙여넣기
@@ -74,8 +94,7 @@ $ docker run -i -t --rm --link mysql:mysql -e SECRET_KEY_BASE="test" rorla/rorla
 ## 컨테이너 실행
 
 ```bash
-$ bin/rake docker:start[태그이름]
-$ docker run --name 컨테이너이름 --link mysql:mysql -e SECRET_KEY_BASE="test" -d -p 80:80 rorla/rorla:태그이름
+$ bin/rake dockera:con:start
 ```
 
 출력된 명령어를 운영서버에서 붙여넣기
