@@ -31,10 +31,14 @@ RUN gem install foreman --no-ri --no-rdoc
 # Install for mysql gem
 RUN apt-get install -qq -y mysql-server mysql-client libmysqlclient-dev
 
+# Install for Webshots
+RUN apt-get install libssl0.9.8 -y
+RUN apt-get install ttf-unfonts-core -y
+
 # Install rails app
 WORKDIR /app
 ## 캐쉬 방지용 echo. rake 에서 sed 이용해서 문자열 치환
-RUN echo "CACHE_BUSTER_1404448349"
+RUN echo "CACHE_BUSTER_1404454270"
 ## 현재 폴더의 파일을 Add
 ADD . /app
 
