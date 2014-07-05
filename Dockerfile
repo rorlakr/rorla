@@ -8,7 +8,8 @@ RUN apt-get update
 RUN apt-get -qq -y install git curl build-essential openssl libssl-dev python-software-properties python g++ make
 
 # Install imagemagick
-RUN sudo apt-get install libmagickwand-dev imagemagick -y
+RUN apt-get update
+RUN apt-get -qq -y install libmagickwand-dev imagemagick
 
 # Install Ruby 2.1
 RUN apt-get -qq -y install python-software-properties
