@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140617082849) do
+ActiveRecord::Schema.define(version: 20140618121658) do
 
   create_table "answers", force: true do |t|
     t.text     "content"
@@ -48,8 +48,10 @@ ActiveRecord::Schema.define(version: 20140617082849) do
     t.boolean  "shared",      default: true
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
+  add_index "bundlelinks", ["slug"], name: "index_bundlelinks_on_slug"
   add_index "bundlelinks", ["writer_id"], name: "index_bundlelinks_on_writer_id"
 
   create_table "comments", force: true do |t|
