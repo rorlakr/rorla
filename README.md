@@ -15,9 +15,11 @@ $ brew install qt
 
 # Docker 이용해서 Production 환경 로컬에서 확인하기
 
+소스를 Pull Request 하기전에 로컬에서 운영환경 테스트를 해보는것이 좋습니다.
+
 ## 1. 환경변수 설정
 
-`.env` 파일 생성후 다음과 같이 추가하고 `source .env`를 실행하여 환경변수 설정. 레일스 4 이후에는 `bin/spring stop` 한후에 `source .env` 실행.
+`.env` 파일 생성후 다음과 같이 추가하고 `source .env`를 실행하여 환경변수 설정. 레일스 4 이후에는 환경변수의 적용을 위해 `bin/spring stop` 실행 필수.
 
 ```bash
 # .env
@@ -73,8 +75,15 @@ $ bin/rake dockera:db:migrate
 
 출력된 명령어를 운영서버에서 붙여넣기
 
+## 4. 볼륨 컨테이너 연결(기존 볼륨 컨테이너가 없는 경우)
 
-## 4. 컨테이너 실행
+실행중인 볼륨 컨테이너가 있으면 현재 섹션 무시
+
+```bash
+$ docker run -v /app/public/uploads --name rorla_uploads busybox
+```
+
+## 5. 컨테이너 실행
 
 ```bash
 $ bin/rake dockera:con:start
