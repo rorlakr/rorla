@@ -1,9 +1,10 @@
-<h1>Listing bundlelinks</h1>
-
+<h2>Bundlelinks</h2>
+<div class='table-responsive'>
 <table class='table'>
   <thead>
     <tr>
-      <th>Title</th>
+      <th style='width:50%;'>Title</th>
+      <th class=''>Created by</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -12,16 +13,17 @@
     <% @bundlelinks.each do |bundlelink| %>
       <tr>
         <td><%= bundlelink.title %></td>
+        <td><%= t('authored_html', who: bundlelink.writer.email, ago: time_ago_in_words(bundlelink.created_at)) %></td>
         <td>
-          <%= link_to 'Show', bundlelink %>
-          <%= link_to 'Edit', edit_bundlelink_path(bundlelink) %>
-          <%= link_to 'Destroy', bundlelink, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to icon_button('eye-open'), bundlelink %>
+          <%= link_to icon_button('edit'), edit_bundlelink_path(bundlelink) %>
+          <%= link_to icon_button('trash'), bundlelink, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
-<%= link_to 'New Bundlelink', new_bundlelink_path %>
+<%= link_to 'New Bundlelink', new_bundlelink_path, class: 'btn btn-default' %>
