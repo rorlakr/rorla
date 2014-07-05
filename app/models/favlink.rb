@@ -46,7 +46,7 @@ class Favlink < ActiveRecord::Base
   def save_capture_image
     tmp_capture_loc = Webshots::Processor.url_to_png linkurl, { 'height' => 768, 'width' => 1024}
     # capture_loc = tmp_capture_loc.split('/').last
-    FileUtils.mkdir("public/uploads/capture_loc/#{id}") unless Dir.exists?("public/uploads/capture_loc/#{id}")
+    FileUtils.mkdir_p("public/uploads/capture_loc/#{id}") unless Dir.exists?("public/uploads/capture_loc/#{id}")
     FileUtils.rm_rf(Dir.glob("public/uploads/capture_loc/#{id}/*"))
     image = MiniMagick::Image.open(tmp_capture_loc)
     image.resize "200x150"
