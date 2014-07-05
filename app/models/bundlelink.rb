@@ -12,9 +12,13 @@
 #
 
 class Bundlelink < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   belongs_to :writer, class_name: 'User'
   has_many :favlinks, dependent: :nullify
 
   validates :title, presence: true
   validates :writer_id, presence: true
+
 end
