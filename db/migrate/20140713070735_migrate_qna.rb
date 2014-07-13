@@ -1,6 +1,6 @@
 class MigrateQna < ActiveRecord::Migration
   def up
-    user = User.first || User.create(email: 'qna-master@example.com', password: '12345678')
+    user = User.first
     Question.all.each do |question|
       question.user ||= user
       question.save!
