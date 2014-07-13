@@ -14,6 +14,12 @@ Rails.application.routes.draw do
     resources :answers
   end
 
+  namespace :api do
+    resources :questions do
+      resources :answers
+    end
+  end
+
   # resources :tasks, only: [ :index, :show, :create, :update, :destroy ]
   # scope :api do
   #   devise_for :users,
