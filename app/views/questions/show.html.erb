@@ -1,7 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>질문 : <%= @question.title %></p>
+<h2>질문 : <%= @question.title %></h2>
 <p>내용 : <%= @question.content %></p>
+
+<%= link_to '목록보기', questions_path, class: 'btn btn-default' %>
+<% if current_user == @question.user %>
+  <%= link_to '수정', edit_question_path(@question), class: 'btn btn-default' %>
+  <%= link_to '삭제', @question, method: :delete, data: {confirm: "삭제하시겠습니까?"}, class: 'btn btn-danger' %>
+<% end %>
+
+<hr />
+
+<h4>답변 목록</h4>
 
 <table class="table table-hover">
   <tbody>
@@ -9,6 +19,7 @@
       <tr class="item-<%= answer.id %>">
         <td><%= link_to answer.content, question_answer_path(@question, answer) %></td>
         <td><%= answer.answerer %></td>
+        <td><%= distance_of_time_in_words_to_now(answer.created_at) %> 전</td>
       </tr>
     <% end %>
   </tbody>
@@ -16,10 +27,3 @@
 
 <%= link_to '답변등록', new_question_answer_path(@question), class: 'btn btn-default' %>
 
-<hr />
-
-<%= link_to '목록보기', questions_path, class: 'btn btn-default' %>
-<% if current_user == @question.user %>
-  <%= link_to '수정', edit_question_path(@question), class: 'btn btn-default' %>
-  <%= link_to '삭제', @question, method: :delete, data: {confirm: "삭제하시겠습니까?"}, class: 'btn btn-danger' %>
-<% end %>
