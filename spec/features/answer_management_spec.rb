@@ -17,7 +17,8 @@ feature '답변을 관리한다.', js: true do
     create(:answer,
           id: 1,
           content: 'If not!',
-          question_id: 1)
+          question_id: 1,
+          user_id: @user.id)
 
     login_as(@user)
 
