@@ -9,7 +9,8 @@ DockerAlias.configure do |config|
     'SECRET_KEY_BASE'   => ENV['RORLA_SECRET_KEY_BASE'],
     'MANDRILL_USERNAME' => ENV['MANDRILL_USERNAME'],
     'MANDRILL_APIKEY'   => ENV['MANDRILL_APIKEY'],
-    'RORLA_HOST'        => ENV['RORLA_HOST']
+    'RORLA_HOST'        => ENV['RORLA_HOST'],
+    'RORLA_LOGENTRIES_TOKEN' => ENV['RORLA_LOGENTRIES_TOKEN']
   }
   config.port_maps = ['80:80']
 end if defined?(DockerAlias)
