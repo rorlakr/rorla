@@ -125,6 +125,7 @@ GEM
     json (1.8.1)
     launchy (2.4.2)
       addressable (~> 2.3)
+    le (2.3.9)
     letter_opener (1.2.0)
       launchy (~> 2.2)
     listen (2.7.8)
@@ -288,6 +289,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   launchy (~> 2.4.2)
+  le
   letter_opener
   mini_magick
   mysql2

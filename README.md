@@ -27,6 +27,7 @@ export RORLA_SECRET_KEY_BASE=암호화키
 export MANDRILL_USERNAME=email@email.com
 export MANDRILL_APIKEY=password
 export RORLA_HOST=localhost
+export RORLA_LOGENTRIES_TOKEN=key
 ```
 
 메일 보내는것을 확인해야 하는경우 `MANDRILL_USERNAME`, `MANDRILL_APIKEY`, `RORLA_HOST`를 본인의 환경에 맞게 설정. 메일 보내는것이 중요하지 않으면 아무값이나 입력.
