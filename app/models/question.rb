@@ -22,6 +22,10 @@ class Question < ActiveRecord::Base
 
   validates_presence_of :title, :content
 
+  def is_owner?(user)
+    self.user == user 
+  end
+
   def questioner
     user.email
   end

@@ -20,4 +20,8 @@ class Answer < ActiveRecord::Base
   def answerer
     user.email
   end
+
+  def is_owner?(user)
+    self.user == user
+  end
 end
