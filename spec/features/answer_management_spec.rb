@@ -3,33 +3,25 @@ require 'spec_helper'
 Capybara.javascript_driver = :webkit
 
 feature '답변을 관리한다.', js: true do
+  let(:questioner) { create(:user) }
+  let(:answerer) { create(:user) }
+  let(:question) { create(:question, user: questioner) }
+
   background do
-    @user = create(:user, email: 'user@example.com', password: 'testtest', id: 1)
-    @user.confirm!
-    @user.save
-
-    create(:question,
-          id: 1,
-          title: 'I have Question',
-          content: 'If you..',
-          user_id: @user.id)
-
     create(:answer,
-          id: 1,
-          content: 'If not!',
-          question_id: 1,
-          user_id: @user.id)
+      question: question,
+      content: 'It is simple',
+      user: answerer
+    )
 
-    login_as(@user)
+    login_as(answerer)
 
-    visit '/'
-    click_link 'Bulletins'
-    click_link 'Q&A'    
-    click_link 'I have Question'
+    visit '/questions'
+    click_link 'Question Title'
   end
 
   scenario '답변 목록을 본다.' do
-    expect(page).to have_content('If not!')
+    expect(page).to have_content('It is simple')
   end
 
   scenario '답변 등록한다.' do
@@ -53,7 +45,7 @@ feature '답변을 관리한다.', js: true do
   end
 
   scenario '답변을 수정한다.' do
-    click_link 'If not!'
+    click_link 'It is simple'
 
     click_link '수정'
 
@@ -65,7 +57,7 @@ feature '답변을 관리한다.', js: true do
   end
 
   scenario '내용을 입력하지 않아 수정에 실패한다.' do
-    click_link 'If not!'
+    click_link 'It is simple'
 
     click_link '수정'
 
@@ -77,23 +69,23 @@ feature '답변을 관리한다.', js: true do
   end
 
   scenario '답변을 삭제한다.' do
-    click_link 'If not!'
+    click_link 'It is simple'
 
     page.driver.accept_js_confirms!
 
     click_link '삭제'
 
-    expect(page).to_not have_content('If not!')
+    expect(page).to_not have_content('It is simple')
   end
 
-  scenario '질문을 삭제하지 않는다.' do
-    click_link 'If not!'
+  scenario '답변을 삭제하지 않는다.' do
+    click_link 'It is simple'
 
     page.driver.dismiss_js_confirms!
 
     click_link '삭제'
 
-    expect(page).to have_content('If not!')
+    expect(page).to have_content('It is simple')
   end
 
 end
