@@ -22,7 +22,8 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rails-erd'
-  gem 'docker_alias', '~> 0.0.2'
+  gem 'docker_alias', github: 'rorlab/docker_alias'
+  # gem 'docker_alias', '~> 0.0.2'
 end
 
 group :development, :test do
@@ -83,4 +84,3 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-

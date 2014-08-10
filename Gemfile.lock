@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/rorlab/docker_alias.git
+  revision: 512791a39c1d3216960d5ec59c5df9ee3509a1f0
+  specs:
+    docker_alias (0.0.4)
+      railties (>= 3.0)
+
+GIT
   remote: git://github.com/rorlab/webshots.git
   revision: 421f6d1d7b1c69a066a85836f2fc2171f0bad217
   specs:
@@ -87,8 +94,6 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.4)
-    docker_alias (0.0.3)
-      railties (>= 3.0)
     erubis (2.7.0)
     execjs (2.2.0)
     factory_girl (4.2.0)
@@ -112,7 +117,7 @@ GEM
       guard (~> 2.1)
       rspec (>= 2.14, < 4.0)
     hike (1.2.3)
-    i18n (0.6.9)
+    i18n (0.6.11)
     jbuilder (2.1.0)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -141,7 +146,7 @@ GEM
     mini_magick (3.7.0)
       subexec (~> 0.2.1)
     mini_portile (0.6.0)
-    minitest (5.3.5)
+    minitest (5.4.0)
     multi_json (1.10.1)
     mysql2 (0.3.16)
     nokogiri (1.6.2.1)
@@ -279,7 +284,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner (~> 1.0.1)
   devise
-  docker_alias (~> 0.0.2)
+  docker_alias!
   factory_girl_rails (~> 4.2.1)
   faker (~> 1.1.2)
   friendly_id
