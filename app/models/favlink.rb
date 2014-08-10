@@ -32,6 +32,9 @@ class Favlink < ActiveRecord::Base
   after_save :save_capture_image, if: Proc.new { |link| link.linkurl_changed? }
   after_destroy :delete_capture_image
 
+  scope :shared, -> { Favlink.where(shared: true).order(created_at: :desc)}
+  scope :whose, -> (user) { Favlink.where(writer: user).order(created_at: :desc)}
+
   def capture_image(action)
     kind = action == 'show' ? "" : "thumb_"
     "/uploads/capture_loc/#{id}/#{kind}#{capture_loc}"

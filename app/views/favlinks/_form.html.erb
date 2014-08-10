@@ -2,6 +2,10 @@
   <%= f.error_notification %>
 
   <div class="form-group">
+    <%= f.input :bundlelink_id, include_blank: "Select a bundlelink. (it's optional)",  collection: Bundlelink.as_collection(current_user),  input_html: { class: 'form-control' }  %>
+  </div>
+
+  <div class="form-group">
     <%= f.input :linkurl, placeholder: 'http://', input_html: { class: 'form-control' } %>
   </div>
   <% if @favlink.persisted? %>
