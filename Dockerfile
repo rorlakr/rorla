@@ -15,7 +15,7 @@ RUN apt-get -qq -y install libmagickwand-dev imagemagick
 RUN apt-get -qq -y install python-software-properties
 RUN apt-add-repository ppa:brightbox/ruby-ng
 RUN apt-get update
-RUN apt-get -qq -y install ruby2.1 ruby2.1-dev
+RUN apt-get -qq --force-yes install ruby2.1 ruby2.1-dev
 RUN gem install bundler --no-ri --no-rdoc
 
 # Install packages
@@ -39,7 +39,7 @@ RUN apt-get install ttf-unfonts-core -y
 # Install rails app
 WORKDIR /app
 ## 캐쉬 방지용 echo. rake 에서 sed 이용해서 문자열 치환
-RUN echo "CACHE_BUSTER_1404454270"
+RUN echo "CACHE_BUSTER_1405985185"
 ## 현재 폴더의 파일을 Add
 ADD . /app
 

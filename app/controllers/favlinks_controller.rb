@@ -1,12 +1,12 @@
 class FavlinksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_bundlelink, only: [:index]
-  before_action :set_favlink, only: [:show, :edit, :update, :destroy]
+  before_action :set_bundlelink
+  before_action :set_favlink, except: [:index, :new, :create]
 
   # GET /favlinks
   # GET /favlinks.json
   def index
-
+    @favlinks = @bundlelink ? @bundlelink.favlinks : (params[:whose] ? Favlink.whose(current_user) : Favlink.shared)
   end
 
   # GET /favlinks/1
@@ -16,7 +16,7 @@ class FavlinksController < ApplicationController
 
   # GET /favlinks/new
   def new
-    @favlink = Favlink.new
+    @favlink = @bundlelink ? @bundlelink.favlinks.new : Favlink.new
   end
 
   # GET /favlinks/1/edit
@@ -71,22 +71,19 @@ class FavlinksController < ApplicationController
   private
 
     def set_bundlelink
-      if params[:bundle_id]
-        # @bundlelink = Bundlelink.find(params[:bundlelink_id])
-        @favlinks = @bundlelink.favlinks
-      else
-        @favlinks = Favlink.all
+      if params[:bundlelink_id]
+        @bundlelink = Bundlelink.friendly.find(params[:bundlelink_id])
       end
     end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_favlink
-      @favlink = Favlink.find(params[:id])
+      @favlink = @bundlelink ? @bundlelink.favlinks.find(params[:id]) : Favlink.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def favlink_params
-      params.require(:favlink).permit(:title, :description, :linkurl, :shared)
+      params.require(:favlink).permit(:title, :description, :linkurl, :shared, :bundlelink_id)
     end
 
     def rand_str(len=20)
