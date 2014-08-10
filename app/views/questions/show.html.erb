@@ -17,7 +17,7 @@
 <table class="table table-hover">
   <tbody>
     <% @question.answers.each do |answer| %>
-      <tr class="item-<%= answer.id %>">
+      <tr class="answer-<%= answer.id %>">
         <td>
           <% if answer.is_owner?(current_user) %>
             <%= link_to answer.content, question_answer_path(@question, answer) %>
@@ -27,6 +27,11 @@
         </td>
         <td><%= answer.answerer %></td>
         <td><%= distance_of_time_in_words_to_now(answer.created_at) %> 전</td>
+        <td>
+          <% if answer.is_owner?(current_user) %>
+            <%= link_to '삭제', question_answer_path(@question, answer), method: :delete, data: {confirm: "삭제하시겠습니까?"}, class: "btn btn-danger" %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
