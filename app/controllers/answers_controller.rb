@@ -1,7 +1,7 @@
 class AnswersController < ApplicationController
   before_action :authenticate_user!, except: [ :index, :show]
   before_action :set_question
-  before_action :set_answer, only: [:show, :edit, :update, :destroy]
+  before_action :set_answer, only: [:show, :destroy]
 
   # respond_to :json
 
@@ -17,8 +17,8 @@ class AnswersController < ApplicationController
     @answer = Answer.new
   end
 
-  def edit
-  end
+#  def edit
+#  end
 
   def create
     @answer = @question.answers.new(answer_params)
@@ -30,13 +30,13 @@ class AnswersController < ApplicationController
     render "new"
   end
 
-  def update
-    @answer.update!(answer_params)
-
-    redirect_to question_path(@question)
-  rescue ActiveRecord::RecordInvalid
-    render "edit"
-  end
+#  def update
+#    @answer.update!(answer_params)
+#
+#    redirect_to question_path(@question)
+#  rescue ActiveRecord::RecordInvalid
+#    render "edit"
+#  end
 
   def destroy
     @answer.destroy

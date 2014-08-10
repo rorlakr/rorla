@@ -14,6 +14,12 @@ feature '답변을 관리한다.', js: true do
       user: answerer
     )
 
+    create(:answer,
+      question: question,
+      content: 'really?',
+      user: questioner
+    )
+
     login_as(answerer)
 
     visit '/questions'
@@ -44,46 +50,28 @@ feature '답변을 관리한다.', js: true do
     expect(page).to have_content('답변에 내용을 입력해 주세요')
   end
 
-  scenario '답변을 수정한다.' do
-    click_link 'It is simple'
-
-    click_link '수정'
-
-    fill_in '답변', with: '!!! Why not !!!'
-
-    click_button '갱신'
-
-    expect(page).to have_content('!!! Why not !!!')
-  end
-
-  scenario '내용을 입력하지 않아 수정에 실패한다.' do
-    click_link 'It is simple'
-
-    click_link '수정'
-
-    fill_in '답변', with: ' '
-
-    click_button '갱신'
-
-    expect(page).to have_content('답변에 내용을 입력해 주세요')
-  end
-
   scenario '답변을 삭제한다.' do
-    click_link 'It is simple'
+    puts page.html
+
+    within('.answer-2') do
+      expect(page).to_not have_content('삭제')      
+    end
 
     page.driver.accept_js_confirms!
 
-    click_link '삭제'
+    within('.answer-1') do
+      click_link '삭제'
+    end
 
     expect(page).to_not have_content('It is simple')
   end
 
   scenario '답변을 삭제하지 않는다.' do
-    click_link 'It is simple'
-
     page.driver.dismiss_js_confirms!
 
-    click_link '삭제'
+    within('.answer-1') do
+      click_link '삭제'
+    end
 
     expect(page).to have_content('It is simple')
   end
