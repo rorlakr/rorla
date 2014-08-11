@@ -1,7 +1,7 @@
 class AnswersController < ApplicationController
-  before_action :authenticate_user!, except: [ :index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_question
-  before_action :set_answer, only: [:show, :destroy]
+  before_action :set_answer, only: [:show, :update, :destroy]
 
   # respond_to :json
 
@@ -17,9 +17,6 @@ class AnswersController < ApplicationController
     @answer = Answer.new
   end
 
-#  def edit
-#  end
-
   def create
     @answer = @question.answers.new(answer_params)
     @answer.user = current_user
@@ -30,13 +27,22 @@ class AnswersController < ApplicationController
     render "new"
   end
 
-#  def update
-#    @answer.update!(answer_params)
-#
-#    redirect_to question_path(@question)
-#  rescue ActiveRecord::RecordInvalid
-#    render "edit"
-#  end
+  def update
+    logger.debug params[:useful]
+    unless params[:useful].nil?
+      if params[:useful]
+        @answer.is_useful(current_user)
+      else
+        @answer.is_not_useful(current_user)
+      end
+    end
+    @answer.save!
+
+    redirect_to question_path(@question)
+  rescue ActiveRecord::RecordInvalid
+    #TODO: 에러 처리
+    redirect_to question_path(@question)
+  end
 
   def destroy
     @answer.destroy
@@ -53,6 +59,6 @@ class AnswersController < ApplicationController
     end
 
     def answer_params
-      params.require(:answer).permit(:title, :content)
+      params.require(:answer).permit(:content)
     end
 end
