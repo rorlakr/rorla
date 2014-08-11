@@ -76,4 +76,11 @@ feature '답변을 관리한다.', js: true do
     expect(page).to have_content('It is simple')
   end
 
+  scenario '답변을 추천한다.' do
+    within('.answer-1') do
+      expect(page).to have_content('0')
+      click_button '추천'
+      expect(page).to have_content('1')
+    end
+  end
 end

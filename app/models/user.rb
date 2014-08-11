@@ -35,6 +35,7 @@ class User < ActiveRecord::Base
   has_many :answers, dependent: :destroy
   has_many :bundlelinks, foreign_key: :writer_id, dependent: :nullify
   has_many :favlinks, foreign_key: :writer_id, dependent: :destroy
+  has_and_belongs_to_many :useful_answers, class_name: "Answer", join_table: :useful_answers
 
   def confirm!
     super
