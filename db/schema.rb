@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140713070735) do
+ActiveRecord::Schema.define(version: 20140810080859) do
 
   create_table "answers", force: true do |t|
     t.text     "content"
@@ -144,6 +144,14 @@ ActiveRecord::Schema.define(version: 20140713070735) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "useful_answers", id: false, force: true do |t|
+    t.integer "user_id"
+    t.integer "answer_id"
+  end
+
+  add_index "useful_answers", ["answer_id", "user_id"], name: "index_useful_answers_on_answer_id_and_user_id", unique: true
+  add_index "useful_answers", ["user_id", "answer_id"], name: "index_useful_answers_on_user_id_and_answer_id", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
