@@ -3,41 +3,31 @@ require 'spec_helper'
 Capybara.javascript_driver = :webkit
 
 feature '질문을 관리한다.', js: true do
+  let(:questioner) { create(:questioner) }
+  let(:user) { create(:user) }
+
   background(:each) do
-    @user = create(:user, email: 'user111@example.com', password: 'testtest')
-    @user.confirm!
-    @user.save
+    create(
+      :question,
+      title: 'I have Question',
+      content: 'If you..',
+      user: questioner
+    )
 
-    create(:question,
-          id: 1,
-          title: 'I have Question',
-          content: 'If you..',
-          user_id: @user.id)
+    create(
+      :question,
+      title: '다른 사람이 작성한 질문?',
+      content: '물론 확인 가능합니다.',
+      user: user
+    )
 
-    create(:question,
-          id: 2,
-          title: '이거슨 좋은것.',
-          content: '???',
-          user_id: @user.id)
+    login_as(questioner)
 
-    create(:question,
-          id: 3,
-          title: '다른 사람이 작성한 질문?',
-          content: '물론 확인 가능합니다.',
-          user_id: @user.id)
-
-    login_as(@user)
-
-    visit '/'
-
-    click_link 'Bulletins'
-
-    click_link 'Q&A'
+    visit '/questions'
   end
 
   scenario '질문 목록을 본다.' do
     expect(page).to have_content('I have Question')
-    expect(page).to have_content('이거슨 좋은것.')
     expect(page).to have_content('다른 사람이 작성한 질문?')
   end
 
@@ -46,6 +36,8 @@ feature '질문을 관리한다.', js: true do
 
     expect(page).to have_content('I have Question')
     expect(page).to have_content('If you..')
+    expect(page).to have_content('수정')
+    expect(page).to have_content('삭제')
 
     click_link '목록보기'
 
@@ -53,6 +45,8 @@ feature '질문을 관리한다.', js: true do
 
     expect(page).to have_content('다른 사람이 작성한 질문?')
     expect(page).to have_content('물론 확인 가능합니다.')
+    expect(page).to_not have_content('수정')
+    expect(page).to_not have_content('삭제')
   end
 
   scenario '질문을 등록한다.' do
