@@ -28,15 +28,7 @@ class AnswersController < ApplicationController
   end
 
   def update
-    logger.debug params[:useful]
-    unless params[:useful].nil?
-      if params[:useful]
-        @answer.is_useful(current_user)
-      else
-        @answer.is_not_useful(current_user)
-      end
-    end
-    @answer.save!
+    @answer.useful!(current_user, params[:useful] == "true")
 
     redirect_to question_path(@question)
   rescue ActiveRecord::RecordInvalid
