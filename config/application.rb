@@ -36,5 +36,7 @@ module Rorla
         request_specs: false
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
+
+    config.exceptions_app = self.routes
   end
 end
