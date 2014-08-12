@@ -51,8 +51,6 @@ feature '답변을 관리한다.', js: true do
   end
 
   scenario '답변을 삭제한다.' do
-    puts page.html
-
     within('.answer-2') do
       expect(page).to_not have_content('삭제')      
     end
@@ -81,6 +79,20 @@ feature '답변을 관리한다.', js: true do
       expect(page).to have_content('0')
       click_button '추천'
       expect(page).to have_content('1')
+    end
+  end
+
+  scenario '추천한 답변을 취소한다.' do
+    within('.answer-1') do
+      expect(page).to have_content('0')
+      click_button '추천'
+      expect(page).to have_content('1')
+    end
+
+    within('.answer-1') do
+      expect(page).to have_content('1')
+      click_button '추천취소'
+      expect(page).to have_content('0')
     end
   end
 end
