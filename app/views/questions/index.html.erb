@@ -9,7 +9,10 @@
   <tbody>
     <% @questions.each do |question| %>
       <tr class="item-<%= question.id %>">
-        <td><%= link_to question.title+" (#{question.no_answers})", question %></td>
+        <td>
+          <%= link_to question.title, question %>
+          <span class="badge"><%= question.no_answers %></span>
+        </td>
         <td class="questioner"><%= question.questioner %></td>
         <td><%= distance_of_time_in_words_to_now(question.created_at) %> 전</td>
       </tr>
