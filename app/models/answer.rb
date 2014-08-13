@@ -26,17 +26,15 @@ class Answer < ActiveRecord::Base
     self.user == user
   end
 
-  def was_useful?(user)
-    useful_users.find_by(id: user.id)
+  def useful?(user)
+    !useful_users.find_by(id: user.id).nil?
   end
 
-  def is_useful(user)
-    useful_users << user
+  def useful!(user, option)
+    if option
+      useful_users << user
+    else
+      useful_users.delete(user)
+    end
   end
-
-  def is_not_useful(user)
-    useful_users.delete(user)
-  end
-
 end
-
