@@ -1,0 +1,13 @@
+<div class='favlink'>
+  <div class='title'><h4><%= link_to icon_label('share-alt', resource.title), resource.linkurl, style:'display:block;' %></h4></div>
+  <div class='linkurl'><%= icon_label('link', resource.linkurl) %></div>
+  <% if resource.bundlelink %>
+    <div class='bundle'><%= icon_label('book', link_to(resource.bundlelink.try(:title), bundlelink_favlinks_path(resource.bundlelink))) %></div>
+  <% end %>
+  <div class='author'><%= icon_label('user', t('authored_html', who: resource.writer.email, ago: time_ago_in_words(resource.created_at))) %></div>
+  <div class='actions'>
+    <%= link_to icon_button('eye-open'), resource unless action_name == 'show' %>
+    <%= link_to icon_button('edit'), edit_favlink_path(resource) %>
+    <%= link_to icon_button('trash'), resource, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
