@@ -1,4 +1,9 @@
-<h2>Favlinks <small><%= @bundlelink ? "of #{@bundlelink.title} (#{@bundlelink.favlinks.size})" : "(#{@favlinks.size})" %></small></h2>
+<h2>Favlinks
+  <small>
+    <%= @bundlelink ? "of #{@bundlelink.title} (#{@bundlelink.favlinks.size})" : "(#{@favlinks.size})" %>
+    <%= link_to icon('remove-circle'), favlinks_path if params[:bundlelink_id] %>
+  </small>
+</h2>
 
 <div id='favlinks'>
   <%= render @favlinks %>
