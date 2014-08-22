@@ -1,16 +1,35 @@
 <% if controller_name == "favlinks" %>
-  <% bundles = Bundlelink.all %>
-  <div style="text-align:center;margin-top:5em;">
-    <%= link_to 'New Favlink', new_favlink_path, class: 'well btn btn-default' %>
-  </div>
 
-  <p><%= link_to "My Links", '#' %></p>
+  <% if user_signed_in? %>
+    <div style="text-align:center;margin-top:5em;">
+      <% if params[:bundlelink_id] %>
+        <%= link_to icon_label('plus', 'Add a Favlink'), new_bundlelink_favlink_path(bundlelink_id: params[:bundlelink_id]), class: 'well btn btn-default' %>
+      <% else %>
+        <%= link_to icon_label('plus', 'Add a Favlink'), new_favlink_path, class: 'well btn btn-default' %>
+      <% end %>
+    </div>
+    <p><%= link_to "All Links", favlinks_path %> | <%= link_to "My Links", favlinks_path(whose: current_user) %></p>
+  <% end %>
+
   <div class='row'>
     <div class='col-md-12'>
-    <p><%= link_to "Bundlelinks :", bundlelinks_path %></p>
+    <p><%= link_to_if (user_signed_in? && current_user.has_role?(:admin)), "Bundlelinks :", bundlelinks_path %></p>
     <ul>
+    <% bundles = Bundlelink.shared_bundles %>
     <% bundles.each do |bundle| %>
       <li><%= link_to bundle.title, bundlelink_favlinks_path(bundle)%></li>
+    <% end %>
+    </ul>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='col-md-12'>
+    <p><%= link_to_if (user_signed_in? && current_user.has_role?(:user)), "My Bundlelinks :", bundlelinks_path %></p>
+    <ul>
+    <% bundles = Bundlelink.my_bundles(current_user) %>
+    <% bundles.each do |bundle| %>
+      <li><%= bundle.shared ? icon_button('share') : icon_button('lock')%> <%= link_to bundle.title, bundlelink_favlinks_path(bundle)%></li>
     <% end %>
     </ul>
     </div>
