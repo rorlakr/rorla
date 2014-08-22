@@ -13,12 +13,16 @@
 
 class Bundlelink < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :title
 
   belongs_to :writer, class_name: 'User'
   has_many :favlinks, dependent: :nullify
 
   validates :title, presence: true
   validates :writer_id, presence: true
+
+  scope :shared_bundles, -> { Bundlelink.where(shared: true) }
+  scope :my_bundles, -> (user) { Bundlelink.where(writer: user)}
+  scope :as_collection, -> (user) { Bundlelink.where("shared = 't' or (writer_id = ? and shared = 'f')", user.id)}
 
 end

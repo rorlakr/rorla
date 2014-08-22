@@ -4,7 +4,7 @@ class BundlelinksController < ApplicationController
   # GET /bundlelinks
   # GET /bundlelinks.json
   def index
-    @bundlelinks = Bundlelink.all
+    @bundlelinks = Bundlelink.my_bundles(current_user)
   end
 
   # GET /bundlelinks/1

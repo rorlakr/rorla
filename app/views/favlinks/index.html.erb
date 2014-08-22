@@ -1,4 +1,4 @@
-<h1>Listing favlinks</h1>
+<h2>Favlinks <small><%= @bundlelink ? "of #{@bundlelink.title} (#{@bundlelink.favlinks.size})" : "(#{@favlinks.size})" %></small></h2>
 
 <div id='favlinks'>
   <%= render @favlinks %>
