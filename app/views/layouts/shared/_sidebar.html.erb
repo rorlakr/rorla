@@ -14,10 +14,10 @@
   <div class='row'>
     <div class='col-md-12'>
     <p><%= link_to_if (user_signed_in? && current_user.has_role?(:admin)), "Public Bundlelinks :", bundlelinks_path %></p>
-    <ul>
+    <ul style="list-style-type: none;padding-left:1.5em;">
     <% bundles = Bundlelink.shared_bundles %>
     <% bundles.each do |bundle| %>
-      <li><%= link_to bundle.title, bundlelink_favlinks_path(bundle)%></li>
+      <li><%= icon('book') %>&nbsp;&nbsp;<%= link_to bundle.title, bundlelink_favlinks_path(bundle)%></li>
     <% end %>
     </ul>
     </div>
@@ -27,10 +27,10 @@
     <div class='row'>
       <div class='col-md-12'>
       <p><%= link_to_if (user_signed_in? && current_user.has_role?(:user)), "My Bundlelinks :", bundlelinks_path %></p>
-      <ul>
+      <ul style="list-style-type: none;padding-left:1.5em;">
       <% bundles = Bundlelink.my_bundles(current_user) %>
       <% bundles.each do |bundle| %>
-        <li><%= bundle.shared ? icon_button('share') : icon_button('lock')%> <%= link_to bundle.title, bundlelink_favlinks_path(bundle)%></li>
+        <li><%= bundle.shared ? icon('share') : icon('lock')%>&nbsp;&nbsp;<%= link_to bundle.title, bundlelink_favlinks_path(bundle)%></li>
       <% end %>
       </ul>
       </div>
