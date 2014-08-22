@@ -23,6 +23,10 @@ class Bundlelink < ActiveRecord::Base
 
   scope :shared_bundles, -> { Bundlelink.where(shared: true) }
   scope :my_bundles, -> (user) { Bundlelink.where(writer: user)}
-  scope :as_collection, -> (user) { Bundlelink.where("shared = 't' or (writer_id = ? and shared = 'f')", user.id)}
+  if Rails.env == "production"
+    scope :as_collection, -> (user) { Bundlelink.where("shared = 1 or (writer_id = ? and shared = 0)", user.id)} 
+  else
+    scope :as_collection, -> (user) { Bundlelink.where("shared = 't' or (writer_id = ? and shared = 'f')", user.id)}
+  end
 
 end
