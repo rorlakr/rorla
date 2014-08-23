@@ -22,7 +22,9 @@ feature '답변을 관리한다.', js: true do
 
     login_as(answerer)
 
-    visit '/questions'
+    visit '/'
+    click_link 'Bulletins'
+    click_link 'Q&A'
     click_link 'Question Title'
   end
 
