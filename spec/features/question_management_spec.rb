@@ -23,7 +23,9 @@ feature '질문을 관리한다.', js: true do
 
     login_as(questioner)
 
-    visit '/questions'
+    visit '/'
+    click_link 'Bulletins'
+    click_link 'Q&A'
   end
 
   scenario '질문 목록을 본다.' do
