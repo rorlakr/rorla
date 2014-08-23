@@ -30,8 +30,8 @@ module ApplicationHelper
     "<span class='label label-default'><span class='glyphicon glyphicon-#{shape}'></span></span> #{label}".html_safe
   end
 
-  def active_menu(target_controller)
-    "class=#{controller_name == target_controller ? 'active' : ''}"
+  def active_menu(*target_controller)
+    target_controller.include?(controller_name) ? 'active' : ''
   end
 
   def user_email(post)
