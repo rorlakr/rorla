@@ -34,7 +34,7 @@
                 <b class="caret"></b>
               </a>
             <ul class="dropdown-menu">
-              <% %w(공지사항 새소식 가입인사 갤러리).each do |bulletin| %>
+              <% @bulletins.each do |bulletin| %>
                 <li class="<%= params[:bulletin_id] == bulletin ? 'active' : '' %>">
                   <%= link_to bulletin, bulletin_posts_path(bulletin) %>
                 </li>
