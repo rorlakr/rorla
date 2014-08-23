@@ -8,7 +8,7 @@
     <% end %>
   </div>
   <% if user_signed_in? %>
-    <p><%= link_to "All Links", favlinks_path %> | <%= link_to "My Links", favlinks_path(whose: current_user) %></p>
+    <p><%= link_to "All Favinks", favlinks_path %> | <%= link_to "My Favlinks", favlinks_path(whose: current_user) %></p>
   <% end %>
 
   <div class='row'>
@@ -17,7 +17,7 @@
     <ul style="list-style-type: none;padding-left:1.5em;">
     <% bundles = Bundlelink.shared_bundles %>
     <% bundles.each do |bundle| %>
-      <li><%= icon('book') %>&nbsp;&nbsp;<%= link_to bundle.title, bundlelink_favlinks_path(bundle)%></li>
+      <li><%= icon('book') %>&nbsp;&nbsp;<%= link_to bundle.title, bundlelink_favlinks_path(bundle)%> (<%= bundle.favlinks.size %>)</li>
     <% end %>
     </ul>
     </div>
@@ -30,7 +30,7 @@
       <ul style="list-style-type: none;padding-left:1.5em;">
       <% bundles = Bundlelink.my_bundles(current_user) %>
       <% bundles.each do |bundle| %>
-        <li><%= bundle.shared ? icon('share') : icon('lock')%>&nbsp;&nbsp;<%= link_to bundle.title, bundlelink_favlinks_path(bundle)%></li>
+        <li><%= bundle.shared ? icon('share') : icon('lock')%>&nbsp;&nbsp;<%= link_to bundle.title, bundlelink_favlinks_path(bundle)%> (<%= bundle.favlinks.size %>)</li>
       <% end %>
       </ul>
       </div>
