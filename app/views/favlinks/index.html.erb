@@ -1,4 +1,5 @@
-<h2>Favlinks
+<h2>
+  <%= params[:whose] ? "My Favlinks" : "All Favlinks" %>
   <small>
     <%= @bundlelink ? "of #{@bundlelink.title} (#{@bundlelink.favlinks.size})" : "(#{@favlinks.size})" %>
     <%= link_to icon('remove-circle'), favlinks_path if params[:bundlelink_id] %>
