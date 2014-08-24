@@ -4,8 +4,6 @@ Capybara.javascript_driver = :webkit
 
 feature 'News', js: true do
   background do
-    pending "TODO"
-
     visit '/'
     click_link 'Bulletins'
     click_link '새소식'
@@ -16,5 +14,4 @@ feature 'News', js: true do
       expect(page).to have_content('새소식')
     end  
   end
-
 end
