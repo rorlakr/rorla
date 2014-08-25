@@ -1,21 +1,6 @@
 class AnswersController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_question
-  before_action :set_answer, only: [:show, :update, :destroy]
-
-  # respond_to :json
-
-  def index
-    @answers = @question.answers
-    render json: @answers
-  end
-
-  def show
-  end
-
-  def new
-    @answer = Answer.new
-  end
+  before_action :set_answer, only: [:update, :destroy]
 
   def create
     @answer = @question.answers.new(answer_params)
@@ -24,7 +9,11 @@ class AnswersController < ApplicationController
 
     redirect_to question_path(@question)
   rescue ActiveRecord::RecordInvalid
-    render "new"
+    errors = @answer.errors.messages.map { |field, messages|
+      messages.map { |message| [t("labels.answer.#{field}"), message].join }
+    }.flatten
+
+    redirect_to question_path(@question), flash: { error: errors }
   end
 
   def update
