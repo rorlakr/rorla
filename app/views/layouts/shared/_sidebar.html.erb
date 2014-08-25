@@ -1,14 +1,25 @@
 <% if controller_name == "favlinks" %>
+  <div style="text-align:center;margin-top:4em;">
 
-  <div style="text-align:center;margin-top:5em;">
-    <% if params[:bundlelink_id] %>
-      <%= link_to icon_label('plus', 'Add a Favlink'), new_bundlelink_favlink_path(bundlelink_id: params[:bundlelink_id]), class: 'well btn btn-default' %>
-    <% else %>
-      <%= link_to icon_label('plus', 'Add a Favlink'), new_favlink_path, class: 'well btn btn-default' %>
-    <% end %>
+    <form class="navbar-form navbar-right" style="margin-bottom:1.5em;">
+       <div class="input-group">
+           <input type="Search" name="search" placeholder="Search..." class="form-control" value="<%= params[:search] %>" />
+           <div class="input-group-btn">
+               <button class="btn btn-info">
+               <span class="glyphicon glyphicon-search"></span>
+               </button>
+           </div>
+       </div>
+    </form>
+
+    <%= link_to icon_label('plus', 'Add a Favlink'), \
+        ( params[:bundlelink_id] ? new_bundlelink_favlink_path(bundlelink_id: params[:bundlelink_id]) \
+        : new_favlink_path ), \
+        class: 'well btn btn-default' %>
   </div>
+
   <% if user_signed_in? %>
-    <p><%= link_to "All Favinks", favlinks_path %> | <%= link_to "My Favlinks", favlinks_path(whose: current_user) %></p>
+    <p><%= link_to "All Favlinks", favlinks_path %> | <%= link_to "My Favlinks", favlinks_path(whose: current_user) %></p>
   <% end %>
 
   <div class='row'>
