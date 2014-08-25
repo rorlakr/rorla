@@ -10,6 +10,8 @@ gem 'friendly_id'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'webshots', github: 'rorlab/webshots'
+gem 'will_paginate'
+gem 'pageless-rails', github: 'rorlab/pageless-rails'
 gem 'rails_12factor', group: :production
 gem 'mysql2', group: :production
 
