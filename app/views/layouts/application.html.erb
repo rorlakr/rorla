@@ -34,10 +34,11 @@
                 <b class="caret"></b>
               </a>
             <ul class="dropdown-menu">
-              <li class="<%= params[:bulletin_id] == '공지사항' ? 'active' : '' %>"><%= link_to '공지사항', bulletin_posts_path('공지사항') %></li>
-              <li class="<%= params[:bulletin_id] == '새소식' ? 'active' : '' %>"><%= link_to '새소식', bulletin_posts_path('새소식') %></li>
-              <li class="<%= params[:bulletin_id] == '가입인사' ? 'active' : '' %>"><%= link_to '가입인사', bulletin_posts_path('가입인사') %></li>
-              <li class="<%= params[:bulletin_id] == '갤러리' ? 'active' : '' %>"><%= link_to '갤러리', bulletin_posts_path('갤러리') %></li>
+              <% @bulletins.each do |bulletin| %>
+                <li class="<%= params[:bulletin_id] == bulletin ? 'active' : '' %>">
+                  <%= link_to bulletin, bulletin_posts_path(bulletin) %>
+                </li>
+              <% end %>
               <li class="<%= active_menu('questions') %>"><%= link_to 'Q&A', questions_path %></li>
             </ul>
           </li>
