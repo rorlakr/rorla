@@ -1,0 +1,26 @@
+<h2><%= params[:bulletin_id] %> <small><%= link_to '설정', edit_bulletin_path(params[:bulletin_id])%></small></h2>
+
+<table class='table'>
+  <thead>
+  <tr>
+    <th class="col-md-9">Title</th>
+    <th>Data Actions</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td>
+          <%= link_to 'Show', [post.bulletin, post], class:'btn btn-default' %>
+          <% if user_signed_in? %>
+            <%= link_to 'Edit', edit_bulletin_post_path(post.bulletin, post), class:'btn btn-default' if current_user.can_update? post %>
+            <%= link_to 'Destroy', [post.bulletin, post], method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default' if current_user.can_delete? post %>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
