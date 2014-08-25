@@ -6,7 +6,11 @@ class FavlinksController < ApplicationController
   # GET /favlinks
   # GET /favlinks.json
   def index
-    @favlinks = @bundlelink ? @bundlelink.favlinks : (params[:whose] ? Favlink.whose(current_user) : Favlink.shared)
+    if params[:search]
+      @favlinks = Favlink.search(params[:search])
+    else
+      @favlinks = @bundlelink ? @bundlelink.favlinks : (params[:whose] ? Favlink.whose(current_user) : Favlink.shared)
+    end
     @favlinks = @favlinks.paginate(page: params[:page], per_page: 10)
     if request.xhr?
       sleep(3)
