@@ -18,6 +18,10 @@ class Favlink < ActiveRecord::Base
 
   resourcify
   include Authority::Abilities
+  include AttrSearchable
+
+  attr_searchable :title, :description
+  attr_searchable :bundlelink => "bundlelink.title"
 
   default_scope { order(created_at: :desc)}
 
