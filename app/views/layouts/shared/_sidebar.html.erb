@@ -1,7 +1,7 @@
 <% if controller_name == "favlinks" %>
   <div style="text-align:center;margin-top:4em;">
 
-    <form class="navbar-form navbar-right" style="margin-bottom:1.5em;">
+    <form action="/favlinks" class="navbar-form navbar-right" style="margin-bottom:1.5em;">
        <div class="input-group">
            <input type="Search" name="search" placeholder="Search..." class="form-control" value="<%= params[:search] %>" />
            <div class="input-group-btn">
