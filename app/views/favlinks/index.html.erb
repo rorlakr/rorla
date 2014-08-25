@@ -2,8 +2,9 @@
   <%= params[:whose] ? "My Favlinks" : "All Favlinks" %>
   <small>
     <%= "of #{@bundlelink.title}" if params[:bundlelink_id] %>
+    <%= "filtered by <strong style=color:red;>'<u>#{params[:search]}</u>'</strong>".html_safe if params[:search] %>
     (<%= @favlinks.total_entries %>)
-    <%= link_to icon('remove-circle'), favlinks_path if params[:bundlelink_id] %>
+    <%= link_to icon('remove-circle'), favlinks_path if params[:bundlelink_id] || params[:search] %>
   </small>
 </h2>
 
