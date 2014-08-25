@@ -47,7 +47,7 @@ module ApplicationHelper
         :totalPages => total_pages,
         :url        => url,
         :loaderMsg  => 'Loading more pages...',
-        :loaderImage => image_path('load.gif')
+        :loaderImage => asset_path('load1.gif')
     }
 
     container && opts[:container] ||= container
