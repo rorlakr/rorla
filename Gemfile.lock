@@ -6,6 +6,13 @@ GIT
       railties (>= 3.0)
 
 GIT
+  remote: git://github.com/rorlab/pageless-rails.git
+  revision: bd13f2b8e7ac93235cf28c94c8379ef42d635de4
+  specs:
+    pageless-rails (0.0.3)
+      railties (>= 3.1)
+
+GIT
   remote: git://github.com/rorlab/webshots.git
   revision: 421f6d1d7b1c69a066a85836f2fc2171f0bad217
   specs:
@@ -260,7 +267,7 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (2.2.2)
       coffee-rails
-    tzinfo (1.2.1)
+    tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.5.1)
       execjs (>= 0.3.0)
@@ -272,6 +279,7 @@ GEM
     warden (1.2.3)
       rack (>= 1.0)
     websocket (1.0.7)
+    will_paginate (3.0.7)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -304,6 +312,7 @@ DEPENDENCIES
   letter_opener
   mini_magick
   mysql2
+  pageless-rails!
   rails (= 4.1.1)
   rails-erd
   rails_12factor
@@ -322,3 +331,4 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   unicorn
   webshots!
+  will_paginate
