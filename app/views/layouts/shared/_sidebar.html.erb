@@ -1,9 +1,8 @@
 <% if controller_name == "favlinks" %>
-  <div style="text-align:center;margin-top:4em;">
-
-    <form action="/favlinks" class="navbar-form navbar-right" style="margin-bottom:1.5em;">
+  <div style="margin-top:4.5em;">
+    <form action="/favlinks" class="navbar-form" style="margin-bottom:1.5em;">
        <div class="input-group">
-           <input type="Search" name="search" placeholder="Search..." class="form-control" value="<%= params[:search] %>" />
+           <input type="Search" name="search" placeholder="Search ..." class="form-control" value="<%= params[:search] %>" />
            <div class="input-group-btn">
                <button class="btn btn-info">
                <span class="glyphicon glyphicon-search"></span>
@@ -11,7 +10,8 @@
            </div>
        </div>
     </form>
-
+  </div>
+  <div style="text-align:center;">
     <%= link_to icon_label('plus', 'Add a Favlink'), \
         ( params[:bundlelink_id] ? new_bundlelink_favlink_path(bundlelink_id: params[:bundlelink_id]) \
         : new_favlink_path ), \
