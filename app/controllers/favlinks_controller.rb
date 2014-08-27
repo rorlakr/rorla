@@ -11,6 +11,8 @@ class FavlinksController < ApplicationController
     else
       @favlinks = @bundlelink ? @bundlelink.favlinks : (params[:whose] ? Favlink.whose(current_user) : Favlink.shared)
     end
+    @favlinks = @favlinks.tagged_with(params[:tag]) if params[:tag]
+
     @favlinks = @favlinks.paginate(page: params[:page], per_page: 10)
     if request.xhr?
       sleep(3)
@@ -92,7 +94,7 @@ class FavlinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def favlink_params
-      params.require(:favlink).permit(:title, :description, :linkurl, :shared, :bundlelink_id)
+      params.require(:favlink).permit(:title, :description, :linkurl, :shared, :bundlelink_id, :tag_list)
     end
 
     def rand_str(len=20)

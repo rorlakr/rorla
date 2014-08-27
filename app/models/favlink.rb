@@ -23,6 +23,8 @@ class Favlink < ActiveRecord::Base
   attr_searchable :title, :description
   attr_searchable :bundlelink => "bundlelink.title"
 
+  acts_as_taggable
+
   default_scope { order(created_at: :desc)}
 
   has_one :plaza, :as => :postitable, :dependent => :destroy
