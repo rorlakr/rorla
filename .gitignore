@@ -20,3 +20,6 @@
 .ruby-version
 
 /.env
+
+public/capybara.html
+public/screenshot.png

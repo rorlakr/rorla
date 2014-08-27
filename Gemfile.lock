@@ -47,6 +47,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    acts-as-taggable-on (3.3.0)
+      activerecord (>= 3, < 5)
     addressable (2.3.6)
     annotate (2.6.3)
       activerecord (>= 2.3.0)
@@ -289,6 +291,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
   annotate
   attr_searchable
   authority
