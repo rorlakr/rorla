@@ -4,7 +4,12 @@
   <% if favlink.bundlelink %>
     <div class='bundle'><%= icon_label('book', link_to(favlink.bundlelink.try(:title), bundlelink_favlinks_path(favlink.bundlelink))) %></div>
   <% end %>
-  <div class='writer'><%= icon_label('user', t('authored_html', who: favlink.writer.email, ago: time_ago_in_words(favlink.created_at))) %></div>
+  <div class='tag'>
+    <%= icon_tags(favlink.tag_list) %>
+  </div>
+  <div class='writer'>
+    <%= icon_label('user', t('authored_html', who: favlink.writer.email, ago: time_ago_in_words(favlink.created_at))) %>
+  </div>
   <div class='actions'>
     <%= link_to icon_button('eye-open'), favlink unless action_name == 'show' %>
     <%= link_to icon_button('edit'), edit_favlink_path(favlink) %>
