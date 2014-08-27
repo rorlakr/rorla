@@ -20,6 +20,11 @@
     .writer {
       color:#a8a8a8;
       padding-left: .5em;
+      margin-top: .5em;
+      border-top: 1px solid #eaeaea;
+    }
+    .tag {
+      padding-left: .5em;
     }
     .actions {
       text-align: right;
@@ -43,5 +48,17 @@
       margin-bottom: 0;
     }
   }
+
+}
+
+.badge {
+  a {
+    color: white;
+    &:hover { color: black; text-decoration: none;}
+  }
+  .css1 { font-size: .6em; }
+  .css2 { font-size: .8em; }
+  .css3 { font-size: 1.0em; }
+  .css4 { font-size: 1.2em; }
 
 }
