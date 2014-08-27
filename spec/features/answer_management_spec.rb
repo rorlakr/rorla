@@ -22,7 +22,9 @@ feature '답변을 관리한다.', js: true do
 
     login_as(answerer)
 
-    visit '/questions'
+    visit '/'
+    click_link 'Bulletins'
+    click_link 'Q&A'
     click_link 'Question Title'
   end
 
@@ -31,21 +33,17 @@ feature '답변을 관리한다.', js: true do
   end
 
   scenario '답변 등록한다.' do
-    click_link '답변등록'
-
     fill_in '답변', with: '첫번째 답변'
 
-    click_button '등록'
+    click_button '답변등록'
 
     expect(page).to have_content('첫번째 답변')
   end
 
   scenario '내용을 입력하지 않아 등록에 실패한다.' do
-    click_link '답변등록'
-
     fill_in '답변', with: ' '
 
-    click_button '등록'
+    click_button '답변등록'
 
     expect(page).to have_content('답변에 내용을 입력해 주세요')
   end

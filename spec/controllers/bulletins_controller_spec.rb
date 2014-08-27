@@ -18,10 +18,11 @@ describe BulletinsController do
 
   describe "GET index" do
     it "assigns all bulletins as @bulletins" do
+      Bulletin.delete_all
+
       bulletin = Bulletin.create! valid_attributes
       get :index, {}, valid_session
       expect(assigns(:bulletins)).to match_array([bulletin])
-
     end
   end
 
