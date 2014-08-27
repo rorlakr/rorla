@@ -30,6 +30,14 @@ module ApplicationHelper
     "<span class='label label-default'><span class='glyphicon glyphicon-#{shape}'></span></span> #{label}".html_safe
   end
 
+  def icon_tags(tags_array)
+    label_tags = ""
+    tags_array.each do |tag|
+      label_tags += "<a href='/favlinks?tag=#{CGI::escape(tag)}'><span class='badge badge-default'>#{tag}</span></a> "
+    end
+    icon('tag') + " " + label_tags.html_safe unless tags_array.blank?
+  end
+
   def active_menu(*target_controller)
     target_controller.include?(controller_name) ? 'active' : ''
   end
