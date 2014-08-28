@@ -11,6 +11,9 @@
 #
 
 class Bulletin < ActiveRecord::Base
+  resourcify
+  include Authority::Abilities
+
   extend FriendlyId
   friendly_id :title
   validates_length_of :title, maximum: 64
