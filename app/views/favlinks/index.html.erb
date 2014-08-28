@@ -15,4 +15,4 @@
 
 <div id="last_page"></div>
 <%= will_paginate @favlinks %>
-<%= pageless(@favlinks.total_pages, favlinks_path, '#favlinks') %>
+<%= pageless(@favlinks.total_pages, url_for, '#favlinks') %>
