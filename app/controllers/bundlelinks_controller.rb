@@ -1,4 +1,5 @@
 class BundlelinksController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_bundlelink, only: [:show, :edit, :update, :destroy]
 
   # GET /bundlelinks
