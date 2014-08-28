@@ -34,23 +34,8 @@
     </div>
   </div>
 
-  <% if user_signed_in? %>
-    <div class='row'>
-      <div class='col-md-12'>
-      <p><%= link_to_if (user_signed_in? && current_user.has_role?(:user)), "My Bundlelinks :", bundlelinks_path %></p>
-      <ul style="list-style-type: none;padding-left:1.5em;">
-      <% bundles = Bundlelink.my_bundles(current_user) %>
-      <% bundles.each do |bundle| %>
-        <li><%= bundle.shared ? icon('share') : icon('lock')%>&nbsp;&nbsp;<%= link_to bundle.title, bundlelink_favlinks_path(bundle)%> (<%= bundle.favlinks.size %>)</li>
-      <% end %>
-      </ul>
-      </div>
-    </div>
-  <% end %>
-<% @tags = Favlink.tag_counts_on(:tags) if @tags.blank? %>
-  <p>Tag Cloud :</p>
-  <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-    <span class='badge badge-default'><%= link_to tag.name, favlinks_path(tag: tag.name), :class => css_class %></span>
-  <% end %>
+  <%= render "layouts/shared/sidebar/my_bundles" %>
+
+  <%= render "layouts/shared/sidebar/tag_clouds" %>
 
 <% end %>
