@@ -38,6 +38,10 @@ module ApplicationHelper
     icon('tag') + " " + label_tags.html_safe unless tags_array.blank?
   end
 
+  def icon_shared(shared)
+    shared ? icon('share') : icon('lock')
+  end
+
   def active_menu(*target_controller)
     target_controller.include?(controller_name) ? 'active' : ''
   end
