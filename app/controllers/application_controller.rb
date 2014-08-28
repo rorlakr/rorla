@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
     end
 
     def set_bulletins
-      @bulletins = Bulletin.all.map { |bulletin| bulletin.title }
+      # nav_bar 메뉴 Bulletins의 항목을 가져옴.
+      @bulletin_titles = Bulletin.all.map { |bulletin| bulletin.title }
     end
 end
