@@ -5,7 +5,7 @@
       <ul style="list-style-type: none;padding-left:1.5em;">
       <% bundles = Bundlelink.my_private_bundles(current_user) %>
       <% bundles.each do |bundle| %>
-        <li><%= bundle.shared ? icon('share') : icon('lock')%>&nbsp;&nbsp;<%= link_to bundle.title, bundlelink_favlinks_path(bundle)%> (<%= bundle.favlinks.size %>)</li>
+        <li><%= icon_shared(bundle.shared) %>&nbsp;&nbsp;<%= link_to bundle.title, bundlelink_favlinks_path(bundle)%> (<%= bundle.favlinks.size %>)</li>
       <% end %>
       </ul>
     </div>
