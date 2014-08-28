@@ -22,7 +22,7 @@ class Bundlelink < ActiveRecord::Base
   validates :writer_id, presence: true
 
   scope :shared_bundles, -> { Bundlelink.where(shared: true) }
-  scope :my_bundles, -> (user) { Bundlelink.where(writer: user)}
+  scope :my_bundles, -> (user) { Bundlelink.where(writer: user).where(shared: false)}
   scope :as_collection, -> (user) { Bundlelink.where("shared = ? or (writer_id = ? and shared = ?)", true, user.id, false)}
 
 end
