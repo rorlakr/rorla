@@ -38,13 +38,22 @@ class FavlinksController < ApplicationController
   # POST /favlinks
   # POST /favlinks.json
   def create
-    @favlink = current_user.favlinks.new(favlink_params)
-    # @favlink.writer = current_user
+    if @bundlelink
+      @favlink = @bundlelink.favlinks.new(favlink_params)
+      @favlink.writer = current_user
+    else
+      @favlink = current_user.favlinks.new(favlink_params)
+    end
     @favlink.capture_loc = rand_str
     respond_to do |format|
       if @favlink.save
-        format.html { redirect_to @favlink, notice: 'Favlink was successfully created.' }
-        format.json { render :show, status: :created, location: @favlink }
+        if @bundlelink
+          format.html { redirect_to [@favlink.bundlelink, @favlink], notice: 'Favlink was successfully created.' }
+          format.json { render :show, status: :created, location: [@favlink.bundlelink, @favlink] }
+        else
+          format.html { redirect_to @favlink, notice: 'Favlink was successfully created.' }
+          format.json { render :show, status: :created, location: @favlink }
+        end
       else
         format.html { render :new }
         format.json { render json: @favlink.errors, status: :unprocessable_entity }
@@ -59,7 +68,7 @@ class FavlinksController < ApplicationController
     @favlink.capture_loc = rand_str if @favlink.capture_loc.blank?
     respond_to do |format|
       if @favlink.update(favlink_params)
-        format.html { redirect_to @favlink, notice: 'Favlink was successfully updated.' }
+        format.html { redirect_to (@bundlelink ? [@bundlelink, @favlink] : @favlink), notice: 'Favlink was successfully updated.' }
         format.json { render :show, status: :ok, location: @favlink }
       else
         format.html { render :edit }
@@ -74,7 +83,7 @@ class FavlinksController < ApplicationController
     authorize_action_for @favlink
     @favlink.destroy
     respond_to do |format|
-      format.html { redirect_to favlinks_url, notice: 'Favlink was successfully destroyed.' }
+      format.html { redirect_to @bundlelink ? bundlelink_favlinks_url : favlinks_url, notice: 'Favlink was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
