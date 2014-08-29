@@ -11,9 +11,9 @@
     <%= icon_label('user', t('authored_html', who: favlink.writer.email, ago: time_ago_in_words(favlink.created_at))) %>
   </div>
   <div class='actions'>
-    <%= link_to icon_button('eye-open'), favlink unless action_name == 'show' %>
-    <%= link_to icon_button('edit'), edit_favlink_path(favlink) %>
-    <%= link_to icon_button('trash'), favlink, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to icon_button('eye-open'), params[:bundlelink_id] ? [favlink.bundlelink, favlink] : favlink unless action_name == 'show' %>
+    <%= link_to icon_button('edit'), params[:bundlelink_id] ? edit_bundlelink_favlink_path(favlink.bundlelink, favlink) :edit_favlink_path(favlink) %>
+    <%= link_to icon_button('trash'), params[:bundlelink_id] ? [favlink.bundlelink, favlink] : favlink, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
   <% if action_name == 'show' %>
     <div class='capture_loc'>
