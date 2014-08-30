@@ -47,7 +47,7 @@ $ bin/rake dockera:build
 #### 3.1.1 MySQL 컨테이너 실행
 
 ```bash
-docker run --name mysql -e MYSQL_USERNAME="admin" -e MYSQL_PASS="yourpassword" -d tutum/mysql
+docker run --name mysql --volumes-from rorla_mysql_data -e MYSQL_USERNAME="admin" -e MYSQL_PASS="yourpassword" -d -p 3306:3306 tutum/mysql
 ```
 
 계정 정보는 아무렇게나 입력해도 된다. docker link로 알아서 여기에 입력한 계정정보를 사용.
