@@ -17,10 +17,6 @@ gem 'pageless-rails', github: 'rorlab/pageless-rails'
 gem 'rails_12factor', group: :production
 gem 'mysql2', group: :production
 
-group :production do
-  gem 'le'
-end
-
 group :development do
   gem 'annotate'
   gem 'better_errors'
