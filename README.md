@@ -46,8 +46,23 @@ $ bin/rake dockera:build
 
 #### 3.1.1 MySQL 컨테이너 실행
 
+먼저 볼륨 컨테이너를 생성한다.
+
 ```bash
-docker run --name mysql --volumes-from rorla_mysql_data -e MYSQL_USERNAME="admin" -e MYSQL_PASS="yourpassword" -d -p 3306:3306 tutum/mysql
+$ docker run -d -v /var/lib/mysql --name rorla_mysql_data busybox
+```
+
+이렇게 하면 호스트의 어딘가 저장되지만 볼륨 컨테이너 삭제시 데이터도 삭제 되므로 호스트의 특정 폴더와 연결해도 된다.
+
+```bash
+$ docker run -d -v /data/mysql:/var/lib/mysql --name rorla_mysql_data busybox
+```
+
+이제 MySQL을 실행하자.
+
+```bash
+
+$ docker run --name mysql --volumes-from rorla_mysql_data -e MYSQL_USERNAME="admin" -e MYSQL_PASS="yourpassword" -d -p 3306:3306 tutum/mysql
 ```
 
 계정 정보는 아무렇게나 입력해도 된다. docker link로 알아서 여기에 입력한 계정정보를 사용.
