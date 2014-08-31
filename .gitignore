@@ -23,3 +23,6 @@
 
 public/capybara.html
 public/screenshot.png
+
+/Vagrantfile
+.vagrant/**/*
