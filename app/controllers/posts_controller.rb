@@ -7,6 +7,12 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = @bulletin.posts.all
+    @posts = @posts.paginate(page: params[:page], per_page: 10)
+
+    if request.xhr?
+      sleep(3)
+      render :partial => @plazas
+    end
   end
 
   # GET /posts/1
