@@ -12,7 +12,7 @@
   <tbody>
   <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
+        <td><%= link_to post.title, [post.bulletin, post] %></td>
 	      <td class="hidden-xs"><%= post.created_at.strftime('%Y-%m-%d %l:%M:%S%P') %></td>
 	      <td class="visible-xs"><%= post.created_at.strftime('%Y-%m-%d') %></td>
         <td class="hidden-xs">
@@ -27,3 +27,6 @@
   </tbody>
 </table>
 
+<center>
+  <%= will_paginate @posts %>
+</center>
