@@ -1,5 +1,9 @@
-<h2>Listing plazas</h2>
+<h2>Plaza</h2>
 
 <div id="plazas">
   <%= render @plazas %>
 </div>
+
+<div id="last_page"></div>
+<%= will_paginate @favlinks %>
+<%= pageless(@plazas.total_pages, url_for, '#plazas') %>
