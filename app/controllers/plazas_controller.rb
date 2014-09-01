@@ -6,6 +6,11 @@ class PlazasController < ApplicationController
   # GET /plazas.json
   def index
     @plazas = Plaza.all
+    @plazas = @plazas.paginate(page: params[:page], per_page: 10)
+    if request.xhr?
+      sleep(3)
+      render :partial => @plazas
+    end
   end
 
   # GET /plazas/1
