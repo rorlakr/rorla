@@ -3,8 +3,9 @@
 <table class='table'>
   <thead>
   <tr>
-    <th class="col-md-9">Title</th>
-    <th>Data Actions</th>
+    <th class="col-md-7 col-sm-7 col-xs-8">Title</th>
+	  <th class="col-md-3 col-sm-3 col-xs-4">Created at</th>
+    <th class="col-md-2 col-sm-2 hidden-xs">Data Actions</th>
   </tr>
   </thead>
 
@@ -12,11 +13,13 @@
   <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td>
-          <%= link_to 'Show', [post.bulletin, post], class:'btn btn-default' %>
+	      <td class="hidden-xs"><%= post.created_at.strftime('%Y-%m-%d %l:%M:%S%P') %></td>
+	      <td class="visible-xs"><%= post.created_at.strftime('%Y-%m-%d') %></td>
+        <td class="hidden-xs">
+          <%= link_to icon_button('eye-open'), [post.bulletin, post] %>
           <% if user_signed_in? %>
-            <%= link_to 'Edit', edit_bulletin_post_path(post.bulletin, post), class:'btn btn-default' if current_user.can_update? post %>
-            <%= link_to 'Destroy', [post.bulletin, post], method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default' if current_user.can_delete? post %>
+            <%= link_to icon_button('edit'), edit_bulletin_post_path(post.bulletin, post) if current_user.can_update? post %>
+            <%= link_to icon_button('trash'), [post.bulletin, post], method: :delete, data: { confirm: 'Are you sure?' } if current_user.can_delete? post %>
           <% end %>
         </td>
       </tr>
