@@ -1,4 +1,4 @@
-<h2><%= params[:bulletin_id] %> <small><%= link_to '설정', edit_bulletin_path(params[:bulletin_id])%></small></h2>
+<%= render partial: "posts/post_types/bulletin_title" %>
 
 <div id="posts">
   <% @posts.each do | post | %>
