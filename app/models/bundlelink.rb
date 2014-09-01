@@ -24,6 +24,6 @@ class Bundlelink < ActiveRecord::Base
   scope :shared_bundles, -> { Bundlelink.where(shared: true).order(title: :asc) }
   scope :my_bundles, -> (user) { Bundlelink.where(writer: user).order(created_at: :desc)}
   scope :my_private_bundles, -> (user) { Bundlelink.where(writer: user).where(shared: false).order(title: :asc)}
-  scope :as_collection, -> (user) { Bundlelink.where("shared = ? or (writer_id = ? and shared = ?)", true, user.id, false)}
+  scope :as_collection, -> (user) { Bundlelink.where("shared = ? or (writer_id = ? and shared = ?)", true, user.id, false).order(title: :asc)}
 
 end
