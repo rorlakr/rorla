@@ -1,6 +1,7 @@
 class BulletinsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_bulletin, only: [:show, :edit, :update, :destroy]
+  authorize_actions_for Bulletin
 
   # GET /bulletins
   # GET /bulletins.json

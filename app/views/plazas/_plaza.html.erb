@@ -2,6 +2,6 @@
 <% if plaza.postitable.class == Post %>
   <%= render partial: "plazas/templates/#{plaza.postitable.bulletin.post_type}", locals: {post: plaza.postitable } %>
 <% else %>
-  not Post
+  <%= render partial: "plazas/templates/#{plaza.postitable.class.name.underscore}", locals: { resource: plaza.postitable } %>
 <% end %>
 </div>
