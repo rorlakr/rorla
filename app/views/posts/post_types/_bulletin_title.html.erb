@@ -1,0 +1,8 @@
+<h2>
+  <%= params[:bulletin_id] %>
+  <% if user_signed_in? && current_user.has_role?(:admin) %>
+    <small>
+      <%= link_to '설정', edit_bulletin_path(params[:bulletin_id])%>
+    </small>
+  <% end %>
+</h2>

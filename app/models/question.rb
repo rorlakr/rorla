@@ -22,6 +22,18 @@ class Question < ActiveRecord::Base
 
   validates_presence_of :title, :content
 
+  def is_owner?(user)
+    self.user == user 
+  end
+
+  def questioner
+    user.email
+  end
+
+  def no_answers
+    answers.count
+  end
+
   private
     def set_plaza_question
       self.create_plaza

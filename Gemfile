@@ -10,6 +10,10 @@ gem 'friendly_id'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'webshots', github: 'rorlab/webshots'
+gem 'acts-as-taggable-on'
+gem 'attr_searchable'
+gem 'will_paginate'
+gem 'pageless-rails', github: 'rorlab/pageless-rails'
 gem 'rails_12factor', group: :production
 gem 'mysql2', group: :production
 gem 'merit' 
@@ -19,6 +23,8 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rails-erd'
+  gem 'docker_alias', github: 'rorlab/docker_alias'
+  # gem 'docker_alias', '~> 0.0.2'
 end
 
 group :development, :test do
@@ -72,11 +78,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-

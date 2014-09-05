@@ -1,5 +1,51 @@
+
 <% if controller_name == "favlinks" %>
-  <div style="text-align:center;margin-top:5em;">
-    <%= link_to 'New Favlink', new_favlink_path, class: 'well btn btn-default' %>
+  <div style="margin-top:4.5em;">
+    <form action="/favlinks" class="navbar-form" style="margin-bottom:1.5em;">
+       <div class="input-group">
+           <input type="Search" name="search" placeholder="Search ..." class="form-control" value="<%= params[:search] %>" />
+           <div class="input-group-btn">
+               <button class="btn btn-info">
+               <span class="glyphicon glyphicon-search"></span>
+               </button>
+           </div>
+       </div>
+    </form>
   </div>
+  <div style="text-align:center;">
+    <%= link_to icon_label('plus', 'Add a Favlink'), \
+        ( params[:bundlelink_id] ? new_bundlelink_favlink_path(bundlelink_id: params[:bundlelink_id]) \
+        : new_favlink_path ), \
+        class: 'well btn btn-default' %>
+  </div>
+
+  <% if user_signed_in? %>
+    <p><%= link_to "All Favlinks", favlinks_path %> | <%= link_to "My Favlinks", favlinks_path(whose: current_user) %></p>
+  <% end %>
+
+  <div class='row'>
+    <div class='col-md-12'>
+    <p><%= link_to_if (user_signed_in? && current_user.has_role?(:admin)), "Public Bundlelinks :", bundlelinks_path %></p>
+    <ul style="list-style-type: none;padding-left:1.5em;">
+    <% bundles = Bundlelink.shared_bundles %>
+    <% bundles.each do |bundle| %>
+      <li><%= icon('book') %>&nbsp;&nbsp;<%= link_to bundle.title, bundlelink_favlinks_path(bundle)%> (<%= bundle.favlinks.size %>)</li>
+    <% end %>
+    </ul>
+    </div>
+  </div>
+
+  <%= render "layouts/shared/sidebar/my_bundles" %>
+
+  <%= render "layouts/shared/sidebar/tag_clouds" %>
+
 <% end %>
+
+
+<div class="hidden-xs hidden-sm" style="margin-top:5em;">
+	<!--Twitter Timeline-->
+  <a class="twitter-timeline" href="https://twitter.com/rorlab" data-widget-id="340285058244022272">@rorlab 님의 트윗</a>
+  <script src="//platform.twitter.com/widgets.js"></script>
+</div>
+
+

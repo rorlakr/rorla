@@ -1,7 +1,9 @@
 <h2>Preview of Favlink</h2>
 
+<div id='show_favlink'>
 <%= render @favlink %>
+</div>
 <hr>
 
-<%= link_to 'Edit', edit_favlink_path(@favlink), class: 'btn btn-default' %>
-<%= link_to 'Back', favlinks_path, class: 'btn btn-default' %>
+<%= link_to 'Edit', @bundlelink ? edit_bundlelink_favlink_path(@bundlelink, @favlink) : edit_favlink_path(@favlink), class: 'btn btn-default' %>
+<%= link_to 'Back', @bundlelink ? bundlelink_favlinks_path(@bundlelink) : favlinks_path, class: 'btn btn-default' %>

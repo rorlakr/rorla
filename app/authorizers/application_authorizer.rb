@@ -2,7 +2,7 @@
 class ApplicationAuthorizer < Authority::Authorizer
 
   def self.default(adjective, user)
-    has_role? :admin
+    user.has_role? :admin
   end
 
   def updatable_by?(user)
