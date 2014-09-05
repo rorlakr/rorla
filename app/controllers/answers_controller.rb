@@ -1,40 +1,28 @@
 class AnswersController < ApplicationController
-  before_action :authenticate_user!, except: [ :index, :show]
   before_action :set_question
-  before_action :set_answer, only: [:show, :edit, :update, :destroy]
-
-  # respond_to :json
-
-  def index
-    @answers = @question.answers
-    render json: @answers
-  end
-
-  def show
-  end
-
-  def new
-    @answer = Answer.new
-  end
-
-  def edit
-  end
+  before_action :set_answer, only: [:update, :destroy]
 
   def create
     @answer = @question.answers.new(answer_params)
+    @answer.user = current_user
     @answer.save!
 
     redirect_to question_path(@question)
   rescue ActiveRecord::RecordInvalid
-    render "new"
+    errors = @answer.errors.messages.map { |field, messages|
+      messages.map { |message| [t("labels.answer.#{field}"), message].join }
+    }.flatten
+
+    redirect_to question_path(@question), flash: { error: errors }
   end
 
   def update
-    @answer.update!(answer_params)
+    @answer.useful!(current_user, params[:useful] == "true")
 
     redirect_to question_path(@question)
   rescue ActiveRecord::RecordInvalid
-    render "edit"
+    #TODO: 에러 처리
+    redirect_to question_path(@question)
   end
 
   def destroy
@@ -52,6 +40,6 @@ class AnswersController < ApplicationController
     end
 
     def answer_params
-      params.require(:answer).permit(:title, :content)
+      params.require(:answer).permit(:content)
     end
 end

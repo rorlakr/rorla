@@ -1,0 +1,5 @@
+ko:
+  will_paginate:
+    previous_label: "< 이전"
+    next_label: "다음 >"
+    page_gap: "&hellip;"

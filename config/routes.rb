@@ -1,14 +1,25 @@
 Rails.application.routes.draw do
+  get '/404', to: 'errors#not_found'
+  get '/500', to: 'errors#server_error'  
 
   root "welcome#index"
   devise_for :users
   resources :plazas
+  resources :bundlelinks do
+    resources :favlinks
+  end
   resources :favlinks
   resources :bulletins do
     resources :posts
   end
   resources :questions do
     resources :answers
+  end
+
+  namespace :api do
+    resources :questions do
+      resources :answers
+    end
   end
 
   # resources :tasks, only: [ :index, :show, :create, :update, :destroy ]

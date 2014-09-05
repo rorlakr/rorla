@@ -1,0 +1,1 @@
+Webshots.mode = Rails.env

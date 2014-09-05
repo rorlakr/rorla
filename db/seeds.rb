@@ -9,7 +9,3 @@
 admin_user = User.create! email: 'admin@email.com', password: '12345678', confirmed_at: Time.now
 admin_user.add_role :admin
 
-Bulletin.create! title: '공지사항'
-Bulletin.create! title: '새소식'
-Bulletin.create! title: '가입인사', post_type: 'blog'
-Bulletin.create! title: '갤러리', post_type: 'gallery'

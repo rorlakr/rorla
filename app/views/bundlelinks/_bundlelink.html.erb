@@ -1,0 +1,17 @@
+<div class='bundlelink'>
+  <div class='title'>
+    <h4><%= bundlelink.title %>
+    </h4>
+  </div>
+  <div class='writer'><%= t('authored_html', who: bundlelink.writer.email, ago: time_ago_in_words(bundlelink.created_at)) %></div>
+  <% if action_name == 'show' %>
+    <div class='description' style='margin-top: 1em;'><%= simple_format bundlelink.description %></div>
+  <% else %>
+    <div class='description'><%= truncate bundlelink.description, length: 100 %></div>
+  <% end %>
+  <div class='actions'>
+    <%= link_to icon_button('eye-open'), bundlelink unless action_name == 'show' %>
+    <%= link_to icon_button('edit'), edit_bundlelink_path(bundlelink) %>
+    <%= link_to icon_button('trash'), bundlelink, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
