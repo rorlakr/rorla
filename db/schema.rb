@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140831223422) do
+ActiveRecord::Schema.define(version: 20140906122524) do
 
   create_table "answers", force: true do |t|
     t.text     "content"
@@ -81,15 +81,16 @@ ActiveRecord::Schema.define(version: 20140831223422) do
   end
 
   create_table "favlinks", force: true do |t|
-    t.string   "title",                        null: false
+    t.string   "title",                           null: false
     t.text     "description"
-    t.string   "linkurl",                      null: false
+    t.string   "linkurl",                         null: false
     t.integer  "writer_id"
-    t.boolean  "shared",        default: true
+    t.boolean  "shared",           default: true
     t.integer  "bundlelink_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "capture_loc"
+    t.boolean  "with_screen_shot", default: true
   end
 
   add_index "favlinks", ["bundlelink_id"], name: "index_favlinks_on_bundlelink_id"
