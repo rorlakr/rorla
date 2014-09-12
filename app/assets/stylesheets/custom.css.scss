@@ -15,3 +15,20 @@ checkbox {
   padding:5px;
   box-shadow: 0px 0px 5px #888888;
 }
+
+.form-actions {
+   background-color:#eaeaea;
+   padding:1em;
+   margin:2em 0;
+   border-top:1px solid #dadada;
+}
+
+
+// Customization of General Views
+
+h2 { font-weight: bold}
+h2 > span.glyphicon {
+  display: inline-block;
+  vertical-align: top;
+  margin-top:2px;
+}

@@ -26,3 +26,5 @@ public/screenshot.png
 
 /Vagrantfile
 .vagrant/**/*
+
+.idea
