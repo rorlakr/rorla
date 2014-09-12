@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :rblogs
+
   get '/404', to: 'errors#not_found'
-  get '/500', to: 'errors#server_error'  
+  get '/500', to: 'errors#server_error'
 
   root "welcome#index"
   devise_for :users
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   resources :bundlelinks do
     resources :favlinks
   end
+
   resources :favlinks
   resources :bulletins do
     resources :posts

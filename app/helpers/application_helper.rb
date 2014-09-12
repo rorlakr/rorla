@@ -66,4 +66,8 @@ module ApplicationHelper
 
     javascript_tag("$('#{container}').pageless(#{opts.to_json});")
   end
+
+  def authored_by(user)
+    icon_label('user', t('authored_html', who: user.writer.email, ago: time_ago_in_words(user.created_at)))
+  end
 end
