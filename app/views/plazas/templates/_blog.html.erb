@@ -1,4 +1,5 @@
 <div class='blog'>
+  <div style="border-bottom:1px solid #eaeaea;padding-bottom:.5em;margin-bottom:.5em;">> Bulletins > <%= post.bulletin.title %></div>
   <div class='title'><h4><%= post.title %></h4></div>
   <div class='content'><%= truncate post.content, length:100 %></div>
   <div class='author'><%= t('authored_html', who: post.writer.email, ago: time_ago_in_words(post.created_at)) %></div>
