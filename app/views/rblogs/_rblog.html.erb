@@ -1,0 +1,25 @@
+<div class='rblog <%= 'rblog_index' if action_name == 'index' %>'>
+
+  <h2 class='title'><%= icon_shared(rblog.shared) %> <%= rblog.title %></h2>
+
+  <div class='content'>
+  <% if action_name == 'show' %>
+    <%= simple_format rblog.content %>
+  <% else %>
+    <%= truncate rblog.content, length: 200 %>
+  <% end %>
+  </div>
+
+  <div class='authored_by'>
+    <%= authored_by rblog %>
+  </div>
+
+  <% if user_signed_in? %>
+    <div class="rblog-actions <%= "form-actions" if action_name == 'show' %>">
+      <%= link_to 'Edit', edit_rblog_path(rblog), class: 'btn btn-default' %>
+      <%= link_to 'Show', rblog_path(rblog), class: 'btn btn-default' if action_name == 'index' %>
+      <%= link_to 'Back', rblogs_path, class: 'btn btn-default' if action_name == 'show' %>
+    </div>
+  <% end %>
+</div>
+

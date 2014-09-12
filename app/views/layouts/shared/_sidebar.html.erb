@@ -1,4 +1,13 @@
 
+<% if controller_name == 'rblogs' %>
+
+  <div style="text-align:center;margin-top:4.5em;">
+    <%= link_to icon_label('plus', 'New Rblog'), \
+        new_rblog_path, \
+        class: 'well btn btn-default' %>
+  </div>
+<% end %>
+
 <% if controller_name == "favlinks" %>
   <div style="margin-top:4.5em;">
     <form action="/favlinks" class="navbar-form" style="margin-bottom:1.5em;">
