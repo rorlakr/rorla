@@ -106,6 +106,7 @@ GEM
     diff-lcs (1.2.5)
     docile (1.1.4)
     erubis (2.7.0)
+    excon (0.39.5)
     execjs (2.2.0)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
@@ -162,6 +163,7 @@ GEM
     mysql2 (0.3.16)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
+    oj (2.10.2)
     orm_adapter (0.5.0)
     polyglot (0.3.5)
     pry (0.10.0)
@@ -304,6 +306,7 @@ DEPENDENCIES
   database_cleaner (~> 1.0.1)
   devise
   docker_alias!
+  excon (~> 0.39.5)
   factory_girl_rails (~> 4.2.1)
   faker (~> 1.1.2)
   friendly_id
@@ -315,7 +318,9 @@ DEPENDENCIES
   launchy (~> 2.4.2)
   letter_opener
   mini_magick
+  multi_json (~> 1.10.1)
   mysql2
+  oj (~> 2.10.2)
   pageless-rails!
   rails (= 4.1.1)
   rails-erd
