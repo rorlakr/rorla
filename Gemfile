@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'bootstrap-sass', '~> 3.1.1'
+gem 'pagedown-bootstrap-rails'
+gem 'font-awesome-sass', '~> 4.2.0'
+gem 'google-code-prettify-rails', '~> 1.1.0'
+gem 'sanitize'
 gem 'simple_form'
 gem 'devise'
 gem 'rolify'
