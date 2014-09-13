@@ -4,17 +4,26 @@
     <%= icon_shared(rblog.shared) %> <%= action_name == 'index' ? truncate(rblog.title, length: 100) : rblog.title %>
   </h2>
 
-  <div class='content'>
-  <% if action_name == 'show' %>
-    <%= simple_format rblog.content %>
-  <% else %>
-    <%= truncate rblog.content, length: 200 %>
-  <% end %>
-  </div>
-
   <div class='authored_by'>
     <%= authored_by rblog %>
   </div>
+
+  <div class='content'>
+  <% if action_name == 'show' %>
+    <div class='markdown-preview'>
+      <%#= sanitize rblog.content %>
+      <%#= rblog.content %>
+      <%= rblog.content.gsub(/<[^(>|\/)]*?script.*?>([^<]*?)<.*?\/script.*?>/, '') %>
+      <%#= rblog.content.gsub(/<script.*?>[\s\S]*<\/script>/i, "") %>
+      <%#= Sanitize.fragment(rblog.content, :elements => ['img']) %>
+      <%#= Sanitize.clean(rblog.content, {:remove_contents => ['script']}) %>
+    </div>
+  <% else %>
+    <%= truncate(Sanitize.clean(rblog.content, elements: %w(img table)), length: 200 )%>
+    <%#= truncate(rblog.content, length: 200 )%>
+  <% end %>
+  </div>
+
 
   <% if user_signed_in? %>
     <div class="rblog-actions <%= "form-actions" if action_name == 'show' %>">
