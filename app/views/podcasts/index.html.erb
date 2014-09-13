@@ -1,1 +1,23 @@
-index podcasts
+<table class='table'>
+  <thead>
+    <tr>
+      <th class="col-md-9">Title</th>
+      <th>Author</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @podcasts.each do |podcast| %>
+      <tr>
+        <td><%= link_to podcast.title, podcast_path(podcast) %></td>
+        <td>
+          <%= podcast.author %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<center>
+  <%= will_paginate @podcasts %>
+</center>
