@@ -11,8 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.pageless
+//= require jquery.turbolinks
 //= require jquery_ujs
+//= require jquery.pageless
 //= require bootstrap
+//= require pagedown_bootstrap
+//= require google-code-prettify-rails/prettify
 //= require_tree .
 //= require turbolinks
