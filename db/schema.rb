@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140906122524) do
+ActiveRecord::Schema.define(version: 20140911113839) do
 
   create_table "answers", force: true do |t|
     t.text     "content"
@@ -132,6 +132,17 @@ ActiveRecord::Schema.define(version: 20140906122524) do
   end
 
   add_index "questions", ["user_id"], name: "index_questions_on_user_id"
+
+  create_table "rblogs", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "writer_id"
+    t.boolean  "shared"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rblogs", ["writer_id"], name: "index_rblogs_on_writer_id"
 
   create_table "roles", force: true do |t|
     t.string   "name"
