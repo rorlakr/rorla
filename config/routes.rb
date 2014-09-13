@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     resources :answers
   end
 
+  resources :podcasts, only: [ :index, :show ]
+
   namespace :api do
     resources :questions do
       resources :answers

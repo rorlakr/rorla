@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140911113839) do
+ActiveRecord::Schema.define(version: 20140913024616) do
 
   create_table "answers", force: true do |t|
     t.text     "content"
@@ -105,6 +105,17 @@ ActiveRecord::Schema.define(version: 20140911113839) do
   end
 
   add_index "plazas", ["postitable_id", "postitable_type"], name: "index_plazas_on_postitable_id_and_postitable_type"
+
+  create_table "podcasts", force: true do |t|
+    t.string   "title"
+    t.string   "author"
+    t.text     "description"
+    t.text     "enclosure_url"
+    t.integer  "enclosure_size", default: 0
+    t.string   "duration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", force: true do |t|
     t.string   "title"
