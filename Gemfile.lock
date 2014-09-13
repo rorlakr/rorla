@@ -169,9 +169,9 @@ GEM
     mysql2 (0.3.16)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
-    oj (2.10.2)
     nokogumbo (1.1.12)
       nokogiri
+    oj (2.10.2)
     orm_adapter (0.5.0)
     pagedown-bootstrap-rails (2.1.0)
       railties (> 3.1)
