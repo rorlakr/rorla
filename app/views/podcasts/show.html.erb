@@ -1,1 +1,27 @@
-show podcasts
+<h2>Podcasts</h2>
+
+<table class='table'>
+  <tr>
+    <th>Title</th>
+    <td><%= @podcast.title %></td>
+  </tr>
+  <tr>
+    <th>Author</th>
+    <td><%= @podcast.author %></td>
+  </tr>
+  <tr>
+    <th>Content</th>
+    <td>
+      <iframe id="podcast-video" src="<%= @podcast.enclosure_url.gsub('/download', '/embed') %>" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+      <%= raw @podcast.description %>
+    </td>
+  </tr>
+  <tr>
+    <th>Published at</th>
+    <td><%= @podcast.published_at %></td>
+  </tr>
+</table>
+
+<hr>
+
+<%= link_to 'Back', podcasts_path, class: 'btn btn-default' %>
