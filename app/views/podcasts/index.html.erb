@@ -1,8 +1,11 @@
+<h2>Podcasts</h2>
+
 <table class='table'>
   <thead>
     <tr>
       <th class="col-md-9">Title</th>
-      <th>Author</th>
+      <th class="col-md-2">Published at</th>
+      <th class="col-md-1">Author</th>
     </tr>
   </thead>
 
@@ -10,9 +13,8 @@
   <% @podcasts.each do |podcast| %>
       <tr>
         <td><%= link_to podcast.title, podcast_path(podcast) %></td>
-        <td>
-          <%= podcast.author %>
-        </td>
+        <td><%= podcast.published_at.strftime('%Y-%m-%d(%a)') %></td>
+        <td><%= podcast.author %></td>
       </tr>
   <% end %>
   </tbody>
