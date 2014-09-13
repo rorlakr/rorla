@@ -11,6 +11,8 @@ class Rblog < ActiveRecord::Base
   scope :my_shared_blogs, -> (user_id) { my_blogs(user_id).where(shared: true)}
   scope :my_private_blogs, -> (user_id) { my_blogs(user_id).where(shared: false)}
 
+  validates :title, :content, presence: true
+
   after_create :set_plaza_rblog
 
 
