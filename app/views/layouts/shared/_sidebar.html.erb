@@ -1,3 +1,10 @@
+<% if controller_name == 'codebanks' %>
+
+  <div style="text-align:center;margin-top:4.5em;">
+    <%= link_to icon_label('plus', 'Add a snippet'), new_codebank_path, class: 'well btn btn-default' %>
+  </div>
+
+<% end %>
 
 <% if controller_name == 'rblogs' %>
 

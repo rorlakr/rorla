@@ -1,0 +1,25 @@
+// Place all the styles related to the Codebanks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.codebank {
+  .title {
+    margin-bottom: .5em;
+  }
+  .summary {
+    border:1px solid #eaeaea;
+    border-bottom:0;
+    border-radius: 4px 4px 0 0;
+    padding: 1em;
+  }
+  .snippet {}
+  .writer {
+    border:1px solid #eaeaea;
+    border-top:0;
+    padding: 1em;
+    text-align: right;
+  }
+  .form-actions {
+    border-radius: 0 0 4px 4px;
+  }
+}

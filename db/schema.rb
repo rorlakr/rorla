@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140913024616) do
+ActiveRecord::Schema.define(version: 20140914000552) do
 
   create_table "answers", force: true do |t|
     t.text     "content"
@@ -51,6 +51,18 @@ ActiveRecord::Schema.define(version: 20140913024616) do
   end
 
   add_index "bundlelinks", ["writer_id"], name: "index_bundlelinks_on_writer_id"
+
+  create_table "codebanks", force: true do |t|
+    t.string   "title",      null: false
+    t.text     "summary"
+    t.text     "snippet",    null: false
+    t.integer  "writer_id"
+    t.boolean  "shared"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "codebanks", ["writer_id"], name: "index_codebanks_on_writer_id"
 
   create_table "comments", force: true do |t|
     t.integer  "commentable_id"
@@ -95,6 +107,18 @@ ActiveRecord::Schema.define(version: 20140913024616) do
 
   add_index "favlinks", ["bundlelink_id"], name: "index_favlinks_on_bundlelink_id"
   add_index "favlinks", ["writer_id"], name: "index_favlinks_on_writer_id"
+
+  create_table "labnotes", force: true do |t|
+    t.string   "title",       null: false
+    t.text     "summary"
+    t.text     "codesnippet", null: false
+    t.integer  "writer_id"
+    t.boolean  "shared"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "labnotes", ["writer_id"], name: "index_labnotes_on_writer_id"
 
   create_table "plazas", force: true do |t|
     t.integer  "postitable_id"
