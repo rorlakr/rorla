@@ -1,5 +1,13 @@
-<h2>코드뱅크</h2>
-
+<h2>
+  <%= params[:whose] ? "나의 코드스니펫" : "코드뱅크" %>
+  <small>
+    <%#= "filtered by <strong style=color:red;>'<u>#{params[:search]}</u>'</strong>".html_safe if params[:search] %>
+    <%#= "tagged with <span class='badge badge-default'>#{params[:tag]}</span>".html_safe if params[:tag] %>
+    <%= params[:private] == '1' ? "<span class='badge badge-private'>private</span>".html_safe : (params[:whose] ? "<span class='badge badge-shared'>shared</span>".html_safe : "") %>
+    (<%= @codebanks.total_entries %>)
+    <%= link_to icon('remove-circle'), codebanks_path if params[:whose] || params[:search] || params[:tag] %>
+  </small>
+</h2>
 <table class='table'>
   <thead>
     <tr>
@@ -26,6 +34,8 @@
   <% end %>  </tbody>
 </table>
 
-<br>
+<center>
+  <%= will_paginate @podcasts %>
+</center>
 
 <%= link_to icon_label('plus', 'Add a snippet'), new_codebank_path, class: 'btn btn-default' %>
