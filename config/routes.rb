@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :codebanks
+
   resources :rblogs
 
   get '/404', to: 'errors#not_found'

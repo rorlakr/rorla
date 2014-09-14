@@ -1,0 +1,24 @@
+<div style="margin-top:1.5em;">
+  <%= simple_form_for(@codebank) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-group">
+      <%= f.input :title, input_html: { class: 'form-control'} %>
+    </div>
+    <div class="form-group">
+      <%= f.input :summary, input_html: { class: 'form-control'} %>
+    </div>
+    <div class="form-group">
+      <%= f.input :snippet, input_html: { class: 'form-control codemirror editable', rows: 10} %>
+    </div>
+    <div class="checkbox">
+      <%= f.input :shared, as: :boolean, label: false, inline_label: "shared by #{ (!f.object.persisted? || current_user == @codebank.writer) ? "me (#{current_user.email})" : @codebank.email}"  %>
+    </div>
+
+    <div class="form-actions" style='margin-top: 2em;'>
+      <%= f.button :submit, class: 'btn btn-default' %>
+      <%= link_to 'Show', @codebank, class: 'btn btn-default' if action_name == 'edit' %>
+      <%= link_to 'Back', codebanks_path, class: 'btn btn-default' %>
+    </div>
+  <% end %>
+</div>

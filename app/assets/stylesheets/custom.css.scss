@@ -5,9 +5,10 @@ checkbox {
 }
 
 .alert-error {
-  border:1px solid #080000;
+  border:1px solid #d9534f;
   border-radius: 5px;
-  background-color: #fde6d6;
+  color: #d9534f;
+  background-color: #fecfcf;
 }
 
 .shadow_image {
@@ -19,7 +20,7 @@ checkbox {
 .form-actions {
    background-color:#eaeaea;
    padding:1em;
-   margin:2em 0;
+   // margin:2em 0;
    border-top:1px solid #dadada;
 }
 
@@ -39,6 +40,10 @@ h2 > span.glyphicon {
 
 .badge-shared {
   background-color: #008040;
+}
+
+.help-inline {
+  color: #ff0000;
 }
 
 // Pagedown Editor
@@ -90,4 +95,13 @@ h2 > span.glyphicon {
 // 1,2,3,4,와 같이 연번호로 보이게 하기
 li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8, li.L9 {
     list-style-type: decimal !important;
+}
+
+
+// CodeMirror
+.CodeMirror {
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  line-height: 1.45em;
+  height: 30em;
 }
