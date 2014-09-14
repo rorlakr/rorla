@@ -103,4 +103,10 @@ li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8, li.L9 {
   border: 1px solid #eaeaea;
   line-height: 1.45em;
   height: auto;
+  // min-height: 30em;
+}
+
+.CodeMirror-scroll {
+  overflow-y: hidden;
+  overflow-x: auto;
 }

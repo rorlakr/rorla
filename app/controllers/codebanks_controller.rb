@@ -5,7 +5,18 @@ class CodebanksController < ApplicationController
   # GET /codebanks
   # GET /codebanks.json
   def index
-    @codebanks = Codebank.all
+    if params[:whose]
+      @codebanks = Codebank.my_snippets(params[:whose])
+      if params[:private]
+        @codebanks = @codebanks.my_private_snippets(params[:whose])
+      else
+        @codebanks = @codebanks.my_shared_snippets(params[:whose])
+      end
+    else
+      @codebanks = Codebank.shared
+    end
+    @codebanks = @codebanks.paginate(page: params[:page], per_page: 10)
+
   end
 
   # GET /codebanks/1
