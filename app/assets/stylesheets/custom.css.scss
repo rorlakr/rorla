@@ -98,15 +98,18 @@ li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8, li.L9 {
 }
 
 
-// CodeMirror
+// CodeMirror for Editing
 .CodeMirror {
   border: 1px solid #eaeaea;
   line-height: 1.45em;
   height: auto;
-  // min-height: 30em;
+  border-radius: 4px;
+  .CodeMirror-gutters {
+    border-radius: 3px 0 0 3px;
+  }
 }
 
-// .CodeMirror-scroll {
-//   overflow-y: hidden;
-//   overflow-x: auto;
-// }
+// CodeMirror for Readonly
+.code .CodeMirror {
+  border-radius: 0;
+}
