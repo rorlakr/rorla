@@ -11,9 +11,7 @@
   <% end %>
   </div>
 
-  <div class='snippet'>
-    <textarea class='codemirror readonly'><%= @codebank.snippet %></textarea>
-  </div>
+  <div class='code'><%= @codebank.snippet %></div>
 
   <div class='writer'>
     <%= authored_by @codebank %>
