@@ -5,4 +5,11 @@ class Codebank < ActiveRecord::Base
   belongs_to :writer, class_name: "User"
 
   validates :title, :snippet, presence: true
+
+  default_scope { order(created_at: :desc)}
+  scope :shared, -> { where(shared: true)}
+  scope :my_snippets, -> (user_id) { where(writer_id: user_id)}
+  scope :my_shared_snippets, -> (user_id) { my_snippets(user_id).where(shared: true)}
+  scope :my_private_snippets, -> (user_id) { my_snippets(user_id).where(shared: false)}
+
 end
