@@ -4,6 +4,8 @@
     <%= link_to icon_label('plus', 'Add a snippet'), new_codebank_path, class: 'well btn btn-default' %>
   </div>
 
+  <%= render "layouts/shared/sidebar/my_codes" %>
+
 <% end %>
 
 <% if controller_name == 'rblogs' %>
