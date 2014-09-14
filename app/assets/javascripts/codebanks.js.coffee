@@ -18,4 +18,5 @@ $ ->
       tabSize: 2
       theme: "default"
       readOnly: true
+      # viewportMargin: "Infinity"
     return
