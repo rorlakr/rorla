@@ -1,0 +1,31 @@
+<h2>코드뱅크</h2>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th class='col-md-3'>Writer</th>
+      <th class='col-md-3'>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @codebanks.each do |codebank| %>
+      <tr>
+        <td><%= link_to codebank.title, codebank %></td>
+        <td class="hidden-xs"><%= codebank.created_at.strftime('%Y-%m-%d %l:%M:%S%P') %></td>
+        <td class="visible-xs"><%= codebank.created_at.strftime('%Y-%m-%d') %></td>
+        <td class="hidden-xs">
+          <%= link_to icon_button('eye-open'), codebank %>
+          <% if user_signed_in? %>
+            <%= link_to icon_button('edit'), edit_codebank_path(codebank) if current_user.can_update? codebank %>
+            <%= link_to icon_button('trash'), codebank, method: :delete, data: { confirm: 'Are you sure?' } if current_user.can_delete? codebank %>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>  </tbody>
+</table>
+
+<br>
+
+<%= link_to icon_label('plus', 'Add a snippet'), new_codebank_path, class: 'btn btn-default' %>
