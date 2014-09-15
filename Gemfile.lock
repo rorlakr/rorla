@@ -294,6 +294,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  ambry
   annotate
   attr_searchable
   authority

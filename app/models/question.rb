@@ -11,6 +11,8 @@
 #
 
 class Question < ActiveRecord::Base
+  has_merit
+
   after_create :set_plaza_question
 
   has_one :plaza, :as => :postitable, :dependent => :destroy

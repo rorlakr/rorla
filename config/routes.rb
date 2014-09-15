@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/500', to: 'errors#server_error'  
 
   root "welcome#index"
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   resources :plazas
   resources :bundlelinks do
     resources :favlinks
