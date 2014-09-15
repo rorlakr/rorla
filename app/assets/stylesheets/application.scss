@@ -1,4 +1,6 @@
 $navbar-default-link-hover-color: #bc0000;
+$code-color: #004080;
+$code-bg: #eaf2ff;
 
 // vertical spacing
 .spacer01 { height: 1em;}
@@ -13,11 +15,21 @@ $navbar-default-link-hover-color: #bc0000;
 .spacer10 { height: 10em;}
 
 @import 'bootstrap';
+@import "pagedown_bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "google-code-prettify-rails/prettify";
+@import "codemirror";
+@import "codemirror/themes/solarized";
+@import "codemirror/addons/dialog/dialog";
 @import 'layout';
 @import 'custom';
 @import 'plazas';
 @import 'posts';
 @import 'favlinks';
+@import 'rblogs';
 @import 'question/questions';
+@import 'podcasts';
+@import 'codebanks';
 
 body { padding-top: 60px; padding-bottom:80px; }
