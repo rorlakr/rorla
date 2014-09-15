@@ -6,6 +6,13 @@ GIT
       railties (>= 3.0)
 
 GIT
+  remote: git://github.com/rorlab/pagedown-bootstrap-rails.git
+  revision: 4114b63172f306fbc996c4f2fd4a8b9d2f36ff7c
+  specs:
+    pagedown-bootstrap-rails (2.1.0)
+      railties (> 3.1)
+
+GIT
   remote: git://github.com/rorlab/pageless-rails.git
   revision: bd13f2b8e7ac93235cf28c94c8379ef42d635de4
   specs:
@@ -181,8 +188,6 @@ GEM
       nokogiri
     oj (2.10.2)
     orm_adapter (0.5.0)
-    pagedown-bootstrap-rails (2.1.0)
-      railties (> 3.1)
     polyglot (0.3.5)
     pry (0.10.0)
       coderay (~> 1.1.0)
@@ -349,7 +354,7 @@ DEPENDENCIES
   multi_json (~> 1.10.1)
   mysql2
   oj (~> 2.10.2)
-  pagedown-bootstrap-rails
+  pagedown-bootstrap-rails!
   pageless-rails!
   rails (= 4.1.1)
   rails-erd
