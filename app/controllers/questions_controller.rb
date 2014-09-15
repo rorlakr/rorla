@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  include MeritHelper
+  before_action :resource_refresh  
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_question, only: [:edit, :update, :destroy]
 
