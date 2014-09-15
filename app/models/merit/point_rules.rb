@@ -11,8 +11,17 @@
 module Merit
   class PointRules
     include Merit::PointRulesMethods
-
+    
     def initialize
+      score 10, to: :writer, on: 'posts#create' do |post|
+        post.title.present?
+      end
+      score 5, to: :user, on: 'questions#create' do |question|
+        question.title.present?
+      end      
+      score 5, to: :user, on: 'answers#create' do |answer|
+        answer.content.present?
+      end            
       # score 10, :on => 'users#update' do
       #   user.name.present?
       # end
