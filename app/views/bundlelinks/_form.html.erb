@@ -1,0 +1,17 @@
+<%= simple_form_for(@bundlelink) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    <%= f.input :title, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :description, input_html: { class: 'form-control', rows: 10} %>
+  </div>
+  <div class="checkbox">
+    <%= f.input :shared, inline_label: true, label: false %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-default' %>
+  </div>
+<% end %>

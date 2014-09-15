@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140617082849) do
+ActiveRecord::Schema.define(version: 20140914000552) do
 
   create_table "answers", force: true do |t|
     t.text     "content"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20140617082849) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sash_id"
+    t.integer  "level",       default: 0
   end
 
   add_index "answers", ["question_id"], name: "index_answers_on_question_id"
@@ -32,6 +34,17 @@ ActiveRecord::Schema.define(version: 20140617082849) do
   end
 
   add_index "auth_tokens", ["user_id"], name: "index_auth_tokens_on_user_id"
+
+  create_table "badges_sashes", force: true do |t|
+    t.integer  "badge_id"
+    t.integer  "sash_id"
+    t.boolean  "notified_user", default: false
+    t.datetime "created_at"
+  end
+
+  add_index "badges_sashes", ["badge_id", "sash_id"], name: "index_badges_sashes_on_badge_id_and_sash_id"
+  add_index "badges_sashes", ["badge_id"], name: "index_badges_sashes_on_badge_id"
+  add_index "badges_sashes", ["sash_id"], name: "index_badges_sashes_on_sash_id"
 
   create_table "bulletins", force: true do |t|
     t.string   "title"
@@ -51,6 +64,18 @@ ActiveRecord::Schema.define(version: 20140617082849) do
   end
 
   add_index "bundlelinks", ["writer_id"], name: "index_bundlelinks_on_writer_id"
+
+  create_table "codebanks", force: true do |t|
+    t.string   "title",      null: false
+    t.text     "summary"
+    t.text     "snippet",    null: false
+    t.integer  "writer_id"
+    t.boolean  "shared"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "codebanks", ["writer_id"], name: "index_codebanks_on_writer_id"
 
   create_table "comments", force: true do |t|
     t.integer  "commentable_id"
@@ -81,19 +106,64 @@ ActiveRecord::Schema.define(version: 20140617082849) do
   end
 
   create_table "favlinks", force: true do |t|
-    t.string   "title",                        null: false
+    t.string   "title",                           null: false
     t.text     "description"
-    t.string   "linkurl",                      null: false
+    t.string   "linkurl",                         null: false
     t.integer  "writer_id"
-    t.boolean  "shared",        default: true
+    t.boolean  "shared",           default: true
     t.integer  "bundlelink_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "capture_loc"
+    t.boolean  "with_screen_shot", default: true
   end
 
   add_index "favlinks", ["bundlelink_id"], name: "index_favlinks_on_bundlelink_id"
   add_index "favlinks", ["writer_id"], name: "index_favlinks_on_writer_id"
+
+  create_table "labnotes", force: true do |t|
+    t.string   "title",       null: false
+    t.text     "summary"
+    t.text     "codesnippet", null: false
+    t.integer  "writer_id"
+    t.boolean  "shared"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "labnotes", ["writer_id"], name: "index_labnotes_on_writer_id"
+
+  create_table "merit_actions", force: true do |t|
+    t.integer  "user_id"
+    t.string   "action_method"
+    t.integer  "action_value"
+    t.boolean  "had_errors",    default: false
+    t.string   "target_model"
+    t.integer  "target_id"
+    t.boolean  "processed",     default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "merit_activity_logs", force: true do |t|
+    t.integer  "action_id"
+    t.string   "related_change_type"
+    t.integer  "related_change_id"
+    t.string   "description"
+    t.datetime "created_at"
+  end
+
+  create_table "merit_score_points", force: true do |t|
+    t.integer  "score_id"
+    t.integer  "num_points", default: 0
+    t.string   "log"
+    t.datetime "created_at"
+  end
+
+  create_table "merit_scores", force: true do |t|
+    t.integer "sash_id"
+    t.string  "category", default: "default"
+  end
 
   create_table "plazas", force: true do |t|
     t.integer  "postitable_id"
@@ -104,6 +174,19 @@ ActiveRecord::Schema.define(version: 20140617082849) do
   end
 
   add_index "plazas", ["postitable_id", "postitable_type"], name: "index_plazas_on_postitable_id_and_postitable_type"
+
+  create_table "podcasts", force: true do |t|
+    t.string   "uid"
+    t.string   "title"
+    t.string   "author"
+    t.text     "description"
+    t.text     "enclosure_url"
+    t.integer  "enclosure_size", default: 0
+    t.string   "duration"
+    t.date     "published_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -117,6 +200,8 @@ ActiveRecord::Schema.define(version: 20140617082849) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "picture"
+    t.integer  "sash_id"
+    t.integer  "level",        default: 0
   end
 
   add_index "posts", ["bulletin_id"], name: "index_posts_on_bulletin_id"
@@ -128,9 +213,22 @@ ActiveRecord::Schema.define(version: 20140617082849) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sash_id"
+    t.integer  "level",      default: 0
   end
 
   add_index "questions", ["user_id"], name: "index_questions_on_user_id"
+
+  create_table "rblogs", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "writer_id"
+    t.boolean  "shared"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rblogs", ["writer_id"], name: "index_rblogs_on_writer_id"
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -142,6 +240,39 @@ ActiveRecord::Schema.define(version: 20140617082849) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "sashes", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", force: true do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
+
+  create_table "useful_answers", id: false, force: true do |t|
+    t.integer "user_id"
+    t.integer "answer_id"
+  end
+
+  add_index "useful_answers", ["answer_id", "user_id"], name: "index_useful_answers_on_answer_id_and_user_id", unique: true
+  add_index "useful_answers", ["user_id", "answer_id"], name: "index_useful_answers_on_user_id_and_answer_id", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -160,6 +291,8 @@ ActiveRecord::Schema.define(version: 20140617082849) do
     t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sash_id"
+    t.integer  "level",                  default: 0
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

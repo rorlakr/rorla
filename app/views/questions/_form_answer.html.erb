@@ -1,0 +1,19 @@
+<%= simple_form_for([@question, @answer]) do |f| %>
+  <% if @answer.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @answer.errors.messages.each do |field, messages| %>
+        <% messages.each do |message| %>
+          <li><%= t("labels.answer.#{field}") %><%= message %></li>
+        <% end %>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.input :content, label: t("labels.answer.content"), input_html: {class: 'form-control', rows: '3'} %>
+  </div>
+
+  <%= f.button :submit, '답변등록', class: "btn btn-primary" %>
+<% end %>

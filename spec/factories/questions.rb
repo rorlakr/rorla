@@ -16,6 +16,14 @@ FactoryGirl.define do
   factory :question do
     title "Question Title"
     content "Question Content"
-    user_id nil
+    user
+
+    trait :newbie_question do
+      title "ROR?"
+      content "What is ROR?"
+    end
+  
+    factory :newbie_question, traits: [:newbie_question]
   end
+
 end

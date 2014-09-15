@@ -1,81 +1,108 @@
-# Docker 사용법
+# 개발환경 설정시 유의
 
-## 사전 환경설정
+## capybara-webkit
 
-DB 마이그레이션이나 컨테이너 실행 할때 환경변수를 설정하면 해당 값이 포함되서 출력됩니다.
-로컬 컴퓨터의 `.profile`, `.bashrc`등에 다음과 같이 운영환경의 환경변수를 설정합니다.
+`capybara-webkit` gem 설치를 위해서는 관련 라이브러리가 필요하다.
 
-```bash
-export RORLA_SECRET_KEY_BASE='test'
+[capybara-webkit 설치하기 문서](https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit)
+
+맥에서는 다음과 같이 설치
+
+```shell
+$ brew update
+$ brew install qt
 ```
 
+# Docker 이용해서 Production 환경 로컬에서 확인하기
 
-## 이미지 build
+소스를 Pull Request 하기전에 로컬에서 운영환경 테스트를 해보는것이 좋습니다.
+
+## 1. 환경변수 설정
+
+`.env` 파일 생성후 다음과 같이 추가하고 `source .env`를 실행하여 환경변수 설정. 레일스 4 이후에는 환경변수의 적용을 위해 `bin/spring stop` 실행 필수.
 
 ```bash
-$ bin/rake docker:build[태그이름]
+# .env
+export RORLA_SECRET_KEY_BASE=암호화키
+export MANDRILL_USERNAME=email@email.com
+export MANDRILL_APIKEY=password
+export RORLA_HOST=localhost
+export RORLA_LOGENTRIES_TOKEN=key
 ```
 
-## MySQL DB 서버 구동
+메일 보내는것을 확인해야 하는경우 `MANDRILL_USERNAME`, `MANDRILL_APIKEY`, `RORLA_HOST`를 본인의 환경에 맞게 설정. 메일 보내는것이 중요하지 않으면 아무값이나 입력.
 
-MySQL DB는 Docker 공식 저장소의 것을 사용하고 어플리케이션에서 MySQL 컨테이너의 접근은 [Docker Link](https://docs.docker.com/userguide/dockerlinks/)를 이용합니다.
-
-MySQL 컨테이너 실행
+## 2. 로컬에서 Docker 이미지 빌드
 
 ```bash
-docker run --name mysql -e MYSQL_USERNAME="admin" -e MYSQL_PASS="yourpassword" -d tutum/mysql
+$ bin/rake dockera:build
 ```
 
-MySQL 컨테이너와 어플리케이션 컨테이너의 연결
+## 3. MySQL DB 서버 연결 
+
+### 3.1 기존 MySQL 컨테이너가 없는 경우
+
+실행중인 MySQL 컨테이너가 있고 DB가 생성되있으면 `3.2`로 이동
+
+#### 3.1.1 MySQL 컨테이너 실행
+
+먼저 볼륨 컨테이너를 생성한다.
 
 ```bash
-docker run --link mysql:mysql 블라블라
+$ docker run -d -v /var/lib/mysql --name rorla_mysql_data busybox
 ```
 
-### 이게 동작하는 방식
-
-어플리케이션 컨테이너를 실행할때 MySQL 컨테이너를 link 옵션으로 연결하는경우 어플리케이션 컨테이너에 다음과 같은 환경변수가 설정된다. 앱은 이 환경변수를 사용하면 된다. 자세한 내용은 [Docker Link](https://docs.docker.com/userguide/dockerlinks/) 참고.
-
-설정되는 환경변수 목록. `????` 문자열은 link 할때 `:` 뒷부분의 이름에 따라달라진다.
+이렇게 하면 호스트의 어딘가 저장되지만 볼륨 컨테이너 삭제시 데이터도 삭제 되므로 호스트의 특정 폴더와 연결해도 된다.
 
 ```bash
-????_PORT_3306_TCP=tcp://172.17.0.2:3306
-????_NAME=/sharp_franklin/mysql2
-????_PORT_3306_TCP_ADDR=172.17.0.2
-????_PORT_3306_TCP_PORT=3306
-????_ENV_MYSQL_USERNAME=admin
-????_ENV_MYSQL_PASS=yourpassword
-????_PORT_3306_TCP_PROTO=tcp
-????_PORT=tcp://172.17.0.2:3306
+$ docker run -d -v /data/mysql:/var/lib/mysql --name rorla_mysql_data busybox
 ```
 
-### DB 생성
+이제 MySQL을 실행하자.
 
 ```bash
-$ docker run -i -t --rm --link mysql:mysql -e SECRET_KEY_BASE="test" rorla/rorla:태그이름 bundle exec rake db:create
+
+$ docker run --name mysql --volumes-from rorla_mysql_data -e MYSQL_USERNAME="admin" -e MYSQL_PASS="yourpassword" -d -p 3306:3306 tutum/mysql
 ```
 
-## DB 마이그레이션
+계정 정보는 아무렇게나 입력해도 된다. docker link로 알아서 여기에 입력한 계정정보를 사용.
+
+아무것도 할것이 없다.
+
+#### 3.1.2 DB 생성 및 초기화
 
 ```bash
-$ bin/rake docker:migrate[태그이름]
-$ docker run -i -t --rm --link mysql:mysql -e SECRET_KEY_BASE="test" rorla/rorla:태그이름 bundle exec rake db:migrate
-```
-
-### DB 시드 데이터 적용
-
-```bash
-$ docker run -i -t --rm --link mysql:mysql -e SECRET_KEY_BASE="test" rorla/rorla:태그이름 bundle exec rake db:seed
+$ bin/rake dockera:db:create
 ```
 
 출력된 명령어를 운영서버에서 붙여넣기
 
+```bash
+$ bin/rake dockera:db:setup
+```
 
-## 컨테이너 실행
+출력된 명령어를 운영서버에서 붙여넣기
+
+### 3.2 DB 마이그레이션
 
 ```bash
-$ bin/rake docker:start[태그이름]
-$ docker run --name 컨테이너이름 --link mysql:mysql -e SECRET_KEY_BASE="test" -d -p 80:80 rorla/rorla:태그이름
+$ bin/rake dockera:db:migrate
+```
+
+출력된 명령어를 운영서버에서 붙여넣기
+
+## 4. 볼륨 컨테이너 연결(기존 볼륨 컨테이너가 없는 경우)
+
+실행중인 볼륨 컨테이너가 있으면 현재 섹션 무시
+
+```bash
+$ docker run -v /app/public/uploads --name rorla_uploads busybox
+```
+
+## 5. 컨테이너 실행
+
+```bash
+$ bin/rake dockera:con:start
 ```
 
 출력된 명령어를 운영서버에서 붙여넣기

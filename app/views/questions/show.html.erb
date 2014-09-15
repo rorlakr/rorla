@@ -1,18 +1,47 @@
-<p id="notice"><%= notice %></p>
-
-<p>질문 : <%= @question.title %></p>
-<p>내용 : <%= @question.content %></p>
-
-<% @question.answers.each do |answer| %>
-  <p><%= link_to answer.content, question_answer_path(@question, answer) %></p>
-<% end %>
-
-<%= link_to '답변등록', new_question_answer_path(@question), class: 'btn btn-default' %>
-
-<hr />
+<h2><%= @question.title %></h2>
+<div class="question-content"><%= simple_format @question.content %></div>
+<div class="question-questioner">by <%= @question.questioner %></div>
 
 <%= link_to '목록보기', questions_path, class: 'btn btn-default' %>
-<% if current_user == @question.user %>
+<% if @question.is_owner?(current_user) %>
   <%= link_to '수정', edit_question_path(@question), class: 'btn btn-default' %>
   <%= link_to '삭제', @question, method: :delete, data: {confirm: "삭제하시겠습니까?"}, class: 'btn btn-danger' %>
 <% end %>
+
+<hr />
+
+<h4>답변 목록</h4>
+
+<table class="table table-hover">
+  <tbody>
+    <% @question.answers.each do |answer| %>
+      <tr class="answer-<%= answer.id %>">
+        <td><%= answer.useful_users.count %></td>
+        <td>
+          <% if answer.is_owner?(current_user) %>
+            <%#= link_to answer.content, question_answer_path(@question, answer) %>
+            <%= answer.content %>
+          <% else %>
+            <%= answer.content %>
+          <% end %>
+          <div class='writer'>
+    <%= icon_label('user', t('authored_html', who: answer.answerer, ago: time_ago_in_words(answer.created_at))) %>
+  </div>
+        </td>
+        <td>
+          <% unless answer.useful?(current_user) %>
+            <%= button_to '추천', question_answer_path(@question, answer, useful: true), method: :patch, class: "btn btn-default" %></td>
+          <% else %>
+            <%= button_to '추천취소', question_answer_path(@question, answer, useful: false), method: :patch, class: "btn btn-default" %></td>
+          <% end %>
+        <td>
+          <% if answer.is_owner?(current_user) %>
+            <%= link_to '삭제', question_answer_path(@question, answer), method: :delete, data: {confirm: "삭제하시겠습니까?"}, class: "btn btn-danger" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= render 'form_answer' %>
