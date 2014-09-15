@@ -137,3 +137,11 @@ li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8, li.L9 {
   max-height: 100% !important;
   margin-bottom: 2em;
 }
+
+// Preview button background color
+#wmd-preview-button-content {
+  background-color: #5ed559;
+  &:hover {
+    background-color: #5cb85c;
+  }
+}
