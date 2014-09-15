@@ -1,3 +1,19 @@
+<div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modal-content-one">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Fullscreen Mode for Markdown Editor</h4>
+      </div>
+      <div class="modal-body">
+
+        <div id='wmd-preview-content' class='wmd-preview'></div>
+
+      </div>
+    </div>
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <%= simple_form_for(@rblog) do |f| %>
   <%= f.error_notification %>
 
@@ -5,7 +21,7 @@
     <%= f.input :title, input_html: { class: 'form-control'} %>
   </div>
   <div class="form-group">
-    <%= f.input :content, :as => :pagedown, :input_html => { :preview => true, rows: 5} %>
+    <%= f.input :content, :as => :pagedown %>
   </div>
   <div class="checkbox">
     <%= f.input :shared, as: :boolean, label: false, inline_label: "shared by #{ (!f.object.persisted? || current_user == @rblog.writer) ? "me (#{current_user.email})" : @rblog.email}"  %>
