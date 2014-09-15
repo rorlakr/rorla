@@ -26,7 +26,14 @@
   .title { border-left: 5px solid #eaeaea; }
   border-top: 1px solid #eaeaea;
   border-left: 1px solid #eaeaea;
-  // border-bottom: 1px solid #eaeaea;
-  // padding-left: 1em;
-  // padding-bottom: 1em;
+
+}
+
+.rblog_content textarea {
+  -webkit-transition: width 0.3s, height 0.3s, left 0.3s;
+  -o-transition: width 0.3s, height 0.3s, left 0.3s;
+  transition: width 0.3s, height 0.3s, left 0.3s;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
