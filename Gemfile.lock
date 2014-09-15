@@ -67,6 +67,8 @@ GEM
     authority (3.0.0)
       activesupport (>= 3.0.0)
       rake (>= 0.8.7)
+    autosize-rails (1.18.8)
+      rails (>= 3.1)
     bcrypt (3.1.7)
     better_errors (1.1.0)
       coderay (>= 1.0.0)
@@ -324,6 +326,7 @@ DEPENDENCIES
   annotate
   attr_searchable
   authority
+  autosize-rails
   better_errors
   bh (~> 1.0)
   binding_of_caller
