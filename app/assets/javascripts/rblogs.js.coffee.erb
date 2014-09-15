@@ -3,6 +3,15 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
+
+  # rblog-content 필드 입력창의 autosize 적용
+  $ta = $('.rblog_content textarea')
+  $ta.autosize()
+  # force a reflow before the class gets applied
+  document.body.offsetWidth
+  $ta.addClass('textarea-transition')
+
+
   $('textarea.wmd-input').each (i, input) ->
     attr = $(input).attr('id').split('wmd-input')[1]
     converter = new Markdown.Converter()
