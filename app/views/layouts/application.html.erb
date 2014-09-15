@@ -41,15 +41,25 @@
               <% end %>
             </ul>
           </li>
-          <li class="<%= active_menu('questions') %>"><%= link_to 'Q&A', questions_path %></li>
-          <li class="<%= active_menu('favlinks') %>"><%= link_to "Favlinks", favlinks_path %></li>
+          <li class='dropdown <%= active_menu('codebanks', 'podcasts', 'favlinks', 'questions') %>'>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                DataRoom
+                <b class="caret"></b>
+              </a>
+            <ul class="dropdown-menu">
+              <li class="<%= active_menu('codebanks') %>"><%= link_to 'Codebanks', codebanks_path %></li>
+              <li class="<%= active_menu('podcasts') %>"><%= link_to 'Podcasts', podcasts_path %></li>
+              <li class="<%= active_menu('favlinks') %>"><%= link_to "Favlinks", favlinks_path %></li>
+              <li class="<%= active_menu('questions') %>"><%= link_to 'Q&A', questions_path %></li>
+            </ul>
+          <li class="<%= active_menu('rblogs') %>"><%= link_to 'rBlogs', rblogs_path %></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
             <li><a href="#">Level : <%= current_user.level %> Point : <%= current_user.points %> </a></li>
             <li class="dropdown <%= 'active' if devise_controller? %>">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <%= current_user.email %>
+                <%= current_user.email.split("@").first %>
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">

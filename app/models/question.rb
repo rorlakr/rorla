@@ -13,6 +13,9 @@
 class Question < ActiveRecord::Base
   has_merit
 
+  resourcify
+  include Authority::Abilities
+
   after_create :set_plaza_question
 
   has_one :plaza, :as => :postitable, :dependent => :destroy
@@ -25,7 +28,7 @@ class Question < ActiveRecord::Base
   validates_presence_of :title, :content
 
   def is_owner?(user)
-    self.user == user 
+    self.user == user
   end
 
   def questioner

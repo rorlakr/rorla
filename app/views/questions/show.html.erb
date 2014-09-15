@@ -1,8 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <h2><%= @question.title %></h2>
-<p class="question-content"><%= @question.content %></p>
-<p><%= @question.questioner %></p>
+<div class="question-content"><%= simple_format @question.content %></div>
+<div class="question-questioner">by <%= @question.questioner %></div>
 
 <%= link_to '목록보기', questions_path, class: 'btn btn-default' %>
 <% if @question.is_owner?(current_user) %>
@@ -21,13 +19,15 @@
         <td><%= answer.useful_users.count %></td>
         <td>
           <% if answer.is_owner?(current_user) %>
-            <%= link_to answer.content, question_answer_path(@question, answer) %>
+            <%#= link_to answer.content, question_answer_path(@question, answer) %>
+            <%= answer.content %>
           <% else %>
             <%= answer.content %>
           <% end %>
+          <div class='writer'>
+    <%= icon_label('user', t('authored_html', who: answer.answerer, ago: time_ago_in_words(answer.created_at))) %>
+  </div>
         </td>
-        <td><%= answer.answerer %></td>
-        <td><%= distance_of_time_in_words_to_now(answer.created_at) %> 전</td>
         <td>
           <% unless answer.useful?(current_user) %>
             <%= button_to '추천', question_answer_path(@question, answer, useful: true), method: :patch, class: "btn btn-default" %></td>
