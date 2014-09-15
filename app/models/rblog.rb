@@ -14,11 +14,21 @@ class Rblog < ActiveRecord::Base
   validates :title, :content, presence: true
 
   after_create :set_plaza_rblog
+  after_update :update_plaza_rblog, if: 'self.shared_changed?'
 
 
   private
 
   def set_plaza_rblog
-    self.create_plaza
+    self.create_plaza(visible: self.shared)
+  end
+
+  def update_plaza_rblog
+    if self.plaza.nil?
+      self.create_plaza(visible: self.shared)
+    else
+      self.plaza.visible = self.shared
+      self.plaza.save
+    end
   end
 end
