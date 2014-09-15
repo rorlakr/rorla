@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140911084209) do
+ActiveRecord::Schema.define(version: 20140914000552) do
 
   create_table "answers", force: true do |t|
     t.text     "content"
@@ -65,6 +65,18 @@ ActiveRecord::Schema.define(version: 20140911084209) do
 
   add_index "bundlelinks", ["writer_id"], name: "index_bundlelinks_on_writer_id"
 
+  create_table "codebanks", force: true do |t|
+    t.string   "title",      null: false
+    t.text     "summary"
+    t.text     "snippet",    null: false
+    t.integer  "writer_id"
+    t.boolean  "shared"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "codebanks", ["writer_id"], name: "index_codebanks_on_writer_id"
+
   create_table "comments", force: true do |t|
     t.integer  "commentable_id"
     t.string   "commentable_type"
@@ -94,19 +106,32 @@ ActiveRecord::Schema.define(version: 20140911084209) do
   end
 
   create_table "favlinks", force: true do |t|
-    t.string   "title",                        null: false
+    t.string   "title",                           null: false
     t.text     "description"
-    t.string   "linkurl",                      null: false
+    t.string   "linkurl",                         null: false
     t.integer  "writer_id"
-    t.boolean  "shared",        default: true
+    t.boolean  "shared",           default: true
     t.integer  "bundlelink_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "capture_loc"
+    t.boolean  "with_screen_shot", default: true
   end
 
   add_index "favlinks", ["bundlelink_id"], name: "index_favlinks_on_bundlelink_id"
   add_index "favlinks", ["writer_id"], name: "index_favlinks_on_writer_id"
+
+  create_table "labnotes", force: true do |t|
+    t.string   "title",       null: false
+    t.text     "summary"
+    t.text     "codesnippet", null: false
+    t.integer  "writer_id"
+    t.boolean  "shared"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "labnotes", ["writer_id"], name: "index_labnotes_on_writer_id"
 
   create_table "merit_actions", force: true do |t|
     t.integer  "user_id"
@@ -150,6 +175,19 @@ ActiveRecord::Schema.define(version: 20140911084209) do
 
   add_index "plazas", ["postitable_id", "postitable_type"], name: "index_plazas_on_postitable_id_and_postitable_type"
 
+  create_table "podcasts", force: true do |t|
+    t.string   "uid"
+    t.string   "title"
+    t.string   "author"
+    t.text     "description"
+    t.text     "enclosure_url"
+    t.integer  "enclosure_size", default: 0
+    t.string   "duration"
+    t.date     "published_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "content"
@@ -180,6 +218,17 @@ ActiveRecord::Schema.define(version: 20140911084209) do
   end
 
   add_index "questions", ["user_id"], name: "index_questions_on_user_id"
+
+  create_table "rblogs", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "writer_id"
+    t.boolean  "shared"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rblogs", ["writer_id"], name: "index_rblogs_on_writer_id"
 
   create_table "roles", force: true do |t|
     t.string   "name"

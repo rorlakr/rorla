@@ -1,11 +1,9 @@
 require 'spec_helper'
 
-
-
 # js: true 옵션은 Selenium을 사용하기 위한 것으로 자바스크립트를 테스트할 수 있게 해 준다.
 feature '즐겨찾기를 관리한다.', js: true do
 
-  # feature 스펙에서는 let => given, before => background를 사용한다.
+  # feature 스펙에서는 let() => given(), before() => background()를 사용한다.
   given(:user) { create(:user) }
 
   background(:each) do
@@ -42,26 +40,26 @@ feature '즐겨찾기를 관리한다.', js: true do
     expect(page).to have_content('Favlink was successfully created.')
   end
 
-  context '태그 관련 테스트', focus: true do
-    scenario '새로운 태그를 등록한다.'do
+  context '태그 관련 테스트' do
+    scenario '> 새로운 태그를 등록한다.'do
       sign_in_with(user)
       visit new_favlink_path
       fill_in "Title", with: "ROR Lab."
       fill_in "Linkurl", with: "http://rorlab.org"
       fill_in "Tag list", with: "tag1, tag2"
 
+      # save_and_open_page => page를 브라우저로 보여 줌.(css 와 js는 제외)
+      # page.save_screenshot('tmp/screenshot.png')  # 특정 위치에 이지지를 보여 줌.
+
       # save_and_open_page에서 css와 js를 포함. local server가 실행되어야 한다.
       # show_page
 
       click_button I18n.t("helpers.submit.create")
 
-      # save_and_open_page => page를 브라우저로 보여 줌.(css 와 js는 제외)
-      # screenshot  # page의 screenshot 이미지를 public 디렉토리에 생성함.
-      # page.save_screenshot('tmp/screenshot.png')  # 특정 위치에 이지지를 보여 줌.
-
+      # show_page
       expect(page).to have_content('Favlink was successfully created.')
-      expect(page).to have_content('tag1, tag2')
-      show_page
+      expect(find('.tag')).to have_content('tag1')
+      expect(find('.tag')).to have_content('tag2')
     end
   end
 end

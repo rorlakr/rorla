@@ -17,19 +17,31 @@
   </div>
 </div>
 
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="media">
+		  <a class="pull-left" href="https://www.gitbook.io/book/rorlab/railsguidebook">
+		    <img class="media-object" src="https://sm3lir.cloudimage.io/s/height/140/https://www.gitbook.io/cover/book/rorlab/railsguidebook?build=1410399248615" alt="Gitbook">
+		  </a>
+		  <div class="media-body">
+		    <h4 class="media-heading">초보자를 위한 레일스 가이드북</h4>
+		    Gitbook(온라일 전자책)으로 작성된 레일스 안내서로 ROR Lab.에서 공동집필로 작성되었습니다.<hr>
+		    그 외에도 초보자를 위한 <a href='https://www.gitbook.io/book/luciuschoi/exploring_devise' target='_blank'>"Devise 젬 파헤치기"</a>, <a href='https://www.gitbook.io/book/luciuschoi/foundblog' target='_blank'>"FoundBlog 따라하기"</a> 등이 있습니다.
+		  </div>
+		</div>
+	</div>
+</div>
 
-<% if user_signed_in? %>
-  <hr>
-  <h3>Badges</h3>
-    <% current_user.badges.each do |badge| %>
-    <div class="media">
-      <a class="pull-left" href="#">
-        <img style="width: 60px;" class="media-object" src="<%= badge.custom_fields[:image_url] %>" alt="...">
-      </a>
-      <div class="media-body">
-        <h4 class="media-heading"><%= badge.name %></h4>
-        <p><%= badge.custom_fields[:difficulty] %> <br> <%= badge.description %></p>
-      </div>
-    </div>
-    <% end %>
-<% end %>
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="media">
+		  <a class="pull-left" href="http://developer.naver.com/wiki/pages/Community">
+		    <img class="media-object" src="http://rorlabpodcasts.github.io/images/naver_d2_banner_164.png" alt="NAVER D2 커뮤니티 지원">
+		  </a>
+		  <div class="media-body">
+		    <h4 class="media-heading">NAVER D2의 지원을 받아 진행됩니다</h4>
+		    본 RORLab은 <%= link_to 'NAVER D2 개발자 커뮤니티 지원 프로그램', 'http://developer.naver.com/wiki/pages/Community' %>에서 후원합니다.
+		  </div>
+		</div>
+	</div>
+</div>
