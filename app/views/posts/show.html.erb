@@ -16,7 +16,7 @@
 <% if @post.bulletin.post_type == "gallery" %>
   <tr>
     <th>Picture</th>
-    <td><%= image_tag @post.picture_url %></td>
+    <td><%= image_tag @post.picture_url, width: '100%' %></td>
   </tr>
 <% end %>
 </table>
