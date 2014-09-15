@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140831223422) do
+ActiveRecord::Schema.define(version: 20140911084209) do
 
   create_table "answers", force: true do |t|
     t.text     "content"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20140831223422) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sash_id"
+    t.integer  "level",       default: 0
   end
 
   add_index "answers", ["question_id"], name: "index_answers_on_question_id"
@@ -160,6 +162,8 @@ ActiveRecord::Schema.define(version: 20140831223422) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "picture"
+    t.integer  "sash_id"
+    t.integer  "level",        default: 0
   end
 
   add_index "posts", ["bulletin_id"], name: "index_posts_on_bulletin_id"
@@ -171,6 +175,8 @@ ActiveRecord::Schema.define(version: 20140831223422) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sash_id"
+    t.integer  "level",      default: 0
   end
 
   add_index "questions", ["user_id"], name: "index_questions_on_user_id"
@@ -185,6 +191,11 @@ ActiveRecord::Schema.define(version: 20140831223422) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "sashes", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"

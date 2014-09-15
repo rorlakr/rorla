@@ -17,7 +17,8 @@
 #
 
 class Post < ActiveRecord::Base
-
+  has_merit
+  
   resourcify
   include Authority::Abilities
 

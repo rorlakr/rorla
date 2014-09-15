@@ -4,17 +4,32 @@
 <div class="visible-lg spacer05"></div>
 <div class="jumbotron">
   <div class="container">
-		<h2>ROR Lab.에 오신 것을 환영합니다.</h2>
-		<p>: Ruby on Rails Korean Study Group with free offline lectures</p>
-	  <hr style="border:1px solid #850000;">
-	  <% if user_signed_in? %>
-		  <p>Logged in with <%= current_user.email %>.</p>
-			<%= link_to "> 로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-primary' %>
-	  <% else %>
-			<%= link_to "> 로그인", new_user_session_path, class: 'btn btn-primary' %>
-			<%= link_to "> 회원가입", new_user_registration_path, class: 'btn btn-success' %>
-	  <% end %>
+        <h2>ROR Lab.에 오신 것을 환영합니다.</h2>
+        <p>: Ruby on Rails Korean Study Group with free offline lectures</p>
+      <hr style="border:1px solid #850000;">
+      <% if user_signed_in? %>
+          <p>Logged in with <%= current_user.email %>.</p>
+            <%= link_to "> 로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-primary' %>
+      <% else %>
+            <%= link_to "> 로그인", new_user_session_path, class: 'btn btn-primary' %>
+            <%= link_to "> 회원가입", new_user_registration_path, class: 'btn btn-success' %>
+      <% end %>
   </div>
 </div>
 
 
+<% if user_signed_in? %>
+  <hr>
+  <h3>Badges</h3>
+    <% current_user.badges.each do |badge| %>
+    <div class="media">
+      <a class="pull-left" href="#">
+        <img style="width: 60px;" class="media-object" src="<%= badge.custom_fields[:image_url] %>" alt="...">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading"><%= badge.name %></h4>
+        <p><%= badge.custom_fields[:difficulty] %> <br> <%= badge.description %></p>
+      </div>
+    </div>
+    <% end %>
+<% end %>

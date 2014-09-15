@@ -21,8 +21,40 @@ module Merit
     include Merit::BadgeRulesMethods
 
     def initialize
-      grant_on 'users/registrations#create', badge: 'just-registered', model_name: 'User'
-
+      # grant_on 'users/registrations#create', badge: 'just-registered', model_name: 'User'
+      grant_on 'posts#create', badge: '첫 걸음마', model_name: 'Post' do |post|
+        post.writer.posts.count == 1
+      end
+      grant_on 'posts#create', badge: '재잘거리다', model_name: 'Post' do |post|
+        post.writer.posts.count == 30
+      end   
+      grant_on 'posts#create', badge: '글쓰기에 중독되다', model_name: 'Post' do |post|
+        post.writer.posts.count == 100
+      end         
+      grant_on 'questions#create', badge: '알고싶다', model_name: 'Question' do |question|
+        question.user.questions.count == 1
+      end
+      grant_on 'questions#create', badge: '호기심이 많은', model_name: 'Question' do |question|
+        question.user.questions.count == 10
+      end   
+      grant_on 'questions#create', badge: '소크라테스', model_name: 'Question' do |question|
+        question.user.questions.count == 30
+      end
+      grant_on 'answers#create', badge: '괜찮은 응대자', model_name: 'Answer' do |answer|
+        answer.user.answers.count == 1
+      end
+      grant_on 'answers#create', badge: '좋은 해답자', model_name: 'Answer' do |answer|
+        answer.user.answers.count == 10
+      end
+      grant_on 'answers#create', badge: '위대한 인도자', model_name: 'Answer' do |answer|
+        answer.user.answers.count == 30
+      end            
+      # grant_on 'comments#create', badge: '호기심이 많은', model_name: 'Question' do |question|
+      #   question.user.comments.count == 2
+      # end   
+      # grant_on 'comments#create', badge: '소크라테스', model_name: 'Question' do |question|
+      #   question.user.comments.count == 3
+      # end              
       # If it creates user, grant badge
       # Should be "current_user" after registration for badge to be granted.
       # grant_on 'users#create', badge: 'just-registered', to: :itself

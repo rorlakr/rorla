@@ -17,6 +17,7 @@ gem 'pageless-rails', github: 'rorlab/pageless-rails'
 gem 'rails_12factor', group: :production
 gem 'mysql2', group: :production
 gem 'merit' 
+gem 'ambry'
 
 group :development do
   gem 'annotate'
