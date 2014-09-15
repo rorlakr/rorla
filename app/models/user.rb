@@ -22,6 +22,8 @@
 #
 
 class User < ActiveRecord::Base
+  has_merit
+
   rolify
   include Authority::UserAbilities
   # Include default devise modules. Others available are:

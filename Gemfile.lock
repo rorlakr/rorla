@@ -50,6 +50,7 @@ GEM
     acts-as-taggable-on (3.3.0)
       activerecord (>= 3, < 5)
     addressable (2.3.6)
+    ambry (0.3.1)
     annotate (2.6.3)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
@@ -164,6 +165,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    merit (2.1.1)
+      ambry (~> 0.3.0)
     method_source (0.8.2)
     mime-types (1.25.1)
     mini_magick (3.7.0)
@@ -312,6 +315,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  ambry
   annotate
   attr_searchable
   authority
@@ -340,6 +344,7 @@ DEPENDENCIES
   jquery-turbolinks
   launchy (~> 2.4.2)
   letter_opener
+  merit
   mini_magick
   multi_json (~> 1.10.1)
   mysql2
