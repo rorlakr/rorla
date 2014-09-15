@@ -18,11 +18,12 @@
 
 class Post < ActiveRecord::Base
   has_merit
-  
+
   resourcify
   include Authority::Abilities
 
   default_scope { order(created_at: :desc)}
+  scope :my_posts, -> (user_id){ where(writer_id: user_id) }
 
   validates :title, presence: true, :length => { :minimum => 3, :maximum => 255 }
   validates :content, presence: true, :length => { :minimum => 0, :maximum => 10000 }
@@ -30,6 +31,7 @@ class Post < ActiveRecord::Base
   before_save :set_published_at
 
   after_create :set_plaza_post
+  after_update :update_plaza_post, if: 'self.published_changed?'
 
   has_one :plaza, :as => :postitable, :dependent => :destroy
   has_many :comments, :as => :commentable, :dependent => :destroy
@@ -49,6 +51,15 @@ class Post < ActiveRecord::Base
   end
 
   def set_plaza_post
-  	self.create_plaza
+  	self.create_plaza(visible: self.published)
+  end
+
+  def update_plaza_post
+    if self.plaza.nil?
+      self.create_plaza(visible: self.published)
+    else
+      self.plaza.visible = self.published
+      self.plaza.save
+    end
   end
 end
