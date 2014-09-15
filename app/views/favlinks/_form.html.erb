@@ -1,10 +1,18 @@
-<%= simple_form_for(@favlink) do |f| %>
+<%= simple_form_for(@bundlelink ? [@favlink.bundlelink, @favlink] : @favlink) do |f| %>
   <%= f.error_notification %>
+
+  <div class="form-group">
+    <%= f.input :bundlelink_id, include_blank: "Select a bundlelink. (it's optional)",  collection: Bundlelink.as_collection(current_user),  input_html: { class: 'form-control' }  %>
+  </div>
 
   <div class="form-group">
     <%= f.input :linkurl, placeholder: 'http://', input_html: { class: 'form-control' } %>
   </div>
-  <% if @favlink.persisted? %>
+
+  <div class="checkbox">
+    <%= f.input :with_screen_shot, as: :boolean, inline_label: true, label: false %>
+  </div>
+  <% if @favlink.persisted? && @favlink.with_screen_shot %>
   <div class="form-group">
   <%= link_to image_tag(@favlink.capture_image(action_name), width: (action_name == 'show' ? '100%' : ""), class: 'shadow_image'), @favlink.linkurl %>
   </div>
@@ -16,7 +24,10 @@
     <%= f.input :description, input_html: { class: 'form-control', rows: 10 } %>
   </div>
   <div class="form-group">
-    <%= f.input :shared, as: :boolean, inline_label: true, label: false %>
+    <%= f.input :tag_list, placeholder: '여러 개의 태그는 쉼표(,)로 구분하세요.', input_html: { class: 'form-control'} %>
+  </div>
+  <div class="checkbox">
+    <%= f.input :shared, as: :boolean, inline_label: "공유", label: false %>
   </div>
 
   <%= f.button :submit, class: 'btn btn-default' %>

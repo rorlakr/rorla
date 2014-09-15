@@ -1,0 +1,44 @@
+<h2>
+  <%= params[:whose] ? "나의 코드스니펫" : "코드뱅크" %>
+  <small>
+    <%#= "filtered by <strong style=color:red;>'<u>#{params[:search]}</u>'</strong>".html_safe if params[:search] %>
+    <%#= "tagged with <span class='badge badge-default'>#{params[:tag]}</span>".html_safe if params[:tag] %>
+    <%= params[:private] == '1' ? "<span class='badge badge-private'>private</span>".html_safe : (params[:whose] ? "<span class='badge badge-shared'>shared</span>".html_safe : "") %>
+    (<%= @codebanks.total_entries %>)
+    <%= link_to icon('remove-circle'), codebanks_path if params[:whose] || params[:search] || params[:tag] %>
+  </small>
+</h2>
+<table class='table'>
+  <thead>
+    <tr>
+      <th class='col-lg-4 col-md-5 col-sm-7 col-xs-8'>Title</th>
+      <th class='col-lg-3 col-md-3 hidden-sm hidden-xs'>Writer</th>
+      <th class='col-lg-3 col-md-2 col-sm-3 col-xs-4'>Created at</th>
+      <th class='col-lg-2 col-md-2 hidden-xs'>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @codebanks.each do |codebank| %>
+      <tr>
+        <td class=""><%= link_to codebank.title, codebank %></td>
+        <td class="hidden-sm hidden-xs"><%= codebank.writer.email %></td>
+        <td class="hidden-xs"><%= codebank.created_at.strftime('%Y-%m-%d %l:%M:%S%P') %></td>
+        <td class="visible-xs"><%= codebank.created_at.strftime('%Y-%m-%d') %></td>
+        <td class="hidden-xs">
+          <%= link_to icon_button('eye-open'), codebank %>
+          <% if user_signed_in? %>
+            <%= link_to icon_button('edit'), edit_codebank_path(codebank) if current_user.can_update? codebank %>
+            <%= link_to icon_button('trash'), codebank, method: :delete, data: { confirm: 'Are you sure?' } if current_user.can_delete? codebank %>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<center>
+  <%= will_paginate @podcasts %>
+</center>
+
+<%= link_to icon_label('plus', 'Add a snippet'), new_codebank_path, class: 'btn btn-default' %>

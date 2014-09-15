@@ -18,3 +18,13 @@
 /public/uploads/**/*
 
 .ruby-version
+
+/.env
+
+public/capybara.html
+public/screenshot.png
+
+/Vagrantfile
+.vagrant/**/*
+
+.idea

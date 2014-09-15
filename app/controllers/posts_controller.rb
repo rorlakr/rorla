@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  include MeritHelper
+  before_action :resource_refresh
   before_action :authenticate_user!, except: [ :index, :show ]
   before_action :set_bulletin
   before_action :set_post, only: [:show, :edit, :update, :destroy]
@@ -7,6 +9,12 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = @bulletin.posts.all
+    @posts = @posts.paginate(page: params[:page], per_page: 10)
+
+    if request.xhr?
+      sleep(3)
+      render :partial => @plazas
+    end
   end
 
   # GET /posts/1

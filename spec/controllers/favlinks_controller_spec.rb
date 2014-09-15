@@ -20,19 +20,32 @@ require 'spec_helper'
 
 describe FavlinksController do
 
+  before :each do
+    @current_user = User.create!                      \
+                         email:"user1@email.com",    \
+                         password:"12345678",         \
+                         confirmed_at: Time.now
+
+    @bulletin = create(:bulletin)
+  end
+
   # This should return the minimal set of attributes required to create a valid
   # Favlink. As you add validations to Favlink, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { {  } }
+  let(:valid_attributes) { attributes_for(:favlink) }
+  let(:invalid_attributes) { attributes_for(:favlink, linkurl: nil) }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # FavlinksController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  let(:valid_session) do
+    @current_user.confirm!
+    sign_in @current_user
+  end
 
   describe "GET index" do
     it "assigns all favlinks as @favlinks" do
-      favlink = Favlink.create! valid_attributes
+      favlink = @current_user.favlinks.create! valid_attributes
       get :index, {}, valid_session
       assigns(:favlinks).should eq([favlink])
     end
@@ -40,7 +53,7 @@ describe FavlinksController do
 
   describe "GET show" do
     it "assigns the requested favlink as @favlink" do
-      favlink = Favlink.create! valid_attributes
+      favlink = @current_user.favlinks.create! valid_attributes
       get :show, {:id => favlink.to_param}, valid_session
       assigns(:favlink).should eq(favlink)
     end
@@ -55,7 +68,7 @@ describe FavlinksController do
 
   describe "GET edit" do
     it "assigns the requested favlink as @favlink" do
-      favlink = Favlink.create! valid_attributes
+      favlink = @current_user.favlinks.create! valid_attributes
       get :edit, {:id => favlink.to_param}, valid_session
       assigns(:favlink).should eq(favlink)
     end
@@ -85,14 +98,14 @@ describe FavlinksController do
       it "assigns a newly created but unsaved favlink as @favlink" do
         # Trigger the behavior that occurs when invalid params are submitted
         Favlink.any_instance.stub(:save).and_return(false)
-        post :create, {:favlink => {  }}, valid_session
+        post :create, {:favlink => valid_attributes }, valid_session
         assigns(:favlink).should be_a_new(Favlink)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Favlink.any_instance.stub(:save).and_return(false)
-        post :create, {:favlink => {  }}, valid_session
+        post :create, {:favlink => valid_attributes}, valid_session
         response.should render_template("new")
       end
     end
@@ -101,23 +114,23 @@ describe FavlinksController do
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested favlink" do
-        favlink = Favlink.create! valid_attributes
+        favlink = @current_user.favlinks.create! valid_attributes
         # Assuming there are no other favlinks in the database, this
         # specifies that the Favlink created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Favlink.any_instance.should_receive(:update).with({ "these" => "params" })
-        put :update, {:id => favlink.to_param, :favlink => { "these" => "params" }}, valid_session
+        Favlink.any_instance.should_receive(:update).with({ "linkurl" => "http://google.com" })
+        put :update, {:id => favlink.to_param, :favlink => { "linkurl" => "http://google.com" }}, valid_session
       end
 
       it "assigns the requested favlink as @favlink" do
-        favlink = Favlink.create! valid_attributes
+        favlink = @current_user.favlinks.create! valid_attributes
         put :update, {:id => favlink.to_param, :favlink => valid_attributes}, valid_session
         assigns(:favlink).should eq(favlink)
       end
 
       it "redirects to the favlink" do
-        favlink = Favlink.create! valid_attributes
+        favlink = @current_user.favlinks.create! valid_attributes
         put :update, {:id => favlink.to_param, :favlink => valid_attributes}, valid_session
         response.should redirect_to(favlink)
       end
@@ -125,18 +138,18 @@ describe FavlinksController do
 
     describe "with invalid params" do
       it "assigns the favlink as @favlink" do
-        favlink = Favlink.create! valid_attributes
+        favlink = @current_user.favlinks.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Favlink.any_instance.stub(:save).and_return(false)
-        put :update, {:id => favlink.to_param, :favlink => {  }}, valid_session
+        put :update, {:id => favlink.to_param, :favlink => invalid_attributes}, valid_session
         assigns(:favlink).should eq(favlink)
       end
 
       it "re-renders the 'edit' template" do
-        favlink = Favlink.create! valid_attributes
+        favlink = @current_user.favlinks.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Favlink.any_instance.stub(:save).and_return(false)
-        put :update, {:id => favlink.to_param, :favlink => {  }}, valid_session
+        put :update, {:id => favlink.to_param, :favlink => invalid_attributes}, valid_session
         response.should render_template("edit")
       end
     end
@@ -144,14 +157,14 @@ describe FavlinksController do
 
   describe "DELETE destroy" do
     it "destroys the requested favlink" do
-      favlink = Favlink.create! valid_attributes
+      favlink = @current_user.favlinks.create! valid_attributes
       expect {
         delete :destroy, {:id => favlink.to_param}, valid_session
       }.to change(Favlink, :count).by(-1)
     end
 
     it "redirects to the favlinks list" do
-      favlink = Favlink.create! valid_attributes
+      favlink = @current_user.favlinks.create! valid_attributes
       delete :destroy, {:id => favlink.to_param}, valid_session
       response.should redirect_to(favlinks_url)
     end

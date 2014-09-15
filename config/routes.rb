@@ -1,14 +1,32 @@
 Rails.application.routes.draw do
+  resources :codebanks
+
+  resources :rblogs
+
+  get '/404', to: 'errors#not_found'
+  get '/500', to: 'errors#server_error'
 
   root "welcome#index"
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   resources :plazas
+  resources :bundlelinks do
+    resources :favlinks
+  end
+
   resources :favlinks
   resources :bulletins do
     resources :posts
   end
   resources :questions do
     resources :answers
+  end
+
+  resources :podcasts, only: [ :index, :show ]
+
+  namespace :api do
+    resources :questions do
+      resources :answers
+    end
   end
 
   # resources :tasks, only: [ :index, :show, :create, :update, :destroy ]

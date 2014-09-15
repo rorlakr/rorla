@@ -1,8 +1,35 @@
+$navbar-default-link-hover-color: #bc0000;
+$code-color: #004080;
+$code-bg: #eaf2ff;
+
+// vertical spacing
+.spacer01 { height: 1em;}
+.spacer02 { height: 2em;}
+.spacer03 { height: 3em;}
+.spacer04 { height: 4em;}
+.spacer05 { height: 5em;}
+.spacer06 { height: 6em;}
+.spacer07 { height: 7em;}
+.spacer08 { height: 8em;}
+.spacer09 { height: 9em;}
+.spacer10 { height: 10em;}
+
 @import 'bootstrap';
+@import "pagedown_bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "google-code-prettify-rails/prettify";
+@import "codemirror";
+@import "codemirror/themes/solarized";
+@import "codemirror/addons/dialog/dialog";
 @import 'layout';
 @import 'custom';
 @import 'plazas';
 @import 'posts';
 @import 'favlinks';
+@import 'rblogs';
+@import 'question/questions';
+@import 'podcasts';
+@import 'codebanks';
 
 body { padding-top: 60px; padding-bottom:80px; }

@@ -24,6 +24,21 @@
   <%= f.button :submit, "Update", class: 'btn btn-default' %>
 <% end %>
 
+<% if user_signed_in? %>
+  <hr>
+  <h3>Badges</h3>
+    <% current_user.badges.each do |badge| %>
+    <div class="media">
+      <a class="pull-left" href="#">
+        <img style="width: 60px;" class="media-object" src="<%= badge.custom_fields[:image_url] %>" alt="...">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading"><%= badge.name %></h4>
+        <p><%= badge.custom_fields[:difficulty] %> <br> <%= badge.description %></p>
+      </div>
+    </div>
+    <% end %>
+<% end %>
 <hr>
 
 <h3>Cancel my account</h3>
@@ -31,3 +46,4 @@
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back, class: "btn btn-default" %>
+
