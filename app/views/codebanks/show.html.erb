@@ -1,0 +1,25 @@
+<div class='codebank'>
+
+  <h2 class='title'><%= @codebank.title %></h2>
+
+  <div class='summary'>
+    :
+  <% if @codebank.summary.present? %>
+    <%= @codebank.summary %>
+  <% else %>
+    <span class='text-muted'>no summary</span>
+  <% end %>
+  </div>
+
+  <div class='code'><%= @codebank.snippet %></div>
+
+  <div class='writer'>
+    <%= authored_by @codebank %>
+  </div>
+
+  <div class='form-actions'>
+    <%= link_to 'Edit', edit_codebank_path(@codebank), class: 'btn btn-default' if user_signed_in? and current_user.can_update? @codebank %>
+    <%= link_to 'Back', codebanks_path, class: 'btn btn-default' %>
+  </div>
+
+</div>

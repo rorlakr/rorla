@@ -20,7 +20,7 @@ FactoryGirl.define do
   factory :favlink do
     title "MyString"
     description "MyText"
-    linkurl "http:/a/aaa.com/ssss/asdfasdf"
+    linkurl "http://rorlab.org"
     writer
     factory :favlink_not_shared do
       shared false

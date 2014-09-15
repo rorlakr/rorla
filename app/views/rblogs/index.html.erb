@@ -1,0 +1,21 @@
+<h2>
+  <%= params[:whose] ? "My rBlogs" : "All Shared rBlogs" %>
+  <small>
+    <%#= "filtered by <strong style=color:red;>'<u>#{params[:search]}</u>'</strong>".html_safe if params[:search] %>
+    <%#= "tagged with <span class='badge badge-default'>#{params[:tag]}</span>".html_safe if params[:tag] %>
+    <%= params[:private] == '1' ? "<span class='badge badge-private'>private</span>".html_safe : (params[:whose] ? "<span class='badge badge-shared'>shared</span>".html_safe : "") %>
+    (<%= @rblogs.total_entries %>)
+    <%= link_to icon('remove-circle'), rblogs_path if params[:whose] || params[:search] || params[:tag] %>
+  </small>
+</h2>
+<div id='rblogs'>
+  <% if @rblogs.size > 0 %>
+    <%= render @rblogs %>
+  <% else %>
+    No entries
+  <% end %>
+</div>
+
+<div id="last_page"></div>
+<%= will_paginate @rblogs %>
+<%= pageless(@rblogs.total_pages, url_for, '#rblogs') %>

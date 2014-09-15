@@ -6,7 +6,7 @@
     border-radius: 5px;
     margin:1em 0;
     padding:.5em;
-    .general, .blog, .gallery{
+    .general, .blog, .gallery, .favlink{
       // border:1px solid #eaeaea;
       .title h4 {
         margin:0 0 5px 0;
@@ -19,5 +19,14 @@
         text-align: right;
       }
     }
+  }
+}
+
+.favlink {
+  .title {
+    h4 { margin:0;}
+    background-color: #def1f8;
+    padding:.5em .5em;
+    margin-bottom: .5em;
   }
 }

@@ -13,6 +13,8 @@ ko:
 
   devise:
     failure:
+      user:
+        not_found_in_database: "등록되지 않은 사용자입니다."
       already_authenticated: '이미 로그인하셨습니다.'
       unauthenticated: '이용하시려면 로그인하거나 가입하셔야 합니다.'
       unconfirmed: '계정 확인 하셔야 이용하실 수 있습니다.'

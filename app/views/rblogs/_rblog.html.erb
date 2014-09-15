@@ -1,0 +1,33 @@
+<div class='rblog <%= 'rblog_index' if action_name == 'index' %>'>
+
+  <h2 class='title'>
+    <%= icon_shared(rblog.shared) %>
+    <%= action_name == 'index' ? link_to(truncate(rblog.title, length: 100), rblog) : rblog.title %>
+  </h2>
+
+  <div class='authored_by'>
+    <%= authored_by rblog %>
+  </div>
+
+  <div class='content'>
+  <% if action_name == 'show' %>
+    <div class='markdown-preview'>
+      <%= rblog.content.gsub(/<[^(>|\/)]*?script.*?>([^<]*?)<.*?\/script.*?>/, '') %>
+    </div>
+  <% else %>
+    <%= truncate(Sanitize.clean(rblog.content, elements: %w(img table)), length: 200 )%>
+    <%#= truncate(rblog.content, length: 200 )%>
+  <% end %>
+  </div>
+
+
+  <% if user_signed_in? %>
+    <div class="rblog-actions <%= "form-actions" if action_name == 'show' %>">
+      <%= link_to 'Edit', edit_rblog_path(rblog), class: 'btn btn-default' if current_user.can_update? rblog %>
+      <%= link_to 'Delete', rblog, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' if current_user.can_delete? rblog %>
+      <%= link_to 'Show', rblog_path(rblog), class: 'btn btn-default' if action_name == 'index' %>
+      <%= link_to 'Back', rblogs_path, class: 'btn btn-default' if action_name == 'show' %>
+    </div>
+  <% end %>
+</div>
+

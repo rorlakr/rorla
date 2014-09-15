@@ -1,6 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'bootstrap-sass', '~> 3.1.1'
+gem 'pagedown-bootstrap-rails'
+gem 'font-awesome-sass', '~> 4.2.0'
+gem 'google-code-prettify-rails', '~> 1.1.0'
+gem 'sanitize'
+gem 'codemirror-rails'
 gem 'simple_form'
 gem 'devise'
 gem 'rolify'
@@ -10,14 +15,27 @@ gem 'friendly_id'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'webshots', github: 'rorlab/webshots'
+gem 'acts-as-taggable-on'
+gem 'attr_searchable'
+gem 'will_paginate'
+gem 'pageless-rails', github: 'rorlab/pageless-rails'
 gem 'rails_12factor', group: :production
 gem 'mysql2', group: :production
+gem 'excon', '~> 0.39.5'
+gem 'merit' 
+gem 'ambry'
+
+# json 파싱을 위함. 실제 파싱은 oj가 하지만 multi_json 인터페이스를 이용
+gem 'multi_json', '~> 1.10.1'
+gem 'oj', '~> 2.10.2'
 
 group :development do
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rails-erd'
+  gem 'docker_alias', github: 'rorlab/docker_alias'
+  # gem 'docker_alias', '~> 0.0.2'
 end
 
 group :development, :test do
@@ -71,11 +89,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
