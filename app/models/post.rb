@@ -24,6 +24,7 @@ class Post < ActiveRecord::Base
 
   default_scope { order(created_at: :desc)}
   scope :my_posts, -> (user_id){ where(writer_id: user_id) }
+  scope :recent, -> { where(published: true).limit(5) }
 
   validates :title, presence: true, :length => { :minimum => 3, :maximum => 255 }
   validates :content, presence: true, :length => { :minimum => 0, :maximum => 10000 }
