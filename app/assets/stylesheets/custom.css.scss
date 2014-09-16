@@ -145,3 +145,29 @@ li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8, li.L9 {
     background-color: #5cb85c;
   }
 }
+
+
+// Bottom Menu
+.bottom_menu {
+  border-top: 1px solid #eaeaea;
+  margin:4em 0 0;
+  padding:2em 0 0;
+  .menu_title {
+    font-weight:bold;
+    font-size: 1.3em;
+  }
+  ul.section {
+    // display: block;
+    // float: left;
+    margin:1em 0 2em;
+    padding: 1em 0 1em 3em;
+    border-left: 1px solid #eaeaea;
+    border-top: 1px solid #eaeaea;
+　　　list-style-type: none;
+    li {
+    　　　display: inline;
+      line-height: 1.5em;
+    }
+  }
+
+}
