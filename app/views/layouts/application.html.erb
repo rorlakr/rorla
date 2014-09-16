@@ -91,11 +91,15 @@
 
   </div> <!-- /container -->
 
-  <!-- <div class="navbar-fixed-bottom"> -->
-    <div id='footer'>
-        Copyright<sup>&reg;</sup> <%= Time.new.year %>, RORLa Project, ROR Lab., All rights reserved.
-    </div>
-  <!-- </div> -->
+  <div class='container'>
+    <!-- Bottom Menu -->
+    <%= render 'layouts/shared/bottom_menu' if controller_name == 'welcome' %>
+  </div>
+
+  <div id='footer'>
+      Copyright<sup>&reg;</sup> <%= Time.new.year %>, RORLa Project, ROR Lab., All rights reserved.
+  </div>
+
 
 </body>
 </html>
