@@ -1,0 +1,57 @@
+<div class='bottom_menu'>
+
+<div class='row'>
+  <div class='col-md-3'>
+    <div style="overflow:auto;">
+      <%= image_tag 'rorlab_logo_75X75.png', style:'float:left;margin-right:1em;' %>
+      <p>루비/루비온레일스를 위한 커뮤니티. </p>
+      <p>since 2011</p>
+    </div>
+    <div class='well' style='margin-top:1.3em;text-align:center;'><%= link_to '>>> Contributors', contributors_path %></div>
+  </div>
+
+  <div class='col-md-3'>
+    <div class='menu_title'>최근 공지 및 새소식</div>
+    <ul class='section'>
+    <% @news = Post.where(bulletin_id: [ 1, 2]).recent %>
+    <% @news.each do | post | %>
+      <li><%= link_to post.title, bulletin_post_path(post.bulletin, post) %> <small class='text-muted'><%= time_ago_in_words(post.created_at) %>전</small></li>
+    <% end %>
+    </ul>
+  </div>
+
+  <div class='col-md-6'>
+    <div class='row'>
+      <div class='col-md-4 col-sm-4'>
+        <div class='menu_title'>행사 및 일정</div>
+        <ul class='section'>
+          <li>Biweekly Lecutures</li>
+          <li>Biweekly Koding</li>
+        </ul>
+      </div>
+
+      <div class='col-md-4 col-sm-4'>
+        <div class='menu_title'>한글 및 문서화 작업</div>
+        <ul class='section'>
+          <li>레일스가이드</li>
+          <li>레일스튜토리얼</li>
+          <li>Railscasts</li>
+          <li>Gitbook eBook</li>
+        </ul>
+      </div>
+
+      <div class='col-md-4 col-sm-4'>
+        <div class='menu_title'>도움말</div>
+        <ul class='section'>
+          <li><%= link_to '소개말', about_path %></li>
+          <li><%= link_to '웹사이트 사용법', howto_path %></li>
+          <li><%= link_to '홈페이지 오류보고', "#" %></li>
+          <li><%= link_to '개인정보보호', security_path %></li>
+          <li><%= link_to '저작권보호', copyright_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
