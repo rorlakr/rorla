@@ -1,1 +1,16 @@
 <%= render @rblog %>
+
+<% if user_signed_in? %>
+  <section class='rblog_comments_section'>
+    <h4>Comments <small id='comments_count_of_<%= @rblog.id %>'><%= "(#{@rblog.reload.comments.size})" %></small>
+
+    <small id='notice_comments_of_<%=@rblog.id%>' class="notice_comment"></small>
+    </h4>
+    <div id='comments_of_<%= @rblog.id %>' class='comments'>
+      <%= render @rblog.comments %>
+    </div>
+    <div id="comment_form_of_<%=@rblog.id%>" class='comments_form'>
+      <%= render 'comments/form' %>
+    </div>
+  </section>
+<% end %>
