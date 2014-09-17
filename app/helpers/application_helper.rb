@@ -30,6 +30,22 @@ module ApplicationHelper
     "<span class='label label-default'><span class='glyphicon glyphicon-#{shape}'></span></span> #{label}".html_safe
   end
 
+  def awesome_icon(shape)
+    "<span class='fa fa-#{shape}'></span>".html_safe
+  end
+
+  def awesome_icon_label(shape, label)
+    "<span class='fa fa-#{shape}'></span> #{label}".html_safe
+  end
+
+  def awesome_icon_button(shape)
+    "<span class='label label-default'><span class='fa fa-#{shape}'></span></span>".html_safe
+  end
+
+  def awesome_icon_lable_button(shape, label)
+    "<span class='label label-default'><span class='fa fa-#{shape}'></span></span> #{label}".html_safe
+  end
+
   def icon_tags(tags_array)
     label_tags = ""
     tags_array.each do |tag|
@@ -40,6 +56,10 @@ module ApplicationHelper
 
   def icon_shared(shared)
     shared ? icon('share') : icon('lock')
+  end
+
+  def awesome_icon_shared(shared)
+    shared ? awesome_icon('share-alt-square') : icon('lock')
   end
 
   def active_menu(*target_controller)
