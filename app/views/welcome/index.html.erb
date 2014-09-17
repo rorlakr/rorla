@@ -9,10 +9,10 @@
       <hr style="border:1px solid #850000;">
       <% if user_signed_in? %>
           <p>Logged in with <%= current_user.email %>.</p>
-            <%= link_to "> 로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-primary' %>
+            <%= link_to icon_label("log-out", "로그아웃"), destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-primary' %>
       <% else %>
-            <%= link_to "> 로그인", new_user_session_path, class: 'btn btn-primary' %>
-            <%= link_to "> 회원가입", new_user_registration_path, class: 'btn btn-success' %>
+            <%= link_to icon_label("log-in","로그인"), new_user_session_path, class: 'btn btn-primary' %>
+            <%= link_to awesome_icon_label("users","회원가입"), new_user_registration_path, class: 'btn btn-success' %>
       <% end %>
   </div>
 </div>
