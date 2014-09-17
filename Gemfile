@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'jquery-ui-rails'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'bh', '~> 1.0'
 # gem 'pagedown-bootstrap-rails'

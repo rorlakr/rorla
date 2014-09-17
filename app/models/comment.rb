@@ -13,8 +13,12 @@
 
 class Comment < ActiveRecord::Base
 
-  belongs_to :writer
-  belongs_to :commentable, :polymorphic => true
+  # Rolify and Authroization
+  resourcify
+  include Authority::Abilities
+
+  belongs_to :writer, class_name: 'User'
+  belongs_to :commentable, polymorphic: true
   validates :content, presence: true, :length => { :minimum => 0, :maximum => 10000 }
 
 end

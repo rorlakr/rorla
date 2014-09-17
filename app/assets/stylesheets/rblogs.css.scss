@@ -37,3 +37,23 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+.rblog_comments_section {
+  margin-top:2em;
+  .comments {
+    margin-top: 1em;
+    .comment {
+      border-top:1px solid #eaeaea;
+      margin-bottom: 1em;
+      padding: .5em 0;
+      .content {
+        padding-left: 1em;
+        margin-bottom:.2em;
+      }
+      .authored_by {
+        padding-left: 1em;
+      }
+    }
+  }
+
+}
