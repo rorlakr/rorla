@@ -27,6 +27,7 @@ $jumbotron-padding: 20px;
 .spacer09 { height: 9em;}
 .spacer10 { height: 10em;}
 
+@import 'jquery-ui';
 @import 'bootstrap';
 @import "pagedown_bootstrap";
 @import "font-awesome-sprockets";
@@ -45,5 +46,6 @@ $jumbotron-padding: 20px;
 @import 'podcasts';
 @import 'codebanks';
 @import 'info';
+@import 'comments';
 
 body { padding-top: 60px;  }
