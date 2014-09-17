@@ -20,7 +20,7 @@
   <% @codebanks.each do |codebank| %>
       <tr>
         <td class=""><%= link_to awesome_icon_shared_label(codebank.shared, codebank.title), codebank %></td>
-        <td class="hidden-sm hidden-xs"><%= codebank.writer.email %></td>
+        <td class="hidden-sm hidden-xs"><%= codebank.writer.account_name %></td>
         <td class="hidden-xs"><%= codebank.created_at.strftime('%Y-%m-%d %l:%M:%S%P') %></td>
         <td class="visible-xs"><%= codebank.created_at.strftime('%Y-%m-%d') %></td>
         <td class="hidden-xs">

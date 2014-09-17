@@ -6,7 +6,7 @@
       <h4 class="media-heading"><%= post.title %></h4>
       <div class='info'>
         <div class='content'><%= truncate post.content, length:100 %></div>
-        <div class='author'><%= t('authored_html', who: post.writer.email, ago: time_ago_in_words(post.created_at)) %></div>
+        <div class='author'><%= t('authored_html', who: post.writer.account_name, ago: time_ago_in_words(post.created_at)) %></div>
         <div class='actions'>
           <%= link_to icon_button('eye-open'), [post.bulletin, post] %>
           <% if user_signed_in? %>

@@ -45,4 +45,8 @@ class User < ActiveRecord::Base
     add_role :user
   end
 
+  def account_name
+    email.split('@').first
+  end
+
 end

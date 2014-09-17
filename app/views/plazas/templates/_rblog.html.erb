@@ -2,7 +2,7 @@
   <div style="border-bottom:1px solid #eaeaea;padding-bottom:.5em;margin-bottom:.5em;">> rBlogs</div>
   <div class='title'><h4><%= truncate(resource.title, length: 50) %></h4></div>
   <div class='content'><%= truncate resource.content, length:100 %></div>
-  <div class='author'><%= t('authored_html', who: resource.writer.email, ago: time_ago_in_words(resource.created_at)) %></div>
+  <div class='author'><%= t('authored_html', who: resource.writer.account_name, ago: time_ago_in_words(resource.created_at)) %></div>
   <div class='actions'>
     <%= link_to icon_button('eye-open'), resource %>
     <% if user_signed_in? %>
