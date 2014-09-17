@@ -6,7 +6,7 @@
 
       <ul style="list-style-type: none;padding-left:1.5em;">
       <% Post.my_posts(current_user).each do |post| %>
-        <li><%= icon_shared(post.published).html_safe %> <%= link_to "#{post.bulletin.title} / #{post.title}", [post.bulletin, post] %></li>
+        <li><%= awesome_icon_shared(post.published).html_safe %> <%= link_to "#{post.bulletin.title} / #{post.title}", [post.bulletin, post] %></li>
       <% end %>
       </ul>
 
