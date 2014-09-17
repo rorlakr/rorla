@@ -1,5 +1,7 @@
 <div class='gallery'>
-  <div style="border-bottom:1px solid #eaeaea;padding-bottom:.5em;margin-bottom:.5em;">> Bulletins > <%= post.bulletin.title %></div>
+  <div style="border-bottom:1px solid #eaeaea;padding-bottom:.5em;margin-bottom:.5em;">
+    <%= icon_label('folder-open', "Bulletins") %> <%= icon_label('chevron-right', post.bulletin.title) %>
+  </div>
   <div class="media">
     <%= link_to(image_tag(post.picture_url(:thumb_plaza), class:'media-object'), [post.bulletin, post], class:'pull-left') if post.picture? %>
     <div class="media-body">
