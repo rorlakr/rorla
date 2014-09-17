@@ -1,7 +1,7 @@
 <div class='rblog <%= 'rblog_index' if action_name == 'index' %>'>
 
   <h2 class='title'>
-    <%= icon_shared(rblog.shared) %>
+    <%= awesome_icon_shared(rblog.shared) %>
     <%= action_name == 'index' ? link_to(truncate(rblog.title, length: 100), rblog) : rblog.title %>
   </h2>
 
