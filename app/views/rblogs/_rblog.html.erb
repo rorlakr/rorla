@@ -6,7 +6,10 @@
   </h2>
 
   <div class='authored_by'>
-    <%= authored_by rblog %>
+    <%= authored_by rblog.writer, rblog.created_at %>
+    <% if action_name == 'index' %>
+    <span class="text-muted" title="Comments Count">(<%= rblog.comments.size %>)</span>
+    <% end %>
   </div>
 
   <div class='content'>
@@ -21,13 +24,13 @@
   </div>
 
 
-  <% if user_signed_in? %>
-    <div class="rblog-actions <%= "form-actions" if action_name == 'show' %>">
+  <div class="rblog-actions <%= "form-actions" if action_name == 'show' %>">
+    <% if user_signed_in? %>
       <%= link_to 'Edit', edit_rblog_path(rblog), class: 'btn btn-default' if current_user.can_update? rblog %>
       <%= link_to 'Delete', rblog, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' if current_user.can_delete? rblog %>
       <%= link_to 'Show', rblog_path(rblog), class: 'btn btn-default' if action_name == 'index' %>
-      <%= link_to 'Back', rblogs_path, class: 'btn btn-default' if action_name == 'show' %>
-    </div>
-  <% end %>
+    <% end %>
+    <%= link_to 'Back', rblogs_path, class: 'btn btn-default' if action_name == 'show' %>
+  </div>
 </div>
 

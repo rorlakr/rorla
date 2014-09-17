@@ -27,7 +27,7 @@
     <%= f.input :content, :as => :pagedown %>
   </div>
   <div class="checkbox">
-    <%= f.input :shared, as: :boolean, label: false, inline_label: "shared by #{ (!f.object.persisted? || current_user == @rblog.writer) ? "me (#{current_user.email})" : @rblog.email}"  %>
+    <%= f.input :shared, as: :boolean, label: false, inline_label: "shared by #{ (!f.object.persisted? || current_user == @rblog.writer) ? "me (#{current_user.email})" : @rblog.writer.email}"  %>
   </div>
 
   <div class="form-actions">
