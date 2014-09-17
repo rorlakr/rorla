@@ -7,11 +7,11 @@
       <p>루비/루비온레일스를 위한 커뮤니티. </p>
       <p>since 2011</p>
     </div>
-    <div class='well' style='margin-top:1.3em;text-align:center;'><%= link_to '>>> Contributors', contributors_path %></div>
+    <div class='well' style='margin-top:1.3em;text-align:center;'><%= link_to awesome_icon_label('users','Contributors'), contributors_path %></div>
   </div>
 
   <div class='col-md-3'>
-    <div class='menu_title'>최근 공지 및 새소식</div>
+    <div class='menu_title'><%= awesome_icon_label "bullhorn", "최근 공지 및 새소식" %></div>
     <ul class='section'>
     <% @news = Post.where(bulletin_id: [ 1, 2]).recent %>
     <% @news.each do | post | %>
@@ -23,7 +23,7 @@
   <div class='col-md-6'>
     <div class='row'>
       <div class='col-md-4 col-sm-4'>
-        <div class='menu_title'>행사 및 일정</div>
+        <div class='menu_title'><%= awesome_icon_label "calendar", "행사 및 일정" %></div>
         <ul class='section'>
           <li>Biweekly Lecuture</li>
           <li>Biweekly Koding</li>
@@ -31,7 +31,7 @@
       </div>
 
       <div class='col-md-4 col-sm-4'>
-        <div class='menu_title'>한글 및 문서화 작업</div>
+        <div class='menu_title'><%= awesome_icon_label "archive", "한글 및 문서화" %></div>
         <ul class='section'>
           <li>레일스가이드</li>
           <li>레일스튜토리얼</li>
@@ -41,7 +41,7 @@
       </div>
 
       <div class='col-md-4 col-sm-4'>
-        <div class='menu_title'>도움말</div>
+        <div class='menu_title'><%= awesome_icon_label 'info-circle', '도움말' %></div>
         <ul class='section'>
           <li><%= link_to '소개말', about_path %></li>
           <li><%= link_to '웹사이트 사용법', howto_path %></li>
