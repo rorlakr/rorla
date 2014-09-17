@@ -1,5 +1,7 @@
 <div class='general'>
-  <div style="border-bottom:1px solid #eaeaea;padding-bottom:.5em;margin-bottom:.5em;">> Q&A</div>
+  <div style="border-bottom:1px solid #eaeaea;padding-bottom:.5em;margin-bottom:.5em;">
+    <%= icon_label('folder-open', "Q&A") %>
+  </div>
   <div class='title'><h4><%= resource.title %></h4></div>
   <div class='content'><%= truncate resource.content, length:100 %></div>
   <div class='author'><%= t('authored_html', who: resource.user.account_name, ago: time_ago_in_words(resource.created_at)) %></div>
