@@ -1,5 +1,7 @@
 <div class='favlink'>
-  <div style="border-bottom:1px solid #eaeaea;padding-bottom:.5em;margin-bottom:.5em;">> Favlink</div>
+  <div style="border-bottom:1px solid #eaeaea;padding-bottom:.5em;margin-bottom:.5em;">
+    <%= icon_label('folder-open', "Favlinks") %>
+  </div>
   <div class='title'><h4><%= link_to icon_label('share-alt', resource.title), resource.linkurl, style:'display:block;' %></h4></div>
   <div class='linkurl'><%= icon_label('link', resource.linkurl) %></div>
   <% if resource.bundlelink %>

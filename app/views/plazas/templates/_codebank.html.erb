@@ -1,5 +1,7 @@
 <div class='general'>
-  <div style="border-bottom:1px solid #eaeaea;padding-bottom:.5em;margin-bottom:.5em;">> Codebanks</div>
+  <div style="border-bottom:1px solid #eaeaea;padding-bottom:.5em;margin-bottom:.5em;">
+    <%= icon_label('folder-open', "Codebanks") %>
+  </div>
   <div class='title'><h4><%= truncate(resource.title, length: 50) %></h4></div>
   <div class='content'><%= truncate resource.summary, length:100 %> <%= truncate resource.snippet, length:100 %></div>
   <div class='author'><%= t('authored_html', who: resource.writer.account_name, ago: time_ago_in_words(resource.created_at)) %></div>
