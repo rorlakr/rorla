@@ -5,7 +5,7 @@
   <% if resource.bundlelink %>
     <div class='bundle'><%= icon_label('book', link_to(resource.bundlelink.try(:title), bundlelink_favlinks_path(resource.bundlelink))) %></div>
   <% end %>
-  <div class='author'><%= icon_label('user', t('authored_html', who: resource.writer.email, ago: time_ago_in_words(resource.created_at))) %></div>
+  <div class='author'><%= icon_label('user', t('authored_html', who: resource.writer.account_name, ago: time_ago_in_words(resource.created_at))) %></div>
   <div class='actions'>
     <%= link_to icon_button('eye-open'), resource unless action_name == 'show' %>
     <%= link_to icon_button('edit'), edit_favlink_path(resource) %>
