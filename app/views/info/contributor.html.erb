@@ -10,34 +10,16 @@
 <div class="visible-xs spacer01"></div>
 <div class="visible-sm spacer02"></div>
 <div class="visible-md spacer04"></div>
-<div class="visible-lg spacer05"></div>
+<div class="visible-lg spacer02"></div>
 
 <div class="row">
-  <div class="col-sm-4"><div class="panel panel-info">
-    <div class="panel-heading"><h3 class="panel-title">운영자</h3></div>
-    <div class="panel-body"><%= image_tag 'contributors/generic-user.png', style:'width:100px;border-radius:50px;box-shadow:3px;', class:'shadow' %> 기여자 성함</div>
-  </div></div>
-  <div class="col-sm-4"><div class="panel panel-default">
-    <div class="panel-heading"><h3 class="panel-title">강사1</h3></div>
-    <div class="panel-body"><%= image_tag 'contributors/generic-user.png', style:'width:100px;border-radius:50px;box-shadow:3px;', class:'shadow' %> 기여자 성함</div>
-  </div></div>
-  <div class="col-sm-4"><div class="panel panel-default">
-    <div class="panel-heading"><h3 class="panel-title">강사2</h3></div>
-    <div class="panel-body"><%= image_tag 'contributors/generic-user.png', style:'width:100px;border-radius:50px;box-shadow:3px;', class:'shadow' %> 기여자 성함</div>
-  </div></div>
+  <%= profile "info", "운영자", "generic-user.png", "홍길동" %>
+  <%= profile "default", "강사1", "generic-user.png", "김철수" %>
+  <%= profile "default", "강사2", "generic-user.png", "최고봉" %>
 </div>
 
 <div class="row">
-  <div class="col-sm-4"><div class="panel panel-default">
-    <div class="panel-heading"><h3 class="panel-title">강사3</h3></div>
-    <div class="panel-body"><%= image_tag 'contributors/generic-user.png', style:'width:100px;border-radius:50px;box-shadow:3px;', class:'shadow' %> 기여자 성함</div>
-  </div></div>
-  <div class="col-sm-4"><div class="panel panel-default">
-    <div class="panel-heading"><h3 class="panel-title">강사4</h3></div>
-    <div class="panel-body"><%= image_tag 'contributors/generic-user.png', style:'width:100px;border-radius:50px;box-shadow:3px;', class:'shadow' %> 기여자 성함</div>
-  </div></div>
-  <div class="col-sm-4"><div class="panel panel-default">
-    <div class="panel-heading"><h3 class="panel-title">강사5</h3></div>
-    <div class="panel-body"><%= image_tag 'contributors/generic-user.png', style:'width:100px;border-radius:50px;box-shadow:3px;', class:'shadow' %> 기여자 성함</div>
-  </div></div>
+  <%= profile "default", "강사3", "generic-user.png", "정직함" %>
+  <%= profile "default", "강사4", "generic-user.png", "박치기" %>
+  <%= profile "default", "강사5", "generic-user.png", "이기자" %>
 </div>

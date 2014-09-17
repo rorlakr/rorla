@@ -160,6 +160,8 @@ GEM
     jquery-turbolinks (2.0.2)
       railties (>= 3.1.0)
       turbolinks
+    jquery-ui-rails (5.0.0)
+      railties (>= 3.2.16)
     json (1.8.1)
     kgio (2.9.2)
     launchy (2.4.2)
@@ -350,6 +352,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  jquery-ui-rails
   launchy (~> 2.4.2)
   letter_opener
   merit

@@ -18,7 +18,9 @@ Rails.application.routes.draw do
 
   # Resources routing
   resources :codebanks
-  resources :rblogs
+  resources :rblogs do
+    resources :comments
+  end
   resources :plazas
   resources :bundlelinks do
     resources :favlinks
