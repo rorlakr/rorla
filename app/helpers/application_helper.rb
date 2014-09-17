@@ -62,6 +62,10 @@ module ApplicationHelper
     shared ? awesome_icon('share-alt-square') : icon('lock')
   end
 
+  def awesome_icon_shared_label(shared, label)
+    (shared ? awesome_icon('share-alt-square') : icon('lock')) + ' ' + label
+  end
+
   def active_menu(*target_controller)
     target_controller.include?(controller_name) ? 'active' : ''
   end
