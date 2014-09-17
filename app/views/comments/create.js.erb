@@ -1,0 +1,8 @@
+$("#comments_count_of_<%=@comment.commentable.id%>").html("(<%= @comment.commentable.comments.size %>)").hide().slideDown('fast').effect("highlight", {}, 1000);
+$("#comments_of_<%= @comment.commentable.id %>").append("<%= j render @comment %>");
+$("#comment_<%=@comment.id %>").hide().slideDown('fast').effect("highlight", {}, 1000);
+$("#comment_form_of_<%= @comment.commentable.id %> form")[0].reset();
+
+$("#notice_comments_of_<%=@comment.commentable.id%>").html("<%=j flash[:alert] %>").css('display', 'none').fadeIn('slow').delay(1000).fadeOut('slow');
+
+<% flash.clear %>

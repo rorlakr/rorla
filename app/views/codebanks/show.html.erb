@@ -14,7 +14,7 @@
   <div class='code'><%= @codebank.snippet %></div>
 
   <div class='writer'>
-    <%= authored_by @codebank %>
+    <%= authored_by @codebank.writer, @codebank.created_at %>
   </div>
 
   <div class='form-actions'>
