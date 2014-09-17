@@ -2,7 +2,7 @@
   <div style="border-bottom:1px solid #eaeaea;padding-bottom:.5em;margin-bottom:.5em;">> Q&A</div>
   <div class='title'><h4><%= resource.title %></h4></div>
   <div class='content'><%= truncate resource.content, length:100 %></div>
-  <div class='author'><%= t('authored_html', who: resource.user.email, ago: time_ago_in_words(resource.created_at)) %></div>
+  <div class='author'><%= t('authored_html', who: resource.user.account_name, ago: time_ago_in_words(resource.created_at)) %></div>
   <div class='actions'>
     <%= link_to icon_button('eye-open'), resource %>
     <% if user_signed_in? %>
