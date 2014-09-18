@@ -17,10 +17,13 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
   # Resources routing
-  resources :codebanks
-  resources :rblogs do
+
+  concern :commentable do
     resources :comments
   end
+  resources :codebanks, concerns: :commentable
+  resources :rblogs, concerns: :commentable
+
   resources :plazas
   resources :bundlelinks do
     resources :favlinks
