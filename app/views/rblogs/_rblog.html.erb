@@ -3,13 +3,11 @@
   <h2 class='title'>
     <%= awesome_icon_shared(rblog.shared) %>
     <%= action_name == 'index' ? link_to(truncate(rblog.title, length: 100), rblog) : rblog.title %>
+    <small class="text-muted" title="댓글갯수" data-toggle='tooltip'>(<%= rblog.comments.size %>)</small>
   </h2>
 
   <div class='authored_by'>
     <%= authored_by rblog.writer, rblog.created_at %>
-    <% if action_name == 'index' %>
-    <span class="text-muted" title="Comments Count">(<%= rblog.comments.size %>)</span>
-    <% end %>
   </div>
 
   <div class='content'>
@@ -26,11 +24,11 @@
 
   <div class="rblog-actions <%= "form-actions" if action_name == 'show' %>">
     <% if user_signed_in? %>
-      <%= link_to 'Edit', edit_rblog_path(rblog), class: 'btn btn-default' if current_user.can_update? rblog %>
-      <%= link_to 'Delete', rblog, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' if current_user.can_delete? rblog %>
+      <%= link_to t('form_actions.edit'), edit_rblog_path(rblog), class: 'btn btn-default' if current_user.can_update? rblog %>
+      <%= link_to t('form_actions.delete'), rblog, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' if current_user.can_delete? rblog %>
     <% end %>
-    <%= link_to 'Show', rblog_path(rblog), class: 'btn btn-default' if action_name == 'index' %>
-    <%= link_to 'Back', rblogs_path, class: 'btn btn-default' if action_name == 'show' %>
+    <%= link_to t('form_actions.show'), rblog_path(rblog), class: 'btn btn-default' if action_name == 'index' %>
+    <%= link_to t('form_actions.back'), rblogs_path, class: 'btn btn-default' if action_name == 'show' %>
   </div>
 </div>
 
