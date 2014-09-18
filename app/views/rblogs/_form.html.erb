@@ -27,14 +27,14 @@
     <%= f.input :content, :as => :pagedown %>
   </div>
   <div class="checkbox">
-    <%= f.input :shared, as: :boolean, label: false, inline_label: "shared by #{ (!f.object.persisted? || current_user == @rblog.writer) ? "me (#{current_user.email})" : @rblog.writer.email}"  %>
+    <%= f.input :shared, as: :boolean, label: false, inline_label: t('shared_by', who: (!f.object.persisted? || (current_user == @rblog.writer)) ? "본인:#{current_user.account_name}" : @rblog.writer.account_name ) %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit, class: 'btn btn-default'%>
-    <%= link_to 'Delete', @rblog, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' if @rblog.persisted? %>
-    <%= link_to 'Show', @rblog, class: 'btn btn-default' if action_name == 'edit' %>
-    <%= link_to 'Back', rblogs_path, class: 'btn btn-default' %>
+    <%= link_to t('form_actions.delete'), @rblog, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' if @rblog.persisted? %>
+    <%= link_to t('form_actions.show'), @rblog, class: 'btn btn-default' if action_name == 'edit' %>
+    <%= link_to t('form_actions.back'), rblogs_path, class: 'btn btn-default' %>
 
   </div>
 <% end %>
