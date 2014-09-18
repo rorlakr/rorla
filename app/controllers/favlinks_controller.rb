@@ -23,6 +23,7 @@ class FavlinksController < ApplicationController
   # GET /favlinks/1
   # GET /favlinks/1.json
   def show
+    @comment = @favlink.comments.build
   end
 
   # GET /favlinks/new

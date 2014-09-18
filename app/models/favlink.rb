@@ -28,6 +28,7 @@ class Favlink < ActiveRecord::Base
   default_scope { order(created_at: :desc)}
 
   has_one :plaza, :as => :postitable, :dependent => :destroy
+  has_many :comments, as: :commentable, dependent: :destroy
   belongs_to :writer, class_name: 'User'
   belongs_to :bundlelink
 
