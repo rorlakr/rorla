@@ -4,6 +4,7 @@ class Codebank < ActiveRecord::Base
 
   belongs_to :writer, class_name: "User"
   has_one :plaza, :as => :postitable, :dependent => :destroy
+  has_many :comments, as: :commentable, dependent: :destroy
 
   validates :title, :snippet, presence: true
 
