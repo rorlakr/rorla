@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   concern :commentable do
     resources :comments
   end
-  resources :codebanks, :rblogs, :podcasts, concerns: :commentable
+  resources :favlinks, :codebanks, :rblogs, :podcasts, concerns: :commentable
 
   resources :plazas
   resources :bundlelinks do
