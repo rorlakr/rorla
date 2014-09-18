@@ -221,6 +221,7 @@ ko:
         answer:
           content: 답변
   form_actions:
+    edit: 수정
     delete: 삭제
     show: 보기
     back: 목록
