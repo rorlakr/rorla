@@ -1,9 +1,14 @@
-<h2>Preview of Favlink</h2>
+<h2>Favlinks</h2>
 
 <div id='show_favlink'>
 <%= render @favlink %>
 </div>
-<hr>
 
+<div class='form-actions'>
 <%= link_to 'Edit', @bundlelink ? edit_bundlelink_favlink_path(@bundlelink, @favlink) : edit_favlink_path(@favlink), class: 'btn btn-default' %>
 <%= link_to 'Back', @bundlelink ? bundlelink_favlinks_path(@bundlelink) : favlinks_path, class: 'btn btn-default' %>
+</div>
+
+<!-- 댓글 위젯 -->
+<%= render partial: "comments/comments_widget", locals: { resource: @favlink} %>
+
