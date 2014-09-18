@@ -1,3 +1,4 @@
+<!-- @codebank 인스턴스 객채 뷰 렌더링 -->
 <div class='codebank'>
 
   <h2 class='title'><%= awesome_icon_shared_label @codebank.shared, @codebank.title %></h2>
@@ -23,3 +24,6 @@
   </div>
 
 </div>
+
+<!-- 댓글 위젯 -->
+<%= render partial: "comments/comments_widget", locals: { resource: @codebank} %>

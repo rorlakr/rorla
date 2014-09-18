@@ -28,8 +28,8 @@
     <% if user_signed_in? %>
       <%= link_to 'Edit', edit_rblog_path(rblog), class: 'btn btn-default' if current_user.can_update? rblog %>
       <%= link_to 'Delete', rblog, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' if current_user.can_delete? rblog %>
-      <%= link_to 'Show', rblog_path(rblog), class: 'btn btn-default' if action_name == 'index' %>
     <% end %>
+    <%= link_to 'Show', rblog_path(rblog), class: 'btn btn-default' if action_name == 'index' %>
     <%= link_to 'Back', rblogs_path, class: 'btn btn-default' if action_name == 'show' %>
   </div>
 </div>
