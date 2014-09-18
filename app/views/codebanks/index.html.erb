@@ -2,7 +2,7 @@
   <%= params[:whose] ? "나의 코드스니펫" : "코드뱅크" %>
   <small>
     <%= params[:private] == '1' ? "<span class='badge badge-private'>private</span>".html_safe : (params[:whose] ? "<span class='badge badge-shared'>shared</span>".html_safe : "") %>
-    (<%= @codebanks.total_entries %>)
+    <span title='스니펫갯수' data-toggle='tooltip'>(<%= @codebanks.total_entries %>)</span>
     <%= link_to icon('remove-circle'), codebanks_path if params[:whose] || params[:search] || params[:tag] %>
   </small>
 </h2>
@@ -19,15 +19,18 @@
   <tbody>
   <% @codebanks.each do |codebank| %>
       <tr>
-        <td class=""><%= link_to awesome_icon_shared_label(codebank.shared, codebank.title), codebank %></td>
+        <td class="">
+          <%= link_to awesome_icon_shared_label(codebank.shared, codebank.title), codebank %>
+          <small class='text-muted' title='댓글갯수' data-toggle='tooltip'><%= codebank.comments.size%></small>
+        </td>
         <td class="hidden-sm hidden-xs"><%= codebank.writer.account_name %></td>
-        <td class="hidden-xs"><%= codebank.created_at.strftime('%Y-%m-%d %l:%M:%S%P') %></td>
+        <td class="hidden-xs"><span title='<%= codebank.created_at.strftime('%Y-%m-%d %l:%M:%S%P') %>' data-toggle='tooltip'><%= time_ago_in_words(codebank.created_at) %>전</span></td>
         <td class="visible-xs"><%= codebank.created_at.strftime('%Y-%m-%d') %></td>
         <td class="hidden-xs">
-          <%= link_to icon_button('eye-open'), codebank %>
+          <%= link_to icon_button('eye-open'), codebank, title: t('form_actions.show'), data:{toggle:'tooltip'}  %>
           <% if user_signed_in? %>
-            <%= link_to icon_button('edit'), edit_codebank_path(codebank) if current_user.can_update? codebank %>
-            <%= link_to icon_button('trash'), codebank, method: :delete, data: { confirm: 'Are you sure?' } if current_user.can_delete? codebank %>
+            <%= link_to icon_button('edit'), edit_codebank_path(codebank), title: t('form_actions.edit'), data:{toggle:'tooltip'}  if current_user.can_update? codebank %>
+            <%= link_to icon_button('trash'), codebank, method: :delete, data: { confirm: 'Are you sure?' }, title: t('form_actions.delete'), data:{toggle:'tooltip'}  if current_user.can_delete? codebank %>
           <% end %>
         </td>
       </tr>
