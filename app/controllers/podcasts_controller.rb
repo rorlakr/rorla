@@ -7,5 +7,6 @@ class PodcastsController < ApplicationController
   # GET /podcasts/1
   def show
     @podcast = Podcast.find(params[:id])
+    @comment = @podcast.comments.build
   end
 end
