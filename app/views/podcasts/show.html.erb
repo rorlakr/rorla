@@ -22,6 +22,10 @@
   </tr>
 </table>
 
-<hr>
+<div class="form-actions">
+<%= link_to t('form_actions.back'), podcasts_path, class: 'btn btn-default' %>
+</div>
 
-<%= link_to 'Back', podcasts_path, class: 'btn btn-default' %>
+<!-- 댓글 위젯 -->
+<%= render partial: "comments/comments_widget", locals: { resource: @podcast} %>
+
