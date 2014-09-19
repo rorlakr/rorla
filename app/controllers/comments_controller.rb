@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.build(comment_params)
     @comment.writer_id = current_user.id
     if @comment.save
-      flash[:alert] = ">> Comment successfully saved."
+      flash[:notice] = ">> Comment successfully saved."
     else
       flash[:alert] = ">> Comment was not saved."
     end
@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.find(params[:id])
     authorize_action_for @comment
     if @comment.destroy
-      flash[:alert] = ">> Comment successfully deleted."
+      flash[:notice] = ">> Comment successfully deleted."
     else
       flash[:alert] = ">> Comment was not deleted."
     end
