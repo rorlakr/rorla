@@ -1,8 +1,6 @@
 <% if user_signed_in? %>
   <section class='rblog_comments_section'>
     <h4>Comments <small id='comments_count_of_<%= resource.id %>'><%= "(#{resource.reload.comments.size})" %></small>
-
-    <small id='notice_comments_of_<%=resource.id%>' class="notice_comment"></small>
     </h4>
     <div id='comments_of_<%= resource.id %>' class='comments'>
       <%= render resource.comments %>
