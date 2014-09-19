@@ -1,0 +1,12 @@
+.notice_comments {
+  margin-bottom:1em;
+  .flash_notice, .flash_alert {
+    padding: 1em;
+  }
+  .flash_notice {
+    color: #008040;
+  }
+  .flash_alert {
+    color: #800000;
+  }
+}
