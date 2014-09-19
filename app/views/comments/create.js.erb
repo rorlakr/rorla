@@ -1,8 +1,11 @@
-$("#comments_count_of_<%=@comment.commentable.id%>").html("(<%= @comment.commentable.comments.size %>)").hide().slideDown('fast').effect("highlight", {}, 1000);
-$("#comments_of_<%= @comment.commentable.id %>").append("<%= j render @comment %>");
-$("#comment_<%=@comment.id %>").hide().slideDown('fast').effect("highlight", {}, 1000);
-$("#comment_form_of_<%= @comment.commentable.id %> form")[0].reset();
+<% if @comment.errors.size == 0 %>
+  $("#comments_count_of_<%=@comment.commentable.id%>").html("(<%= @comment.commentable.comments.size %>)").hide().slideDown('fast').effect("highlight", {}, 1000);
+  $("#comments_of_<%= @comment.commentable.id %>").append("<%= j render @comment %>");
+  $("#comment_<%=@comment.id %>").hide().slideDown('fast').effect("highlight", {}, 1000);
+  $("#comment_form_of_<%= @comment.commentable.id %> form")[0].reset();
+<% end %>
 
-$("#notice_comments_of_<%=@comment.commentable.id%>").html("<%=j flash[:alert] %>").css('display', 'none').fadeIn('slow').delay(1000).fadeOut('slow');
+// Flash message
+$("#notice_comments_of_<%=@comment.commentable.id%>").html("<%=j (@comment.errors.size == 0 ? "<span class='flash_notice'>#{flash[:notice]}</span>" : "<span class='flash_alert'>#{flash[:alert]}</span>").html_safe %>").css('display', 'none').fadeIn('slow').delay(1000).slideUp('fast');
 
 <% flash.clear %>

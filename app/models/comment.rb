@@ -19,6 +19,6 @@ class Comment < ActiveRecord::Base
 
   belongs_to :writer, class_name: 'User'
   belongs_to :commentable, polymorphic: true
-  validates :content, presence: true, :length => { :minimum => 0, :maximum => 10000 }
+  validates :content, presence: true, :length => { :maximum => 255 }
 
 end

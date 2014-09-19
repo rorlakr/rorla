@@ -1,6 +1,8 @@
 $("#comments_count_of_<%=@comment.commentable.id%>").html("(<%= @comment.commentable.comments(true).size %>)").hide().slideDown('fast').effect("highlight", {}, 1000);
 $("#comment_<%=@comment.id %>").effect("highlight", {}, 500).stop().slideUp("fast");
 
-$("#notice_comments_of_<%=@comment.commentable.id%>").html("<%=j flash[:alert] %>").css('display', 'none').fadeIn('slow').delay(1000).fadeOut('slow');
+// Flash message
+$("#notice_comments_of_<%=@comment.commentable.id%>").html("<%=j (@comment.errors.size == 0 ? "<span class='flash_notice'>#{flash[:notice]}</span>" : "<span class='flash_alert'>#{flash[:alert]}</span>").html_safe %>").css('display', 'none').fadeIn('slow').delay(1000).slideUp('fast');
 
+// Flash message clearing
 <% flash.clear %>
