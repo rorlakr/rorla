@@ -1,6 +1,7 @@
 
 #posts {
   overflow: auto;
+  margin-top: 1em;
   .post {
     border:1px solid #eaeaea;
     border-radius: 5px;
@@ -9,7 +10,7 @@
     .title {
       border-bottom:1px solid #eaeaea;
       margin-bottom: 1em;
-      h4 { margin:0 0 5px; padding-bottom: .5em;}
+      h4 { margin:0 0 5px; padding-bottom: .5em; font-weight: bold;}
     }
     .content {
       margin-bottom: 1em;
@@ -20,7 +21,10 @@
   }
   .gallery {
     margin-bottom:1em;
-    .title { font-weight: bold;}
+    .title, h4.media-heading {
+      font-weight: bold !important;
+      margin-top:.5em;
+    }
     .content { color: #b3b3b3;}
     img {
       width:100%;
