@@ -1,4 +1,4 @@
-$("#comments_count_of_<%=@comment.commentable.id%>").html("(<%= @comment.commentable.comments(true).size %>)").hide().slideDown('fast').effect("highlight", {}, 1000);
+$("#comments_count_of_<%=@comment.commentable.id%>, #comment-count-of-rblog-<%=@comment.commentable.id%>").html("(<%= @comment.commentable.comments(true).size %>)").hide().slideDown('fast').effect("highlight", {}, 1000);
 $("#comment_<%=@comment.id %>").effect("highlight", {}, 500).stop().slideUp("fast");
 
 // Flash message
