@@ -233,5 +233,6 @@ ko:
       submit: 제출
       update: 갱신
   authored_html: "<small>%{who}님이 %{ago}전에 작성함.</small>"
+  updated_html: "<small title='%{time_ago}' data-toggle='tooltip'>%{ago}전</small>"
   shared_by: "이 글을 공유함 (%{who})"
 

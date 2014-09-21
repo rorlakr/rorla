@@ -3,7 +3,7 @@
   <h2 class='title'>
     <%= awesome_icon_shared(rblog.shared) %>
     <%= action_name == 'index' ? link_to(truncate(rblog.title, length: 100), rblog) : rblog.title %>
-    <small class="text-muted" title="댓글갯수" data-toggle='tooltip'>(<%= rblog.comments.size %>)</small>
+    <small id="comment-count-of-rblog-<%= rblog.id %>" class="text-muted" title="댓글갯수" data-toggle='tooltip'>(<%= rblog.comments(true).size %>)</small>
   </h2>
 
   <div class='authored_by'>
