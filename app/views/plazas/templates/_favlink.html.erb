@@ -1,16 +1,27 @@
+<% content_for :plaza_category do %>
+  <%= icon_label('folder-open', "Favlinks") %>
+<% end %>
+<% content_for :plaza_category do %>
+  <%= t("updated_html", time_ago: resource.updated_at, ago: time_ago_in_words(resource.updated_at)) %>
+<% end %>
+<% content_for :plaza_content do %>
 <div class='favlink'>
-  <div style="border-bottom:1px solid #eaeaea;padding-bottom:.5em;margin-bottom:.5em;">
-    <%= icon_label('folder-open', "Favlinks") %>
-  </div>
-  <div class='title'><h4><%= link_to icon_label('share-alt', resource.title), resource.linkurl, style:'display:block;' %></h4></div>
-  <div class='linkurl'><%= icon_label('link', resource.linkurl) %></div>
+  <div class='title'><h4><%= link_to icon_label('share-alt', resource.title), resource, style:'display:block;' %></h4></div>
+  <div class='linkurl'><%= icon_label('link', link_to(resource.linkurl, resource.linkurl)) %></div>
   <% if resource.bundlelink %>
     <div class='bundle'><%= icon_label('book', link_to(resource.bundlelink.try(:title), bundlelink_favlinks_path(resource.bundlelink))) %></div>
   <% end %>
-  <div class='author'><%= icon_label('user', t('authored_html', who: resource.writer.account_name, ago: time_ago_in_words(resource.created_at))) %></div>
-  <div class='actions'>
+</div>
+<% end %>
+
+<% content_for :plaza_author do %>
+  <%= icon_label('user', t('authored_html', who: resource.writer.account_name, ago: time_ago_in_words(resource.created_at))) %>
+<% end %>
+
+<% content_for :plaza_actions do %>
+
     <%= link_to icon_button('eye-open'), resource unless action_name == 'show' %>
     <%= link_to icon_button('edit'), edit_favlink_path(resource) %>
     <%= link_to icon_button('trash'), resource, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
-</div>
+
+<% end %>

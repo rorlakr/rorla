@@ -1,7 +1,6 @@
-<div class='plaza'>
+
 <% if plaza.postitable.class == Post %>
-  <%= render partial: "plazas/templates/#{plaza.postitable.bulletin.post_type}", locals: {post: plaza.postitable } %>
+  <%= render partial: "plazas/templates/#{plaza.postitable.bulletin.post_type}", locals: { post: plaza.postitable }, layout: 'plazas/templates/plaza_layout' %>
 <% else %>
-  <%= render partial: "plazas/templates/#{plaza.postitable.class.name.underscore}", locals: { resource: plaza.postitable } %>
+  <%= render partial: "plazas/templates/#{plaza.postitable.class.name.underscore}", locals: { resource: plaza.postitable }, layout: 'plazas/templates/plaza_layout' %>
 <% end %>
-</div>

@@ -1,0 +1,21 @@
+<div class="plaza panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <div class='category'>
+        <%= yield_content! :plaza_category %>
+        <%= yield_content! :plaza_updated %>
+      </div>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <div class="content">
+      <%= yield_content! :plaza_content %>
+    </div>
+    <div class="author">
+      <%= yield_content! :plaza_author %>
+    </div>
+    <div class="actions">
+      <%= yield_content! :plaza_actions %>&nbsp;
+    </div>
+  </div>
+</div>
