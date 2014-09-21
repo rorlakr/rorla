@@ -5,8 +5,10 @@
     padding: 1em;
     margin-bottom:1em;
     .title {
-      h4 { margin:0;}
-      background-color: #def1f8;
+      h4 {
+        font-weight: bold;
+      }
+      background-color: #e0f0f7;
       padding:.5em .5em;
       margin-bottom: .5em;
 

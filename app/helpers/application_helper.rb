@@ -108,4 +108,8 @@ module ApplicationHelper
   def authored_by(user, date)
     icon_label('user', t('authored_html', who: user.account_name, ago: time_ago_in_words(date)))
   end
+
+  def yield_content!(content_key)
+    view_flow.content.delete(content_key)
+  end
 end
