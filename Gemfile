@@ -1,9 +1,13 @@
 source 'https://rubygems.org'
 
+gem 'jquery-ui-rails'
 gem 'bootstrap-sass', '~> 3.1.1'
-gem 'pagedown-bootstrap-rails'
+gem 'bh', '~> 1.0'
+# gem 'pagedown-bootstrap-rails'
+gem 'pagedown-bootstrap-rails', github: 'rorlab/pagedown-bootstrap-rails'
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'google-code-prettify-rails', '~> 1.1.0'
+gem 'autosize-rails'
 gem 'sanitize'
 gem 'codemirror-rails'
 gem 'simple_form'
@@ -22,8 +26,9 @@ gem 'pageless-rails', github: 'rorlab/pageless-rails'
 gem 'rails_12factor', group: :production
 gem 'mysql2', group: :production
 gem 'excon', '~> 0.39.5'
-gem 'merit' 
+gem 'merit'
 gem 'ambry'
+gem 'clockwork', '~> 1.0.0'
 
 # json 파싱을 위함. 실제 파싱은 oj가 하지만 multi_json 인터페이스를 이용
 gem 'multi_json', '~> 1.10.1'

@@ -22,6 +22,7 @@ class CodebanksController < ApplicationController
   # GET /codebanks/1
   # GET /codebanks/1.json
   def show
+    @comment = @codebank.comments.build
   end
 
   # GET /codebanks/new
