@@ -13,7 +13,9 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require jquery-ui
 //= require jquery.pageless
+//= require jquery.autosize
 //= require bootstrap
 //= require pagedown_bootstrap
 //= require google-code-prettify-rails/prettify

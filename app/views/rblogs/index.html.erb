@@ -4,7 +4,7 @@
     <%#= "filtered by <strong style=color:red;>'<u>#{params[:search]}</u>'</strong>".html_safe if params[:search] %>
     <%#= "tagged with <span class='badge badge-default'>#{params[:tag]}</span>".html_safe if params[:tag] %>
     <%= params[:private] == '1' ? "<span class='badge badge-private'>private</span>".html_safe : (params[:whose] ? "<span class='badge badge-shared'>shared</span>".html_safe : "") %>
-    (<%= @rblogs.total_entries %>)
+    <span title='글갯수' data-toggle='tooltip'>(<%= @rblogs.total_entries %>)</span>
     <%= link_to icon('remove-circle'), rblogs_path if params[:whose] || params[:search] || params[:tag] %>
   </small>
 </h2>

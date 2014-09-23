@@ -131,13 +131,6 @@ ko:
       header:
         one: 한 개의 오류가 발생해 %{model}를 저장 할 수 없습니다
         other: ! '%{count}개의 오류가 발생해 %{model}를 저장 할 수 없습니다'
-  helpers:
-    select:
-      prompt: 선택해주세요
-    submit:
-      create: 등록
-      submit: 제출
-      update: 갱신
   number:
     currency:
       format:
@@ -195,4 +188,61 @@ ko:
       long: ! '%Y년 %m월 %d일, %H시 %M분 %S초 %Z'
       short: ! '%y/%m/%d %H:%M'
     pm: 오후
+
+  activerecord:
+      models:
+        user: 유저
+        codebank: 코드뱅크
+        rblog: 테크노트
+        question: 질문
+        answer: 답변
+        favlink: 즐겨찾기
+      attributes:
+        post:
+          title: 글제목
+          content: 글내용
+          writer: 작성자
+          published: 공개여부
+          picture: 사진
+          created_at: 생성일
+          updated_at: 갱신일
+          data_actions: 데이터작업
+        rblog:
+          title: 글제목
+          content: 글내용
+        codebank:
+          title: 스니펫제목
+          summary: 내용요약
+          writer: 작성자
+          snippet: 코드스니펫
+          shared: 공개허용
+          created_at: 생성일
+          data_actions: 데이터작업
+        favlink:
+          bundlelink_id: 링크분류
+          linkurl: 링크주소
+          title: 링크제목
+          description: 내용소개
+          tag_list: 태그 목록
+        question:
+          title: 제목
+          content: 내용
+        answer:
+          content: 답변
+  form_actions:
+    edit: 수정
+    delete: 삭제
+    show: 보기
+    back: 목록
+  helpers:
+    select:
+      prompt: 선택해주세요
+    submit:
+      create: 등록
+      submit: 제출
+      update: 갱신
+
   authored_html: "<small>%{who}님이 %{ago}전에 작성함.</small>"
+  updated_html: "<small title='%{time_ago}' data-toggle='tooltip'>%{ago}전</small>"
+  shared_by: "이 글을 공유함 (%{who})"
+
