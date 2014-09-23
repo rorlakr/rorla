@@ -1,18 +1,32 @@
 Rails.application.routes.draw do
-  resources :codebanks
 
-  resources :rblogs
+  root "welcome#index"
 
+  # Info routing
+  get 'info/about', as: :about
+  get 'info/howto', as: :howto
+  get 'info/copyright', as: :copyright
+  get 'info/security', as: :security
+  get 'info/contributor', as: :contributors
+
+  # Exception routing
   get '/404', to: 'errors#not_found'
   get '/500', to: 'errors#server_error'
 
-  root "welcome#index"
+  # Devise routing
   devise_for :users, controllers: { registrations: 'users/registrations' }
+
+  # Resources routing
+
+  concern :commentable do
+    resources :comments
+  end
+  resources :favlinks, :codebanks, :rblogs, :podcasts, concerns: :commentable
+
   resources :plazas
   resources :bundlelinks do
     resources :favlinks
   end
-
   resources :favlinks
   resources :bulletins do
     resources :posts
@@ -20,9 +34,9 @@ Rails.application.routes.draw do
   resources :questions do
     resources :answers
   end
-
   resources :podcasts, only: [ :index, :show ]
 
+  # API routing
   namespace :api do
     resources :questions do
       resources :answers

@@ -1,1 +1,5 @@
+<!-- @rblog 인스턴스 객채 뷰 렌더링 -->
 <%= render @rblog %>
+
+<!-- 댓글 위젯 -->
+<%= render partial: "comments/comments_widget", locals: { resource: @rblog} %>

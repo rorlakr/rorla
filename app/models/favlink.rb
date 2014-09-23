@@ -28,6 +28,7 @@ class Favlink < ActiveRecord::Base
   default_scope { order(created_at: :desc)}
 
   has_one :plaza, :as => :postitable, :dependent => :destroy
+  has_many :comments, as: :commentable, dependent: :destroy
   belongs_to :writer, class_name: 'User'
   belongs_to :bundlelink
 
@@ -38,6 +39,7 @@ class Favlink < ActiveRecord::Base
             :format => {:with => URI::regexp, :message => 'Incorrect URL format!'}
   after_save :save_capture_image, if: Proc.new { |link| link.linkurl_changed? && link.with_screen_shot }
   after_create :set_plaza_favlink
+  after_update :update_plaza_favlink, if: 'self.shared_changed?'
   after_destroy :delete_capture_image
 
   scope :shared, -> { Favlink.where(shared: true).order(created_at: :desc)}
@@ -66,6 +68,15 @@ class Favlink < ActiveRecord::Base
   end
 
   def set_plaza_favlink
-    self.create_plaza
+    self.create_plaza(visible: self.shared)
+  end
+
+  def update_plaza_favlink
+    if self.plaza.nil?
+      self.create_plaza(visible: self.shared)
+    else
+      self.plaza.visible = self.shared
+      self.plaza.save
+    end
   end
 end
