@@ -1,6 +1,7 @@
+<!-- @codebank 인스턴스 객채 뷰 렌더링 -->
 <div class='codebank'>
 
-  <h2 class='title'><%= @codebank.title %></h2>
+  <h2 class='title'><%= awesome_icon_shared_label @codebank.shared, @codebank.title %></h2>
 
   <div class='summary'>
     :
@@ -14,12 +15,15 @@
   <div class='code'><%= @codebank.snippet %></div>
 
   <div class='writer'>
-    <%= authored_by @codebank %>
+    <%= authored_by @codebank.writer, @codebank.created_at %>
   </div>
 
   <div class='form-actions'>
-    <%= link_to 'Edit', edit_codebank_path(@codebank), class: 'btn btn-default' if user_signed_in? and current_user.can_update? @codebank %>
-    <%= link_to 'Back', codebanks_path, class: 'btn btn-default' %>
+    <%= link_to t('form_actions.edit'), edit_codebank_path(@codebank), class: 'btn btn-default' if user_signed_in? and current_user.can_update? @codebank %>
+    <%= link_to t('form_actions.back'), codebanks_path, class: 'btn btn-default' %>
   </div>
 
 </div>
+
+<!-- 댓글 위젯 -->
+<%= render partial: "comments/comments_widget", locals: { resource: @codebank} %>

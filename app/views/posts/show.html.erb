@@ -2,26 +2,34 @@
 
 <table class='table'>
 <tr>
-  <th>Title</th>
+  <th class='col-sm-2 col-xs-3'><%=t('activerecord.attributes.post.title')%></th>
   <td><%= @post.title %></td>
 </tr>
 <tr>
-  <th>Content</th>
+  <th><%=t('activerecord.attributes.post.content')%></th>
   <td><%= simple_format @post.content %></td>
 </tr>
 <tr>
-  <th>Created at</th>
+  <th><%=t('activerecord.attributes.post.writer')%></th>
+  <td><%= @post.writer.email %></td>
+</tr>
+<tr>
+  <th><%=t('activerecord.attributes.post.created_at')%></th>
   <td><%= @post.created_at %></td>
 </tr>
 <% if @post.bulletin.post_type == "gallery" %>
   <tr>
-    <th>Picture</th>
-    <td><%= image_tag @post.picture_url %></td>
+    <th><%=t('activerecord.attributes.post.picture')%></th>
+    <td><%= image_tag @post.picture_url, width: '100%' %></td>
   </tr>
 <% end %>
+<tr>
+  <th><%=t('activerecord.attributes.post.published')%></th>
+  <td><%= icon_shared @post.published %></td>
+</tr>
 </table>
 
 <hr>
 
-<%= link_to 'Edit', edit_bulletin_post_path(@post.bulletin, @post), class: 'btn btn-default' %>
-<%= link_to 'Back', bulletin_posts_path, class: 'btn btn-default' %>
+<%= link_to t('form_actions.edit'), edit_bulletin_post_path(@post.bulletin, @post), class: 'btn btn-default' %>
+<%= link_to t('form_actions.back'), bulletin_posts_path, class: 'btn btn-default' %>

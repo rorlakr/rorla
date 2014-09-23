@@ -1,3 +1,22 @@
+<div class="modal fade " id="previewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modal-content-one">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">[Preview] <%= @rblog.title %></h4>
+      </div>
+      <div class="modal-body">
+
+        <div id='wmd-preview-content' class='wmd-preview'></div>
+        <div style='text-align:center;border-top:1px solid #eaeaea;padding-top:1em;'>
+          <p>- The End of rBlog -</p>
+          (Preview를 중단하려면 esc 키를 누르거나 우측 상단에 있는 &times; 표시를 클릭하세요.)
+        </div>
+      </div>
+    </div>
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <%= simple_form_for(@rblog) do |f| %>
   <%= f.error_notification %>
 
@@ -5,17 +24,17 @@
     <%= f.input :title, input_html: { class: 'form-control'} %>
   </div>
   <div class="form-group">
-    <%= f.input :content, :as => :pagedown, :input_html => { :preview => true, rows: 5} %>
+    <%= f.input :content, :as => :pagedown %>
   </div>
   <div class="checkbox">
-    <%= f.input :shared, as: :boolean, label: false, inline_label: "shared by #{ (!f.object.persisted? || current_user == @rblog.writer) ? "me (#{current_user.email})" : @rblog.email}"  %>
+    <%= f.input :shared, as: :boolean, label: false, inline_label: t('shared_by', who: (!f.object.persisted? || (current_user == @rblog.writer)) ? "본인:#{current_user.account_name}" : @rblog.writer.account_name ) %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit, class: 'btn btn-default'%>
-    <%= link_to 'Delete', @rblog, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' if @rblog.persisted? %>
-    <%= link_to 'Show', @rblog, class: 'btn btn-default' if action_name == 'edit' %>
-    <%= link_to 'Back', rblogs_path, class: 'btn btn-default' %>
+    <%= link_to t('form_actions.delete'), @rblog, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' if @rblog.persisted? %>
+    <%= link_to t('form_actions.show'), @rblog, class: 'btn btn-default' if action_name == 'edit' %>
+    <%= link_to t('form_actions.back'), rblogs_path, class: 'btn btn-default' %>
 
   </div>
 <% end %>
