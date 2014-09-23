@@ -8,7 +8,7 @@
         <p>: Ruby on Rails Korean Study Group with free offline lectures</p>
       <hr style="border:1px solid #850000;">
       <% if user_signed_in? %>
-          <p>Logged in with <%= current_user.email %>.</p>
+          <p>Hello, <em><%= current_user.account_name.capitalize! %></em></p>
             <%= link_to icon_label("log-out", "로그아웃"), destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-primary' %>
       <% else %>
             <%= link_to icon_label("log-in","로그인"), new_user_session_path, class: 'btn btn-primary' %>

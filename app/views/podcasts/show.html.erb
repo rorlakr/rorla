@@ -3,7 +3,7 @@
 <table class='table'>
   <tr>
     <th>Title</th>
-    <td><%= @podcast.title %></td>
+    <td><%= @podcast.title %> <small class='text-muted' title='댓글갯수' data-toggle='tooltip'><%= @podcast.comments(true).size %></small></td>
   </tr>
   <tr>
     <th>Author</th>
