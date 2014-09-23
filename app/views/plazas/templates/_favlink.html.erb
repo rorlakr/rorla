@@ -16,6 +16,7 @@
 
 <% content_for :plaza_author do %>
   <%= icon_label('user', t('authored_html', who: resource.writer.account_name, ago: time_ago_in_words(resource.created_at))) %>
+  <%= render partial: 'plazas/templates/comment_count', locals: {resource: resource } %>
 <% end %>
 
 <% content_for :plaza_actions do %>
