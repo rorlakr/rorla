@@ -13,7 +13,8 @@
   <div class='content'>
   <% if action_name == 'show' %>
     <div class='markdown-preview'>
-      <%= rblog.content.gsub(/<[^(>|\/)]*?script.*?>([^<]*?)<.*?\/script.*?>/, '') %>
+      <%= rblog.content %>
+      <%#= rblog.content.gsub(/<[^(>|\/)]*?script.*?>([^<]*?)<.*?\/script.*?>/, '') %>
     </div>
   <% else %>
     <%= truncate(Sanitize.clean(rblog.content, elements: %w(img table)), length: 200 )%>
