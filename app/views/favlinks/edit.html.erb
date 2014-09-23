@@ -1,8 +1,8 @@
-<h2>Editing Favlink</h2>
+<h2>Favlinks</h2>
 
 <%= render 'form' %>
 
 <hr>
 
-<%= link_to 'Show', @favlink, class: 'btn btn-default' %>
-<%= link_to 'Back', favlinks_path, class: 'btn btn-default' %>
+<%= link_to t('form_actions.show'), @favlink, class: 'btn btn-default' %>
+<%= link_to t('form_actions.back'), favlinks_path, class: 'btn btn-default' %>

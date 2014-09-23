@@ -3,15 +3,15 @@
 <div id='posts'>
 <% @posts.each do | post | %>
     <div class='post'>
-      <div class='title'><h4><%= post.title %> <small>- <%= t('authored_html', who: post.writer.email, ago: time_ago_in_words(post.created_at)) %></small></h4></div>
+      <div class='title'><h4><%= post.title %> <small>- <%= t('authored_html', who: post.writer.account_name, ago: time_ago_in_words(post.created_at)) %></small></h4></div>
       <div class='content'>
         <%= truncate post.content, length: 100 %>
       </div>
       <div class='actions'>
-        <%= link_to 'Show', [post.bulletin, post], class:'btn btn-sm btn-default' %>
+        <%= link_to t('form_actions.show'), [post.bulletin, post], class:'btn btn-sm btn-default' %>
         <% if user_signed_in? %>
-        <%= link_to 'Edit', edit_bulletin_post_path(post.bulletin, post), class:'btn btn-sm btn-default' if current_user.can_update? post %>
-        <%= link_to 'Destroy', [post.bulletin, post], method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-sm btn-default' if current_user.can_delete? post %>
+        <%= link_to t('form_actions.edit'), edit_bulletin_post_path(post.bulletin, post), class:'btn btn-sm btn-default' if current_user.can_update? post %>
+        <%= link_to t('form_actions.delete'), [post.bulletin, post], method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-sm btn-danger' if current_user.can_delete? post %>
         <% end %>
       </div>
     </div>
