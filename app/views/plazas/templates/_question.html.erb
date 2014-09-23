@@ -18,6 +18,7 @@
 
 <% content_for :plaza_author do %>
   <%= t('authored_html', who: resource.user.account_name, ago: time_ago_in_words(resource.created_at)) %>
+  <%= render partial: 'plazas/templates/comment_count', locals: {resource: resource } %>
 <% end %>
 
 <% content_for :plaza_actions do %>

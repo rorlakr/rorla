@@ -19,8 +19,8 @@
   </div>
 
   <div class='form-actions'>
-    <%= link_to 'Edit', edit_codebank_path(@codebank), class: 'btn btn-default' if user_signed_in? and current_user.can_update? @codebank %>
-    <%= link_to 'Back', codebanks_path, class: 'btn btn-default' %>
+    <%= link_to t('form_actions.edit'), edit_codebank_path(@codebank), class: 'btn btn-default' if user_signed_in? and current_user.can_update? @codebank %>
+    <%= link_to t('form_actions.back'), codebanks_path, class: 'btn btn-default' %>
   </div>
 
 </div>

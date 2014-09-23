@@ -201,14 +201,23 @@ ko:
         post:
           title: 글제목
           content: 글내용
+          writer: 작성자
+          published: 공개여부
+          picture: 사진
+          created_at: 생성일
+          updated_at: 갱신일
+          data_actions: 데이터작업
         rblog:
           title: 글제목
           content: 글내용
         codebank:
           title: 스니펫제목
           summary: 내용요약
+          writer: 작성자
           snippet: 코드스니펫
           shared: 공개허용
+          created_at: 생성일
+          data_actions: 데이터작업
         favlink:
           bundlelink_id: 링크분류
           linkurl: 링크주소
@@ -232,6 +241,7 @@ ko:
       create: 등록
       submit: 제출
       update: 갱신
+
   authored_html: "<small>%{who}님이 %{ago}전에 작성함.</small>"
   updated_html: "<small title='%{time_ago}' data-toggle='tooltip'>%{ago}전</small>"
   shared_by: "이 글을 공유함 (%{who})"
