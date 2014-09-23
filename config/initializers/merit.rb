@@ -79,6 +79,36 @@ badge_id = 0
   name: '위대한 인도자',
   description: "총 응답이 30개 이상인 우리들의 위대한 인도자",
   custom_fields: { difficulty: :gold, image_url: 'http://dummyimage.com/100x100/C98910/fff&text=' }  
+}, {
+  id: (badge_id = badge_id+1),
+  name: '지식 공유의 참맛',
+  description: "지식공유의 참맛을 느껴 보세요.",
+  custom_fields: { difficulty: :bronze, image_url: 'http://dummyimage.com/100x100/965a38/fff&text=' }  
+}, {
+  id: (badge_id = badge_id+1),
+  name: '지식 공유의 기쁨',
+  description: "지식을 공유하면 기쁨이 배가 됩니다.",
+  custom_fields: { difficulty: :silver, image_url: 'http://dummyimage.com/100x100/A8A8A8/fff&text=' }  
+}, {
+  id: (badge_id = badge_id+1),
+  name: '지식 공유의 참사랑',
+  description: "이제 참된 사랑으로 세상을 공유해 보세요.",
+  custom_fields: { difficulty: :gold, image_url: 'http://dummyimage.com/100x100/C98910/fff&text=' }  
+}, {
+  id: (badge_id = badge_id+1),
+  name: '신규계좌 개설',
+  description: "처음 코드를 공유한 유저",
+  custom_fields: { difficulty: :bronze, image_url: 'http://dummyimage.com/100x100/965a38/fff&text=' }  
+}, {
+  id: (badge_id = badge_id+1),
+  name: '실버계좌',
+  description: "코드를 20개 이상 공유한 유저",
+  custom_fields: { difficulty: :silver, image_url: 'http://dummyimage.com/100x100/A8A8A8/fff&text=' }  
+}, {
+  id: (badge_id = badge_id+1),
+  name: '골드계좌',
+  description: "코드를 50개 이상 공유한 유저",
+  custom_fields: { difficulty: :gold, image_url: 'http://dummyimage.com/100x100/C98910/fff&text=' }  
 }].each do |attrs|
   Merit::Badge.create! attrs
 end

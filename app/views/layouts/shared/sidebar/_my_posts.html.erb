@@ -1,0 +1,15 @@
+<% if user_signed_in? %>
+  <div class='row'>
+    <div class='col-md-12'>
+
+      <p>My Posts <small>(<%= Post.my_posts(current_user.id).size %>)</small></p>
+
+      <ul style="list-style-type: none;padding-left:1.5em;">
+      <% Post.my_posts(current_user).each do |post| %>
+        <li><%= awesome_icon_shared(post.published).html_safe %> <%= link_to "#{post.bulletin.title} / #{truncate(post.title, length: 20)}", [post.bulletin, post] %></li>
+      <% end %>
+      </ul>
+
+    </div>
+  </div>
+<% end %>

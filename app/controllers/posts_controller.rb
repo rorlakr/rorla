@@ -1,6 +1,4 @@
 class PostsController < ApplicationController
-  include MeritHelper
-  before_action :resource_refresh
   before_action :authenticate_user!, except: [ :index, :show ]
   before_action :set_bulletin
   before_action :set_post, only: [:show, :edit, :update, :destroy]
@@ -87,6 +85,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :content, :picture, :picture_cache)
+      params.require(:post).permit(:title, :content, :picture, :picture_cache, :published)
     end
 end

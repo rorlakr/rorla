@@ -3,12 +3,21 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
+
+  # rblog-content 필드 입력창의 autosize 적용
+  $ta = $('.rblog_content textarea')
+  $ta.autosize()
+  # force a reflow before the class gets applied
+  document.body.offsetWidth
+  $ta.addClass('textarea-transition')
+
+
   $('textarea.wmd-input').each (i, input) ->
     attr = $(input).attr('id').split('wmd-input')[1]
     converter = new Markdown.Converter()
     Markdown.Extra.init(converter)
     converter.hooks.chain "postConversion", (text) ->
-      text = "<div style='border-bottom:1px dotted #800000;font-weight:bolder;color:#800000;margin-bottom: .5em;'>[Markdown Preview]</div>\n" + text
+      # text = "<div style='border-bottom:1px dotted #800000;font-weight:bolder;color:#800000;margin-bottom: .5em;'>[Markdown Preview]</div>\n" + text
       text.replace /<pre>/g, "<pre class='prettyprint linenums'>"
     help =
       handler: () ->

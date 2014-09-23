@@ -21,7 +21,13 @@ module Merit
       end      
       score 5, to: :user, on: 'answers#create' do |answer|
         answer.content.present?
-      end            
+      end           
+      score 15, to: :user, on: 'rblogs#create' do |rblog|
+        rblog.title.present?
+      end               
+      score 5, to: :user, on: 'codebanks#create' do |codebank|
+        codebank.title.present?
+      end           
       # score 10, :on => 'users#update' do
       #   user.name.present?
       # end

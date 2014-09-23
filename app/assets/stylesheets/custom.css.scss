@@ -61,8 +61,9 @@ h2 > span.glyphicon {
 }
 .wmd-preview, .markdown-preview {
   margin-top: 0;
-  background-color: #f7f7f7;
-  border-color: #eaeaea;
+  background-color: white !important;
+  border:0 !important;
+  // border-color: #eaeaea;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.00);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.00);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.00);
@@ -72,30 +73,35 @@ h2 > span.glyphicon {
     &:first-child { margin-top: .2em;}
   }
   h1 { font-weight: bolder;}
-  pre { background-color: white;}
+  pre { background-color: #f5f5f5 !important;}
   table {
     @extend .table;
     @extend .table-bordered;
-    background-color: white;
+    // background-color: white;
   }
   pre.prettyprint {
-    padding:1em;
+    padding:.2em;
     border-color: #ececec;
   }
-
+  ol.linenums {
+    background-color: #eaeaea;
+    padding-left:4em !important;
+  }
 }
 
 // rBlog "Show" 액션에서 마크다운 문서 보는 div 클래스
 .markdown-preview {
   background-color: transparent;
-  pre {background-color: #fdfdfd;}
 }
 
 // 구글 prettify 를 이용하여 syntax highlighting 할 때 좌측 코드라인을 5 단위로 표시하지 않고,
 // 1,2,3,4,와 같이 연번호로 보이게 하기
-li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8, li.L9 {
+li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
     list-style-type: decimal !important;
+    padding-left:.5em;
 }
+li.L0,li.L2,li.L4,li.L6,li.L8 { background-color: white !important; }
+li.L1,li.L3,li.L5,li.L7,li.L9 { background-color: #f6f6f6 !important; }
 
 
 // CodeMirror for Editing
@@ -113,3 +119,63 @@ li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8, li.L9 {
 .code .CodeMirror {
   border-radius: 0;
 }
+
+
+// fullscreen 다이어로그
+.modal-dialog {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin:0;
+  div, textarea, h4 {
+    color: #666666 !important;
+  }
+}
+.modal-content {
+      height: 100%;
+      border-radius: 0;
+      color:white;
+      overflow:auto;
+}
+
+.wmd-preview {
+  max-height: 100% !important;
+  margin-bottom: 2em;
+}
+
+// Preview button background color
+#wmd-preview-button-content {
+  background-color: #5ed559;
+  &:hover {
+    background-color: #5cb85c;
+  }
+}
+
+
+// Bottom Menu
+.bottom_menu {
+  border-top: 1px solid #eaeaea;
+  margin:4em 0 0;
+  padding:2em 0 0;
+  .menu_title {
+    font-weight:bold;
+    font-size: 1.3em;
+  }
+  ul.section {
+    // display: block;
+    // float: left;
+    margin:1em 0 2em;
+    padding: 1em 0 1em 3em;
+    border-left: 1px solid #eaeaea;
+    border-top: 1px solid #eaeaea;
+　　　list-style-type: none;
+    li {
+    　　　display: inline;
+      line-height: 1.5em;
+    }
+  }
+
+}
+
+h2.view_title { margin:1em 0; }
+
