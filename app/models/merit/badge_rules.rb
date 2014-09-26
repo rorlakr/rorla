@@ -49,6 +49,25 @@ module Merit
       grant_on 'answers#create', badge: '위대한 인도자', model_name: 'Answer' do |answer|
         answer.user.answers.count == 30
       end            
+      grant_on 'rblogs#create', badge: '지식 공유의 참맛', model_name: 'Rblog' do |rblog|
+        rblog.writer.rblogs.count == 1
+      end
+      grant_on 'rblogs#create', badge: '지식 공유의 기쁨', model_name: 'Rblog' do |rblog|
+        rblog.writer.rblogs.count == 5
+      end
+      grant_on 'rblogs#create', badge: '지식 공유의 참사랑', model_name: 'Rblog' do |rblog|
+        rblog.writer.rblogs.count == 10
+      end  
+      grant_on 'codebanks#create', badge: '신규계좌 개설', model_name: 'Answer' do |codebank|
+        codebank.writer.codebanks.count == 1
+      end
+      grant_on 'codebanks#create', badge: '실버계좌', model_name: 'Answer' do |codebank|
+        codebank.writer.codebanks.count == 20
+      end
+      grant_on 'codebanks#create', badge: '골드계좌', model_name: 'Answer' do |codebank|
+        codebank.writer.codebanks.count == 50
+      end  
+                  
       # grant_on 'comments#create', badge: '호기심이 많은', model_name: 'Question' do |question|
       #   question.user.comments.count == 2
       # end   
