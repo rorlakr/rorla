@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'jquery-ui-rails'
-gem 'bootstrap-sass', '~> 3.1.1'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 gem 'bh', '~> 1.0'
 # gem 'pagedown-bootstrap-rails'
 gem 'pagedown-bootstrap-rails', github: 'rorlab/pagedown-bootstrap-rails'
