@@ -16,7 +16,7 @@
 //= require jquery-ui
 //= require jquery.pageless
 //= require jquery.autosize
-//= require bootstrap
+//= require bootstrap-sprockets
 //= require pagedown_bootstrap
 //= require google-code-prettify-rails/prettify
 //= require codemirror

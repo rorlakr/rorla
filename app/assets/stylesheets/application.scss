@@ -28,6 +28,8 @@ $jumbotron-padding: 20px;
 .spacer10 { height: 10em;}
 
 @import 'jquery-ui';
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import 'bootstrap';
 @import "pagedown_bootstrap";
 @import "font-awesome-sprockets";
