@@ -60,6 +60,7 @@ h2 > span.glyphicon {
   border-color: #eaeaea;
 }
 .wmd-preview, .markdown-preview {
+  img { max-width: 100% !important; }
   margin-top: 0;
   background-color: white !important;
   border:0 !important;
