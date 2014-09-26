@@ -7,4 +7,7 @@ module Clockwork
   every(1.day, 'podcasts.grap') { 
     puts `bin/rake podcasts:grap`
   }
+  every(1.hour, 'merit.hourly_cron_job') { 
+    puts `bin/rake merit.hourly_cron_job`
+  }
 end
