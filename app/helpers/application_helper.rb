@@ -112,4 +112,14 @@ module ApplicationHelper
   def yield_content!(content_key)
     view_flow.content.delete(content_key)
   end
+
+  def alert_box(kind, message)
+    content_tag :div, role: "alert", class: "alert alert-#{kind} alert-dismissible" do
+      content_tag :button, type: 'button', class: 'close', data: {dismiss: 'alert'} do
+        content_tag(:span, raw('&times;'), 'aria-hidden' => 'true') +
+        content_tag(:span, 'Close', class:'sr-only')
+      end.concat message
+    end
+  end
+
 end
