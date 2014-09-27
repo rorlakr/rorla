@@ -12,36 +12,10 @@
 
 <h4>답변 목록</h4>
 
-<table class="table table-hover">
-  <tbody>
-    <% @question.answers.each do |answer| %>
-      <tr class="answer-<%= answer.id %>">
-        <td><%= answer.useful_users.count %></td>
-        <td>
-          <% if answer.is_owner?(current_user) %>
-            <%#= link_to answer.content, question_answer_path(@question, answer) %>
-            <%= answer.content %>
-          <% else %>
-            <%= answer.content %>
-          <% end %>
-          <div class='writer'>
-    <%= icon_label('user', t('authored_html', who: answer.answerer, ago: time_ago_in_words(answer.created_at))) %>
-  </div>
-        </td>
-        <td>
-          <% unless answer.useful?(current_user) %>
-            <%= button_to '추천', question_answer_path(@question, answer, useful: true), method: :patch, class: "btn btn-default" %></td>
-          <% else %>
-            <%= button_to '추천취소', question_answer_path(@question, answer, useful: false), method: :patch, class: "btn btn-default" %></td>
-          <% end %>
-        <td>
-          <% if answer.is_owner?(current_user) %>
-            <%= link_to '삭제', question_answer_path(@question, answer), method: :delete, data: {confirm: "삭제하시겠습니까?"}, class: "btn btn-danger" %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
+<table class="table">
+  <tbody id="q_<%=@question.id %>_answers" >
+    <%= render @question.answers  %>
   </tbody>
 </table>
 
-<%= render 'form_answer' %>
+<%= render 'answers/form' %>
