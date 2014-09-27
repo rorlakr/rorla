@@ -1,4 +1,4 @@
-<%= simple_form_for([@question, @answer]) do |f| %>
+<%= simple_form_for([@question, @answer], remote: true) do |f| %>
   <% if @answer.errors.any? %>
     <div id="error_explanation">
       <ul>

@@ -1,0 +1,2 @@
+$("#answer-<%=@answer.id %>").replaceWith("<%=j render @answer %>");
+$("#answer-<%=@answer.id %>").effect("highlight", {color: "<%= @answer.useful?(current_user) ? "#fffdbd": "#ffc8bad" %>"}, 1000);
