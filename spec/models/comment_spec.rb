@@ -43,8 +43,8 @@ describe Comment do
     it "> Content가 없으면 유효하지 않다." do
       expect(build(:comment)).to validate_presence_of :content
     end
-    it "> Content가 0글자 이상 10000글자 이하이어야 한다." do
-      should ensure_length_of(:content).is_at_least(0).is_at_most(10000)
+    it "> Content가 0글자 이상 255글자 이하이어야 한다." do
+      should ensure_length_of(:content).is_at_most(255)
     end
   end
 
