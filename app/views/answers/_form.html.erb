@@ -12,8 +12,10 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.input :content, label: t("labels.answer.content"), input_html: {class: 'form-control', rows: '3'} %>
+    <%= f.input :content, label: t("labels.answer.content"), placeholder: 'Add an answer.', input_html: {class: 'form-control', rows: '3'} %>
   </div>
+
+  <div id="q_<%= @question.id %>_answer_form_error_message" class='answer_form_error_message'></div>
 
   <%= f.button :submit, '답변등록', class: "btn btn-primary" %>
 <% end %>

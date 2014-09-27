@@ -9,7 +9,7 @@ class AnswersController < ApplicationController
 
     # redirect_to question_path(@question)
   rescue ActiveRecord::RecordInvalid
-    errors = @answer.errors.messages.map { |field, messages|
+    @errors = @answer.errors.messages.map { |field, messages|
       messages.map { |message| [t("labels.answer.#{field}"), message].join }
     }.flatten
 
