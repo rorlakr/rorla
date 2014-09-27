@@ -4,7 +4,8 @@ $("#answer-<%=@answer.id %>").hide().slideDown('fast').effect("highlight", {}, 1
 $("#new_answer")[0].reset();
 <% else %>
 // Flash message
-  $("#q_<%= @question.id %>_answer_form_error_message").html("<span class='flash_alert'><%= @errors.join(', ')%></span>").css('display', 'none').effect("highlight", {}, 1000).fadeIn('fast').delay(1000).slideUp('fast');
+  // $("#q_<%= @question.id %>_answer_form_error_message").html("<span class='flash_alert'><%= @errors.join(', ')%></span>").css('display', 'none').effect("highlight", {}, 1000).fadeIn('fast').delay(1000).slideUp('fast');
+  $("#q_<%= @question.id %>_answer_form_error_message").html("<%=j alert_box('danger', @errors.join(', ')) %>").css('display', 'none').effect("highlight", {}, 1000).fadeIn('fast').delay(1000).slideUp('fast');
 <% end %>
 
 <% flash.clear %>
