@@ -7,27 +7,27 @@ class AnswersController < ApplicationController
     @answer.user = current_user
     @answer.save!
 
-    redirect_to question_path(@question)
+    # redirect_to question_path(@question)
   rescue ActiveRecord::RecordInvalid
     errors = @answer.errors.messages.map { |field, messages|
       messages.map { |message| [t("labels.answer.#{field}"), message].join }
     }.flatten
 
-    redirect_to question_path(@question), flash: { error: errors }
+    # redirect_to question_path(@question), flash: { error: errors }
   end
 
   def update
     @answer.useful!(current_user, params[:useful] == "true")
 
-    redirect_to question_path(@question)
+    # redirect_to question_path(@question)
   rescue ActiveRecord::RecordInvalid
     #TODO: 에러 처리
-    redirect_to question_path(@question)
+    # redirect_to question_path(@question)
   end
 
   def destroy
     @answer.destroy
-    redirect_to question_path(@question)
+    # redirect_to question_path(@question)
   end
 
   private
