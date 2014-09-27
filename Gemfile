@@ -42,6 +42,7 @@ group :development do
   gem 'rails-erd'
   gem 'docker_alias', github: 'rorlab/docker_alias'
   # gem 'docker_alias', '~> 0.0.2'
+  gem 'terminal-notifier-guard'
 end
 
 group :development, :test do
