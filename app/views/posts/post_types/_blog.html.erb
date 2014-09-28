@@ -3,7 +3,7 @@
 <div id='posts'>
 <% @posts.each do | post | %>
     <div class='post'>
-      <div class='title'><h4><%= post.title %> <small>- <%= t('authored_html', who: post.writer.account_name, ago: time_ago_in_words(post.created_at)) %></small></h4></div>
+      <div class='title'><h4><%= post.title %> <small>- <%= copyright_with_tooltip(post, post.writer.email) %></small></h4></div>
       <div class='content'>
         <%= truncate post.content, length: 100 %>
       </div>
