@@ -1,14 +1,6 @@
 <%= simple_form_for(@question) do |f| %>
   <% if @question.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-      <% @question.errors.messages.each do |field, messages| %>
-        <% messages.each do |message| %>
-          <li><%= t("labels.question.#{field}") %><%= message %></li>
-        <% end %>
-      <% end %>
-      </ul>
-    </div>
+    <%= alert_box_multiple('danger', "문제가 발생했습니다:", f.object.errors.messages) %>
   <% end %>
 
   <div class="form-group">
