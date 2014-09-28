@@ -15,7 +15,7 @@
   <div class='code'><%= @codebank.snippet %></div>
 
   <div class='writer'>
-    <%= authored_by @codebank.writer, @codebank.created_at %>
+    <%= copyright_with_tooltip @codebank, @codebank.writer.email %>
   </div>
 
   <div class='form-actions'>

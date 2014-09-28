@@ -122,4 +122,29 @@ module ApplicationHelper
     end
   end
 
+  def alert_box_multiple(kind, title, messages)
+    content_tag :div, role: "alert", class: "alert alert-#{kind} alert-dismissible" do
+      concat(content_tag(:button, type: 'button', class: 'close', data: {dismiss: 'alert'}) do
+        content_tag(:span, raw('&times;'), 'aria-hidden' => 'true') +
+        content_tag(:span, 'Close', class:'sr-only')
+      end)
+      concat(content_tag(:h4, title))
+      concat(content_tag(:ul) do
+        messages.map do |message|
+          content_tag :li, message
+        end.join('').html_safe
+      end)
+    end
+  end
+
+  def account_with_tooltip(email)
+    content_tag :span, title: email, data:{toggle:'tooltip'} do
+      content_tag(:i, content_tag(:strong, email.split('@').first.capitalize)).html_safe
+    end
+  end
+
+  def copyright_with_tooltip(resource, email)
+    icon_label('user', t('authored_html', who: account_with_tooltip(email), ago: time_ago_in_words(resource.created_at)))
+  end
+
 end
