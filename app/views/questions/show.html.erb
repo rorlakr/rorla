@@ -1,6 +1,8 @@
 <h2><%= @question.title %></h2>
 <div class="question-content"><%= simple_format @question.content %></div>
-<div class="question-questioner">by <%= @question.questioner %></div>
+<div class="question-questioner">
+  by <%= account_with_tooltip @question.questioner %>
+</div>
 
 <%= link_to '목록보기', questions_path, class: 'btn btn-default' %>
 <% if @question.is_owner?(current_user) %>
