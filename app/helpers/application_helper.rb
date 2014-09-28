@@ -130,12 +130,16 @@ module ApplicationHelper
       end)
       concat(content_tag(:h4, title))
       concat(content_tag(:ul) do
-        messages.map do |message|
-          content_tag :li, message
+        messages.map do |field, messages|
+          messages.map do |message|
+            content_tag :li, t("activerecord.attributes.question.#{field}") + message
+          end.join('').html_safe
         end.join('').html_safe
       end)
     end
   end
+
+
 
   def account_with_tooltip(email)
     content_tag :span, title: email, data:{toggle:'tooltip'} do
