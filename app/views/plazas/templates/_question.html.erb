@@ -17,7 +17,7 @@
 <% end %>
 
 <% content_for :plaza_author do %>
-  <%= t('authored_html', who: resource.user.account_name, ago: time_ago_in_words(resource.created_at)) %>
+  <%= copyright_with_tooltip(resource, resource.questioner) %>
   <%= render partial: 'plazas/templates/comment_count', locals: {resource: resource } %>
 <% end %>
 
@@ -28,5 +28,3 @@
     <%= link_to icon_button('trash'), resource, method: :delete, data: { confirm: 'Are you sure?' } if current_user.can_delete? resource %>
   <% end %>
 <% end %>
-
-

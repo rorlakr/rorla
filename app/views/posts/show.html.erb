@@ -11,7 +11,7 @@
 </tr>
 <tr>
   <th><%=t('activerecord.attributes.post.writer')%></th>
-  <td><%= @post.writer.email %></td>
+  <td><%= account_with_tooltip @post.writer.email %></td>
 </tr>
 <tr>
   <th><%=t('activerecord.attributes.post.created_at')%></th>
