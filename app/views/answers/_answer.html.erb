@@ -8,7 +8,7 @@
       <%= answer.content %>
     <% end %>
     <div class='writer'>
-      <%= icon_label('user', t('authored_html', who: answer.answerer, ago: time_ago_in_words(answer.created_at))) %>
+      <%= icon_label('user', t('authored_html', who: account_with_tooltip(answer.answerer), ago: time_ago_in_words(answer.created_at))) %>
     </div>
   </td>
   <td>

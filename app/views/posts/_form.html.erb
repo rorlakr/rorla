@@ -1,5 +1,6 @@
 <%= simple_form_for([@post.bulletin, @post]) do |f| %>
-  <%= f.error_notification %>
+  <%#= f.error_notification %>
+  <%= alert_box_multiple('danger', "문제가 발생했습니다:", f.object.errors.full_messages) %>
 
   <div class="form-group">
     <%= f.input :title, input_html:{ class: 'form-control'} %>
