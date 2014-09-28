@@ -3,7 +3,7 @@
     <%= comment.content %>
   </div>
   <div class='authored_by text-muted'>
-    <%= authored_by comment.writer, comment.created_at %>
+    <%= copyright_with_tooltip comment, comment.writer.email %>
     <%= link_to icon('remove-circle'), [comment.commentable, comment], method: :delete, data: { confirm: "Are you sure?" }, remote: true if user_signed_in? && current_user.can_delete?(comment) %>
   </div>
 </div>

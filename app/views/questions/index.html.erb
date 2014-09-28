@@ -16,7 +16,7 @@
           <%= link_to question.title, question %>
           <span class="badge"><%= question.no_answers %></span>
         </td>
-        <td class="questioner"><span title="<%= question.questioner %>" data-toggle="tooltip"><%= question.user.account_name %></span></td>
+        <td class="questioner"><%= account_with_tooltip question.questioner %></td>
         <td><span title="<%= question.created_at %>" data-toggle="tooltip"><%= distance_of_time_in_words_to_now(question.created_at) %> 전</span></td>
       </tr>
     <% end %>

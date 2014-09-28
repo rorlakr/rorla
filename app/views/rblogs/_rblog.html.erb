@@ -7,7 +7,7 @@
   </h2>
 
   <div class='authored_by'>
-    <%= authored_by rblog.writer, rblog.created_at %>
+    <%= copyright_with_tooltip rblog, rblog.writer.email %>
   </div>
 
   <div class='content'>
@@ -31,4 +31,3 @@
     <%= link_to t('form_actions.back'), rblogs_path, class: 'btn btn-default' if action_name == 'show' %>
   </div>
 </div>
-
