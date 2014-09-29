@@ -8,5 +8,6 @@ class PodcastsController < ApplicationController
   def show
     @podcast = Podcast.find(params[:id])
     @comment = @podcast.comments.build
+    impressionist(@podcast, "message...")
   end
 end
