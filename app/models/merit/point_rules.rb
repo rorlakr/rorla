@@ -11,23 +11,23 @@
 module Merit
   class PointRules
     include Merit::PointRulesMethods
-    
+
     def initialize
       score 10, to: :writer, on: 'posts#create' do |post|
         post.title.present?
       end
       score 5, to: :user, on: 'questions#create' do |question|
         question.title.present?
-      end      
+      end
       score 5, to: :user, on: 'answers#create' do |answer|
         answer.content.present?
-      end           
-      score 15, to: :user, on: 'rblogs#create' do |rblog|
+      end
+      score 15, to: :writer, on: 'rblogs#create' do |rblog|
         rblog.title.present?
-      end               
-      score 5, to: :user, on: 'codebanks#create' do |codebank|
+      end
+      score 5, to: :writer, on: 'codebanks#create' do |codebank|
         codebank.title.present?
-      end           
+      end
       # score 10, :on => 'users#update' do
       #   user.name.present?
       # end
