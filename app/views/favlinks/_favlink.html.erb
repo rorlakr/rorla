@@ -9,6 +9,7 @@
   </div>
   <div class='writer'>
     <%= icon_label('user', t('authored_html', who: account_with_tooltip(favlink.writer.email), ago: time_ago_in_words(favlink.created_at))) %>
+    <%= hit_count(favlink.impressionist_count) %>
   </div>
   <div class='actions'>
     <%= link_to icon_button('eye-open'), params[:bundlelink_id] ? [favlink.bundlelink, favlink] : favlink unless action_name == 'show' %>

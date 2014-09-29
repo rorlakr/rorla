@@ -139,8 +139,6 @@ module ApplicationHelper
     end
   end
 
-
-
   def account_with_tooltip(email)
     content_tag :span, title: email, data:{toggle:'tooltip'} do
       content_tag(:i, content_tag(:strong, email.split('@').first.capitalize)).html_safe
@@ -160,6 +158,12 @@ module ApplicationHelper
       concat content_tag(:strong, title)
       concat " "
       concat message
+    end
+  end
+
+  def hit_count(count)
+    content_tag(:span, title:'hit count', data:{toggle:'tooltip'}) do
+      content_tag(:i, awesome_icon_label('bullseye', count), style:'font-weight:bold;')
     end
   end
 

@@ -17,6 +17,9 @@ class Codebank < ActiveRecord::Base
   after_create :set_plaza_codebank
   after_update :update_plaza_codebank, if: 'self.shared_changed?'
 
+  # Model Impressionable
+  is_impressionable
+
   private
 
   def set_plaza_codebank
