@@ -155,7 +155,11 @@ GEM
       guard (~> 2.1)
       rspec (>= 2.14, < 4.0)
     hike (1.2.3)
+    httpclient (2.4.0)
     i18n (0.6.11)
+    impressionist (1.5.1)
+      httpclient (~> 2.2)
+      nokogiri (~> 1.5)
     jbuilder (2.1.0)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -357,6 +361,7 @@ DEPENDENCIES
   google-code-prettify-rails (~> 1.1.0)
   guard (~> 2)
   guard-rspec
+  impressionist
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks

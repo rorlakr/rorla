@@ -23,6 +23,7 @@ class CodebanksController < ApplicationController
   # GET /codebanks/1.json
   def show
     @comment = @codebank.comments.build
+    impressionist(@codebank, "message...")
   end
 
   # GET /codebanks/new
