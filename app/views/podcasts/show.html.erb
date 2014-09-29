@@ -3,11 +3,12 @@
 <table class='table'>
   <tr>
     <th>Title</th>
-    <td><%= @podcast.title %> <small class='text-muted' title='댓글갯수' data-toggle='tooltip'><%= @podcast.comments(true).size %></small></td>
+    <td><%= @podcast.title %></td>
   </tr>
   <tr>
     <th>Author</th>
     <td><%= icon_label('user', @podcast.author) %>
+        <%= comment_count(@podcast.comments(true).size) %>
         <%= hit_count(@podcast.impressionist_count) %>
     </td>
   </tr>

@@ -1,23 +1,14 @@
 <%= render partial: "posts/post_types/bulletin_title" %>
 
-<div id="posts">
+<div id="posts" class='media-list'>
   <% @posts.each do | post | %>
-    <div class='col-lg-3 col-md-3 col-xs-6  picture'>
-      <div class='gallery'>
-        <div class='image'>
-          <%= link_to(image_tag(post.picture_url(:thumb)), [post.bulletin, post]) if post.picture? %>
-          <div class='content'>
-            <span class='hidden-xs'><%= truncate post.content %></span>
-            <span class='actions'>
-              <%= link_to "<span class='glyphicon glyphicon-eye-open'></span>".html_safe, [post.bulletin, post] %>
-              <% if user_signed_in? %>
-                <%= link_to "<span class='glyphicon glyphicon-edit'></span>".html_safe, edit_bulletin_post_path(post.bulletin, post) if current_user.can_update? post %>
-                <%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, [post.bulletin, post], method: :delete, data: { confirm: 'Are you sure?' } if current_user.can_delete? post %>
-              <% end %>
-            </span>
-          </div>
-        </div>
-        <div class='title'><%= post.title %></div>
+    <div class="media">
+      <%= link_to(image_tag(post.picture_url(:thumb), class:"media-object", style:'width:5em;'),[post.bulletin, post], class:'pull-left') if post.picture? %>
+      <div class="media-body">
+        <h4 class="media-heading"><%= post.title %></h4>
+        <div class="media-content"><%= truncate post.content %></div>
+        <%= copyright_with_tooltip post, post.writer.email %>
+        <%= hit_count(post.impressionist_count) %>
       </div>
     </div>
   <% end %>
