@@ -18,7 +18,9 @@
 </div><!-- /.modal -->
 
 <%= simple_form_for(@rblog) do |f| %>
-  <%= f.error_notification %>
+  <% if @rblog.errors.any? %>
+    <%= alert_box_multiple('danger', "문제가 발생했습니다:", f.object.errors.messages) %>
+  <% end %>
 
   <div class="form-group">
     <%= f.input :title, input_html: { class: 'form-control'} %>
