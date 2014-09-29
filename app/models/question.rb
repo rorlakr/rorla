@@ -27,6 +27,8 @@ class Question < ActiveRecord::Base
 
   validates_presence_of :title, :content
 
+  default_scope { order(created_at: :desc)}
+
   is_impressionable
 
   def is_owner?(user)
