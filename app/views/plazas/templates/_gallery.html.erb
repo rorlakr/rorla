@@ -20,7 +20,7 @@
 
 <% content_for :plaza_author do %>
   <%= copyright_with_tooltip(post, post.writer.email) %>
-  <%= render partial: 'plazas/templates/comment_count', locals: {resource: post } %>
+  <%= comment_count(post.comments.size) %>
 <% end %>
 
 <% content_for :plaza_actions do %>

@@ -3,7 +3,15 @@
 <div id='posts'>
 <% @posts.each do | post | %>
     <div class='post'>
-      <div class='title'><h4><%= post.title %> <small>- <%= copyright_with_tooltip(post, post.writer.email) %></small></h4></div>
+      <div class='title'>
+        <h4>
+          <%= post.title %>
+          <small>
+            <%= copyright_with_tooltip(post,  post.writer.email) %>
+            <%= hit_count(post.impressionist_count) %>
+          </small>
+        </h4>
+      </div>
       <div class='content'>
         <%= truncate post.content, length: 100 %>
       </div>
