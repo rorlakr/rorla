@@ -23,22 +23,22 @@ module Merit
       end
       set_rank :level => 3, :to => User do |user|
         user.points > 100 && user.points <= 200
-      end      
+      end
       set_rank :level => 4, :to => User do |user|
         user.points > 200 && user.points <= 300
-      end            
+      end
       set_rank :level => 5, :to => User do |user|
         user.points > 300 && user.points <= 400
-      end                  
+      end
       set_rank :level => 6, :to => User do |user|
         user.points > 400 && user.points <= 600
-      end                        
+      end
       set_rank :level => 7, :to => User do |user|
         user.points > 600 && user.points <= 800
-      end                              
+      end
       set_rank :level => 8, :to => User do |user|
         user.points > 800 && user.points <= 1000
-      end                                    
+      end
       # set_rank :level => 1, :to => Commiter.active do |commiter|
       #   commiter.repositories.count > 1 && commiter.followers >= 10
       # end
