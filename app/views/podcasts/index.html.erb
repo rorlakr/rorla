@@ -12,7 +12,11 @@
   <tbody>
   <% @podcasts.each do |podcast| %>
       <tr>
-        <td><%= link_to podcast.title, podcast_path(podcast) %> <small class='text-muted' title='댓글갯수' data-toggle='tooltip'><%= podcast.comments.size %></small></td>
+        <td>
+          <%= link_to podcast.title, podcast_path(podcast) %>
+          <%= comment_count(podcast.comments.size) %>
+          <%= hit_count(podcast.impressionist_count) %>
+        </td>
         <td><%= podcast.published_at.strftime('%Y-%m-%d(%a)') %></td>
         <td><%= podcast.author %></td>
       </tr>

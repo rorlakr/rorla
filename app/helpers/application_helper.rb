@@ -15,41 +15,35 @@ module ApplicationHelper
   end
 
   def icon(shape)
-    "<span class='glyphicon glyphicon-#{shape}'></span>".html_safe
+    content_tag(:span, '', class: "glyphicon glyphicon-#{shape}")
   end
 
   def icon_label(shape, label)
-    "#{icon(shape)} #{label}".html_safe
-    # "<span class='glyphicon glyphicon-#{shape}'></span> #{label}".html_safe
+    content_tag(:span, '', class: "glyphicon glyphicon-#{shape}") + ' ' + label
   end
 
   def icon_button(shape)
-    "<span class='label label-default'>#{icon(shape)}</span>".html_safe
-    # "<span class='label label-default'><span class='glyphicon glyphicon-#{shape}'></span></span>".html_safe
+    content_tag(:span, icon(shape), class: "label label-default")
   end
 
   def icon_label_button(shape, label)
-    "#{icon_button(shape)} #{label}".html_safe
-    # "<span class='label label-default'><span class='glyphicon glyphicon-#{shape}'></span></span> #{label}".html_safe
+    content_tag(:span, icon(shape, label), class: "label label-default")
   end
 
   def awesome_icon(shape)
-    "<span class='fa fa-#{shape}'></span>".html_safe
+    content_tag(:span, '', class: "fa fa-#{shape}")
   end
 
   def awesome_icon_label(shape, label)
-    "#{awesome_icon(shape)} #{label}".html_safe
-    # "<span class='fa fa-#{shape}'></span> #{label}".html_safe
+    content_tag(:span, '', class: "fa fa-#{shape}") + ' ' + label
   end
 
   def awesome_icon_button(shape)
-    "<span class='label label-default'>#{awesome_icon(shape)}</span>".html_safe
-    # "<span class='label label-default'><span class='fa fa-#{shape}'></span></span>".html_safe
+    content_tag(:span, awesome_icon(shape), class: "label label-default")
   end
 
   def awesome_icon_label_button(shape, label)
-    "#{awesome_icon_button(shape)} #{label}".html_safe
-    # "<span class='label label-default'><span class='fa fa-#{shape}'></span></span> #{label}".html_safe
+    content_tag(:span, awesome_icon(shape, label), class: "label label-default")
   end
 
   def awesome_icon_shared(shared)
@@ -57,7 +51,11 @@ module ApplicationHelper
   end
 
   def awesome_icon_shared_label(shared, label)
-    (shared ? awesome_icon('share-alt-square') : icon('lock')) + ' ' + label
+    capture do
+      concat(shared ? awesome_icon('share-alt-square') : icon('lock'))
+      concat ' '
+      concat label
+    end
   end
 
   def ib_link_to(name, label, url, html_options = {})
@@ -122,6 +120,18 @@ module ApplicationHelper
     end
   end
 
+  def alert_box1(kind="warning", title="Warning!", message="Warnings occurred")
+    content_tag(:div, class:"alert alert-#{kind} alert-dismissible", role: "alert") do
+      concat(content_tag(:button, type: 'button', class: 'close', data: {dismiss: 'alert'}) do
+        concat content_tag(:span, raw('&times;'), "aria-hidden"=>"true")
+        concat content_tag(:span, "Close", class:"sr-only")
+      end)
+      concat content_tag(:strong, title)
+      concat " "
+      concat message
+    end
+  end
+
   def alert_box_multiple(kind, title, messages)
     content_tag :div, role: "alert", class: "alert alert-#{kind} alert-dismissible" do
       concat(content_tag(:button, type: 'button', class: 'close', data: {dismiss: 'alert'}) do
@@ -146,24 +156,22 @@ module ApplicationHelper
   end
 
   def copyright_with_tooltip(resource, email)
-    icon_label('user', t('authored_html', who: account_with_tooltip(email), ago: time_ago_in_words(resource.created_at)))
-  end
-
-  def alert_box1(kind="warning", title="Warning!", message="Warnings occurred")
-    content_tag(:div, class:"alert alert-#{kind} alert-dismissible", role: "alert") do
-      concat(content_tag(:button, type: 'button', class: 'close', data: {dismiss: 'alert'}) do
-        concat content_tag(:span, raw('&times;'), "aria-hidden"=>"true")
-        concat content_tag(:span, "Close", class:"sr-only")
-      end)
-      concat content_tag(:strong, title)
-      concat " "
-      concat message
+    capture do
+      concat content_tag(:small, icon('user'))
+      concat ' '
+      concat t('authored_html', who: account_with_tooltip(email), ago: time_ago_in_words(resource.created_at))
     end
   end
 
   def hit_count(count)
-    content_tag(:span, title:'hit count', data:{toggle:'tooltip'}) do
-      content_tag(:i, awesome_icon_label('bullseye', count), style:'font-weight:bold;')
+    content_tag(:small, '', title:'hit count', class:'text-muted', data:{toggle:'tooltip'}) do
+      concat awesome_icon_label('bullseye', content_tag(:i, " #{count}", style:'font-weight:bold;'))
+    end
+  end
+
+  def comment_count(count)
+    content_tag(:small, '', title:'댓글갯수', class:'text-muted', data:{toggle:'tooltip'}) do
+      concat icon_label('comment', content_tag(:i, " #{count}", style:'font-weight:bold;'))
     end
   end
 
