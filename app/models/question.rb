@@ -27,6 +27,8 @@ class Question < ActiveRecord::Base
 
   validates_presence_of :title, :content
 
+  is_impressionable
+
   def is_owner?(user)
     self.user == user
   end

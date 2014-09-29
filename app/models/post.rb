@@ -41,6 +41,8 @@ class Post < ActiveRecord::Base
 
   mount_uploader :picture, PictureUploader
 
+  is_impressionable
+
   private
 
   def set_published_at

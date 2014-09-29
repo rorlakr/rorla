@@ -45,6 +45,8 @@ class Favlink < ActiveRecord::Base
   scope :shared, -> { Favlink.where(shared: true).order(created_at: :desc)}
   scope :whose, -> (user) { Favlink.where(writer: user).order(created_at: :desc)}
 
+  is_impressionable
+
   def capture_image(action)
     kind = action == 'show' ? "" : "thumb_"
     "/uploads/capture_loc/#{id}/#{kind}#{capture_loc}"

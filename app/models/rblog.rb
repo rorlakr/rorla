@@ -23,6 +23,9 @@ class Rblog < ActiveRecord::Base
   after_create :set_plaza_rblog
   after_update :update_plaza_rblog, if: 'self.shared_changed?'
 
+  # Model Impressionable
+  is_impressionable
+
 
   private
 

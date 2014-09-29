@@ -7,7 +7,9 @@
   </tr>
   <tr>
     <th>Author</th>
-    <td><%= @podcast.author %></td>
+    <td><%= icon_label('user', @podcast.author) %>
+        <%= hit_count(@podcast.impressionist_count) %>
+    </td>
   </tr>
   <tr>
     <th>Content</th>
@@ -28,4 +30,3 @@
 
 <!-- 댓글 위젯 -->
 <%= render partial: "comments/comments_widget", locals: { resource: @podcast} %>
-

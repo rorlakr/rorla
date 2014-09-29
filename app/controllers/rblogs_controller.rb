@@ -26,6 +26,7 @@ class RblogsController < ApplicationController
   # GET /rblogs/1.json
   def show
     @comment = @rblog.comments.build
+    impressionist(@rblog, "message...")
   end
 
   # GET /rblogs/new
