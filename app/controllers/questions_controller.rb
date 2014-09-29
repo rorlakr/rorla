@@ -1,4 +1,4 @@
-class QuestionsController < ApplicationController 
+class QuestionsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_question, only: [:edit, :update, :destroy]
 
@@ -13,6 +13,7 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @answer = Answer.new
+    impressionist(@question, "message...")
   end
 
   # GET /questions/new

@@ -11,7 +11,10 @@
 </tr>
 <tr>
   <th><%=t('activerecord.attributes.post.writer')%></th>
-  <td><%= account_with_tooltip @post.writer.email %></td>
+  <td>
+    <%= account_with_tooltip @post.writer.email %>
+    <%= hit_count(@post.impressionist_count) %>
+  </td>
 </tr>
 <tr>
   <th><%=t('activerecord.attributes.post.created_at')%></th>
@@ -20,7 +23,7 @@
 <% if @post.bulletin.post_type == "gallery" %>
   <tr>
     <th><%=t('activerecord.attributes.post.picture')%></th>
-    <td><%= image_tag @post.picture_url, width: '100%' %></td>
+    <td><%= image_tag @post.picture_url, style: 'max-width:100%' %></td>
   </tr>
 <% end %>
 <tr>
