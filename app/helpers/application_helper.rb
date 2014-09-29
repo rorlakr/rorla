@@ -151,4 +151,16 @@ module ApplicationHelper
     icon_label('user', t('authored_html', who: account_with_tooltip(email), ago: time_ago_in_words(resource.created_at)))
   end
 
+  def alert_box1(kind="warning", title="Warning!", message="Warnings occurred")
+    content_tag(:div, class:"alert alert-#{kind} alert-dismissible", role: "alert") do
+      concat(content_tag(:button, type: 'button', class: 'close', data: {dismiss: 'alert'}) do
+        concat content_tag(:span, raw('&times;'), "aria-hidden"=>"true")
+        concat content_tag(:span, "Close", class:"sr-only")
+      end)
+      concat content_tag(:strong, title)
+      concat " "
+      concat message
+    end
+  end
+
 end
