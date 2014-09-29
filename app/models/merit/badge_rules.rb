@@ -27,16 +27,16 @@ module Merit
       end
       grant_on 'posts#create', badge: '재잘거리다', model_name: 'Post' do |post|
         post.writer.posts.count == 30
-      end   
+      end
       grant_on 'posts#create', badge: '글쓰기에 중독되다', model_name: 'Post' do |post|
         post.writer.posts.count == 100
-      end         
+      end
       grant_on 'questions#create', badge: '알고싶다', model_name: 'Question' do |question|
         question.user.questions.count == 1
       end
       grant_on 'questions#create', badge: '호기심이 많은', model_name: 'Question' do |question|
         question.user.questions.count == 10
-      end   
+      end
       grant_on 'questions#create', badge: '소크라테스', model_name: 'Question' do |question|
         question.user.questions.count == 30
       end
@@ -48,7 +48,7 @@ module Merit
       end
       grant_on 'answers#create', badge: '위대한 인도자', model_name: 'Answer' do |answer|
         answer.user.answers.count == 30
-      end            
+      end
       grant_on 'rblogs#create', badge: '지식 공유의 참맛', model_name: 'Rblog' do |rblog|
         rblog.writer.rblogs.count == 1
       end
@@ -57,7 +57,7 @@ module Merit
       end
       grant_on 'rblogs#create', badge: '지식 공유의 참사랑', model_name: 'Rblog' do |rblog|
         rblog.writer.rblogs.count == 10
-      end  
+      end
       grant_on 'codebanks#create', badge: '신규계좌 개설', model_name: 'Answer' do |codebank|
         codebank.writer.codebanks.count == 1
       end
@@ -66,14 +66,14 @@ module Merit
       end
       grant_on 'codebanks#create', badge: '골드계좌', model_name: 'Answer' do |codebank|
         codebank.writer.codebanks.count == 50
-      end  
-                  
+      end
+
       # grant_on 'comments#create', badge: '호기심이 많은', model_name: 'Question' do |question|
       #   question.user.comments.count == 2
-      # end   
+      # end
       # grant_on 'comments#create', badge: '소크라테스', model_name: 'Question' do |question|
       #   question.user.comments.count == 3
-      # end              
+      # end
       # If it creates user, grant badge
       # Should be "current_user" after registration for badge to be granted.
       # grant_on 'users#create', badge: 'just-registered', to: :itself
