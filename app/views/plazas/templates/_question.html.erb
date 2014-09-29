@@ -18,7 +18,7 @@
 
 <% content_for :plaza_author do %>
   <%= copyright_with_tooltip(resource, resource.questioner) %>
-  <%= render partial: 'plazas/templates/comment_count', locals: {resource: resource } %>
+  <%= comment_count(resource.comments.size) %>
 <% end %>
 
 <% content_for :plaza_actions do %>
