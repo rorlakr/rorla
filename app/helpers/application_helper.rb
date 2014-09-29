@@ -165,13 +165,13 @@ module ApplicationHelper
 
   def hit_count(count)
     content_tag(:small, '', title:'hit count', class:'text-muted', data:{toggle:'tooltip'}) do
-      concat awesome_icon_label('bullseye', content_tag(:i, " #{count}", style:'font-weight:bold;'))
+      awesome_icon_label('bullseye', content_tag(:i, " #{count}", style:'font-weight:bold;'))
     end
   end
 
   def comment_count(count)
     content_tag(:small, '', title:'댓글갯수', class:'text-muted', data:{toggle:'tooltip'}) do
-      concat icon_label('comment', content_tag(:i, " #{count}", style:'font-weight:bold;'))
+      icon_label('comment', content_tag(:i, " #{count}", style:'font-weight:bold;'))
     end
   end
 
