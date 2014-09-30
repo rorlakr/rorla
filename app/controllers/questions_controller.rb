@@ -13,7 +13,7 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @answer = Answer.new
-    impressionist(@question, "message...")
+    impressionist(@question, "message...") if !user_signed_in? or (user_signed_in? and current_user != @question.user)
   end
 
   # GET /questions/new

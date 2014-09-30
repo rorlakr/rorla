@@ -24,7 +24,7 @@ class FavlinksController < ApplicationController
   # GET /favlinks/1.json
   def show
     @comment = @favlink.comments.build
-    impressionist(@favlink, "message...")
+    impressionist(@favlink, "message...") if !user_signed_in? or (user_signed_in? and current_user != @favlink.writer)
   end
 
   # GET /favlinks/new
