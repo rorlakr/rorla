@@ -15,7 +15,8 @@
     <ul class='section'>
     <% @news = Post.where(bulletin_id: [ 1, 2]).recent %>
     <% @news.each do | post | %>
-      <li><%= link_to post.title, bulletin_post_path(post.bulletin, post) %> <small class='text-muted'><%= time_ago_in_words(post.created_at) %>전</small></li>
+      <li><%= link_to post.title, bulletin_post_path(post.bulletin, post) %>
+      <small title='<%= post.created_at %>' data-toggle="tooltip" class='text-muted'><%= time_ago_in_words(post.created_at) %>전 작성</small></li>
     <% end %>
     </ul>
   </div>
