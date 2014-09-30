@@ -17,12 +17,13 @@
 <% content_for :plaza_author do %>
   <%= copyright_with_tooltip(resource, resource.writer.email) %>
   <%= comment_count(resource.comments.size) %>
+  <%= hit_count(resource.impressionist_count) %>
 <% end %>
 
 <% content_for :plaza_actions do %>
-
-    <%= link_to icon_button('eye-open'), resource unless action_name == 'show' %>
-    <%= link_to icon_button('edit'), edit_favlink_path(resource) %>
-    <%= link_to icon_button('trash'), resource, method: :delete, data: { confirm: 'Are you sure?' } %>
-
+  <%= link_to icon_button('eye-open'), resource, title: t('form_actions.show') , data:{toggle:'tooltip'}  unless action_name == 'show' %>
+  <% if user_signed_in? %>
+    <%= link_to icon_button('edit'), edit_favlink_path(resource), title: t('form_actions.edit') , data:{toggle:'tooltip'}  if current_user.can_update? resource %>
+    <%= link_to icon_button('trash'), resource, method: :delete, data: { confirm: 'Are you sure?', toggle:'tooltip' }, title: t('form_actions.delete') if current_user.can_delete? resource %>
+  <% end %>
 <% end %>
