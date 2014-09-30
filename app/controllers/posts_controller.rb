@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    impressionist(@post, "message...")
+    impressionist(@post, "message...") if !user_signed_in? or (user_signed_in? and current_user != @post.writer)
   end
 
   # GET /posts/new

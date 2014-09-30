@@ -23,7 +23,7 @@ class CodebanksController < ApplicationController
   # GET /codebanks/1.json
   def show
     @comment = @codebank.comments.build
-    impressionist(@codebank, "message...")
+    impressionist(@codebank, "message...") if !user_signed_in? or (user_signed_in? and current_user != @codebank.writer)
   end
 
   # GET /codebanks/new

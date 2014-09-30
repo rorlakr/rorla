@@ -26,7 +26,7 @@ class RblogsController < ApplicationController
   # GET /rblogs/1.json
   def show
     @comment = @rblog.comments.build
-    impressionist(@rblog, "message...")
+    impressionist(@rblog, "message...") if !user_signed_in? or (user_signed_in? and current_user != @rblog.writer)
   end
 
   # GET /rblogs/new
