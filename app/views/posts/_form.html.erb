@@ -8,7 +8,7 @@
   <div class="form-group">
     <%= f.input :content, input_html:{ class: 'form-control', rows: 10} %>
   </div>
-  <%= image_tag(@post.picture_url) if @post.picture? %>
+  <%= image_tag(@post.picture_url, style:'max-width:100%;') if @post.picture? %>
   <% if @post.bulletin.post_type == "gallery" %>
     <div class="form-group">
       <%= f.input :picture, as: :file, input_html:{ class: 'form-control' } %>
