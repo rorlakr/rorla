@@ -16,10 +16,10 @@
 	      <td class="hidden-xs"><%= post.created_at.strftime('%Y-%m-%d %l:%M:%S%P') %></td>
 	      <td class="visible-xs"><%= post.created_at.strftime('%Y-%m-%d') %></td>
         <td class="hidden-xs">
-          <%= link_to icon_button('eye-open'), [post.bulletin, post] %>
+          <%= link_to icon_button('eye-open'), [post.bulletin, post], title: t('form_actions.show') , data:{toggle:'tooltip'}  %>
           <% if user_signed_in? %>
-            <%= link_to icon_button('edit'), edit_bulletin_post_path(post.bulletin, post) if current_user.can_update? post %>
-            <%= link_to icon_button('trash'), [post.bulletin, post], method: :delete, data: { confirm: 'Are you sure?' } if current_user.can_delete? post %>
+            <%= link_to icon_button('edit'), edit_bulletin_post_path(post.bulletin, post), title: t('form_actions.edit') , data:{toggle:'tooltip'}  if current_user.can_update? post %>
+            <%= link_to icon_button('trash'), [post.bulletin, post], method: :delete, data: { confirm: 'Are you sure?', toggle:'tooltip' }, title: t('form_actions.delete') if current_user.can_delete? post %>
           <% end %>
         </td>
       </tr>
