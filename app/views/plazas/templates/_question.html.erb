@@ -19,12 +19,13 @@
 <% content_for :plaza_author do %>
   <%= copyright_with_tooltip(resource, resource.questioner) %>
   <%= comment_count(resource.comments.size) %>
+  <%= hit_count(resource.impressionist_count) %>
 <% end %>
 
 <% content_for :plaza_actions do %>
-  <%= link_to icon_button('eye-open'), resource %>
+  <%= link_to icon_button('eye-open'), resource, title: t('form_actions.show') , data:{toggle:'tooltip'}  %>
   <% if user_signed_in? %>
-    <%= link_to icon_button('edit'), url_for(controller: resource.class.to_s.pluralize.downcase, action: 'edit', id: resource) if current_user.can_update? resource%>
-    <%= link_to icon_button('trash'), resource, method: :delete, data: { confirm: 'Are you sure?' } if current_user.can_delete? resource %>
+    <%= link_to icon_button('edit'), url_for(controller: resource.class.to_s.pluralize.downcase, action: 'edit', id: resource), title: t('form_actions.edit') , data:{toggle:'tooltip'}  if current_user.can_update? resource%>
+    <%= link_to icon_button('trash'), resource, method: :delete, data: { confirm: 'Are you sure?', toggle:'tooltip' }, title: t('form_actions.delete') if current_user.can_delete? resource %>
   <% end %>
 <% end %>
