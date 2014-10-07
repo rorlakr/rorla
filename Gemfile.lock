@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/rorlab/docker_alias.git
-  revision: 512791a39c1d3216960d5ec59c5df9ee3509a1f0
+  revision: 0502927395fe21eb10df1dcb638c570377ceccfa
   specs:
     docker_alias (0.0.4)
       railties (>= 3.0)
@@ -82,8 +82,6 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
-    bootstrap-tagsinput-rails (0.4.2)
-      railties (>= 3.1)
     builder (3.2.2)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -349,7 +347,6 @@ DEPENDENCIES
   bh (~> 1.0)
   binding_of_caller
   bootstrap-sass (~> 3.2.0)
-  bootstrap-tagsinput-rails
   capybara (~> 2.1.0)
   capybara-webkit
   carrierwave
