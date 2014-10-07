@@ -183,12 +183,7 @@ li.L1,li.L3,li.L5,li.L7,li.L9 { background-color: #f6f6f6 !important; }
 
 h2.view_title { margin:1em 0; }
 
-.tag {
-  background-color: white;
-  color: #959595 !important;
-  border:1px solid #eaeaea;
-}
-
+// token-input-facebook 커스터마이징.
 ul.token-input-list-facebook {
   border-radius: 3px;
   padding:.2em;
@@ -196,6 +191,7 @@ ul.token-input-list-facebook {
   border-color: #c2c2c2;
   li.token-input-token-facebook {
     background-color: white;
+    color: black;
     padding:.2em .5em;
     border-radius: 3px;
   }
