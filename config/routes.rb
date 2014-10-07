@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root "welcome#index"
 
+  get 'tags', to: 'tags#list'
+
   # Info routing
   get 'info/about', as: :about
   get 'info/howto', as: :howto
