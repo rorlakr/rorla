@@ -1,7 +1,14 @@
 class TagsController < ApplicationController
 
   def list
-    render json: ActsAsTaggableOn::Tag.select([:id, :name]).where("name like ?", "%#{params[:q]}%")
+    tags = ActsAsTaggableOn::Tag.where("name like ?", "%#{params[:q]}%")
+    if tags.empty?
+      render json: [{id: "<<<#{params[:q]}>>>", name: "New: \"#{params[:q]}\""}].to_json
+      # ActsAsTaggableOn::Tag.create!(name: params[:q] )
+    else
+      tags
+      render json: tags
+    end
   end
 
 end
