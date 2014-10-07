@@ -1,0 +1,5 @@
+var flash_message = "<%=j render 'shared/flash_messages', flash: flash %>";
+// $("#container").prepend(flash_message).
+$(flash_message).hide().prependTo("#container").slideDown("slow");
+// hide().slideDown("slow");
+$("#container .alert:first").fadeIn('fast').delay(1000).slideUp('slow');

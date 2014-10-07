@@ -1,4 +1,9 @@
-<h2>Podcasts</h2>
+<h2>
+  Podcasts
+  <% if user_signed_in? && current_user.has_role?(:admin) %>
+    <%= link_to '최신 데이터 수집', podcasts_grap_path, remote: true, class: 'btn btn-default' %>
+  <% end %>
+</h2>
 
 <table class='table'>
   <thead>

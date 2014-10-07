@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'info/security', as: :security
   get 'info/contributor', as: :contributors
 
+  get 'podcasts/grap' => 'podcasts#grap'
+
   # Exception routing
   get '/404', to: 'errors#not_found'
   get '/500', to: 'errors#server_error'
@@ -23,7 +25,7 @@ Rails.application.routes.draw do
   concern :commentable do
     resources :comments
   end
-  resources :favlinks, :codebanks, :rblogs, :podcasts, concerns: :commentable
+  resources :favlinks, :codebanks, :rblogs, concerns: :commentable
 
   resources :plazas
   resources :bundlelinks do
@@ -36,7 +38,9 @@ Rails.application.routes.draw do
   resources :questions do
     resources :answers
   end
-  resources :podcasts, only: [ :index, :show ]
+
+  resources :podcasts, only: [ :index, :show ], concerns: :commentable
+  
 
   # API routing
   namespace :api do
