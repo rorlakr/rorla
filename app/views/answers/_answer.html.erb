@@ -11,6 +11,7 @@
       <%= icon_label('user', t('authored_html', who: account_with_tooltip(answer.answerer), ago: time_ago_in_words(answer.created_at))) %>
     </div>
   </td>
+  <% if user_signed_in? %>
   <td>
     <% unless answer.useful?(current_user) %>
       <%= button_to '추천', question_answer_path(@question, answer, useful: true), method: :patch, remote: true, class: "btn btn-default" %></td>
@@ -22,4 +23,5 @@
       <%= link_to '삭제', [answer.question, answer], method: :delete, data: {confirm: "삭제하시겠습니까?"}, remote: true, class: "btn btn-danger" %>
     <% end %>
   </td>
+  <% end %>
 </tr>
