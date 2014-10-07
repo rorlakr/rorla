@@ -4,7 +4,7 @@
   <% if favlink.bundlelink %>
     <div class='bundle'><%= icon_label('book', link_to(favlink.bundlelink.try(:title), bundlelink_favlinks_path(favlink.bundlelink))) %></div>
   <% end %>
-  <div class='tag'>
+  <div class='tags'>
     <%= icon_tags(favlink.tag_list) %>
   </div>
   <div class='writer'>
