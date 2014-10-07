@@ -49,6 +49,7 @@ class Favlink < ActiveRecord::Base
   is_impressionable
 
   def tag_tokens=(ids)
+    ids.gsub!(/<<<(.+?)>>>/) { ActsAsTaggableOn::Tag.create!(name: $1).id }
     self.tag_list = ActsAsTaggableOn::Tag.where( id: ids.split(',')).pluck(:name)
   end
 
