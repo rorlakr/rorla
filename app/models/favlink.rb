@@ -22,6 +22,7 @@ class Favlink < ActiveRecord::Base
 
   attr_searchable :title, :description
   attr_searchable :bundlelink => "bundlelink.title"
+  attr_accessor :tag_tokens
 
   acts_as_taggable
 
@@ -46,6 +47,14 @@ class Favlink < ActiveRecord::Base
   scope :whose, -> (user) { Favlink.where(writer: user).order(created_at: :desc)}
 
   is_impressionable
+
+  def tag_tokens=(ids)
+    self.tag_list = ActsAsTaggableOn::Tag.where( id: ids.split(',')).pluck(:name)
+  end
+
+  def tag_tokens
+    ActsAsTaggableOn::Tag.select([:id, :name]).where( id: self.tag_ids )
+  end
 
   def capture_image(action)
     kind = action == 'show' ? "" : "thumb_"

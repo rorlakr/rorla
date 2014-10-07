@@ -188,3 +188,15 @@ h2.view_title { margin:1em 0; }
   color: #959595 !important;
   border:1px solid #eaeaea;
 }
+
+ul.token-input-list-facebook {
+  border-radius: 3px;
+  padding:.2em;
+  width:100%;
+  border-color: #c2c2c2;
+  li.token-input-token-facebook {
+    background-color: white;
+    padding:.2em .5em;
+    border-radius: 3px;
+  }
+}
