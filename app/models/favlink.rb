@@ -48,13 +48,13 @@ class Favlink < ActiveRecord::Base
 
   is_impressionable
 
-  def tag_tokens=(ids)
-    ids.gsub!(/<<<(.+?)>>>/) { ActsAsTaggableOn::Tag.create!(name: $1).id }
-    self.tag_list = ActsAsTaggableOn::Tag.where( id: ids.split(',')).pluck(:name)
+  def tag_tokens=(tokens)
+    tag_ids = Tag.ids_from_tokens(tokens)
+    self.tag_list = Tag.where( id: tag_ids).pluck(:name)
   end
 
   def tag_tokens
-    ActsAsTaggableOn::Tag.select([:id, :name]).where( id: self.tag_ids )
+    Tag.order(:name).where( id: self.tag_ids )
   end
 
   def capture_image(action)
