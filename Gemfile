@@ -31,6 +31,7 @@ gem 'merit'
 gem 'ambry'
 gem 'clockwork', '~> 1.0.0'
 gem 'impressionist'
+gem 'bootstrap-tagsinput-rails'
 
 # json 파싱을 위함. 실제 파싱은 oj가 하지만 multi_json 인터페이스를 이용
 gem 'multi_json', '~> 1.10.1'
