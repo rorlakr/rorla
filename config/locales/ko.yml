@@ -224,6 +224,7 @@ ko:
           title: 링크제목
           description: 내용소개
           tag_list: 태그 목록
+          tag_tokens: 태그 토큰
         question:
           title: 제목
           content: 내용
