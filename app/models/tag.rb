@@ -3,7 +3,7 @@ class Tag < ActsAsTaggableOn::Tag
   def self.tokens(query)
     tags = where("name like ?", "%#{query}%")
     if tags.empty?
-      [{id: "<<<#{query}>>>", name: "New: \"#{query}\""}]
+      [{id: "<<<#{query}>>>", name: "추가: \"#{query}\""}]
     else
       tags
     end
