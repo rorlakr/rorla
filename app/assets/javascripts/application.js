@@ -16,8 +16,8 @@
 //= require jquery-ui
 //= require jquery.pageless
 //= require jquery.autosize
+//= require jquery.tokeninput
 //= require bootstrap-sprockets
-//= require bootstrap-tagsinput
 //= require pagedown_bootstrap
 //= require google-code-prettify-rails/prettify
 //= require codemirror
