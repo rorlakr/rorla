@@ -26,7 +26,6 @@
   <div class="form-group">
     <%= f.input :tag_tokens, placeholder: '여러 개의 태그는 쉼표(,)로 구분하세요.',
         input_html: { data: { load: @favlink.tag_tokens }, class: 'form-control'} %>
-    <%#= f.input :tag_list, placeholder: '여러 개의 태그는 쉼표(,)로 구분하세요.', input_html: { data:{role:'tagsinput'}, class: 'form-control'} %>
   </div>
   <div class="checkbox">
     <%= f.input :shared, as: :boolean, inline_label: "공유", label: false %>

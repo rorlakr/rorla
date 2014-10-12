@@ -10,7 +10,7 @@ class Tag < ActsAsTaggableOn::Tag
   end
 
   def self.ids_from_tokens(tokens)
-    tokens.gsub!(/<<<(.+?)>>>/) { find_or_create_by!(name: $1).id }
+    tokens.gsub!(/<<<(.+?)>>>/) { create!(name: $1).id }
     tokens.split(',')
   end
 
