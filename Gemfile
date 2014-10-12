@@ -25,7 +25,6 @@ gem 'attr_searchable'
 gem 'will_paginate'
 gem 'pageless-rails', github: 'rorlab/pageless-rails'
 gem 'rails_12factor', group: :production
-gem 'mysql2', group: :production
 gem 'excon', '~> 0.39.5'
 gem 'merit'
 gem 'ambry'
@@ -73,8 +72,9 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# 데이터베이스 젬 그룹변경 및 추가
+gem 'sqlite3', group: :development
+gem 'mysql2', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -103,7 +103,20 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano-rails', group: :development
+
+# 추가할 젬
+gem 'capistrano-rbenv', '2.0.2', group: :development
+gem 'capistrano-rbenv-install', '1.0.0', group: :development
+gem 'capistrano-unicorn-nginx', '2.0.0', group: :development
+gem 'capistrano-rails-console'
+gem 'capistrano-rails-collection'
+gem 'capistrano-rails-tail-log'
+gem 'capistrano-secrets-yml', '~> 1.0.0', group: :development
+
+group :production do
+  gem 'rb-readline'
+end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
