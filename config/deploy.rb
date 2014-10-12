@@ -6,7 +6,8 @@ set :repo_url, 'git@example.com:me/my_repo.git'
 
 
 set :application, 'rorla_production'
-set :repo_url, 'git@github.com:hschoidr/rcafe.git', branch: :deploy
+set :repo_url, 'git@github.com:hschoidr/rorla.git'
+set :branch, fetch(:branch, "deploy")
 set :deploy_to, '/home/deployer/apps/rorla'
 
 # rbenv 환경설정
