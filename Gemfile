@@ -73,8 +73,6 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # 데이터베이스 젬 그룹변경 및 추가
-gem 'sqlite3', group: :development
-gem 'mysql2', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -115,7 +113,12 @@ gem 'capistrano-rails-tail-log'
 gem 'capistrano-secrets-yml', '~> 1.0.0', group: :development
 
 group :production do
+  gem 'mysql2'
   gem 'rb-readline'
+end
+
+group :development do
+  gem 'sqlite3'
 end
 
 # Use debugger
