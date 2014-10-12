@@ -15,8 +15,6 @@
 /log/*.log
 /tmp
 
-/config.secrets.yml
-
 /public/uploads/**/*
 
 .ruby-version
@@ -30,3 +28,4 @@ public/screenshot.png
 .vagrant/**/*
 
 .idea
+config/secrets.yml
