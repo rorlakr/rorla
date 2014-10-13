@@ -90,6 +90,6 @@ class RblogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rblog_params
-      params.require(:rblog).permit(:title, :content, :writer_id, :shared)
+      params.require(:rblog).permit(:title, :content, :writer_id, :shared, :tag_tokens)
     end
 end

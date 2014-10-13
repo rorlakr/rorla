@@ -14,6 +14,10 @@
 
   <div class='code'><%= @codebank.snippet %></div>
 
+  <div class='tags'>
+    <%= icon_tags(@codebank.tag_list) %>
+  </div>
+
   <div class='writer'>
     <%= copyright_with_tooltip @codebank, @codebank.writer.email %>
     <%= comment_count(@codebank.comments(true).size) %>

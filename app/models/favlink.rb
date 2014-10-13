@@ -16,13 +16,15 @@
 
 class Favlink < ActiveRecord::Base
 
+  include TagTokenize
+
   resourcify
   include Authority::Abilities
   include AttrSearchable
 
   attr_searchable :title, :description
   attr_searchable :bundlelink => "bundlelink.title"
-  attr_accessor :tag_tokens
+  # attr_accessor :tag_tokens
 
   acts_as_taggable
 
@@ -48,14 +50,14 @@ class Favlink < ActiveRecord::Base
 
   is_impressionable
 
-  def tag_tokens=(tokens)
-    tag_ids = Tag.ids_from_tokens(tokens)
-    self.tag_list = Tag.where( id: tag_ids).pluck(:name)
-  end
+  # def tag_tokens=(tokens)
+  #   tag_ids = Tag.ids_from_tokens(tokens)
+  #   self.tag_list = Tag.where( id: tag_ids).pluck(:name)
+  # end
 
-  def tag_tokens
-    Tag.order(:name).where( id: self.tag_ids )
-  end
+  # def tag_tokens
+  #   Tag.order(:name).where( id: self.tag_ids )
+  # end
 
   def capture_image(action)
     kind = action == 'show' ? "" : "thumb_"

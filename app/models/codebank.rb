@@ -20,6 +20,10 @@ class Codebank < ActiveRecord::Base
   # Model Impressionable
   is_impressionable
 
+  # 태그 토큰입력
+  include TagTokenize
+  acts_as_taggable
+
   private
 
   def set_plaza_codebank

@@ -84,6 +84,35 @@ GEM
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     builder (3.2.2)
+    capistrano (3.2.1)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (~> 1.3)
+    capistrano-bundler (1.1.3)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2)
+    capistrano-rails (1.1.2)
+      capistrano (~> 3.1)
+      capistrano-bundler (~> 1.1)
+    capistrano-rails-collection (0.0.3)
+      capistrano-rails (~> 1.1.0)
+    capistrano-rails-console (0.2.0)
+      capistrano (>= 3.0.0)
+    capistrano-rails-tail-log (0.0.1)
+      capistrano (>= 3.0)
+      capistrano-rails
+    capistrano-rbenv (2.0.2)
+      capistrano (~> 3.1)
+      sshkit (~> 1.3)
+    capistrano-rbenv-install (1.0.0)
+      capistrano (>= 3.0)
+      capistrano-rbenv (>= 2.0)
+    capistrano-secrets-yml (1.0.0)
+      capistrano (>= 3.1)
+      sshkit (>= 1.2.0)
+    capistrano-unicorn-nginx (2.0.0)
+      capistrano (>= 3.1)
+      sshkit (>= 1.2.0)
     capybara (2.1.0)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -116,6 +145,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    colorize (0.7.3)
     crass (0.2.1)
     database_cleaner (1.0.1)
     debug_inspector (0.0.2)
@@ -138,7 +168,7 @@ GEM
       railties (>= 3.0.0)
     faker (1.1.2)
       i18n (~> 0.5)
-    ffi (1.9.5)
+    ffi (1.9.6)
     font-awesome-sass (4.2.0)
       sass (~> 3.2)
     formatador (0.2.5)
@@ -162,7 +192,7 @@ GEM
     impressionist (1.5.1)
       httpclient (~> 2.2)
       nokogiri (~> 1.5)
-    jbuilder (2.2.1)
+    jbuilder (2.2.2)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (3.1.2)
@@ -172,7 +202,7 @@ GEM
     jquery-turbolinks (2.1.0)
       railties (>= 3.1.0)
       turbolinks
-    jquery-ui-rails (5.0.0)
+    jquery-ui-rails (5.0.1)
       railties (>= 3.2.16)
     json (1.8.1)
     kgio (2.9.2)
@@ -198,6 +228,9 @@ GEM
     minitest (5.4.2)
     multi_json (1.10.1)
     mysql2 (0.3.16)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.9.1)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
     nokogumbo (1.1.12)
@@ -242,6 +275,7 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    rb-readline (0.5.1)
     rdoc (4.1.2)
       json (~> 1.4)
     responders (1.1.1)
@@ -302,11 +336,15 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.1.4)
+    sprockets-rails (2.2.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
-      sprockets (~> 2.8)
+      sprockets (>= 2.8, < 4.0)
     sqlite3 (1.3.9)
+    sshkit (1.5.1)
+      colorize
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
     subexec (0.2.3)
     sucker_punch (1.2.1)
       celluloid (~> 0.15.2)
@@ -351,6 +389,14 @@ DEPENDENCIES
   bh (~> 1.0)
   binding_of_caller
   bootstrap-sass (~> 3.2.0)
+  capistrano-rails
+  capistrano-rails-collection
+  capistrano-rails-console
+  capistrano-rails-tail-log
+  capistrano-rbenv (= 2.0.2)
+  capistrano-rbenv-install (= 1.0.0)
+  capistrano-secrets-yml (~> 1.0.0)
+  capistrano-unicorn-nginx (= 2.0.0)
   capybara (~> 2.1.0)
   capybara-webkit
   carrierwave
@@ -386,6 +432,7 @@ DEPENDENCIES
   rails (= 4.1.1)
   rails-erd
   rails_12factor
+  rb-readline
   rolify
   rspec-rails (~> 2.14.0)
   sanitize
