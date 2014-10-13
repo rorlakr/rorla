@@ -4,6 +4,17 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 require 'shoulda/matchers'
+require 'webmock/rspec'
+require 'vcr'
+
+WebMock.allow_net_connect!
+
+VCR.configure do |c|
+  c.ignore_localhost=true
+  c.cassette_library_dir = 'spec/cassettes'
+  c.hook_into :webmock
+  c.configure_rspec_metadata!
+end
 
 include Warden::Test::Helpers
 Warden.test_mode!
@@ -69,6 +80,8 @@ RSpec.configure do |config|
   # RSpec's Tag feature -----
   config.filter_run focus: true
   # config.filter_run_excluding slow: true
+
+  config.include WebMock::API
 
 end
 
