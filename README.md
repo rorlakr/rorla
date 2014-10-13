@@ -5,6 +5,9 @@
 ### 0. 배포 전에 설정해야 할 것
 
 * 배포 서버의 IP와 도메인명을 확인한다.
+
+  > **노트** : **Virtual Box**에 배포용 서버를 준비하는 과정은 http://rorla.rorlab.org/rblogs/24 와 http://rorla.rorlab.org/rblogs/24 를 참고한다.
+
 * 배포 서버에는 배포용 계정 `deployer`를 생성하고 `admin` 그룹에 할당해 준다.
 
   ```bash
@@ -19,7 +22,7 @@
   $ sudo visudo
   ```
 
-* 아래와 내용을 하단에 추가해 준다
+  아래와 내용을 하단에 추가해 준다
 
   ```
   deployer ALL=(ALL) NOPASSWD: ALL
