@@ -14,12 +14,10 @@ role :db,  %w{deployer@vbserver1.net}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-
 set :nginx_server_name, 'vbserver1.net'
 set :unicorn_workers, 4
 
 server 'vbserver1.net', user: 'deployer', roles: %w{web app}
-
 
 # Custom SSH Options
 # ==================
