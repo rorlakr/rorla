@@ -1,11 +1,10 @@
 require 'spec_helper'
 
-describe EventsController do
-
-  describe "GET 'FBevents'" do
+describe EventsController,focus:true do
+ let(:http_response) {"OK"}
+  describe "GET 'FBevents'", :vcr do
     it "returns http success" do
-      get 'FBevents'
-      response.should be_success
+      subject.FBevents.message.should == http_response
     end
   end
 
