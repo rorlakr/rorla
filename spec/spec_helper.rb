@@ -82,7 +82,7 @@ RSpec.configure do |config|
   # config.filter_run_excluding slow: true
 
   config.include WebMock::API
-
+  config.treat_symbols_as_metadata_keys_with_true_values = true
 end
 
 class ActiveRecord::Base
