@@ -1,0 +1,148 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/v2.1/151742221561550/events?access_token=CAACEdEose0cBAJ7pTu6lSBugNDCzhV4XgQ21uIYdMOmInFDax14nZCJCJn5fjKwJ8lMnhQgSanZBEil064OABPOaOZCpYa7aCSEmlSqIl27Xh14iIDXFEKYBSvTUiKXwyewqR3dbYVD39dlgojTi2N5IGKtXXG1Flbmr5qU8liWUfwujvGZCa8Tz7hfDZASBKlMWtt2CyLT6J26ywHrEZC
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Facebook-Api-Version:
+      - v2.1
+      Etag:
+      - '"8c692129ed8b7846a43f8100f69d3df1723af0c2"'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - '*'
+      X-Fb-Rev:
+      - '1452760'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - +ZFHDf6kRtyXsoPsJb4R5dwgDvpqPdCRYGJIxMe8Us1eVmE1+Ccjvid8TKTMccsHiv0Eqt6hSH9F3DhVAsNyEQ==
+      Date:
+      - Tue, 14 Oct 2014 07:39:31 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1841'
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"name":"\uc81c72\ud68c ROR Lab. (Biweekly Lecture)","start_time":"2014-10-14T20:00:00+0900","end_time":"2014-10-14T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"828670540517010"},{"name":"\ud504\ub85c\uadf8\ub798\ubc0d
+        \uc2e4\uc2b5 \ubaa8\uc784(Biweekly Koding)","start_time":"2014-10-07T20:00:00+0900","timezone":"Asia\/Seoul","location":"\ud1a0\uc988
+        \uac15\ub0a82\ud638\uc810","id":"387182158101421"},{"name":"\uc81c71\ud68c
+        ROR Lab. (Biweekly Lecture)","start_time":"2014-09-30T20:00:00+0900","end_time":"2014-09-30T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"867394779938862"},{"name":"\uc81c70\ud68c
+        ROR Lab. (Biweekly Lecture)","start_time":"2014-09-16T20:00:00+0900","end_time":"2014-09-16T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"718793994822684"},{"name":"\uc81c69\ud68c
+        ROR Lab. (Biweekly Lecture)","start_time":"2014-09-02T20:00:00+0900","end_time":"2014-09-02T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"1485178491725695"},{"name":"\uc81c68\ud68c
+        ROR Lab.","start_time":"2014-08-19T20:00:00+0900","end_time":"2014-08-19T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"688561981218933"},{"name":"\uc81c67\ud68c
+        ROR Lab.","start_time":"2014-08-05T20:00:00+0900","end_time":"2014-08-05T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"826343114056841"},{"name":"\uc81c66\ud68c
+        ROR Lab.","start_time":"2014-07-22T20:00:00+0900","end_time":"2014-07-22T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"254865298048245"},{"name":"\uc81c65\ud68c
+        ROR Lab.","start_time":"2014-07-08T20:00:00+0900","end_time":"2014-07-08T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"1472172926360102"},{"name":"\uc81c64\ud68c
+        ROR Lab","start_time":"2014-06-24T20:00:00+0900","end_time":"2014-06-24T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"245167095683506"},{"name":"\uc81c63\ud68c
+        ROR Lab","start_time":"2014-06-10T20:00:00+0900","end_time":"2014-06-10T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"1422364048038787"},{"name":"\uc81c62\ud68c
+        ROR Lab","start_time":"2014-05-27T20:00:00+0900","end_time":"2014-05-27T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"1605303183028404"},{"name":"\uc81c61\ud68c
+        ROR Lab.","start_time":"2014-05-13T20:00:00+0900","end_time":"2014-05-13T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"661012203947451"},{"name":"\"\ucd08\ubcf4\uc790\ub97c
+        \uc704\ud55c \ub808\uc77c\uc2a4 \uac00\uc774\ub4dc\ub77c\uc778(\uac00\uc81c)\"
+        \uacf5\ub3d9\uc9d1\ud544\uc744 \uc704\ud55c \uce58\ub9e5\ud30c\ud2f0","start_time":"2014-05-09T19:00:00+0900","timezone":"Asia\/Seoul","location":"\uae08\uac15\ubc14\ube44\ud050
+        http:\/\/me2.do\/xhm3CjnN","id":"1427034717550641"},{"name":"\uc81c60\ud68c
+        ROR Lab.","start_time":"2014-04-29T20:00:00+0900","end_time":"2014-04-29T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"226561887541773"},{"name":"\uc81c59\ud68c
+        ROR Lab.","start_time":"2014-04-15T20:00:00+0900","end_time":"2014-04-15T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"1467746593454865"},{"name":"\uc81c58\ud68c
+        ROR Lab.","start_time":"2014-04-01T20:00:00+0900","end_time":"2014-04-01T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"216105198588300"},{"name":"\uc81c57\ud68c
+        ROR Lab.","start_time":"2014-03-18T20:00:00+0900","end_time":"2014-03-18T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"1449827871917192"},{"name":"\uc81c56\ud68c
+        ROR Lab.","start_time":"2014-03-04T20:00:00+0900","end_time":"2014-03-04T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"197843123758360"},{"name":"\uc81c55\ud68c
+        ROR Lab.","start_time":"2014-02-18T20:00:00+0900","end_time":"2014-02-18T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"602861886468273"},{"name":"\uc81c54\ud68c
+        ROR Lab.","start_time":"2014-02-04T20:00:00+0900","end_time":"2014-02-04T22:00:00+0900","timezone":"Asia\/Seoul","location":"\ud1a0\uc988
+        \uac15\ub0a82\ud638\uc810","id":"578264848910310"},{"name":"\uc81c53\ud68c
+        ROR Lab.","start_time":"2014-01-21T20:00:00+0900","end_time":"2014-01-21T22:00:00+0900","timezone":"Asia\/Seoul","location":"\ud1a0\uc988
+        \uac15\ub0a82\ud638\uc810","id":"1444848972398246"},{"name":"ROR Lab. \uc6f9\uc0ac\uc774\ud2b8
+        \ub9ac\ub274\uc5bc \ud0a5\uc5c5 \uce58\ub9e5 \ud30c\ud2f0","start_time":"2014-01-14T19:00:00+0900","timezone":"Asia\/Seoul","location":"\uae08\uac15\ubc14\ube44\ud050
+        http:\/\/me2.do\/xhm3CjnN","id":"278716895586298"},{"name":"\uc81c52\ud68c
+        ROR Lab.","start_time":"2014-01-07T20:00:00+0900","end_time":"2014-01-07T22:00:00+0900","timezone":"Asia\/Seoul","location":"\ud1a0\uc988
+        \uac15\ub0a82\ud638\uc810","id":"555358147886924"},{"name":"\uc81c51\ud68c
+        ROR Lab.","start_time":"2013-12-17T20:00:00+0900","end_time":"2013-12-17T22:00:00+0900","timezone":"Asia\/Seoul","location":"\ud1a0\uc988
+        \uac15\ub0a82\ud638\uc810","id":"1441562226066432"},{"name":"\uc81c50\ud68c
+        ROR Lab.","start_time":"2013-12-03T20:00:00+0900","end_time":"2013-12-03T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"525096094253574"},{"name":"ROR Lab. 50\ud68c
+        \uae30\ub150 \uce58\ub9e5 \ud30c\ud2f0","start_time":"2013-11-19T19:00:00+0900","timezone":"Asia\/Seoul","location":"\uae08\uac15\uce58\ud0a8
+        http:\/\/www.kkbbq.co.kr","id":"185921001598775"},{"name":"\uc81c49\ud68c
+        ROR Lab.","start_time":"2013-11-05T20:00:00+0900","end_time":"2013-11-05T22:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"654503087913492"},{"name":"\uc81c48\ud68c
+        ROR Lab","start_time":"2013-10-22T20:00:00+0900","end_time":"2013-10-22T22:00:00+0900","timezone":"Asia\/Seoul","location":"\ud1a0\uc988
+        \uac15\ub0a82\ud638\uc810","id":"593940630665679"},{"name":"\uc81c47\ud68c
+        ROR Lab","start_time":"2013-10-08T20:00:00+0900","end_time":"2013-10-08T22:00:00+0900","timezone":"Asia\/Seoul","location":"\ud1a0\uc988
+        \uac15\ub0a82\ud638\uc810","id":"1417097788513935"},{"name":"\uc81c46\ud68c
+        ROR Lab","start_time":"2013-09-24T20:00:00+0900","end_time":"2013-09-24T22:00:00+0900","timezone":"Asia\/Seoul","location":"\ud1a0\uc988
+        \uac15\ub0a82\ud638\uc810","id":"401459199977570"},{"name":"\uc81c45\ud68c
+        ROR Lab","start_time":"2013-09-10T20:00:00+0900","end_time":"2013-09-10T22:00:00+0900","timezone":"Asia\/Seoul","location":"\ud1a0\uc988
+        \uac15\ub0a82\ud638\uc810","id":"526674107405153"},{"name":"\uc81c44\ud68c
+        ROR Lab.","start_time":"2013-08-27T20:00:00+0900","end_time":"2013-08-27T22:00:00+0900","timezone":"Asia\/Seoul","location":"\ud1a0\uc988
+        \uac15\ub0a82\ud638\uc810","id":"221949164627790"},{"name":"\uc81c43\ud68c
+        ROR Lab","start_time":"2013-08-13T20:00:00+0900","end_time":"2013-08-13T22:00:00+0900","timezone":"Asia\/Seoul","location":"\ud1a0\uc988
+        \uac15\ub0a82\ud638\uc810","id":"497597986986363"},{"name":"\uc81c42\ud68c
+        ROR Lab.","start_time":"2013-07-30T20:00:00+0900","end_time":"2013-07-30T22:00:00+0900","timezone":"Asia\/Seoul","location":"\ud1a0\uc988
+        \uac15\ub0a82\ud638\uc810","id":"130819057128152"},{"name":"\uc81c41\ud68c
+        ROR Lab.","start_time":"2013-07-16T20:00:00+0900","end_time":"2013-07-16T22:00:00+0900","timezone":"Asia\/Seoul","location":"\ud1a0\uc988
+        \uac15\ub0a82\ud638\uc810","id":"481493738602589"},{"name":"\uc81c40\ud68c
+        ROR Lab.","start_time":"2013-07-02T20:00:00+0900","timezone":"Asia\/Seoul","location":"\ud1a0\uc988
+        \uac15\ub0a82\ud638\uc810","id":"383188695119880"},{"name":"\uc81c39\ud68c
+        ROR Lab.","start_time":"2013-06-18T20:00:00+0900","end_time":"2013-06-18T22:00:00+0900","timezone":"Asia\/Seoul","location":"\ud1a0\uc988
+        \uac15\ub0a82\ud638\uc810","id":"181177602042726"},{"name":"\uc81c38\ud68c
+        ROR Lab.","start_time":"2013-06-04T20:00:00+0900","end_time":"2013-06-04T22:00:00+0900","timezone":"Asia\/Seoul","location":"\ud1a0\uc988
+        \uac15\ub0a82\ud638\uc810","id":"527815370588343"},{"name":"\uc81c37\ud68c
+        ROR Lab.","start_time":"2013-05-25T10:00:00+0900","end_time":"2013-05-25T12:00:00+0900","timezone":"Asia\/Seoul","location":"\ud1a0\uc988
+        \uac15\ub0a82\ud638\uc810","id":"480558265351152"},{"name":"\uc81c36\ud68c
+        ROR Lab.","start_time":"2013-05-11T10:00:00+0900","end_time":"2013-05-11T12:00:00+0900","timezone":"Asia\/Seoul","location":"\ud1a0\uc988
+        \uac15\ub0a82\ud638\uc810","id":"284962498305331"},{"name":"\uc81c35\ud68c
+        ROR Lab.","start_time":"2013-04-27T10:00:00+0900","end_time":"2013-04-27T12:00:00+0900","timezone":"Asia\/Seoul","location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","id":"472596899480124"},{"name":"\uc81c34\ud68c
+        ROR Lab.","start_time":"2013-04-13T10:00:00+0900","end_time":"2013-04-13T12:00:00+0900","timezone":"Asia\/Seoul","location":"\t
+        \uc5ed\uc0bc\ub3d9 PMK\ube4c\ub529 12\uce35 ReALLPlay \ud68c\uc758\uc2e4","id":"318294604965282"},{"name":"\uc81c33\ud68c
+        ROR Lab.","start_time":"2013-03-30T10:00:00+0900","end_time":"2013-03-30T12:00:00+0900","timezone":"Asia\/Seoul","location":"\uc5ed\uc0bc\ub3d9
+        PMK\ube4c\ub529 12\uce35 ReALLPlay \ud68c\uc758\uc2e4","id":"495301573865575"},{"name":"\uc81c32\ud68c
+        ROR Lab.","start_time":"2013-03-16T10:00:00+0900","end_time":"2013-03-16T12:00:00+0900","timezone":"Asia\/Seoul","location":"\uc5ed\uc0bc\ub3d9
+        PMK \ube4c\ub529 12\uce35 ReALLPlay \ud68c\uc758\uc2e4","id":"583247215038692"},{"name":"\uc81c31\ud68c
+        ROR Lab., \uc2dc\uc98c3-1 \/ AP 1-1","start_time":"2013-03-02T10:00:00+0900","end_time":"2013-03-02T12:00:00+0900","timezone":"Asia\/Seoul","location":"\uc5ed\uc0bc\ub3d9
+        PMK \uac74\ubb3c 12\uce35 \uac15\uc758\uc2e4","id":"425150434229279"},{"name":"\uc81c16\ud68c
+        ROR Lab. \uc624\ud504\ub77c\uc778 \uac15\uc88c","start_time":"2013-02-16T10:00:00+0900","timezone":"Asia\/Seoul","location":"PMK
+        \ube4c\ub529 12\uce35 \uac15\uc758\uc2e4","id":"152779641543454"},{"name":"\uc81c15\ud68c
+        ROR Lab. \uc624\ud504\ub77c\uc778 \uac15\uc88c","start_time":"2013-02-02T10:00:00+0900","timezone":"Asia\/Seoul","location":"PMK
+        \ube4c\ub529 12\uce35","id":"527750237248943"},{"name":"\uc81c14\ud68c ROR
+        Lab. \uc628\ub77c\uc778 \uac15\uc88c","start_time":"2013-01-12T10:00:00+0900","end_time":"2013-01-12T12:00:00+0900","timezone":"Asia\/Seoul","location":"CrossFinger","id":"407994369281102"},{"name":"\uc81c13\ud68c
+        ROR Lab. \uc628\ub77c\uc778 \uac15\uc88c","start_time":"2012-12-29T10:00:00+0900","end_time":"2012-12-29T12:00:00+0900","timezone":"Asia\/Seoul","id":"579045335443963"}],"paging":{"cursors":{"after":"NTc5MDQ1MzM1NDQzOTYz","before":"ODI4NjcwNTQwNTE3MDEw"}}}'
+    http_version: 
+  recorded_at: Tue, 14 Oct 2014 07:39:31 GMT
+recorded_with: VCR 2.9.3
