@@ -68,6 +68,8 @@ group :test do
   gem "selenium-webdriver", "~> 2.35.1"
   gem 'shoulda-matchers', require: false
   gem 'simplecov', :require => false
+  gem 'webmock', '1.19.0'
+  gem 'vcr', '2.9.3'
 end
 
 
