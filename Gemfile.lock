@@ -192,6 +192,8 @@ GEM
       treetop (~> 1.4.8)
     merit (2.2.0)
       ambry (~> 0.3.0)
+    meta-tags (2.0.0)
+      actionpack (>= 3.0.0)
     method_source (0.8.2)
     mime-types (1.25.1)
     mini_magick (3.8.1)
@@ -384,6 +386,7 @@ DEPENDENCIES
   launchy (~> 2.4.2)
   letter_opener
   merit
+  meta-tags (~> 2.0.0)
   mini_magick
   multi_json (~> 1.10.1)
   mysql2
