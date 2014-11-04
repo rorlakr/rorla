@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     if Rails.env.production?
-      {:host => "rorla.rorlab.org", :port => nil}
+      {:host => ENV['RORLA_HOST'], :port => nil}
     else  
       {}
     end
