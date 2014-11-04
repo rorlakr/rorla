@@ -27,6 +27,11 @@ class RblogsController < ApplicationController
   def show
     @comment = @rblog.comments.build
     impressionist(@rblog, "message...") if !user_signed_in? or (user_signed_in? and current_user != @rblog.writer)
+
+    set_meta_tags og: {
+      title: "RORLab | #{@rblog.title}",
+      url: rblog_url(@rblog)
+    }, title: @rblog.title
   end
 
   # GET /rblogs/new
