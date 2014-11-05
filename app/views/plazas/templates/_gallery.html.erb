@@ -2,7 +2,7 @@
   <%= icon_label('folder-open', "Bulletins") %> <%= icon_label('chevron-right', post.bulletin.title) %>
 <% end %>
 <% content_for :plaza_category do %>
-  <%= t("updated_html", time_ago: post.updated_at, ago: time_ago_in_words(post.updated_at) %>
+  <%= t("updated_html", time_ago: post.updated_at, ago: time_ago_in_words(post.updated_at)) %>
 <% end %>
 <% content_for :plaza_content do %>
 <div class='gallery'>

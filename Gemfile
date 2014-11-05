@@ -37,6 +37,7 @@ gem 'multi_json', '~> 1.10.1'
 gem 'oj', '~> 2.10.2'
 
 gem 'sucker_punch', '~> 1.2.1'
+gem 'meta-tags', '~> 2.0.0'
 
 group :development do
   gem 'annotate'
@@ -67,6 +68,8 @@ group :test do
   gem "selenium-webdriver", "~> 2.35.1"
   gem 'shoulda-matchers', require: false
   gem 'simplecov', :require => false
+  gem 'webmock', '1.19.0'
+  gem 'vcr', '2.9.3'
 end
 
 
