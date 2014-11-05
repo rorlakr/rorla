@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'events/FBevents'
+
   root "welcome#index"
 
   get 'tags', to: 'tags#list'
