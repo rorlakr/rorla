@@ -99,12 +99,6 @@ $ brew install qt
 $ curl -L https://github.com/docker/fig/releases/download/1.0.1/fig-`uname -s`-`uname -m` > /usr/local/bin/fig; chmod +x /usr/local/bin/fig
 ```
 
-<<<<<<< HEAD
-## 3. MySQL DB 서버 연결
-=======
-설치후 `fig --version` 명령어 결과를 확인
->>>>>>> master
-
 ## Fig 사용
 
 아래 명령어는 최초 DB 설정관련 명령어로 이미 해당 컨테이너가 존재하면 입력하지 않아도됨
