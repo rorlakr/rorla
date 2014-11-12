@@ -1,0 +1,35 @@
+# 맥의 볼륨을 바로 마운트 하면 "Waiting for confirmation of MySQL service startup" 오류 발생. https://github.com/tutumcloud/tutum-docker-mysql/issues/11
+mysqldata:
+  image: busybox
+  volumes:
+    - /var/lib/mysql
+
+mysql:
+  image: tutum/mysql
+  ports:
+    - "3306:3306"
+  volumes_from:
+    - mysqldata
+  environment:
+    MYSQL_USERNAME: admin
+    MYSQL_PASS: yourpassword
+
+uploads:
+  image: busybox
+  volumes:
+    - /app/public/uploads
+
+web:
+  build: .
+  volumes_from:
+    - uploads
+  ports:
+    - "80:80"
+  links:
+    - mysql
+  environment:
+    SECRET_KEY_BASE: secretkey
+    MANDRILL_USERNAME: email@email.com
+    MANDRILL_APIKEY: password
+    RORLA_HOST: localhost
+    RORLA_LOGENTRIES_TOKEN: key
