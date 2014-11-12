@@ -86,99 +86,52 @@ $ brew update
 $ brew install qt
 ```
 
-# Docker 이용해서 Production 환경 로컬에서 확인하기
+
+# Fig 이용해서 Production 환경 로컬에서 확인하기
 
 소스를 Pull Request 하기전에 로컬에서 운영환경 테스트를 해보는것이 좋습니다.
 
-## 1. 환경변수 설정
+## Fig 설치하기
 
-`.env` 파일 생성후 다음과 같이 추가하고 `source .env`를 실행하여 환경변수 설정. 레일스 4 이후에는 환경변수의 적용을 위해 `bin/spring stop` 실행 필수.
+아래 실행 명령어는 참고만하고 [Fig 설치하기](http://www.fig.sh/install.html) 문서를 참고해서 최신 버전으로 설치하자
 
-```bash
-# .env
-export RORLA_SECRET_KEY_BASE=암호화키
-export MANDRILL_USERNAME=email@email.com
-export MANDRILL_APIKEY=password
-export RORLA_HOST=localhost
-export RORLA_LOGENTRIES_TOKEN=key
+```shell
+$ curl -L https://github.com/docker/fig/releases/download/1.0.1/fig-`uname -s`-`uname -m` > /usr/local/bin/fig; chmod +x /usr/local/bin/fig
 ```
 
-메일 보내는것을 확인해야 하는경우 `MANDRILL_USERNAME`, `MANDRILL_APIKEY`, `RORLA_HOST`를 본인의 환경에 맞게 설정. 메일 보내는것이 중요하지 않으면 아무값이나 입력.
-
-## 2. 로컬에서 Docker 이미지 빌드
-
-```bash
-$ bin/rake dockera:build
-```
-
+<<<<<<< HEAD
 ## 3. MySQL DB 서버 연결
+=======
+설치후 `fig --version` 명령어 결과를 확인
+>>>>>>> master
 
-### 3.1 기존 MySQL 컨테이너가 없는 경우
+## Fig 사용
 
-실행중인 MySQL 컨테이너가 있고 DB가 생성되있으면 `3.2`로 이동
+아래 명령어는 최초 DB 설정관련 명령어로 이미 해당 컨테이너가 존재하면 입력하지 않아도됨
 
-#### 3.1.1 MySQL 컨테이너 실행
-
-먼저 볼륨 컨테이너를 생성한다.
-
-```bash
-$ docker run -d -v /var/lib/mysql --name rorla_mysql_data busybox
+```
+$ fig run --rm web bundle exec rake db:create
+$ fig run --rm web bundle exec rake db:migrate
+$ fig run --rm web bundle exec rake db:seed
 ```
 
-이렇게 하면 호스트의 어딘가 저장되지만 볼륨 컨테이너 삭제시 데이터도 삭제 되므로 호스트의 특정 폴더와 연결해도 된다.
+create 첫번째 하면 오류나는데 한번더 실행하자
 
-```bash
-$ docker run -d -v /data/mysql:/var/lib/mysql --name rorla_mysql_data busybox
+관련된 컨테이너들을 실행. `--no-recreate` 옵션이 없으면 위에서 설정했던 DB 변경 사항이 반영되지 않을수 있으므로 주의
+
+```
+$ fig up --no-recreate
 ```
 
-이제 MySQL을 실행하자.
+메일 보내는것을 확인해야 하는경우 `fig.yml` 파일에서 `MANDRILL_USERNAME`, `MANDRILL_APIKEY`, `RORLA_HOST`를 본인의 환경에 맞게 설정. 메일 보내는것이 중요하지 않으면 아무값이나 입력.
 
-```bash
+실행중인 컨테이너들을 종료하기
 
-$ docker run --name mysql --volumes-from rorla_mysql_data -e MYSQL_USERNAME="admin" -e MYSQL_PASS="yourpassword" -d -p 3306:3306 tutum/mysql
+```
+$ fig stop
 ```
 
-계정 정보는 아무렇게나 입력해도 된다. docker link로 알아서 여기에 입력한 계정정보를 사용.
-
-아무것도 할것이 없다.
-
-#### 3.1.2 DB 생성 및 초기화
-
-```bash
-$ bin/rake dockera:db:create
-```
-
-출력된 명령어를 운영서버에서 붙여넣기
-
-```bash
-$ bin/rake dockera:db:setup
-```
-
-출력된 명령어를 운영서버에서 붙여넣기
-
-### 3.2 DB 마이그레이션
-
-```bash
-$ bin/rake dockera:db:migrate
-```
-
-출력된 명령어를 운영서버에서 붙여넣기
-
-## 4. 볼륨 컨테이너 연결(기존 볼륨 컨테이너가 없는 경우)
-
-실행중인 볼륨 컨테이너가 있으면 현재 섹션 무시
-
-```bash
-$ docker run -v /app/public/uploads --name rorla_uploads busybox
-```
-
-## 5. 컨테이너 실행
-
-```bash
-$ bin/rake dockera:con:start
-```
-
-출력된 명령어를 운영서버에서 붙여넣기
+원래는 `ctrl + c` 누르면 종료되야 되는거 같은데 `--no-recreate` 옵션 때문인지 별도로 종료 명령을 입력해야한다.
 
 
 ## 참고
