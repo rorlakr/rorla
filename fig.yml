@@ -33,3 +33,4 @@ web:
     MANDRILL_APIKEY: password
     RORLA_HOST: localhost
     RORLA_LOGENTRIES_TOKEN: key
+    MAILCHIMP_API_KEY: key
