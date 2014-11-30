@@ -1,0 +1,32 @@
+<h2>
+  RORLab 주간뉴스
+  <% if user_signed_in? && current_user.has_role?(:admin) %>
+    <%= link_to '최신 데이터 수집', weeklynews_grap_path, remote: true, class: 'btn btn-default' %>
+  <% end %>
+</h2>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th class="col-md-9">제목</th>
+      <th class="col-md-2">발행일자</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @items.each do |news| %>
+      <tr>
+        <td>
+          <%= link_to news.subject, news.url %>
+        </td>
+        <td>
+          <%= news.sended_at.strftime('%Y-%m-%d(%a)') %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<center>
+  <%= will_paginate @items %>
+</center>
