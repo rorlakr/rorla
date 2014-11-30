@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   resources :podcasts, only: [ :index, :show ], concerns: :commentable
 
   get 'weeklynews/index', as: 'weeklynews'
+  get 'weeklynews/grap', as: 'weeklynews_grap'
   
 
   # API routing
