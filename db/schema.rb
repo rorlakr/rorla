@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140929040340) do
+ActiveRecord::Schema.define(version: 20141130051602) do
 
   create_table "answers", force: true do |t|
     t.text     "content"
@@ -330,5 +330,14 @@ ActiveRecord::Schema.define(version: 20140929040340) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+
+  create_table "weeklynews", force: true do |t|
+    t.string   "uid",        null: false
+    t.string   "subject",    null: false
+    t.datetime "sended_at",  null: false
+    t.text     "url",        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
