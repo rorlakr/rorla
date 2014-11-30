@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141130051602) do
+ActiveRecord::Schema.define(version: 20141130061052) do
 
   create_table "answers", force: true do |t|
     t.text     "content"
@@ -339,5 +339,7 @@ ActiveRecord::Schema.define(version: 20141130051602) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "weeklynews", ["sended_at"], name: "index_weeklynews_on_sended_at"
 
 end
