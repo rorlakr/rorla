@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root "welcome#index"
 
   # Info routing
@@ -38,6 +37,8 @@ Rails.application.routes.draw do
   end
 
   resources :podcasts, only: [ :index, :show ], concerns: :commentable
+
+  get 'weeklynews/index', as: 'weeklynews'
   
 
   # API routing
