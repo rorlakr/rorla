@@ -5,7 +5,7 @@ class WeeklynewsController < ApplicationController
 
   def grap
     if current_user.has_role?(:admin)
-      PodcastJob.new.async.perform
+      WeeklynewsJob.new.async.perform
       flash.now[:notice] = "주간뉴스 수집요청 완료"
     else
       flash.now[:alert] = "admin만 가능한 기능입니다"
