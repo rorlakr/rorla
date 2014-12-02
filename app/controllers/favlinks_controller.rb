@@ -105,7 +105,7 @@ class FavlinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def favlink_params
-      params.require(:favlink).permit(:title, :description, :linkurl, :shared, :bundlelink_id, :with_screen_shot, :tag_list)
+      params.require(:favlink).permit(:title, :description, :linkurl, :shared, :bundlelink_id, :with_screen_shot, :tag_list, :tag_tokens)
     end
 
     def rand_str(len=20)
