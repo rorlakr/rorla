@@ -28,3 +28,4 @@ public/screenshot.png
 .vagrant/**/*
 
 .idea
+.DS_Store
