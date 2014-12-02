@@ -1,7 +1,8 @@
 <h2>
-  RORLab 주간뉴스
+  주간뉴스
+  <%= link_to '구독하기', 'http://weekly.rorlab.org', class: 'btn btn-success btn-xs' %>
   <% if user_signed_in? && current_user.has_role?(:admin) %>
-    <%= link_to '최신 데이터 수집', weeklynews_grap_path, remote: true, class: 'btn btn-default' %>
+    <%= link_to '최신 데이터 수집', weeklynews_grap_path, remote: true, class: 'btn btn-default btn-xs' %>
   <% end %>
 </h2>
 
