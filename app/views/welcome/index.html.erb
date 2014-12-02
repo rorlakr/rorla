@@ -4,15 +4,15 @@
 <div class="visible-lg spacer05"></div>
 <div class="jumbotron">
   <div class="container">
-        <h2>ROR Lab.에 오신 것을 환영합니다.</h2>
-        <p>: Ruby on Rails Korean Study Group with free offline lectures</p>
-      <hr style="border:1px solid #850000;">
+    <h2>RORLab에 오신 것을 환영합니다.</h2>
+    <p>: Ruby on Rails Korean Study Group with free offline lectures</p>
+    <hr style="border:1px solid #850000;">
       <% if user_signed_in? %>
-          <p>Hello, <em><%= current_user.account_name.capitalize! %></em></p>
-            <%= link_to icon_label("log-out", "로그아웃"), destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-primary' %>
+        <p>Hello, <em><%= current_user.account_name.capitalize! %></em></p>
+        <%= link_to icon_label("log-out", "로그아웃"), destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-primary' %>
       <% else %>
-            <%= link_to icon_label("log-in","로그인"), new_user_session_path, class: 'btn btn-primary' %>
-            <%= link_to awesome_icon_label("users","회원가입"), new_user_registration_path, class: 'btn btn-success' %>
+        <%= link_to icon_label("log-in","로그인"), new_user_session_path, class: 'btn btn-primary' %>
+        <%= link_to awesome_icon_label("users","회원가입"), new_user_registration_path, class: 'btn btn-success' %>
       <% end %>
   </div>
 </div>
@@ -30,6 +30,21 @@
 		  </div>
 		</div>
 	</div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-xs-12 col-sm-3 col-md-3">
+        <%= link_to weeklynews_path do %>
+          <%= image_tag "rorlab_weekly.png", class: 'img-responsive', alt: "RORLab 주간뉴스" %>
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9">
+        RORLab 주간뉴스는 매주 <strong>루비</strong>와 <strong>루비온레일스</strong>에 대한 정보를 전달합니다.
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="panel panel-default">
