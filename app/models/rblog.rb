@@ -1,5 +1,6 @@
 class Rblog < ActiveRecord::Base
 
+
   # Rolify and Authroization
   resourcify
   include Authority::Abilities
@@ -26,6 +27,9 @@ class Rblog < ActiveRecord::Base
   # Model Impressionable
   is_impressionable
 
+  # 태그 토큰입
+  include TagTokenize
+  acts_as_taggable
 
   private
 

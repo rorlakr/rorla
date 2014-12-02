@@ -31,7 +31,7 @@ gem 'merit'
 gem 'ambry'
 gem 'clockwork', '~> 1.0.0'
 gem 'impressionist'
-gem 'bootstrap-tagsinput-rails'
+gem 'jquery-tokeninput-rails'
 
 # json 파싱을 위함. 실제 파싱은 oj가 하지만 multi_json 인터페이스를 이용
 gem 'multi_json', '~> 1.10.1'
@@ -70,6 +70,8 @@ group :test do
   gem "selenium-webdriver", "~> 2.35.1"
   gem 'shoulda-matchers', require: false
   gem 'simplecov', :require => false
+  gem 'webmock', '1.19.0'
+  gem 'vcr', '2.9.3'
 end
 
 

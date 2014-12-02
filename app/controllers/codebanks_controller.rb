@@ -87,6 +87,6 @@ class CodebanksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def codebank_params
-      params.require(:codebank).permit(:title, :summary, :snippet, :writer_id, :shared)
+      params.require(:codebank).permit(:title, :summary, :snippet, :writer_id, :shared, :tag_tokens)
     end
 end
