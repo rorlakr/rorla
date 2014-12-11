@@ -1,0 +1,2087 @@
+
+---
+Events:
+  columns:
+  - id
+  - name
+  - start_time
+  - end_time
+  - location
+  - fb_event_id
+  - created_at
+  - updated_at
+  - description
+  - latitude
+  - longitude
+  - updated_time
+  - material
+  - modifiable
+  records:
+  - - 1
+    - "시즌 1 : 제 1 회 ROR Lab."
+    - 2011-11-12 05:00:00.000000000 Z
+    - 2011-11-12 05:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔"
+    - '1'
+    - 2011-12-20 23:23:03.000000000 Z
+    - 2013-02-17 07:31:31.000000000 Z
+    - "2011년 11월 12일(토) `Wordstory ROR Lab`을 위한 조그마한 공간을 마련하고 레일스 초보자를 위한 오프라인 강좌를
+      시작합니다.\r\n\r\n워드스토리 웹사이트를 활성화하고 레일스의 저변 확대를 위해 워드스토리 개발팀은 ROR Lab 을 운영하기로 결정했습니다.\r\n\r\n오픈
+      소스인 레일스의 정신을 이어 받아 레일스를 이제 막 입문하는 분들이나 레일스에 대한 경험이 많은 분들이 함께 만나 레일스에 관한 지식을
+      공유할 수 있는 공간을 마련한 것으로, 레일스에 관한 지식 공간이 아쉬운 국내 현실을 감안할 때 매우 의미 있는 출발이라고 생각합니다.\r\n\r\n격주로
+      토요일 오전 10시부터 약 2시간정도 실제 코딩을 해 가면서 강의를 진행하려고 합니다. Wordstory ROR Lab 은 초보자를 위한
+      강의와 향후 뜻있는 레일스 실무경력자들 모여 레일스 방식의 웹개발에 대한 지식을 공유할 수 있는 공간으로 활용하려고 합니다.\r\n\r\n워드스토리의
+      \ 레일스 초보자를 위한 오프라인 공개강의는 루비온레일스 공식 홈페이지에 있는 가이드(http://guides.rubyonrails.org/)
+      를 주교재로 한국어 번역판(비공식)을 함께 제공할 것입니다. 또한 다른 스크립트 언어로 이미 실무경험이 있는 분들에게는 레일스를 이용한
+      개발방식의 효율성을 알아 볼 수 있는 좋은 기회가 될 것으로 생각합니다. 강의 중간 중간에 자유롭게 질문을 할 수도 있도록 진행할 예정이며
+      ROR Lab 에 참여를 원하시는 분은 장소가 협소한 관계로 hschoidr@gmail.com 으로 미리 연락을 주시면 강의 스케쥴 조정에
+      도움이 될 것 같습니다.\r\n\r\n강좌내용 : http://rorlab.org/categories/9/posts/25"
+    - !ruby/object:BigDecimal 18:0.37540199E2
+    - !ruby/object:BigDecimal 18:0.126947998E3
+    -
+    - |-
+      <p>2011년 11월 12일(토) `Wordstory <span class="caps">ROR</span> Lab`을 위한 조그마한 공간을 마련하고 레일스 초보자를 위한 오프라인 강좌를 시작합니다.</p>
+      <p>워드스토리 웹사이트를 활성화하고 레일스의 저변 확대를 위해 워드스토리 개발팀은 <span class="caps">ROR</span> Lab 을 운영하기로 결정했습니다.</p>
+      <p>오픈 소스인 레일스의 정신을 이어 받아 레일스를 이제 막 입문하는 분들이나 레일스에 대한 경험이 많은 분들이 함께 만나 레일스에 관한 지식을 공유할 수 있는 공간을 마련한 것으로, 레일스에 관한 지식 공간이 아쉬운 국내 현실을 감안할 때 매우 의미 있는 출발이라고 생각합니다.</p>
+      <p>격주로 토요일 오전 10시부터 약 2시간정도 실제 코딩을 해 가면서 강의를 진행하려고 합니다. Wordstory <span class="caps">ROR</span> Lab 은 초보자를 위한 강의와 향후 뜻있는 레일스 실무경력자들 모여 레일스 방식의 웹개발에 대한 지식을 공유할 수 있는 공간으로 활용하려고 합니다.</p>
+      <p>워드스토리의  레일스 초보자를 위한 오프라인 공개강의는 루비온레일스 공식 홈페이지에 있는 가이드(<a href="http://guides.rubyonrails.org/" target="_blank" rel="nofollow">http://guides.rubyonrails.org/</a>) 를 주교재로 한국어 번역판(비공식)을 함께 제공할 것입니다. 또한 다른 스크립트 언어로 이미 실무경험이 있는 분들에게는 레일스를 이용한 개발방식의 효율성을 알아 볼 수 있는 좋은 기회가 될 것으로 생각합니다. 강의 중간 중간에 자유롭게 질문을 할 수도 있도록 진행할 예정이며 <span class="caps">ROR</span> Lab 에 참여를 원하시는 분은 장소가 협소한 관계로 <a href="mailto:hschoidr@gmail.com" target="_blank" rel="nofollow">hschoidr@gmail.com</a> 으로 미리 연락을 주시면 강의 스케쥴 조정에 도움이 될 것 같습니다.</p>
+      <p>강좌내용 : <a href="http://rorlab.org/categories/9/posts/25" target="_blank" rel="nofollow">http://rorlab.org/categories/9/posts/25</a></p>
+    - '0'
+  - - 2
+    - "시즌 1 : 제 2 회 ROR Lab."
+    - 2011-11-26 01:00:00.000000000 Z
+    - 2011-11-26 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔"
+    - '2'
+    - 2011-12-20 23:25:06.000000000 Z
+    - 2013-02-17 07:32:56.000000000 Z
+    - "1 회때 진행되었던 내용을 복습하고 레이아웃에 대한 개념과 실제 블로그 어플리케이션에 적용하는 과정을 진행합니다.\r\n\r\n강좌내용
+      : http://lab.wordstory.net/categories/9/posts/27"
+    - !ruby/object:BigDecimal 18:0.37540199E2
+    - !ruby/object:BigDecimal 18:0.126947998E3
+    -
+    - |-
+      <p>1 회때 진행되었던 내용을 복습하고 레이아웃에 대한 개념과 실제 블로그 어플리케이션에 적용하는 과정을 진행합니다.</p>
+      <p>강좌내용 : <a href="http://lab.wordstory.net/categories/9/posts/27" target="_blank" rel="nofollow">http://lab.wordstory.net/categories/9/posts/27</a></p>
+    - '0'
+  - - 3
+    - "시즌 1 : 제 3 회 ROR Lab."
+    - 2011-12-10 01:00:00.000000000 Z
+    - 2011-12-10 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔"
+    - '3'
+    - 2011-12-20 23:27:02.000000000 Z
+    - 2013-02-21 13:47:33.000000000 Z
+    - "2 회때 강의한 내용을 중심으로 복습하고 블로그 어플리케이션의 심화학습을 진행합니다. \r\n\r\n강좌내용 : http://lab.wordstory.net/categories/9/posts/50"
+    - !ruby/object:BigDecimal 18:0.37540199E2
+    - !ruby/object:BigDecimal 18:0.126947998E3
+    -
+    - |
+      <p>2 회때 강의한 내용을 중심으로 복습하고 블로그 어플리케이션의 심화학습을 진행합니다. </p>
+
+      <p>강좌내용 : <a href="http://lab.wordstory.net/categories/9/posts/50" target="_blank" rel="nofollow">http://lab.wordstory.net/categories/9/posts/50</a></p>
+    - '0'
+  - - 4
+    - "시즌 1 : 제 4 회 ROR Lab."
+    - 2012-01-07 01:00:00.000000000 Z
+    - 2012-01-07 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔"
+    - '4'
+    - 2011-12-20 23:29:20.000000000 Z
+    - 2013-02-21 12:54:21.000000000 Z
+    - "공지\r\n--\r\n\r\n* 제 4 회 공개강좌부터는 사전등록 시스템을 도입하기로 했습니다. 장소가 협소한 관계로 8분까지는 좌석이
+      제공될 것 같습니다. 이점 양해해 주시기 바랍니다. \r\n* 우측 아래에 \"Register\" 링크를 클릭하시면 \"사전등록자\" 명단에
+      계정명이 보이게 될 것입니다. 초록색은 좌석이 배정된 분입니다. \r\n* 사전등록하신 후 본인에 대한 소개를 댓글로 남겨 주시기 바랍니다.
+      \r\n\r\n레일스가이드\r\n------\r\n\r\n * 루비온레일스 공식 홈페이지의 레일스가이드 내용 중 \"Database Migrations\":http://lab.wordstory.net/categories/3/posts/18
+      부분을 중심으로 공개 강의를 진행합니다. \r\n * \"Rails Database Migrations\":http://www.slideshare.net/hyoseongchoi/database-migration<br
+      />\r\n<div class=\"videoWrapper\">\r\nhttp://youtu.be/SU6k2-b-jSM\r\n</div>\r\n\r\n특강\r\n--\r\n\r\n
+      * 연자 : 정창훈님(NHN)\r\n * 제목 : How to use Heroku\r\n * 강좌내용 : http://seapy.com/1872
+      \r\n<div class=\"videoWrapper\">\r\nhttp://youtu.be/kbKQ6aBUGA0\r\n</div>"
+    - !ruby/object:BigDecimal 18:0.37540199E2
+    - !ruby/object:BigDecimal 18:0.126947998E3
+    -
+    - "<h2>공지</h2>\n\n<ul>\n<li>제 4 회 공개강좌부터는 사전등록 시스템을 도입하기로 했습니다. 장소가 협소한 관계로 8분까지는
+      좌석이 제공될 것 같습니다. 이점 양해해 주시기 바랍니다. </li>\n<li>우측 아래에 &quot;Register&quot; 링크를
+      클릭하시면 &quot;사전등록자&quot; 명단에 계정명이 보이게 될 것입니다. 초록색은 좌석이 배정된 분입니다. </li>\n<li>사전등록하신
+      후 본인에 대한 소개를 댓글로 남겨 주시기 바랍니다. </li>\n</ul>\n\n<h2>레일스가이드</h2>\n\n<ul>\n<li>루비온레일스
+      공식 홈페이지의 레일스가이드 내용 중 &quot;Database Migrations&quot;:<a href=\"http://lab.wordstory.net/categories/3/posts/18\"
+      target=\"_blank\" rel=\"nofollow\">http://lab.wordstory.net/categories/3/posts/18</a>
+      부분을 중심으로 공개 강의를 진행합니다. </li>\n<li>&quot;Rails Database Migrations&quot;:<a href=\"http://www.slideshare.net/hyoseongchoi/database-migration\"
+      target=\"_blank\" rel=\"nofollow\">http://www.slideshare.net/hyoseongchoi/database-migration</a><br
+      />\n<div class=\"videoWrapper\">\n<iframe width=\"400\" height=\"250\" src=\"//www.youtube.com/embed/SU6k2-b-jSM?wmode=transparent\"
+      frameborder=\"0\" allowfullscreen></iframe>\n</div></li>\n</ul>\n\n<h2>특강</h2>\n\n<ul>\n<li>연자
+      : 정창훈님(NHN)</li>\n<li>제목 : How to use Heroku</li>\n<li>강좌내용 : <a href=\"http://seapy.com/1872\"
+      target=\"_blank\" rel=\"nofollow\">http://seapy.com/1872</a> \n<div class=\"videoWrapper\">\n<iframe
+      width=\"400\" height=\"250\" src=\"//www.youtube.com/embed/kbKQ6aBUGA0?wmode=transparent\"
+      frameborder=\"0\" allowfullscreen></iframe>\n</div></li>\n</ul>\n"
+    - '0'
+  - - 5
+    - "시즌 1 : 제 5 회 ROR Lab."
+    - 2012-01-14 01:00:00.000000000 Z
+    - 2012-01-14 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔"
+    - '5'
+    - 2012-01-07 05:43:38.000000000 Z
+    - 2013-02-21 13:54:10.000000000 Z
+    - "공지\r\n--\r\n\r\n* 다음번 모임은 구정연휴와 겹쳐서 7일후인 1월 14일에 개최토록 하겠습니다. \r\n\r\n레일스가이드\r\n------\r\n\r\n*
+      강의내용 : [Active Record Validations and Callbacks - 1][1]\r\n* 스크린캐스트 : <br />\r\n<div
+      class=\"videoWrapper\">\r\nhttp://youtu.be/BfTzRwsk_Bg\r\n</div>\r\n\r\n특강\r\n--\r\n\r\n*
+      제목 : *_+Vim for Rails, 레일스를 위한 Vim 활용+_*\r\n* 강사 : 정창훈님\r\n* 강의내용 : http://seapy.com/1852\r\n*
+      스크린캐스트 : <br />\r\n<div class=\"videoWrapper\">\r\nhttp://youtu.be/LDHrE1VBccg\r\n</div>\r\n\r\nhttp://www.slideshare.net/seapy/vim-for-you-11021600\r\n\r\n\r\n
+      \ [1]: http://lab.wordstory.net/categories/3/posts/37"
+    - !ruby/object:BigDecimal 18:0.37540199E2
+    - !ruby/object:BigDecimal 18:0.126947998E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>다음번 모임은 구정연휴와 겹쳐서 7일후인 1월 14일에 개최토록 하겠습니다. </li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>강의내용 : <a href="http://lab.wordstory.net/categories/3/posts/37">Active Record Validations and Callbacks - 1</a></li>
+      <li>스크린캐스트 : <br />
+      <div class="videoWrapper">
+      <iframe width="400" height="250" src="//www.youtube.com/embed/BfTzRwsk_Bg?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+      </div></li>
+      </ul>
+
+      <h2>특강</h2>
+
+      <ul>
+      <li>제목 : <em><em>+Vim for Rails, 레일스를 위한 Vim 활용+</em></em></li>
+      <li>강사 : 정창훈님</li>
+      <li>강의내용 : <a href="http://seapy.com/1852" target="_blank" rel="nofollow">http://seapy.com/1852</a></li>
+      <li>스크린캐스트 : <br />
+      <div class="videoWrapper">
+      <iframe width="400" height="250" src="//www.youtube.com/embed/LDHrE1VBccg?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+      </div></li>
+      </ul>
+
+      <p><a href="http://www.slideshare.net/seapy/vim-for-you-11021600" target="_blank" rel="nofollow">http://www.slideshare.net/seapy/vim-for-you-11021600</a></p>
+    - '0'
+  - - 6
+    - "시즌 1 : 제 6 회 ROR Lab."
+    - 2012-02-04 01:00:00.000000000 Z
+    - 2012-02-04 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔"
+    - '6'
+    - 2012-01-14 05:38:31.000000000 Z
+    - 2013-02-17 07:34:46.000000000 Z
+    - "h3. 레일스가이드\r\n\r\n* 강의내용 : \"Active Record Validations and Callbacks - 2\":http://lab.wordstory.net/categories/3/posts/37\r\n\r\n*
+      강의슬라이드: <br /><div style=\"width:425px\" id=\"__ss_11399198\"> <strong style=\"display:block;margin:12px
+      0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/active-record-callbacks-and-observers\"
+      title=\"Active Record callbacks and Observers\" target=\"_blank\">Active Record
+      callbacks and Observers</a></strong> <iframe src=\"http://www.slideshare.net/slideshow/embed_code/11399198\"
+      width=\"425\" height=\"355\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\"></iframe> <div style=\"padding:5px 0 12px\"> View more <a href=\"http://www.slideshare.net/\"
+      target=\"_blank\">presentations</a> from <a href=\"http://www.slideshare.net/hyoseongchoi\"
+      target=\"_blank\">Hyoseong Choi</a> </div> </div>\r\n\r\n* 스크린캐스트 : <br />http://youtu.be/Exxyp2Eg6qA"
+    - !ruby/object:BigDecimal 18:0.37540199E2
+    - !ruby/object:BigDecimal 18:0.126947998E3
+    -
+    - "<h3>레일스가이드</h3>\n<ul>\n\t<li>강의내용 : <a href=\"http://lab.wordstory.net/categories/3/posts/37\">Active
+      Record Validations and Callbacks &#8211; 2</a></li>\n</ul>\n<ul>\n\t<li>강의슬라이드:
+      <br /><div style=\"width:425px\" id=\"__ss_11399198\"> <strong style=\"display:block;margin:12px
+      0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/active-record-callbacks-and-observers\"
+      title=\"Active Record callbacks and Observers\" target=\"_blank\">Active Record
+      callbacks and Observers</a></strong> <iframe src=\"http://www.slideshare.net/slideshow/embed_code/11399198\"
+      width=\"425\" height=\"355\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\"></iframe> <div style=\"padding:5px 0 12px\"> View more <a href=\"http://www.slideshare.net/\"
+      target=\"_blank\">presentations</a> from <a href=\"http://www.slideshare.net/hyoseongchoi\"
+      target=\"_blank\">Hyoseong Choi</a> </div> </div></li>\n</ul>\n<ul>\n\t<li>스크린캐스트
+      : <br /><iframe width=\"400\" height=\"250\" src=\"http://www.youtube.com/embed/Exxyp2Eg6qA?wmode=transparent\"
+      frameborder=\"0\" allowfullscreen></iframe>\n</ul>"
+    - '0'
+  - - 7
+    - "시즌 1 : 제 7 회 ROR Lab."
+    - 2012-02-18 01:00:00.000000000 Z
+    - 2012-02-18 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔"
+    - '7'
+    - 2012-02-04 09:15:14.000000000 Z
+    - 2013-02-17 07:35:24.000000000 Z
+    - "h3. 레일스가이드\r\n\r\n* 제목 : \"A Guide to Active Record Associations\":http://lab.wordstory.net/categories/3/posts/107\r\n*
+      스크린캐스트 : <br />http://youtu.be/hoWX7qlV0LY\r\n* 슬라이드 : <div style=\"width:425px\"
+      id=\"__ss_11645284\"> <strong style=\"display:block;margin:12px 0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/active-record-associations-in-rails\"
+      title=\"Active Record Associations, in Rails\" target=\"_blank\">Active Record
+      Associations, in Rails</a></strong> <iframe src=\"http://www.slideshare.net/slideshow/embed_code/11645284\"
+      width=\"425\" height=\"355\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\"></iframe> <div style=\"padding:5px 0 12px\"> View more <a href=\"http://www.slideshare.net/\"
+      target=\"_blank\">presentations</a> from <a href=\"http://www.slideshare.net/hyoseongchoi\"
+      target=\"_blank\">Hyoseong Choi</a> </div> </div>"
+    - !ruby/object:BigDecimal 18:0.37540199E2
+    - !ruby/object:BigDecimal 18:0.126947998E3
+    -
+    - "<h3>레일스가이드</h3>\n<ul>\n\t<li>제목 : <a href=\"http://lab.wordstory.net/categories/3/posts/107\">A
+      Guide to Active Record Associations</a></li>\n\t<li>스크린캐스트 : <br /><iframe width=\"400\"
+      height=\"250\" src=\"http://www.youtube.com/embed/hoWX7qlV0LY?wmode=transparent\"
+      frameborder=\"0\" allowfullscreen></iframe>\n\t<li>슬라이드 : <div style=\"width:425px\"
+      id=\"__ss_11645284\"> <strong style=\"display:block;margin:12px 0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/active-record-associations-in-rails\"
+      title=\"Active Record Associations, in Rails\" target=\"_blank\">Active Record
+      Associations, in Rails</a></strong> <iframe src=\"http://www.slideshare.net/slideshow/embed_code/11645284\"
+      width=\"425\" height=\"355\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\"></iframe> <div style=\"padding:5px 0 12px\"> View more <a href=\"http://www.slideshare.net/\"
+      target=\"_blank\">presentations</a> from <a href=\"http://www.slideshare.net/hyoseongchoi\"
+      target=\"_blank\">Hyoseong Choi</a> </div> </div></li>\n</ul>"
+    - '0'
+  - - 8
+    - "시즌 1 : 제 8 회 ROR Lab."
+    - 2012-03-03 01:00:00.000000000 Z
+    - 2012-03-03 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔"
+    - '8'
+    - 2012-02-18 06:32:42.000000000 Z
+    - 2013-02-17 07:35:51.000000000 Z
+    - "h3. 레일스가이드\r\n\r\n* 제목 : Active Record Association - 2\r\n* 스크린캐스트 : <br /><iframe
+      width=\"560\" height=\"315\" src=\"http://www.youtube.com/embed/bXDi2tsHKoU\"
+      frameborder=\"0\" allowfullscreen></iframe>\r\n* 슬라이드 : <div style=\"width:425px\"
+      id=\"__ss_11811298\"> <strong style=\"display:block;margin:12px 0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/activerecord-associations-2\"
+      title=\"ActiveRecord Associations (2)\" target=\"_blank\">ActiveRecord Associations
+      (2)</a></strong> <iframe src=\"http://www.slideshare.net/slideshow/embed_code/11811298\"
+      width=\"425\" height=\"355\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\"></iframe> <div style=\"padding:5px 0 12px\"> View more <a href=\"http://www.slideshare.net/\"
+      target=\"_blank\">presentations</a> from <a href=\"http://www.slideshare.net/hyoseongchoi\"
+      target=\"_blank\">Hyoseong Choi</a> </div> </div>"
+    - !ruby/object:BigDecimal 18:0.37540199E2
+    - !ruby/object:BigDecimal 18:0.126947998E3
+    -
+    - "<h3>레일스가이드</h3>\n<ul>\n\t<li>제목 : Active Record Association &#8211; 2</li>\n\t<li>스크린캐스트
+      : <br /><iframe width=\"560\" height=\"315\" src=\"http://www.youtube.com/embed/bXDi2tsHKoU\"
+      frameborder=\"0\" allowfullscreen></iframe></li>\n\t<li>슬라이드 : <div style=\"width:425px\"
+      id=\"__ss_11811298\"> <strong style=\"display:block;margin:12px 0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/activerecord-associations-2\"
+      title=\"ActiveRecord Associations (2)\" target=\"_blank\">ActiveRecord Associations
+      (2)</a></strong> <iframe src=\"http://www.slideshare.net/slideshow/embed_code/11811298\"
+      width=\"425\" height=\"355\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\"></iframe> <div style=\"padding:5px 0 12px\"> View more <a href=\"http://www.slideshare.net/\"
+      target=\"_blank\">presentations</a> from <a href=\"http://www.slideshare.net/hyoseongchoi\"
+      target=\"_blank\">Hyoseong Choi</a> </div> </div></li>\n</ul>"
+    - '0'
+  - - 9
+    - "시즌 1 : 제 9 회 ROR Lab."
+    - 2012-03-17 01:00:00.000000000 Z
+    - 2012-03-17 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔"
+    - '9'
+    - 2012-03-06 00:24:49.000000000 Z
+    - 2013-02-17 07:36:21.000000000 Z
+    - "h3. 레일스가이드\r\n\r\n* 제목 : ActiveRecord Query Interface\r\n* 스크린캐스트 :  <br />
+      <iframe width=\"560\" height=\"315\" src=\"http://www.youtube.com/embed/qXJz3Rf19qU\"
+      frameborder=\"0\" allowfullscreen></iframe>\r\n\r\n* 슬라이드 : <div style=\"width:425px\"
+      id=\"__ss_12016458\"><strong style=\"display:block;margin:12px 0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/activerecord-query-interface-1-12016458\"
+      title=\"ActiveRecord Query Interface (1)\">ActiveRecord Query Interface (1)</a></strong><object
+      id=\"__sse12016458\" width=\"425\" height=\"355\"><param name=\"movie\" value=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=ar-queryinterface1-120315041333-phpapp02&stripped_title=activerecord-query-interface-1-12016458&userName=hyoseongchoi\"
+      /><param name=\"allowFullScreen\" value=\"true\"/><param name=\"allowScriptAccess\"
+      value=\"always\"/><param name=\"wmode\" value=\"transparent\"/><embed name=\"__sse12016458\"
+      src=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=ar-queryinterface1-120315041333-phpapp02&stripped_title=activerecord-query-interface-1-12016458&userName=hyoseongchoi\"
+      type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\"
+      wmode=\"transparent\" width=\"425\" height=\"355\"></embed></object><div style=\"padding:5px
+      0 12px\">View more <a href=\"http://www.slideshare.net/\">presentations</a>
+      from <a href=\"http://www.slideshare.net/hyoseongchoi\">Hyoseong Choi</a>.</div></div>"
+    - !ruby/object:BigDecimal 18:0.37540199E2
+    - !ruby/object:BigDecimal 18:0.126947998E3
+    -
+    - "<h3>레일스가이드</h3>\n<ul>\n\t<li>제목 : ActiveRecord Query Interface</li>\n\t<li>스크린캐스트
+      :  <br /> <iframe width=\"560\" height=\"315\" src=\"http://www.youtube.com/embed/qXJz3Rf19qU\"
+      frameborder=\"0\" allowfullscreen></iframe></li>\n</ul>\n<ul>\n\t<li>슬라이드 :
+      <div style=\"width:425px\" id=\"__ss_12016458\"><strong style=\"display:block;margin:12px
+      0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/activerecord-query-interface-1-12016458\"
+      title=\"ActiveRecord Query Interface (1)\">ActiveRecord Query Interface (1)</a></strong><object
+      id=\"__sse12016458\" width=\"425\" height=\"355\"><param name=\"movie\" value=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=ar-queryinterface1-120315041333-phpapp02&stripped_title=activerecord-query-interface-1-12016458&userName=hyoseongchoi\"
+      /><param name=\"allowFullScreen\" value=\"true\"/><param name=\"allowScriptAccess\"
+      value=\"always\"/><param name=\"wmode\" value=\"transparent\"/><embed name=\"__sse12016458\"
+      src=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=ar-queryinterface1-120315041333-phpapp02&stripped_title=activerecord-query-interface-1-12016458&userName=hyoseongchoi\"
+      type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\"
+      wmode=\"transparent\" width=\"425\" height=\"355\"></embed></object><div style=\"padding:5px
+      0 12px\">View more <a href=\"http://www.slideshare.net/\">presentations</a>
+      from <a href=\"http://www.slideshare.net/hyoseongchoi\">Hyoseong Choi</a>.</div></div></li>\n</ul>"
+    - '0'
+  - - 10
+    - "시즌 1 : 제 10 회 ROR Lab."
+    - 2012-04-07 01:00:00.000000000 Z
+    - 2012-04-07 01:00:00.000000000 Z
+    - "서울특별시 영등포구 여의도동 63빌딩"
+    - '10'
+    - 2012-03-17 04:47:26.000000000 Z
+    - 2013-02-17 07:39:27.000000000 Z
+    - "h3. 레일스가이드\r\n\r\n* 제목 : ActiveRecord Query Interface (2)\r\n* 스크린캐스트 :  <br
+      /><iframe width=\"560\" height=\"315\" src=\"http://www.youtube.com/embed/nYa5GDNN8-c\"
+      frameborder=\"0\" allowfullscreen></iframe>\r\n* 슬라이드 :  <br /><div style=\"width:425px\"
+      id=\"__ss_12300234\"><strong style=\"display:block;margin:12px 0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/ar-query-interface2\"
+      title=\"Ar query interface(2)\">Ar query interface(2)</a></strong><object id=\"__sse12300234\"
+      width=\"425\" height=\"355\"><param name=\"movie\" value=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=ar-queryinterface2-120406072445-phpapp01&stripped_title=ar-query-interface2&userName=hyoseongchoi\"
+      /><param name=\"allowFullScreen\" value=\"true\"/><param name=\"allowScriptAccess\"
+      value=\"always\"/><param name=\"wmode\" value=\"transparent\"/><embed name=\"__sse12300234\"
+      src=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=ar-queryinterface2-120406072445-phpapp01&stripped_title=ar-query-interface2&userName=hyoseongchoi\"
+      type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\"
+      wmode=\"transparent\" width=\"425\" height=\"355\"></embed></object><div style=\"padding:5px
+      0 12px\">View more <a href=\"http://www.slideshare.net/\">presentations</a>
+      from <a href=\"http://www.slideshare.net/hyoseongchoi\">Hyoseong Choi</a>.</div></div>"
+    - !ruby/object:BigDecimal 18:0.37519798E2
+    - !ruby/object:BigDecimal 18:0.126940002E3
+    -
+    - "<h3>레일스가이드</h3>\n<ul>\n\t<li>제목 : ActiveRecord Query Interface (2)</li>\n\t<li>스크린캐스트
+      :  <br /><iframe width=\"560\" height=\"315\" src=\"http://www.youtube.com/embed/nYa5GDNN8-c\"
+      frameborder=\"0\" allowfullscreen></iframe></li>\n\t<li>슬라이드 :  <br /><div style=\"width:425px\"
+      id=\"__ss_12300234\"><strong style=\"display:block;margin:12px 0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/ar-query-interface2\"
+      title=\"Ar query interface(2)\">Ar query interface(2)</a></strong><object id=\"__sse12300234\"
+      width=\"425\" height=\"355\"><param name=\"movie\" value=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=ar-queryinterface2-120406072445-phpapp01&stripped_title=ar-query-interface2&userName=hyoseongchoi\"
+      /><param name=\"allowFullScreen\" value=\"true\"/><param name=\"allowScriptAccess\"
+      value=\"always\"/><param name=\"wmode\" value=\"transparent\"/><embed name=\"__sse12300234\"
+      src=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=ar-queryinterface2-120406072445-phpapp01&stripped_title=ar-query-interface2&userName=hyoseongchoi\"
+      type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\"
+      wmode=\"transparent\" width=\"425\" height=\"355\"></embed></object><div style=\"padding:5px
+      0 12px\">View more <a href=\"http://www.slideshare.net/\">presentations</a>
+      from <a href=\"http://www.slideshare.net/hyoseongchoi\">Hyoseong Choi</a>.</div></div></li>\n</ul>"
+    - '0'
+  - - 11
+    - "시즌 1 : 제 11 회 ROR Lab."
+    - 2012-04-21 01:00:00.000000000 Z
+    - 2012-04-21 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔"
+    - '11'
+    - 2012-04-07 10:48:35.000000000 Z
+    - 2013-02-17 07:40:06.000000000 Z
+    - "h3. 레일스가이드\r\n\r\n* 제목 : Action View Form Helpers\r\n* 스크린캐스트 :  \r\n* 슬라이드
+      : <br /><div style=\"width:425px\" id=\"__ss_12618330\"><strong style=\"display:block;margin:12px
+      0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/active-record-form-helpers\"
+      title=\"Active Record Form Helpers\">Active Record Form Helpers</a></strong><object
+      id=\"__sse12618330\" width=\"425\" height=\"355\"><param name=\"movie\" value=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=railsformhelpers-120420082159-phpapp01&stripped_title=active-record-form-helpers&userName=hyoseongchoi\"
+      /><param name=\"allowFullScreen\" value=\"true\"/><param name=\"allowScriptAccess\"
+      value=\"always\"/><param name=\"wmode\" value=\"transparent\"/><embed name=\"__sse12618330\"
+      src=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=railsformhelpers-120420082159-phpapp01&stripped_title=active-record-form-helpers&userName=hyoseongchoi\"
+      type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\"
+      wmode=\"transparent\" width=\"425\" height=\"355\"></embed></object><div style=\"padding:5px
+      0 12px\">View more <a href=\"http://www.slideshare.net/\">presentations</a>
+      from <a href=\"http://www.slideshare.net/hyoseongchoi\">Hyoseong Choi</a>.</div></div>\r\n"
+    - !ruby/object:BigDecimal 18:0.37540199E2
+    - !ruby/object:BigDecimal 18:0.126947998E3
+    -
+    - "<h3>레일스가이드</h3>\n<ul>\n\t<li>제목 : Action View Form Helpers</li>\n\t<li>스크린캐스트
+      :</li>\n\t<li>슬라이드 : <br /><div style=\"width:425px\" id=\"__ss_12618330\"><strong
+      style=\"display:block;margin:12px 0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/active-record-form-helpers\"
+      title=\"Active Record Form Helpers\">Active Record Form Helpers</a></strong><object
+      id=\"__sse12618330\" width=\"425\" height=\"355\"><param name=\"movie\" value=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=railsformhelpers-120420082159-phpapp01&stripped_title=active-record-form-helpers&userName=hyoseongchoi\"
+      /><param name=\"allowFullScreen\" value=\"true\"/><param name=\"allowScriptAccess\"
+      value=\"always\"/><param name=\"wmode\" value=\"transparent\"/><embed name=\"__sse12618330\"
+      src=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=railsformhelpers-120420082159-phpapp01&stripped_title=active-record-form-helpers&userName=hyoseongchoi\"
+      type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\"
+      wmode=\"transparent\" width=\"425\" height=\"355\"></embed></object><div style=\"padding:5px
+      0 12px\">View more <a href=\"http://www.slideshare.net/\">presentations</a>
+      from <a href=\"http://www.slideshare.net/hyoseongchoi\">Hyoseong Choi</a>.</div></div></li>\n</ul>"
+    - '0'
+  - - 12
+    - "제 1 회 Special Lab. "
+    - 2012-05-05 01:00:00.000000000 Z
+    - 2012-05-05 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔"
+    - '12'
+    - 2012-04-24 04:09:54.000000000 Z
+    - 2013-02-17 07:40:40.000000000 Z
+    - "h3. 공지사항\r\n<br>\r\n* 제12회 Dry Lab.일정은 사정상 3주후로 연기될 예정입니다. 대신에 오는 5월5일 어린이날(토)
+      오전10시에 Lab 사무실에서 Q&A를 진행하고자 합니다.  \r\n\r\n* 질문 리스트는 4월30일까지 본 게시물의 댓글로 올려 주시면
+      취합해서 답변을 준비하도록 하겠습니다. \r\n\r\n* 가급적이면 당일 번개 질문은 사양하겠습니다. ㅎㅎㅎ "
+    - !ruby/object:BigDecimal 18:0.37540199E2
+    - !ruby/object:BigDecimal 18:0.126947998E3
+    -
+    - "<h3>공지사항<br />\n<br></h3>\n<ul>\n\t<li>제12회 Dry Lab.일정은 사정상 3주후로 연기될 예정입니다.
+      대신에 오는 5월5일 어린이날(토) 오전10시에 Lab 사무실에서 Q&amp;A를 진행하고자 합니다.</li>\n</ul>\n<ul>\n\t<li>질문
+      리스트는 4월30일까지 본 게시물의 댓글로 올려 주시면 취합해서 답변을 준비하도록 하겠습니다.</li>\n</ul>\n<ul>\n\t<li>가급적이면
+      당일 번개 질문은 사양하겠습니다. ㅎㅎㅎ</li>\n</ul>"
+    - '0'
+  - - 13
+    - "시즌 1 : 제 12 회 ROR Lab."
+    - 2012-05-12 01:00:00.000000000 Z
+    - 2012-05-12 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔"
+    - '13'
+    - 2012-05-05 04:00:31.000000000 Z
+    - 2013-02-17 07:41:08.000000000 Z
+    - "h3. 레일스가이드\r\n\r\n* 제목 : Action Controller Overview\r\n* 강의내용 : http://rorlab.org/rails_guides/action_controller_overview.html\r\n*
+      스크린캐스트 : \r\n* 슬라이드 : <br /><div style=\"width:425px\" id=\"__ss_12901987\"><strong
+      style=\"display:block;margin:12px 0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/action-controller-overview\"
+      title=\"Action Controller Overview\">Action Controller Overview</a></strong><object
+      id=\"__sse12901987\" width=\"425\" height=\"355\"><param name=\"movie\" value=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=actioncontroller-120511232255-phpapp01&stripped_title=action-controller-overview&userName=hyoseongchoi\"
+      /><param name=\"allowFullScreen\" value=\"true\"/><param name=\"allowScriptAccess\"
+      value=\"always\"/><param name=\"wmode\" value=\"transparent\"/><embed name=\"__sse12901987\"
+      src=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=actioncontroller-120511232255-phpapp01&stripped_title=action-controller-overview&userName=hyoseongchoi\"
+      type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\"
+      wmode=\"transparent\" width=\"425\" height=\"355\"></embed></object><div style=\"padding:5px
+      0 12px\">View more <a href=\"http://www.slideshare.net/\">presentations</a>
+      from <a href=\"http://www.slideshare.net/hyoseongchoi\">Hyoseong Choi</a>.</div></div>"
+    - !ruby/object:BigDecimal 18:0.37540199E2
+    - !ruby/object:BigDecimal 18:0.126947998E3
+    -
+    - "<h3>레일스가이드</h3>\n<ul>\n\t<li>제목 : Action Controller Overview</li>\n\t<li>강의내용
+      : <a href=\"http://rorlab.org/rails_guides/action_controller_overview.html\"
+      target=\"_blank\" rel=\"nofollow\">http://rorlab.org/rails_guides/action_controller_overview.html</a></li>\n\t<li>스크린캐스트
+      :</li>\n\t<li>슬라이드 : <br /><div style=\"width:425px\" id=\"__ss_12901987\"><strong
+      style=\"display:block;margin:12px 0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/action-controller-overview\"
+      title=\"Action Controller Overview\">Action Controller Overview</a></strong><object
+      id=\"__sse12901987\" width=\"425\" height=\"355\"><param name=\"movie\" value=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=actioncontroller-120511232255-phpapp01&stripped_title=action-controller-overview&userName=hyoseongchoi\"
+      /><param name=\"allowFullScreen\" value=\"true\"/><param name=\"allowScriptAccess\"
+      value=\"always\"/><param name=\"wmode\" value=\"transparent\"/><embed name=\"__sse12901987\"
+      src=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=actioncontroller-120511232255-phpapp01&stripped_title=action-controller-overview&userName=hyoseongchoi\"
+      type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\"
+      wmode=\"transparent\" width=\"425\" height=\"355\"></embed></object><div style=\"padding:5px
+      0 12px\">View more <a href=\"http://www.slideshare.net/\">presentations</a>
+      from <a href=\"http://www.slideshare.net/hyoseongchoi\">Hyoseong Choi</a>.</div></div></li>\n</ul>"
+    - '0'
+  - - 14
+    - "시즌 1 : 제 13 회 ROR Lab."
+    - 2012-05-26 01:00:00.000000000 Z
+    - 2012-05-26 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔"
+    - '14'
+    - 2012-05-13 08:13:43.000000000 Z
+    - 2013-02-17 07:41:30.000000000 Z
+    - "h3. 레일스가이드\r\n\r\n* 제목 : Rails Routing from the Outside In (1)\r\n* 교재 : http://rorlab.org/rails_guides/routing.html\r\n*
+      스크린캐스트 : \r\n* 슬라이드 :  <br /><div style=\"width:425px\" id=\"__ss_13080930\"><strong
+      style=\"display:block;margin:12px 0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/routing-1\"
+      title=\"Routing 1\">Routing 1</a></strong><object id=\"__sse13080930\" width=\"425\"
+      height=\"355\"><param name=\"movie\" value=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=routing-1-120525194000-phpapp01&stripped_title=routing-1&userName=hyoseongchoi\"
+      /><param name=\"allowFullScreen\" value=\"true\"/><param name=\"allowScriptAccess\"
+      value=\"always\"/><param name=\"wmode\" value=\"transparent\"/><embed name=\"__sse13080930\"
+      src=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=routing-1-120525194000-phpapp01&stripped_title=routing-1&userName=hyoseongchoi\"
+      type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\"
+      wmode=\"transparent\" width=\"425\" height=\"355\"></embed></object><div style=\"padding:5px
+      0 12px\">View more <a href=\"http://www.slideshare.net/\">presentations</a>
+      from <a href=\"http://www.slideshare.net/hyoseongchoi\">Hyoseong Choi</a>.</div></div>"
+    - !ruby/object:BigDecimal 18:0.37540199E2
+    - !ruby/object:BigDecimal 18:0.126947998E3
+    -
+    - "<h3>레일스가이드</h3>\n<ul>\n\t<li>제목 : Rails Routing from the Outside In (1)</li>\n\t<li>교재
+      : <a href=\"http://rorlab.org/rails_guides/routing.html\" target=\"_blank\"
+      rel=\"nofollow\">http://rorlab.org/rails_guides/routing.html</a></li>\n\t<li>스크린캐스트
+      :</li>\n\t<li>슬라이드 :  <br /><div style=\"width:425px\" id=\"__ss_13080930\"><strong
+      style=\"display:block;margin:12px 0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/routing-1\"
+      title=\"Routing 1\">Routing 1</a></strong><object id=\"__sse13080930\" width=\"425\"
+      height=\"355\"><param name=\"movie\" value=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=routing-1-120525194000-phpapp01&stripped_title=routing-1&userName=hyoseongchoi\"
+      /><param name=\"allowFullScreen\" value=\"true\"/><param name=\"allowScriptAccess\"
+      value=\"always\"/><param name=\"wmode\" value=\"transparent\"/><embed name=\"__sse13080930\"
+      src=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=routing-1-120525194000-phpapp01&stripped_title=routing-1&userName=hyoseongchoi\"
+      type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\"
+      wmode=\"transparent\" width=\"425\" height=\"355\"></embed></object><div style=\"padding:5px
+      0 12px\">View more <a href=\"http://www.slideshare.net/\">presentations</a>
+      from <a href=\"http://www.slideshare.net/hyoseongchoi\">Hyoseong Choi</a>.</div></div></li>\n</ul>"
+    - '0'
+  - - 15
+    - "시즌 1 : 제 14 회 ROR Lab."
+    - 2012-06-09 01:00:00.000000000 Z
+    - 2012-06-09 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔"
+    - '15'
+    - 2012-05-26 06:54:40.000000000 Z
+    - 2013-02-17 07:42:00.000000000 Z
+    - "h3. 공지사항\r\n\r\n* 제14회를 끝으로 Season 1 ROR Lab. Biweekly Lecture 과정을 종료합니다. 이제
+      Season 2 가 기존의 가이드 강의와 함께 보다 알찬 내용으로 시작할 예정입니다. \r\n\r\nh3. 레일스가이드\r\n\r\n*
+      제목 : Rails Routing From the Outer in (2)\r\n* 스크린캐스트 : \r\n* 슬라이드 : <br /><div
+      style=\"width:425px\" id=\"__ss_13255871\"><strong style=\"display:block;margin:12px
+      0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/routing-2\" title=\"Routing
+      2\">Routing 2</a></strong><object id=\"__sse13255871\" width=\"425\" height=\"355\"><param
+      name=\"movie\" value=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=routing-2-120608232839-phpapp02&stripped_title=routing-2&userName=hyoseongchoi\"
+      /><param name=\"allowFullScreen\" value=\"true\"/><param name=\"allowScriptAccess\"
+      value=\"always\"/><param name=\"wmode\" value=\"transparent\"/><embed name=\"__sse13255871\"
+      src=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=routing-2-120608232839-phpapp02&stripped_title=routing-2&userName=hyoseongchoi\"
+      type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\"
+      wmode=\"transparent\" width=\"425\" height=\"355\"></embed></object><div style=\"padding:5px
+      0 12px\">View more <a href=\"http://www.slideshare.net/\">presentations</a>
+      from <a href=\"http://www.slideshare.net/hyoseongchoi\">Hyoseong Choi</a>.</div></div>\r\n"
+    - !ruby/object:BigDecimal 18:0.37540199E2
+    - !ruby/object:BigDecimal 18:0.126947998E3
+    -
+    - "<h3>공지사항</h3>\n<ul>\n\t<li>제14회를 끝으로 Season 1 <span class=\"caps\">ROR</span>
+      Lab. Biweekly Lecture 과정을 종료합니다. 이제 Season 2 가 기존의 가이드 강의와 함께 보다 알찬 내용으로 시작할
+      예정입니다.</li>\n</ul>\n<h3>레일스가이드</h3>\n<ul>\n\t<li>제목 : Rails Routing From the
+      Outer in (2)</li>\n\t<li>스크린캐스트 :</li>\n\t<li>슬라이드 : <br /><div style=\"width:425px\"
+      id=\"__ss_13255871\"><strong style=\"display:block;margin:12px 0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/routing-2\"
+      title=\"Routing 2\">Routing 2</a></strong><object id=\"__sse13255871\" width=\"425\"
+      height=\"355\"><param name=\"movie\" value=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=routing-2-120608232839-phpapp02&stripped_title=routing-2&userName=hyoseongchoi\"
+      /><param name=\"allowFullScreen\" value=\"true\"/><param name=\"allowScriptAccess\"
+      value=\"always\"/><param name=\"wmode\" value=\"transparent\"/><embed name=\"__sse13255871\"
+      src=\"http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=routing-2-120608232839-phpapp02&stripped_title=routing-2&userName=hyoseongchoi\"
+      type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\"
+      wmode=\"transparent\" width=\"425\" height=\"355\"></embed></object><div style=\"padding:5px
+      0 12px\">View more <a href=\"http://www.slideshare.net/\">presentations</a>
+      from <a href=\"http://www.slideshare.net/hyoseongchoi\">Hyoseong Choi</a>.</div></div></li>\n</ul>"
+    - '0'
+  - - 16
+    - "시즌 2 : 제 1 회 ROR Lab."
+    - 2012-06-23 01:00:00.000000000 Z
+    - 2012-06-23 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔"
+    - '16'
+    - 2012-06-09 04:20:49.000000000 Z
+    - 2013-02-17 07:42:48.000000000 Z
+    - "h3. 인사말씀\r\n<hr />\r\n\r\n<blockquote>\r\n그동안 ROR Lab.에 관심을 가져주신 여러분께 감사의 말씀을
+      드립니다. \r\n\r\n격주 토요일 오전 10시에 개최되는 ROR Lab.은 레일스 공식 홈페이지에 있는 가이드 내용을 중심으로 강의를
+      진행해 왔으며, 지난 주 토요일 제14회 Lab.을 마지막으로 시즌 1 을 종료하였습니다.\r\n\r\n오는 6월 23일 토요일에 시즌
+      2를 다시 시작하게 되는데, 시즌 1에서 강의했던 내용과 같이 레일스 가이드내용을 처음부터 시작할 예정입니다. \r\n\r\n또한 시즌
+      2 부터는 1시간 정도 레일스 가이드 강의를 진행하고, 다음 50분에 걸쳐서는 10분씩 5명이 각자의 프로젝트 진행 내용을 중점적으로 PT하기로
+      했습니다. 여기서 각자의 프로젝트란 ROR Lab.에서 제안하는 주제를 말하며, 각 참석자들이 2주간 작업한 내용을 다른 참석자들에게 소개하는
+      시간입니다. 마지막 10분은 참석자들이 윤번으로 유용한 젬 하나를 선택하여 소개하도록 기획하고 있습니다. \r\n\r\n웹 개발을 전혀
+      해 보지 않은 분들에게는 레일스 외의 어떤 랭귀지로 개발하든지 쉽지 않을 것으로 판단됩니다. \r\n\r\n그러나, 웹개발 경험이 있고
+      웹전반적인 지식이 있는 분들 중에 레일스 프레임워크로 개발을 고려하는 분들에게는 아마도 제격이 아닐까 생각합니다. \r\n\r\n레일스는
+      컴퓨터 언어가 아니고 개발 프레임워크이므로 루비 언어의 습득보다도 레일스 프레임워크의 전반적인 흐름을 아는 것이 무엇보다도 중요할 것으로
+      봅니다. \r\n\r\n따라서, 초보자들이 이러한 흐름을 파악하는데 있어서 레일스 가이드는 최적의 교재라고 생각됩니다.\r\n\r\n강의
+      신청은 홈페이지에서 사전등록을 해 주시면 됩니다. \r\n</blockquote>\r\n\r\nh3. 공지사항\r\n\r\n* 이번 Lab.부터는
+      시즌 2로 시작합니다. 레일스 가이드의 내용을 처음부터 새로 시작합니다. 1시간에 걸쳐 가이드 내용에 대한 강의가 있을 예정이고, 이어서
+      참석하신 분이 본인의 블로그를 레일스로 작성하였던 내용을 매 lab 시간에 10분간 발표하고, 마지막으로 유용한 젬을 소개하는 시간으로
+      구성했습니다. \r\n\r\nh3. 레일스가이드\r\n\r\n* 제목 : Getting started with Rails\r\n* 스크린캐스트
+      : <br /> http://youtu.be/JFbK_8uiMgM\r\n* 슬라이드 : \r\n\r\nh3. 10분발표\r\n\r\n*
+      프로젝트명 : blog\r\n* blog 프로젝트를 각자 진행하면서 매 lab 시간에 지난 2주간에 걸처 개발한 분량을 소개합니다.\r\n*
+      스크린캐스트 :<br />http://youtu.be/Yo8DHY7UBQM\r\n\r\nh3. 유용한 젬소개\r\n\r\n* 참석자 중에
+      윤번제로 함께 공유할 수 있는 젬을 소개합니다."
+    - !ruby/object:BigDecimal 18:0.37540199E2
+    - !ruby/object:BigDecimal 18:0.126947998E3
+    -
+    - "<h3>인사말씀<br />\n<hr /></h3>\n<blockquote>\n<p>그동안 <span class=\"caps\">ROR</span>
+      Lab.에 관심을 가져주신 여러분께 감사의 말씀을 드립니다.</p>\n<p>격주 토요일 오전 10시에 개최되는 <span class=\"caps\">ROR</span>
+      Lab.은 레일스 공식 홈페이지에 있는 가이드 내용을 중심으로 강의를 진행해 왔으며, 지난 주 토요일 제14회 Lab.을 마지막으로 시즌
+      1 을 종료하였습니다.</p>\n<p>오는 6월 23일 토요일에 시즌 2를 다시 시작하게 되는데, 시즌 1에서 강의했던 내용과 같이 레일스
+      가이드내용을 처음부터 시작할 예정입니다.</p>\n<p>또한 시즌 2 부터는 1시간 정도 레일스 가이드 강의를 진행하고, 다음 50분에
+      걸쳐서는 10분씩 5명이 각자의 프로젝트 진행 내용을 중점적으로 PT하기로 했습니다. 여기서 각자의 프로젝트란 <span class=\"caps\">ROR</span>
+      Lab.에서 제안하는 주제를 말하며, 각 참석자들이 2주간 작업한 내용을 다른 참석자들에게 소개하는 시간입니다. 마지막 10분은 참석자들이
+      윤번으로 유용한 젬 하나를 선택하여 소개하도록 기획하고 있습니다.</p>\n<p>웹 개발을 전혀 해 보지 않은 분들에게는 레일스 외의 어떤
+      랭귀지로 개발하든지 쉽지 않을 것으로 판단됩니다.</p>\n<p>그러나, 웹개발 경험이 있고 웹전반적인 지식이 있는 분들 중에 레일스 프레임워크로
+      개발을 고려하는 분들에게는 아마도 제격이 아닐까 생각합니다.</p>\n<p>레일스는 컴퓨터 언어가 아니고 개발 프레임워크이므로 루비 언어의
+      습득보다도 레일스 프레임워크의 전반적인 흐름을 아는 것이 무엇보다도 중요할 것으로 봅니다.</p>\n<p>따라서, 초보자들이 이러한 흐름을
+      파악하는데 있어서 레일스 가이드는 최적의 교재라고 생각됩니다.</p>\n<p>강의 신청은 홈페이지에서 사전등록을 해 주시면 됩니다.</p>\n</blockquote>\n<h3>공지사항</h3>\n<ul>\n\t<li>이번
+      Lab.부터는 시즌 2로 시작합니다. 레일스 가이드의 내용을 처음부터 새로 시작합니다. 1시간에 걸쳐 가이드 내용에 대한 강의가 있을 예정이고,
+      이어서 참석하신 분이 본인의 블로그를 레일스로 작성하였던 내용을 매 lab 시간에 10분간 발표하고, 마지막으로 유용한 젬을 소개하는 시간으로
+      구성했습니다.</li>\n</ul>\n<h3>레일스가이드</h3>\n<ul>\n\t<li>제목 : Getting started with
+      Rails</li>\n\t<li>스크린캐스트 : <br /> <iframe width=\"400\" height=\"250\" src=\"http://www.youtube.com/embed/JFbK_8uiMgM?wmode=transparent\"
+      frameborder=\"0\" allowfullscreen></iframe>\n\t<li>슬라이드 :</li>\n</ul>\n<h3>10분발표</h3>\n<ul>\n\t<li>프로젝트명
+      : blog</li>\n\t<li>blog 프로젝트를 각자 진행하면서 매 lab 시간에 지난 2주간에 걸처 개발한 분량을 소개합니다.</li>\n\t<li>스크린캐스트
+      :<br /><iframe width=\"400\" height=\"250\" src=\"http://www.youtube.com/embed/Yo8DHY7UBQM?wmode=transparent\"
+      frameborder=\"0\" allowfullscreen></iframe>\n</ul>\n<h3>유용한 젬소개</h3>\n<ul>\n\t<li>참석자
+      중에 윤번제로 함께 공유할 수 있는 젬을 소개합니다.</li>\n</ul>"
+    - '0'
+  - - 17
+    - "시즌 2 : 제 2 회 ROR Lab."
+    - 2012-07-07 01:00:00.000000000 Z
+    - 2012-07-07 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔 8층 818호"
+    - '17'
+    - 2012-06-23 06:28:06.000000000 Z
+    - 2012-07-11 03:47:08.000000000 Z
+    - "h3. 레일스가이드\r\n\r\n* 제목 : Getting started with Rails (2)\r\n* 스크린캐스트 : <br />http://youtu.be/f8d5epSWF-o\r\n*
+      슬라이드 : <br /><div style=\"width:425px\" id=\"__ss_13568324\"> <strong style=\"display:block;margin:12px
+      0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/getting-started-with-rails-2\"
+      title=\"Getting started with Rails (2), Season 2\" target=\"_blank\">Getting
+      started with Rails (2), Season 2</a></strong> <iframe src=\"http://www.slideshare.net/slideshow/embed_code/13568324\"
+      width=\"425\" height=\"355\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\" style=\"border:1px solid #CCC;border-width:1px 1px 0\" allowfullscreen></iframe>
+      <div style=\"padding:5px 0 12px\"> View more presentations from <a href=\"http://www.slideshare.net/hyoseongchoi\"
+      target=\"_blank\">Hyoseong Choi</a> </div> </div>\r\n\r\nh3. Blog project 10minute
+      Presentation\r\n\r\n* 참석자 누구나 발표할 수 있습니다.\r\n\r\nh3. Useful Gem Sharing\r\n\r\n*
+      참석자 누구나 발표할 수 있습니다.\r\n\r\nh4. >>> 가이드 강좌후에 gitosis를 remote server에 설치해서 사용하는
+      방법을 시연할 예정입니다. (아래의 내용을 미리 공부해 오시면 도움이 될 것 같습니다.)\r\n\r\n* 동영상 <br />http://youtu.be/rbHCeMBKOkM\r\n*
+      A Visual Git Reference http://marklodato.github.com/visual-git-guide/index-ko.html\r\n*
+      ProGit 번연본 http://rorlab.org/categories/4/posts/73\r\n* Gitimmersion http://gitimmersion.com/lab_01.html\r\n*
+      Git을 이용한 개발주기 http://rorlab.org/categories/4/posts/65\r\n* 우분투 서버에 Gitosis 설치하기
+      (번역) http://rorlab.org/categories/4/posts/75\r\n* Git client for Mac : Tower
+      http://www.git-tower.com/\r\n\r\nh4. >>> `Dropbox`를 Git 저장소로 사용하기 \r\n\r\n*
+      정창훈님이 시연할 예정입니다.\r\n* http://seapy.com/1747 미리보고 오시면 도움이 되겠습니다. "
+    -
+    -
+    -
+    - "<h3>레일스가이드</h3>\n<ul>\n\t<li>제목 : Getting started with Rails (2)</li>\n\t<li>스크린캐스트
+      : <br /><iframe width=\"400\" height=\"250\" src=\"http://www.youtube.com/embed/f8d5epSWF-o?wmode=transparent\"
+      frameborder=\"0\" allowfullscreen></iframe>\n\t<li>슬라이드 : <br /><div style=\"width:425px\"
+      id=\"__ss_13568324\"> <strong style=\"display:block;margin:12px 0 4px\"><a href=\"http://www.slideshare.net/hyoseongchoi/getting-started-with-rails-2\"
+      title=\"Getting started with Rails (2), Season 2\" target=\"_blank\">Getting
+      started with Rails (2), Season 2</a></strong> <iframe src=\"http://www.slideshare.net/slideshow/embed_code/13568324\"
+      width=\"425\" height=\"355\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\" style=\"border:1px solid #CCC;border-width:1px 1px 0\" allowfullscreen></iframe>
+      <div style=\"padding:5px 0 12px\"> View more presentations from <a href=\"http://www.slideshare.net/hyoseongchoi\"
+      target=\"_blank\">Hyoseong Choi</a> </div> </div></li>\n</ul>\n<h3>Blog project
+      10minute Presentation</h3>\n<ul>\n\t<li>참석자 누구나 발표할 수 있습니다.</li>\n</ul>\n<h3>Useful
+      Gem Sharing</h3>\n<ul>\n\t<li>참석자 누구나 발표할 수 있습니다.</li>\n</ul>\n<h4>&gt;&gt;&gt;
+      가이드 강좌후에 gitosis를 remote server에 설치해서 사용하는 방법을 시연할 예정입니다. (아래의 내용을 미리 공부해 오시면
+      도움이 될 것 같습니다.)</h4>\n<ul>\n\t<li>동영상 <br /><iframe width=\"400\" height=\"250\"
+      src=\"http://www.youtube.com/embed/rbHCeMBKOkM?wmode=transparent\" frameborder=\"0\"
+      allowfullscreen></iframe>\n\t<li>A Visual Git Reference <a href=\"http://marklodato.github.com/visual-git-guide/index-ko.html\"
+      target=\"_blank\" rel=\"nofollow\">http://marklodato.github.com/visual-git-guide/index-ko.html</a></li>\n\t<li>ProGit
+      번연본 <a href=\"http://rorlab.org/categories/4/posts/73\" target=\"_blank\" rel=\"nofollow\">http://rorlab.org/categories/4/posts/73</a></li>\n\t<li>Gitimmersion
+      <a href=\"http://gitimmersion.com/lab_01.html\" target=\"_blank\" rel=\"nofollow\">http://gitimmersion.com/lab_01.html</a></li>\n\t<li>Git을
+      이용한 개발주기 <a href=\"http://rorlab.org/categories/4/posts/65\" target=\"_blank\"
+      rel=\"nofollow\">http://rorlab.org/categories/4/posts/65</a></li>\n\t<li>우분투
+      서버에 Gitosis 설치하기 (번역) <a href=\"http://rorlab.org/categories/4/posts/75\" target=\"_blank\"
+      rel=\"nofollow\">http://rorlab.org/categories/4/posts/75</a></li>\n\t<li>Git
+      client for Mac : Tower <a href=\"http://www.git-tower.com/\" target=\"_blank\"
+      rel=\"nofollow\">http://www.git-tower.com/</a></li>\n</ul>\n<h4>&gt;&gt;&gt;
+      `Dropbox`를 Git 저장소로 사용하기</h4>\n<ul>\n\t<li>정창훈님이 시연할 예정입니다.</li>\n\t<li><a href=\"http://seapy.com/1747\"
+      target=\"_blank\" rel=\"nofollow\">http://seapy.com/1747</a> 미리보고 오시면 도움이 되겠습니다.</li>\n</ul>"
+    - '0'
+  - - 18
+    - "시즌 2 : 제 3 회 ROR Lab."
+    - 2012-07-21 01:00:00.000000000 Z
+    - 2012-07-21 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔 8층 818호"
+    - '18'
+    - 2012-07-07 07:22:41.000000000 Z
+    - 2012-07-21 10:10:51.000000000 Z
+    - "h3. RailsGuide\r\n* 제목 : Getting started with Rails (3) <br /><code>블로그 프로젝트에서
+      Comment모델을 추가하여 Post모델과 belongs_to, has_many association를 만들고 임의의 Post 객체에 대해서
+      Comment 객체를 추가하는 방법을 소개합니다.</code>\r\n* 스크린캐스트 : <br />http://youtu.be/VnnbTxtVMQo\r\n*
+      슬라이드 : <br /><iframe src=\"http://www.slideshare.net/slideshow/embed_code/13712564\"
+      width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\" style=\"border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px\"
+      allowfullscreen> </iframe> <div style=\"margin-bottom:5px\"> <strong> <a href=\"http://www.slideshare.net/hyoseongchoi/getting-started-with-rails-3\"
+      title=\"Getting started with Rails (3)\" target=\"_blank\">Getting started with
+      Rails (3)</a> </strong> from <strong><a href=\"http://www.slideshare.net/hyoseongchoi\"
+      target=\"_blank\">Hyoseong Choi</a></strong> </div>\r\n\r\nh3. Blog project
+      10minute Presentation\r\n\r\n* 참석자 누구나 발표할 수 있습니다.\r\n\r\nh3. Useful Gem Sharing\r\n\r\n*
+      참석자 누구나 발표할 수 있습니다.\r\n\r\n>>> Gitosis에서 프로젝트를 추가하는 방법에 대해서 소개합니다. "
+    -
+    -
+    -
+    - "<h3>RailsGuide</h3>\n<ul>\n\t<li>제목 : Getting started with Rails (3) <br /><div
+      class=\"CodeRay\">\n  <div class=\"code\"><pre>블로그 프로젝트에서 Comment모델을 추가하여 Post모델과
+      belongs_to, has_many association를 만들고 임의의 Post 객체에 대해서 Comment 객체를 추가하는 방법을
+      소개합니다.</pre></div>\n</div>\n</li>\n\t<li>스크린캐스트 : <br /><iframe width=\"400\"
+      height=\"250\" src=\"http://www.youtube.com/embed/VnnbTxtVMQo?wmode=transparent\"
+      frameborder=\"0\" allowfullscreen></iframe>\n\t<li>슬라이드 : <br /><iframe src=\"http://www.slideshare.net/slideshow/embed_code/13712564\"
+      width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\" style=\"border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px\"
+      allowfullscreen> </iframe> <div style=\"margin-bottom:5px\"> <strong> <a href=\"http://www.slideshare.net/hyoseongchoi/getting-started-with-rails-3\"
+      title=\"Getting started with Rails (3)\" target=\"_blank\">Getting started with
+      Rails (3)</a> </strong> from <strong><a href=\"http://www.slideshare.net/hyoseongchoi\"
+      target=\"_blank\">Hyoseong Choi</a></strong> </div></li>\n</ul>\n<h3>Blog project
+      10minute Presentation</h3>\n<ul>\n\t<li>참석자 누구나 발표할 수 있습니다.</li>\n</ul>\n<h3>Useful
+      Gem Sharing</h3>\n<ul>\n\t<li>참석자 누구나 발표할 수 있습니다.</li>\n</ul>\n<p>&gt;&gt;&gt;
+      Gitosis에서 프로젝트를 추가하는 방법에 대해서 소개합니다.</p>"
+    - '0'
+  - - 19
+    - "시즌 2 : 제 4 회 ROR Lab."
+    - 2012-08-18 01:00:00.000000000 Z
+    - 2012-08-18 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔 8층 818호"
+    - '19'
+    - 2012-07-21 05:12:50.000000000 Z
+    - 2012-08-21 04:30:29.000000000 Z
+    - "<h3 style=\"color:red;\">토요일 새벽 올림픽 한일축구전으로 강의일정을 1주일 연기합니다. </h3>\r\n\r\nh3.
+      RailsGuide\r\n* 제목 : Getting started with Rails (4) <br /><code>블로그 프로젝트에서 Tag모델을
+      추가하여 Post모델과 belongs_to, has_many association를 만들고 임의의 Post 객체에 대해서 tag 객체를
+      추가하는 방법을 소개합니다.</code>\r\n* 스크린캐스트 : <br />http://youtu.be/5xNyzlqxkkM\r\n*
+      슬라이드 : <br /><iframe src=\"http://www.slideshare.net/slideshow/embed_code/14003061\"
+      width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\" style=\"border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px\"
+      allowfullscreen> </iframe> <div style=\"margin-bottom:5px\"> <strong> <a href=\"http://www.slideshare.net/hyoseongchoi/getting-started-with-rails-4-season-2\"
+      title=\"Getting started with Rails (4), Season 2\" target=\"_blank\">Getting
+      started with Rails (4), Season 2</a> </strong> from <strong><a href=\"http://www.slideshare.net/hyoseongchoi\"
+      target=\"_blank\">Hyoseong Choi</a></strong> </div>\r\n\r\nh3. Blog project
+      10minute Presentation\r\n\r\n* 참석자 누구나 발표할 수 있습니다.\r\n\r\nh3. Useful Gem Sharing\r\n\r\n*
+      참석자 누구나 발표할 수 있습니다."
+    -
+    -
+    -
+    - "<h3 style=\"color:red;\">토요일 새벽 올림픽 한일축구전으로 강의일정을 1주일 연기합니다. </h3>\n<h3>RailsGuide</h3>\n<ul>\n\t<li>제목
+      : Getting started with Rails (4) <br /><div class=\"CodeRay\">\n  <div class=\"code\"><pre>블로그
+      프로젝트에서 Tag모델을 추가하여 Post모델과 belongs_to, has_many association를 만들고 임의의 Post 객체에
+      대해서 tag 객체를 추가하는 방법을 소개합니다.</pre></div>\n</div>\n</li>\n\t<li>스크린캐스트 : <br /><iframe
+      width=\"400\" height=\"250\" src=\"http://www.youtube.com/embed/5xNyzlqxkkM?wmode=transparent\"
+      frameborder=\"0\" allowfullscreen></iframe>\n\t<li>슬라이드 : <br /><iframe src=\"http://www.slideshare.net/slideshow/embed_code/14003061\"
+      width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\" style=\"border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px\"
+      allowfullscreen> </iframe> <div style=\"margin-bottom:5px\"> <strong> <a href=\"http://www.slideshare.net/hyoseongchoi/getting-started-with-rails-4-season-2\"
+      title=\"Getting started with Rails (4), Season 2\" target=\"_blank\">Getting
+      started with Rails (4), Season 2</a> </strong> from <strong><a href=\"http://www.slideshare.net/hyoseongchoi\"
+      target=\"_blank\">Hyoseong Choi</a></strong> </div></li>\n</ul>\n<h3>Blog project
+      10minute Presentation</h3>\n<ul>\n\t<li>참석자 누구나 발표할 수 있습니다.</li>\n</ul>\n<h3>Useful
+      Gem Sharing</h3>\n<ul>\n\t<li>참석자 누구나 발표할 수 있습니다.</li>\n</ul>"
+    - '0'
+  - - 20
+    - "시즌 2 : 제 5 회 ROR Lab."
+    - 2012-09-01 01:00:00.000000000 Z
+    - 2012-09-01 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔 8층 818호"
+    - '20'
+    - 2012-08-18 08:36:30.000000000 Z
+    - 2012-09-01 10:19:16.000000000 Z
+    - "h3. RailsGuide\r\n* 제목 : Rails Database Migration (1) \r\n* 스크린캐스트 : <br />http://youtu.be/A3G2GTu3P3o\r\n*
+      슬라이드 : <br /><iframe src=\"http://www.slideshare.net/slideshow/embed_code/14128627\"
+      width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\" style=\"border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px\"
+      allowfullscreen> </iframe> <div style=\"margin-bottom:5px\"> <strong> <a href=\"http://www.slideshare.net/hyoseongchoi/rails-database-migration-season-2\"
+      title=\"Rails Database Migration, Season 2\" target=\"_blank\">Rails Database
+      Migration, Season 2</a> </strong> from <strong><a href=\"http://www.slideshare.net/hyoseongchoi\"
+      target=\"_blank\">Hyoseong Choi</a></strong> </div>\r\n\r\nh3. Blog project
+      10minute Presentation\r\n\r\n* 참석자 누구나 발표할 수 있습니다.\r\n\r\nh3. Useful Gem Sharing\r\n\r\n*
+      참석자 누구나 발표할 수 있습니다."
+    -
+    -
+    -
+    - "<h3>RailsGuide</h3>\n<ul>\n\t<li>제목 : Rails Database Migration (1)</li>\n\t<li>스크린캐스트
+      : <br /><iframe width=\"400\" height=\"250\" src=\"http://www.youtube.com/embed/A3G2GTu3P3o?wmode=transparent\"
+      frameborder=\"0\" allowfullscreen></iframe>\n\t<li>슬라이드 : <br /><iframe src=\"http://www.slideshare.net/slideshow/embed_code/14128627\"
+      width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\" style=\"border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px\"
+      allowfullscreen> </iframe> <div style=\"margin-bottom:5px\"> <strong> <a href=\"http://www.slideshare.net/hyoseongchoi/rails-database-migration-season-2\"
+      title=\"Rails Database Migration, Season 2\" target=\"_blank\">Rails Database
+      Migration, Season 2</a> </strong> from <strong><a href=\"http://www.slideshare.net/hyoseongchoi\"
+      target=\"_blank\">Hyoseong Choi</a></strong> </div></li>\n</ul>\n<h3>Blog project
+      10minute Presentation</h3>\n<ul>\n\t<li>참석자 누구나 발표할 수 있습니다.</li>\n</ul>\n<h3>Useful
+      Gem Sharing</h3>\n<ul>\n\t<li>참석자 누구나 발표할 수 있습니다.</li>\n</ul>"
+    - '0'
+  - - 21
+    - "시즌 2 : 제 6 회 ROR Lab."
+    - 2012-09-15 01:00:00.000000000 Z
+    - 2012-09-15 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔 8층 818호"
+    - '21'
+    - 2012-09-01 04:18:49.000000000 Z
+    - 2012-09-15 05:34:24.000000000 Z
+    - "h3. RailsGuide\r\n* 제목 : Active Record Validations\r\n* 스크린캐스트 : \r\n\r\nh3.
+      Blog project 10minute Presentation\r\n\r\n* 참석자 누구나 발표할 수 있습니다.\r\n\r\nh3. Useful
+      Gem Sharing\r\n\r\n* 참석자 누구나 발표할 수 있습니다.\r\n\r\n<hr>\r\nh3. Archives\r\n<iframe
+      style=\"margin-left:20px;margin-top:10px;\" src=\"http://www.slideshare.net/hyoseongchoi/slideshelf\"
+      width=\"615px\" height=\"470px\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\" style=\"border:none;\" allowfullscreen></iframe>"
+    -
+    -
+    -
+    - "<h3>RailsGuide</h3>\n<ul>\n\t<li>제목 : Active Record Validations</li>\n\t<li>스크린캐스트
+      :</li>\n</ul>\n<h3>Blog project 10minute Presentation</h3>\n<ul>\n\t<li>참석자
+      누구나 발표할 수 있습니다.</li>\n</ul>\n<h3>Useful Gem Sharing</h3>\n<ul>\n\t<li>참석자 누구나
+      발표할 수 있습니다.</li>\n</ul>\n<hr>\n<h3>Archives<br />\n<iframe style=\"margin-left:20px;margin-top:10px;\"
+      src=\"http://www.slideshare.net/hyoseongchoi/slideshelf\" width=\"615px\" height=\"470px\"
+      frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" style=\"border:none;\"
+      allowfullscreen></iframe></h3>"
+    - '0'
+  - - 22
+    - "시즌 2 : 제 7 회 ROR Lab."
+    - 2012-10-06 01:00:00.000000000 Z
+    - 2012-10-06 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔 8층 818호"
+    - '22'
+    - 2012-09-17 04:15:27.000000000 Z
+    - 2012-10-06 15:18:24.000000000 Z
+    - "h3. Notice\r\n\r\n추석연휴로 예정일보다 1주연기 합니다. \r\n\r\nh3. RailsGuide\r\n* 제목 : Active
+      Record Callbacks\r\n* 스크린캐스트 : \r\n\r\nh3. Blog project 10minute Presentation\r\n\r\n*
+      참석자 누구나 발표할 수 있습니다.\r\n\r\nh3. Useful Gem Sharing\r\n\r\n* 참석자 누구나 발표할 수 있습니다.\r\n\r\n<hr>\r\nh3.
+      Archives\r\n<iframe style=\"margin-left:20px;margin-top:10px;\" src=\"http://www.slideshare.net/hyoseongchoi/slideshelf\"
+      width=\"615px\" height=\"470px\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\" style=\"border:none;\" allowfullscreen></iframe>"
+    -
+    -
+    -
+    - "<h3>Notice</h3>\n<p>추석연휴로 예정일보다 1주연기 합니다.</p>\n<h3>RailsGuide</h3>\n<ul>\n\t<li>제목
+      : Active Record Callbacks</li>\n\t<li>스크린캐스트 :</li>\n</ul>\n<h3>Blog project
+      10minute Presentation</h3>\n<ul>\n\t<li>참석자 누구나 발표할 수 있습니다.</li>\n</ul>\n<h3>Useful
+      Gem Sharing</h3>\n<ul>\n\t<li>참석자 누구나 발표할 수 있습니다.</li>\n</ul>\n<hr>\n<h3>Archives<br
+      />\n<iframe style=\"margin-left:20px;margin-top:10px;\" src=\"http://www.slideshare.net/hyoseongchoi/slideshelf\"
+      width=\"615px\" height=\"470px\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\" style=\"border:none;\" allowfullscreen></iframe></h3>"
+    - '0'
+  - - 23
+    - "시즌 2 : 제 8 회 ROR Lab."
+    - 2012-10-20 01:00:00.000000000 Z
+    - 2012-10-20 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔 8층 818호"
+    - '23'
+    - 2012-10-06 15:21:17.000000000 Z
+    - 2012-10-20 04:14:21.000000000 Z
+    - "h3. RailsGuide\r\n* 제목 : Active Record Associations (1)\r\n\r\nh3. Blog project
+      10minute Presentation\r\n\r\n* 참석자 누구나 발표할 수 있습니다.\r\n\r\nh3. Useful Gem Sharing\r\n\r\n*
+      참석자 누구나 발표할 수 있습니다.\r\n\r\n<hr>\r\nh3. Archives\r\n<iframe style=\"margin-left:20px;margin-top:10px;\"
+      src=\"http://www.slideshare.net/hyoseongchoi/slideshelf\" width=\"615px\" height=\"470px\"
+      frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" style=\"border:none;\"
+      allowfullscreen></iframe>"
+    -
+    -
+    -
+    - "<h3>RailsGuide</h3>\n<ul>\n\t<li>제목 : Active Record Associations (1)</li>\n</ul>\n<h3>Blog
+      project 10minute Presentation</h3>\n<ul>\n\t<li>참석자 누구나 발표할 수 있습니다.</li>\n</ul>\n<h3>Useful
+      Gem Sharing</h3>\n<ul>\n\t<li>참석자 누구나 발표할 수 있습니다.</li>\n</ul>\n<hr>\n<h3>Archives<br
+      />\n<iframe style=\"margin-left:20px;margin-top:10px;\" src=\"http://www.slideshare.net/hyoseongchoi/slideshelf\"
+      width=\"615px\" height=\"470px\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\" style=\"border:none;\" allowfullscreen></iframe></h3>"
+    - '0'
+  - - 24
+    - "시즌 2 : 제 9 회 ROR Lab."
+    - 2012-11-03 01:00:00.000000000 Z
+    - 2012-11-03 01:00:00.000000000 Z
+    - "마포구 도화동 36번지 고려아카데미텔 8층 818호"
+    - '25'
+    - 2012-10-30 08:17:13.000000000 Z
+    - 2012-11-03 04:37:55.000000000 Z
+    - "h3. RailsGuide\r\n* 제목 : Active Record Associations (2)\r\n\r\nh3. Blog project
+      10minute Presentation\r\n\r\n* 참석자 누구나 발표할 수 있습니다.\r\n\r\nh3. Useful Gem Sharing\r\n\r\n*
+      참석자 누구나 발표할 수 있습니다.\r\n\r\n<hr>\r\nh3. Archives\r\n<iframe style=\"margin-left:20px;amargin-top:10px;\"
+      src=\"http://www.slideshare.net/hyoseongchoi/slideshelf\" width=\"615px\" height=\"470px\"
+      frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" style=\"border:none;\"
+      allowfullscreen></iframe>"
+    -
+    -
+    -
+    - "<h3>RailsGuide</h3>\n<ul>\n\t<li>제목 : Active Record Associations (2)</li>\n</ul>\n<h3>Blog
+      project 10minute Presentation</h3>\n<ul>\n\t<li>참석자 누구나 발표할 수 있습니다.</li>\n</ul>\n<h3>Useful
+      Gem Sharing</h3>\n<ul>\n\t<li>참석자 누구나 발표할 수 있습니다.</li>\n</ul>\n<hr>\n<h3>Archives<br
+      />\n<iframe style=\"margin-left:20px;amargin-top:10px;\" src=\"http://www.slideshare.net/hyoseongchoi/slideshelf\"
+      width=\"615px\" height=\"470px\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\" style=\"border:none;\" allowfullscreen></iframe></h3>"
+    - '0'
+  - - 25
+    - "시즌 2 : 제 10 회 ROR Lab"
+    - 2012-11-17 01:00:00.000000000 Z
+    - 2012-11-17 01:00:00.000000000 Z
+    - "홍대 토즈 "
+    - '26'
+    - 2012-11-09 01:02:38.000000000 Z
+    - 2013-02-21 03:10:21.000000000 Z
+    - "h3. RailsGuide\r\n\r\n* 제목 : Active Record Query Interface\r\n\r\nh3. Blog
+      project 10minute Presentation\r\n\r\n* 참석자 누구나 발표할 수 있습니다.\r\n\r\nh3. Useful
+      Gem Sharing\r\n\r\n* 참석자 누구나 발표할 수 있습니다.\r\n\r\n<hr>\r\nh3. Archives\r\n<iframe
+      style=\"margin-left:20px;amargin-top:10px;\" src=\"http://www.slideshare.net/hyoseongchoi/slideshelf\"
+      width=\"615px\" height=\"470px\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\" style=\"border:none;\" allowfullscreen></iframe>\r\n"
+    -
+    -
+    -
+    - "<h3>RailsGuide</h3>\n<ul>\n\t<li>제목 : Active Record Query Interface</li>\n</ul>\n<h3>Blog
+      project 10minute Presentation</h3>\n<ul>\n\t<li>참석자 누구나 발표할 수 있습니다.</li>\n</ul>\n<h3>Useful
+      Gem Sharing</h3>\n<ul>\n\t<li>참석자 누구나 발표할 수 있습니다.</li>\n</ul>\n<hr>\n<h3>Archives<br
+      />\n<iframe style=\"margin-left:20px;amargin-top:10px;\" src=\"http://www.slideshare.net/hyoseongchoi/slideshelf\"
+      width=\"615px\" height=\"470px\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"
+      scrolling=\"no\" style=\"border:none;\" allowfullscreen></iframe></h3>"
+    - '0'
+  - - 26
+    - "시즌 2 : 제 11 회 ROR Lab"
+    - 2012-12-01 01:00:00.000000000 Z
+    - 2012-12-01 01:00:00.000000000 Z
+    - "온라인 강좌로 변경합니다. http://www.anymeeting.com/rorlab1"
+    - '27'
+    - 2012-11-22 12:11:04.000000000 Z
+    - 2013-02-16 08:52:28.000000000 Z
+    - "긴급공지\r\n----\r\n\r\n* 토요일 10시 토즈에서 개최하기로 했던 오프라인 강좌를 온라인 강좌로 변경합니다. \r\n* 웹컨퍼런스
+      URL :  http://www.anymeeting.com/rorlab1\r\n<br>\r\n\r\nRailsGuide\r\n----------\r\n\r\n*
+      제목 : Active Record Query Interface (2)\r\n\r\nBlog project 10minute Presentation\r\n----------------------------------\r\n\r\n*
+      참석자 누구나 발표할 수 있습니다.\r\n\r\n\r\nUseful Gem Sharing\r\n------------------\r\n\r\n*
+      참석자 누구나 발표할 수 있습니다.\r\n\r\n\r\n----------\r\n\r\n[강\b의슬라이드보기][1]\r\n\r\n\r\n
+      \ [1]: http://www.slideshare.net/hyoseongchoi/activerecord-query-interface-2-season-2"
+    -
+    -
+    -
+    - "<h1 style=\"color:red;\">긴급공지</h1>\n<p><br></p>\n<ul>\n\t<li>토요일 10시 토즈에서 개최하기로
+      했던 오프라인 강좌를 온라인 강좌로 변경합니다.</li>\n\t<li>웹컨퍼런스 <span class=\"caps\">URL</span>
+      :  <a href=\"http://www.anymeeting.com/rorlab1\" target=\"_blank\" rel=\"nofollow\">http://www.anymeeting.com/rorlab1</a><br
+      />\n<br></li>\n</ul>\n<h3>RailsGuide</h3>\n<ul>\n\t<li>제목 : Active Record Query
+      Interface (2)</li>\n</ul>\n<h3>Blog project 10minute Presentation</h3>\n<ul>\n\t<li>참석자
+      누구나 발표할 수 있습니다.</li>\n</ul>\n<h3>Useful Gem Sharing</h3>\n<ul>\n\t<li>참석자 누구나
+      발표할 수 있습니다.</li>\n</ul>\n<hr>\n<h3>Archives<br />\n<iframe style=\"margin-left:20px;amargin-top:10px;\"
+      src=\"http://www.slideshare.net/hyoseongchoi/slideshelf\" width=\"615px\" height=\"470px\"
+      frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" style=\"border:none;\"
+      allowfullscreen></iframe></h3>"
+    - '0'
+  - - 27
+    - "시즌 2 : 제 12 회 ROR Lab"
+    - 2012-12-15 01:00:00.000000000 Z
+    - 2012-12-15 01:00:00.000000000 Z
+    - "대한민국 경기도 고양시 일산동구 마두1동 809"
+    - '28'
+    - 2012-12-12 04:51:40.000000000 Z
+    - 2013-02-19 23:52:40.000000000 Z
+    - "<h4 style=\"color:red;\">공지</h4>\r\n\r\n* 제 11회 부터는 온라인으로 강좌를 진행합니다. 당일 아래의
+      주소를 접속하시면 온라인 강좌를 들을 수 있습니다.  \r\n* 웹컨퍼런스 URL :  http://www.anymeeting.com/rorlab1\r\n*
+      사전등록 URL : http://www.anymeeting.com/PIID=E951DB88894B30\r\n<br>\r\n\r\nRailsGuide\r\n----------\r\n\r\n*
+      제목 : Layouts and Rendering in Rails\r\n\r\n<center>\r\n<iframe width=\"420\"
+      height=\"315\" src=\"http://www.youtube.com/embed/zaMllTj6cM8\" frameborder=\"0\"
+      allowfullscreen></iframe>\r\n</center>\r\n\r\nBlog project 10minute Presentation\r\n----------------------------------\r\n\r\n*
+      참석자 누구나 발표할 수 있습니다.\r\n\r\nUseful Gem Sharing\r\n------------------\r\n\r\n*
+      참석자 누구나 발표할 수 있습니다.\r\n\r\n\r\n----------\r\n\r\n\r\n[강의슬라이드보\x1D기][1]\r\n\r\n\r\n
+      \ [1]: http://www.slideshare.net/hyoseongchoi/season2-12layouts-andrenderingnew"
+    - !ruby/object:BigDecimal 18:0.37663835E2
+    - !ruby/object:BigDecimal 18:0.126782911E3
+    -
+    - "<h4 style=\"color:red;\">공지</h4>\n\n<ul>\n<li>제 11회 부터는 온라인으로 강좌를 진행합니다. 당일
+      아래의 주소를 접속하시면 온라인 강좌를 들을 수 있습니다.<br></li>\n<li>웹컨퍼런스 URL :  <a href=\"http://www.anymeeting.com/rorlab1\"
+      target=\"_blank\" rel=\"nofollow\">http://www.anymeeting.com/rorlab1</a></li>\n<li>사전등록
+      URL : <a href=\"http://www.anymeeting.com/PIID=E951DB88894B30\" target=\"_blank\"
+      rel=\"nofollow\">http://www.anymeeting.com/PIID=E951DB88894B30</a>\n<br></li>\n</ul>\n\n<h2>RailsGuide</h2>\n\n<ul>\n<li>제목
+      : Layouts and Rendering in Rails</li>\n</ul>\n\n<p><center>\n<iframe width=\"420\"
+      height=\"315\" src=\"http://www.youtube.com/embed/zaMllTj6cM8\" frameborder=\"0\"
+      allowfullscreen></iframe>\n</center></p>\n\n<h2>Blog project 10minute Presentation</h2>\n\n<ul>\n<li>참석자
+      누구나 발표할 수 있습니다.</li>\n</ul>\n\n<h2>Useful Gem Sharing</h2>\n\n<ul>\n<li>참석자
+      누구나 발표할 수 있습니다.</li>\n</ul>\n\n<hr>\n\n<p><a href=\"http://www.slideshare.net/hyoseongchoi/season2-12layouts-andrenderingnew\">강의슬라이드보\x1D기</a></p>\n"
+    - '0'
+  - - 28
+    - "시즌 2 : 제 13 회 ROR Lab"
+    - 2012-12-29 01:00:00.000000000 Z
+    - 2012-12-29 01:00:00.000000000 Z
+    - "대한민국 경기도 고양시 일산동구 마두1동 809"
+    - '29'
+    - 2012-12-16 23:37:39.000000000 Z
+    - 2013-02-19 23:49:45.000000000 Z
+    - "공지\r\n--\r\n\r\n* 제 11회 부터는 온라인으로 강좌를 진행합니다. 당일 아래의 주소를 접속하시면 온라인 강좌를 들을 수
+      있습니다.  \r\n* 웹컨퍼런스 URL :  http://www.anymeeting.com/rorlab1\r\n* 사전등록 URL :
+      http://www.anymeeting.com/PIID=E951DB88894B30\r\n<br>\r\n\r\nRailsGuide\r\n----------\r\n\r\n*
+      제목 : Action View Form Helpers\r\n\r\n\r\nBlog project 10minute Presentation\r\n----------------------------------\r\n\r\n*
+      참석자 누구나 발표할 수 있습니다.\r\n\r\nUseful Gem Sharing\r\n------------------\r\n\r\n*
+      참석자 누구나 발표할 수 있습니다.\r\n\r\n\r\n----------\r\n\r\n\r\n[강의슬라이드 보기][1]\r\n\r\n\r\n\r\n
+      \ [1]: http://www.slideshare.net/hyoseongchoi/season2-13action-viewformhelpers1"
+    - !ruby/object:BigDecimal 18:0.37663937E2
+    - !ruby/object:BigDecimal 18:0.126782924E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제 11회 부터는 온라인으로 강좌를 진행합니다. 당일 아래의 주소를 접속하시면 온라인 강좌를 들을 수 있습니다.<br></li>
+      <li>웹컨퍼런스 URL :  <a href="http://www.anymeeting.com/rorlab1" target="_blank" rel="nofollow">http://www.anymeeting.com/rorlab1</a></li>
+      <li>사전등록 URL : <a href="http://www.anymeeting.com/PIID=E951DB88894B30" target="_blank" rel="nofollow">http://www.anymeeting.com/PIID=E951DB88894B30</a>
+      <br></li>
+      </ul>
+
+      <h2>RailsGuide</h2>
+
+      <ul>
+      <li>제목 : Action View Form Helpers</li>
+      </ul>
+
+      <h2>Blog project 10minute Presentation</h2>
+
+      <ul>
+      <li>참석자 누구나 발표할 수 있습니다.</li>
+      </ul>
+
+      <h2>Useful Gem Sharing</h2>
+
+      <ul>
+      <li>참석자 누구나 발표할 수 있습니다.</li>
+      </ul>
+
+      <hr>
+
+      <p><a href="http://www.slideshare.net/hyoseongchoi/season2-13action-viewformhelpers1">강의슬라이드 보기</a></p>
+    - '0'
+  - - 29
+    - "시즌 2 : 제 14 회 ROR Lab"
+    - 2013-01-12 01:00:00.000000000 Z
+    - 2013-01-12 01:00:00.000000000 Z
+    - "역삼동 746 PMK 빌딩"
+    - '30'
+    - 2013-01-03 10:55:13.000000000 Z
+    - 2013-02-17 07:26:05.000000000 Z
+    - "공지사항\r\n----\r\n\r\n* 이번 강의는 오프라인으로 진행합니다. \r\n\r\n레일스가이드\r\n------\r\n\r\n*
+      제목 :  Action View Form Helper / Action Controller Overview\r\n\r\n\r\n찾아오기 안내\r\n-------\r\n\r\n*
+      차가지고 오시는 분은 건물내 주차장이 있고, 2시간에 3-4천원정도라고 합니다. 당일 위치를 찾지 못할 경우에는 채종원님(010 2913
+      5667, 사무실 070 8260 6119)로 연락하셔도 됩니다. 12층 보안입구통과하면 바로 회의실이라 찾기는 쉽다고 합니다.\r\n"
+    - !ruby/object:BigDecimal 18:0.37497601E2
+    - !ruby/object:BigDecimal 18:0.127038002E3
+    -
+    - "<h3>공지사항</h3>\n<ul>\n\t<li>이번 강의는 오프라인으로 진행합니다.</li>\n</ul>\n<h3>레일스가이드</h3>\n<ul>\n\t<li>제목
+      :  Action View Form Helper / Action Controller Overview</li>\n</ul>\n차가지고 오시는
+      분은 건물내 주차장이 있고, 2시간에 3-4천원정도라고 합니다. 당일 위치를 찾지 못할 경우에는 채종원님(010 2913 5667, 사무실
+      070 8260 6119)로 연락하셔도 됩니다. 12층 보안입구통과하면 바로 회의실이라 찾기는 쉽다고 합니다.\n<p>약도는 <a href=\"http://goo.gl/maps/oK7SD\"
+      target=\"_blank\" rel=\"nofollow\">http://goo.gl/maps/oK7SD</a></p>"
+    - '0'
+  - - 30
+    - "시즌 2 : 제 15 회 ROR Lab."
+    - 2013-02-02 01:00:00.000000000 Z
+    - 2013-02-02 01:00:00.000000000 Z
+    - "역삼동 746 PMK 빌딩"
+    - '31'
+    - 2013-02-17 08:08:21.000000000 Z
+    - 2013-02-19 23:04:15.000000000 Z
+    - "레일스가이드\r\n------\r\n\r\n* 제목 : Action Controller Overview\r\n* 스크린캐스트 : \r\n*
+      슬라이드 : \r\n\r\n"
+    - !ruby/object:BigDecimal 18:0.37497601E2
+    - !ruby/object:BigDecimal 18:0.127038002E3
+    -
+    - |
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제목 : Action Controller Overview</li>
+      <li>스크린캐스트 : </li>
+      <li>슬라이드 : </li>
+      </ul>
+    - '0'
+  - - 31
+    - "시즌 2 : 제 16 회 ROR Lab."
+    - 2013-02-17 01:00:00.000000000 Z
+    - 2013-02-17 01:00:00.000000000 Z
+    - "역삼동 746 PMK 빌딩"
+    - '32'
+    - 2013-02-17 08:09:47.000000000 Z
+    - 2013-02-19 23:03:47.000000000 Z
+    - "레일스가이드\r\n------\r\n\r\n* 제목 : Rails Routing from the Outside In\r\n* 스크린캐스트
+      : \r\n* 슬라이드 : \r\n"
+    - !ruby/object:BigDecimal 18:0.37497601E2
+    - !ruby/object:BigDecimal 18:0.127038002E3
+    -
+    - |
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제목 : Rails Routing from the Outside In</li>
+      <li>스크린캐스트 : </li>
+      <li>슬라이드 : </li>
+      </ul>
+    - '0'
+  - - 32
+    - "제 31 회 ROR Lab."
+    - 2013-03-02 01:00:00.000000000 Z
+    - 2013-03-02 01:00:00.000000000 Z
+    - "역삼동 746 PMK 빌딩"
+    - '33'
+    - 2013-02-17 08:11:58.000000000 Z
+    - 2013-03-03 23:08:51.000000000 Z
+    - "공지사항\r\n----\r\n\r\n* 시즌3부터는 강좌 번호를 총 횟수로 하고 기존의 MVC 강좌는 시즌3 - 1, 2, 3...과
+      같이, 새로 시작하는 Digging Deeper 내용은 AP1 - 1,2,3...과 같이 넘버링을 합니다.\r\n\r\n레일스가이드\r\n------\r\n\r\n
+      * 제1교시 : [Getting Started with Rails][1]\r\n * 제2교시 : [Active Support Core Extensions][2]\r\n\r\n\r\n
+      \ [1]: http://guides.rubyonrails.org/getting_started.html\r\n  [2]: http://guides.rubyonrails.org/active_support_core_extensions.html"
+    - !ruby/object:BigDecimal 18:0.37497601E2
+    - !ruby/object:BigDecimal 18:0.127038002E3
+    -
+    - |
+      <h2>공지사항</h2>
+
+      <ul>
+      <li>시즌3부터는 강좌 번호를 총 횟수로 하고 기존의 MVC 강좌는 시즌3 - 1, 2, 3...과 같이, 새로 시작하는 Digging Deeper 내용은 AP1 - 1,2,3...과 같이 넘버링을 합니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : <a href="http://guides.rubyonrails.org/getting_started.html">Getting Started with Rails</a></li>
+      <li>제2교시 : <a href="http://guides.rubyonrails.org/active_support_core_extensions.html">Active Support Core Extensions</a></li>
+      </ul>
+    - '0'
+  - - 33
+    - "제 32 회 ROR Lab."
+    - 2013-03-15 16:00:00.000000000 Z
+    - 2013-03-15 16:00:00.000000000 Z
+    - "역삼동 746 PMK 빌딩"
+    - '34'
+    - 2013-03-03 23:09:53.000000000 Z
+    - 2013-03-17 23:40:16.000000000 Z
+    - "공지\r\n--\r\n\r\n32회부터는 정창훈님이 레일스가이드의 MVC 강의를 해 주시기로 했습니다. Digging Deeper 부분에
+      대한 강의를 DD 코스라고 명칭을 정하고 DD1 코스를 제가 진행할 예정입니다. 실제로 제32회부터 DD코스 첫번째 시간이 될 것 같습니다.
+      어려운 가운데 강의를 흔쾌히 맡아 주신 정창훈님께 다시 한번 감사드리며 많은 성원 부탁드립니다.  \r\n\r\n*당일 장소에 관련해서는
+      `ReAllPlay팀(채종원 010.2913.5667)`으로 연락주시면 됩니다. \r\n\r\n레일스가이드\r\n------\r\n\r\n
+      * 제1교시 : [Getting Started with Rails][1] (시즌3 - 2)\r\n * 제2교시 : [Active Support
+      Core Extensions][2] (DD1 - 1)\r\n\r\n\r\n  [1]: http://guides.rubyonrails.org/getting_started.html\r\n
+      \ [2]: http://guides.rubyonrails.org/active_support_core_extensions.html"
+    - !ruby/object:BigDecimal 18:0.37497583E2
+    - !ruby/object:BigDecimal 18:0.127038081E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <p>32회부터는 정창훈님이 레일스가이드의 MVC 강의를 해 주시기로 했습니다. Digging Deeper 부분에 대한 강의를 DD 코스라고 명칭을 정하고 DD1 코스를 제가 진행할 예정입니다. 실제로 제32회부터 DD코스 첫번째 시간이 될 것 같습니다. 어려운 가운데 강의를 흔쾌히 맡아 주신 정창훈님께 다시 한번 감사드리며 많은 성원 부탁드립니다.  </p>
+
+      <p>*당일 장소에 관련해서는 <code>ReAllPlay팀(채종원 010.2913.5667)</code>으로 연락주시면 됩니다. </p>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : <a href="http://guides.rubyonrails.org/getting_started.html">Getting Started with Rails</a> (시즌3 - 2)</li>
+      <li>제2교시 : <a href="http://guides.rubyonrails.org/active_support_core_extensions.html">Active Support Core Extensions</a> (DD1 - 1)</li>
+      </ul>
+    - '0'
+  - - 34
+    - "제 33 회 ROR Lab."
+    - 2013-03-29 16:00:00.000000000 Z
+    - 2013-03-29 16:00:00.000000000 Z
+    - "역삼동 746 PMK 빌딩"
+    - '35'
+    - 2013-03-17 23:22:10.000000000 Z
+    - 2013-04-01 00:40:08.000000000 Z
+    - "공지\r\n--  \r\n\r\n*당일 장소에 관련해서는 `ReAllPlay팀(채종원 010.2913.5667)`으로 연락주시면 됩니다.
+      \r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : [Rails Database Migrations][1] (시즌3
+      - 3)\r\n * 제2교시 : [Active Support Core Extensions][2] (DD1 - 2)\r\n\r\n\r\n
+      \ [1]: http://guides.rubyonrails.org/migrations.html\r\n  [2]: http://guides.rubyonrails.org/active_support_core_extensions.html#extensions-to-module"
+    - !ruby/object:BigDecimal 18:0.37497583E2
+    - !ruby/object:BigDecimal 18:0.127038081E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <p>*당일 장소에 관련해서는 <code>ReAllPlay팀(채종원 010.2913.5667)</code>으로 연락주시면 됩니다. </p>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : <a href="http://guides.rubyonrails.org/migrations.html">Rails Database Migrations</a> (시즌3 - 3)</li>
+      <li>제2교시 : <a href="http://guides.rubyonrails.org/active_support_core_extensions.html#extensions-to-module">Active Support Core Extensions</a> (DD1 - 2)</li>
+      </ul>
+    - '0'
+  - - 35
+    - "제 34 회 ROR Lab."
+    - 2013-04-12 16:00:00.000000000 Z
+    - 2013-04-12 16:00:00.000000000 Z
+    - "역삼동 746 PMK 빌딩"
+    - '36'
+    - 2013-04-11 12:39:30.000000000 Z
+    - 2013-04-13 22:40:44.000000000 Z
+    - "공지\r\n--  \r\n\r\n*당일 장소에 관련해서는 `ReAllPlay팀(채종원 010.2913.5667)`으로 연락주시면 됩니다.
+      \r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : [Active Record Validations][1] (시즌3
+      - 4)\r\n * 제2교시 : [Active Support Core Extensions][2] (DD1 - 2)\r\n\r\n\r\n
+      \ [1]: http://guides.rubyonrails.org/active_record_validations_callbacks.html\r\n
+      \ [2]: http://guides.rubyonrails.org/active_support_core_extensions.html#extensions-to-module"
+    - !ruby/object:BigDecimal 18:0.37497583E2
+    - !ruby/object:BigDecimal 18:0.127038081E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <p>*당일 장소에 관련해서는 <code>ReAllPlay팀(채종원 010.2913.5667)</code>으로 연락주시면 됩니다. </p>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : <a href="http://guides.rubyonrails.org/active_record_validations_callbacks.html">Active Record Validations</a> (시즌3 - 4)</li>
+      <li>제2교시 : <a href="http://guides.rubyonrails.org/active_support_core_extensions.html#extensions-to-module">Active Support Core Extensions</a> (DD1 - 2)</li>
+      </ul>
+    - '0'
+  - - 36
+    - "제 35 회 ROR Lab."
+    - 2013-04-24 19:00:00.000000000 Z
+    - 2013-04-24 19:00:00.000000000 Z
+    - "토즈 강남 2호점"
+    - '37'
+    - 2013-04-13 22:45:47.000000000 Z
+    - 2013-05-03 14:03:33.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제35회 ROR Lab.부터는 NHN의 지원을 받아 개최됩니다. 장소는 강남 소재 토즈로 자세한
+      위치는 추후 공지할 예정입니다.\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : [Active Record Callbacks][1]
+      (시즌3 - 5)\r\n * 제2교시 : [Active Support Core Extensions][2] (DD1 - 3)\r\n\r\n발표
+      자료\r\n------\r\n - 1교시\r\n   - 키노트\r\n     - slideshare http://www.slideshare.net/seapy/season3-05active-recordcallbacks-20187325\r\n
+      \    - speakerdeck https://speakerdeck.com/seapy/activerecord-callbacks-rorlab-season-3-5\r\n
+      \  - 동영상\r\n     - http://www.youtube.com/watch?feature=player_embedded&v=Yz_5Jr2Ugtk\r\n
+      \  - 코드\r\n     - Callbacks 테스트할때 사용했던 코드입니다. 좀더 간단히 줄이는 방법을 알면 포크해서 수정해주세요
+      :)\r\n     - http://www.slideshare.net/seapy/season3-05active-recordcallbacks-20187325\r\n
+      - 2교시\r\n   - 키노트 및 동영상(슬라이드쉐어 마지막에 동영상이 있습니다)\r\n     - http://www.slideshare.net/hyoseongchoi/active-support-core-extension-3\r\n\r\n
+      \ [1]: http://guides.rubyonrails.org/active_record_validations_callbacks.html\r\n
+      \ [2]: http://guides.rubyonrails.org/active_support_core_extensions.html#extensions-to-class"
+    - !ruby/object:BigDecimal 18:0.37503064E2
+    - !ruby/object:BigDecimal 18:0.127024411E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제35회 ROR Lab.부터는 NHN의 지원을 받아 개최됩니다. 장소는 강남 소재 토즈로 자세한 위치는 추후 공지할 예정입니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : <a href="http://guides.rubyonrails.org/active_record_validations_callbacks.html">Active Record Callbacks</a> (시즌3 - 5)</li>
+      <li>제2교시 : <a href="http://guides.rubyonrails.org/active_support_core_extensions.html#extensions-to-class">Active Support Core Extensions</a> (DD1 - 3)</li>
+      </ul>
+
+      <h2>발표 자료</h2>
+
+      <ul>
+      <li>1교시
+
+      <ul>
+      <li>키노트
+
+      <ul>
+      <li>slideshare <a href="http://www.slideshare.net/seapy/season3-05active-recordcallbacks-20187325" target="_blank" rel="nofollow">http://www.slideshare.net/seapy/season3-05active-recordcallbacks-20187325</a></li>
+      <li>speakerdeck <a href="https://speakerdeck.com/seapy/activerecord-callbacks-rorlab-season-3-5" target="_blank" rel="nofollow">https://speakerdeck.com/seapy/activerecord-callbacks-rorlab-season-3-5</a></li>
+      </ul></li>
+      <li>동영상
+
+      <ul>
+      <li><a href="http://www.youtube.com/watch?feature=player" target="_blank" rel="nofollow">http://www.youtube.com/watch?feature=player</a><em>embedded&amp;v=Yz</em>5Jr2Ugtk</li>
+      </ul></li>
+      <li>코드
+
+      <ul>
+      <li>Callbacks 테스트할때 사용했던 코드입니다. 좀더 간단히 줄이는 방법을 알면 포크해서 수정해주세요 :)</li>
+      <li><a href="http://www.slideshare.net/seapy/season3-05active-recordcallbacks-20187325" target="_blank" rel="nofollow">http://www.slideshare.net/seapy/season3-05active-recordcallbacks-20187325</a></li>
+      </ul></li>
+      </ul></li>
+      <li>2교시
+
+      <ul>
+      <li>키노트 및 동영상(슬라이드쉐어 마지막에 동영상이 있습니다)
+
+      <ul>
+      <li><a href="http://www.slideshare.net/hyoseongchoi/active-support-core-extension-3" target="_blank" rel="nofollow">http://www.slideshare.net/hyoseongchoi/active-support-core-extension-3</a></li>
+      </ul></li>
+      </ul></li>
+      </ul>
+    - '0'
+  - - 37
+    - "제 36 회 ROR Lab."
+    - 2013-05-05 19:00:00.000000000 Z
+    - 2013-05-05 19:00:00.000000000 Z
+    - "서울특별시 서초구 토즈 강남2호점"
+    - '38'
+    - 2013-04-29 02:12:49.000000000 Z
+    - 2013-05-19 16:47:14.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 일정의 변경이 있어 제2교시 강의는 \"레일스가이드 한국번역 공개프로젝트 RORLabGuides
+      소개\"로 대체할 예정입니다.\r\n * 제35회 ROR Lab.부터 NHN의 지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n
+      * 제1교시 : [Active Record Observers][1] (시즌3 - 6)\r\n * 제2교시 : [레일스가이드 한글번역 프로젝트
+      RORLabGuides 소개][2]  \r\n\r\n발표 자료\r\n------\r\n - 1교시\r\n   - 키노트\r\n     -
+      speakerdeck https://speakerdeck.com/seapy/activerecord-observers-rorlab-season-3-6\r\n
+      \  - 동영상\r\n     - http://youtu.be/t497x6WLPY4\r\n - 2교시\r\n   -  스크린캐스트 http://www.youtube.com/watch?v=2qAiBc23swE\r\n\r\n
+      \ [1]: http://guides.rubyonrails.org/active_record_validations_callbacks.html#observers\r\n
+      \ [2]: http://rorlabguides.github.io/docrails"
+    - !ruby/object:BigDecimal 18:0.37503064E2
+    - !ruby/object:BigDecimal 18:0.127024411E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>일정의 변경이 있어 제2교시 강의는 &quot;레일스가이드 한국번역 공개프로젝트 RORLabGuides 소개&quot;로 대체할 예정입니다.</li>
+      <li>제35회 ROR Lab.부터 NHN의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : <a href="http://guides.rubyonrails.org/active_record_validations_callbacks.html#observers">Active Record Observers</a> (시즌3 - 6)</li>
+      <li>제2교시 : <a href="http://rorlabguides.github.io/docrails">레일스가이드 한글번역 프로젝트 RORLabGuides 소개</a><br></li>
+      </ul>
+
+      <h2>발표 자료</h2>
+
+      <ul>
+      <li>1교시
+
+      <ul>
+      <li>키노트
+
+      <ul>
+      <li>speakerdeck <a href="https://speakerdeck.com/seapy/activerecord-observers-rorlab-season-3-6" target="_blank" rel="nofollow">https://speakerdeck.com/seapy/activerecord-observers-rorlab-season-3-6</a></li>
+      </ul></li>
+      <li>동영상
+
+      <ul>
+      <li><iframe width="400" height="250" src="//www.youtube.com/embed/t497x6WLPY4?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+      </ul></li>
+      </ul></li>
+      <li>2교시
+
+      <ul>
+      <li> 스크린캐스트 <iframe width="400" height="250" src="//www.youtube.com/embed/2qAiBc23swE?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+      </ul></li>
+      </ul>
+    - '0'
+  - - 38
+    - "제 37 회 ROR Lab."
+    - 2013-05-24 16:00:00.000000000 Z
+    - 2013-05-24 16:00:00.000000000 Z
+    - "토즈 강남 2호점"
+    - '39'
+    - 2013-05-11 23:12:35.000000000 Z
+    - 2013-06-03 17:13:25.000000000 Z
+    - "공지\r\n--  \r\n.\r\n * 제35회 ROR Lab.부터 NHN의 지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n
+      * 제1교시 : Active Record Associations (시즌3 - 7)\r\n * 제2교시 : Active Support Core
+      Extensions (DD1 - 4)\r\n\r\n발표자료\r\n------\r\n\r\n * 1교시 슬라이드 : https://speakerdeck.com/seapy/activerecord-associations-1-rorlab-season-3-7\r\n
+      * 1교시 동영상 : 편집중\r\n * 2교시 슬라이드 : 작업중"
+    - !ruby/object:BigDecimal 18:0.37503064E2
+    - !ruby/object:BigDecimal 18:0.127024411E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <p>.
+       * 제35회 ROR Lab.부터 NHN의 지원을 받아 개최됩니다.</p>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Active Record Associations (시즌3 - 7)</li>
+      <li>제2교시 : Active Support Core Extensions (DD1 - 4)</li>
+      </ul>
+
+      <h2>발표자료</h2>
+
+      <ul>
+      <li>1교시 슬라이드 : <a href="https://speakerdeck.com/seapy/activerecord-associations-1-rorlab-season-3-7" target="_blank" rel="nofollow">https://speakerdeck.com/seapy/activerecord-associations-1-rorlab-season-3-7</a></li>
+      <li>1교시 동영상 : 편집중</li>
+      <li>2교시 슬라이드 : 작업중</li>
+      </ul>
+    - '0'
+  - - 39
+    - "제 38 회 ROR Lab."
+    - 2013-06-04 11:00:00.000000000 Z
+    - 2013-06-04 11:00:00.000000000 Z
+    - "토즈 강남 2호점"
+    - '40'
+    - 2013-05-27 22:28:05.000000000 Z
+    - 2013-06-11 20:36:57.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NHN의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Active Record Associations
+      (2) (시즌3 - 7)\r\n * 제2교시 : Active Support Core Extensions (5) (DD1 - 5)\r\n\r\n발표자료\r\n------\r\n
+      * 1교시 키노트 : [speakerdeck][1] [slideshare][2]\r\n * 1교시 동영상 : <div class=\"videoWrapper\">http://youtu.be/RdmPHtfy80M</div>\r\n
+      * 2교시 키노트 및 동영상 : 준비중\r\n\r\n  [1]: https://speakerdeck.com/seapy/activerecord-associations-2-rorlab-season-3-8\r\n
+      \ [2]: http://www.slideshare.net/seapy/season3-08active-recordassociation"
+    - !ruby/object:BigDecimal 18:0.37503064E2
+    - !ruby/object:BigDecimal 18:0.127024411E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NHN의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Active Record Associations (2) (시즌3 - 7)</li>
+      <li>제2교시 : Active Support Core Extensions (5) (DD1 - 5)</li>
+      </ul>
+
+      <h2>발표자료</h2>
+
+      <ul>
+      <li>1교시 키노트 : <a href="https://speakerdeck.com/seapy/activerecord-associations-2-rorlab-season-3-8">speakerdeck</a> <a href="http://www.slideshare.net/seapy/season3-08active-recordassociation">slideshare</a></li>
+      <li>1교시 동영상 : <div class="videoWrapper"><iframe width="400" height="250" src="//www.youtube.com/embed/RdmPHtfy80M?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+      <li>2교시 키노트 및 동영상 : 준비중</li>
+      </ul>
+    - '0'
+  - - 40
+    - "제 39 회 ROR Lab."
+    - 2013-06-17 08:00:00.000000000 Z
+    - 2013-06-17 08:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '41'
+    - 2013-06-11 20:41:50.000000000 Z
+    - 2013-07-03 09:27:10.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NHN의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Active Record Associations
+      (3) (시즌3 - 8)\r\n * 제2교시 : Active Support Core Extensions (6) (DD1 - 6)\r\n\r\n\r\n발표자료\r\n------\r\n
+      * 1교시 동영상 : <div class=\"videoWrapper\">http://youtu.be/XrLfuPWmnP4</div>\r\n
+      * 2교시 키노트 및 동영상 : 준비중\r\n"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NHN의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Active Record Associations (3) (시즌3 - 8)</li>
+      <li>제2교시 : Active Support Core Extensions (6) (DD1 - 6)</li>
+      </ul>
+
+      <h2>발표자료</h2>
+
+      <ul>
+      <li>1교시 동영상 : <div class="videoWrapper"><iframe width="400" height="250" src="//www.youtube.com/embed/XrLfuPWmnP4?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+      <li>2교시 키노트 및 동영상 : 준비중</li>
+      </ul>
+    - '0'
+  - - 41
+    - "제 40 회 ROR Lab."
+    - 2013-07-01 17:00:00.000000000 Z
+    - 2013-07-01 17:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '42'
+    - 2013-06-21 06:59:59.000000000 Z
+    - 2013-07-03 09:26:34.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NHN의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Active Record Associations
+      (4) (시즌3 - 9)\r\n * 제2교시 : Active Support Core Extensions (7) (DD1 - 7)\r\n\r\n\r\n발표자료\r\n------\r\n
+      * 1교시 동영상 : <div class=\"videoWrapper\">http://youtu.be/t14Yj1qfQVI</div>\r\n
+      * 2교시 키노트 및 동영상 : 준비중"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NHN의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Active Record Associations (4) (시즌3 - 9)</li>
+      <li>제2교시 : Active Support Core Extensions (7) (DD1 - 7)</li>
+      </ul>
+
+      <h2>발표자료</h2>
+
+      <ul>
+      <li>1교시 동영상 : <div class="videoWrapper"><iframe width="400" height="250" src="//www.youtube.com/embed/t14Yj1qfQVI?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+      <li>2교시 키노트 및 동영상 : 준비중</li>
+      </ul>
+    - '0'
+  - - 42
+    - "제 41 회 ROR Lab."
+    - 2013-07-15 17:00:00.000000000 Z
+    - 2013-07-15 17:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '43'
+    - 2013-07-02 21:49:27.000000000 Z
+    - 2013-07-29 15:35:36.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NHN의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Active Record Associations
+      (5) (시즌3 - 10)\r\n * 제2교시 : Asset Pipeline (DD1 - 8)\r\n\r\n\r\n발표자료\r\n------\r\n
+      * 1교시 동영상 : <div class=\"videoWrapper\">http://youtu.be/KA3Znp4dEGc</div>\r\n
+      * 2교시 키노트 및 동영상 : 준비중"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NHN의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Active Record Associations (5) (시즌3 - 10)</li>
+      <li>제2교시 : Asset Pipeline (DD1 - 8)</li>
+      </ul>
+
+      <h2>발표자료</h2>
+
+      <ul>
+      <li>1교시 동영상 : <div class="videoWrapper"><iframe width="400" height="250" src="//www.youtube.com/embed/KA3Znp4dEGc?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+      <li>2교시 키노트 및 동영상 : 준비중</li>
+      </ul>
+    - '0'
+  - - 43
+    - "제 42 회 ROR Lab."
+    - 2013-07-29 17:00:00.000000000 Z
+    - 2013-07-29 17:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '44'
+    - 2013-07-17 04:19:31.000000000 Z
+    - 2013-08-20 15:35:42.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NHN의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Active Record Associations
+      (6) (시즌3 - 11)\r\n * 제2교시 : Asset Pipeline(2) (DD1 - 9)\r\n\r\n\r\n\r\n발표자료\r\n------\r\n
+      * 1교시 동영상 : <div class=\"videoWrapper\">http://youtu.be/MVfK6GufrrY</div>\r\n
+      * 2교시 키노트 및 동영상 : 준비중"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NHN의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Active Record Associations (6) (시즌3 - 11)</li>
+      <li>제2교시 : Asset Pipeline(2) (DD1 - 9)</li>
+      </ul>
+
+      <h2>발표자료</h2>
+
+      <ul>
+      <li>1교시 동영상 : <div class="videoWrapper"><iframe width="400" height="250" src="//www.youtube.com/embed/MVfK6GufrrY?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+      <li>2교시 키노트 및 동영상 : 준비중</li>
+      </ul>
+    - '0'
+  - - 44
+    - "제 43 회 ROR Lab."
+    - 2013-08-13 11:00:00.000000000 Z
+    - 2013-08-13 11:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '45'
+    - 2013-07-31 00:08:51.000000000 Z
+    - 2013-08-23 13:43:38.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NHN의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Active Record Query
+      Interface (시즌3 - 12)\r\n * 제2교시 : Asset Pipeline(3) (DD1 - 10)"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NHN의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Active Record Query Interface (시즌3 - 12)</li>
+      <li>제2교시 : Asset Pipeline(3) (DD1 - 10)</li>
+      </ul>
+    - '0'
+  - - 45
+    - "제 44 회 ROR Lab."
+    - 2013-08-26 08:00:00.000000000 Z
+    - 2013-08-26 08:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '46'
+    - 2013-08-23 13:42:47.000000000 Z
+    - 2013-09-07 03:22:24.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NAVER
+      개발자 커뮤니티 지원 프로그램에서 장소를 후원 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시
+      : Active Record Query Interface (2) (시즌3 - 12)\r\n * 제2교시 : Rails Internationalization
+      API (1)  (DD1 - 12)\r\n\r\n\r\n발표자료\r\n------\r\n * 1교시 동영상 : <div class=\"videoWrapper\">http://youtu.be/va4pxpjKnDA</div>"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NAVER 개발자 커뮤니티 지원 프로그램에서 장소를 후원 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Active Record Query Interface (2) (시즌3 - 12)</li>
+      <li>제2교시 : Rails Internationalization API (1)  (DD1 - 12)</li>
+      </ul>
+
+      <h2>발표자료</h2>
+
+      <ul>
+      <li>1교시 동영상 : <div class="videoWrapper"><iframe width="400" height="250" src="//www.youtube.com/embed/va4pxpjKnDA?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+      </ul>
+    - '0'
+  - - 46
+    - "제 45 회 ROR Lab."
+    - 2013-09-09 17:00:00.000000000 Z
+    - 2013-09-09 17:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '47'
+    - 2013-09-01 23:05:40.000000000 Z
+    - 2013-09-13 16:05:40.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NAVER개발자커뮤니티의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Active Record Query
+      Interface (3) (시즌3 - 13)\r\n * 제2교시 : Rails with MongoDB (특강: 박유진)\r\n\r\n\r\n발표자료\r\n------\r\n
+      * 1교시 동영상 : <div class=\"videoWrapper\">http://youtu.be/VXb_YWPehBo</div>\r\n
+      * 2교시 발표자료 : http://www.slideshare.net/eugene/rails-with-mongodb-26080468"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NAVER개발자커뮤니티의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Active Record Query Interface (3) (시즌3 - 13)</li>
+      <li>제2교시 : Rails with MongoDB (특강: 박유진)</li>
+      </ul>
+
+      <h2>발표자료</h2>
+
+      <ul>
+      <li>1교시 동영상 : <div class="videoWrapper"><iframe width="400" height="250" src="//www.youtube.com/embed/VXb_YWPehBo?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+      <li>2교시 발표자료 : <a href="http://www.slideshare.net/eugene/rails-with-mongodb-26080468" target="_blank" rel="nofollow">http://www.slideshare.net/eugene/rails-with-mongodb-26080468</a></li>
+      </ul>
+    - '0'
+  - - 47
+    - "제 46 회 ROR Lab."
+    - 2013-09-23 17:00:00.000000000 Z
+    - 2013-09-23 17:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '48'
+    - 2013-09-13 10:00:48.000000000 Z
+    - 2013-09-25 02:15:27.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NAVER개발자커뮤니티의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Active Record Query
+      Interface (4)\r\n * 제2교시 : Rails I18n (2)\r\n\r\n\r\n발표자료\r\n------\r\n * 1교시
+      동영상 : <div class=\"videoWrapper\">http://youtu.be/V4dc2Pg9xFI</div>\r\n * 2교시
+      동영상 : <div class=\"videoWrapper\">http://youtu.be/zYCIt5RMD9g</div>"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NAVER개발자커뮤니티의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Active Record Query Interface (4)</li>
+      <li>제2교시 : Rails I18n (2)</li>
+      </ul>
+
+      <h2>발표자료</h2>
+
+      <ul>
+      <li>1교시 동영상 : <div class="videoWrapper"><iframe width="400" height="250" src="//www.youtube.com/embed/V4dc2Pg9xFI?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+      <li>2교시 동영상 : <div class="videoWrapper"><iframe width="400" height="250" src="//www.youtube.com/embed/zYCIt5RMD9g?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+      </ul>
+    - '0'
+  - - 48
+    - "제 47 회 ROR Lab."
+    - 2013-10-07 17:00:00.000000000 Z
+    - 2013-10-07 17:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '49'
+    - 2013-09-25 02:19:51.000000000 Z
+    - 2013-10-22 17:03:37.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NAVER개발자커뮤니티의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Active Record Query
+      Interface (5)\r\n * 제2교시 : Rails with MongoDB (2) \r\n\r\n\r\n발표자료\r\n------\r\n
+      * 1교시 동영상 : <div class=\"videoWrapper\">http://youtu.be/d_R1uL6IzSM</div>\r\n
+      * 2교시 동영상 : "
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NAVER개발자커뮤니티의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Active Record Query Interface (5)</li>
+      <li>제2교시 : Rails with MongoDB (2) </li>
+      </ul>
+
+      <h2>발표자료</h2>
+
+      <ul>
+      <li>1교시 동영상 : <div class="videoWrapper"><iframe width="400" height="250" src="//www.youtube.com/embed/d_R1uL6IzSM?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+      <li>2교시 동영상 : </li>
+      </ul>
+    - '0'
+  - - 49
+    - "제 48 회 ROR Lab."
+    - 2013-10-22 11:00:00.000000000 Z
+    - 2013-10-22 11:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '50'
+    - 2013-10-09 01:43:37.000000000 Z
+    - 2013-10-23 06:56:50.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NAVER개발자커뮤니티의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Layouts and Rendering
+      in Rails (정창훈)\r\n * 제2교시 : Action Mailer Basics (최효성)\r\n\r\n발표자료\r\n------\r\n
+      * 1교시 동영상 : <div class=\"videoWrapper\">http://youtu.be/FEQx6DtED7E</div>\r\n
+      * 2교시 동영상 : <div class=\"videoWrapper\">http://youtu.be/7wqgGjPcs0s</div>"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NAVER개발자커뮤니티의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Layouts and Rendering in Rails (정창훈)</li>
+      <li>제2교시 : Action Mailer Basics (최효성)</li>
+      </ul>
+
+      <h2>발표자료</h2>
+
+      <ul>
+      <li>1교시 동영상 : <div class="videoWrapper"><iframe width="400" height="250" src="//www.youtube.com/embed/FEQx6DtED7E?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+      <li>2교시 동영상 : <div class="videoWrapper"><iframe width="400" height="250" src="//www.youtube.com/embed/7wqgGjPcs0s?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+      </ul>
+    - '0'
+  - - 50
+    - "제 49 회 ROR Lab."
+    - 2013-11-05 02:00:00.000000000 Z
+    - 2013-11-05 02:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '51'
+    - 2013-10-22 23:14:58.000000000 Z
+    - 2013-11-06 02:06:16.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NAVER개발자커뮤니티의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Layouts and Rendering
+      in Rails (2) (정창훈)\r\n * 제2교시 : Rails with MongoDB (3) (박유진)\r\n\r\n발표자료\r\n------\r\n
+      * 1교시 동영상 : <div class=\"videoWrapper\">http://youtu.be/pLKgW11wszI</div>\r\n
+      * 2교시 동영상 : <div class=\"videoWrapper\">http://youtu.be/wf0m4-pbfBs</div>"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NAVER개발자커뮤니티의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Layouts and Rendering in Rails (2) (정창훈)</li>
+      <li>제2교시 : Rails with MongoDB (3) (박유진)</li>
+      </ul>
+
+      <h2>발표자료</h2>
+
+      <ul>
+      <li>1교시 동영상 : <div class="videoWrapper"><iframe width="400" height="250" src="//www.youtube.com/embed/pLKgW11wszI?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+      <li>2교시 동영상 : <div class="videoWrapper"><iframe width="400" height="250" src="//www.youtube.com/embed/wf0m4-pbfBs?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+      </ul>
+    - '0'
+  - - 51
+    - "제 50 회 ROR Lab."
+    - 2013-12-02 17:00:00.000000000 Z
+    - 2013-12-02 17:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '52'
+    - 2013-12-06 03:18:39.000000000 Z
+    - 2013-12-30 04:55:49.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NAVER개발자커뮤니티의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Layouts and Rendering
+      in Rails (3) (정창훈)\r\n * 제2교시 : Action Mailer Basics (2) (최효성)\r\n\r\n발표자료\r\n------\r\n
+      * 1, 2교시 동영상 : https://archive.org/details/Rorlab50"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NAVER개발자커뮤니티의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Layouts and Rendering in Rails (3) (정창훈)</li>
+      <li>제2교시 : Action Mailer Basics (2) (최효성)</li>
+      </ul>
+
+      <h2>발표자료</h2>
+
+      <ul>
+      <li>1, 2교시 동영상 : <a href="https://archive.org/details/Rorlab50" target="_blank" rel="nofollow">https://archive.org/details/Rorlab50</a></li>
+      </ul>
+    - '0'
+  - - 52
+    - "제 51 회 ROR Lab."
+    - 2013-12-17 11:00:00.000000000 Z
+    - 2013-12-17 11:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '53'
+    - 2013-12-06 03:20:10.000000000 Z
+    - 2014-01-20 21:43:38.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NAVER개발자커뮤니티의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Layouts and Rendering
+      in Rails (4) (정창훈)\r\n * 제2교시 : Securing Rails Application (1) (최효성)\r\n\r\n\r\n발표자료\r\n------\r\n
+      * 1, 2교시 동영상 : https://archive.org/details/Rorlab51"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NAVER개발자커뮤니티의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Layouts and Rendering in Rails (4) (정창훈)</li>
+      <li>제2교시 : Securing Rails Application (1) (최효성)</li>
+      </ul>
+
+      <h2>발표자료</h2>
+
+      <ul>
+      <li>1, 2교시 동영상 : <a href="https://archive.org/details/Rorlab51" target="_blank" rel="nofollow">https://archive.org/details/Rorlab51</a></li>
+      </ul>
+    - '0'
+  - - 53
+    - "제 52 회 ROR Lab."
+    - 2014-01-07 11:00:00.000000000 Z
+    - 2014-01-07 11:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '54'
+    - 2014-01-20 21:42:41.000000000 Z
+    - 2014-01-20 21:44:54.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NAVER개발자커뮤니티의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Layouts and Rendering
+      in Rails (5) (정창훈)\r\n * 제2교시 : Securing Rails Application (2) (최효성)\r\n"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NAVER개발자커뮤니티의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Layouts and Rendering in Rails (5) (정창훈)</li>
+      <li>제2교시 : Securing Rails Application (2) (최효성)</li>
+      </ul>
+    - '0'
+  - - 54
+    - "제 53 회 ROR Lab."
+    - 2014-01-21 11:00:00.000000000 Z
+    - 2014-01-21 11:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '55'
+    - 2014-01-20 21:44:22.000000000 Z
+    - 2014-01-25 22:38:40.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NAVER개발자커뮤니티의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Form Helpers (정창훈)\r\n
+      * 제2교시 : Securing Rails Application (3) (최효성)\r\n"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NAVER개발자커뮤니티의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Form Helpers (정창훈)</li>
+      <li>제2교시 : Securing Rails Application (3) (최효성)</li>
+      </ul>
+    - '0'
+  - - 55
+    - "제 54 회 ROR Lab."
+    - 2014-02-04 11:00:00.000000000 Z
+    - 2014-02-04 11:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '56'
+    - 2014-01-25 22:38:12.000000000 Z
+    - 2014-02-05 23:55:56.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NAVER개발자커뮤니티의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Form Helpers (2)
+      (정창훈)\r\n * 제2교시 : Securing Rails Application (4) (최효성)\r\n"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NAVER개발자커뮤니티의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Form Helpers (2) (정창훈)</li>
+      <li>제2교시 : Securing Rails Application (4) (최효성)</li>
+      </ul>
+    - '0'
+  - - 56
+    - "제 55 회 ROR Lab."
+    - 2014-02-18 11:00:00.000000000 Z
+    - 2014-02-18 11:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '57'
+    - 2014-02-05 23:56:31.000000000 Z
+    - 2014-02-18 22:55:54.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NAVER개발자커뮤니티의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Form Helpers (3)
+      (정창훈)\r\n * 제2교시 : Securing Rails Application (5) (최효성)\r\n"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NAVER개발자커뮤니티의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Form Helpers (3) (정창훈)</li>
+      <li>제2교시 : Securing Rails Application (5) (최효성)</li>
+      </ul>
+    - '0'
+  - - 57
+    - "제 56 회 ROR Lab."
+    - 2014-03-04 11:00:00.000000000 Z
+    - 2014-03-04 11:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '58'
+    - 2014-02-18 22:56:33.000000000 Z
+    - 2014-03-04 23:24:46.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NAVER개발자커뮤니티의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Form Helpers (4)
+      (정창훈)\r\n * 제2교시 : Securing Rails Application (5) (최효성)\r\n"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NAVER개발자커뮤니티의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Form Helpers (4) (정창훈)</li>
+      <li>제2교시 : Securing Rails Application (5) (최효성)</li>
+      </ul>
+    - '0'
+  - - 58
+    - "제 57 회 ROR Lab."
+    - 2014-03-18 11:00:00.000000000 Z
+    - 2014-03-18 11:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '59'
+    - 2014-03-04 23:23:51.000000000 Z
+    - 2014-03-19 00:51:36.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NAVER개발자커뮤니티의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Form Helpers (5)
+      (정창훈)\r\n * 제2교시 : Debugging Rails Application (1) (남승균)\r\n"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NAVER개발자커뮤니티의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Form Helpers (5) (정창훈)</li>
+      <li>제2교시 : Debugging Rails Application (1) (남승균)</li>
+      </ul>
+    - '0'
+  - - 59
+    - "제 58 회 ROR Lab."
+    - 2014-04-01 11:00:00.000000000 Z
+    - 2014-04-01 11:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '60'
+    - 2014-03-19 00:52:09.000000000 Z
+    - 2014-03-19 00:52:09.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NAVER개발자커뮤니티의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Form Helpers (6)
+      (정창훈)\r\n * 제2교시 : Debugging Rails Application (1) (남승균)\r\n"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NAVER개발자커뮤니티의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Form Helpers (6) (정창훈)</li>
+      <li>제2교시 : Debugging Rails Application (1) (남승균)</li>
+      </ul>
+    - '0'
+  - - 60
+    - "제 59 회 ROR Lab."
+    - 2014-04-15 11:00:00.000000000 Z
+    - 2014-04-15 11:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '61'
+    - 2014-04-02 00:02:14.000000000 Z
+    - 2014-04-02 00:02:14.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NAVER개발자커뮤니티의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Form Helpers (7)
+      (정창훈)\r\n * 제2교시 : Debugging Rails Application (2) (남승균)\r\n"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NAVER개발자커뮤니티의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Form Helpers (7) (정창훈)</li>
+      <li>제2교시 : Debugging Rails Application (2) (남승균)</li>
+      </ul>
+    - '0'
+  - - 61
+    - "제 60 회 ROR Lab."
+    - 2014-04-29 11:00:00.000000000 Z
+    - 2014-04-29 11:00:00.000000000 Z
+    - "토즈 강남2호점, 서울특별시 서초구 서초동 1303-34"
+    - '62'
+    - 2014-04-15 23:06:38.000000000 Z
+    - 2014-04-15 23:06:38.000000000 Z
+    - "공지\r\n--  \r\n\r\n * 제38회 부터는 화요일 오후 8시부터 시작합니다.  \r\n * 제35회 ROR Lab.부터 NAVER개발자커뮤니티의
+      지원을 받아 개최됩니다.\r\n\r\n\r\n레일스가이드\r\n------\r\n\r\n * 제1교시 : Action Controller
+      Overview (1) (정창훈)\r\n * 제2교시 : Configuring Rails Application (1) (이한국)\r\n"
+    - !ruby/object:BigDecimal 18:0.37503033E2
+    - !ruby/object:BigDecimal 18:0.127024332E3
+    -
+    - |
+      <h2>공지</h2>
+
+      <ul>
+      <li>제38회 부터는 화요일 오후 8시부터 시작합니다.<br></li>
+      <li>제35회 ROR Lab.부터 NAVER개발자커뮤니티의 지원을 받아 개최됩니다.</li>
+      </ul>
+
+      <h2>레일스가이드</h2>
+
+      <ul>
+      <li>제1교시 : Action Controller Overview (1) (정창훈)</li>
+      <li>제2교시 : Configuring Rails Application (1) (이한국)</li>
+      </ul>
+    - '0'
