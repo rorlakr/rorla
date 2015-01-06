@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/v2.2/560777114059299?access_token=CAACEdEose0cBACBsodlNTZAZAgL5Lxd4QkzvQQYi36ZBeb3dZBzefy3twRPsjr2J7HEZBVwxyELr9exiAtczHl89SddcZAhwGjyUEEt0xnhU604FZCFDXwLVj5YFCxfTmzuGcV7B9xNIoqgOY1ZCtrQiUVZBQuSyMzbGa10SvjE3ZBmy1jSa1ZCKZBxBiVL57PKZB9ZAWbyXWVdNLq6CHZCxtc1UTaC2Xr3BW39KYQZD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.39.6
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Facebook-Api-Version:
+      - v2.2
+      Etag:
+      - '"04018646e84fa1454be7871da185c8cfe8cec6d0"'
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Rev:
+      - '1547526'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - S+64BgZ7H/BfmywbFZIAwoD8LdhWR8LQkmSXn+48QqOJazyOWoSLUjKciXBIBCub57KtBLclViI3mM99Pd/+Sw==
+      Date:
+      - Fri, 02 Jan 2015 10:23:49 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"description":"\uc81c1\uad50\uc2dc-1 : \ub808\uc77c\uc2a4\uac00\uc774\ub4dc(20\ubd84)
+        : \"Getting Started(5)\" - \ucd5c\ud6a8\uc131\n\uc81c1\uad50\uc2dc-2 : Digging
+        Deeper(20\ubd84) - \"(\ud14c\uc2a4\ud2b8\ud658\uacbd\uc744 \ud3ec\ud568\ud55c)
+        \ub8e8\ube44 \ud504\ub85c\uc81d\ud2b8 \ubf08\ub300 \uad6c\uc131\ud558\uae30\"
+        - \uae40\ub300\uad8c\n\uc81c2\uad50\uc2dc : \ub8e8\ube44 Playground(60\ubd84)
+        - \ucd5c\uc644\ubcf5\n\n* NAVER \uac1c\ubc1c\uc790 \uc9c0\uc6d0 \ud504\ub85c\uadf8\ub7a8\n*
+        \uac15\ub0a8 \ud1a0\uc9882\ud638\uc810\uc5d0 \uc608\uc57d\ub418\uc5b4\uc788\uc2b5\ub2c8\ub2e4.
+        \uc608\uc57d\ud55c \ubaa8\uc784\uba85\uc740 \"NAVER\uac1c\ubc1c\uc790\ucee4\ubba4\ub2c8\ud2f0\uc9c0\uc6d0_RORLab_\uc815\uae30\ubaa8\uc784\"
+        \uc785\ub2c8\ub2e4.","end_time":"2014-12-23T22:00:00+0900","is_date_only":false,"location":"\uac15\ub0a8
+        \ud1a0\uc988 2\ud638\uc810","name":"\uc81c77\ud68c ROR Lab. (Biweekly Lecture)
+        : \uc2dc\uc98c 4","owner":{"id":"1556306027929601","name":"Lucius Choi"},"start_time":"2014-12-23T20:00:00+0900","timezone":"Asia\/Seoul","updated_time":"2014-12-19T20:16:10+0000","venue":{"city":"Seoul","country":"South
+        Korea","latitude":37.5033250584,"longitude":127.024916778,"id":"336084496408494"},"id":"560777114059299"}'
+    http_version: 
+  recorded_at: Fri, 02 Jan 2015 10:23:49 GMT
+recorded_with: VCR 2.9.3
