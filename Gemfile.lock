@@ -196,6 +196,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meetup_client (0.0.6)
     merit (2.2.0)
       ambry (~> 0.3.0)
     meta-tags (2.0.0)
@@ -396,6 +397,7 @@ DEPENDENCIES
   jquery-ui-rails
   launchy (~> 2.4.2)
   letter_opener
+  meetup_client
   merit
   meta-tags (~> 2.0.0)
   mini_magick
