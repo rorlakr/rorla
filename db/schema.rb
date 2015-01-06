@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150105204509) do
+ActiveRecord::Schema.define(version: 20150106121745) do
 
   create_table "answers", force: true do |t|
     t.text     "content"
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 20150105204509) do
     t.boolean  "modifiable",                            default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "event_url"
   end
 
   create_table "favlinks", force: true do |t|
