@@ -16,11 +16,20 @@
 #  updated_time :datetime
 #  material     :text
 #  modifiable   :boolean          default(FALSE)
+#  event_url    :string(255)
 #
 
 class Event < ActiveRecord::Base
+
+    # Rolify and Authroization
+    resourcify
+    include Authority::Abilities
+    
     has_one :plaza, :as => :postitable, :dependent => :destroy
 
     validates_presence_of :name, :start_time, :end_time, :location, :fb_event_id, :latitude, :longitude
+
+    default_scope { order(start_time: :desc)}
+
 
 end
