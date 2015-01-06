@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'events/FBevents'
 
   root "welcome#index"
 
@@ -13,7 +12,7 @@ Rails.application.routes.draw do
   get 'info/contributor', as: :contributors
 
   get 'podcasts/grap' => 'podcasts#grap'
-
+  get 'events/upcoming'
   # Exception routing
   get '/404', to: 'errors#not_found'
   get '/500', to: 'errors#server_error'
@@ -26,7 +25,7 @@ Rails.application.routes.draw do
   concern :commentable do
     resources :comments
   end
-  resources :favlinks, :codebanks, :rblogs, concerns: :commentable
+  resources :favlinks, :codebanks, :rblogs, :events, concerns: :commentable
 
   resources :plazas
   resources :bundlelinks do
@@ -44,7 +43,7 @@ Rails.application.routes.draw do
 
   get 'weeklynews/index', as: 'weeklynews'
   get 'weeklynews/grap', as: 'weeklynews_grap'
-  
+
 
   # API routing
   namespace :api do
