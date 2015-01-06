@@ -1,0 +1,27 @@
+<h2> Events </h2>
+<table class='table'>
+  <thead>
+    <tr>
+      <th class="col-md-6">행사명</th>
+      <th class="col-md-3">개최일시</th>
+      <th class="col-md-3">장소</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @events.each do |event| %>
+      <tr>
+        <td>
+          <%= link_to event.name, event_path(event) %>
+        </td>
+        <td><%= event.start_time.strftime('%Y-%m-%d %H:%S (%a)') %></td>
+        <td><%= event.location %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<center>
+<%= will_paginate @events %>
+</center>
+<%# if user_signed_in? && current_user.has_role?(:admin) %>
+<%= link_to '등록', new_event_path, class: 'btn btn-default' %>
+<%# end %>
