@@ -1,0 +1,77 @@
+<div class="modal fade " id="previewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modal-content-one">
+
+      <div class="modal-body">
+
+        <div id='wmd-preview-description' class='wmd-preview'></div>
+        <div id='wmd-preview-material' class='wmd-preview'></div>
+        <div style='text-align:center;border-top:1px solid #eaeaea;padding-top:1em;'>
+          <p>- The End of Event -</p>
+          (Preview를 중단하려면 esc 키를 누르거나 우측 상단에 있는 &times; 표시를 클릭하세요.)
+        </div>
+      </div>
+    </div>
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<%= simple_form_for(@event) do |f| %>
+<% if @event.errors.any? %>
+  <%= alert_box_multiple('danger', "문제가 발생했습니다:", f.object.errors.messages) %>
+<% end %>
+<div class="form-group">
+  <%= f.input :name, input_html: { class: 'form-control'} %>
+</div>
+
+<div class="form-inline">
+  <div class="form-group">
+    <div class="row">
+      <div class="col-xs-6">
+      <%= f.input :start_time, input_html: { class: 'form-control'} %>
+      </div>
+      <div class="col-xs-6">
+      <%= f.input :end_time, input_html: { class: 'form-control'} %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.input :location, input_html: { class: 'form-control'} %>
+</div>
+<div class="form-group">
+  <%= f.input :latitude, input_html: { class: 'form-control'} %>
+</div>
+<div class="form-group">
+  <%= f.input :longitude, input_html: { class: 'form-control'} %>
+</div>
+<div class="form-group">
+  <%= f.input :fb_event_id, input_html: { class: 'form-control'} %>
+</div>
+<div class="form-group">
+  <%= f.input :event_url, input_html: { class: 'form-control'} %>
+</div>
+<div class="form-group">
+  <%= f.input :description, :as => :pagedown %>
+</div>
+<div class="form-group">
+  <%= f.input :material, :as => :pagedown %>
+</div>
+<div class="form-actions">
+  <%= f.button :submit, class: 'btn btn-default'%>
+  <%= link_to t('form_actions.delete'), @event, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' if @event.persisted? %>
+  <%= link_to t('form_actions.show'), @event, class: 'btn btn-default' if action_name == 'edit' %>
+  <%= link_to t('form_actions.back'), events_path, class: 'btn btn-default' %>
+</div>
+<%end %>
+<script>
+$(function() {
+  $("#wmd-preview-description").css("display", "none");
+  $("#wmd-preview-material").css("display", "none");
+
+  $("#wmd-preview-button-description").click(function() {
+    $("#wmd-preview-description").css("display", "block");
+  });
+  $( "#wmd-preview-button-material" ).click(function() {
+    $("#wmd-preview-material").css("display", "block");
+  });
+});
+</script>
