@@ -40,6 +40,8 @@ gem 'oj', '~> 2.10.2'
 gem 'sucker_punch', '~> 1.2.1'
 gem 'meta-tags', '~> 2.0.0'
 gem 'gibbon'
+gem 'yaml_db'
+gem "meetup_client"
 
 group :development do
   gem 'annotate'
