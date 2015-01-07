@@ -1,0 +1,49 @@
+<h2><%= @event.name %></h2>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class='markdown-preview'>
+      <%= simple_format @event.description %>
+    </div>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table">
+    <tr>
+      <th>일시</th><td><%= @event.start_time.strftime('%Y-%m-%d %H:%S (%a)') %></td>
+    </tr>
+    <tr>
+      <th>장소</th><td><%= @event.location%></td>
+    </tr>
+    <tr>
+      <th>연락처</th><td><a href="mailto:rorlab@rorlab.org">rorlab@rorlab.org</a></td>
+    </tr>
+    <tr>
+      <th>참가등록</th><td><a href="<%= @event.event_url%>" target="blank"><%= @event.event_url%></a></td>
+    </tr>
+    <% if @event.location.index('2호점') != nil %>
+    <tr>
+      <td colspan="2"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3165.2057998668615!2d127.02440999999999!3d37.503063999999995!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca158a8d5dd53%3A0x23c8e3902c32682!2z7Yag7KaIIOqwleuCqDLtmLjsoJA!5e0!3m2!1sen!2skr!4v1420198876582" width="800" height="600" frameborder="0" style="border:0"></iframe></td>
+    </tr>
+    <% end %>
+
+  </table>
+</div>
+<% if not @event.material.blank?%>
+<h3>Resources</h3>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class='markdown-preview'>
+      <%= simple_format @event.material %>
+    </div>
+  </div>
+</div>
+<%end%>
+
+<div class="event-actions <%= "form-actions" if action_name == 'show' %>">
+  <% if user_signed_in? && current_user.has_role?(:admin) %>
+    <%= link_to t('form_actions.edit'), edit_event_path(@event), class: 'btn btn-default' if current_user.has_role?(:admin) %>
+    <%= link_to t('form_actions.delete'), @event, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' if current_user.has_role?(:admin) %>
+  <% end %>
+  <%= link_to t('form_actions.back'), events_path, class: 'btn btn-default' if action_name == 'show' %>
+</div>
