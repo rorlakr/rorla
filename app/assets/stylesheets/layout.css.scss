@@ -8,6 +8,15 @@ body {
 	// background-color: white;
 }
 
+.navbar-brand {
+	padding-top:7px!important;
+	padding-bottom:7px!important;
+	img {
+		width: 155px !important;
+		height: 40px !important;
+	}
+}
+
 .navbar-default {
 	border:none;
 	background-color:#302a2a;
