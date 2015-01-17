@@ -88,4 +88,35 @@ namespace :oldrorla do
 
     Rails.logger.info "END oldrorla:rblog"
   end
+
+  desc "happyrails(to rblogs) 마이그레이션"
+  task :happyrails => [:setup_logger, :user] do
+    items = Oj.load(File.read('tmp/json/happyrails.json'))
+    items.each do |item|
+      rblog = Rblog.create(
+        title: item[:title],
+        content: item[:content],
+        shared: true,
+        writer: @user,
+        created_at: item[:created_at],
+        updated_at: item[:updated_at],
+        tag_list: item[:tags]
+      )
+
+      item[:hit].times.each do
+        Impression.create(
+          impressionable_type: "Rblog", 
+          impressionable_id: rblog.id, 
+          user_id: @user.id, 
+          controller_name: "rblogs", 
+          action_name: "show", 
+          request_hash: SecureRandom.hex(64), 
+          session_hash: SecureRandom.hex(32), 
+          ip_address: "127.0.0.1"
+        )
+      end
+    end
+
+    Rails.logger.info "END oldrorla:happyrails"
+  end
 end
