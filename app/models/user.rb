@@ -31,7 +31,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
-  after_confirmation:
 
   has_many :rblogs, foreign_key: :writer_id, dependent: :destroy
   has_many :posts, foreign_key: :writer_id, dependent: :destroy
