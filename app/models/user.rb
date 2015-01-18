@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
+  after_confirmation:
 
   has_many :rblogs, foreign_key: :writer_id, dependent: :destroy
   has_many :posts, foreign_key: :writer_id, dependent: :destroy
@@ -41,9 +42,9 @@ class User < ActiveRecord::Base
   has_many :favlinks, foreign_key: :writer_id, dependent: :destroy
   has_and_belongs_to_many :useful_answers, class_name: "Answer", join_table: :useful_answers
 
-  def confirm!
-    super
-    add_role :user
+  # Override Devise::Confirmable#after_confirmation
+  def after_confirmation
+    self.add_role :user
   end
 
   def account_name
