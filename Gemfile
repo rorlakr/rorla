@@ -105,11 +105,15 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use unicorn as the app server
-gem 'unicorn'
+# Use puma as the app server
+gem 'puma'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano', '~> 3.4.0', group: :development
+gem 'capistrano-rails', '~> 1.1', group: :development
+gem 'capistrano-rbenv', '~> 2.0', group: :development
+gem 'capistrano-bundler', '~> 1.1.2', group: :development
+gem 'capistrano3-puma', github: "seuros/capistrano-puma", group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
