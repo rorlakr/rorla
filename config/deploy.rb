@@ -24,7 +24,7 @@ set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all
 
 # bundler
-# set :bundle_jobs, 4
+set :bundle_jobs, 4
 
 namespace :deploy do
   after :restart, :clear_cache do
@@ -38,7 +38,7 @@ namespace :deploy do
 end
 
 namespace :bundler do
-  before :install do
+  before :install, :bundle_config do
     on fetch(:bundle_servers) do
       within release_path do
         execute :bundle, 'config mirror.https://rubygems.org https://ruby.taobao.org'
