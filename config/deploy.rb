@@ -26,14 +26,7 @@ set :rbenv_roles, :all
 # bundler
 # set :bundle_jobs, 4
 
-task :prepare_bundle_config do
-  execute :bundle, 'config mirror.https://rubygems.org https://ruby.taobao.org'
-end
-before 'bundler:install', 'prepare_bundle_config'
-
-
 namespace :deploy do
-
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
@@ -42,6 +35,14 @@ namespace :deploy do
       # end
     end
   end
-
 end
 
+namespace :bundler do
+  before :install do
+    on fetch(:bundle_servers) do
+      within release_path do
+        execute :bundle, 'config mirror.https://rubygems.org https://ruby.taobao.org'
+      end
+    end
+  end
+end
