@@ -25,7 +25,7 @@ gem 'attr_searchable'
 gem 'will_paginate'
 gem 'pageless-rails', github: 'rorlab/pageless-rails'
 gem 'rails_12factor', group: :production
-gem 'mysql2', group: :production
+gem 'mysql2', '~> 0.3.18', group: :production
 gem 'excon', '~> 0.39.5'
 gem 'merit'
 gem 'ambry'
