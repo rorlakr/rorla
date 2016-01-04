@@ -26,6 +26,12 @@ set :rbenv_roles, :all
 # bundler
 # set :bundle_jobs, 4
 
+task :prepare_bundle_config do
+  execute :bundle, 'config mirror.https://rubygems.org https://ruby.taobao.org'
+end
+before 'bundler:install', 'prepare_bundle_config'
+
+
 namespace :deploy do
 
   after :restart, :clear_cache do
@@ -38,3 +44,4 @@ namespace :deploy do
   end
 
 end
+
