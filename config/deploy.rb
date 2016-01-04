@@ -24,7 +24,7 @@ set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all
 
 # bundler
-set :bundle_jobs, 4
+# set :bundle_jobs, 4
 
 namespace :deploy do
 
