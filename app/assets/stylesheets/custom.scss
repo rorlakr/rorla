@@ -1,0 +1,198 @@
+// Customization of Devise Views
+
+checkbox {
+  margin-right:5px;
+}
+
+.alert-error {
+  border:1px solid #d9534f;
+  border-radius: 5px;
+  color: #d9534f;
+  background-color: #fecfcf;
+}
+
+.shadow_image {
+  border:1px solid #eaeaea;
+  padding:5px;
+  box-shadow: 0px 0px 5px #888888;
+}
+
+.form-actions {
+   background-color:#eaeaea;
+   padding:1em;
+   // margin:2em 0;
+   border-top:1px solid #dadada;
+}
+
+
+// Customization of General Views
+
+h2 { font-weight: bold}
+h2 > span.glyphicon {
+  display: inline-block;
+  vertical-align: top;
+  margin-top:2px;
+}
+
+.badge-private {
+  background-color: #c9302c;
+}
+
+.badge-shared {
+  background-color: #008040;
+}
+
+.help-inline {
+  color: #ff0000;
+}
+
+// Pagedown Editor
+#wmd-button-bar-content {
+  border: 1px solid #eaeaea;
+  border-radius: 4px 4px 0 0;
+  padding: .2em;
+  background-color: #eaeaea;
+}
+.wmd-input {
+  margin-top:0;
+  padding:1em;
+  border-radius: 0 0 4px 4px;
+  border-color: #eaeaea;
+}
+.wmd-preview, .markdown-preview {
+  img { max-width: 100% !important; }
+  margin-top: 0;
+  background-color: white !important;
+  border:0 !important;
+  // border-color: #eaeaea;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.00);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.00);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.00);
+
+  h1, h2, h3, h4, h5 {
+    margin:1.4em 0 .6em;
+    &:first-child { margin-top: .2em;}
+  }
+  h1 { font-weight: bolder;}
+  pre { background-color: #f5f5f5 !important;}
+  table {
+    @extend .table;
+    @extend .table-bordered;
+    // background-color: white;
+  }
+  pre.prettyprint {
+    padding:.2em;
+    border-color: #ececec;
+  }
+  ol.linenums {
+    background-color: #eaeaea;
+    padding-left:4em !important;
+  }
+}
+
+// rBlog "Show" 액션에서 마크다운 문서 보는 div 클래스
+.markdown-preview {
+  background-color: transparent;
+}
+
+// 구글 prettify 를 이용하여 syntax highlighting 할 때 좌측 코드라인을 5 단위로 표시하지 않고,
+// 1,2,3,4,와 같이 연번호로 보이게 하기
+li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
+    list-style-type: decimal !important;
+    padding-left:.5em;
+}
+li.L0,li.L2,li.L4,li.L6,li.L8 { background-color: white !important; }
+li.L1,li.L3,li.L5,li.L7,li.L9 { background-color: #f6f6f6 !important; }
+
+
+// CodeMirror for Editing
+.CodeMirror {
+  border: 1px solid #eaeaea;
+  line-height: 1.45em;
+  height: auto;
+  border-radius: 4px;
+  .CodeMirror-gutters {
+    border-radius: 3px 0 0 3px;
+  }
+}
+
+// CodeMirror for Readonly
+.code .CodeMirror {
+  border-radius: 0;
+}
+
+
+// fullscreen 다이어로그
+.modal-dialog {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin:0;
+  div, textarea, h4 {
+    color: #666666 !important;
+  }
+}
+.modal-content {
+      height: 100%;
+      border-radius: 0;
+      color:white;
+      overflow:auto;
+}
+
+.wmd-input {
+  margin-bottom:0;
+}
+.wmd-preview {
+  max-height: 100% !important;
+  margin-bottom: 2em;
+}
+
+// Preview button background color
+#wmd-preview-button-content {
+  background-color: #5ed559;
+  &:hover {
+    background-color: #5cb85c;
+  }
+}
+
+
+// Bottom Menu
+.bottom_menu {
+  border-top: 1px solid #eaeaea;
+  margin:4em 0 0;
+  padding:2em 0 0;
+  .menu_title {
+    font-weight:bold;
+    font-size: 1.3em;
+  }
+  ul.section {
+    // display: block;
+    // float: left;
+    margin:1em 0 2em;
+    padding: 1em 0 1em 3em;
+    border-left: 1px solid #eaeaea;
+    border-top: 1px solid #eaeaea;
+　　　list-style-type: none;
+    li {
+    　　　display: inline;
+      line-height: 1.5em;
+    }
+  }
+
+}
+
+h2.view_title { margin:1em 0; }
+
+// token-input-facebook 커스터마이징.
+ul.token-input-list-facebook {
+  border-radius: 3px;
+  padding:.2em;
+  width:100%;
+  border-color: #c2c2c2;
+  li.token-input-token-facebook {
+    background-color: white;
+    color: black;
+    padding:.2em .5em;
+    border-radius: 3px;
+  }
+}
