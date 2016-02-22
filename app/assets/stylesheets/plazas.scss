@@ -1,0 +1,54 @@
+#plazas {
+  // overflow: auto;
+  .plaza {
+    position:relative;
+    .content {
+      overflow:scroll;
+      .title {
+        h4, h4.media-heading { font-weight: bold; margin-top:0; }
+      }
+    }
+    .author {
+      border-top:1px solid #eaeaea;
+      margin-top:.5em;
+    }
+    .actions {
+      display:none;
+      position: absolute;
+      bottom:.5em; right: .5em;
+    }
+  }
+}
+
+.general, .blog, .gallery, .favlink{
+
+}
+
+.plaza-item-title-hover, h4.media-heading {
+  a {
+    // padding:.5em;
+    font-weight: bold;
+    &:hover {
+      display: block !important;
+      background-color: #d8e8ff !important;
+      text-decoration: none;
+    }
+  }
+}
+
+// plazas#index 에서 mouse hover on panel 시에 적용되는 CSS 클래스
+.inside {
+  background-color: #e7f3ff; border-color: #93c6ff;
+  .panel-heading, .label { background-color: #93c6ff !important;}
+  .author { border-color: #d0d8f3 !important; }
+  .category small { color: white !important; }
+}
+
+.favlink {
+  .title {
+    h4 { margin:0;}
+    background-color: #f2f2f2;
+    padding:.5em .5em;
+    margin-bottom: .5em;
+  }
+}

@@ -1,0 +1,33 @@
+
+#posts {
+  overflow: auto;
+  margin-top: 1em;
+  .post {
+    border:1px solid #eaeaea;
+    border-radius: 5px;
+    padding:1em;
+    margin-bottom:1em;
+    .title {
+      border-bottom:1px solid #eaeaea;
+      margin-bottom: 1em;
+      h4 { margin:0 0 5px; padding-bottom: .5em; font-weight: bold;}
+    }
+    .content {
+      margin-bottom: 1em;
+    }
+    .actions {
+      text-align: right;
+    }
+  }
+  .media {
+    .media-object {
+      border:1px solid #4e4444;
+    }
+    .media-content {
+      border-top:1px solid #eaeaea;
+      border-bottom:1px solid #eaeaea;
+      padding:.3em 0;
+    }
+  }
+
+}
