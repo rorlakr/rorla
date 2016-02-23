@@ -245,7 +245,7 @@ GEM
     minitest (5.8.4)
     multi_json (1.10.1)
     multi_xml (0.5.5)
-    mysql2 (0.3.20)
+    mysql2 (0.3.18)
     nenv (0.3.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -456,7 +456,7 @@ DEPENDENCIES
   meta-tags (~> 2.0.0)
   mini_magick
   multi_json (~> 1.10.1)
-  mysql2 (~> 0.3.18)
+  mysql2 (= 0.3.18)
   oj (~> 2.10.2)
   pagedown-bootstrap-rails!
   pageless-rails!
