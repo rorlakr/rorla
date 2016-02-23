@@ -174,7 +174,6 @@ GEM
     faker (1.1.2)
       i18n (~> 0.5)
     ffi (1.9.10)
-    fingerprintless (0.0.2)
     font-awesome-sass (4.5.0)
       sass (>= 3.2)
     formatador (0.2.5)
@@ -440,7 +439,6 @@ DEPENDENCIES
   excon (~> 0.39.5)
   factory_girl_rails (~> 4.2.1)
   faker (~> 1.1.2)
-  fingerprintless
   font-awesome-sass
   friendly_id
   gibbon
