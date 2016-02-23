@@ -30,7 +30,7 @@ class RblogsController < ApplicationController
 
     set_meta_tags og: {
       title: "RORLab | #{@rblog.title}",
-      url: rblog_url(@rblog)
+      url: rblog_path(@rblog)
     }, title: @rblog.title
   end
 
