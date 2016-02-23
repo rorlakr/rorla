@@ -25,7 +25,7 @@ gem 'attr_searchable'
 gem 'will_paginate'
 gem 'pageless-rails', github: 'rorlab/pageless-rails'
 gem 'rails_12factor', group: :production
-gem 'mysql2', '~> 0.3.18', group: :production
+gem 'mysql2', '0.3.18', group: :production
 gem 'excon', '~> 0.39.5'
 gem 'merit'
 gem 'ambry'
@@ -80,7 +80,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', group: :development
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
