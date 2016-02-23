@@ -16,6 +16,8 @@ require 'capistrano/rbenv'
 require 'capistrano/bundler'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
+require 'capistrano/rails_tail_log'
+require 'capistrano/rails/console'
 
 require 'capistrano/puma'
 require 'capistrano/puma/nginx'

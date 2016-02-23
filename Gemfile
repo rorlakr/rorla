@@ -114,6 +114,8 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
+  gem 'capistrano-rails-tail-log'
+  gem 'capistrano-rails-console'
   gem 'capistrano3-puma'
 end
 
