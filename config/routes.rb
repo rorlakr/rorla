@@ -1,3 +1,5 @@
+Rails.application.routes.default_url_options[:host] = 'rorlab.org'
+
 Rails.application.routes.draw do
 
   root "welcome#index"
