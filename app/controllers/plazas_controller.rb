@@ -9,7 +9,7 @@ class PlazasController < ApplicationController
     @plazas = @plazas.paginate(page: params[:page], per_page: 10)
     if request.xhr?
       sleep(3)
-      render :partial => @plazas
+      render @plazas
     end
   end
 
