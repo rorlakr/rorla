@@ -23,7 +23,7 @@
 <% if @post.bulletin.post_type == "gallery" %>
   <tr>
     <th><%=t('activerecord.attributes.post.picture')%></th>
-    <td><%= image_tag @post.picture_url, style: 'max-width:100%' %></td>
+    <td><%= image_tag @post.picture_url, fingerprinting: false, style: 'max-width:100%' %></td>
   </tr>
 <% end %>
 <tr>
