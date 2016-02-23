@@ -109,11 +109,13 @@ gem 'sdoc',           group: :doc
 gem 'puma'
 
 # Use Capistrano for deployment
-gem 'capistrano', '~> 3.4.0', group: :development
-gem 'capistrano-rails', '~> 1.1', group: :development
-gem 'capistrano-rbenv', '~> 2.0', group: :development
-gem 'capistrano-bundler', '~> 1.1.2', group: :development
-gem 'capistrano3-puma', github: "seuros/capistrano-puma", group: :development
+group :development do
+  gem 'capistrano', '~> 3.4.0'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-puma'
+end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
