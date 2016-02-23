@@ -29,3 +29,6 @@ public/screenshot.png
 
 .idea
 .DS_Store
+
+.sql
+.tar
