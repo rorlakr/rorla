@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   before_action :set_metatags
 
   layout :dynamic_layout
-  default_url_options[:host] = 'rorlab.org'
 
   def authority_forbidden(error)
     Authority.logger.warn(error.message)
@@ -16,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     if Rails.env.production?
-      {:host => ENV['RORLA_HOST'], :port => nil}
+      {:host => 'rorlab.org', :port => nil}
     else
       {}
     end
