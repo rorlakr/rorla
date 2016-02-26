@@ -11,6 +11,12 @@
   }
   .content {
     margin: 2em 0 1em;
+    h1, h2, h3, h4, h5 {
+      font-weight: bold;
+    }
+    h2, h3, h4, h5 {
+      margin: 1.5em 0 1em;
+    }
   }
   .rblog-actions {
     border-top: 1px solid #eaeaea !important;
