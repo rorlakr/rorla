@@ -36,7 +36,7 @@ $ ->
     converter = new Markdown.getSanitizingConverter()
 
     # 문서상에 html 태그를 직접 작성할 때 변환 후에도 적용되도록 하기 위햇 사용
-    # converter = new Markdown.Converter()
+    converter = new Markdown.Converter()
 
     Markdown.Extra.init(converter)
     converter.hooks.chain "postConversion", (text) ->
