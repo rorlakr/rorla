@@ -33,6 +33,8 @@ gem 'clockwork'
 gem 'impressionist'
 gem 'jquery-tokeninput-rails'
 gem 'will_paginate-bootstrap'
+gem 'redcarpet'
+gem 'markdown-rails'
 
 # json 파싱을 위함. 실제 파싱은 oj가 하지만 multi_json 인터페이스를 이용
 gem 'multi_json', '~> 1.10.1'
