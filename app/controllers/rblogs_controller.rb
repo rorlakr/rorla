@@ -1,4 +1,5 @@
 class RblogsController < ApplicationController
+  include ActionView::Helpers::TextHelper
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_rblog, only: [:show, :edit, :update, :destroy]
 
@@ -30,6 +31,7 @@ class RblogsController < ApplicationController
 
     set_meta_tags og: {
       title: "RORLab | #{@rblog.title}",
+      description: truncate(@rblog.content, :length   => 100, :separator => /\w/, :omission => "&hellip;"),
       url: rblog_path(@rblog)
     }, title: @rblog.title
   end
