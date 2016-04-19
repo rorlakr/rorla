@@ -31,7 +31,7 @@ class RblogsController < ApplicationController
 
     set_meta_tags og: {
       title: "RORLab | #{@rblog.title}",
-      description: truncate(@rblog.content, :length   => 100, :separator => /\w/, :omission => "&hellip;"),
+      description: truncate(@rblog.content, :length   => 300, :separator => /\w/, :omission => "&hellip;"),
       url: rblog_path(@rblog)
     }, title: @rblog.title
   end
