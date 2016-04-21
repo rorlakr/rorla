@@ -41,6 +41,8 @@ class User < ActiveRecord::Base
   has_many :favlinks, foreign_key: :writer_id, dependent: :destroy
   has_and_belongs_to_many :useful_answers, class_name: "Answer", join_table: :useful_answers
 
+  has_many :purchase_requests, foreign_key: :buyer_id, dependent: :destroy
+
   def confirm!
     super
     add_role :user
