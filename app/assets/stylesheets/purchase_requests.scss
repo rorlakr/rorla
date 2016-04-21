@@ -1,3 +1,27 @@
 // Place all the styles related to the PurchaseRequests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.add_fields {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+a.remove_fields {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+
+}
+
+#size-table {
+  img {
+    border:1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom:2em;
+  }
+}
+
+#req_form_div {
+  margin-top: 2em;
+}

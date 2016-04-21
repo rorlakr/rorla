@@ -1,39 +1,40 @@
-<p id="notice"><%= notice %></p>
+<H1>접수된 신청내용</H1>
+<br/>
+<div class='jumbotron'>
+  <div class='row'>
+  <% @purchase_request.items.each do | item | %>
+    <div class='col-md-6'>
+      <div style="position:absolute;top:10px;left:35px;border:1px solid red;border-radius:12px;width:24px;height:24px;text-align:center;color:white;padding:0px;background-color:red;"><%= item.count %></div>
+      <%= image_tag "T-shirts-#{item.shirts_color == "W" ? 'white' : 'black'}-color.png", width: '100%', class:'img-rounded', style:'margin-bottom:1em;' %>
+    </div>
+  <% end %>
+  </div>
+<fieldset class='request_items'>
+  <legend>접수내용</legend>
+  <%= @purchase_request.user.email %>님이 <%= @purchase_request.created_at.to_date %> 공동구매로 신청하신 내역은 아래와 같습니다.
 
-<p>
-  <strong>User:</strong>
-  <%= @purchase_request.user %>
-</p>
+  <ul style='margin: 2em;'>
+    <%= render @purchase_request.items %>
+  </ul>
 
-<p>
-  <strong>Req date:</strong>
-  <%= @purchase_request.req_date %>
-</p>
+</fieldset>
 
-<p>
-  <strong>Send date:</strong>
-  <%= @purchase_request.send_date %>
-</p>
+<fieldset class='request_items'>
+  <legend class="<%= @purchase_request.confirmed ? '' : 'not_confirmed' %>">입금확인</legend>
+  <p>입금해야할 총 금액은 <%= @purchase_request.human_total_price %> 원입니다.</p>
+  <% if @purchase_request.confirmed %>
+    <%= @purchase_request.confirmed_at %> 입금이 확인되셨습니다.
+    입금자 : <%= @purchase_request.sender_name %>
+    입금액 : <%= @purchase_request.human_total_price %>
+  <% else %>
+     <%= Time.now %> 현재, 아직 입금이 확인되지 않았습니다.
+  <% end %>
 
-<p>
-  <strong>Sender name:</strong>
-  <%= @purchase_request.sender_name %>
-</p>
+</fieldset>
+</div>
 
-<p>
-  <strong>Amount:</strong>
-  <%= @purchase_request.amount %>
-</p>
 
-<p>
-  <strong>Confirmed:</strong>
-  <%= @purchase_request.confirmed %>
-</p>
-
-<p>
-  <strong>Confirmed at:</strong>
-  <%= @purchase_request.confirmed_at %>
-</p>
-
-<%= link_to 'Edit', edit_purchase_request_path(@purchase_request) %> |
-<%= link_to 'Back', purchase_requests_path %>
+<div class='form-actions'>
+<%= link_to '수정', edit_purchase_request_path(@purchase_request), class:'btn btn-default' %> |
+<%= link_to '신청목록', purchase_requests_path, class:'btn btn-default' %>
+</div>
