@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421030851) do
+ActiveRecord::Schema.define(version: 20160421210141) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -64,6 +64,16 @@ ActiveRecord::Schema.define(version: 20160421030851) do
   end
 
   add_index "bundlelinks", ["writer_id"], name: "index_bundlelinks_on_writer_id", using: :btree
+
+  create_table "buy_products", force: :cascade do |t|
+    t.integer  "group_purchase_id", limit: 4
+    t.integer  "product_id",        limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "buy_products", ["group_purchase_id"], name: "index_buy_products_on_group_purchase_id", using: :btree
+  add_index "buy_products", ["product_id"], name: "index_buy_products_on_product_id", using: :btree
 
   create_table "codebanks", force: :cascade do |t|
     t.string   "title",      limit: 255,   null: false
@@ -121,6 +131,18 @@ ActiveRecord::Schema.define(version: 20160421030851) do
 
   add_index "favlinks", ["bundlelink_id"], name: "index_favlinks_on_bundlelink_id", using: :btree
   add_index "favlinks", ["writer_id"], name: "index_favlinks_on_writer_id", using: :btree
+
+  create_table "group_purchases", force: :cascade do |t|
+    t.string   "event_name", limit: 255,   null: false
+    t.text     "event_info", limit: 65535
+    t.datetime "start_date",               null: false
+    t.datetime "end_date"
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "group_purchases", ["user_id"], name: "index_group_purchases_on_user_id", using: :btree
 
   create_table "impressions", force: :cascade do |t|
     t.string   "impressionable_type", limit: 255
@@ -243,6 +265,19 @@ ActiveRecord::Schema.define(version: 20160421030851) do
 
   add_index "posts", ["bulletin_id"], name: "index_posts_on_bulletin_id", using: :btree
   add_index "posts", ["writer_id"], name: "index_posts_on_writer_id", using: :btree
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name",              limit: 255,                 null: false
+    t.integer  "unit_price",        limit: 4
+    t.integer  "total_stock_count", limit: 4
+    t.boolean  "sold_out",                      default: false
+    t.datetime "sold_out_at"
+    t.integer  "user_id",           limit: 4
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+  end
+
+  add_index "products", ["user_id"], name: "index_products_on_user_id", using: :btree
 
   create_table "purchase_requests", force: :cascade do |t|
     t.integer  "user_id",          limit: 4
@@ -367,6 +402,10 @@ ActiveRecord::Schema.define(version: 20160421030851) do
 
   add_index "weeklynews", ["sended_at"], name: "index_weeklynews_on_sended_at", using: :btree
 
+  add_foreign_key "buy_products", "group_purchases"
+  add_foreign_key "buy_products", "products"
+  add_foreign_key "group_purchases", "users"
   add_foreign_key "items", "purchase_requests"
+  add_foreign_key "products", "users"
   add_foreign_key "purchase_requests", "users"
 end

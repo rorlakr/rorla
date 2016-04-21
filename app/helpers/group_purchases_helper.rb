@@ -1,0 +1,2 @@
+module GroupPurchasesHelper
+end
