@@ -1,0 +1,17 @@
+<fieldset>
+  <div class='row no-gutter' style="position:relative;">
+    <div class="col-md-4">
+      <%= f.input :shirts_color, label: '셔츠색상', collection: [['흰색','W'],['검정색', 'B']], input_html: { class: 'form-control' } %>
+    </div>
+    <div class="col-md-4">
+      <%= f.input :shirts_size, label: "셔츠사이즈", collection: [['XS','XS'],['S','S'],['M','M'],['L','L'],['XL','XL'],['2XL','2XL'],['3XL','3XL']], input_html: { class: 'form-control' } %>
+    </div>
+    <div class="col-md-3">
+      <%= f.input :count, label: "갯수", input_html: { class: 'form-control' } %>
+    </div>
+
+      <%= f.hidden_field :_destroy %>
+      <%= link_to icon('trash fa-lg'), '#', class: "remove_fields text-danger" %>
+
+  </div>
+</fieldset>

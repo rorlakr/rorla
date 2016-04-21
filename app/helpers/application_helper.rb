@@ -1,4 +1,16 @@
 module ApplicationHelper
+
+  # Always use the Twitter Bootstrap pagination renderer
+  def will_paginate(collection_or_options = nil, options = {})
+    if collection_or_options.is_a? Hash
+      options, collection_or_options = collection_or_options, nil
+    end
+    unless options[:renderer]
+      options = options.merge :renderer => BootstrapPagination::Rails
+    end
+    super *[collection_or_options, options].compact
+  end
+    
   def bootstrap_class_for(flash_type)
     case flash_type
       when "success"
@@ -173,6 +185,15 @@ module ApplicationHelper
     content_tag(:small, '', title:'댓글갯수', class:'text-muted', data:{toggle:'tooltip'}) do
       icon_label('comment', content_tag(:i, " #{count}", style:'font-weight:bold;'))
     end
+  end
+
+  def link_to_add_fields(name, f, association)
+    new_object = f.object.send(association).klass.new
+    id = new_object.object_id
+    fields = f.fields_for(association, new_object, child_index: id) do |builder|
+      render(association.to_s.singularize + "_fields", f: builder)
+    end
+    link_to(name, '#', class: "add_fields btn btn-info btn-xs", data: {id: id, fields: fields.gsub("\n", "")})
   end
 
 end

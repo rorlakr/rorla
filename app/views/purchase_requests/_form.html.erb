@@ -1,17 +1,54 @@
-<%= simple_form_for(@purchase_request) do |f| %>
-  <%= f.error_notification %>
+<% @purchase_request.items.build if @purchase_request.items.size < 2 %>
 
-  <div class="form-inputs">
-    <%= f.association :user %>
-    <%= f.input :req_date %>
-    <%= f.input :send_date %>
-    <%= f.input :sender_name %>
-    <%= f.input :amount %>
-    <%= f.input :confirmed %>
-    <%= f.input :confirmed_at %>
-  </div>
+<%= simple_form_for @purchase_request, id: 'req_shirts' do |f| %>
+<div class='row'>
+  <div class='col-md-6' id='size-table'>
+    <%= image_tag "tshirts-size-table.png", class: 'img-responsive' %>
+    <%= image_tag "T-shirts-black-and-white-wide.png", class: 'img-responsive' %>
+    <p> 흰색셔츠 20장, 검정색셔츠 20장, 총 40장 공동구매합니다.</p>
+    <ul>
+      <li><b>흰색 : 한 벌당 12,500원</b> <br/>(2도 인쇄 110,000원 + 길단 7600 : 7,000원) * 20장 =  250,000원 </li>
+      <li><b>검은색 : 한 벌당 17,000원</b> <br/>(2도 인쇄 200,000원 + 길단 7600 : 7,000원) * 20장 = 340,000원 </li>
+    </ul>
 
-  <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-default' %>
   </div>
+  <div class='col-md-6' id='req_form'>
+      <%= f.error_notification %>
+      <div class='alert alert-warning'>
+        계좌 : 하나은행 홍순상 105-910065-24-207
+      </div>
+      <div class="form-group">
+        <fieldset class="purchase_items">
+          <legend>항목 리스트</legend>
+          <%= f.fields_for :items do | item | %>
+              <%= render "item_fields", :f => item %>
+          <% end %>
+          <%= link_to_add_fields "항목 추가", f, :items %>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <fieldset class="purchase_items">
+          <legend>송금상태</legend>
+          <div class='row no-gutter'>
+          <div class='col-md-4'>
+            <%= f.input :send_date, label: "송금일", as: :string, placeholder: 'yyyy-mm-dd', input_html:{ class: 'form-control'}  %>
+          </div>
+          <div class='col-md-4'>
+            <%= f.input :sender_name, label: "송금인",  input_html:{ class: 'form-control'}  %>
+          </div>
+          <div class='col-md-4'>
+            <%= f.input :send_total_price, label: "송금액",  input_html:{ class: 'form-control'}  %>
+          </div>
+        </div>
+        </fieldset>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, class: 'btn btn-default' %>
+        <%= link_to '미리보기', @purchase_request, class: 'btn btn-default' if @purchage_request.present? %> |
+        <%= link_to '신청목록', purchase_requests_path, class: 'btn btn-default' %>
+      </div>
+  </div>
+</div>
 <% end %>
