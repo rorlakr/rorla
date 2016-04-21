@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Purchase Requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Req date</th>
+      <th>Send date</th>
+      <th>Sender name</th>
+      <th>Amount</th>
+      <th>Confirmed</th>
+      <th>Confirmed at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @purchase_requests.each do |purchase_request| %>
+      <tr>
+        <td><%= purchase_request.user %></td>
+        <td><%= purchase_request.req_date %></td>
+        <td><%= purchase_request.send_date %></td>
+        <td><%= purchase_request.sender_name %></td>
+        <td><%= purchase_request.amount %></td>
+        <td><%= purchase_request.confirmed %></td>
+        <td><%= purchase_request.confirmed_at %></td>
+        <td><%= link_to 'Show', purchase_request %></td>
+        <td><%= link_to 'Edit', edit_purchase_request_path(purchase_request) %></td>
+        <td><%= link_to 'Destroy', purchase_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Purchase request', new_purchase_request_path %>

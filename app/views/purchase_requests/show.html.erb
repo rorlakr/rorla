@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @purchase_request.user %>
+</p>
+
+<p>
+  <strong>Req date:</strong>
+  <%= @purchase_request.req_date %>
+</p>
+
+<p>
+  <strong>Send date:</strong>
+  <%= @purchase_request.send_date %>
+</p>
+
+<p>
+  <strong>Sender name:</strong>
+  <%= @purchase_request.sender_name %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @purchase_request.amount %>
+</p>
+
+<p>
+  <strong>Confirmed:</strong>
+  <%= @purchase_request.confirmed %>
+</p>
+
+<p>
+  <strong>Confirmed at:</strong>
+  <%= @purchase_request.confirmed_at %>
+</p>
+
+<%= link_to 'Edit', edit_purchase_request_path(@purchase_request) %> |
+<%= link_to 'Back', purchase_requests_path %>

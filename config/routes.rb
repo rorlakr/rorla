@@ -2,6 +2,8 @@ Rails.application.routes.default_url_options[:host] = 'rorlab.org'
 
 Rails.application.routes.draw do
 
+  resources :purchase_requests
+  resources :purchase_requests
   root "welcome#index"
 
   get 'tags', to: 'tags#list'
