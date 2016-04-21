@@ -1,39 +1,54 @@
-<p id="notice"><%= notice %></p>
+<h1>티셔츠 공동구매 신청</h1>
 
-<h1>Listing Purchase Requests</h1>
+<div style="margin:2em 0;">
+  <%= image_tag 'T-shirts-black-and-white-wide.png', class: 'img-responsive img-rounded' %>
+</div>
 
-<table>
+<p class='alert alert-warning'>
+총등록건수 : <%= @purchase_requests_all.size %> |
+총신청항목갯수 : <%= @purchase_requests_shirts_all_count %> (W:<%=  @purchase_requests_shirts_white_count%>/B:<%= @purchase_requests_shirts_black_count %>) |
+입금확인건수 : <%= @purchase_requests_confirmed.size %>
+</p>
+
+<table class='table table-bordered'>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Req date</th>
-      <th>Send date</th>
-      <th>Sender name</th>
-      <th>Amount</th>
-      <th>Confirmed</th>
-      <th>Confirmed at</th>
-      <th colspan="3"></th>
+      <th class='text-center'>신청일</th>
+      <th class='text-center'>신청자</th>
+      <th class='text-center'>총수량</th>
+      <th class='text-center'>입금확인</th>
+      <th class='text-center'>입금액</th>
+      <th class='text-center'>데이터작업</th>
     </tr>
   </thead>
 
   <tbody>
     <% @purchase_requests.each do |purchase_request| %>
       <tr>
-        <td><%= purchase_request.user %></td>
-        <td><%= purchase_request.req_date %></td>
-        <td><%= purchase_request.send_date %></td>
-        <td><%= purchase_request.sender_name %></td>
-        <td><%= purchase_request.amount %></td>
-        <td><%= purchase_request.confirmed %></td>
-        <td><%= purchase_request.confirmed_at %></td>
-        <td><%= link_to 'Show', purchase_request %></td>
-        <td><%= link_to 'Edit', edit_purchase_request_path(purchase_request) %></td>
-        <td><%= link_to 'Destroy', purchase_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class='text-center'><%= purchase_request.created_at.strftime("%Y-%m-%d %p%I:%M:%S")  %></td>
+        <td><%= purchase_request.user.email %></td>
+        <td class='text-center'><%= purchase_request.items.sum(:count) %></td>
+        <td class='text-center'><%=raw purchase_request.confirmed ? "<span class='btn btn-success btn-xs' title='#{purchase_request.confirmed_at}'>완료</span>" : "<span class='btn btn-danger btn-xs'>미확인</span>" %></span></td>
+        <td class='text-center'>
+          <%#= purchase_request.confirmed_at ? purchase_request.confirmed_at : "n/a"%>
+          <%= purchase_request.human_total_price %> 원
+        </td>
+        <td class='text-center'>
+          <% if current_user.can_read? purchase_request %>
+            <%= link_to icon_button('eye-open'), purchase_request, title: t('form_actions.show'), data:{toggle:'tooltip'}  %>
+          <% else %>
+            <%= icon_button("ban-circle") %>
+          <% end %>
+          <%= link_to icon_button('edit'), edit_purchase_request_path(purchase_request), title: t('form_actions.edit'), data:{toggle:'tooltip'}  if current_user.can_update? purchase_request %>
+          <%= link_to icon_button('trash'), purchase_request, method: :delete, data: { confirm: 'Are you sure?', toggle:'tooltip' }, title: t('form_actions.delete') if current_user.can_delete? purchase_request %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<div class='text-center'>
+<%= will_paginate @purchase_requests %>
+</div>
 
-<%= link_to 'New Purchase request', new_purchase_request_path %>
+<%= link_to '신청하기', new_purchase_request_path, class: 'btn btn-primary' %>
