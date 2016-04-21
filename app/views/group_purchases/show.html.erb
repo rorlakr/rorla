@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event name:</strong>
+  <%= @group_purchase.event_name %>
+</p>
+
+<p>
+  <strong>Event info:</strong>
+  <%= @group_purchase.event_info %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @group_purchase.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @group_purchase.end_date %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @group_purchase.user %>
+</p>
+
+<%= link_to 'Edit', edit_group_purchase_path(@group_purchase) %> |
+<%= link_to 'Back', group_purchases_path %>
