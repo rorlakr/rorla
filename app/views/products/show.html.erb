@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Unit price:</strong>
+  <%= @product.unit_price %>
+</p>
+
+<p>
+  <strong>Total stock count:</strong>
+  <%= @product.total_stock_count %>
+</p>
+
+<p>
+  <strong>Sold out:</strong>
+  <%= @product.sold_out %>
+</p>
+
+<p>
+  <strong>Sold out at:</strong>
+  <%= @product.sold_out_at %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
