@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @commentable.comments.build(comment_params)
+    authorize_action_for Comment
     @comment.writer_id = current_user.id
     if @comment.save
       flash[:notice] = ">> Comment successfully saved."

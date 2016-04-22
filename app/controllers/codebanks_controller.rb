@@ -28,6 +28,7 @@ class CodebanksController < ApplicationController
 
   # GET /codebanks/new
   def new
+    authorize_action_for Codebank
     @codebank = Codebank.new
   end
 
@@ -39,6 +40,7 @@ class CodebanksController < ApplicationController
   # POST /codebanks
   # POST /codebanks.json
   def create
+    authorize_action_for Codebank
     @codebank = Codebank.new(codebank_params)
     @codebank.writer = current_user
 

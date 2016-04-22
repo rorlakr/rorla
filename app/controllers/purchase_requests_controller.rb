@@ -81,6 +81,6 @@ class PurchaseRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def purchase_request_params
-      params.require(:purchase_request).permit(:id, :user_id, :send_total_price, :send_date, :sender_name, :confirmed, :confirmed_at, items_attributes: [:id, :purchase_request_id, :shirts_color, :shirts_size, :count, :_destroy])
+      params.require(:purchase_request).permit(:id, :user_id, :send_total_price, :send_date, :sender_name, :confirmed, :confirmed_at, :delivery, :parcel_zip, :parcel_addr, :parcel_receiver, :memo, items_attributes: [:id, :purchase_request_id, :shirts_color, :shirts_size, :count, :_destroy])
     end
 end
