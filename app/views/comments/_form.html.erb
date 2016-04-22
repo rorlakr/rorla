@@ -1,5 +1,5 @@
-<div id='notice_comments_of_<%=@comment.commentable.id %>' class='notice_comments'></div>
-<%= simple_form_for [@comment.commentable, @comment], html: {id: "comment_form_of_#{@comment.commentable.id}"}, remote: true do | f | %>
+<div id='notice_comments_of_<%=commentable.id %>' class='notice_comments'></div>
+<%= simple_form_for [commentable, commentable.comments.build], html: {id: "comment_form_of_#{commentable.id}"}, remote: true do | f | %>
   <%= f.input :content, label: false, placeholder: 'Add your comment (255를 넘을 수 없습니다).', input_html: { class: 'form-control', rows: 5 } %>
   <%= f.submit class: 'btn btn-default pull-right', style:'margin-top:.5em;' %>
 <% end %>
