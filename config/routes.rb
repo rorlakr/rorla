@@ -2,10 +2,7 @@ Rails.application.routes.default_url_options[:host] = 'rorlab.org'
 
 Rails.application.routes.draw do
 
-  resources :products
-  resources :group_purchases
-  resources :purchase_requests
-  resources :purchase_requests
+
   root "welcome#index"
 
   get 'tags', to: 'tags#list'
@@ -31,7 +28,7 @@ Rails.application.routes.draw do
   concern :commentable do
     resources :comments
   end
-  resources :favlinks, :codebanks, :rblogs, :events, concerns: :commentable
+  resources :favlinks, :codebanks, :rblogs, :events, :purchase_requests, :group_purchases, :products, concerns: :commentable
 
   resources :plazas
   resources :bundlelinks do

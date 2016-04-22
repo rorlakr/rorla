@@ -31,3 +31,7 @@
   <%= link_to '수정', edit_product_path(@product), class: 'btn btn-default' %> |
   <%= link_to '제품목록', products_path, class: 'btn btn-default' %>
 </div>
+
+
+<!-- 댓글 위젯 -->
+<%= render partial: "comments/comments_widget", locals: { resource: @product}  %>
