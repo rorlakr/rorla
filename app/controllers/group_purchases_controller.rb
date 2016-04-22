@@ -1,4 +1,5 @@
 class GroupPurchasesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_group_purchase, only: [:show, :edit, :update, :destroy]
 
   # GET /group_purchases
@@ -19,12 +20,15 @@ class GroupPurchasesController < ApplicationController
 
   # GET /group_purchases/1/edit
   def edit
+    authorize_action_for @group_purchase
   end
 
   # POST /group_purchases
   # POST /group_purchases.json
   def create
+    # authorize_action_for @group_purchase
     @group_purchase = GroupPurchase.new(group_purchase_params)
+    @group_purchase.user = current_user
 
     respond_to do |format|
       if @group_purchase.save
@@ -40,6 +44,7 @@ class GroupPurchasesController < ApplicationController
   # PATCH/PUT /group_purchases/1
   # PATCH/PUT /group_purchases/1.json
   def update
+    authorize_action_for @group_purchase
     respond_to do |format|
       if @group_purchase.update(group_purchase_params)
         format.html { redirect_to @group_purchase, notice: 'Group purchase was successfully updated.' }
@@ -54,6 +59,7 @@ class GroupPurchasesController < ApplicationController
   # DELETE /group_purchases/1
   # DELETE /group_purchases/1.json
   def destroy
+    authorize_action_for @group_purchase
     @group_purchase.destroy
     respond_to do |format|
       format.html { redirect_to group_purchases_url, notice: 'Group purchase was successfully destroyed.' }

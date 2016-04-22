@@ -1,16 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h1>공동구매 이벤트</h1>
 
-<h1>Listing Group Purchases</h1>
-
-<table>
+<table class='table table-bordered'>
   <thead>
     <tr>
-      <th>Event name</th>
-      <th>Event info</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th class='text-center'>행사명</th>
+      <th class='text-center'>시작일시</th>
+      <th class='text-center'>종료일시</th>
+      <th class='text-center'>데이터작업</th>
     </tr>
   </thead>
 
@@ -18,13 +14,13 @@
     <% @group_purchases.each do |group_purchase| %>
       <tr>
         <td><%= group_purchase.event_name %></td>
-        <td><%= group_purchase.event_info %></td>
-        <td><%= group_purchase.start_date %></td>
-        <td><%= group_purchase.end_date %></td>
-        <td><%= group_purchase.user %></td>
-        <td><%= link_to 'Show', group_purchase %></td>
-        <td><%= link_to 'Edit', edit_group_purchase_path(group_purchase) %></td>
-        <td><%= link_to 'Destroy', group_purchase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class='text-center'><%= group_purchase.start_date %></td>
+        <td class='text-center'><%= group_purchase.end_date %></td>
+        <td class='text-center'>
+          <%= link_to icon_button('eye-open'), group_purchase %>
+          <%= link_to icon_button('edit'), edit_group_purchase_path(group_purchase) if current_user.can_update? group_purchase %>
+          <%= link_to icon_button('trash'), group_purchase, method: :delete, data: { confirm: 'Are you sure?' } if current_user.can_delete? group_purchase %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +28,5 @@
 
 <br>
 
-<%= link_to 'New Group purchase', new_group_purchase_path %>
+<%= link_to '이벤트등록', new_group_purchase_path, class: 'btn btn-primary' %> |
+<%= link_to '제품목록', products_path, class: 'btn btn-primary' %>

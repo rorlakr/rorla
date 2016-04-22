@@ -6,7 +6,7 @@
   </div>
   <% if user_signed_in? %>
     <div id="comment_form_of_<%=resource.id%>" class='comments_form'>
-      <%= render 'comments/form' %>
+      <%= render 'comments/form' if current_user.can_create? Comment %>
     </div>
   <% end %>
 </section>

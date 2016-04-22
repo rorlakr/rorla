@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
+<H1>등록된 이벤트정보</H1>
 
-<p>
-  <strong>Event name:</strong>
-  <%= @group_purchase.event_name %>
-</p>
+<table class='table table-bordered'>
+<tr>
+  <td><strong>행사명</strong></td>
+  <td><%= @group_purchase.event_name %></td>
+</tr>
 
-<p>
-  <strong>Event info:</strong>
-  <%= @group_purchase.event_info %>
-</p>
+<tr>
+  <td><strong>안내문</strong></td>
+  <td><%= @group_purchase.event_info %></td>
+</tr>
 
-<p>
-  <strong>Start date:</strong>
-  <%= @group_purchase.start_date %>
-</p>
+<tr>
+  <td><strong>시작일시</strong></td>
+  <td><%= @group_purchase.start_date %></td>
+</tr>
 
-<p>
-  <strong>End date:</strong>
-  <%= @group_purchase.end_date %>
-</p>
+<tr>
+  <td><strong>종료일시</strong></td>
+  <td><%= @group_purchase.end_date %></td>
+</tr>
 
-<p>
-  <strong>User:</strong>
-  <%= @group_purchase.user %>
-</p>
+</table>
 
-<%= link_to 'Edit', edit_group_purchase_path(@group_purchase) %> |
-<%= link_to 'Back', group_purchases_path %>
+<div class="form-actions">
+  <%= link_to '수정', edit_group_purchase_path(@group_purchase), class: 'btn btn-default'  %> |
+  <%= link_to '행사목록', group_purchases_path, class: 'btn btn-default' %>
+</div>
+
+<!-- 댓글 위젯 -->
+<%= render partial: "comments/comments_widget", locals: { resource: @group_purchase}  %>
