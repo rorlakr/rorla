@@ -1,29 +1,33 @@
-<p id="notice"><%= notice %></p>
+<h1>제품 정보</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<table class='table table-bordered'>
+<tr>
+  <th class='col-md-2 text-right'><strong>제품명</strong></th>
+  <td><%= @product.name %></td>
+</tr>
 
-<p>
-  <strong>Unit price:</strong>
-  <%= @product.unit_price %>
-</p>
+<tr>
+  <th class='text-right'><strong>단가</strong></th>
+  <td><%= @product.unit_price %></td>
+</tr>
 
-<p>
-  <strong>Total stock count:</strong>
-  <%= @product.total_stock_count %>
-</p>
+<tr>
+  <th class='text-right'><strong>총구매량</strong></th>
+  <td><%= @product.total_stock_count %></td>
+</tr>
 
-<p>
-  <strong>Sold out:</strong>
-  <%= @product.sold_out %>
-</p>
+<tr>
+  <th class='text-right'><strong>매진여부</strong></th>
+  <td><%= @product.sold_out %></td>
+</tr>
 
-<p>
-  <strong>Sold out at:</strong>
-  <%= @product.sold_out_at %>
-</p>
+<tr>
+  <th class='text-right'><strong>매진일자</strong></th>
+  <td><%= @product.sold_out_at %></td>
+</tr>
+</table>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<div class="form-actions">
+  <%= link_to '수정', edit_product_path(@product), class: 'btn btn-default' %> |
+  <%= link_to '제품목록', products_path, class: 'btn btn-default' %>
+</div>

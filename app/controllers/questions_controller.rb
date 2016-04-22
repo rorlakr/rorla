@@ -18,16 +18,19 @@ class QuestionsController < ApplicationController
 
   # GET /questions/new
   def new
+    authorize_action_for Question
     @question = Question.new
   end
 
   # GET /questions/1/edit
   def edit
+    authorize_action_for @question
   end
 
   # POST /questions
   # POST /questions.json
   def create
+    authorize_action_for Question
     @question = current_user.questions.new(question_params)
     @question.user = current_user
 
@@ -45,6 +48,7 @@ class QuestionsController < ApplicationController
   # PATCH/PUT /questions/1
   # PATCH/PUT /questions/1.json
   def update
+    authorize_action_for @question
     respond_to do |format|
       if @question.update(question_params)
         format.html { redirect_to @question, notice: 'Question was successfully updated.' }
@@ -59,6 +63,7 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1
   # DELETE /questions/1.json
   def destroy
+    authorize_action_for @question
     @question.destroy
     respond_to do |format|
       format.html { redirect_to questions_url, notice: 'Question was successfully destroyed.' }

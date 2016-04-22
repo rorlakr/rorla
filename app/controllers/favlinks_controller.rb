@@ -29,6 +29,7 @@ class FavlinksController < ApplicationController
 
   # GET /favlinks/new
   def new
+    authorize_action_for Favlink
     @favlink = @bundlelink ? @bundlelink.favlinks.new : Favlink.new
   end
 
@@ -40,6 +41,7 @@ class FavlinksController < ApplicationController
   # POST /favlinks
   # POST /favlinks.json
   def create
+    authorize_action_for Favlink
     if @bundlelink
       @favlink = @bundlelink.favlinks.new(favlink_params)
       @favlink.writer = current_user

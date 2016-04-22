@@ -38,6 +38,7 @@ class RblogsController < ApplicationController
 
   # GET /rblogs/new
   def new
+    authorize_action_for Rblog
     @rblog = Rblog.new
   end
 
@@ -49,6 +50,7 @@ class RblogsController < ApplicationController
   # POST /rblogs
   # POST /rblogs.json
   def create
+    authorize_action_for Rblog
     @rblog = Rblog.new(rblog_params)
     @rblog.writer = current_user
 

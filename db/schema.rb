@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421210141) do
+ActiveRecord::Schema.define(version: 20160422033809) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -268,8 +268,8 @@ ActiveRecord::Schema.define(version: 20160421210141) do
 
   create_table "products", force: :cascade do |t|
     t.string   "name",              limit: 255,                 null: false
-    t.integer  "unit_price",        limit: 4
-    t.integer  "total_stock_count", limit: 4
+    t.integer  "unit_price",        limit: 4,   default: 0
+    t.integer  "total_stock_count", limit: 4,   default: 0
     t.boolean  "sold_out",                      default: false
     t.datetime "sold_out_at"
     t.integer  "user_id",           limit: 4
@@ -283,11 +283,16 @@ ActiveRecord::Schema.define(version: 20160421210141) do
     t.integer  "user_id",          limit: 4
     t.date     "send_date"
     t.string   "sender_name",      limit: 10
-    t.integer  "send_total_price", limit: 4,  default: 0
-    t.boolean  "confirmed",                   default: false
+    t.integer  "send_total_price", limit: 4,     default: 0
+    t.boolean  "confirmed",                      default: false
     t.datetime "confirmed_at"
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.boolean  "delivery",                       default: false
+    t.string   "parcel_zip",       limit: 10
+    t.string   "parcel_addr",      limit: 255
+    t.string   "parcel_receiver",  limit: 10
+    t.text     "memo",             limit: 65535
   end
 
   add_index "purchase_requests", ["user_id"], name: "index_purchase_requests_on_user_id", using: :btree

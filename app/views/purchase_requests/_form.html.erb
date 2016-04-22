@@ -29,6 +29,36 @@
 
       <div class="form-group">
         <fieldset class="purchase_items">
+          <legend>물품수령안내</legend>
+          <p>* 물품 인도장소는 RORLAB 모임 장소인 토즈 강남2호점 입니다.</p>
+          <p>* 배송을 원하실 경우에는 아래의 항목을 체크해 주세요.</p>
+            <%= f.check_box :delivery %>
+            <%= f.label :delivery, "택배배송원함(착불)"  %>
+          <fieldset class="purchase_items">
+            <legend>배송정보</legend>
+            <div class='row'>
+              <div class='col-md-5'>
+                <div class='form-group'>
+                  <%= f.input :parcel_zip, label: '배송지우편번호', input_html: { class: 'form-control'} %>
+                </div>
+              </div>
+            </div>
+            <div class='form-group'>
+              <%= f.input :parcel_addr, label: '배송지주소', input_html: { class: 'form-control'} %>
+            </div>
+            <div class='row'>
+              <div class='col-md-5'>
+                <div class='form-group'>
+                  <%= f.input :parcel_receiver, label: '수령인', input_html: { class: 'form-control'} %>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <fieldset class="purchase_items">
           <legend>송금상태</legend>
           <div class='row no-gutter'>
           <div class='col-md-4'>
@@ -38,7 +68,7 @@
             <%= f.input :sender_name, label: "송금인",  input_html:{ class: 'form-control'}  %>
           </div>
           <div class='col-md-4'>
-            <%= f.input :send_total_price, label: "송금액",  input_html:{ class: 'form-control'}  %>
+            <%= f.input :send_total_price, readonly: true, label: "송금액(원)",  input_html:{ class: 'form-control'}  %>
           </div>
         </div>
         </fieldset>
