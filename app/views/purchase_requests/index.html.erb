@@ -28,7 +28,9 @@
         <td class='text-center'><%= purchase_request.created_at.strftime("%Y-%m-%d %p%I:%M:%S")  %></td>
         <td><%= purchase_request.user.email %></td>
         <td class='text-center'><%= purchase_request.items.sum(:count) %></td>
-        <td class='text-center'><%=raw purchase_request.confirmed ? "<span class='btn btn-success btn-xs' title='#{purchase_request.confirmed_at}'>완료</span>" : "<span class='btn btn-danger btn-xs'>미확인</span>" %></span></td>
+        <td class='text-center' id="confirm_purchase_<%= purchase_request.id %>" >
+          <%= purchase_confirmed(purchase_request) %>
+        </td>
         <td class='text-center'>
           <%#= purchase_request.confirmed_at ? purchase_request.confirmed_at : "n/a"%>
           <%= purchase_request.human_total_price %> 원

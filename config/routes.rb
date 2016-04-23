@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   get 'tags', to: 'tags#list'
+  get 'purchase_requests/confirm_request/:id' => 'purchase_requests#confirm_request_toggle', as: :confirm_purchase
 
   # Info routing
   get 'info/about', as: :about
