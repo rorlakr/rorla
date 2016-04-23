@@ -13,3 +13,7 @@ $ ->
     regexp = new RegExp($(this).data('id'), 'g')
     $(this).before($(this).data('fields').replace(regexp, time))
     event.preventDefault()
+
+  $("#purchase_request_delivery").click ->
+    if $(this).is(":checked") == true
+      alert("택배비는 착불입니다.")
