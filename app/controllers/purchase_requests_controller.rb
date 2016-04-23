@@ -1,6 +1,6 @@
 class PurchaseRequestsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_purchase_request, only: [:show, :edit, :update, :destroy]
+  before_action :set_purchase_request, only: [:show, :edit, :update, :destroy, :confirm_request_toggle]
 
   # GET /purchase_requests
   # GET /purchase_requests.json
@@ -71,6 +71,18 @@ class PurchaseRequestsController < ApplicationController
       format.html { redirect_to purchase_requests_url, notice: 'Purchase request was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def confirm_request_toggle
+    authorize_action_for @purchase_request
+    if @purchase_request.confirmed
+      @purchase_request.confirmed = false
+      @purchase_request.confirmed_at = nil
+    else
+      @purchase_request.confirmed = true
+      @purchase_request.confirmed_at = Time.now
+    end
+    @purchase_request.save
   end
 
   private
