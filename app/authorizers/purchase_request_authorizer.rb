@@ -12,4 +12,8 @@ class PurchaseRequestAuthorizer < ApplicationAuthorizer
     resource.user == user || user.has_role?(:admin)
   end
 
+  def confirmable_by(user)
+    user.has_role?(:admin)
+  end
+
 end
