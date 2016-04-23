@@ -40,8 +40,11 @@
                   <%= link_to bulletin, bulletin_posts_path(bulletin) %>
                 </li>
               <% end %>
-              <li class="<%= active_menu('group_purchases') %>"><%= link_to '공동구매', group_purchases_path %></li>
-              <li class="<%= active_menu('purchase_requests') %>"><%= link_to '티셔츠', purchase_requests_path %></li>
+              <% if user_signed_in? && current_user.has_role?(:admin) %>
+                <li class="divider"></li>
+                <!-- <li class="<%#= active_menu('group_purchases') %>"><%#= link_to '공동구매', group_purchases_path %></li> -->
+                <li class="<%= active_menu('purchase_requests') %>"><%= link_to '티셔츠 공구', purchase_requests_path %></li>
+              <% end %>
             </ul>
           </li>
           <li class='dropdown <%= active_menu('codebanks', 'podcasts', 'weeklynews', 'favlinks', 'questions') %>'>
