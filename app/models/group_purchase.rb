@@ -5,6 +5,6 @@ class GroupPurchase < ActiveRecord::Base
   include Authority::Abilities
 
   belongs_to :user
+  has_many :purchase_requests, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
-  
 end
