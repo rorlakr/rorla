@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160422033809) do
+ActiveRecord::Schema.define(version: 20160425013631) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -64,16 +64,6 @@ ActiveRecord::Schema.define(version: 20160422033809) do
   end
 
   add_index "bundlelinks", ["writer_id"], name: "index_bundlelinks_on_writer_id", using: :btree
-
-  create_table "buy_products", force: :cascade do |t|
-    t.integer  "group_purchase_id", limit: 4
-    t.integer  "product_id",        limit: 4
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-  end
-
-  add_index "buy_products", ["group_purchase_id"], name: "index_buy_products_on_group_purchase_id", using: :btree
-  add_index "buy_products", ["product_id"], name: "index_buy_products_on_product_id", using: :btree
 
   create_table "codebanks", force: :cascade do |t|
     t.string   "title",      limit: 255,   null: false
@@ -266,35 +256,24 @@ ActiveRecord::Schema.define(version: 20160422033809) do
   add_index "posts", ["bulletin_id"], name: "index_posts_on_bulletin_id", using: :btree
   add_index "posts", ["writer_id"], name: "index_posts_on_writer_id", using: :btree
 
-  create_table "products", force: :cascade do |t|
-    t.string   "name",              limit: 255,                 null: false
-    t.integer  "unit_price",        limit: 4,   default: 0
-    t.integer  "total_stock_count", limit: 4,   default: 0
-    t.boolean  "sold_out",                      default: false
-    t.datetime "sold_out_at"
-    t.integer  "user_id",           limit: 4
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
-  end
-
-  add_index "products", ["user_id"], name: "index_products_on_user_id", using: :btree
-
   create_table "purchase_requests", force: :cascade do |t|
-    t.integer  "user_id",          limit: 4
+    t.integer  "user_id",           limit: 4
     t.date     "send_date"
-    t.string   "sender_name",      limit: 10
-    t.integer  "send_total_price", limit: 4,     default: 0
-    t.boolean  "confirmed",                      default: false
+    t.string   "sender_name",       limit: 10
+    t.integer  "send_total_price",  limit: 4,     default: 0
+    t.boolean  "confirmed",                       default: false
     t.datetime "confirmed_at"
-    t.datetime "created_at",                                     null: false
-    t.datetime "updated_at",                                     null: false
-    t.boolean  "delivery",                       default: false
-    t.string   "parcel_zip",       limit: 10
-    t.string   "parcel_addr",      limit: 255
-    t.string   "parcel_receiver",  limit: 10
-    t.text     "memo",             limit: 65535
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.boolean  "delivery",                        default: false
+    t.string   "parcel_zip",        limit: 10
+    t.string   "parcel_addr",       limit: 255
+    t.string   "parcel_receiver",   limit: 10
+    t.text     "memo",              limit: 65535
+    t.integer  "group_purchase_id", limit: 4
   end
 
+  add_index "purchase_requests", ["group_purchase_id"], name: "index_purchase_requests_on_group_purchase_id", using: :btree
   add_index "purchase_requests", ["user_id"], name: "index_purchase_requests_on_user_id", using: :btree
 
   create_table "questions", force: :cascade do |t|
@@ -407,10 +386,8 @@ ActiveRecord::Schema.define(version: 20160422033809) do
 
   add_index "weeklynews", ["sended_at"], name: "index_weeklynews_on_sended_at", using: :btree
 
-  add_foreign_key "buy_products", "group_purchases"
-  add_foreign_key "buy_products", "products"
   add_foreign_key "group_purchases", "users"
   add_foreign_key "items", "purchase_requests"
-  add_foreign_key "products", "users"
+  add_foreign_key "purchase_requests", "group_purchases"
   add_foreign_key "purchase_requests", "users"
 end
