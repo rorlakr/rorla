@@ -1,6 +1,6 @@
 <% @purchase_request.items.build if @purchase_request.items.size < 2 %>
 
-<%= simple_form_for @purchase_request, id: 'req_shirts' do |f| %>
+<%= simple_form_for (params[:group_purchase_id] ? [@group_purchase, @purchase_request] : @purchase_request), id: 'req_shirts' do |f| %>
 <div class='row'>
   <div class='col-md-6' id='size-table'>
     <%= image_tag "tshirts-size-table.png", class: 'img-responsive' %>
@@ -77,7 +77,7 @@
       <div class="form-actions">
         <%= f.button :submit, class: 'btn btn-default' %>
         <%= link_to '미리보기', @purchase_request, class: 'btn btn-default' if @purchage_request.present? %> |
-        <%= link_to '신청목록', purchase_requests_path, class: 'btn btn-default' %>
+        <%= link_to '신청목록', (params[:group_purchase_id] ? group_purchase_purchase_requests_path(@group_purchase) : purchase_requests_path), class: 'btn btn-default' %>
       </div>
   </div>
 </div>

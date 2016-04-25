@@ -25,3 +25,36 @@ a.remove_fields {
 #req_form_div {
   margin-top: 2em;
 }
+
+fieldset {
+  margin-bottom: 7px;
+}
+fieldset.purchase_items, fieldset.product_addition_form {
+  border: 1px solid #ccc;
+  border-radius: .3em;
+  padding:1em;
+  legend {
+    border-radius: 3px;
+    background-color: #eaeaea;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0;
+    width: auto;
+    padding: .2em .5em;
+    border:0;
+  }
+}
+
+fieldset.request_items {
+  @extend fieldset.purchase_items;
+  background-color: white;
+  legend {
+    background-color: green;
+    color: white;
+  }
+  legend.not_confirmed {
+    background-color: red;
+    color: white;
+  }
+
+}

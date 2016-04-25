@@ -6,6 +6,7 @@ class PurchaseRequest < ActiveRecord::Base
 
 
   belongs_to :user
+  belongs_to :group_purchase
   has_many :items, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
 

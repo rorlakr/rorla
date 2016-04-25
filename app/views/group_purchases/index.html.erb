@@ -1,4 +1,4 @@
-<h1>공동구매 이벤트</h1>
+<h1>공동구매 행사</h1>
 
 <table class='table table-bordered'>
   <thead>
@@ -13,7 +13,7 @@
   <tbody>
     <% @group_purchases.each do |group_purchase| %>
       <tr>
-        <td><%= group_purchase.event_name %></td>
+        <td><%= link_to group_purchase.event_name, group_purchase_purchase_requests_path(group_purchase) %></td>
         <td class='text-center'><%= group_purchase.start_date %></td>
         <td class='text-center'><%= group_purchase.end_date %></td>
         <td class='text-center'>
@@ -28,5 +28,4 @@
 
 <br>
 
-<%= link_to '이벤트등록', new_group_purchase_path, class: 'btn btn-primary' %> |
-<%= link_to '제품목록', products_path, class: 'btn btn-primary' %>
+<%= link_to '행사등록', new_group_purchase_path, class: 'btn btn-primary' %>

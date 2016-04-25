@@ -1,4 +1,7 @@
-<h1>티셔츠 공동구매 신청</h1>
+<h1>공동구매 신청 <small><%= @group_purchase.event_name %></small></h1>
+
+
+
 
 <div style="margin:2em 0;">
   <%= image_tag 'T-shirts-black-and-white-wide.png', class: 'img-responsive img-rounded' %>
@@ -37,11 +40,11 @@
         </td>
         <td class='text-center'>
           <% if current_user.can_read? purchase_request %>
-            <%= link_to icon_button('eye-open'), purchase_request, title: t('form_actions.show'), data:{toggle:'tooltip'}  %>
+            <%= link_to icon_button('eye-open'), (params[:group_purchase_id] ? [purchase_request.group_purchase, purchase_request] : purchase_request), title: t('form_actions.show'), data:{toggle:'tooltip'}  %>
           <% else %>
             <%= icon_button("ban-circle") %>
           <% end %>
-          <%= link_to icon_button('edit'), edit_purchase_request_path(purchase_request), title: t('form_actions.edit'), data:{toggle:'tooltip'}  if current_user.can_update? purchase_request %>
+          <%= link_to icon_button('edit'), (params[:group_purchase_id] ? edit_group_purchase_purchase_request_path(purchase_request.group_purchase, purchase_request) : edit_purchase_request_path(purchase_request)), title: t('form_actions.edit'), data:{toggle:'tooltip'}  if current_user.can_update? purchase_request %>
           <%= link_to icon_button('trash'), purchase_request, method: :delete, data: { confirm: 'Are you sure?', toggle:'tooltip' }, title: t('form_actions.delete') if current_user.can_delete? purchase_request %>
         </td>
       </tr>
@@ -53,4 +56,4 @@
 <%= will_paginate @purchase_requests %>
 </div>
 
-<%= link_to '신청하기', new_purchase_request_path, class: 'btn btn-primary' %>
+<%= link_to '신청하기', (params[:group_purchase_id] ? new_group_purchase_purchase_request_path : new_purchase_request_path), class: 'btn btn-primary' %>
