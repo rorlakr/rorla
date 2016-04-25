@@ -1,4 +1,4 @@
-<H1>등록된 행사정보</H1>
+<H1>행사정보</H1>
 
 <table class='table table-bordered'>
 <tr>
@@ -26,13 +26,8 @@
 <div class="form-actions">
   <%= link_to '수정', edit_group_purchase_path(@group_purchase), class: 'btn btn-default'  %> |
   <%= link_to '행사목록', group_purchases_path, class: 'btn btn-default' %>
+  <%= link_to '구매신청', group_purchase_purchase_requests_path(@group_purchase), class: 'btn btn-default' %>
 </div>
-
-<!-- 구매 제품 목록 -->
-<%#= render 'products/products_widget', resource: @group_purchase %>
-
-<%= render 'purchase_requests/request' %>
-
 
 <!-- 댓글 위젯 -->
 <%= render "comments/comments_widget", resource: @group_purchase  %>
