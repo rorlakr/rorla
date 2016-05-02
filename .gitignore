@@ -32,3 +32,6 @@ public/screenshot.png
 
 .sql
 .tar
+
+# Ignore application configuration
+/config/application.yml
