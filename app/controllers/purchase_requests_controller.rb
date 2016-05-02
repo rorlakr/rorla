@@ -12,6 +12,12 @@ class PurchaseRequestsController < ApplicationController
     @purchase_requests_shirts_black_count = @purchase_requests_all.includes(:items).where("items.shirts_color = 'B'").sum(:count)
     @purchase_requests_confirmed = @purchase_requests_all.where(confirmed: true)
     @purchase_requests = @purchase_requests_all.paginate(:page => params[:page], :per_page => 10)
+
+    set_meta_tags og: {
+      title: "RORLab | #{@group_purchase.event_name}",
+      description: @group_purchase.event_info,
+      url: [@group_purchase, @purchase_requests_all]
+    }, title: @group_purchase.event_name
   end
 
   # GET /purchase_requests/1
