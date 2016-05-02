@@ -18,6 +18,7 @@ require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 require 'capistrano/rails_tail_log'
 require 'capistrano/rails/console'
+require 'capistrano/figaro_yml'
 
 require 'capistrano/puma'
 require 'capistrano/puma/nginx'
