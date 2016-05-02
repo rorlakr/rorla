@@ -5,7 +5,7 @@ class GroupPurchasesController < ApplicationController
   # GET /group_purchases
   # GET /group_purchases.json
   def index
-    @group_purchases = GroupPurchase.all
+    @group_purchases = GroupPurchase.order(created_at: :desc)
   end
 
   # GET /group_purchases/1
@@ -15,6 +15,7 @@ class GroupPurchasesController < ApplicationController
 
   # GET /group_purchases/new
   def new
+    authorize_action_for GroupPurchase
     @group_purchase = GroupPurchase.new
   end
 
@@ -26,7 +27,7 @@ class GroupPurchasesController < ApplicationController
   # POST /group_purchases
   # POST /group_purchases.json
   def create
-    # authorize_action_for @group_purchase
+    authorize_action_for GroupPurchase
     @group_purchase = GroupPurchase.new(group_purchase_params)
     @group_purchase.user = current_user
 

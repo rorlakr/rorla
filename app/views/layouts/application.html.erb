@@ -40,7 +40,7 @@
                   <%= link_to bulletin, bulletin_posts_path(bulletin) %>
                 </li>
               <% end %>
-              <% if user_signed_in? && current_user.has_role?(:admin) %>
+              <% if user_signed_in? %>
                 <li class="divider"></li>
                 <li class="<%= active_menu('group_purchases') %>"><%= link_to '공동구매', group_purchases_path %></li>
               <% end %>

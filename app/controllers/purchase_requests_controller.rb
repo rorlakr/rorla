@@ -48,9 +48,11 @@ class PurchaseRequestsController < ApplicationController
 
     respond_to do |format|
       if @purchase_request.save
+        UserMailer.confirm_purchase_request(current_user).deliver_later
         format.html { redirect_to (params[:group_purchase_id] ? [@group_purchase, @purchase_request] : @purchase_request), notice: 'Purchase request was successfully created.' }
         format.json { render :show, status: :created, location: @purchase_request }
       else
+        flash.now[:error] = @purchase_request.errors.full_messages.join(" ")
         format.html { render :new }
         format.json { render json: @purchase_request.errors, status: :unprocessable_entity }
       end

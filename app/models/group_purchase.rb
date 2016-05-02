@@ -7,4 +7,6 @@ class GroupPurchase < ActiveRecord::Base
   belongs_to :user
   has_many :purchase_requests, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
+
+  validates :event_name, :start_date, presence: true
 end

@@ -5,11 +5,11 @@ class PurchaseRequestAuthorizer < ApplicationAuthorizer
   end
 
   def updatable_by?(user)
-    resource.user == user || user.has_role?(:admin)
+    (resource.user == user && !resource.confirmed ) || user.has_role?(:admin)
   end
 
   def deletable_by?(user)
-    resource.user == user || user.has_role?(:admin)
+    (resource.user == user && !resource.confirmed ) || user.has_role?(:admin)
   end
 
   def confirmable_by(user)

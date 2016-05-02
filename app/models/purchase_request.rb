@@ -4,6 +4,7 @@ class PurchaseRequest < ActiveRecord::Base
   resourcify
   include Authority::Abilities
 
+  validates :user_id, :uniqueness => {:scope => :group_purchase_id, message: "이미 신청하셨습니다."}
 
   belongs_to :user
   belongs_to :group_purchase
