@@ -16,7 +16,7 @@ class PurchaseRequestsController < ApplicationController
     set_meta_tags og: {
       title: "RORLab | #{@group_purchase.event_name}",
       description: @group_purchase.event_info,
-      url: [@group_purchase, @purchase_requests_all]
+      url: group_purchase_purchase_requests_url
     }, title: @group_purchase.event_name
   end
 
