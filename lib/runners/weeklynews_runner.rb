@@ -1,6 +1,6 @@
 class Runners::WeeklynewsRunner
   def self.update
-    gb = Gibbon::API.new
+    gb = Gibbon::API.new("d7be1222528f20795652293a1d97c9a7-us9")
     campaigns = gb.campaigns.list({:start => 0, :limit => 100})
     if campaigns["total"] > 0
       campaigns["data"].each do |campaign|
