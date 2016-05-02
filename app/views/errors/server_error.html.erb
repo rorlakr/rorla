@@ -1,8 +1,18 @@
-<div class='container'>
-  <div class='row-col-8 row-col-offset-2'>
-    <div class="alert alert-danger" role="alert">
-      <strong>이런!</strong>
-      서버에 오류가 발생했군요!
+
+
+  <div class='container'>
+    <div style='display:table;margin:2em;padding:3em;margin:0 auto;height:100%;width:100%;'>
+      <div style='display:table-cell; text-align:center;vertical-align:middle;'>
+        <div class="panel panel-danger">
+          <div class="panel-heading">500 Internal Server Error</div>
+          <div class="panel-body">
+            서버 오류가 발생했습니다!<br />
+            <%= link_to "이전 페이지로 이동", :back %>
+          </div>
+          <div class="panel-footer">
+            RORLAB<sup>&reg;</sup>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
