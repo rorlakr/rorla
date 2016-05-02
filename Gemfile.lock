@@ -70,6 +70,8 @@ GEM
     annotate (2.7.0)
       activerecord (>= 3.2, < 6.0)
       rake (~> 10.4)
+    annotate_gem (0.0.8)
+      bundler (~> 1.11.2)
     arel (6.0.3)
     attr_searchable (0.0.7)
       treetop
@@ -102,6 +104,9 @@ GEM
     capistrano-bundler (1.1.4)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
+    capistrano-figaro-yml (1.0.2)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2, >= 1.2.0)
     capistrano-rails (1.1.6)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
@@ -174,6 +179,8 @@ GEM
     faker (1.1.2)
       i18n (~> 0.5)
     ffi (1.9.10)
+    figaro (1.1.1)
+      thor (~> 0.14)
     font-awesome-sass (4.5.0)
       sass (>= 3.2)
     formatador (0.2.5)
@@ -419,6 +426,7 @@ DEPENDENCIES
   acts-as-taggable-on
   ambry
   annotate
+  annotate_gem
   attr_searchable
   authority
   autoprefixer-rails
@@ -429,6 +437,7 @@ DEPENDENCIES
   bootstrap-sass
   capistrano (~> 3.4.0)
   capistrano-bundler
+  capistrano-figaro-yml (~> 1.0.2)
   capistrano-rails
   capistrano-rails-console
   capistrano-rails-tail-log
@@ -446,6 +455,7 @@ DEPENDENCIES
   excon (~> 0.39.5)
   factory_girl_rails (~> 4.2.1)
   faker (~> 1.1.2)
+  figaro
   font-awesome-sass
   friendly_id
   gibbon
