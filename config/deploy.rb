@@ -27,7 +27,7 @@ set :rbenv_roles, :all
 # bundler
 set :bundle_jobs, 4
 
-before 'deploy:check:linked_files', 'config:push'
+# before 'deploy:check:linked_files', 'config:push'
 
 namespace :deploy do
   after :restart, :clear_cache do

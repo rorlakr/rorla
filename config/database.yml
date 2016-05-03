@@ -20,3 +20,13 @@ development:
   database: rorla_development
   username: root
   password:
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  host: localhost
+  port: 3306
+  database: rorla_production
+  username: <%= ENV['RORLA_DB_USERNAME'] %>
+  password: <%= ENV['RORLA_DB_PASSWORD'] %>
