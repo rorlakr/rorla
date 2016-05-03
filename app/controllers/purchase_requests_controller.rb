@@ -30,6 +30,7 @@ class PurchaseRequestsController < ApplicationController
   def new
     if params[:group_purchase_id]
       set_group_purchase
+      authorize_action_for PurchaseRequest, for: @group_purchase
       @purchase_request = @group_purchase.purchase_requests.new
     else
       @purchase_request = PurchaseRequest.new
