@@ -63,28 +63,6 @@ Rails.application.configure do
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   # config.assets.precompile += %w( search.js )
 
-  # # SMTP email 설정
-  # config.action_mailer.smtp_settings = {
-  #   :address   => "smtp.mandrillapp.com",
-  #   :port      => 587,
-  #   :user_name => ENV["RORLA_MANDRILL_USERNAME"],
-  #   :password  => ENV["RORLA_MANDRILL_APIKEY"]
-  # }
-
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {
-    api_key: ENV['RORLA_MAILGUN_API_KEY'],
-    domain: 'rorlab.org'
-  }
-
-
-  # ActionMailer Config
-  # config.action_mailer.default_url_options = { :host => ENV['RORLA_HOST'] }
-  config.action_mailer.default_url_options = { :host => 'rorlab.org' }
-  # config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
-
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
@@ -100,4 +78,18 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # ActionMailer Config
+  # config.action_mailer.default_url_options = { :host => ENV['RORLA_HOST'] }
+  config.action_mailer.default_url_options = { :host => 'rorlab.org' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+
+  # config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+    api_key: ENV['RORLA_MAILGUN_API_KEY'],
+    domain: 'rorlab.org'
+  }
+
 end
