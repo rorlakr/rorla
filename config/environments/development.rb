@@ -35,9 +35,9 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   #
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'localhost', port: '3000' }
   # config.action_mailer.delivery_method = :smtp
-  config.action_mailer.delivery_method = :letter_opener
+  # config.action_mailer.delivery_method = :letter_opener
 
   # SMTP email 설정
   # config.action_mailer.smtp_settings = {
@@ -46,5 +46,11 @@ Rails.application.configure do
   #   :user_name => ENV["RORLA_MANDRILL_USERNAME"],
   #   :password  => ENV["RORLA_MANDRILL_APIKEY"]
   # }
+
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+          api_key: 'key-da326f087a35331b33d4d13d8e63e404',
+          domain: 'rorlab.org'
+  }
 
 end

@@ -87,6 +87,9 @@ gem 'yaml_db'
 gem "meetup_client"
 # Add comments to your Gemfile with each dependency's description. (https://github.com/ivantsepp/annotate_gem)
 gem 'annotate_gem'
+gem 'mailgun_rails'
+
+
 
 group :development do
   # Annotates Rails Models, routes, fixtures, and others based on the database schema. (http://github.com/ctran/annotate_models)
@@ -105,7 +108,7 @@ group :development do
   # Simple Rails app configuration (https://github.com/laserlemon/figaro)
   gem 'figaro'
   # Capistrano tasks for automating figaro `application.yml` file handling for Rails 4+ apps. (https://github.com/ChouAndy/capistrano-figaro-yml)
-  gem 'capistrano-figaro-yml', '~> 1.0.2'
+  gem 'capistrano-figaro-yml'
 end
 
 group :development, :test do
@@ -206,6 +209,7 @@ group :development do
   gem 'capistrano-rails-console'
   # Puma integration for Capistrano (https://github.com/seuros/capistrano-puma)
   gem 'capistrano3-puma'
+  gem 'capistrano-upload-config'
 end
 
 # Use debugger
