@@ -118,6 +118,8 @@ GEM
     capistrano-rbenv (2.0.4)
       capistrano (~> 3.1)
       sshkit (~> 1.3)
+    capistrano-upload-config (0.7.0)
+      capistrano (>= 3.0)
     capistrano3-puma (1.2.1)
       capistrano (~> 3.0)
       puma (>= 2.6)
@@ -166,6 +168,8 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    domain_name (0.5.20160310)
+      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     excon (0.39.6)
     execjs (2.6.0)
@@ -204,6 +208,8 @@ GEM
     guard-rspec (4.3.1)
       guard (~> 2.1)
       rspec (>= 2.14, < 4.0)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
     httparty (0.13.7)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
@@ -238,6 +244,10 @@ GEM
     lumberjack (1.0.10)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mailgun_rails (0.8.0)
+      actionmailer (>= 3.2.13)
+      json (>= 1.7.7)
+      rest-client (>= 1.6.7)
     markdown-rails (0.2.1)
       rails
       rdiscount (>= 1.6.8, < 2.0)
@@ -258,6 +268,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.0.2)
+    netrc (0.11.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     nokogumbo (1.4.7)
@@ -320,6 +331,10 @@ GEM
     redcarpet (3.3.3)
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
+    rest-client (1.8.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     rolify (5.0.0)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
@@ -400,6 +415,9 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
     vcr (2.9.3)
     warden (1.2.6)
       rack (>= 1.0)
@@ -434,11 +452,12 @@ DEPENDENCIES
   bootstrap-sass
   capistrano (~> 3.4.0)
   capistrano-bundler
-  capistrano-figaro-yml (~> 1.0.2)
+  capistrano-figaro-yml
   capistrano-rails
   capistrano-rails-console
   capistrano-rails-tail-log
   capistrano-rbenv
+  capistrano-upload-config
   capistrano3-puma
   capybara (~> 2.1.0)
   capybara-webkit
@@ -467,6 +486,7 @@ DEPENDENCIES
   jquery-ui-rails
   launchy (~> 2.4.2)
   letter_opener
+  mailgun_rails
   markdown-rails
   meetup_client
   merit

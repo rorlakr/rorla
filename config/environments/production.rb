@@ -63,18 +63,25 @@ Rails.application.configure do
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   # config.assets.precompile += %w( search.js )
 
-  # SMTP email 설정
-  config.action_mailer.smtp_settings = {
-    :address   => "smtp.mandrillapp.com",
-    :port      => 587,
-    :user_name => ENV["RORLA_MANDRILL_USERNAME"],
-    :password  => ENV["RORLA_MANDRILL_APIKEY"]
+  # # SMTP email 설정
+  # config.action_mailer.smtp_settings = {
+  #   :address   => "smtp.mandrillapp.com",
+  #   :port      => 587,
+  #   :user_name => ENV["RORLA_MANDRILL_USERNAME"],
+  #   :password  => ENV["RORLA_MANDRILL_APIKEY"]
+  # }
+
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+          api_key: "<%= ENV['MAILGUN_API_KEY'] %>",
+          domain: 'rorlab.org'
   }
+
 
   # ActionMailer Config
   # config.action_mailer.default_url_options = { :host => ENV['RORLA_HOST'] }
   config.action_mailer.default_url_options = { :host => 'rorlab.org' }
-  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
 
