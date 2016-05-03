@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   def authority_forbidden(error)
     Authority.logger.warn(error.message)
-    redirect_to request.referrer.presence || root_path, :alert => '권한이 없습니다. 관리자에게 문의하세요.'
+    redirect_to request.referrer.presence || root_path, :alert => "이 작업(#{controller_name}##{action_name})에 대한 권한이 없습니다."
   end
 
   def default_url_options
