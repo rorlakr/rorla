@@ -49,8 +49,8 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
-          api_key: 'key-da326f087a35331b33d4d13d8e63e404',
-          domain: 'rorlab.org'
+    api_key: "<%= ENV['MAILGUN_API_KEY'] %>",
+    domain: 'rorlab.org'
   }
 
 end
