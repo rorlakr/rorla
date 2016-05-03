@@ -75,7 +75,8 @@ gem 'multi_json', '~> 1.10.1'
 gem 'oj', '~> 2.10.2'
 
 # Sucker Punch is a Ruby asynchronous processing using Celluloid, heavily influenced by Sidekiq and girl_friday. (https://github.com/brandonhilkert/sucker_punch)
-gem 'sucker_punch', '~> 1.2.1'
+# gem 'sucker_punch', '~> 1.2.1'
+gem 'sucker_punch', '~> 2.0'
 # Collection of SEO helpers for Ruby on Rails. (http://github.com/kpumuk/meta-tags)
 gem 'meta-tags', '~> 2.0.0'
 # A wrapper for MailChimp API 2.0 and Export API 1.0 (http://github.com/amro/gibbon)
