@@ -2,8 +2,8 @@ Rails.application.routes.default_url_options[:host] = 'rorlab.org'
 
 Rails.application.routes.draw do
 
-
   root "welcome#index"
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
 
   get 'tags', to: 'tags#list'
   get 'purchase_requests/confirm_request/:id' => 'purchase_requests#confirm_request_toggle', as: :confirm_purchase
