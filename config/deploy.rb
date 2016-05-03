@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.4.0'
+lock '3.5.0'
 
 set :application, 'rorla'
 set :repo_url, 'git@github.com:rorlakr/rorla.git'
@@ -26,6 +26,8 @@ set :rbenv_roles, :all
 
 # bundler
 set :bundle_jobs, 4
+
+before 'deploy:check:linked_files', 'config:push'
 
 namespace :deploy do
   after :restart, :clear_cache do

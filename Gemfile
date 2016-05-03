@@ -196,7 +196,7 @@ gem 'puma'
 # Use Capistrano for deployment
 group :development do
   # Capistrano - Welcome to easy deployment with Ruby over SSH (http://capistranorb.com/)
-  gem 'capistrano', '~> 3.4.0'
+  gem 'capistrano', '~> 3.5.0'
   # Rails specific Capistrano tasks (https://github.com/capistrano/rails)
   gem 'capistrano-rails'
   # rbenv integration for Capistrano (https://github.com/capistrano/rbenv)
