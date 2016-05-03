@@ -76,6 +76,7 @@ gem 'oj', '~> 2.10.2'
 
 # Sucker Punch is a Ruby asynchronous processing using Celluloid, heavily influenced by Sidekiq and girl_friday. (https://github.com/brandonhilkert/sucker_punch)
 # gem 'sucker_punch', '~> 1.2.1'
+# Sucker Punch is a Ruby asynchronous processing using Celluloid, heavily influenced by Sidekiq and girl_friday. (https://github.com/brandonhilkert/sucker_punch)
 gem 'sucker_punch', '~> 2.0'
 # Collection of SEO helpers for Ruby on Rails. (http://github.com/kpumuk/meta-tags)
 gem 'meta-tags', '~> 2.0.0'
@@ -87,6 +88,7 @@ gem 'yaml_db'
 gem "meetup_client"
 # Add comments to your Gemfile with each dependency's description. (https://github.com/ivantsepp/annotate_gem)
 gem 'annotate_gem'
+# Rails Action Mailer adapter for Mailgun (https://github.com/jorgemanrubia/mailgun_rails/)
 gem 'mailgun_rails'
 
 
@@ -209,7 +211,8 @@ group :development do
   gem 'capistrano-rails-console'
   # Puma integration for Capistrano (https://github.com/seuros/capistrano-puma)
   gem 'capistrano3-puma'
-  gem 'capistrano-upload-config'
+  # Capistrano 3.x tasks to upload shared config that is stored outside of SCM (https://github.com/rjocoleman/capistrano-upload-config)
+  # gem 'capistrano-upload-config'
 end
 
 # Use debugger
