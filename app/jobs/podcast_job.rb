@@ -1,5 +1,5 @@
 class PodcastJob
-  include SuckerPunch::Job
+  # include SuckerPunch::Job
 
   # PodcastJob.new.async.perform
   def perform
