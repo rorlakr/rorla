@@ -68,8 +68,6 @@ GEM
     annotate_gem (0.0.8)
       bundler (~> 1.11.2)
     arel (6.0.3)
-    attr_searchable (0.0.7)
-      treetop
     authority (3.1.0)
       activesupport (>= 3.0.0)
       rake (>= 0.8.7)
@@ -374,6 +372,8 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    search_cop (1.0.6)
+      treetop
     selenium-webdriver (2.35.1)
       childprocess (>= 0.2.5)
       multi_json (~> 1.0)
@@ -413,7 +413,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
-    treetop (1.6.4)
+    treetop (1.6.5)
       polyglot (~> 0.3)
     turbolinks (2.5.3)
       coffee-rails
@@ -449,7 +449,6 @@ DEPENDENCIES
   ambry
   annotate
   annotate_gem
-  attr_searchable
   authority
   autoprefixer-rails
   autosize-rails
@@ -514,6 +513,7 @@ DEPENDENCIES
   sanitize
   sass-rails
   sdoc
+  search_cop
   selenium-webdriver (~> 2.35.1)
   shoulda-matchers
   simple_form
