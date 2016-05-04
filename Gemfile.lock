@@ -1,11 +1,4 @@
 GIT
-  remote: git://github.com/rorlab/docker_alias.git
-  revision: 0502927395fe21eb10df1dcb638c570377ceccfa
-  specs:
-    docker_alias (0.0.4)
-      railties (>= 3.0)
-
-GIT
   remote: git://github.com/rorlab/pagedown-bootstrap-rails.git
   revision: 4114b63172f306fbc996c4f2fd4a8b9d2f36ff7c
   specs:
@@ -483,7 +476,6 @@ DEPENDENCIES
   delayed_job_active_record
   delayed_job_web
   devise
-  docker_alias!
   excon (~> 0.39.5)
   factory_girl_rails (~> 4.2.1)
   faker (~> 1.1.2)

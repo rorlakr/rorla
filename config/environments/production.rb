@@ -51,7 +51,7 @@ Rails.application.configure do
 
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
-  config.logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
+  # config.logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
@@ -92,4 +92,5 @@ Rails.application.configure do
     domain: 'rorlab.org'
   }
 
+  config.action_mailer.asset_host = "http://rorlab.org"
 end
