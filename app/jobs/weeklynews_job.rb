@@ -1,5 +1,5 @@
 class WeeklynewsJob
-  include SuckerPunch::Job
+  # include SuckerPunch::Job
 
   # WeeklynewsJob.new.async.perform
   def perform
