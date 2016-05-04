@@ -20,6 +20,7 @@
       <th class='text-center'>신청자</th>
       <th class='text-center'>총수량</th>
       <th class='text-center'>입금확인</th>
+      <th class='text-center'>입금자</th>
       <th class='text-center'>입금액</th>
       <th class='text-center'>데이터작업</th>
     </tr>
@@ -34,6 +35,7 @@
         <td class='text-center' id="confirm_purchase_<%= purchase_request.id %>" >
           <%= purchase_confirmed(purchase_request) %>
         </td>
+        <td><%= purchase_request.sender_name.presence %></td>
         <td class='text-center'>
           <%#= purchase_request.confirmed_at ? purchase_request.confirmed_at : "n/a"%>
           <%= purchase_request.human_total_price %> 원
