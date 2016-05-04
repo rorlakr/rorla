@@ -29,10 +29,16 @@ set :rbenv_roles, :all
 
 before 'deploy:check:linked_files', 'config:push'
 
-after 'deploy:published', 'restart' do
-  invoke 'delayed_job:restart'
-end
+# after 'deploy:published', 'restart' do
+#   invoke 'delayed_job:restart'
+# end
 
+after 'deploy:publishing', 'deploy:restart'
+namespace :deploy do
+  task :restart do
+    invoke 'delayed_job:restart'
+  end
+end
 
 namespace :deploy do
   after :restart, :clear_cache do
