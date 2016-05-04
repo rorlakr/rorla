@@ -49,8 +49,10 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
-    api_key: ENV['RORLA_MAILGUN_API_KEY'],
+    api_key: Rails.application.secrets.rorla_mailgun_api_key,
     domain: 'rorlab.org'
   }
+
+  config.action_mailer.asset_host = "http://localhost:3000"
 
 end
