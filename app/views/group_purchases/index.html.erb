@@ -18,8 +18,8 @@
         <td class='text-center'><%= group_purchase.end_date %></td>
         <td class='text-center'>
           <%= link_to icon_button('eye-open'), group_purchase %>
-          <%= link_to icon_button('edit'), edit_group_purchase_path(group_purchase) if current_user.can_update? group_purchase %>
-          <%= link_to icon_button('trash'), group_purchase, method: :delete, data: { confirm: 'Are you sure?' } if current_user.can_delete? group_purchase %>
+          <%= link_to icon_button('edit'), edit_group_purchase_path(group_purchase) if user_signed_in? && current_user.can_update?(group_purchase) %>
+          <%= link_to icon_button('trash'), group_purchase, method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? && current_user.can_delete?(group_purchase) %>
         </td>
       </tr>
     <% end %>

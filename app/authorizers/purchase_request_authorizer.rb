@@ -5,7 +5,7 @@ class PurchaseRequestAuthorizer < ApplicationAuthorizer
   end
 
   def self.creatable_by?(user, options={})
-    g = GroupPurchase.find(options[:for])
+    g = GroupPurchase.find(options[:for].id)
     g.purchase_requests.where(user: user).size == 0
   end
 

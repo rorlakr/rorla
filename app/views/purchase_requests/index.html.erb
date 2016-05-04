@@ -39,13 +39,13 @@
           <%= purchase_request.human_total_price %> 원
         </td>
         <td class='text-center'>
-          <% if current_user.can_read? purchase_request %>
+          <% if user_signed_in? && current_user.can_read?(purchase_request) %>
             <%= link_to icon_button('eye-open'), (params[:group_purchase_id] ? [purchase_request.group_purchase, purchase_request] : purchase_request), title: t('form_actions.show'), data:{toggle:'tooltip'}  %>
           <% else %>
             <%= icon_button("ban-circle") %>
           <% end %>
-          <%= link_to icon_button('edit'), (params[:group_purchase_id] ? edit_group_purchase_purchase_request_path(purchase_request.group_purchase, purchase_request) : edit_purchase_request_path(purchase_request)), title: t('form_actions.edit'), data:{toggle:'tooltip'}  if current_user.can_update? purchase_request %>
-          <%= link_to icon_button('trash'), (params[:group_purchase_id] ? [purchase_request.group_purchase, purchase_request] : purchase_request), method: :delete, data: { confirm: 'Are you sure?', toggle:'tooltip' }, title: t('form_actions.delete') if current_user.can_delete? purchase_request %>
+          <%= link_to icon_button('edit'), (params[:group_purchase_id] ? edit_group_purchase_purchase_request_path(purchase_request.group_purchase, purchase_request) : edit_purchase_request_path(purchase_request)), title: t('form_actions.edit'), data:{toggle:'tooltip'}  if user_signed_in? && current_user.can_update?(purchase_request) %>
+          <%= link_to icon_button('trash'), (params[:group_purchase_id] ? [purchase_request.group_purchase, purchase_request] : purchase_request), method: :delete, data: { confirm: 'Are you sure?', toggle:'tooltip' }, title: t('form_actions.delete') if user_signed_in? && current_user.can_delete?(purchase_request) %>
         </td>
       </tr>
     <% end %>
