@@ -35,7 +35,7 @@
         <td class='text-center' id="confirm_purchase_<%= purchase_request.id %>" >
           <%= purchase_confirmed(purchase_request) %>
         </td>
-        <td><%= purchase_request.sender_name.presence %></td>
+        <td class='text-center'><%= purchase_request.sender_name.presence %></td>
         <td class='text-center'>
           <%#= purchase_request.confirmed_at ? purchase_request.confirmed_at : "n/a"%>
           <%= purchase_request.human_total_price %> 원
