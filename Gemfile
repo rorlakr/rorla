@@ -107,9 +107,9 @@ group :development do
   # Send User Notifications on Mac OS X 10.8 - with status icons. (https://github.com/Springest/terminal-notifier-guard)
   gem 'terminal-notifier-guard'
   # Simple Rails app configuration (https://github.com/laserlemon/figaro)
-  gem 'figaro'
+  # gem 'figaro'
   # Capistrano tasks for automating figaro `application.yml` file handling for Rails 4+ apps. (https://github.com/ChouAndy/capistrano-figaro-yml)
-  gem 'capistrano-figaro-yml'
+  # gem 'capistrano-figaro-yml'
 end
 
 group :development, :test do
@@ -211,7 +211,7 @@ group :development do
   # Puma integration for Capistrano (https://github.com/seuros/capistrano-puma)
   gem 'capistrano3-puma'
   # Capistrano 3.x tasks to upload shared config that is stored outside of SCM (https://github.com/rjocoleman/capistrano-upload-config)
-  # gem 'capistrano-upload-config'
+  gem 'capistrano-upload-config'
 end
 
 # Use debugger

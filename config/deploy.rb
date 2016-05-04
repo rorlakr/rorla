@@ -27,6 +27,8 @@ set :rbenv_roles, :all
 # bundler
 set :bundle_jobs, 4
 
+before 'deploy:check:linked_files', 'config:push'
+
 after 'deploy:published', 'restart' do
   invoke 'delayed_job:restart'
 end
