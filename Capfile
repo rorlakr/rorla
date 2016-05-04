@@ -18,10 +18,10 @@ require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 require 'capistrano/rails_tail_log'
 require 'capistrano/rails/console'
-require 'capistrano/figaro_yml'
+# require 'capistrano/figaro_yml'
 require 'capistrano/puma'
 require 'capistrano/puma/nginx'
-# require 'capistrano/upload-config'
+require 'capistrano/upload-config'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
