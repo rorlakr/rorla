@@ -40,8 +40,8 @@ gem 'mini_magick'
 gem 'webshots', github: 'rorlab/webshots'
 # Advanced tagging for Rails. (https://github.com/mbleigh/acts-as-taggable-on)
 gem 'acts-as-taggable-on'
-# [DEPRECATION] 'attr_searchable' is deprecated. Migrate to 'search_cop' instead. (https://github.com/mrkamel/search_cop#attrsearchable-is-now-searchcop)
-gem 'attr_searchable'
+
+gem 'search_cop'
 # Pagination plugin for web frameworks and other apps (https://github.com/mislav/will_paginate/wiki)
 gem 'will_paginate'
 gem 'pageless-rails', github: 'rorlab/pageless-rails'
