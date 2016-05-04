@@ -20,11 +20,13 @@ class Favlink < ActiveRecord::Base
 
   resourcify
   include Authority::Abilities
-  include AttrSearchable
+  # include AttrSearchable
+  include SearchCop
 
-  attr_searchable :title, :description
-  attr_searchable :bundlelink => "bundlelink.title"
-  # attr_accessor :tag_tokens
+  search_scope :search do
+    attributes :title, :description
+    attributes :bundlelink => "bundlelink.title"
+  end  
 
   acts_as_taggable
 
