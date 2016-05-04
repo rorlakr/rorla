@@ -1,5 +1,7 @@
 class PodcastJob
   # include SuckerPunch::Job
+  queue_as :default
+
 
   # PodcastJob.new.async.perform
   def perform

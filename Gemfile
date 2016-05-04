@@ -91,7 +91,6 @@ gem 'annotate_gem'
 gem 'mailgun_rails'
 
 
-
 group :development do
   # Annotates Rails Models, routes, fixtures, and others based on the database schema. (http://github.com/ctran/annotate_models)
   gem 'annotate'
@@ -102,7 +101,7 @@ group :development do
   # Entity-relationship diagram for your Rails models. (https://github.com/voormedia/rails-erd)
   gem 'rails-erd'
   # 도커 명령어를 출력 (https://github.com/seapy/docker_alias)
-  gem 'docker_alias', github: 'rorlab/docker_alias'
+  # gem 'docker_alias', github: 'rorlab/docker_alias'
   # gem 'docker_alias', '~> 0.0.2'
   # Send User Notifications on Mac OS X 10.8 - with status icons. (https://github.com/Springest/terminal-notifier-guard)
   gem 'terminal-notifier-guard'
