@@ -29,7 +29,11 @@ Rails.application.routes.draw do
   concern :commentable do
     resources :comments
   end
-  resources :favlinks, :codebanks, :rblogs, :events, :purchase_requests, :group_purchases, concerns: :commentable
+  resources :favlinks, :codebanks, :rblogs, :events, :purchase_requests, :group_purchases, :courses, :lectures, concerns: :commentable
+
+  resources :courses do
+    resources :lectures
+  end
 
   resources :group_purchases do
     resources :purchase_requests

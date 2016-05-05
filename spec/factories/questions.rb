@@ -4,10 +4,12 @@
 #
 #  id         :integer          not null, primary key
 #  title      :string(255)
-#  content    :text
+#  content    :text(65535)
+#  user_id    :integer
 #  created_at :datetime
 #  updated_at :datetime
-#  user_id    :integer
+#  sash_id    :integer
+#  level      :integer          default(0)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

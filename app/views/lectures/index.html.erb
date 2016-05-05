@@ -1,0 +1,40 @@
+<h2 class='fieldset_course_title'>
+  <%= @course.title %>
+</h2>
+
+<fieldset class='fieldset_course_summary'>
+  <legend>강의요약</legend>
+  <%= simple_format @course.summary %>
+</fieldset>
+
+<p class='text-right'>
+  <strong>강사:</strong>
+  <%= @course.tutor.email %>
+  <%= link_to icon_button('edit'), edit_course_path(@course) if user_signed_in? && current_user.can_update?(@course) %>
+</p>
+
+
+<h3>목차</h3>
+
+<ul class='lecture_index_list'>
+  <% @lectures.each do | lecture | %>
+  <li>
+    <%= link_to lecture.title, [lecture.course, lecture] %>
+    <% if user_signed_in? && current_user.can_update?(lecture) %>
+      <%= link_to icon('edit'), edit_course_lecture_path(lecture.course, lecture) %> |
+      <%= link_to icon('trash'), [lecture.course, lecture], method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
+  </li>
+  <% end %>
+</ul>
+
+
+<div class="form-actions">
+    <%= link_to "강의록작성", new_course_lecture_path(@course), class: 'btn btn-primary' if user_signed_in? %>
+    <%= link_to "강좌목록", courses_path, class: 'btn btn-default' %>
+
+</div>
+
+
+<!-- 댓글 위젯 -->
+<%= render partial: "comments/comments_widget", locals: { resource: @course} %>

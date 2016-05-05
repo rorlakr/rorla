@@ -19,6 +19,8 @@
 #  unconfirmed_email      :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
+#  sash_id                :integer
+#  level                  :integer          default(0)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

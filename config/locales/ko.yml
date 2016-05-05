@@ -197,6 +197,8 @@ ko:
         question: 질문
         answer: 답변
         favlink: 즐겨찾기
+        course: 레일스 강좌
+        lecture: 강의
       attributes:
         post:
           title: 글제목
@@ -230,6 +232,13 @@ ko:
           content: 내용
         answer:
           content: 답변
+        course:
+          title: 제목
+          summary: 요약
+        lecture:
+          title: 제목
+          youtube_url: Youtube 공유 URL
+          content: 내용
   form_actions:
     edit: 수정
     delete: 삭제
@@ -246,4 +255,3 @@ ko:
   authored_html: "<small>%{who}님이 %{ago}전에 작성함.</small>"
   updated_html: "<small title='%{time_ago}' data-toggle='tooltip'>%{ago}전에 업데이트</small>"
   shared_by: "이 글을 공유함 (%{who})"
-
