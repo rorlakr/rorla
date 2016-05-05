@@ -1,0 +1,22 @@
+// Place all the styles related to the lectures controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.lecture_show_title {
+  font-weight: bolder;
+  color: darkred;
+  margin-bottom:.7em;
+}
+
+.lecture_index_list {
+  margin-bottom: 2em;
+  li {
+    line-height: 2em;
+
+  }
+}
+
+.lecture_show_youtube {
+  margin: 2em;
+  text-align: center;
+}

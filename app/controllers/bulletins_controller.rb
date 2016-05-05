@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: bulletins
+#
+#  id          :integer          not null, primary key
+#  title       :string(255)
+#  description :text(65535)
+#  created_at  :datetime
+#  updated_at  :datetime
+#  post_type   :string(255)      default("general")
+#
+
 class BulletinsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_bulletin, only: [:show, :edit, :update, :destroy]
