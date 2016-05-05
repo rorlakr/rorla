@@ -1,0 +1,18 @@
+<%= render "layouts/shared/preview", title: @lecture.title %>
+
+<%= simple_form_for [@course, @lecture] do | f | %>
+  <div class="form-group">
+    <%= f.input :title, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :youtube_url, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :content, as: :pagedown, input_html: { class: 'form-control', rows: 10 } %>
+  </div>
+  <div class="form-actions">
+    <%= f.submit '작성', class: 'btn btn-default' %>
+    <%= link_to "보기", [@lecture.course, @lecture], class: 'btn btn-default' if @lecture.persisted? %> |
+    <%= link_to "목차", course_lectures_path(@lecture.course), class: 'btn btn-default' %>
+  </div>
+<% end %>

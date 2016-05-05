@@ -1,0 +1,16 @@
+<%= simple_form_for(@course) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    <%= f.input :title, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :summary, input_html: { class: 'form-control', rows: 10 } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-default' %>
+    <%= link_to '보기', course_lectures_path(@course), class: 'btn btn-default' if @course.persisted? %> |
+    <%= link_to '강좌목록', courses_path, class: 'btn btn-default' %>
+  </div>
+<% end %>

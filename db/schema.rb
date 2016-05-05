@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160503130630) do
+ActiveRecord::Schema.define(version: 20160505081336) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -88,6 +88,16 @@ ActiveRecord::Schema.define(version: 20160503130630) do
 
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
   add_index "comments", ["writer_id"], name: "index_comments_on_writer_id", using: :btree
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "title",      limit: 255,   null: false
+    t.text     "summary",    limit: 65535
+    t.integer  "tutor_id",   limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "courses", ["tutor_id"], name: "index_courses_on_tutor_id", using: :btree
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   limit: 4,     default: 0, null: false
@@ -197,6 +207,19 @@ ActiveRecord::Schema.define(version: 20160503130630) do
   end
 
   add_index "labnotes", ["writer_id"], name: "index_labnotes_on_writer_id", using: :btree
+
+  create_table "lectures", force: :cascade do |t|
+    t.integer  "course_id",   limit: 4
+    t.string   "title",       limit: 255,   null: false
+    t.text     "content",     limit: 65535
+    t.string   "youtube_url", limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "user_id",     limit: 4
+  end
+
+  add_index "lectures", ["course_id"], name: "index_lectures_on_course_id", using: :btree
+  add_index "lectures", ["user_id"], name: "index_lectures_on_user_id", using: :btree
 
   create_table "merit_actions", force: :cascade do |t|
     t.integer  "user_id",       limit: 4
@@ -402,8 +425,11 @@ ActiveRecord::Schema.define(version: 20160503130630) do
 
   add_index "weeklynews", ["sended_at"], name: "index_weeklynews_on_sended_at", using: :btree
 
+  add_foreign_key "courses", "users", column: "tutor_id"
   add_foreign_key "group_purchases", "users"
   add_foreign_key "items", "purchase_requests"
+  add_foreign_key "lectures", "courses"
+  add_foreign_key "lectures", "users"
   add_foreign_key "purchase_requests", "group_purchases"
   add_foreign_key "purchase_requests", "users"
 end

@@ -1,0 +1,17 @@
+<h2 class='lecture_show_title'>
+  <%= @course.title %>
+</h2>
+
+<div class='lecture_show_summary'>
+  <%= simple_format @course.summary %>
+</div>
+
+<p class='text-right'>
+  <strong>강사:</strong>
+  <%= @course.tutor.email %>
+</p>
+
+<div class="form-actions">
+  <%= link_to "수정", edit_course_path(@course), class: 'btn btn-default' %>
+
+</div>

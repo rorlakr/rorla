@@ -1,8 +1,5 @@
 <h1>공동구매 신청 <small><%= @group_purchase.event_name %></small></h1>
 
-
-
-
 <div style="margin:2em 0;">
   <%= image_tag 'T-shirts-black-and-white-wide.png', class: 'img-responsive img-rounded' %>
 </div>
@@ -13,44 +10,46 @@
 입금확인건수 : <%= @purchase_requests_confirmed.size %>
 </p>
 
-<table class='table table-bordered'>
-  <thead>
-    <tr>
-      <th class='text-center'>신청일</th>
-      <th class='text-center'>신청자</th>
-      <th class='text-center'>총수량</th>
-      <th class='text-center'>입금확인</th>
-      <th class='text-center'>입금액</th>
-      <th class='text-center'>데이터작업</th>
-    </tr>
-  </thead>
+<div class="table-responsive">
 
-  <tbody>
-    <% @purchase_requests.each do |purchase_request| %>
+  <table class='table table-bordered'>
+    <thead>
       <tr>
-        <td class='text-center'><%= purchase_request.created_at.strftime("%Y-%m-%d %p%I:%M:%S")  %></td>
-        <td><%= purchase_request.user.email %></td>
-        <td class='text-center'><%= purchase_request.items.sum(:count) %></td>
-        <td class='text-center' id="confirm_purchase_<%= purchase_request.id %>" >
-          <%= purchase_confirmed(purchase_request) %>
-        </td>
-        <td class='text-center'>
-          <%#= purchase_request.confirmed_at ? purchase_request.confirmed_at : "n/a"%>
-          <%= purchase_request.human_total_price %> 원
-        </td>
-        <td class='text-center'>
-          <% if user_signed_in? && current_user.can_read?(purchase_request) %>
-            <%= link_to icon_button('eye-open'), (params[:group_purchase_id] ? [purchase_request.group_purchase, purchase_request] : purchase_request), title: t('form_actions.show'), data:{toggle:'tooltip'}  %>
-          <% else %>
-            <%= icon_button("ban-circle") %>
-          <% end %>
-          <%= link_to icon_button('edit'), (params[:group_purchase_id] ? edit_group_purchase_purchase_request_path(purchase_request.group_purchase, purchase_request) : edit_purchase_request_path(purchase_request)), title: t('form_actions.edit'), data:{toggle:'tooltip'}  if user_signed_in? && current_user.can_update?(purchase_request) %>
-          <%= link_to icon_button('trash'), (params[:group_purchase_id] ? [purchase_request.group_purchase, purchase_request] : purchase_request), method: :delete, data: { confirm: 'Are you sure?', toggle:'tooltip' }, title: t('form_actions.delete') if user_signed_in? && current_user.can_delete?(purchase_request) %>
-        </td>
+        <th class='text-center'>신청일</th>
+        <th class='text-center'>신청자</th>
+        <th class='text-center'>총수량</th>
+        <th class='text-center'>입금확인</th>
+        <th class='text-center'>입금액</th>
+        <th class='text-center'>데이터작업</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @purchase_requests.each do |purchase_request| %>
+        <tr>
+          <td class='text-center'><%= purchase_request.created_at.strftime("%Y-%m-%d %p%I:%M:%S")  %></td>
+          <td><%= purchase_request.user.email %></td>
+          <td class='text-center'><%= purchase_request.items.sum(:count) %></td>
+          <td class='text-center' id="confirm_purchase_<%= purchase_request.id %>" >
+            <%= purchase_confirmed(purchase_request) %>
+          </td>
+          <td class='text-center'>
+            <%#= purchase_request.confirmed_at ? purchase_request.confirmed_at : "n/a"%>
+            <%= purchase_request.human_total_price %> 원
+          </td>
+          <td class='text-center'>
+            <% if user_signed_in? && current_user.can_read?(purchase_request) %>
+              <%= link_to icon_button('eye-open'), (params[:group_purchase_id] ? [purchase_request.group_purchase, purchase_request] : purchase_request), title: t('form_actions.show'), data:{toggle:'tooltip'}  %>
+            <% else %>
+              <%= icon_button("ban-circle") %>
+            <% end %>
+            <%= link_to icon_button('edit'), (params[:group_purchase_id] ? edit_group_purchase_purchase_request_path(purchase_request.group_purchase, purchase_request) : edit_purchase_request_path(purchase_request)), title: t('form_actions.edit'), data:{toggle:'tooltip'}  if user_signed_in? && current_user.can_update?(purchase_request) %>
+            <%= link_to icon_button('trash'), (params[:group_purchase_id] ? [purchase_request.group_purchase, purchase_request] : purchase_request), method: :delete, data: { confirm: 'Are you sure?', toggle:'tooltip' }, title: t('form_actions.delete') if user_signed_in? && current_user.can_delete?(purchase_request) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <div class='text-center'>
 <%= will_paginate @purchase_requests %>

@@ -1,0 +1,25 @@
+<h2 class='lecture_show_title'><%= @lecture.title %></h2>
+
+<div class="text-right">
+  <%= @lecture&.user&.email %>
+</div>
+
+<div class="lecture_show_youtube">
+  <%=raw youtube_embed @lecture.youtube_url if @lecture.youtube_url.present? %>
+</div>
+
+<div class='markdown-preview'>
+  <%= @lecture.content %>
+</div>
+<br />
+<div class="form-actions">
+  <% if user_signed_in? && current_user.can_update?(@lecture) %>
+    <%= link_to "수정", edit_course_lecture_path(@course, @lecture), class: 'btn btn-default' %>
+    <%= link_to "삭제", [@course, @lecture], method: :delete, data:{confirm:"Are you sure?"}, class: 'btn btn-danger' %> |
+  <% end %>
+  <%= link_to "목차", course_lectures_path(@course), class: 'btn btn-default' %>
+</div>
+
+
+<!-- 댓글 위젯 -->
+<%= render partial: "comments/comments_widget", locals: { resource: @lecture} %>

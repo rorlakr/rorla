@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: plazas
+#
+#  id              :integer          not null, primary key
+#  postitable_id   :integer
+#  postitable_type :string(255)
+#  visible         :boolean
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
 class PlazasController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_plaza, only: [:show, :edit, :update, :destroy]

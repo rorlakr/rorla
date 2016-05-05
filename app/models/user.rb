@@ -19,6 +19,8 @@
 #  unconfirmed_email      :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
+#  sash_id                :integer
+#  level                  :integer          default(0)
 #
 
 class User < ActiveRecord::Base
@@ -33,6 +35,8 @@ class User < ActiveRecord::Base
          :confirmable
 
   has_many :rblogs, foreign_key: :writer_id, dependent: :destroy
+  has_many :courses, foreign_key: :tutor_id, dependent: :destroy
+  has_many :lectures, dependent: :destroy
   has_many :posts, foreign_key: :writer_id, dependent: :destroy
   has_many :questions, dependent: :destroy
   has_many :answers, dependent: :destroy
