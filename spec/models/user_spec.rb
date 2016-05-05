@@ -19,6 +19,8 @@
 #  unconfirmed_email      :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
+#  sash_id                :integer
+#  level                  :integer          default(0)
 #
 
 require 'spec_helper'

@@ -8,14 +8,15 @@
 #  end_time     :datetime
 #  location     :string(255)
 #  fb_event_id  :string(255)
-#  created_at   :datetime
-#  updated_at   :datetime
-#  description  :text
+#  description  :text(65535)
 #  latitude     :decimal(10, 6)
 #  longitude    :decimal(10, 6)
 #  updated_time :datetime
-#  material     :text
+#  material     :text(65535)
 #  modifiable   :boolean          default(FALSE)
+#  created_at   :datetime
+#  updated_at   :datetime
+#  event_url    :string(255)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

@@ -1,8 +1,5 @@
 <h1>공동구매 신청 <small><%= @group_purchase.event_name %></small></h1>
 
-
-
-
 <div style="margin:2em 0;">
   <%= image_tag 'T-shirts-black-and-white-wide.png', class: 'img-responsive img-rounded' %>
 </div>
@@ -13,6 +10,7 @@
 입금확인건수 : <%= @purchase_requests_confirmed.size %>
 </p>
 
+<div class='table-responsive'>
 <table class='table table-bordered'>
   <thead>
     <tr>
@@ -25,7 +23,6 @@
       <th class='text-center'>데이터작업</th>
     </tr>
   </thead>
-
   <tbody>
     <% @purchase_requests.each do |purchase_request| %>
       <tr>
@@ -51,8 +48,9 @@
         </td>
       </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>
 
 <div class='text-center'>
 <%= will_paginate @purchase_requests %>
