@@ -12,6 +12,29 @@
     </thead>
 
     <tbody>
+      <% if @my_courses.size > 0 %>
+        <tr><td colspan='3'><h4>나의 개설강좌</h4></td></tr>
+        <% @my_courses.each do | my_course | %>
+        <tr>
+          <td colspan='2'>
+            <ul style='margin-bottom:0;'>
+                <li>
+                  <%= link_to my_course.title, my_course %>
+                </li>
+            </ul>
+          </td>
+          <td class='text-center'>
+            <%= link_to (my_course.published ? awesome_icon_button('share-alt', 'success') : icon_button('lock', 'danger') ), edit_course_path(my_course)  %>
+            <% if current_user.can_update?(my_course) %>
+            <%= link_to icon_button('edit'), edit_course_path(my_course) %>
+            <%= link_to icon_button('trash', 'danger'), my_course, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+
+          </td>
+        </tr>
+        <% end %>
+      <% end %>
+      <tr><td colspan='3'><h4>공개강좌</h4></td></tr>
       <% @courses.each do |course| %>
         <tr>
           <td><%= link_to course.title, course_lectures_path(course) %></td>
@@ -21,7 +44,7 @@
               <%= link_to icon_button('eye-open'), course %>
               <% if current_user.can_update?(course) %>
                 <%= link_to icon_button('edit'), edit_course_path(course) %>
-                <%= link_to icon_button('trash'), course, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to icon_button('trash', 'danger'), course, method: :delete, data: { confirm: 'Are you sure?' } %>
               <% end %>
             <% else %>
               <%= link_to icon('eye-open'), course_lectures_path(course) %>

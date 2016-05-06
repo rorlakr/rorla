@@ -34,12 +34,12 @@ module ApplicationHelper
     content_tag(:span, '', class: "glyphicon glyphicon-#{shape}") + ' ' + label
   end
 
-  def icon_button(shape)
-    content_tag(:span, icon(shape), class: "label label-default")
+  def icon_button(shape, kind='default')
+    content_tag(:span, icon(shape), class: "label label-#{kind}")
   end
 
-  def icon_label_button(shape, label)
-    content_tag(:span, icon(shape, label), class: "label label-default")
+  def icon_label_button(shape, label, kind='default')
+    content_tag(:span, icon(shape, label), class: "label label-#{kind}")
   end
 
   def awesome_icon(shape)
@@ -50,12 +50,12 @@ module ApplicationHelper
     content_tag(:span, '', class: "fa fa-#{shape}") + ' ' + label
   end
 
-  def awesome_icon_button(shape)
-    content_tag(:span, awesome_icon(shape), class: "label label-default")
+  def awesome_icon_button(shape, kind='default')
+    content_tag(:span, awesome_icon(shape), class: "label label-#{kind}")
   end
 
-  def awesome_icon_label_button(shape, label)
-    content_tag(:span, awesome_icon(shape, label), class: "label label-default")
+  def awesome_icon_label_button(shape, label, kind='default')
+    content_tag(:span, awesome_icon(shape, label), class: "label label-#{kind}")
   end
 
   def awesome_icon_shared(shared)

@@ -20,4 +20,7 @@ class Lecture < ActiveRecord::Base
   belongs_to :user
 
   has_many :comments, as: :commentable, dependent: :destroy
+
+  scope :published, -> { where( published: true ).order(published_at: :desc)}
+  scope :my_lectures, -> (user) { where( user: user).order(updated_at: :desc)}
 end
