@@ -13,5 +13,7 @@
 
 <div class="form-actions">
   <%= link_to "수정", edit_course_path(@course), class: 'btn btn-default' %>
+  <%= link_to "삭제", @course, class: 'btn btn-danger' if user_signed_in? && current_user.can_delete?(@course) %> | 
+  <%= link_to "강좌목록", courses_path, class: 'btn btn-default' %>
 
 </div>
