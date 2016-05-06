@@ -17,7 +17,8 @@ class LecturesController < ApplicationController
   before_action :set_lecture, only: [ :show, :edit, :update, :destroy]
 
   def index
-    @lectures = @course.lectures
+    @lectures = @course.lectures.published
+    @my_lectures = @course.lectures.my_lectures(current_user)
   end
 
   def new
@@ -54,7 +55,7 @@ class LecturesController < ApplicationController
   private
 
   def set_course
-    @course = Course.find(params[:course_id])
+    @course = Course.published.find(params[:course_id])
   end
 
   def set_lecture
@@ -62,7 +63,7 @@ class LecturesController < ApplicationController
   end
 
   def lecture_params
-    params.require(:lecture).permit( :title, :content, :youtube_url, :user_id, :course_id)
+    params.require(:lecture).permit( :title, :content, :youtube_url, :published, :published_at, :user_id, :course_id)
   end
 
 end

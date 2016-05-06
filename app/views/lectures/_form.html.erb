@@ -14,5 +14,10 @@
     <%= f.submit '작성', class: 'btn btn-default' %>
     <%= link_to "보기", [@lecture.course, @lecture], class: 'btn btn-default' if @lecture.persisted? %> |
     <%= link_to "목차", course_lectures_path(@lecture.course), class: 'btn btn-default' %>
+    <span class='float:right;'>
+      <%= f.check_box :published %>
+      <%= f.label :published %>
+    </span>
+    
   </div>
 <% end %>
