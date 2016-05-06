@@ -55,7 +55,7 @@ class LecturesController < ApplicationController
   private
 
   def set_course
-    @course = Course.published.find(params[:course_id])
+    @course = Course.find(params[:course_id])
   end
 
   def set_lecture
