@@ -211,6 +211,7 @@ group :development do
   gem 'capistrano3-puma'
   # Capistrano 3.x tasks to upload shared config that is stored outside of SCM (https://github.com/rjocoleman/capistrano-upload-config)
   gem 'capistrano-upload-config'
+  gem 'capistrano3-nginx', '~> 2.0'
 end
 
 # Use debugger
