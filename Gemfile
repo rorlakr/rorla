@@ -154,7 +154,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 # Full-stack web application framework. (http://www.rubyonrails.org)
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
 # This module allows Ruby programs to interface with the SQLite3 database engine (http://www.sqlite.org) (https://github.com/sparklemotion/sqlite3-ruby)
 gem 'sqlite3', group: :development
@@ -196,11 +196,13 @@ gem 'puma'
 # Use Capistrano for deployment
 group :development do
   # Capistrano - Welcome to easy deployment with Ruby over SSH (http://capistranorb.com/)
-  gem 'capistrano', '~> 3.5.0'
+  gem 'capistrano', '~> 3.4.1'
+  # gem 'capistrano', '~> 3.5.0'
   # Rails specific Capistrano tasks (https://github.com/capistrano/rails)
   gem 'capistrano-rails'
   # rbenv integration for Capistrano (https://github.com/capistrano/rbenv)
   gem 'capistrano-rbenv'
+  gem 'capistrano-rbenv-install'
   # Bundler support for Capistrano 3.x (https://github.com/capistrano/bundler)
   gem 'capistrano-bundler'
   # Tail rails logs from server.
