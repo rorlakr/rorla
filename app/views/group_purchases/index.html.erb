@@ -1,33 +1,32 @@
 <h2>공동구매 행사</h2>
 
-<div class="table-responsive">
-  <table class='table table-bordered'>
-  <thead>
-    <tr>
-      <th class='text-center'>행사명</th>
-      <th class='text-center'>시작일시</th>
-      <th class='text-center'>종료일시</th>
-      <th class='text-center'>데이터작업</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @group_purchases.each do |group_purchase| %>
-      <tr>
-        <td><%= link_to group_purchase.event_name, group_purchase_purchase_requests_path(group_purchase) %></td>
-        <td class='text-center'><%= group_purchase.start_date %></td>
-        <td class='text-center'><%= group_purchase.end_date %></td>
-        <td class='text-center'>
-          <%= link_to icon_button('eye-open'), group_purchase %>
-          <%= link_to icon_button('edit'), edit_group_purchase_path(group_purchase) if user_signed_in? && current_user.can_update?(group_purchase) %>
-          <%= link_to icon_button('trash'), group_purchase, method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? && current_user.can_delete?(group_purchase) %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<br />
+<div class='row'>
+  <% @group_purchases.each do |group_purchase| %>
+    <div class='col-sm-4 col-xs-12'>
+      <div class="panel panel-info">
+        <div class="panel-heading text-center"><%= link_to group_purchase.event_name, group_purchase_purchase_requests_path(group_purchase), style:'display:block;'%></div>
+        <% if group_purchase.event_info.present? %>
+          <div class="panel-body">
+            <%= group_purchase.event_info %>
+          </div>
+        <% end %>
+        <div class="panel-footer">
+          <p>시작일 : <%= group_purchase.start_date.strftime("%Y-%m-%d %p%I:%M:%S") %></p>
+          <p>종료일 : <%= group_purchase.end_date ? group_purchase.end_date.strftime("%Y-%m-%d %p%I:%M:%S") : '진행중' %></p>
+          <div class='text-center'>
+            <%= link_to icon_button('eye-open'), group_purchase if user_signed_in? && current_user.can_read?(group_purchase) %>
+            <%= link_to icon_button('edit'), edit_group_purchase_path(group_purchase) if user_signed_in? && current_user.can_update?(group_purchase) %>
+            <%= link_to icon_button('trash'), group_purchase, method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? && current_user.can_delete?(group_purchase) %>
+          </div>
+        </div>
+        <div class="panel-footer text-center">
+          <%= link_to "신청하기", group_purchase_purchase_requests_path(group_purchase), class: 'btn btn-default btn-xs'%>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
-
 <br>
 
 <%= link_to '행사등록', new_group_purchase_path, class: 'btn btn-primary' if user_signed_in? && current_user.can_create?(GroupPurchase)%>

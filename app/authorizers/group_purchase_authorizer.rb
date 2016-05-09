@@ -4,6 +4,10 @@ class GroupPurchaseAuthorizer < ApplicationAuthorizer
     user.has_role?(:admin)
   end
 
+  def readable_by?(user)
+    user.has_role?(:admin)
+  end
+
   def updatable_by?(user)
     user.has_role?(:admin)
   end

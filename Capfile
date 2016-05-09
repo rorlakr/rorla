@@ -13,12 +13,12 @@ require 'capistrano/deploy'
 #   https://github.com/capistrano/rails
 #
 require 'capistrano/rbenv'
+require 'capistrano/rbenv_install'
 require 'capistrano/bundler'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 require 'capistrano/rails_tail_log'
 require 'capistrano/rails/console'
-# require 'capistrano/figaro_yml'
 require 'capistrano/puma'
 require 'capistrano/puma/nginx'
 require 'capistrano/upload-config'
