@@ -37,7 +37,7 @@
       <li>
         <%= link_to my_lecture.title, [my_lecture.course, my_lecture] %> <%= my_lecture.published ? icon_button('share') : icon_button('lock', 'danger') %>
         <%= link_to icon_button('edit'), edit_course_lecture_path(my_lecture.course, my_lecture) if current_user.can_update?(my_lecture) %>
-        <%= link_to icon_button('trash', 'danger'), [my_lecture.course, my_lecture], method: :delete, data: { confirm: "Are you sure?" } %>
+        <%= link_to icon_button('trash', 'danger'), [my_lecture.course, my_lecture], method: :delete, data: { confirm: "Are you sure?" } if current_user.can_delete?(my_lecture) %>
       </li>
     <% end %>
   </ul>
