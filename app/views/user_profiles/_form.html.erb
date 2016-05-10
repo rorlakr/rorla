@@ -1,13 +1,22 @@
 <%= simple_form_for( @user_profile, url: user_profile_path ) do |f| %>
   <%= f.error_notification %>
-
+<br />
 <div class="row">
   <div class='col-sm-6'>
+    <div class="form-group">
+      <% if @user_profile.avatar?  %>
+        <div class='img-rounded' style='border:1px solid #ccc;padding:0 0 0 10px;margin-bottom:10px;'>
+          <%= image_tag current_user.user_profile.avatar.url(:thumb), size: '100x100', style:'margin: 1em auto;', class: 'img-responsive img-rounded' %>
+          <%= f.input :remove_avatar, label: '프로필사진 삭제', as: :boolean %>
+        </div>
+      <% end %>
+      <%= f.input :avatar, as: :file, placeholder: '프로필사진', input_html: { class: 'form-control' } %>
+    </div>
     <div class="form-group">
       <%= f.input :name, placeholder: 'Real name', input_html: { class: 'form-control' } %>
     </div>
     <div class="form-group">
-      <%= f.input :intro, placeholder: 'Self introduction', input_html: { class: 'form-control', rows: 10 } %>
+      <%= f.input :intro, placeholder: 'Self introduction', input_html: { class: 'form-control', rows: 5 } %>
     </div>
   </div>
   <div class='col-sm-6'>

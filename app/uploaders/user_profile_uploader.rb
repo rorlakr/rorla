@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class PictureUploader < CarrierWave::Uploader::Base
+class UserProfileUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -28,8 +28,6 @@ class PictureUploader < CarrierWave::Uploader::Base
     path = ::File.expand_path(store_dir, root)
     Dir.delete(path) # fails if path not empty dir
 
-    path = ::File.expand_path(base_store_dir, root)
-    Dir.delete(path) # fails if path not empty dir
   rescue SystemCallError
     true # nothing, the dir is not empty
   end
@@ -38,10 +36,6 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   version :thumb do
     process :resize_to_fill => [200,200]
-  end
-
-  version :thumb_plaza do
-    process :resize_to_fill => [100,100]
   end
 
 
