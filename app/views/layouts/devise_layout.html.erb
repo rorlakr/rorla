@@ -1,9 +1,13 @@
 <%= content_for :devise do %>
 <div class='row'>
-  <div class='col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4'>
+  <div class='col-md-9'>
     <%= yield %>
   </div>
+  <div class='col-md-3'>
+    <%= render "layouts/shared/sidebar" %>
+  </div>
 </div>
+
 <% end %>
 
 <%= render template: "layouts/application" %>

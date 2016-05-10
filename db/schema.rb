@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506025543) do
+ActiveRecord::Schema.define(version: 20160509070528) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -386,6 +386,21 @@ ActiveRecord::Schema.define(version: 20160506025543) do
   add_index "useful_answers", ["answer_id", "user_id"], name: "index_useful_answers_on_answer_id_and_user_id", unique: true, using: :btree
   add_index "useful_answers", ["user_id", "answer_id"], name: "index_useful_answers_on_user_id_and_answer_id", unique: true, using: :btree
 
+  create_table "user_profiles", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.string   "name",       limit: 255,   null: false
+    t.string   "github",     limit: 255
+    t.text     "intro",      limit: 65535, null: false
+    t.string   "blog",       limit: 255
+    t.string   "website",    limit: 255
+    t.string   "company",    limit: 255
+    t.string   "title",      limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "user_profiles", ["user_id"], name: "index_user_profiles_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
@@ -436,4 +451,5 @@ ActiveRecord::Schema.define(version: 20160506025543) do
   add_foreign_key "lectures", "users"
   add_foreign_key "purchase_requests", "group_purchases"
   add_foreign_key "purchase_requests", "users"
+  add_foreign_key "user_profiles", "users"
 end

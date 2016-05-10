@@ -1,0 +1,38 @@
+<%= simple_form_for( @user_profile ) do |f| %>
+  <%= f.error_notification %>
+
+<div class="row">
+  <div class='col-sm-6'>
+    <div class="form-group">
+      <%= f.input :name, placeholder: 'Real name', input_html: { class: 'form-control' } %>
+    </div>
+    <div class="form-group">
+      <%= f.input :intro, placeholder: 'Self introduction', input_html: { class: 'form-control', rows: 10 } %>
+    </div>
+  </div>
+  <div class='col-sm-6'>
+    <div class="form-group">
+      <%= f.input :github, placeholder: 'Github account name', input_html: { class: 'form-control' } %>
+    </div>
+    <div class="form-group">
+      <%= f.input :blog, placeholder: 'Blog URL... ex) http://...', input_html: { class: 'form-control' } %>
+    </div>
+    <div class="form-group">
+      <%= f.input :website, placeholder: 'Website URL... ex) http://...', input_html: { class: 'form-control' } %>
+    </div>
+    <div class="form-group">
+      <%= f.input :company, placeholder: 'Company name', input_html: { class: 'form-control' } %>
+    </div>
+    <div class="form-group">
+      <%= f.input :title, placeholder: 'Job title', input_html: { class: 'form-control' } %>
+    </div>
+  </div>
+</div>
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-default' %>
+    <% if @user_profile.persisted? %>
+      <%= link_to '보기', user_profile_path(@user_profile), class: 'btn btn-default'  %> |
+      <%= link_to '삭제', @user_profile, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
+    <% end %>
+  </div>
+<% end %>

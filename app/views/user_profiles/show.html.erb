@@ -1,0 +1,44 @@
+<h2>My Profile <small><%= current_user.email %></small></h2>
+
+<div class="panel panel-default table-responsive">
+  <table class='table table-bordered'>
+  <tr>
+    <th class='col-xs-3 text-right'>회원명</th>
+    <td><%= @user_profile.name %></td>
+  </tr>
+
+  <tr>
+    <th class='text-right'>자기소개</th>
+    <td><%= @user_profile.intro %></td>
+  </tr>
+
+  <tr>
+    <th class='text-right'>Github계정</th>
+    <td><%= @user_profile.github %></td>
+  </tr>
+
+  <tr>
+    <th class='text-right'>블로그주소</th>
+    <td><%= @user_profile.blog %></td>
+  </tr>
+
+  <tr>
+    <th class='text-right'>웹사이트주소</th>
+    <td><%= @user_profile.website %></td>
+  </tr>
+
+  <tr>
+    <th class='text-right'>회사명</th>
+    <td><%= @user_profile.company %></td>
+  </tr>
+
+  <tr>
+    <th class='text-right'>직함</th>
+    <td><%= @user_profile.title %></td>
+  </tr>
+  </table>
+</div>
+
+<div class="form-actions">
+  <%= link_to '수정', edit_user_profile_path(@user_profile), class: 'btn btn-default' %>
+</div>
