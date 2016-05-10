@@ -33,6 +33,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
+  has_one :user_profile, dependent: :destroy
 
   has_many :rblogs, foreign_key: :writer_id, dependent: :destroy
   has_many :courses, foreign_key: :tutor_id, dependent: :destroy

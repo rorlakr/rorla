@@ -199,6 +199,7 @@ ko:
         favlink: 즐겨찾기
         course: 레일스 강좌
         lecture: 강의
+        user_profile: 나의 프로필
       attributes:
         post:
           title: 글제목
@@ -239,6 +240,14 @@ ko:
           title: 제목
           youtube_url: Youtube 공유 URL
           content: 내용
+        user_profile:
+          name: 회원명
+          intro: 자기소개
+          github: Github계정
+          blog: 블로그URL
+          website: 웹사이트URL
+          company: 회사명
+          title: 직함
   form_actions:
     edit: 수정
     delete: 삭제
