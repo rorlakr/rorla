@@ -1,12 +1,6 @@
 class UserProfilesController < ApplicationController
   before_action :set_user_profile, only: [ :show, :edit, :update, :destroy ]
 
-  # GET /user_profiles
-  # GET /user_profiles.json
-  # def index
-  #   @user_profiles = UserProfile.all
-  # end
-
   # GET /user_profiles/1
   # GET /user_profiles/1.json
   def show
@@ -29,7 +23,7 @@ class UserProfilesController < ApplicationController
 
     respond_to do |format|
       if @user_profile.save
-        format.html { redirect_to @user_profile, notice: 'User profile was successfully created.' }
+        format.html { redirect_to user_profile_path, notice: 'User profile was successfully created.' }
         format.json { render :show, status: :created, location: @user_profile }
       else
         format.html { render :new }
@@ -43,7 +37,7 @@ class UserProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @user_profile.update(user_profile_params)
-        format.html { redirect_to @user_profile, notice: 'User profile was successfully updated.' }
+        format.html { redirect_to user_profile_path, notice: 'User profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @user_profile }
       else
         format.html { render :edit }
