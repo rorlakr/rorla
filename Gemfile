@@ -90,6 +90,8 @@ gem 'annotate_gem'
 # Rails Action Mailer adapter for Mailgun (https://github.com/jorgemanrubia/mailgun_rails/)
 gem 'mailgun_rails'
 
+gem 'placeholdit'
+
 
 group :development do
   # Annotates Rails Models, routes, fixtures, and others based on the database schema. (http://github.com/ctran/annotate_models)
