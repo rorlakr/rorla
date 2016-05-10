@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   # Devise routing
   devise_for :users, controllers: { registrations: 'users/registrations' }
-  resources :user_profiles, except: :index
+  resource :user_profile
 
   # Resources routing
 

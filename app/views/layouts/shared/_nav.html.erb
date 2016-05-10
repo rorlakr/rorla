@@ -55,7 +55,7 @@
             </a>
             <ul class="dropdown-menu">
               <li class="<%= active_menu('registrations') %>"><%= link_to "My Account", edit_user_registration_path %></li>
-              <li class="<%= active_menu('user_profile') %>"><%= link_to "My Profile", (current_user.user_profile.nil? ? new_user_profile_path : edit_user_profile_path(current_user)) %></li>
+              <li class="<%= active_menu('user_profile') %>"><%= link_to "My Profile", (current_user.user_profile.nil? ? new_user_profile_path : edit_user_profile_path) %></li>
               <li><%= link_to "Roles : " + user_roles(current_user), '#' %></li>
             </ul>
           </li>
