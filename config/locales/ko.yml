@@ -248,6 +248,7 @@ ko:
           website: 웹사이트URL
           company: 회사명
           title: 직함
+          avatar: 프로필사진 
   form_actions:
     edit: 수정
     delete: 삭제
