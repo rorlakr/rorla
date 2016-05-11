@@ -18,8 +18,8 @@ module InfoHelper
           end
         )
         concat(
-          content_tag(:div, class:'text-center panel-footer') do
-            user.email
+          content_tag(:div, title: user.email, class:'text-center panel-footer') do
+            contributor(user)
           end
         )
       end

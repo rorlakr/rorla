@@ -10,5 +10,6 @@
 .profile {
   width:100px;border-radius:50px;box-shadow:3px;padding:5px;
   height:100px;
+  border: 1px solid red;
   @extend .shadow;
 }

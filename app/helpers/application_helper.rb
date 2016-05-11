@@ -208,4 +208,8 @@ module ApplicationHelper
     %Q{<iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen></iframe>}
   end
 
+  def contributor(user)
+    user.user_profile.nil? ? user.email : (user.user_profile.name.nil? ? user.email : user.user_profile.name)
+  end
+
 end

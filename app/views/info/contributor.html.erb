@@ -15,7 +15,7 @@
 <% contributor_role = Role.find_by_name :contributor %>
 <% contributors = contributor_role.nil? ? [] : contributor_role.users %>
 <div class='row'>
-  <% contributors.each do | contributor | %>
+  <% contributors.shuffle.each do | contributor | %>
     <%= profile "primary", "기여자", contributor %>
   <% end %>
 </div>
