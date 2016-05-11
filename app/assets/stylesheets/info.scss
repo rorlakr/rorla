@@ -13,3 +13,11 @@
   border: 1px solid red;
   @extend .shadow;
 }
+
+.contributor {
+  white-space: pre-wrap;
+}
+
+.popover {
+  width: 200px;
+}
