@@ -16,6 +16,6 @@
 <% contributors = contributor_role.nil? ? [] : contributor_role.users %>
 <div class='row'>
   <% contributors.shuffle.each do | contributor | %>
-    <%= profile "primary", "기여자", contributor %>
+    <%= profile "primary", "초대운영위원", contributor %>
   <% end %>
 </div>

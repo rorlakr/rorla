@@ -14,8 +14,9 @@
   @extend .shadow;
 }
 
-.contributor {
+a.contributor {
   white-space: pre-wrap;
+  text-decoration: none; 
 }
 
 .popover {
