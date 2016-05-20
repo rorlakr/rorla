@@ -27,7 +27,11 @@ Rails.application.routes.draw do
 
   # Resources routing
   resources :schedules do
-    resources :appliers
+    resources :appliers do
+      member do
+        put 'accept'
+      end
+    end
   end
 
   concern :commentable do

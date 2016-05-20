@@ -260,6 +260,7 @@ ko:
         repeating: 반복일정
         user: 작성자
       applier:
+        id: 접수번호
         name: 신청자명
         email: 이메일주소
         cellphone: 휴대폰번호

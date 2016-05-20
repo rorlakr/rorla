@@ -22,6 +22,7 @@
         <th class='text-center'>신청자명</th>
         <th class='text-center'>이메일</th>
         <th class='text-center'>접수일</th>
+        <th class='text-center'>최종수락</th>
         <th class='text-center'>데이터작업</th>
       </tr>
     </thead>
@@ -31,6 +32,7 @@
         <td class='text-center'><%= applier.name %></td>
         <td class='text-center'><%= applier.email %></td>
         <td class='text-center'><%= applier.created_at %></td>
+        <td class='text-center text-<%= applier.accepted ? 'success' : 'muted' %>'><%= applier.accepted ? awesome_icon('check-square-o') : awesome_icon('square') %></td>
         <td class='text-center'>
           <%= link_to icon_button('eye-open', :success), [applier.schedule, applier] %>
           <% if user_signed_in? && current_user.can_update?(applier) %>
@@ -50,6 +52,7 @@
 <br />
 <% if @applier && current_user.can_update?(@applier)%>
   <%= link_to "수정", edit_schedule_applier_path(@schedule, @applier), class: 'btn btn-default' %>
+  <%= link_to t("form_actions.show"), [@schedule, @applier], class: 'btn btn-default' %>
   <%= link_to "신청취소", [@schedule, @applier], method: :delete, data:{confirm:"Are you sure?"}, class: 'btn btn-danger' %>
 <% else %>
   <%= link_to "참가신청", new_schedule_applier_path(@schedule), class: 'btn btn-default' %>

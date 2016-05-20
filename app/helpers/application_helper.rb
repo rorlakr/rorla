@@ -42,8 +42,8 @@ module ApplicationHelper
     content_tag(:span, icon(shape, label), class: "label label-#{kind}")
   end
 
-  def awesome_icon(shape)
-    content_tag(:span, '', class: "fa fa-#{shape}")
+  def awesome_icon(shape, size="1x")
+    content_tag(:span, '', class: "fa fa-#{shape} fa-#{size}")
   end
 
   def awesome_icon_label(shape, label)
