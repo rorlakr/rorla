@@ -10,9 +10,11 @@
   <%= f.input :name %>
   <%= f.input :email %>
   <%= f.input :cellphone %>
-  <%= f.input :remittor %>
-  <%= f.input :remit_date %>
-  <%= f.input :remit_money %>
+  <% if @schedule.charged %>
+    <%= f.input :remittor %>
+    <%= f.input :remit_date %>
+    <%= f.input :remit_money %>
+  <% end %>
   <%= f.input :memo, as: :text, input_html: { rows: 5 } %>
 
   <div class="form-actions">
