@@ -6,9 +6,9 @@
 </div>
 
 
-<% if @applier %>
+<% if @my_applier %>
   <h2>신청접수상황</h2>
-  <%= render @applier %>
+  <%= render partial: 'applier', locals: { applier: @my_applier} %>
 <% end %>
 
 <% if user_signed_in? && current_user.has_role?(:contributor) %>
@@ -50,10 +50,10 @@
 <% end %>
 
 <br />
-<% if @applier && current_user.can_update?(@applier)%>
-  <%= link_to "수정", edit_schedule_applier_path(@schedule, @applier), class: 'btn btn-default' %>
-  <%= link_to t("form_actions.show"), [@schedule, @applier], class: 'btn btn-default' %>
-  <%= link_to "신청취소", [@schedule, @applier], method: :delete, data:{confirm:"Are you sure?"}, class: 'btn btn-danger' %>
+<% if @my_applier && current_user.can_update?(@my_applier)%>
+  <%= link_to "수정", edit_schedule_applier_path(@schedule, @my_applier), class: 'btn btn-default' %>
+  <%= link_to t("form_actions.show"), [@schedule, @my_applier], class: 'btn btn-default' %>
+  <%= link_to "신청취소", [@schedule, @my_applier], method: :delete, data:{confirm:"Are you sure?"}, class: 'btn btn-danger' %>
 <% else %>
   <%= link_to "참가신청", new_schedule_applier_path(@schedule), class: 'btn btn-default' %>
 <% end %>
