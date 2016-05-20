@@ -47,18 +47,30 @@ h2 > span.glyphicon {
 }
 
 // Pagedown Editor
-#wmd-button-bar-content {
+#wmd-button-bar-content, #wmd-button-bar-info {
   border: 1px solid #eaeaea;
   border-radius: 4px 4px 0 0;
   padding: .2em;
   background-color: #eaeaea;
 }
+
+// Preview button background color
+#wmd-preview-button-content, #wmd-preview-button-info {
+  background-color: #5ed559;
+  &:hover {
+    background-color: #5cb85c;
+  }
+}
+
 .wmd-input {
   margin-top:0;
+  margin-bottom:0;
   padding:1em;
   border-radius: 0 0 4px 4px;
   border-color: #eaeaea;
 }
+
+
 .wmd-preview, .markdown-preview {
   img { max-width: 100% !important; }
   margin-top: 0;
@@ -94,6 +106,13 @@ h2 > span.glyphicon {
 .markdown-preview {
   background-color: transparent;
 }
+
+.wmd-preview {
+  max-height: 100% !important;
+  margin-bottom: 2em;
+}
+
+
 
 // 구글 prettify 를 이용하여 syntax highlighting 할 때 좌측 코드라인을 5 단위로 표시하지 않고,
 // 1,2,3,4,와 같이 연번호로 보이게 하기
@@ -138,23 +157,6 @@ li.L1,li.L3,li.L5,li.L7,li.L9 { background-color: #f6f6f6 !important; }
       color:white;
       overflow:auto;
 }
-
-.wmd-input {
-  margin-bottom:0;
-}
-.wmd-preview {
-  max-height: 100% !important;
-  margin-bottom: 2em;
-}
-
-// Preview button background color
-#wmd-preview-button-content {
-  background-color: #5ed559;
-  &:hover {
-    background-color: #5cb85c;
-  }
-}
-
 
 // Bottom Menu
 .bottom_menu {

@@ -1,4 +1,4 @@
-<%= render "layouts/shared/preview", title: @lecture.title %>
+<%= render "layouts/shared/preview", title: @lecture.title, attribute: :content %>
 
 <%= simple_form_for [@course, @lecture] do | f | %>
   <div class="form-group">
@@ -8,7 +8,7 @@
     <%= f.input :youtube_url, input_html: { class: 'form-control' } %>
   </div>
   <div class="form-group">
-    <%= f.input :content, as: :pagedown, input_html: { class: 'form-control', rows: 10 } %>
+    <%= f.input :content, as: :pagedown, input_html: { rows: 20 }  %>
   </div>
   <div class="form-actions">
     <%= f.submit '작성', class: 'btn btn-default' %>
@@ -18,6 +18,6 @@
       <%= f.check_box :published %>
       <%= f.label :published %>
     </span>
-    
+
   </div>
 <% end %>

@@ -1,11 +1,4 @@
 ko:
-  labels:
-    question:
-      title: 제목
-      content: 내용
-    answer:
-      content: 답변
-
   date:
     abbr_day_names:
     - 일
@@ -189,66 +182,93 @@ ko:
       short: ! '%y/%m/%d %H:%M'
     pm: 오후
 
+  labels:
+    question:
+      title: 제목
+      content: 내용
+    answer:
+      content: 답변
+
   activerecord:
-      models:
-        user: 유저
-        codebank: 코드뱅크
-        rblog: 테크노트
-        question: 질문
-        answer: 답변
-        favlink: 즐겨찾기
-        course: 레일스 강좌
-        lecture: 강의
-        user_profile: 나의 프로필
-      attributes:
-        post:
-          title: 글제목
-          content: 글내용
-          writer: 작성자
-          published: 공개여부
-          picture: 사진
-          created_at: 생성일
-          updated_at: 갱신일
-          data_actions: 데이터작업
-        rblog:
-          title: 글제목
-          content: 글내용
-        codebank:
-          title: 스니펫제목
-          summary: 내용요약
-          writer: 작성자
-          snippet: 코드스니펫
-          shared: 공개허용
-          created_at: 생성일
-          data_actions: 데이터작업
-        favlink:
-          bundlelink_id: 링크분류
-          linkurl: 링크주소
-          title: 링크제목
-          description: 내용소개
-          tag_list: 태그 목록
-          tag_tokens: 태그 토큰
-        question:
-          title: 제목
-          content: 내용
-        answer:
-          content: 답변
-        course:
-          title: 제목
-          summary: 요약
-        lecture:
-          title: 제목
-          youtube_url: Youtube 공유 URL
-          content: 내용
-        user_profile:
-          name: 회원명
-          intro: 자기소개
-          github: Github계정
-          blog: 블로그URL
-          website: 웹사이트URL
-          company: 회사명
-          title: 직함
-          avatar: 프로필사진 
+    models:
+      user: 유저
+      codebank: 코드뱅크
+      rblog: 테크노트
+      question: 질문
+      answer: 답변
+      favlink: 즐겨찾기
+      course: 레일스 강좌
+      lecture: 강의
+      user_profile: 나의 프로필
+    attributes:
+      post:
+        title: 글제목
+        content: 글내용
+        writer: 작성자
+        published: 공개여부
+        picture: 사진
+        created_at: 생성일
+        updated_at: 갱신일
+        data_actions: 데이터작업
+      rblog:
+        title: 글제목
+        content: 글내용
+      codebank:
+        title: 스니펫제목
+        summary: 내용요약
+        writer: 작성자
+        snippet: 코드스니펫
+        shared: 공개허용
+        created_at: 생성일
+        data_actions: 데이터작업
+      favlink:
+        bundlelink_id: 링크분류
+        linkurl: 링크주소
+        title: 링크제목
+        description: 내용소개
+        tag_list: 태그 목록
+        tag_tokens: 태그 토큰
+      question:
+        title: 제목
+        content: 내용
+      answer:
+        content: 답변
+      course:
+        title: 제목
+        summary: 요약
+      lecture:
+        title: 제목
+        youtube_url: Youtube 공유 URL
+        content: 내용
+      user_profile:
+        name: 회원명
+        intro: 자기소개
+        github: Github계정
+        blog: 블로그URL
+        website: 웹사이트URL
+        company: 회사명
+        title: 직함
+        avatar: 프로필사진
+      schedule:
+        name: 일정명
+        info: 안내문
+        venue: 장소
+        start_date: 시작일시
+        end_date: 종료일시
+        charged: 유료강의
+        charge_amount: 수강료(원)
+        repeating: 반복일정
+        user: 작성자
+      applier:
+        name: 신청자명
+        email: 이메일주소
+        cellphone: 휴대폰번호
+        remittor: 송금자명
+        remit_date: 송금일시
+        remit_money: 송금액(원)
+        memo: 메모
+        created_at: 접수일자
+
   form_actions:
     edit: 수정
     delete: 삭제

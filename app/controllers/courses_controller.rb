@@ -39,6 +39,7 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
+    authorize_action_for Course
     @course = Course.new(course_params)
     @course.tutor = current_user
 

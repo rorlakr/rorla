@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160510044953) do
+ActiveRecord::Schema.define(version: 20160519065810) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -25,6 +25,23 @@ ActiveRecord::Schema.define(version: 20160510044953) do
 
   add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
   add_index "answers", ["user_id"], name: "index_answers_on_user_id", using: :btree
+
+  create_table "appliers", force: :cascade do |t|
+    t.integer  "schedule_id", limit: 4
+    t.integer  "user_id",     limit: 4
+    t.string   "name",        limit: 255,               null: false
+    t.string   "email",       limit: 255,               null: false
+    t.string   "cellphone",   limit: 255
+    t.string   "remittor",    limit: 255
+    t.datetime "remit_date"
+    t.integer  "remit_money", limit: 4,     default: 0
+    t.text     "memo",        limit: 65535
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+  end
+
+  add_index "appliers", ["schedule_id"], name: "index_appliers_on_schedule_id", using: :btree
+  add_index "appliers", ["user_id"], name: "index_appliers_on_user_id", using: :btree
 
   create_table "auth_tokens", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -358,6 +375,22 @@ ActiveRecord::Schema.define(version: 20160510044953) do
     t.datetime "updated_at"
   end
 
+  create_table "schedules", force: :cascade do |t|
+    t.integer  "user_id",       limit: 4
+    t.string   "name",          limit: 255,                   null: false
+    t.text     "info",          limit: 65535
+    t.string   "venue",         limit: 255
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.boolean  "repeating"
+    t.boolean  "charged",                     default: false
+    t.integer  "charge_amount", limit: 4,     default: 0
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+  end
+
+  add_index "schedules", ["user_id"], name: "index_schedules_on_user_id", using: :btree
+
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id",        limit: 4
     t.integer  "taggable_id",   limit: 4
@@ -445,6 +478,8 @@ ActiveRecord::Schema.define(version: 20160510044953) do
 
   add_index "weeklynews", ["sended_at"], name: "index_weeklynews_on_sended_at", using: :btree
 
+  add_foreign_key "appliers", "schedules"
+  add_foreign_key "appliers", "users"
   add_foreign_key "courses", "users", column: "tutor_id"
   add_foreign_key "group_purchases", "users"
   add_foreign_key "items", "purchase_requests"
@@ -452,5 +487,6 @@ ActiveRecord::Schema.define(version: 20160510044953) do
   add_foreign_key "lectures", "users"
   add_foreign_key "purchase_requests", "group_purchases"
   add_foreign_key "purchase_requests", "users"
+  add_foreign_key "schedules", "users"
   add_foreign_key "user_profiles", "users"
 end

@@ -1,0 +1,2 @@
+module AppliersHelper
+end

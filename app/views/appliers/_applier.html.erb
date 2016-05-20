@@ -1,0 +1,38 @@
+<div class="panel panel-default table-responsive">
+  <table class="table table-bordered">
+    <tr>
+      <th class='col-xs-2 text-right'><%= t("activerecord.attributes.applier.name") %></th>
+      <td><%= @applier.name %></td>
+    </tr>
+    <tr>
+      <th class='text-right'><%= t("activerecord.attributes.applier.email") %></th>
+      <td><%= @applier.email %></td>
+    </tr>
+    <tr>
+      <th class='text-right'><%= t("activerecord.attributes.applier.cellphone") %></th>
+      <td><%= @applier.cellphone %></td>
+    </tr>
+    <tr>
+      <th class='text-right'><%= t("activerecord.attributes.applier.created_at") %></th>
+      <td><%= @applier.created_at %></td>
+    </tr>
+    <% if @applier.schedule.charged  %>
+      <tr>
+        <th class='text-right'><%= t("activerecord.attributes.applier.remittor") %></th>
+        <td><%= @applier.remittor %></td>
+      </tr>
+      <tr>
+        <th class='text-right'><%= t("activerecord.attributes.applier.remit_date") %></th>
+        <td><%= @applier.remit_date %></td>
+      </tr>
+      <tr>
+        <th class='text-right'><%= t("activerecord.attributes.applier.remit_money") %></th>
+        <td><%= @applier.remit_money %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <th class='text-right'><%= t("activerecord.attributes.applier.memo") %></th>
+      <td><%= @applier.memo %></td>
+    </tr>
+  </table>
+</div>

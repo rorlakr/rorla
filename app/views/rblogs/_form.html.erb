@@ -1,4 +1,4 @@
-<%= render "layouts/shared/preview", title: @rblog.title %>
+<%= render "layouts/shared/preview", title: @rblog.title, attribute: :content %>
 
 <%= simple_form_for(@rblog) do |f| %>
   <% if @rblog.errors.any? %>
@@ -9,7 +9,7 @@
     <%= f.input :title, input_html: { class: 'form-control'} %>
   </div>
   <div class="form-group">
-    <%= f.input :content, :as => :pagedown %>
+    <%= f.input :content, :as => :pagedown, input_html: { rows: 22 } %>
   </div>
   <div class="form-group">
     <%= f.input :tag_tokens, placeholder: '여러 개의 태그는 쉼표(,)로 구분하세요.',
