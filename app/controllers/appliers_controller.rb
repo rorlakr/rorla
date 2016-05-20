@@ -73,7 +73,8 @@ class AppliersController < ApplicationController
   def accept
     authorize_action_for @applier
     @applier.toggle! :accepted
-    redirect_to [@schedule, @applier], notice: ( @applier.accepted ? "최종수락되었습니다." : "수락취소되었습니다.")
+    UserMailer.confirm_application_accept(current_user, @applier).deliver_later if @applier.accepted
+    redirect_to [@schedule, @applier], notice: ( @applier.accepted ? "최종승인되었습니다." : "승인취소되었습니다.")
   end
 
 
