@@ -25,7 +25,7 @@
               </li>
             <% end %>
 
-            <% if user_signed_in? && current_user.has_role?(:admin) %>
+            <% if user_signed_in? && current_user.has_role?(:contributor) %>
               <li class="divider"></li>
               <li class="<%= active_menu('schedules') %>"><%= link_to 'RORLAB일정', schedules_path %></li>
             <% end %>
