@@ -6,7 +6,8 @@ class AppliersController < ApplicationController
   def index
     # @schedule = Schedule.find(params[:schedule_id])
     @appliers = @schedule.appliers.order( created_at: :desc)
-    @applier = @appliers.find_by('user_id', current_user.id) if user_signed_in?
+    @applier = current_user.appliers.find_by('schedule_id', @schedule.id) if user_signed_in?
+    # @applier = @appliers.find_by('user_id', current_user.id) if user_signed_in?
   end
 
   def show
