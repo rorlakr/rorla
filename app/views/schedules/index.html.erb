@@ -13,6 +13,9 @@
   </thead>
 
   <tbody>
+    <% if @schedules.empty? %>
+      <tr><td class='text-center text-primary' colspan='5'><%= awesome_icon_label "exclamation-triangle", '아직 등록된 일정이 없습니다.' %></td></tr>
+    <% end %>
     <% @schedules.each do |schedule| %>
       <tr>
         <td><%= link_to schedule.name, schedule_appliers_path(schedule) %> <small><%= schedule.appliers.size %></small></td>
