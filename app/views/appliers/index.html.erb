@@ -27,6 +27,9 @@
       </tr>
     </thead>
     <tbody>
+    <% if @appliers.empty? %>
+      <tr><td class='text-center text-primary' colspan='5'><%= awesome_icon_label "exclamation-triangle", '아직 참가 신청자가 없습니다.' %></td></tr>
+    <% end %>
     <% @appliers.each do | applier | %>
       <tr>
         <td class='text-center'><%= applier.name %></td>
