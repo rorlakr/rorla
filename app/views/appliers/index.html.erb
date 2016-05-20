@@ -11,7 +11,7 @@
   <%= render @applier %>
 <% end %>
 
-<% if user_signed_in? && current_user.has_role?(:admin) %>
+<% if user_signed_in? && current_user.has_role?(:contributor) %>
 <h2>신청자명단 <small><%= @schedule.name %></small></h2>
 <br />
 
