@@ -36,7 +36,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 # before 'deploy:check:linked_files', 'config:push'
 #
-# after 'deploy:publishing', 'deploy:restart'
+after 'deploy:publishing', 'deploy:restart'
 
 
 namespace :deploy do
