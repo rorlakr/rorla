@@ -18,7 +18,7 @@
         <td><%= link_to schedule.name, schedule_appliers_path(schedule) %> <small><%= schedule.appliers.size %></small></td>
         <td class='text-center'><%= schedule.venue %></td>
         <td class='text-center'><%= schedule.start_date %></td>
-        <td class='text-center'><%= lecture_type(schedule.charged) %></td>
+        <td class='text-center'><%= schedule.charged ? number_to_currency(schedule.charge_amount) : lecture_type(schedule.charged) %></td>
         <td class='text-center'>
           <%= link_to icon_button('eye-open', :success), schedule %>
           <% if user_signed_in? && current_user.can_update?(schedule) %>
