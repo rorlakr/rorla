@@ -16,5 +16,9 @@ class UserMailer < ActionMailer::Base
     mail(:to      => user.email,
          :subject => "[RORLAB] #{@applier.schedule.name} 참가신청 완료")
   end
+  def confirm_application_withdraw(user)
+    mail(:to      => user.email,
+         :subject => "[RORLAB] 참가신청 취소")
+  end
 
 end
