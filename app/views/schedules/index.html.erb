@@ -1,0 +1,38 @@
+<h2>RORLAB일정</h2>
+<br />
+<div class='panel panel-default'>
+<table class='table table-bordered table-responsive'>
+  <thead>
+    <tr>
+      <th class='text-center'><%= t("activerecord.attributes.schedule.name") %></th>
+      <th class='text-center'><%= t("activerecord.attributes.schedule.venue") %></th>
+      <th class='text-center'><%= t("activerecord.attributes.schedule.start_date") %></th>
+      <th class='text-center'><%= t("activerecord.attributes.schedule.charged") %></th>
+      <th class='text-center'>데이터작업</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schedules.each do |schedule| %>
+      <tr>
+        <td><%= link_to schedule.name, schedule_appliers_path(schedule) %> <small><%= schedule.appliers.size %></small></td>
+        <td class='text-center'><%= schedule.venue %></td>
+        <td class='text-center'><%= schedule.start_date %></td>
+        <td class='text-center'><%= lecture_type(schedule.charged) %></td>
+        <td class='text-center'>
+          <%= link_to icon_button('eye-open', :success), schedule %>
+          <% if user_signed_in? && current_user.can_update?(schedule) %>
+            <%= link_to icon_button('edit', :info), edit_schedule_path(schedule) %>
+          <% end %>
+          <% if user_signed_in? && current_user.can_delete?(schedule) %>
+            <%= link_to icon_button('trash', :danger), schedule, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to '일정등록', new_schedule_path, class: 'btn btn-default' %>

@@ -1,0 +1,58 @@
+<br />
+<div class="well">
+  <div class='markdown-preview' style='border-radius:5px;padding:1em;'>
+    <%= @schedule.info %>
+  </div>
+</div>
+
+
+<% if @applier %>
+  <h2>신청접수상황</h2>
+  <%= render @applier %>
+<% end %>
+
+<% if user_signed_in? && current_user.has_role?(:admin) %>
+<h2>신청자명단 <small><%= @schedule.name %></small></h2>
+<br />
+
+<div class="panel panel-default table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class='text-center'>신청자명</th>
+        <th class='text-center'>이메일</th>
+        <th class='text-center'>접수일</th>
+        <th class='text-center'>데이터작업</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @appliers.each do | applier | %>
+      <tr>
+        <td class='text-center'><%= applier.name %></td>
+        <td class='text-center'><%= applier.email %></td>
+        <td class='text-center'><%= applier.created_at %></td>
+        <td class='text-center'>
+          <%= link_to icon_button('eye-open', :success), [applier.schedule, applier] %>
+          <% if user_signed_in? && current_user.can_update?(applier) %>
+            <%= link_to icon_button('edit', :info), edit_schedule_applier_path(applier.schedule, applier) %>
+          <% end %>
+          <% if user_signed_in? && current_user.can_delete?(applier) %>
+            <%= link_to icon_button('trash', :danger), [applier.schedule, applier], method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+<% end %>
+
+<br />
+<% if @applier && current_user.can_update?(@applier)%>
+  <%= link_to "수정", edit_schedule_applier_path(@schedule, @applier), class: 'btn btn-default' %>
+  <%= link_to "신청취소", [@schedule, @applier], method: :delete, data:{confirm:"Are you sure?"}, class: 'btn btn-danger' %>
+<% else %>
+  <%= link_to "가입신청", new_schedule_applier_path(@schedule), class: 'btn btn-default' %>
+<% end %>
+
+<%= link_to "RORLAB일정", schedules_path, class: 'btn btn-default' %>

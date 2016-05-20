@@ -212,4 +212,7 @@ module ApplicationHelper
     user.user_profile.nil? ? user.email : (user.user_profile.name.nil? ? user.email : user.user_profile.name)
   end
 
+  def yesno(bool)
+    bool ? "예" : "아니오"
+  end
 end

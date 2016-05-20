@@ -1,0 +1,33 @@
+<%= render "layouts/shared/preview", title: @schedule.name, attribute: :info %>
+
+<%= simple_form_for(@schedule) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="row">
+    <div class="col-sm-7">
+      <%= f.input :name %>
+      <%= f.input :info, :as => :pagedown, input_html: { rows: 17 } %>
+    </div>
+    <div class="col-sm-5">
+      <%= f.input :venue %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <div class="row">
+        <div class="col-xs-4">
+          <%= f.input :repeating %>
+        </div>
+        <div class="col-xs-8">
+          <%= f.input :charged %>
+          <%= f.input :charge_amount %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+    <%= link_to '보기', @schedule, class: 'btn btn-default' if @schedule.persisted? %>
+    <%= link_to '목록', schedules_path, class: 'btn btn-default' %>
+  </div>
+
+<% end %>

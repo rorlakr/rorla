@@ -1,0 +1,22 @@
+<%= simple_form_for [@schedule, @applier] do | f | %>
+  <%= f.error_notification %>
+  <ul>
+  <% @applier.errors.messages.each do |message| %>
+    <% if message[0] == :user_id %>
+    <li><%= message[1][0]  %></li>
+    <% end %>
+  <% end %>
+  </ul>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :cellphone %>
+  <%= f.input :remittor %>
+  <%= f.input :remit_date %>
+  <%= f.input :remit_money %>
+  <%= f.input :memo, as: :text, input_html: { rows: 5 } %>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-default' %>
+    <%= link_to "접수상황", schedule_appliers_path(@schedule), class: 'btn btn-default' %>
+  </div>
+<% end %>

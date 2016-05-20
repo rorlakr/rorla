@@ -26,6 +26,9 @@ Rails.application.routes.draw do
   resource :user_profile
 
   # Resources routing
+  resources :schedules do
+    resources :appliers
+  end
 
   concern :commentable do
     resources :comments

@@ -34,6 +34,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
   has_one :user_profile, dependent: :destroy
+  has_many :appliers, dependent: :destroy
 
   has_many :rblogs, foreign_key: :writer_id, dependent: :destroy
   has_many :courses, foreign_key: :tutor_id, dependent: :destroy
@@ -48,6 +49,7 @@ class User < ActiveRecord::Base
 
   has_many :purchase_requests, dependent: :destroy
   has_many :group_purchases, dependent: :destroy
+  has_many :schedules, dependent: :nullify
 
   def confirm!
     super

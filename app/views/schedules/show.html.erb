@@ -1,0 +1,53 @@
+<h2>일정보기</h2>
+<br />
+
+<div class="well">
+  <div class='markdown-preview' style='border-radius:5px;padding:1em;'>
+    <%= @schedule.info %>
+  </div>
+</div>
+
+<% if user_signed_in? && current_user.has_role?(:admin) %>
+  <div class="panel panel-default table-responsive">
+    <table class='table table-bordered'>
+      <tr>
+        <th class='text-right'><%= t("activerecord.attributes.schedule.name") %></th>
+        <td class='text-danger'><strong><%= @schedule.name %></strong></td>
+      </tr>
+      <tr>
+        <th class='text-right'><%= t("activerecord.attributes.schedule.venue") %></th>
+        <td><%= @schedule.venue %></td>
+      </tr>
+      <tr>
+        <th class='text-right'><%= t("activerecord.attributes.schedule.start_date") %></th>
+        <td><%= @schedule.start_date %></td>
+      </tr>
+      <tr>
+        <th class='text-right'><%= t("activerecord.attributes.schedule.end_date") %></th>
+        <td><%= @schedule.end_date %></td>
+      </tr>
+      <tr>
+        <th class='text-right'><%= t("activerecord.attributes.schedule.repeating") %></th>
+        <td><%= yesno @schedule.repeating %></td>
+      </tr>
+      <tr>
+        <th class='text-right'><%= t("activerecord.attributes.schedule.charged") %></th>
+        <td><%= lecture_type @schedule.charged %></td>
+      </tr>
+      <tr>
+        <th class='text-right'><%= t("activerecord.attributes.schedule.charge_amount") %></th>
+        <td><%= @schedule.charge_amount %></td>
+      </tr>
+      <tr>
+        <th class='text-right col-xs-2'><%= t("activerecord.attributes.schedule.user") %></th>
+        <td><%= @schedule.user.email %> (<%= @schedule.created_at %>)</td>
+      </tr>
+    </table>
+  </div>
+<% end %>
+
+<div class="form-actions">
+  <%= link_to t("form_actions.edit"), edit_schedule_path(@schedule), class: 'btn btn-default' if user_signed_in? && current_user.can_update?(@schedule) %>
+  <%= link_to t("form_actions.back"), schedules_path, class: 'btn btn-default' %>
+  <%= link_to '참가신청', new_schedule_applier_path(@schedule), class: 'btn btn-default' %>
+</div>
