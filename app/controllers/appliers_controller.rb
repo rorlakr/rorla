@@ -1,12 +1,12 @@
 class AppliersController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :set_schedule
-  before_action :set_applier, only: [:show, :edit, :update, :destroy]
+  before_action :set_applier, only: [:show, :edit, :update, :destroy, :accept]
 
   def index
     # @schedule = Schedule.find(params[:schedule_id])
     @appliers = @schedule.appliers.order( created_at: :desc)
-    @applier = current_user.appliers.find_by('schedule_id', @schedule) if user_signed_in?
+    @applier = @appliers.find_by('user_id', current_user.id) if user_signed_in?
   end
 
   def show
@@ -69,6 +69,12 @@ class AppliersController < ApplicationController
     end
   end
 
+  def accept
+    authorize_action_for @applier
+    @applier.toggle! :accepted
+    redirect_to [@schedule, @applier], notice: ( @applier.accepted ? "최종수락되었습니다." : "수락취소되었습니다.")
+  end
+
 
   private
 
@@ -81,7 +87,7 @@ class AppliersController < ApplicationController
   end
 
   def applier_params
-    params.require(:applier).permit(:schedule_id, :id, :name, :email, :cellphone, :remittor, :remit_date, :remit_money, :memo)
+    params.require(:applier).permit(:schedule_id, :id, :name, :email, :cellphone, :remittor, :remit_date, :remit_money, :memo, :accepted)
   end
 
 end

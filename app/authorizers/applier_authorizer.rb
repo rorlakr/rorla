@@ -12,4 +12,8 @@ class ApplierAuthorizer < ApplicationAuthorizer
     resource.user == user || user.has_role?(:admin) || user.has_role?(:contributor)
   end
 
+  def acceptable_by?(user)
+    user.has_role?(:admin) || user.has_role?(:contributor)
+  end
+
 end

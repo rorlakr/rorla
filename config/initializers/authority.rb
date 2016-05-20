@@ -28,7 +28,8 @@ Authority.configure do |config|
     :edit    => 'update',
     :update  => 'update',
     :destroy => 'delete',
-    :confirm_request_toggle => 'confirm'
+    :confirm_request_toggle => 'confirm',
+    :accept  => 'accept'
   }
 
   # ABILITIES
@@ -44,7 +45,8 @@ Authority.configure do |config|
     :read   => 'readable',
     :update => 'updatable',
     :delete => 'deletable',
-    :confirm => 'confirmable'
+    :confirm => 'confirmable',
+    :accept => 'acceptable'
   }
 
   # LOGGER
