@@ -62,6 +62,7 @@ class AppliersController < ApplicationController
   def destroy
     authorize_action_for @applier
     @applier.destroy
+    UserMailer.confirm_application_withdraw(current_user).deliver_later
     respond_to do |format|
       format.html { redirect_to schedule_appliers_url, notice: '신청 취소되었습니다.' }
       format.json { head :no_content }
