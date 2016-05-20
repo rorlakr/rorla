@@ -1,6 +1,6 @@
 <h2>신청내용</h2>
 <br />
-<%= render @applier %>
+<%= render partial: 'applier', locals: {applier: @applier }%>
 <br />
 <div class="form-actions">
   <%= link_to "신청확인", schedule_appliers_path(@schedule), class: 'btn btn-default' %>

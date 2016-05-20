@@ -2,44 +2,44 @@
   <table class="table table-bordered">
     <tr>
       <th class='col-xs-2 text-right'><%= t("activerecord.attributes.applier.id") %></th>
-      <td><%= @applier.id %></td>
+      <td><%= applier.id %></td>
     </tr>
     <tr>
       <th class='col-xs-2 text-right'><%= t("activerecord.attributes.applier.name") %></th>
       <td>
-        <%= @applier.name %>
-        <span class='text-success'><%= awesome_icon_label "check-square-o", "최종수락" if @applier.accepted %></span>
+        <%= applier.name %>
+        <span class='text-success'><%= awesome_icon_label "check-square-o", "최종수락" if applier.accepted %></span>
       </td>
     </tr>
     <tr>
       <th class='text-right'><%= t("activerecord.attributes.applier.email") %></th>
-      <td><%= @applier.email %></td>
+      <td><%= applier.email %></td>
     </tr>
     <tr>
       <th class='text-right'><%= t("activerecord.attributes.applier.cellphone") %></th>
-      <td><%= @applier.cellphone %></td>
+      <td><%= applier.cellphone %></td>
     </tr>
     <tr>
       <th class='text-right'><%= t("activerecord.attributes.applier.created_at") %></th>
-      <td><%= @applier.created_at %></td>
+      <td><%= applier.created_at %></td>
     </tr>
-    <% if @applier.schedule.charged  %>
+    <% if applier.schedule.charged  %>
       <tr>
         <th class='text-right'><%= t("activerecord.attributes.applier.remittor") %></th>
-        <td><%= @applier.remittor %></td>
+        <td><%= applier.remittor %></td>
       </tr>
       <tr>
         <th class='text-right'><%= t("activerecord.attributes.applier.remit_date") %></th>
-        <td><%= @applier.remit_date %></td>
+        <td><%= applier.remit_date %></td>
       </tr>
       <tr>
         <th class='text-right'><%= t("activerecord.attributes.applier.remit_money") %></th>
-        <td><%= @applier.remit_money %></td>
+        <td><%= applier.remit_money %></td>
       </tr>
     <% end %>
     <tr>
       <th class='text-right'><%= t("activerecord.attributes.applier.memo") %></th>
-      <td><%= @applier.memo %></td>
+      <td><%= applier.memo %></td>
     </tr>
   </table>
 </div>
