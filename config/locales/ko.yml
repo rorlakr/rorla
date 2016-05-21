@@ -256,7 +256,7 @@ ko:
         start_date: 시작일시
         end_date: 종료일시
         charged: 유료강의
-        charge_amount: 수강료(원)
+        charge_amount: 수강료
         repeating: 반복일정
         user: 작성자
       applier:

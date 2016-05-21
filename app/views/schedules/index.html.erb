@@ -18,7 +18,7 @@
     <% end %>
     <% @schedules.each do |schedule| %>
       <tr>
-        <td><%= link_to schedule.name, schedule_appliers_path(schedule) %> <small><%= schedule.appliers.size %></small></td>
+        <td><%= link_to schedule.name, schedule %> <small><%= schedule.appliers.size %></small></td>
         <td class='text-center'><%= schedule.venue %></td>
         <td class='text-center'><%= schedule.start_date %></td>
         <td class='text-center'><%= schedule.charged ? number_to_currency(schedule.charge_amount) : lecture_type(schedule.charged) %></td>
@@ -42,4 +42,4 @@
 </center>
 
 <br>
-<%= link_to '일정등록', new_schedule_path, class: 'btn btn-default' %>
+<%= link_to '일정등록', new_schedule_path, class: 'btn btn-success' %>
