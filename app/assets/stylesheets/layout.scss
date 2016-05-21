@@ -8,6 +8,16 @@ body {
 	// background-color: white;
 }
 
+.promo {
+  border:1px solid darkred;
+  border-radius: 5px;
+  padding:1em;
+  margin-top: 1em;
+  margin-bottom:-3em;
+  h3 { font-weight: bolder; }
+
+}
+
 .navbar-brand {
 	padding-top:7px!important;
 	padding-bottom:7px!important;
