@@ -7,15 +7,16 @@ class AppliersController < ApplicationController
     # @schedule = Schedule.find(params[:schedule_id])
     @appliers = @schedule.appliers.order( created_at: :desc)
     @my_applier = current_user.appliers.find_by_schedule_id(@schedule.id) if user_signed_in?
-    # @applier = @appliers.find_by('user_id', current_user.id) if user_signed_in?
   end
 
   def show
   end
 
   def new
-    # @schedule = Schedule.find(params[:schedule_id])
-    # authorize_action_for Applier, for: @schedule
+    if Time.now < "2016-05-22 24:00:00 +0900".to_time
+      flash[:error] =  '죄송합니다. 2016-05-23 00:00:00 +0900 부터 신청가능합니다. '
+      redirect_to schedule_appliers_path(@schedule) and return
+    end
 
     if @schedule.appliers.map(&:user).include?(current_user)
       @applier = current_user.appliers.find_by('schedule_id', @schedule)
@@ -29,7 +30,10 @@ class AppliersController < ApplicationController
   end
 
   def create
-    # @schedule = Schedule.find(params[:schedule_id])
+    if Time.now < "2016-05-22 24:00:00 +0900".to_time
+      flash[:error] =  '죄송합니다. 2016-05-23 00:00:00 +0900 부터 신청가능합니다. '
+      redirect_to schedule_appliers_path(@schedule) and return
+    end
     @applier = @schedule.appliers.new(applier_params)
     authorize_action_for Applier
     @applier.user = current_user
