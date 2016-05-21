@@ -36,6 +36,10 @@
   </tbody>
 </table>
 </div>
-<br>
 
+<center>
+  <%= will_paginate @schedules %>
+</center>
+
+<br>
 <%= link_to '일정등록', new_schedule_path, class: 'btn btn-default' %>
