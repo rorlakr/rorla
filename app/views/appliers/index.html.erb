@@ -52,6 +52,10 @@
 </div>
 <% end %>
 
+<center>
+  <%= will_paginate @appliers %>
+</center>
+
 <br />
 <% if @my_applier && current_user.can_update?(@my_applier)%>
   <%= link_to "수정", edit_schedule_applier_path(@schedule, @my_applier), class: 'btn btn-default' %>

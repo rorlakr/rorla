@@ -5,7 +5,7 @@ class SchedulesController < ApplicationController
   # GET /schedules
   # GET /schedules.json
   def index
-    @schedules = Schedule.order( created_at: :desc)
+    @schedules = Schedule.order( created_at: :desc).paginate(page: params[:page], per_page: 10)
   end
 
   # GET /schedules/1

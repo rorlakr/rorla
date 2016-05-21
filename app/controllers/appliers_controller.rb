@@ -5,7 +5,7 @@ class AppliersController < ApplicationController
 
   def index
     # @schedule = Schedule.find(params[:schedule_id])
-    @appliers = @schedule.appliers.order( created_at: :desc)
+    @appliers = @schedule.appliers.order( created_at: :desc).paginate(page: params[:page], per_page: 10)
     @my_applier = current_user.appliers.find_by_schedule_id(@schedule.id) if user_signed_in?
   end
 
