@@ -58,7 +58,7 @@
   <%= link_to t("form_actions.show"), [@schedule, @my_applier], class: 'btn btn-default' %>
   <%= link_to "신청취소", [@schedule, @my_applier], method: :delete, data:{confirm:"Are you sure?"}, class: 'btn btn-danger' %>
 <% else %>
-  <%= link_to "참가신청", new_schedule_applier_path(@schedule), class: 'btn btn-default' %>
+  <%= link_to "참가신청", new_schedule_applier_path(@schedule), class: 'btn btn-success' %>
 <% end %>
 
 <%= link_to "RORLAB일정", schedules_path, class: 'btn btn-default' %>

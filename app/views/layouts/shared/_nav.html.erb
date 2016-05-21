@@ -25,10 +25,8 @@
               </li>
             <% end %>
 
-            <% if user_signed_in? && current_user.has_role?(:contributor) %>
-              <li class="divider"></li>
-              <li class="<%= active_menu('schedules') %>"><%= link_to 'RORLAB일정', schedules_path %></li>
-            <% end %>
+            <li class="divider"></li>
+            <li class="<%= active_menu('schedules') %>"><%= link_to 'RORLAB일정', schedules_path %></li>
 
             <li class="divider"></li>
             <li class="<%= active_menu('group_purchases', 'purchase_requests') %>"><%= link_to '공동구매', group_purchases_path %></li>
