@@ -17,7 +17,7 @@ class AppliersController < ApplicationController
       flash[:error] =  '죄송합니다. 2016-05-23 00:00:00 +0900 부터 신청가능합니다. '
       redirect_to schedule_appliers_path(@schedule) and return
     end
-
+    authorize_action_for Applier
     if @schedule.appliers.map(&:user).include?(current_user)
       @applier = current_user.appliers.find_by('schedule_id', @schedule)
       redirect_to edit_schedule_applier_path(@schedule, @applier), notice: '회원님은 이미 등록하셨습니다. 변경을 원하시면 수정 후 저장하시면 됩니다.' and return
