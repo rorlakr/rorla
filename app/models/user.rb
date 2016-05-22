@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
   has_many :group_purchases, dependent: :destroy
   has_many :schedules, dependent: :nullify
 
-  def confirm!
+  def confirm
     super
     add_role :user
   end
