@@ -25,9 +25,11 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
-    <%= link_to '보기', @schedule, class: 'btn btn-default' if @schedule.persisted? %>
-    <%= link_to 'RORLAB일정', schedules_path, class: 'btn btn-default' %>
+    <%= button_tag(type: 'submit', class: "btn btn-success") do %>
+      <%= awesome_icon_label "save", "저장" %>
+    <% end %>
+    <%= link_to awesome_icon_label('eye','보기'), @schedule, class: 'btn btn-default' if @schedule.persisted? %>
+    <%= link_to awesome_icon_label('calendar','RORLAB일정'), schedules_path, class: 'btn btn-default' %>
   </div>
 
 <% end %>
