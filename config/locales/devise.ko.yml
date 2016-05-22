@@ -28,13 +28,13 @@ ko:
       signed_out: '성공적으로 로그아웃 하셨습니다.'
     passwords:
       send_instructions: '어떻게 비밀번호를 재설정하는지 안내하는 메일을 발송하였습니다. 잠시후 확인해 보세요.'
-      updated: '비밀번호를 성공적으로 변경했습니다. 이제 로그인된 상태입니다.'
+      updated: '비밀번호를 성공적으로 변경했습니다. 이제 다시 로그인하십시요.'
       updated_not_active: '비밀번호를 성공적으로 변경했습니다.'
       send_paranoid_instructions: "데이터베이스에 고객님의 이메일 주소가 존재하면, 비밀번호 복구 링크가 담긴 이메일을 곧 받으실 수 있습니다."
     confirmations:
       send_instructions: '이메일 주소를 확인하는 메일을 발송하였습니다. 잠시후에 메일을 확인해보세요.'
       send_paranoid_instructions: '데이터베이스에 고객님의 이메일 주소가 존재하면, 이메일 주소를 확인하는 방법이 담긴 이메일을 곧 받으실 수 있습니다.'
-      confirmed: '성공적으로 이메일 주소를 확인하였습니다. 이제 로그인된 상태입니다.'
+      confirmed: '성공적으로 이메일 주소를 확인하였습니다. 이제 다시 로그인하십시요.'
     registrations:
       signed_up: '환영합니다! 성공적으로 가입하셨습니다.'
       signed_up_but_unconfirmed: '이메일 주소 확인 링크가 담긴 메일을 발송하였습니다. 계정을 활성화 하기 위해서 그 링크를 방문해주세요.'
