@@ -78,7 +78,12 @@ class AppliersController < ApplicationController
     authorize_action_for @applier
     @applier.toggle! :accepted
     UserMailer.confirm_application_accept(current_user, @applier).deliver_later if @applier.accepted
-    redirect_to [@schedule, @applier], notice: ( @applier.accepted ? "최종승인되었습니다." : "승인취소되었습니다.")
+    respond_to do |format|
+      format.html { redirect_to [@schedule, @applier], notice: ( @applier.accepted ? "최종승인되었습니다." : "승인취소되었습니다.")}
+      format.json { render json: @applier }
+      format.js 
+    end
+
   end
 
 

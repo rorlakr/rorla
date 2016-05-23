@@ -19,6 +19,11 @@
 <h2>신청자명단 <small><%= @schedule.name %></small></h2>
 <br />
 
+<p>
+  사전등록 : 총 <%= @schedule.appliers.size %> 명 |
+  최종수락 : 총 <%= @schedule.appliers.accepted.size %> 명
+</p>
+
 <div class="panel panel-default table-responsive">
   <table class="table table-bordered">
     <thead>
@@ -39,7 +44,9 @@
         <td class='text-center'><%= applier.name %></td>
         <td class='text-center'><%= applier.email %></td>
         <td class='text-center'><%= applier.created_at %></td>
-        <td class='text-center text-<%= applier.accepted ? 'success' : 'muted' %>'><%= applier.accepted ? awesome_icon('check-square-o') : awesome_icon('square') %></td>
+        <td id="accept_state_of_<%= applier.id %>" class='text-center text-<%= applier.accepted ? 'success' : 'muted' %>'>
+          <%= render partial: 'accept_state', locals: { applier: applier } %>
+        </td>
         <td class='text-center'>
           <%= link_to icon_button('eye-open', :success), [applier.schedule, applier] %>
           <% if user_signed_in? && current_user.can_update?(applier) %>
