@@ -9,7 +9,7 @@
         <%= t("activerecord.attributes.applier.name") %>
       </th>
       <td>
-        <%= link_to_if current_user == applier.user, image_tag(applier.user.user_profile.avatar_url(:thumb), class:'profile'), edit_user_profile_path %>
+        <%= link_to_if current_user == applier.user, image_tag(applier.user.user_profile&.avatar_url(:thumb).presence || 'contributors/generic-user.png', class:'profile'), ( applier.user.user_profile&.avatar_url(:thumb).present? ? edit_user_profile_path : new_user_profile_path ) %>
         <%= applier.name %>
         <span class='text-success'><%= awesome_icon_label "check-square-o", "최종수락" if applier.accepted %></span>
       </td>
