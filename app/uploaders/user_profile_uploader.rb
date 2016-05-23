@@ -38,6 +38,10 @@ class UserProfileUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [200,200]
   end
 
+  def default_url(*args)
+    # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
+    ActionController::Base.helpers.asset_path("contributors/generic-user.png")
+  end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url

@@ -5,8 +5,11 @@
       <td><%= applier.id %></td>
     </tr>
     <tr>
-      <th class='col-xs-2 text-right'><%= t("activerecord.attributes.applier.name") %></th>
+      <th class='col-xs-2 text-right'>
+        <%= t("activerecord.attributes.applier.name") %>
+      </th>
       <td>
+        <%= link_to_if current_user == applier.user, image_tag(applier.user.user_profile.avatar_url(:thumb), class:'profile'), edit_user_profile_path %>
         <%= applier.name %>
         <span class='text-success'><%= awesome_icon_label "check-square-o", "최종수락" if applier.accepted %></span>
       </td>

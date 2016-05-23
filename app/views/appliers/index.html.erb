@@ -69,9 +69,9 @@
 
 <br />
 <% if @my_applier && current_user.can_update?(@my_applier)%>
-  <%= link_to "수정", edit_schedule_applier_path(@schedule, @my_applier), class: 'btn btn-default' %>
-  <%= link_to t("form_actions.show"), [@schedule, @my_applier], class: 'btn btn-default' %>
-  <%= link_to "신청취소", [@schedule, @my_applier], method: :delete, data:{confirm:"Are you sure?"}, class: 'btn btn-danger' %>
+  <%= link_to awesome_icon_label("edit","수정"), edit_schedule_applier_path(@schedule, @my_applier), class: 'btn btn-default' %>
+  <%= link_to awesome_icon_label("eye",t("form_actions.show")), [@schedule, @my_applier], class: 'btn btn-default' %>
+  <%= link_to awesome_icon_label("user-times","신청취소"), [@schedule, @my_applier], method: :delete, data:{confirm:"Are you sure?"}, class: 'btn btn-danger' %>
 <% else %>
   <%= link_to awesome_icon_label("user-plus","참가신청"), new_schedule_applier_path(@schedule), class: 'btn btn-success' %>
 <% end %>
