@@ -47,7 +47,7 @@ h2 > span.glyphicon {
 }
 
 // Pagedown Editor
-#wmd-button-bar-content, #wmd-button-bar-info {
+#wmd-button-bar-content, #wmd-button-bar-info, #wmd-button-bar-memo  {
   border: 1px solid #eaeaea;
   border-radius: 4px 4px 0 0;
   padding: .2em;
@@ -55,7 +55,7 @@ h2 > span.glyphicon {
 }
 
 // Preview button background color
-#wmd-preview-button-content, #wmd-preview-button-info {
+#wmd-preview-button-content, #wmd-preview-button-info, #wmd-preview-button-memo {
   background-color: #5ed559;
   &:hover {
     background-color: #5cb85c;

@@ -1,3 +1,6 @@
+<%= render "layouts/shared/preview", title: "#{@applier.name}님의 자기소개", attribute: :memo %>
+
+
 <%= simple_form_for [@schedule, @applier] do | f | %>
   <%= f.error_notification %>
   <ul>
@@ -15,7 +18,7 @@
     <%= f.input :remit_date %>
     <%= f.input :remit_money %>
   <% end %>
-  <%= f.input :memo, as: :text, input_html: { rows: 5 } %>
+  <%= f.input :memo, :as => :pagedown, input_html: { rows: 17 }  %>
 
   <div class="alert alert-success">
     <%= awesome_icon("exclamation-triangle") %> 반드시 설문지를 충실히 작성해 주셔야 합니다. <%= link_to "설문지 작성하기", "http://goo.gl/forms/kjpdDM7y3yy83ayu2", target: '_blank', class: 'btn btn-success btn-xs' %>
