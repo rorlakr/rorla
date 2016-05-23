@@ -18,7 +18,7 @@
     <% end %>
     <% @schedules.each do |schedule| %>
       <tr>
-        <td><%= link_to schedule.name, schedule %> <small><%= schedule.appliers.size %></small></td>
+        <td><%= link_to schedule.name, schedule %> <small><%= schedule.appliers.size if user_signed_in? && current_user.has_role?(:contributor) %></small></td>
         <td class='text-center'><%= schedule.venue %></td>
         <td class='text-center'><%= schedule.start_date %></td>
         <td class='text-center'><%= schedule.charged ? number_to_currency(schedule.charge_amount) : lecture_type(schedule.charged) %></td>
