@@ -1,0 +1,1 @@
+<%= link_to (applier.accepted ? awesome_icon('check-square-o') : awesome_icon('square')), accept_schedule_applier_path(applier.schedule, applier), method: :put, remote: true, data:{confirm:'Are you sure?'} %>
