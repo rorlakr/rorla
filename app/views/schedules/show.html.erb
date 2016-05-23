@@ -49,6 +49,7 @@
 <div class="form-actions">
   <%= link_to awesome_icon_label("edit", t("form_actions.edit")), edit_schedule_path(@schedule), class: 'btn btn-default' if user_signed_in? && current_user.can_update?(@schedule) %>
   <%= link_to awesome_icon_label("calendar","RORLAB일정"), schedules_path, class: 'btn btn-default' %>
+  <%= link_to awesome_icon_label('list',"접수상황"), schedule_appliers_path(@schedule), class: 'btn btn-default' if user_signed_in? && current_user.can_update?(@schedule)%>
   <%= link_to awesome_icon_label('user-plus','참가신청'), new_schedule_applier_path(@schedule), class: 'btn btn-success' %>
 </div>
 

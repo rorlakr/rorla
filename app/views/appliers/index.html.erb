@@ -1,5 +1,6 @@
 <br />
-<div class="well">
+<div class="well alert">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   <div class='markdown-preview' style='border-radius:5px;padding:1em;'>
     <%= @schedule.info %>
   </div>
@@ -7,8 +8,11 @@
 
 
 <% if @my_applier %>
+<div class='alert alert-info'>
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   <h2>신청접수상황</h2>
-  <%= render partial: 'applier', locals: { applier: @my_applier} %>
+    <%= render partial: 'applier', locals: { applier: @my_applier} %>
+  </div>
 <% end %>
 
 <% if user_signed_in? && current_user.has_role?(:contributor) %>
