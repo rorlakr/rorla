@@ -61,11 +61,11 @@
     </tbody>
   </table>
 </div>
-<% end %>
-
 <center>
   <%= will_paginate @appliers %>
 </center>
+<% end %>
+
 
 <br />
 <% if @my_applier && current_user.can_update?(@my_applier)%>
