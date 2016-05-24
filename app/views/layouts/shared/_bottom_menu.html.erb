@@ -26,8 +26,9 @@
       <div class='col-md-4 col-sm-4'>
         <div class='menu_title'><%= awesome_icon_label "calendar", "행사 및 일정" %></div>
         <ul class='section'>
-          <li>Biweekly Lecuture</li>
-          <li>Biweekly Koding</li>
+          <% Schedule.all.order(id: :desc).limit(5).each do | schedule | %>
+            <li><%= link_to schedule.name, schedule %></li>
+          <% end %>
         </ul>
       </div>
 
