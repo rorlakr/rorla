@@ -3,11 +3,13 @@
 <table class='table'>
 <tr>
   <th class='col-sm-2 col-xs-3'><%=t('activerecord.attributes.post.title')%></th>
-  <td><%= @post.title %></td>
+  <td class='text-danger'><strong><%= @post.title %></strong></td>
 </tr>
 <tr>
   <th><%=t('activerecord.attributes.post.content')%></th>
-  <td><%= simple_format @post.content %></td>
+  <td class='markdown-preview'  style="border-top:1px solid #ccc !important;">
+    <%= simple_format @post.content %>
+  </td>
 </tr>
 <tr>
   <th><%=t('activerecord.attributes.post.writer')%></th>
