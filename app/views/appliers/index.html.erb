@@ -31,6 +31,7 @@
         <th class='text-center'>신청자명</th>
         <th class='text-center'>이메일</th>
         <th class='text-center'>접수일</th>
+        <th class='text-center'>추천</th>
         <th class='text-center'>최종수락</th>
         <th class='text-center'>데이터작업</th>
       </tr>
@@ -44,6 +45,9 @@
         <td class='text-center'><%= applier.name %></td>
         <td class='text-center'><%= applier.email %></td>
         <td class='text-center'><%= applier.created_at %></td>
+        <td id="recommand_state_of_<%= applier.id %>" class='text-center text-<%= applier.recommanded_by?(current_user) ? 'success' : 'muted' %>'>
+          <%= render partial: 'recommand_state', locals: { applier: applier } %>
+        </td>
         <td id="accept_state_of_<%= applier.id %>" class='text-center text-<%= applier.accepted ? 'success' : 'muted' %>'>
           <%= render partial: 'accept_state', locals: { applier: applier } %>
         </td>

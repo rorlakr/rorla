@@ -1,6 +1,7 @@
 class CreateRecommandations < ActiveRecord::Migration
   def change
     create_table :recommandations do |t|
+      t.references :schedule, index: true, foreign_key: true
       t.references :applier, index: true, foreign_key: true
       t.references :recommander, index: true
       t.integer :score, default: 0

@@ -50,6 +50,8 @@ class User < ActiveRecord::Base
   has_many :purchase_requests, dependent: :destroy
   has_many :group_purchases, dependent: :destroy
   has_many :schedules, dependent: :nullify
+  has_many :recommandations, dependent: :nullify, foreign_key: :recommander_id
+  has_many :recommand_appliers, through: :recommandations, source: :applier
 
   def confirm
     super

@@ -13,6 +13,10 @@ class ApplierAuthorizer < ApplicationAuthorizer
   end
 
   def acceptable_by?(user)
+    user.has_role?(:admin)
+  end
+
+  def recommandable_by?(user)
     user.has_role?(:admin) || user.has_role?(:contributor)
   end
 

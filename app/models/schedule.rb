@@ -6,6 +6,8 @@ class Schedule < ActiveRecord::Base
   belongs_to :user
   has_many :appliers, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
+  has_many :recommandations, dependent: :destroy
+  
 
   validates :name, presence: true, uniqueness: true
 end
