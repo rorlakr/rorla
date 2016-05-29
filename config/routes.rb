@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     resources :appliers do
       member do
         put 'accept'
+        put 'recommand'
       end
     end
   end

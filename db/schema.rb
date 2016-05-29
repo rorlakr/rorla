@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160520093317) do
+ActiveRecord::Schema.define(version: 20160529095144) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -360,6 +360,18 @@ ActiveRecord::Schema.define(version: 20160520093317) do
 
   add_index "rblogs", ["writer_id"], name: "index_rblogs_on_writer_id", using: :btree
 
+  create_table "recommandations", force: :cascade do |t|
+    t.integer  "applier_id",     limit: 4
+    t.integer  "recommander_id", limit: 4
+    t.integer  "score",          limit: 4,     default: 0
+    t.text     "letter",         limit: 65535
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+  end
+
+  add_index "recommandations", ["applier_id"], name: "index_recommandations_on_applier_id", using: :btree
+  add_index "recommandations", ["recommander_id"], name: "index_recommandations_on_recommander_id", using: :btree
+
   create_table "roles", force: :cascade do |t|
     t.string   "name",          limit: 255
     t.integer  "resource_id",   limit: 4
@@ -488,6 +500,8 @@ ActiveRecord::Schema.define(version: 20160520093317) do
   add_foreign_key "lectures", "users"
   add_foreign_key "purchase_requests", "group_purchases"
   add_foreign_key "purchase_requests", "users"
+  add_foreign_key "recommandations", "appliers"
+  add_foreign_key "recommandations", "users", column: "recommander_id"
   add_foreign_key "schedules", "users"
   add_foreign_key "user_profiles", "users"
 end

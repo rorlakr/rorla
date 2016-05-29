@@ -41,7 +41,7 @@ class AppliersController < ApplicationController
     if Time.now >= "2016-05-28 24:00:00 +0900".to_time
       flash[:error] =  '죄송합니다. 사전등록이 마감되었습니다.  '
       redirect_to schedule_appliers_path(@schedule) and return
-    end    
+    end
     @applier = @schedule.appliers.new(applier_params)
     authorize_action_for Applier
     @applier.user = current_user
@@ -91,7 +91,10 @@ class AppliersController < ApplicationController
       format.json { render json: @applier }
       format.js
     end
+  end
 
+  def recommand
+    
   end
 
 
