@@ -10,4 +10,10 @@ class Applier < ActiveRecord::Base
   validates :user_id, presence: true, uniqueness:  { scope: :schedule_id, message: "이미 신청하셨습니다." }
 
   scope :accepted, -> { where accepted: true }
+
+  def recommanded_by(user)
+    self.schedule.recommandations 
+
+  end
+
 end
