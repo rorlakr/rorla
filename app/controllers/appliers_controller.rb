@@ -17,6 +17,10 @@ class AppliersController < ApplicationController
       flash[:error] =  '죄송합니다. 2016-05-23 00:00:00 +0900 부터 신청가능합니다. '
       redirect_to schedule_appliers_path(@schedule) and return
     end
+    if Time.now >= "2016-05-28 24:00:00 +0900".to_time
+      flash[:error] =  '죄송합니다. 사전등록이 마감되었습니다.  '
+      redirect_to schedule_appliers_path(@schedule) and return
+    end
     authorize_action_for Applier
     if @schedule.appliers.map(&:user).include?(current_user)
       @applier = current_user.appliers.find_by('schedule_id', @schedule)
@@ -34,6 +38,10 @@ class AppliersController < ApplicationController
       flash[:error] =  '죄송합니다. 2016-05-23 00:00:00 +0900 부터 신청가능합니다. '
       redirect_to schedule_appliers_path(@schedule) and return
     end
+    if Time.now >= "2016-05-28 24:00:00 +0900".to_time
+      flash[:error] =  '죄송합니다. 사전등록이 마감되었습니다.  '
+      redirect_to schedule_appliers_path(@schedule) and return
+    end    
     @applier = @schedule.appliers.new(applier_params)
     authorize_action_for Applier
     @applier.user = current_user
@@ -81,7 +89,7 @@ class AppliersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to [@schedule, @applier], notice: ( @applier.accepted ? "최종승인되었습니다." : "승인취소되었습니다.")}
       format.json { render json: @applier }
-      format.js 
+      format.js
     end
 
   end
