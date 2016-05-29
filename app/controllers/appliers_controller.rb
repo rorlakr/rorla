@@ -1,7 +1,7 @@
 class AppliersController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :set_schedule
-  before_action :set_applier, only: [:show, :edit, :update, :destroy, :accept]
+  before_action :set_applier, only: [:show, :edit, :update, :destroy, :accept, :recommand]
 
   def index
     # @schedule = Schedule.find(params[:schedule_id])
@@ -94,7 +94,17 @@ class AppliersController < ApplicationController
   end
 
   def recommand
-    
+    authorize_action_for @applier
+    if @applier.recommanded_by? current_user
+      @applier.recommanders.delete current_user
+    else
+      @applier.recommanders << current_user
+    end
+    respond_to do |format|
+      format.html { redirect_to [@schedule, @applier], notice: ( @applier.accepted ? "추천했습니다." : "추천을 취소했습니다.")}
+      format.json { render json: @applier }
+      format.js
+    end
   end
 
 

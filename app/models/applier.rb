@@ -4,6 +4,9 @@ class Applier < ActiveRecord::Base
   include Authority::Abilities
 
   belongs_to :schedule
+  has_many :recommandations, dependent: :destroy
+  has_many :recommanders, class_name: 'User', foreign_key: :recommander_id, through: :recommandations
+  has_many :categories
   belongs_to :user
 
   validates :name, :email, presence: true
@@ -11,9 +14,8 @@ class Applier < ActiveRecord::Base
 
   scope :accepted, -> { where accepted: true }
 
-  def recommanded_by(user)
-    self.schedule.recommandations 
-
+  def recommanded_by?(user)
+    self.recommanders.include? user
   end
 
 end

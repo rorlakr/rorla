@@ -5,6 +5,6 @@
 <div class="form-actions">
   <%= link_to awesome_icon_label("check","신청확인"), schedule_appliers_path(@schedule), class: 'btn btn-default' %>
   <%= link_to awesome_icon_label('edit',t("form_actions.edit")), edit_schedule_applier_path(@schedule, @applier), class: 'btn btn-default' %>
-  <%= link_to (@applier.recommanded ? awesome_icon_label("user-times", "추천취소") : awesome_icon_label("user-plus", "추천")), recommand_schedule_applier_path(@schedule, @applier), method: :put, data:{confirm:'Are you sure?'}, class: "btn btn-#{ @applier.accepted ? 'danger' : 'success'}" if current_user.can_accept?(@applier)%>
+  <%= link_to (@applier.recommanded_by?(current_user) ? awesome_icon_label("user-times", "추천취소") : awesome_icon_label("user-plus", "추천")), recommand_schedule_applier_path(@schedule, @applier), method: :put, data:{confirm:'Are you sure?'}, class: "btn btn-#{ @applier.recommanded_by?(current_user) ? 'danger' : 'success'}" if current_user.can_accept?(@applier)%>
   <%= link_to (@applier.accepted ? awesome_icon_label("user-times", "수락취소") : awesome_icon_label("user-plus", "최종수락")), accept_schedule_applier_path(@schedule, @applier), method: :put, data:{confirm:'Are you sure?'}, class: "btn btn-#{ @applier.accepted ? 'danger' : 'success'}" if current_user.can_accept?(@applier)%>
 </div>

@@ -361,6 +361,7 @@ ActiveRecord::Schema.define(version: 20160529095144) do
   add_index "rblogs", ["writer_id"], name: "index_rblogs_on_writer_id", using: :btree
 
   create_table "recommandations", force: :cascade do |t|
+    t.integer  "schedule_id",    limit: 4
     t.integer  "applier_id",     limit: 4
     t.integer  "recommander_id", limit: 4
     t.integer  "score",          limit: 4,     default: 0
@@ -371,6 +372,7 @@ ActiveRecord::Schema.define(version: 20160529095144) do
 
   add_index "recommandations", ["applier_id"], name: "index_recommandations_on_applier_id", using: :btree
   add_index "recommandations", ["recommander_id"], name: "index_recommandations_on_recommander_id", using: :btree
+  add_index "recommandations", ["schedule_id"], name: "index_recommandations_on_schedule_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name",          limit: 255
@@ -501,6 +503,7 @@ ActiveRecord::Schema.define(version: 20160529095144) do
   add_foreign_key "purchase_requests", "group_purchases"
   add_foreign_key "purchase_requests", "users"
   add_foreign_key "recommandations", "appliers"
+  add_foreign_key "recommandations", "schedules"
   add_foreign_key "recommandations", "users", column: "recommander_id"
   add_foreign_key "schedules", "users"
   add_foreign_key "user_profiles", "users"
