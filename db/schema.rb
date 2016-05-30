@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160529095144) do
+ActiveRecord::Schema.define(version: 20160530010326) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -391,17 +391,19 @@ ActiveRecord::Schema.define(version: 20160529095144) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.integer  "user_id",       limit: 4
-    t.string   "name",          limit: 255,                   null: false
-    t.text     "info",          limit: 65535
-    t.string   "venue",         limit: 255
+    t.integer  "user_id",        limit: 4
+    t.string   "name",           limit: 255,                   null: false
+    t.text     "info",           limit: 65535
+    t.string   "venue",          limit: 255
     t.datetime "start_date"
     t.datetime "end_date"
     t.boolean  "repeating"
-    t.boolean  "charged",                     default: false
-    t.integer  "charge_amount", limit: 4,     default: 0
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.boolean  "charged",                      default: false
+    t.integer  "charge_amount",  limit: 4,     default: 0
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.datetime "pre_start_date"
+    t.datetime "pre_end_date"
   end
 
   add_index "schedules", ["user_id"], name: "index_schedules_on_user_id", using: :btree
