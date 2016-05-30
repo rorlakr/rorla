@@ -253,8 +253,10 @@ ko:
         name: 일정명
         info: 안내문
         venue: 장소
-        start_date: 시작일시
-        end_date: 종료일시
+        pre_start_date: 사전등록시작일시
+        pre_end_date: 사전등록종료일시
+        start_date: 행사시작일시
+        end_date: 행사종료일시
         charged: 유료강의
         charge_amount: 수강료
         repeating: 반복일정
