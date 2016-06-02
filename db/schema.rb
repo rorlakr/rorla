@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530010326) do
+ActiveRecord::Schema.define(version: 20160602090803) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -332,8 +332,12 @@ ActiveRecord::Schema.define(version: 20160530010326) do
     t.string   "parcel_receiver",   limit: 10
     t.text     "memo",              limit: 65535
     t.integer  "group_purchase_id", limit: 4
+    t.boolean  "deleted",                         default: false
+    t.datetime "deleted_at"
+    t.integer  "deleted_by_id",     limit: 4
   end
 
+  add_index "purchase_requests", ["deleted_by_id"], name: "index_purchase_requests_on_deleted_by_id", using: :btree
   add_index "purchase_requests", ["group_purchase_id"], name: "index_purchase_requests_on_group_purchase_id", using: :btree
   add_index "purchase_requests", ["user_id"], name: "index_purchase_requests_on_user_id", using: :btree
 
@@ -504,6 +508,7 @@ ActiveRecord::Schema.define(version: 20160530010326) do
   add_foreign_key "lectures", "users"
   add_foreign_key "purchase_requests", "group_purchases"
   add_foreign_key "purchase_requests", "users"
+  add_foreign_key "purchase_requests", "users", column: "deleted_by_id"
   add_foreign_key "recommandations", "appliers"
   add_foreign_key "recommandations", "schedules"
   add_foreign_key "recommandations", "users", column: "recommander_id"

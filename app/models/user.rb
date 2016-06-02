@@ -48,6 +48,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :useful_answers, class_name: "Answer", join_table: :useful_answers
 
   has_many :purchase_requests, dependent: :destroy
+  has_many :deleted_purchase_requests, class_name: "PurchaseRequest", foreign_key: :deleted_by_id, dependent: :destroy
   has_many :group_purchases, dependent: :destroy
   has_many :schedules, dependent: :nullify
   has_many :recommandations, dependent: :nullify, foreign_key: :recommander_id
