@@ -5,8 +5,9 @@ class PurchaseRequestAuthorizer < ApplicationAuthorizer
   end
 
   def self.creatable_by?(user, options={})
-    g = GroupPurchase.find(options[:for].id)
-    g.purchase_requests.where(user: user).size == 0
+    # g = GroupPurchase.find(options[:for].id)
+    # g.purchase_requests.where(user: user).size == 0
+    user.has_role?(:user) || user.has_role?(:admin)
   end
 
   def updatable_by?(user)

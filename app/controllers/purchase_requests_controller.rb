@@ -54,9 +54,9 @@ class PurchaseRequestsController < ApplicationController
   def new
     if params[:group_purchase_id]
       set_group_purchase
-      if @purchase_request = @group_purchase.purchase_requests.find_by(user: current_user)
-        redirect_to([@group_purchase,@purchase_request], notice: "이미 구매신청하셨습니다.") && return if current_user.can_update?(@purchase_request)
-      end
+      # if @purchase_request = @group_purchase.purchase_requests.find_by(user: current_user)
+      #   redirect_to([@group_purchase,@purchase_request], notice: "이미 구매신청하셨습니다.") && return if current_user.can_update?(@purchase_request)
+      # end
       authorize_action_for PurchaseRequest, for: @group_purchase
       @purchase_request = @group_purchase.purchase_requests.new
     else
