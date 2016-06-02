@@ -112,7 +112,8 @@ class PurchaseRequestsController < ApplicationController
   # DELETE /purchase_requests/1.json
   def destroy
     authorize_action_for @purchase_request
-    @purchase_request.destroy
+    @purchase_request.soft_destroy(current_user)
+    # @purchase_request.destroy
     respond_to do |format|
       format.html { redirect_to (params[:group_purchase_id] ? group_purchase_purchase_requests_url : purchase_requests_url), notice: 'Purchase request was successfully destroyed.' }
       format.json { head :no_content }
