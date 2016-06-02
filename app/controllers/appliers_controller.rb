@@ -32,11 +32,11 @@ class AppliersController < ApplicationController
   end
 
   def new
-    if Time.now < @schedule.pre_start_date
+    if @schedule.pre_start_date && Time.now < @schedule.pre_start_date
       flash[:error] =  '죄송합니다. 2016-05-23 00:00:00 +0900 부터 신청가능합니다. '
       redirect_to schedule_appliers_path(@schedule) and return
     end
-    if Time.now >= @schedule.pre_end_date
+    if @schedule.pre_end_date && Time.now >= @schedule.pre_end_date
       flash[:error] =  '죄송합니다. 사전등록이 마감되었습니다.  '
       redirect_to schedule_appliers_path(@schedule) and return
     end
@@ -53,11 +53,11 @@ class AppliersController < ApplicationController
   end
 
   def create
-    if Time.now < @schedule.pre_start_date
+    if @schedule.pre_start_date && Time.now < @schedule.pre_start_date
       flash[:error] =  '죄송합니다. 2016-05-23 00:00:00 +0900 부터 신청가능합니다. '
       redirect_to schedule_appliers_path(@schedule) and return
     end
-    if Time.now >= @schedule.pre_end_date
+    if @schedule.pre_end_date && Time.now >= @schedule.pre_end_date
       flash[:error] =  '죄송합니다. 사전등록이 마감되었습니다.  '
       redirect_to schedule_appliers_path(@schedule) and return
     end
