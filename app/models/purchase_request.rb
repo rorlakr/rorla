@@ -44,7 +44,6 @@ class PurchaseRequest < ActiveRecord::Base
     send_total_price.to_s.reverse.scan(/\d{1,3}/).join(",").reverse
   end
 
-  # soft delete를 위한 메소드 overriding
   def soft_destroy(user)
     deleted = true
     deleted_at = Time.now
