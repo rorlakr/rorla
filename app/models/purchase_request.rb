@@ -17,6 +17,9 @@
 #  parcel_receiver   :string(10)
 #  memo              :text(65535)
 #  group_purchase_id :integer
+#  deleted           :boolean          default(FALSE)
+#  deleted_at        :datetime
+#  deleted_by_id     :integer
 #
 
 class PurchaseRequest < ActiveRecord::Base
@@ -28,6 +31,7 @@ class PurchaseRequest < ActiveRecord::Base
   validates :user_id, :uniqueness => {:scope => :group_purchase_id, message: "이미 신청하셨습니다."}
 
   belongs_to :user
+  belongs_to :deleted_by, class_name: "User"
   belongs_to :group_purchase
   has_many :items, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy

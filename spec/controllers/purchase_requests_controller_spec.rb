@@ -17,6 +17,9 @@
 #  parcel_receiver   :string(10)
 #  memo              :text(65535)
 #  group_purchase_id :integer
+#  deleted           :boolean          default(FALSE)
+#  deleted_at        :datetime
+#  deleted_by_id     :integer
 #
 
 require 'spec_helper'
