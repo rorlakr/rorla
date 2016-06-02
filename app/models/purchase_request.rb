@@ -38,6 +38,9 @@ class PurchaseRequest < ActiveRecord::Base
 
   before_save :cal_total_price
 
+  default_scope { where( deleted: false )}
+  scope :deleted_all, -> { unscoped.where( deleted: true) }
+
   accepts_nested_attributes_for :items, :reject_if => proc { |attributes| attributes['count'] == '0' }, :allow_destroy => true
 
   def human_total_price
@@ -45,17 +48,17 @@ class PurchaseRequest < ActiveRecord::Base
   end
 
   def soft_destroy(user)
-    deleted = true
-    deleted_at = Time.now
-    deleted_by = user
-    save
+    self.deleted = true
+    self.deleted_at = Time.now
+    self.deleted_by = user
+    self.save
   end
 
-  def restore(user)
-    deleted = false
-    deleted_at = nil
-    deleted_by = nil
-    save
+  def restore_soft_destroyed
+    self.deleted = false
+    self.deleted_at = nil
+    self.deleted_by = nil
+    self.save
   end
 
   private
