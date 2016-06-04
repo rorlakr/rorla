@@ -3,7 +3,8 @@
   .plaza {
     position:relative;
     .content {
-      overflow:scroll;
+      overflow:auto;
+      a:hover { text-decoration: none;}
       .title {
         h4, h4.media-heading { font-weight: bold; margin-top:0; }
       }
