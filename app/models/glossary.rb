@@ -9,6 +9,7 @@ class Glossary < ActiveRecord::Base
 
   belongs_to :user
   has_many :glossary_definitions, dependent: :destroy
+  has_many :comments, as: :commentable, dependent: :destroy
 
   accepts_nested_attributes_for :glossary_definitions, allow_destroy: true, :reject_if => :all_blank
 

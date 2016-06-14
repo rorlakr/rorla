@@ -46,3 +46,6 @@
   <%= link_to t('form_actions.edit'), edit_glossary_path(@glossary), class: 'btn btn-default' %>
   <%= link_to t('form_actions.back'), glossaries_path, class: 'btn btn-default' %>
 </div>
+
+<!-- 댓글 위젯 -->
+<%= render partial: "comments/comments_widget", locals: { resource: @glossary} %>

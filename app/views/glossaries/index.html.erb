@@ -57,7 +57,7 @@
     <tbody>
       <% @glossaries.each do |glossary| %>
         <tr>
-          <td><%= glossary.term %></td>
+          <td><%= link_to glossary.term, glossary %></td>
           <td><%= glossary.glossary_definitions.map(&:definition).join(', ')%></td>
           <td class='text-center'>
             <%= link_to icon_button('eye-open', :success), glossary %>
