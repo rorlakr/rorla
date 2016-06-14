@@ -4,7 +4,7 @@ class GlossariesController < ApplicationController
   # GET /glossaries
   # GET /glossaries.json
   def index
-    @glossaries = Glossary.all
+    @glossaries = Glossary.search(params[:search]).paginate( page: params[:page], per_page: 10 )
   end
 
   # GET /glossaries/1

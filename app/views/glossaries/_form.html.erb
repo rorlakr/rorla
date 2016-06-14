@@ -6,7 +6,7 @@
     <div class="col-md-6">
       <div class="form-inputs">
         <%= f.input :term %>
-        <%= f.input :word_class %>
+        <%= f.input :word_class, collection: enum_option_pairs(Glossary, :word_class) %>
         <%= f.input :idiomatic %>
         <%= f.input :memo, input_html: { rows: 5 } %>
       </div>

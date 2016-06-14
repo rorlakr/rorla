@@ -2,8 +2,22 @@
   Ruby & Rails 용어집
 </h2>
 
+<%= form_tag glossaries_path, :method => 'get' do %>
+<div id="custom-search-input" style="margin-bottom:1.5em;">
+  <div class="input-group col-md-6 col-md-push-3">
+    <input type="text" name="search" class="form-control input-lg" placeholder="검색할 영어 단어를 입력하세요." value="<%= params[:search] %>" />
+    <span class="input-group-btn">
+      <button class="btn btn-success btn-lg" type="button">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </span>
+  </div>
+</div>
+<% end %>
+
+
 <div class="panel panel-default">
-  <table class='table table-bordered'>
+  <table id='glossaries_list' class='table table-bordered'>
     <thead>
       <tr>
         <th class='col-md-4 text-center'>Term</th>
@@ -32,6 +46,9 @@
   </table>
 </div>
 
+<div class='text-center'>
+  <%= will_paginate @glossaries %>
+</div>
 
 <div class="form-actions">
   <%= link_to '용어추가', new_glossary_path, class: 'btn btn-default' %>

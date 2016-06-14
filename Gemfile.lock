@@ -384,6 +384,8 @@ GEM
     shellany (0.0.1)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
+    simple_enum (2.0.1)
+      activesupport (>= 4.0.0)
     simple_form (3.2.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
@@ -522,6 +524,7 @@ DEPENDENCIES
   search_cop
   selenium-webdriver (~> 2.35.1)
   shoulda-matchers
+  simple_enum (~> 2.0.0)
   simple_form
   simplecov
   spring
