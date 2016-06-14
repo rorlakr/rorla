@@ -38,3 +38,4 @@ public/screenshot.png
 
 /config/database.production.yml
 /config/secrets.production.yml
+rorla_development_glossaries_and_glossary_definitions.sql

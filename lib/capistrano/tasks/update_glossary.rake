@@ -4,7 +4,7 @@ namespace :glossary do
     on roles(:app) do
       within "#{current_path}" do
         with rails_env: "#{fetch(:stage)}" do
-          execute :rake, "import_glossary[args[:filename], args[:email]]"
+          execute :rake, "\"import_glossary[#{args[:filename]}, #{args[:email]}]\""
         end
       end
     end
