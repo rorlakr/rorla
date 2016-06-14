@@ -14,6 +14,8 @@ class Glossary < ActiveRecord::Base
 
   validates :term, presence: true, uniqueness: true
 
+  default_scope { order(:term)}
+
   def self.search(search)
     if search
       where('term LIKE ?', "#{search}%" )

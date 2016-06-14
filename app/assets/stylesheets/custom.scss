@@ -223,3 +223,15 @@ a,
 .add_fields {
   margin:0 !important;
 }
+
+.alphabet_box {
+  border:1px solid #ccc;
+  border-radius: 5px;
+  padding-top: .5em;
+   margin-bottom:1em;font-family:courier;
+   text-align:center;
+   a {
+     font-weight: bold;
+     margin-bottom: .5em;
+   }
+}
