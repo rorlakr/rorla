@@ -43,3 +43,24 @@ class GlossaryDefinition < AcgtiveRecord::Base
   belongs_to :user
 end
 ```
+
+[레일스튜토리얼 용어집](http://bit.ly/railstutorial_glossary)을 `CSV` 포맷으로 다운로드 받아 `glossaries`, `glossary_definitions` 테이블로 임포트하는 rake task를 작성했음.
+
+`lib/tasks/import_glossary.rake`
+
+```ruby
+require 'csv'
+desc "RailsTutorial 용어집 CSV 파일을 glossaries 와 glossary_definitions 테이블로 추가한다."
+task :import_glossary, [:filename] => [:environment] do |t, args|
+    user = User.first
+    CSV.foreach( args[:filename], :headers => true) do |row|
+      glossary = Glossary.create!(term: row[0], user: user, memo: row[2] )
+      glossary.glossary_definitions.create!( definition: row[1], user: user )
+    end
+end
+```
+
+
+```sh
+$ rake import_glossary[~/railstutorial_glossary_main.csv]
+```

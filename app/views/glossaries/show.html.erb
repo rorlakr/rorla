@@ -13,7 +13,12 @@
     <td>
       <ol style="padding-left: 20px;margin-bottom: 0px;">
       <% @glossary.glossary_definitions.each do | definition | %>
-        <li><%= definition.definition %><br /><span class='text-muted'>Ex) <%= definition.sentence %></span></li>
+        <li>
+          <%= definition.definition %><br />
+          <% if definition.sentence %>
+            <span class='text-muted'>Ex) <%= definition.sentence %></span>
+          <% end %>
+        </li>
       <% end %>
       </ol>
     </td>
