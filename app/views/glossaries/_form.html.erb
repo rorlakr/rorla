@@ -13,7 +13,6 @@
     </div>
     <div class="col-md-6">
       <div class="glossary_definitions">
-
         <%= f.simple_fields_for :glossary_definitions do | ff | %>
           <%= render 'task_fields', f: ff %>
         <% end %>
@@ -25,6 +24,6 @@
     <%= f.button :submit %>
     <%= link_to t('form_actions.show'), @glossary, class: 'btn btn-default' if @glossary.persisted? %>
     <%= link_to t('form_actions.back'), glossaries_path, class: 'btn btn-default' %>
-    <%= link_to_add_association "정의 추가", f, :glossary_definitions, partial: 'task_fields', class: 'btn btn-primary pull-right' %>
+    <%= link_to_add_association "정의 추가", f, :glossary_definitions, partial: 'task_fields',  'data-association-insertion-node': '.glossary_definitions', "data-association-insertion-method": 'append', class: 'btn btn-primary pull-right' %>
   </div>
 <% end %>
