@@ -94,6 +94,8 @@ gem 'placeholdit'
 
 gem 'cocoon'
 
+gem 'simple_enum', '~> 2.0.0'
+
 
 group :development do
   # Annotates Rails Models, routes, fixtures, and others based on the database schema. (http://github.com/ctran/annotate_models)

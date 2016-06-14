@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614025037) do
+ActiveRecord::Schema.define(version: 20160614111206) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -169,13 +169,14 @@ ActiveRecord::Schema.define(version: 20160614025037) do
   add_index "favlinks", ["writer_id"], name: "index_favlinks_on_writer_id", using: :btree
 
   create_table "glossaries", force: :cascade do |t|
-    t.integer  "user_id",    limit: 4
-    t.string   "term",       limit: 255,   null: false
-    t.integer  "word_class", limit: 4
+    t.integer  "user_id",       limit: 4
+    t.string   "term",          limit: 255,   null: false
+    t.integer  "word_class",    limit: 4
     t.boolean  "idiomatic"
-    t.text     "memo",       limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.text     "memo",          limit: 65535
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "word_class_cd", limit: 4
   end
 
   add_index "glossaries", ["user_id"], name: "index_glossaries_on_user_id", using: :btree

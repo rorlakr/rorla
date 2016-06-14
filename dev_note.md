@@ -16,6 +16,32 @@ Attributes:
  - idiomatic (단어/숙어)
  - memo:text (메모)
 
+
+http://www.oxforddictionaries.com/words/word-classes-or-parts-of-speech
+
+noun(명사), pronoun(대명사), adverb(부사), verb(동사), adjective(형용사), preposition(전치사), conjunction(접속사), determiner(관형사), exclamation(감탄사)
+
+noun
+
+verb
+
+adjective
+
+adverb
+
+pronoun
+
+preposition
+
+conjunction
+
+determiner
+
+exclamation
+
+
+
+
 `GlossaryDefinition` Model
 
 ```sh

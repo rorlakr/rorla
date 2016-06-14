@@ -15,7 +15,7 @@
       <% @glossary.glossary_definitions.each do | definition | %>
         <li>
           <%= definition.definition %><br />
-          <% if definition.sentence %>
+          <% if definition.sentence.present? %>
             <span class='text-muted'>Ex) <%= definition.sentence %></span>
           <% end %>
         </li>
