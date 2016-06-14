@@ -1,0 +1,39 @@
+<h2 class="page_title">
+  Ruby & Rails 용어집
+</h2>
+
+<div class="panel panel-default">
+  <table class='table table-bordered'>
+    <thead>
+      <tr>
+        <th class='col-md-4 text-center'>Term</th>
+        <th class='text-center'>Definitions</th>
+        <th class='col-md-2 text-center'>데이터작업</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @glossaries.each do |glossary| %>
+        <tr>
+          <td><%= glossary.term %></td>
+          <td><%= glossary.glossary_definitions.map(&:definition).join(', ')%></td>
+          <td class='text-center'>
+            <%= link_to icon_button('eye-open', :success), glossary %>
+            <% if user_signed_in? && current_user.can_update?(glossary) %>
+              <%= link_to icon_button('edit', :info), edit_glossary_path(glossary) %>
+            <% end %>
+            <% if user_signed_in? && current_user.can_delete?(glossary) %>
+              <%= link_to icon_button('trash', :danger), glossary, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="form-actions">
+  <%= link_to '용어추가', new_glossary_path, class: 'btn btn-default' %>
+
+</div>

@@ -136,6 +136,7 @@ GEM
     clockwork (1.2.0)
       activesupport
       tzinfo
+    cocoon (1.2.9)
     codemirror-rails (5.11)
       railties (>= 3.0, < 5)
     coderay (1.1.1)
@@ -471,6 +472,7 @@ DEPENDENCIES
   capybara-webkit
   carrierwave
   clockwork
+  cocoon
   codemirror-rails
   coffee-rails
   daemons

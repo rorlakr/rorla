@@ -1,0 +1,7 @@
+<div class="glossary_definition">
+  <%= f.input :definition %>
+  <%= f.input :sentence, input_html: { rows: 5 } %>
+  <div class='remove'>
+    <%= link_to_remove_association awesome_icon('trash-o'), f, :glossary_definition, class: 'btn btn-danger' %>
+  </div>
+</div>

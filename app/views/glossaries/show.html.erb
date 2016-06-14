@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @glossary.user %>
+</p>
+
+<p>
+  <strong>Term:</strong>
+  <%= @glossary.term %>
+</p>
+
+<p>
+  <strong>Word class:</strong>
+  <%= @glossary.word_class %>
+</p>
+
+<p>
+  <strong>Idiomatic:</strong>
+  <%= @glossary.idiomatic %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @glossary.memo %>
+</p>
+
+<%= link_to 'Edit', edit_glossary_path(@glossary) %> |
+<%= link_to 'Back', glossaries_path %>

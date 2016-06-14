@@ -271,6 +271,14 @@ ko:
         remit_money: 송금액(원)
         memo: 메모
         created_at: 접수일자
+      glossary:
+        term: 용어
+        word_class: 품사
+        idiomatic: 관용구
+        memo: 메모사항
+      glossary_definition:
+        definition: 정의
+        sentence: 예문
 
   form_actions:
     edit: 수정
