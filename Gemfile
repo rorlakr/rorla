@@ -92,6 +92,8 @@ gem 'mailgun_rails'
 
 gem 'placeholdit'
 
+gem 'cocoon'
+
 
 group :development do
   # Annotates Rails Models, routes, fixtures, and others based on the database schema. (http://github.com/ctran/annotate_models)

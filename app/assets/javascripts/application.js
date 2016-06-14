@@ -20,6 +20,7 @@
 //= require bootstrap-sprockets
 //= require pagedown_bootstrap
 //= require google-code-prettify-rails/prettify
+//= require cocoon
 //= require welcome
 //= require codemirror
 //= require codemirror/modes/ruby

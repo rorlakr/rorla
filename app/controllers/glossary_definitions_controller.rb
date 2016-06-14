@@ -1,0 +1,2 @@
+class GlossaryDefinitionsController < ApplicationController
+end

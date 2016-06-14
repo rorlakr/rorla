@@ -2,6 +2,8 @@ Rails.application.routes.default_url_options[:host] = 'rorlab.org'
 
 Rails.application.routes.draw do
 
+  resources :glossary_definitions
+  resources :glossaries
   root "welcome#index"
   match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
 
