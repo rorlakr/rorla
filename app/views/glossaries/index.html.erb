@@ -61,7 +61,7 @@
           <td><%= link_to glossary.term, glossary %></td>
           <td>
             <ul class='definitions_hozital_list'>
-            <% glossary.glossary_definitions.sort{|x, y| x <=> y}.each_with_index do | definition, index| %>
+            <% glossary.glossary_definitions.sort{|x, y| y.cached_votes_up <=> x.cached_votes_up}.each_with_index do | definition, index| %>
               <li class="<%= index == 0 ? 'main' : 'sub'  %>"><%= "* " if index == 0 %><%= definition.definition %></li>
             <% end %>
             </ul>
