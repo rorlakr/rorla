@@ -48,8 +48,9 @@
   <table id='glossaries_list' class='table table-bordered'>
     <thead>
       <tr>
-        <th class='col-md-4 text-center'>Term</th>
-        <th class='text-center'>Definitions</th>
+        <th class='col-md-4 text-center'><%= t("activerecord.attributes.glossary.term") %></th>
+        <th class='text-center'><%= t("activerecord.attributes.glossary_definition.definition") %></th>
+        <th class='text-center'>업데이트</th>
         <th class='col-md-2 text-center'>데이터작업</th>
       </tr>
     </thead>
@@ -59,6 +60,7 @@
         <tr>
           <td><%= link_to glossary.term, glossary %></td>
           <td><%= glossary.glossary_definitions.map(&:definition).join(', ')%></td>
+          <td class='text-center'><%= time_ago_in_words glossary.updated_at %>전</td>
           <td class='text-center'>
             <%= link_to icon_button('eye-open', :success), glossary %>
             <% if user_signed_in? && current_user.can_update?(glossary) %>
