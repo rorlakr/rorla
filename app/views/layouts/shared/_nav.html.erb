@@ -47,6 +47,7 @@
             <li class="<%= active_menu('questions') %>"><%= link_to 'Q&A', questions_path %></li>
           </ul>
         <li class="<%= active_menu('rblogs') %>"><%= link_to 'rBlogs', rblogs_path %></li>
+        <li class="<%= active_menu('glossaries') %>"><%= link_to 'Glossary', glossaries_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
