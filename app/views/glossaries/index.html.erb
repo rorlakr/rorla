@@ -5,7 +5,7 @@
 <%= form_tag glossaries_path, :method => 'get' do %>
 <div id="custom-search-input" style="margin-bottom:1.5em;">
   <div class="input-group col-md-6 col-md-push-3">
-    <input type="text" name="search" class="form-control input-lg" placeholder="검색할 영어 단어를 입력하세요." value="<%= params[:search] %>" />
+    <input type="text" name="search" class="form-control input-lg" placeholder="검색할 영어 단어를 입력 후 엔터키를 치세요." value="<%= params[:search] %>" />
     <span class="input-group-btn">
       <button class="btn btn-success btn-lg" type="button">
         <i class="glyphicon glyphicon-search"></i>
@@ -59,7 +59,13 @@
       <% @glossaries.each do |glossary| %>
         <tr>
           <td><%= link_to glossary.term, glossary %></td>
-          <td><%= glossary.glossary_definitions.map(&:definition).join(', ')%></td>
+          <td>
+            <ul class='definitions_hozital_list'>
+            <% glossary.glossary_definitions.sort{|x, y| x <=> y}.each_with_index do | definition, index| %>
+              <li class="<%= index == 0 ? 'main' : 'sub'  %>"><%= "* " if index == 0 %><%= definition.definition %></li>
+            <% end %>
+            </ul>
+          </td>
           <td class='text-center'><%= time_ago_in_words glossary.updated_at %>전</td>
           <td class='text-center'>
             <%= link_to icon_button('eye-open', :success), glossary %>

@@ -1,7 +1,7 @@
 <ol style="padding-left: 20px;margin-bottom: 0px;">
-  <% @glossary.glossary_definitions.each do | definition | %>
+  <% @glossary.glossary_definitions.sort{|x, y| x <=> y}.each_with_index do | definition, index | %>
     <li>
-      <span id="definition_<%= definition.id %>"><%= definition.definition %> <small><%= link_to awesome_icon_label('thumbs-o-up', definition.get_likes.size.to_s), like_glossary_definition_path(definition.glossary, definition), method: :post, remote: true %></small></span><br />
+      <span id="definition_<%= definition.id %>" class='text-<%= index == 0 ? "danger" : "muted" %>'><%= definition.definition %> <small><%= link_to awesome_icon_label('thumbs-o-up', definition.get_likes.size.to_s), like_glossary_definition_path(definition.glossary, definition), method: :post, remote: true %></small></span><br />
       <% if definition.sentence.present? %>
         <span class='text-muted'>Ex) <%= definition.sentence %></span>
       <% end %>
