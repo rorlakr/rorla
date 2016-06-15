@@ -1,5 +1,5 @@
 class GlossariesController < ApplicationController
-  before_action :authenticate_user!, except: [ :index, :show ]  
+  before_action :authenticate_user!, except: [ :index, :show ]
   before_action :set_glossary, only: [:show, :edit, :update, :destroy]
 
   # GET /glossaries
@@ -15,16 +15,19 @@ class GlossariesController < ApplicationController
 
   # GET /glossaries/new
   def new
+    authorize_action_for Glossary
     @glossary = Glossary.new
   end
 
   # GET /glossaries/1/edit
   def edit
+    authorize_action_for @glossary
   end
 
   # POST /glossaries
   # POST /glossaries.json
   def create
+    authorize_action_for Glossary
     @glossary = Glossary.new(glossary_params)
     @glossary.user = current_user
 
@@ -42,6 +45,7 @@ class GlossariesController < ApplicationController
   # PATCH/PUT /glossaries/1
   # PATCH/PUT /glossaries/1.json
   def update
+    authorize_action_for @glossary
     respond_to do |format|
       if @glossary.update(glossary_params)
         format.html { redirect_to @glossary, notice: 'Glossary was successfully updated.' }
@@ -56,6 +60,7 @@ class GlossariesController < ApplicationController
   # DELETE /glossaries/1
   # DELETE /glossaries/1.json
   def destroy
+    authorize_action_for @glossary
     @glossary.destroy
     respond_to do |format|
       format.html { redirect_to glossaries_url, notice: 'Glossary was successfully destroyed.' }
