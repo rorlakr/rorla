@@ -76,6 +76,6 @@ class GlossariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def glossary_params
-      params.require(:glossary).permit(:user_id, :term, :word_class, :idiomatic, :memo, glossary_definitions_attributes: [:id, :definition, :sentence, :_destroy])
+      params.require(:glossary).permit(:user_id, :term, :word_class, :idiomatic, :memo, glossary_definitions_attributes: [:id, :user_id, :definition, :sentence, :_destroy])
     end
 end
