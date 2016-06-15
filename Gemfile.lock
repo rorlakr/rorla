@@ -58,6 +58,7 @@ GEM
       tzinfo (~> 1.1)
     acts-as-taggable-on (3.5.0)
       activerecord (>= 3.2, < 5)
+    acts_as_votable (0.10.0)
     addressable (2.4.0)
     ambry (0.3.1)
     annotate (2.7.0)
@@ -450,6 +451,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  acts_as_votable (~> 0.10.0)
   ambry
   annotate
   annotate_gem

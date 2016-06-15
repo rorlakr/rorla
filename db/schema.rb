@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614111206) do
+ActiveRecord::Schema.define(version: 20160615000900) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -182,14 +182,28 @@ ActiveRecord::Schema.define(version: 20160614111206) do
   add_index "glossaries", ["user_id"], name: "index_glossaries_on_user_id", using: :btree
 
   create_table "glossary_definitions", force: :cascade do |t|
-    t.integer  "glossary_id", limit: 4
-    t.integer  "user_id",     limit: 4
-    t.string   "definition",  limit: 255,   null: false
-    t.text     "sentence",    limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer  "glossary_id",             limit: 4
+    t.integer  "user_id",                 limit: 4
+    t.string   "definition",              limit: 255,                 null: false
+    t.text     "sentence",                limit: 65535
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
+    t.integer  "cached_votes_total",      limit: 4,     default: 0
+    t.integer  "cached_votes_score",      limit: 4,     default: 0
+    t.integer  "cached_votes_up",         limit: 4,     default: 0
+    t.integer  "cached_votes_down",       limit: 4,     default: 0
+    t.integer  "cached_weighted_score",   limit: 4,     default: 0
+    t.integer  "cached_weighted_total",   limit: 4,     default: 0
+    t.float    "cached_weighted_average", limit: 24,    default: 0.0
   end
 
+  add_index "glossary_definitions", ["cached_votes_down"], name: "index_glossary_definitions_on_cached_votes_down", using: :btree
+  add_index "glossary_definitions", ["cached_votes_score"], name: "index_glossary_definitions_on_cached_votes_score", using: :btree
+  add_index "glossary_definitions", ["cached_votes_total"], name: "index_glossary_definitions_on_cached_votes_total", using: :btree
+  add_index "glossary_definitions", ["cached_votes_up"], name: "index_glossary_definitions_on_cached_votes_up", using: :btree
+  add_index "glossary_definitions", ["cached_weighted_average"], name: "index_glossary_definitions_on_cached_weighted_average", using: :btree
+  add_index "glossary_definitions", ["cached_weighted_score"], name: "index_glossary_definitions_on_cached_weighted_score", using: :btree
+  add_index "glossary_definitions", ["cached_weighted_total"], name: "index_glossary_definitions_on_cached_weighted_total", using: :btree
   add_index "glossary_definitions", ["glossary_id"], name: "index_glossary_definitions_on_glossary_id", using: :btree
   add_index "glossary_definitions", ["user_id"], name: "index_glossary_definitions_on_user_id", using: :btree
 
@@ -564,6 +578,21 @@ ActiveRecord::Schema.define(version: 20160614111206) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "votable_id",   limit: 4
+    t.string   "votable_type", limit: 255
+    t.integer  "voter_id",     limit: 4
+    t.string   "voter_type",   limit: 255
+    t.boolean  "vote_flag"
+    t.string   "vote_scope",   limit: 255
+    t.integer  "vote_weight",  limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
+  add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
   create_table "weeklynews", force: :cascade do |t|
     t.string   "uid",        limit: 255,   null: false

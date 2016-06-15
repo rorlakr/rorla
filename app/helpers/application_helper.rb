@@ -55,7 +55,7 @@ module ApplicationHelper
   end
 
   def awesome_icon_label_button(shape, label, kind='default')
-    content_tag(:span, awesome_icon(shape, label), class: "label label-#{kind}")
+    content_tag(:span, awesome_icon_label(shape, label), class: "label label-#{kind}")
   end
 
   def awesome_icon_shared(shared)
