@@ -8,3 +8,10 @@
     </li>
   <% end %>
 </ol>
+
+<%= link_to "정의추가", '#', id: 'add_definition_link', class: 'btn btn-success btn-xs', style:'position:absolute;bottom:7px;right:5px;' %>
+<div id="glossary_definition_form" class="glossary_definitions" style="border:1px solid #ccc;margin:1em; padding:1em;border-radius:5px;display:none;">
+  <%= simple_form_for [@glossary, @glossary.glossary_definitions.build], remote: true do | f | %>
+    <%= render 'glossaries/form_definition', f: f %>
+  <% end %>
+</div>

@@ -1,4 +1,5 @@
 <div class="glossary_definition">
+  <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.input :definition %>
   <%= f.input :sentence, input_html: { rows: 5 } %>
   <div class='remove'>
