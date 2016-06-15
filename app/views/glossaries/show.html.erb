@@ -10,17 +10,8 @@
   </tr>
   <tr>
     <th class='text-right'>정의</th>
-    <td>
-      <ol style="padding-left: 20px;margin-bottom: 0px;">
-      <% @glossary.glossary_definitions.each do | definition | %>
-        <li>
-          <%= definition.definition %><br />
-          <% if definition.sentence.present? %>
-            <span class='text-muted'>Ex) <%= definition.sentence %></span>
-          <% end %>
-        </li>
-      <% end %>
-      </ol>
+    <td id="glossary_<%= @glossary.id %>">
+      <%= render "glossaries/glossary_definitions" %>
     </td>
   </tr>
   <tr>

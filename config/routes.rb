@@ -2,8 +2,8 @@ Rails.application.routes.default_url_options[:host] = 'rorlab.org'
 
 Rails.application.routes.draw do
 
-  resources :glossary_definitions
   resources :glossaries
+  post 'glossaries/:glossary_id/glossary_definitions/:id/like_toggle' => 'glossary_definitions#like_toggle', as: :like_glossary_definition
   root "welcome#index"
   match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
 
