@@ -44,11 +44,11 @@
   <%= link_to "Z", glossaries_path(search: "Z"), class: 'btn btn-default' %>
 </div>
 
-<div class="panel panel-default">
+<div class="panel panel-default table-responsive">
   <table id='glossaries_list' class='table table-bordered'>
     <thead>
       <tr>
-        <th class='col-md-4 text-center'><%= t("activerecord.attributes.glossary.term") %></th>
+        <th class='col-md-3 text-center'><%= t("activerecord.attributes.glossary.term") %></th>
         <th class='text-center'><%= t("activerecord.attributes.glossary_definition.definition") %></th>
         <th class='text-center'>업데이트</th>
         <th class='col-md-2 text-center'>데이터작업</th>
