@@ -1,5 +1,5 @@
 <h2 class="page_title">
-  Ruby & Rails 용어집
+  Ruby & Rails 용어집 <small><%= Glossary.count %></small>
 </h2>
 
 <%= form_tag glossaries_path, :method => 'get' do %>
@@ -58,7 +58,7 @@
     <tbody>
       <% @glossaries.each do |glossary| %>
         <tr>
-          <td><%= link_to glossary.term, glossary %></td>
+          <td><%= link_to glossary.term, glossary %> <small style="color: #ee4304;"><%= glossary.comments.size if glossary.comments.size > 0 %></small></td>
           <td>
             <ul class='definitions_hozital_list'>
             <% glossary.glossary_definitions.sort{|x, y| y.cached_votes_up <=> x.cached_votes_up}.each_with_index do | definition, index| %>
