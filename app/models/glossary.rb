@@ -15,7 +15,7 @@ class Glossary < ActiveRecord::Base
 
   validates :term, presence: true, uniqueness: true
 
-  default_scope { order(:term)}
+  default_scope { order(updated_at: :desc)}
 
   def self.search(search)
     if search
