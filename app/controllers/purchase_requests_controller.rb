@@ -46,7 +46,7 @@ class PurchaseRequestsController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render json: @purchase_requests }
-      format.csv { send_data @purchase_requests.to_csv, filename: "purchase_requests-#{Date.today}.csv" } if user_signed_in? && current_user.has_role?(:contributor)
+      format.csv { send_data @purchase_requests_all.to_csv, filename: "purchase_requests-#{Date.today}.csv" } if user_signed_in? && current_user.has_role?(:contributor)
     end
   end
 
