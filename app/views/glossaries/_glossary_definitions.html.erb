@@ -1,7 +1,17 @@
 <ol style="padding-left: 20px;margin-bottom: 0px;">
   <% @glossary.glossary_definitions.sort{|x, y| y.cached_votes_up <=> x.cached_votes_up}.each_with_index do | definition, index | %>
-    <li>
-      <span id="definition_<%= definition.id %>" class='text-<%= index == 0 ? "danger" : "muted" %>'><%= definition.definition %> <small><%= link_to awesome_icon_label('thumbs-o-up', definition.get_likes.size.to_s), like_glossary_definition_path(definition.glossary, definition), method: :post, remote: true %></small></span><br />
+    <li id="definition_li_<%= definition.id %>">
+      <span id="definition_<%= definition.id %>" class='text-<%= index == 0 ? "danger" : "muted" %>'><%= definition.definition %>
+          <small>
+            <%= link_to_if user_signed_in?, awesome_icon_label('thumbs-o-up', definition.get_likes.size.to_s), like_glossary_definition_path(definition.glossary, definition), method: :post, remote: true %>
+            <% if user_signed_in? %>
+              <%= link_to awesome_icon('edit'), edit_glossary_glossary_definition_path(definition.glossary, definition), id: "edit_definition_#{definition.id}_link", remote: true if current_user.can_update?(definition) %>
+              <%= link_to awesome_icon('trash-o'), [definition.glossary, definition], method: :delete, data:{confirm:'Are you sure?'}, remote: true if current_user.can_delete?(definition) %>
+              <%= definition.user&.email %>
+            <% end %>
+          </small>
+      </span>
+    <br />
       <% if definition.sentence.present? %>
         <span class='text-muted'>Ex) <%= definition.sentence %></span>
       <% end %>
@@ -9,9 +19,9 @@
   <% end %>
 </ol>
 
-<%= link_to "정의추가", '#', id: 'add_definition_link', class: 'btn btn-success btn-xs', style:'position:absolute;bottom:7px;right:5px;' %>
-<div id="glossary_definition_form" class="glossary_definitions" style="border:1px solid #ccc;margin:1em; padding:1em;border-radius:5px;display:none;">
-  <%= simple_form_for [@glossary, @glossary.glossary_definitions.build], remote: true do | f | %>
-    <%= render 'glossaries/form_definition', f: f %>
-  <% end %>
-</div>
+<% if user_signed_in? %>
+  <%= link_to "정의추가", new_glossary_glossary_definition_path(@glossary), id: 'add_definition_link', class: 'add_definition_link', remote: true %>
+  <div id="glossary_definition_form" class="show_glossary_definitions">
+    <%= render "glossaries/dynamic_definition_form" %>
+  </div>
+<% end %>

@@ -1,6 +1,15 @@
 class GlossaryDefinitionsController < ApplicationController
   before_action :set_glossary
-  before_action :set_glossary_definition, only: [:update, :destroy, :like_toggle]
+  before_action :set_glossary_definition, only: [:edit, :update, :destroy, :like_toggle]
+
+
+  def new
+    @definition = @glossary.glossary_definitions.build
+  end
+
+  def edit
+    # @glossary.glossary_definitions.last.destroy
+  end
 
   def create
     @definition = @glossary.glossary_definitions.build(glossary_definition_params)
