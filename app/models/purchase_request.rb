@@ -61,6 +61,18 @@ class PurchaseRequest < ActiveRecord::Base
     self.save
   end
 
+  def self.to_csv
+    attributes = self.attribute_names
+
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+
+      all.each do |request|
+        csv << attributes.map{ |attr| request.send(attr) }
+      end
+    end
+  end
+
   private
 
   def cal_total_price
