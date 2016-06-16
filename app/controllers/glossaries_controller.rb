@@ -18,10 +18,10 @@ class GlossariesController < ApplicationController
   # GET /glossaries/1.json
   def show
     set_meta_tags og: {
-      title: "RORLAB Glossary | #{@glossary.title}",
-      description: @glossary.glossary_defintions.map(&:definition).join(', '),
+      title: "RORLAB Glossary | #{@glossary.term}",
+      description: @glossary.glossary_definitions.map(&:definition).join(', '),
       url: glossaries_url(@glossary)
-    }, title: @glossary.title
+    }, title: @glossary.term
   end
 
   # GET /glossaries/new
