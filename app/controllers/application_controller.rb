@@ -34,8 +34,8 @@ class ApplicationController < ActionController::Base
     def set_metatags
       set_meta_tags :og => {
         :type     => 'website',
-        :description => 'Offline Ruby on Rails Lectures for Startups',
-        :site_name => 'RORLab'
+        :description => 'Offline Ruby & Rails Lectures for Startups',
+        :site_name => 'RORLAB'
       }
     end
 end

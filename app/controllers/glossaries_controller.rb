@@ -6,12 +6,22 @@ class GlossariesController < ApplicationController
   # GET /glossaries.json
   def index
     @glossaries = Glossary.search(params[:search]).paginate( page: params[:page], per_page: 10 )
+
+    set_meta_tags og: {
+      title: "RORLAB | Ruby & Rails Glossary",
+      description: "루비와 레일스 용어집. 함께 만들어가면 어렵지 않습니다. ",
+      url: glossaries_url
+    }, title: "RORLAB | Ruby & Rails Glossary #{Glossary.count}"
   end
 
   # GET /glossaries/1
   # GET /glossaries/1.json
   def show
-    
+    set_meta_tags og: {
+      title: "RORLAB Glossary | #{@glossary.title}",
+      description: @glossary.glossary_defintions.map(&:definition).join(', '),
+      url: glossaries_url(@glossary)
+    }, title: @glossary.title
   end
 
   # GET /glossaries/new
