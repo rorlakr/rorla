@@ -11,7 +11,7 @@ class Glossary < ActiveRecord::Base
   has_many :glossary_definitions, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
 
-  accepts_nested_attributes_for :glossary_definitions, allow_destroy: true, :reject_if => :all_blank
+  accepts_nested_attributes_for :glossary_definitions, allow_destroy: true, :reject_if => proc { |attributes| attributes['definition'].blank? }
 
   validates :term, presence: true, uniqueness: true
 

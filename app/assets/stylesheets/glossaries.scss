@@ -2,7 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.glossary_definition {
+.show_glossary_definitions {
+   border:1px solid #ccc;
+   margin:1em;
+   padding:1em;
+   border-radius:5px;
+   display:none;
+}
+
+.task_fields {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 1em;
@@ -17,4 +25,11 @@
     };
 
   }
+}
+
+.add_definition_link {
+  position:absolute;
+  bottom:7px;
+  right:5px;
+  @extend .btn, .btn-success;
 }

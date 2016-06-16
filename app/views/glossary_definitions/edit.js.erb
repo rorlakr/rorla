@@ -1,0 +1,5 @@
+<%# @glossary.glossary_definitions.build.attributes = @definition.attributes %>
+$('#add_definition_link').fadeToggle()
+// $('#edit_definition_<%= @definition.id %>_link').fadeOut()
+$("#glossary_definition_form").html("<%=j render('glossaries/dynamic_definition_form') %>");
+$("#glossary_definition_form").slideToggle('fast')

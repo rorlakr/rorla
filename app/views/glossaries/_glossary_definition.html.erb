@@ -1,8 +1,8 @@
-<div class="glossary_definition">
+<div class="task_fields">
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.input :definition %>
   <%= f.input :sentence, input_html: { rows: 5 } %>
   <div class='remove'>
-    <%= link_to_remove_association awesome_icon('trash-o'), f, wrapper_class: 'glossary_definition',  class: 'btn btn-danger' %>
+    <%= link_to_remove_association awesome_icon('trash-o'), f, wrapper_class: 'task_fields',  class: 'btn btn-danger' %>
   </div>
 </div>

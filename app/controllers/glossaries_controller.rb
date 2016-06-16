@@ -11,6 +11,7 @@ class GlossariesController < ApplicationController
   # GET /glossaries/1
   # GET /glossaries/1.json
   def show
+    
   end
 
   # GET /glossaries/new

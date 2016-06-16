@@ -1,0 +1,6 @@
+
+  <% @definition ||= @glossary.glossary_definitions.build %>
+  <%= simple_form_for @definition, url: (@definition.new_record? ? glossary_glossary_definitions_path(@glossary) : glossary_glossary_definition_path(@glossary, @definition)), remote: true do | f | %>
+  <%#= simple_form_for [@glossary, @glossary.glossary_definitions.build], remote: true do | f | %>
+    <%= render 'glossaries/form_definition', f: f %>
+  <% end %>
