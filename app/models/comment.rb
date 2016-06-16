@@ -18,7 +18,7 @@ class Comment < ActiveRecord::Base
   include Authority::Abilities
 
   belongs_to :writer, class_name: 'User'
-  belongs_to :commentable, polymorphic: true
+  belongs_to :commentable, polymorphic: true, touch: true
   validates :content, presence: true, :length => { :maximum => 255 }
 
 end
