@@ -42,6 +42,12 @@ class PurchaseRequestsController < ApplicationController
       description: @group_purchase.event_info,
       url: "/group_purchases/#{@group_purchase.id}/purchase_requests"
     }, title: @group_purchase.event_name
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @purchase_requests }
+      format.csv { send_data @purchase_requests.to_csv, filename: "purchase_requests-#{Date.today}.csv" }
+    end
   end
 
   # GET /purchase_requests/1
