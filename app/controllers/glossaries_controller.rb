@@ -21,7 +21,7 @@ class GlossariesController < ApplicationController
       title: "RORLAB Glossary | #{@glossary.term}",
       description: @glossary.glossary_definitions.map(&:definition).join(', '),
       url: glossaries_url(@glossary)
-    }, title: @glossary.term
+    }, title: "Ruby & Rails Glossary : '#{@glossary.term}' - #{@glossary.glossary_definitions.map(&:definition).join(', ')}"
   end
 
   # GET /glossaries/new
