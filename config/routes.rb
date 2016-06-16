@@ -2,13 +2,10 @@ Rails.application.routes.default_url_options[:host] = 'rorlab.org'
 
 Rails.application.routes.draw do
 
-  resources :glossaries
-  resources :glossaries do
-    resources :glossary_definitions
-  end
+
+  root "welcome#index"
 
   post 'glossaries/:glossary_id/glossary_definitions/:id/like_toggle' => 'glossary_definitions#like_toggle', as: :like_glossary_definition
-  root "welcome#index"
   match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
 
   get 'tags', to: 'tags#list'
@@ -44,7 +41,11 @@ Rails.application.routes.draw do
   concern :commentable do
     resources :comments
   end
-  resources :favlinks, :codebanks, :rblogs, :events, :purchase_requests, :group_purchases, :courses, :lectures, :schedules, :glossaries, concerns: :commentable
+  resources :favlinks, :codebanks, :rblogs, :events, :purchase_requests, :group_purchases, :courses, :lectures, :schedules, concerns: :commentable
+
+  resources :glossaries, concerns: :commentable do
+    resources :glossary_definitions
+  end
 
   resources :courses do
     resources :lectures
