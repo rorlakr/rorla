@@ -1,0 +1,16 @@
+<p><%= glossary.term %></p>
+<ol style="padding-left: 20px;margin-bottom: 0px;">
+  <% glossary.glossary_definitions.sort{|x, y| y.cached_votes_up <=> x.cached_votes_up}.each_with_index do | definition, index | %>
+    <li id="definition_li_<%= definition.id %>">
+      <span id="definition_<%= definition.id %>" class='text-<%= index == 0 ? "danger" : "muted" %>'><%= definition.definition %>
+          <small title="<%= likers(definition) %>">
+            <%= awesome_icon_label('thumbs-o-up', definition.get_likes.size.to_s) %>
+          </small>
+      </span>
+    <br />
+      <% if definition.sentence.present? %>
+        <span class='text-muted'>Ex) <%= definition.sentence %></span>
+      <% end %>
+    </li>
+  <% end %>
+</ol>

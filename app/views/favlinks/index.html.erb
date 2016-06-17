@@ -10,7 +10,7 @@
 </h2>
 
 <div id='favlinks'>
-  <%= render @favlinks %>
+  <%= render partial: 'favlink_for_index', as: :favlink, collection: @favlinks %>
 </div>
 
 <div id="last_page"></div>

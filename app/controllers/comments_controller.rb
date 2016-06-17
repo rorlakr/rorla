@@ -20,6 +20,7 @@ class CommentsController < ApplicationController
     authorize_action_for Comment
     @comment.writer_id = current_user.id
     if @comment.save
+      UserMailer.confirm_comment_sent(current_user, @comment).deliver_later
       flash[:notice] = ">> Comment successfully saved."
     else
       flash[:alert] = ">> Comment was not saved."

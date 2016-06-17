@@ -1,7 +1,7 @@
 <h2>Favlinks</h2>
 
 <div id='show_favlink'>
-<%= render @favlink %>
+  <%= render partial: 'favlink_for_index', locals: { favlink: @favlink } %>
 </div>
 
 <div class='form-actions'>
@@ -11,4 +11,3 @@
 
 <!-- 댓글 위젯 -->
 <%= render partial: "comments/comments_widget", locals: { resource: @favlink} %>
-
