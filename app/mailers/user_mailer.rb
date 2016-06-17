@@ -1,4 +1,9 @@
 class UserMailer < ActionMailer::Base
+
+  helper :application
+  helper :glossaries
+  helper :mailer
+
   default :from => "rorlakr@gmail.com"
 
   def password_reset(user)
@@ -30,5 +35,14 @@ class UserMailer < ActionMailer::Base
          :bcc => User.with_role(:contributor).pluck(:email),
          :subject => "[RORLAB] #{@applier.schedule.name} 참가 최종 승인")
   end
+
+  def confirm_comment_sent(user, comment)
+    @comment = comment
+    mail(:to      => user.email,
+         :cc      => comment.commentable.try(:user).try(:email) || comment.commentable.try(:writer).try(:email) || comment.commentable.try(:tutor).try(:email),
+         :bcc     => User.with_role(:contributor).pluck(:email),
+         :subject => "[RORLAB] 댓글이 등록되었습니다.")
+  end
+
 
 end

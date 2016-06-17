@@ -24,7 +24,7 @@
 
 
   <div class="rblog-actions <%= "form-actions" if action_name == 'show' %>">
-    <% if user_signed_in? %>
+    <% if defined?(user_signed_in?) && !user_singed_in? %>
       <%= link_to t('form_actions.edit'), edit_rblog_path(rblog), class: 'btn btn-default' if current_user.can_update? rblog %>
       <%= link_to t('form_actions.delete'), rblog, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' if current_user.can_delete? rblog %>
     <% end %>

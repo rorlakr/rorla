@@ -37,7 +37,7 @@ Rails.application.configure do
   #
   config.action_mailer.default_url_options = { host: 'localhost', port: '3000' }
   # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.delivery_method = :letter_opener
 
   # SMTP email 설정
   # config.action_mailer.smtp_settings = {
@@ -47,11 +47,11 @@ Rails.application.configure do
   #   :password  => ENV["RORLA_MANDRILL_APIKEY"]
   # }
 
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {
-    api_key: Rails.application.secrets.rorla_mailgun_api_key,
-    domain: 'rorlab.org'
-  }
+  # config.action_mailer.delivery_method = :mailgun
+  # config.action_mailer.mailgun_settings = {
+  #   api_key: Rails.application.secrets.rorla_mailgun_api_key,
+  #   domain: 'rorlab.org'
+  # }
 
   config.action_mailer.asset_host = "http://localhost:3000"
 
