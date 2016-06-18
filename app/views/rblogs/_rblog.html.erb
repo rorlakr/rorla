@@ -10,7 +10,9 @@
     <%= copyright_with_tooltip rblog, rblog.writer.email %>
     <%= comment_count(rblog.comments(true).size) %>
     <%= hit_count(rblog.impressionist_count) %>&nbsp;
+    <% if action_name == 'show' %>
     <div class="fb-share-button pull-right" data-href="<%= rblog_url(rblog) %>" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= rblog_url(rblog) %>"><%= awesome_icon_label('facebook-official fa-lg', "공유하기") %></a></div>
+      <% end  %>
   </div>
 
   <div class='content'>
@@ -26,7 +28,7 @@
 
 
   <div class="rblog-actions <%= "form-actions" if action_name == 'show' %>">
-    <% if defined?(user_signed_in?) && !user_singed_in? %>
+    <% if defined?(user_signed_in?) && user_singed_in? %>
       <%= link_to t('form_actions.edit'), edit_rblog_path(rblog), class: 'btn btn-default' if current_user.can_update? rblog %>
       <%= link_to t('form_actions.delete'), rblog, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' if current_user.can_delete? rblog %>
     <% end %>

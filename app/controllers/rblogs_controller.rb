@@ -39,7 +39,7 @@ class RblogsController < ApplicationController
   # GET /rblogs/1
   # GET /rblogs/1.json
   def show
-    @comment = @rblog.comments.build
+    # @comment = @rblog.comments.build
     impressionist(@rblog, "message...") if !user_signed_in? or (user_signed_in? and current_user != @rblog.writer)
 
     set_meta_tags og: {
@@ -47,6 +47,7 @@ class RblogsController < ApplicationController
       description: truncate(@rblog.content, :length   => 300, :separator => /\w/, :omission => "&hellip;"),
       url: rblog_url(@rblog)
     }, title: "rBlog : #{@rblog.title}"
+
 
   end
 
