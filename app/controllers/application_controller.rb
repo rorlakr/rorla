@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   def authority_forbidden(error)
     Authority.logger.warn(error.message)
-    redirect_to request.referrer.presence || root_path, :alert =>  "회원님은 이 작업에 대한 권한이 없습니다."
+    redirect_to request.referrer.presence || root_path, :alert => '회원님은 이 작업에 대한 권한이 없습니다.'
   end
 
   def default_url_options
@@ -33,9 +33,10 @@ class ApplicationController < ActionController::Base
 
     def set_metatags
       set_meta_tags :og => {
-        :type     => 'website',
-        :description => 'Offline Ruby & Rails Lectures for Startups',
-        :site_name => 'RORLAB'
+        :type         => 'website',
+        :description  => 'Ruby & Rails Lectures for Startups',
+        :image        =>  image_url('rorlab_logo_158x158.png'),
+        :site_name    => 'RORLAB'
       }
     end
 end
