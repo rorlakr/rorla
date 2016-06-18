@@ -32,6 +32,9 @@ class ApplicationController < ActionController::Base
     end
 
     def set_metatags
+      set_meta_tags fb: {
+          app_id: '140309816373762'
+      }
       set_meta_tags :og => {
         :type         => 'website',
         :description  => 'Ruby & Rails Lectures for Startups',
