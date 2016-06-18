@@ -10,8 +10,11 @@
     <div class="container">
       <h3>대상 글</h3>
       <div class='panel panel-default'>
+        <div class="panel-heading">
+          <strong><%=t @comment.commentable.class.model_name.human %></strong>
+        </div>
         <div class="panel-body">
-          <strong>[<%= @comment.commentable.class %>]</strong> <%= render @comment.commentable %>
+          <%= render @comment.commentable %>
         </div>
         <div class="panel-footer">
           <%= link_to "웹사이트로 이동하기", @comment.commentable %>
