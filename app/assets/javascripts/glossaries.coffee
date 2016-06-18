@@ -11,3 +11,4 @@ $(document).on 'click', '#cancel_definition_link', (event) ->
   event.preventDefault()
   $("#glossary_definition_form").slideToggle('fast')
   $("#add_definition_link").fadeIn()
+
