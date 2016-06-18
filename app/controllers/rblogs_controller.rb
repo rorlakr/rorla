@@ -43,10 +43,11 @@ class RblogsController < ApplicationController
     impressionist(@rblog, "message...") if !user_signed_in? or (user_signed_in? and current_user != @rblog.writer)
 
     set_meta_tags og: {
-      title: "RORLab | #{@rblog.title}",
+      title: "RORLab | rBlog -#{@rblog.title}",
       description: truncate(@rblog.content, :length   => 300, :separator => /\w/, :omission => "&hellip;"),
-      url: rblog_path(@rblog)
-    }, title: @rblog.title
+      url: rblog_url(@rblog)
+    }, title: "rBlog : #{@rblog.title}"
+
   end
 
   # GET /rblogs/new
