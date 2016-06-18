@@ -60,13 +60,13 @@
         <tr>
           <td><%= link_to glossary.term, glossary %> <small style="color: #ee4304;"><%= glossary.comments.size if glossary.comments.size > 0 %></small></td>
           <td>
-            <ul class='definitions_hozital_list'>
+            <ul class='definitions_horizontal_list'>
             <% glossary.glossary_definitions.sort{|x, y| y.cached_votes_up <=> x.cached_votes_up}.each_with_index do | definition, index| %>
               <li class="<%= index == 0 ? 'main' : 'sub'  %>"><%= "* " if index == 0 %><%= definition.definition %></li>
             <% end %>
             </ul>
           </td>
-          <td class='text-center'><%= time_ago_in_words glossary.updated_at %>전</td>
+          <td class='text-center text-nowrap'><%= time_ago_in_words glossary.updated_at %>전</td>
           <td class='text-center'>
             <%= link_to icon_button('eye-open', :success), glossary %>
             <% if user_signed_in? && current_user.can_update?(glossary) %>
