@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
       set_meta_tags :og => {
         :type         => 'website',
         :description  => 'Ruby & Rails Lectures for Startups',
-        :image        =>  image_url('rorlab_logo_158x158.png'),
+        :image        =>  ActionController::Base.helpers.image_url('rorlab_logo_158x158.png'),
         :site_name    => 'RORLAB'
       }
     end
