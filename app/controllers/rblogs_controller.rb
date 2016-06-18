@@ -47,8 +47,6 @@ class RblogsController < ApplicationController
       description: truncate(@rblog.content, :length   => 300, :separator => /\w/, :omission => "&hellip;"),
       url: rblog_url(@rblog)
     }, title: "rBlog : #{@rblog.title}"
-
-
   end
 
   # GET /rblogs/new
