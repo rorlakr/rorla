@@ -168,15 +168,13 @@ li.L1,li.L3,li.L5,li.L7,li.L9 { background-color: #f6f6f6 !important; }
     font-size: 1.3em;
   }
   ul.section {
-    // display: block;
-    // float: left;
     margin:1em 0 2em;
     padding: 1em 0 1em 3em;
     border-left: 1px solid #eaeaea;
     border-top: 1px solid #eaeaea;
-　　　list-style-type: none;
+　　list-style-type: none;
     li {
-    　　　display: inline;
+    　display: inline;
       line-height: 1.5em;
     }
   }
@@ -201,7 +199,9 @@ ul.token-input-list-facebook {
 
 a,
 .content,
-.favlink .linkurl { word-wrap: break-word; }
+.favlink .linkurl {
+  word-wrap: break-word;
+}
 
 
 .row.no-gutter {

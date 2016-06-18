@@ -16,6 +16,18 @@ $ ->
   loadFacebookSDK()
   bindFacebookEvents() unless window.fbEventsBound
 
+  ((d, s, id) ->
+    js = undefined
+    fjs = d.getElementsByTagName(s)[0]
+    if d.getElementById(id)
+      return
+    js = d.createElement(s)
+    js.id = id
+    js.src = '//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.6&appId=140309816373762'
+    fjs.parentNode.insertBefore js, fjs
+    return
+  ) document, 'script', 'facebook-jssdk'
+
 bindFacebookEvents = ->
   $(document)
   .on('page:fetch', saveFacebookRoot)
