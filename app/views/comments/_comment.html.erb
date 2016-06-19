@@ -4,6 +4,6 @@
   </div>
   <div class='authored_by text-muted'>
     <%= copyright_with_tooltip comment, comment.writer.email %>
-    <%= link_to icon('remove-circle'), [comment.commentable, comment], method: :delete, data: { confirm: "Are you sure?" }, remote: true if user_signed_in? && current_user.can_delete?(comment) %>
+    <%= link_to icon('remove-circle'), polymorphic_url([comment.commentable, comment]), method: :delete, data: { confirm: "Are you sure?" }, remote: true if user_signed_in? && current_user.can_delete?(comment) %>
   </div>
 </div>

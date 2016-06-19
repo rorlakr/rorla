@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
       UserMailer.confirm_comment_sent(current_user, @comment).deliver_later
       flash[:notice] = ">> Comment successfully saved."
     else
-      flash[:alert] = ">> 오류가 발생했습니다: " + @comment.errors.full_messages.join(', ')
+      flash[:alert] = ">> 오류가 발생했습니다: " + @comment.errors.get(:content).join(', ')
     end
   end
 

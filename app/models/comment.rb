@@ -19,6 +19,6 @@ class Comment < ActiveRecord::Base
 
   belongs_to :writer, class_name: 'User'
   belongs_to :commentable, polymorphic: true, touch: true
-  validates :content, presence: true, :length => { :maximum => 255 }
+  validates :content, presence: { message: '댓글 내용을 입력하신 후 제출 버튼을 클릭하세요.'}, :length => { :maximum => 255, too_long: "댓글의 글자수가 255자를 넘었습니다." }
 
 end
