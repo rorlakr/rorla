@@ -20,6 +20,12 @@
     </td>
   </tr>
   <tr>
+    <th class="text-right">태그리스트</th>
+    <td>
+      <%= icon_tags(@glossary.tag_list, 'glossaries')  %>
+    </td>
+  </tr>
+  <tr>
     <th class='text-right'><%= t('activerecord.attributes.glossary.word_class') %></th>
     <td><%= @glossary.word_class %></td>
   </tr>

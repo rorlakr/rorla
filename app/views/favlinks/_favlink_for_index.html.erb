@@ -5,7 +5,7 @@
     <div class='bundle'><%= icon_label('book', link_to(favlink.bundlelink.try(:title), bundlelink_favlinks_path(favlink.bundlelink))) %></div>
   <% end %>
   <div class='tags'>
-    <%= icon_tags(favlink.tag_list) %>
+    <%= icon_tags(favlink.tag_list, 'favlinks') %>
   </div>
   <div class='writer'>
     <%= icon_label('user', t('authored_html', who: account_with_tooltip(favlink.writer.email), ago: time_ago_in_words(favlink.created_at))) %>

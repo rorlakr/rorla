@@ -1,5 +1,13 @@
 <h2 class="page_title">
-  Ruby & Rails 용어집 <small><%= Glossary.count %></small>
+  Ruby & Rails 용어집
+  <small>
+    <%= @glossaries_total.size %>
+    <% if params[:tag].present? %>
+      <%= "tagged with <span class='badge badge-default'>#{params[:tag]}</span>".html_safe  %>
+      <%= link_to awesome_icon('times-circle'), url_for %>
+    <% end %>
+
+  </small>
 </h2>
 
 <%= form_tag glossaries_path, :method => 'get' do %>
