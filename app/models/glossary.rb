@@ -3,6 +3,10 @@ class Glossary < ActiveRecord::Base
   resourcify
   include Authority::Abilities
 
+  # 태그 토큰입
+  include TagTokenize
+  acts_as_taggable
+
   as_enum :word_class,
   # %i{noun verb adjective adverb pronoun preposition conjunction determiner exclamation}
   %i{명사 동사 형용사 부사 대명사 전치사 접속사 관형사 감탄사}

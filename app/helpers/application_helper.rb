@@ -78,10 +78,10 @@ module ApplicationHelper
     link_to(awesome_icon_label(name, label), url, html_options)
   end
 
-  def icon_tags(tags_array)
+  def icon_tags(tags_array, resource)
     label_tags = ""
     tags_array.each do |tag|
-      label_tags += "<a href='/favlinks?tag=#{CGI::escape(tag)}'><span class='badge badge-default'>#{tag}</span></a> "
+      label_tags += "<a href='/#{resource}?tag=#{CGI::escape(tag)}'><span class='badge badge-default'>#{tag}</span></a> "
     end
     icon('tag') + " " + label_tags.html_safe unless tags_array.blank?
   end

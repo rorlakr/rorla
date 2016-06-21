@@ -5,7 +5,9 @@ class GlossariesController < ApplicationController
   # GET /glossaries
   # GET /glossaries.json
   def index
-    @glossaries = Glossary.search(params[:search]).paginate( page: params[:page], per_page: 10 )
+    @glossaries_total = Glossary.search(params[:search])
+    @glossaries_total = @glossaries_total.tagged_with(params[:tag]) if params[:tag]
+    @glossaries = @glossaries_total.paginate( page: params[:page], per_page: 10 )
 
     set_meta_tags og: {
       title: "Ruby & Rails Glossary #{Glossary.count}",
@@ -87,6 +89,6 @@ class GlossariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def glossary_params
-      params.require(:glossary).permit(:user_id, :term, :word_class, :idiomatic, :memo, glossary_definitions_attributes: [:id, :user_id, :definition, :sentence, :_destroy])
+      params.require(:glossary).permit(:user_id, :term, :word_class, :idiomatic, :memo, :tag_tokens, glossary_definitions_attributes: [:id, :user_id, :definition, :sentence, :_destroy])
     end
 end
