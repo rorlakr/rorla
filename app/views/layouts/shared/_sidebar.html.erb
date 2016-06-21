@@ -68,10 +68,15 @@
 
   <%= render "layouts/shared/sidebar/my_bundles" %>
 
-  <%= render "layouts/shared/sidebar/tag_clouds" %>
+  <%= render "layouts/shared/sidebar/tag_clouds_for_favlink" %>
 
 <% end %>
 
+<% if controller_name == "glossaries" %>
+  <div style="margin-top:4.5em;">
+    <%= render "layouts/shared/sidebar/tag_clouds_for_glossary" %>
+  </div>
+<% end %>
 
 <div class="hidden-xs hidden-sm" style="margin-top:5em;">
 	<!--Twitter Timeline-->
