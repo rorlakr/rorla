@@ -33,11 +33,11 @@ class FavlinksController < ApplicationController
     @favlinks = @favlinks.paginate(page: params[:page], per_page: 10)
 
     set_meta_tags og: {
-      title: "rBlog",
-      description: "Official Blog of RORLAB",
+      title: "Fav링크",
+      description: "중요한 링크를 모아두는 즐겨찾기",
       image: root_url[0..-2] + ActionController::Base.helpers.asset_url('favlinks.png'),
-      url: rblogs_url
-    }, title: "rBlog"
+      url: favlinks_url
+    }, title: "Fav링크"
 
     if request.xhr?
       sleep(3)
@@ -52,11 +52,11 @@ class FavlinksController < ApplicationController
     impressionist(@favlink, "message...") if !user_signed_in? or (user_signed_in? and current_user != @favlink.writer)
 
     set_meta_tags og: {
-      title: "rBlog -#{@favlink.title}",
+      title: "Fav링크 : #{@favlink.title}",
       description: truncate(@favlink.description, :length   => 300, :separator => /\w/, :omission => "&hellip;"),
       image: root_url[0..-2] + ActionController::Base.helpers.asset_url('favlinks.png'),
-      url: rblog_url(@favlink)
-    }, title: "rBlog : #{@favlink.title}"
+      url: favlink_url(@favlink)
+    }, title: "Fav링크 : #{@favlink.title}"
   end
 
   # GET /favlinks/new
