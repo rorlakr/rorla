@@ -16,6 +16,7 @@
 #
 
 class FavlinksController < ApplicationController
+  include ActionView::Helpers::TextHelper  
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_bundlelink
   before_action :set_favlink, except: [:index, :new, :create]
