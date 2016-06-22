@@ -12,6 +12,7 @@ class GlossariesController < ApplicationController
     set_meta_tags og: {
       title: "Ruby & Rails Glossary #{Glossary.count}",
       description: "루비와 레일스 용어집. 함께 만들어가면 어렵지 않습니다. ",
+      image: root_url[0..-2] + ActionController::Base.helpers.asset_url('glossary.png'),
       url: glossaries_url
     }, title: "Ruby and Rails Glossary #{Glossary.count}"
   end
@@ -22,6 +23,7 @@ class GlossariesController < ApplicationController
     set_meta_tags og: {
       title: "Ruby & Rails Glossary - '#{@glossary.term}'",
       description: @glossary.glossary_definitions.map(&:definition).join(', '),
+      image: root_url[0..-2] + ActionController::Base.helpers.asset_url('glossary.png'),
       url: glossary_url(@glossary)
     }, title: "Ruby and Rails Glossary : '#{@glossary.term}' - #{@glossary.glossary_definitions.map(&:definition).join(', ')}"
   end
