@@ -45,6 +45,7 @@ class RblogsController < ApplicationController
     set_meta_tags og: {
       title: "rBlog -#{@rblog.title}",
       description: truncate(@rblog.content, :length   => 300, :separator => /\w/, :omission => "&hellip;"),
+      image: root_url[0..-2] + ActionController::Base.helpers.asset_url('rblog.png'),
       url: rblog_url(@rblog)
     }, title: "rBlog : #{@rblog.title}"
   end
