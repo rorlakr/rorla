@@ -31,6 +31,14 @@ class FavlinksController < ApplicationController
     @favlinks = @favlinks.tagged_with(params[:tag]) if params[:tag]
 
     @favlinks = @favlinks.paginate(page: params[:page], per_page: 10)
+
+    set_meta_tags og: {
+      title: "rBlog",
+      description: "Official Blog of RORLAB",
+      image: root_url[0..-2] + ActionController::Base.helpers.asset_url('favlinks.png'),
+      url: rblog_url(@favlink)
+    }, title: "rBlog"
+
     if request.xhr?
       sleep(3)
       render :partial => @favlinks
@@ -42,6 +50,13 @@ class FavlinksController < ApplicationController
   def show
     @comment = @favlink.comments.build
     impressionist(@favlink, "message...") if !user_signed_in? or (user_signed_in? and current_user != @favlink.writer)
+
+    set_meta_tags og: {
+      title: "rBlog -#{@favlink.title}",
+      description: truncate(@favlink.description, :length   => 300, :separator => /\w/, :omission => "&hellip;"),
+      image: root_url[0..-2] + ActionController::Base.helpers.asset_url('favlinks.png'),
+      url: rblog_url(@favlink)
+    }, title: "rBlog : #{@favlink.title}"
   end
 
   # GET /favlinks/new
