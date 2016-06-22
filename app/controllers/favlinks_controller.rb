@@ -36,7 +36,7 @@ class FavlinksController < ApplicationController
       title: "rBlog",
       description: "Official Blog of RORLAB",
       image: root_url[0..-2] + ActionController::Base.helpers.asset_url('favlinks.png'),
-      url: rblog_url(@favlink)
+      url: rblogs_url
     }, title: "rBlog"
 
     if request.xhr?
