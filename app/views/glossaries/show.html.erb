@@ -5,42 +5,54 @@
 </h2>
 
 <div class="panel panel-default table-responsive">
-  <table class='table table-bordered'>
-  <tr>
-    <th class='col-md-1 text-right'><%= t('activerecord.attributes.glossary.term') %></th>
-    <td class='text-danger'>
-      <%= @glossary.term %>
-      <div class="fb-share-button pull-right" data-href="<%= glossary_url(@glossary) %>" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= glossary_url(@glossary) %>"><%= awesome_icon_label('facebook-official fa-lg', "공유하기") %></a></div>
-    </td>
-  </tr>
-  <tr>
-    <th class='text-right'>정의</th>
-    <td id="glossary_<%= @glossary.id %>" style="position:relative;">
-      <%= render "glossaries/glossary_definitions" %>
-    </td>
-  </tr>
-  <tr>
-    <th class="text-right">태그리스트</th>
-    <td>
-      <%= icon_tags(@glossary.tag_list, 'glossaries')  %>
-    </td>
-  </tr>
-  <tr>
-    <th class='text-right'><%= t('activerecord.attributes.glossary.word_class') %></th>
-    <td><%= @glossary.word_class %></td>
-  </tr>
-  <tr>
-    <th class='text-right'><%= t('activerecord.attributes.glossary.idiomatic') %></th>
-    <td><%= @glossary.idiomatic %></td>
-  </tr>
-  <tr>
-    <th class='text-right'><%= t('activerecord.attributes.applier.memo') %></th>
-    <td><%= @glossary.memo %></td>
-  </tr>
-  <tr>
-    <th class='col-md-3 text-right'><%= t('activerecord.attributes.schedule.user') %></th>
-    <td><%= @glossary.user.email %></td>
-  </tr>
+  <table class='table table-bordered table-hover table-striped'>
+    <thead class='bg-info'>
+      <tr>
+        <th class='col-md-1 text-right vcenter'><%= t('activerecord.attributes.glossary.term') %></th>
+        <td class='text-danger vcenter'>
+          <strong style="font-size:2em;"><%= @glossary.term %></strong>
+          <div class="fb-share-button pull-right" data-href="<%= glossary_url(@glossary) %>" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= glossary_url(@glossary) %>"><%= awesome_icon_label('facebook-official fa-lg', "공유하기") %></a></div>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class='text-right'>정의</th>
+        <td id="glossary_<%= @glossary.id %>" style="position:relative;">
+          <%= render "glossaries/glossary_definitions" %>
+        </td>
+      </tr>
+      <tr>
+        <th class="text-right">태그리스트</th>
+        <td>
+          <%= icon_tags(@glossary.tag_list, 'glossaries')  %>
+        </td>
+      </tr>
+      <tr>
+        <th class='text-right'><%= t('activerecord.attributes.applier.memo') %></th>
+        <td><%= @glossary.memo %></td>
+      </tr>
+      <tr>
+        <th class='text-right'><%= t('activerecord.attributes.glossary.word_class') %></th>
+        <td><%= @glossary.word_class %></td>
+      </tr>
+      <tr>
+        <th class='text-right'><%= t('activerecord.attributes.glossary.idiomatic') %></th>
+        <td><%= @glossary.idiomatic %></td>
+      </tr>
+      <tr>
+        <th class='col-md-3 text-right'><%= t('activerecord.attributes.schedule.user') %></th>
+        <td><%= @glossary.user.email %></td>
+      </tr>
+      <tr>
+        <th class='col-md-3 text-right'><%= t('activerecord.attributes.post.created_at') %></th>
+        <td><%= "#{@glossary.created_at} ( #{time_ago_in_words(@glossary.created_at)}전 )" %></td>
+      </tr>
+      <tr>
+        <th class='col-md-3 text-right'><%= t('activerecord.attributes.post.updated_at') %></th>
+        <td><%= "#{@glossary.updated_at} ( #{time_ago_in_words(@glossary.updated_at)}전 )" %></td>
+      </tr>
+    </tbody>
   </table>
 </div>
 
@@ -51,4 +63,3 @@
 
 <!-- 댓글 위젯 -->
 <%= render partial: "comments/comments_widget", locals: { resource: @glossary} %>
-
