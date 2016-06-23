@@ -1,3 +1,5 @@
+# Slug URL 적용됨.
+
 class GlossariesController < ApplicationController
   before_action :authenticate_user!, except: [ :index, :show ]
   before_action :set_glossary, only: [:show, :edit, :update, :destroy]
