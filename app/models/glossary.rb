@@ -3,6 +3,9 @@ class Glossary < ActiveRecord::Base
   resourcify
   include Authority::Abilities
 
+  extend FriendlyId
+  friendly_id :term, use: [:slugged, :finders]
+
   # 태그 토큰입
   include TagTokenize
   acts_as_taggable

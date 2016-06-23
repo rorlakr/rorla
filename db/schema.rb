@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160615000900) do
+ActiveRecord::Schema.define(version: 20160623110802) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -168,6 +168,19 @@ ActiveRecord::Schema.define(version: 20160615000900) do
   add_index "favlinks", ["bundlelink_id"], name: "index_favlinks_on_bundlelink_id", using: :btree
   add_index "favlinks", ["writer_id"], name: "index_favlinks_on_writer_id", using: :btree
 
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",           limit: 255, null: false
+    t.integer  "sluggable_id",   limit: 4,   null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope",          limit: 255
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
   create_table "glossaries", force: :cascade do |t|
     t.integer  "user_id",       limit: 4
     t.string   "term",          limit: 255,   null: false
@@ -177,8 +190,10 @@ ActiveRecord::Schema.define(version: 20160615000900) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.integer  "word_class_cd", limit: 4
+    t.string   "slug",          limit: 255
   end
 
+  add_index "glossaries", ["slug"], name: "index_glossaries_on_slug", unique: true, using: :btree
   add_index "glossaries", ["user_id"], name: "index_glossaries_on_user_id", using: :btree
 
   create_table "glossary_definitions", force: :cascade do |t|
