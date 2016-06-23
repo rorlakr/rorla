@@ -1,4 +1,7 @@
 <%= f.input :definition %>
 <%= f.input :sentence %>
+<div class="form-group">
+  <div class='disabled text-right text-muted'><em>created by <%= f.object.user.try(:email) || current_user.email %></em></div>
+</div>
 <%= f.button :submit %>
 <%= link_to "취소", '#', id: 'cancel_definition_link', class: 'btn btn-info' %>
