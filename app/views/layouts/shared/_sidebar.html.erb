@@ -77,7 +77,7 @@
   </div>
   <div>
     <p style="margin-top:4.5em;border:1px solid red; border-radius:5px;padding:1em;">
-      <%= image_tag "glossary_no_border.png", width: '100%', class: 'media' %>
+      <%= link_to image_tag("glossary_no_border.png", width: '100%'), glossaries_path() %>
     </p>
     <%= render "layouts/shared/sidebar/tag_clouds_for_glossary" %>
   </div>
