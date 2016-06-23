@@ -1,4 +1,4 @@
-<ol style="padding-left: 20px;margin-bottom: 0px;">
+<ol style="padding-left: 20px;margin-bottom: 0px;line-height:2em;">
   <% @glossary.glossary_definitions.sort{|x, y| y.cached_votes_up <=> x.cached_votes_up}.each_with_index do | definition, index | %>
     <li id="definition_li_<%= definition.id %>">
       <span id="definition_<%= definition.id %>" class='text-<%= index == 0 ? "danger" : "muted" %>'><%= definition.definition %>
