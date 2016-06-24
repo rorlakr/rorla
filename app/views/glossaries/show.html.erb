@@ -17,15 +17,15 @@
     </thead>
     <tbody>
       <tr>
-        <th class='text-right'>정의</th>
+        <th class='text-right'><%= t('activerecord.attributes.glossary_definition.definition') %></th>
         <td id="glossary_<%= @glossary.id %>" style="position:relative;">
           <%= render "glossaries/glossary_definitions" %>
         </td>
       </tr>
       <tr>
-        <th class="text-right">태그리스트</th>
-        <td>
-          <%= icon_tags(@glossary.tag_list, 'glossaries')  %>
+        <th class="text-right"><%= t('activerecord.attributes.favlink.tag_list') %></th>
+        <td id="tag_list_of_glossary_<%= @glossary.id %>" style="position:relative;">
+          <%= render "glossaries/tag_list" %>
         </td>
       </tr>
       <tr>

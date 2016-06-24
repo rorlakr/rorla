@@ -1,0 +1,4 @@
+<%= simple_form_for :glossary, url: tag_glossary_path(@glossary), remote: true do | f | %>
+  <%= f.error_notification %>
+  <%= render 'glossaries/form_tag_list', f: f %>
+<% end %>

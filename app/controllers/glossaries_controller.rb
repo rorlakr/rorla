@@ -2,7 +2,7 @@
 
 class GlossariesController < ApplicationController
   before_action :authenticate_user!, except: [ :index, :show ]
-  before_action :set_glossary, only: [:show, :edit, :update, :destroy]
+  before_action :set_glossary, only: [:show, :edit, :update, :destroy, :tag]
 
   def default_url_options
     { page: params[:page] , search: params[:search] }
@@ -71,6 +71,20 @@ class GlossariesController < ApplicationController
       if @glossary.update(glossary_params)
         format.html { redirect_to @glossary, notice: 'Glossary was successfully updated.' }
         format.json { render :show, status: :ok, location: @glossary }
+      else
+        format.html { render :edit }
+        format.json { render json: @glossary.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def tag
+    authorize_action_for @glossary
+    respond_to do |format|
+      if @glossary.update(glossary_params)
+        format.html { redirect_to @glossary, notice: 'Glossary was successfully updated.' }
+        format.json { render :show, status: :ok, location: @glossary }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @glossary.errors, status: :unprocessable_entity }
