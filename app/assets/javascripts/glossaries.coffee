@@ -12,6 +12,16 @@ $(document).on 'click', '#cancel_definition_link', (event) ->
   $("#glossary_definition_form").slideToggle('fast')
   $("#add_definition_link").fadeIn()
 
+$(document).on 'click', '#cancel_tag_link', (event) ->
+  event.preventDefault()
+  $(".tag_list_form_of_glossary").slideToggle('fast')
+  $("#add_tag_link").fadeIn()
+
+$(document).on 'click', "#add_tag_link", (event) ->
+  event.preventDefault()
+  $(".tag_list_form_of_glossary").slideToggle('fast')
+  $(this).fadeOut()
+
 $ ->
   loadFacebookSDK()
   bindFacebookEvents() unless window.fbEventsBound

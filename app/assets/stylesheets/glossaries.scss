@@ -6,7 +6,7 @@
   td { vertical-align: middle;}
 }
 
-.show_glossary_definitions {
+.show_glossary_definitions, .tag_list_form_of_glossary {
    border:1px solid #ccc;
    margin:1em;
    padding:1em;
@@ -52,6 +52,15 @@
   @extend .btn, .btn-success, .btn-xs;
 }
 
+.add_tag_link {
+  position:absolute;
+  bottom:7px;
+  right:5px;
+  @extend .btn, .btn-info, .btn-xs;
+}
+
+
+
 ul.definitions_horizontal_list {
   padding-left: 0;
   margin-bottom:0;
@@ -86,4 +95,3 @@ ul.definitions_horizontal_list {
   padding: 1px 5px 3px 3px;
   font-size: 11px;
 }
-

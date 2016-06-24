@@ -12,4 +12,8 @@ class GlossaryAuthorizer < ApplicationAuthorizer
     resource.user == user || user.has_role?(:admin)
   end
 
+  def taggable_by?(user)
+    user.has_role?(:user) || user.has_role?(:admin)
+  end
+
 end

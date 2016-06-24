@@ -1,0 +1,7 @@
+<%= f.input :tag_tokens, placeholder: '여러 개의 태그는 쉼표(,)로 구분하세요.',
+            input_html: { data: { load: @glossary.tag_tokens }, class: 'form-control'} %>
+<div class="form-group">
+  <div class='disabled text-right text-muted'><em>added by <%= current_user.email %></em></div>
+</div>
+<%= f.button :submit %>
+<%= link_to "취소", '#', id: 'cancel_tag_link', class: 'btn btn-info' %>

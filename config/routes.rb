@@ -44,6 +44,9 @@ Rails.application.routes.draw do
   resources :favlinks, :codebanks, :rblogs, :events, :purchase_requests, :group_purchases, :courses, :lectures, :schedules, concerns: :commentable
 
   resources :glossaries, concerns: :commentable do
+    member do
+      post 'tag'
+    end
     resources :glossary_definitions
   end
 
