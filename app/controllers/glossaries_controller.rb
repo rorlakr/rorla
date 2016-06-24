@@ -5,7 +5,7 @@ class GlossariesController < ApplicationController
   before_action :set_glossary, only: [:show, :edit, :update, :destroy, :tag]
 
   def default_url_options
-    { page: params[:page] , search: params[:search] }
+    { page: params[:page], tag: params[:tag], search: params[:search] }
   end
 
   # GET /glossaries
