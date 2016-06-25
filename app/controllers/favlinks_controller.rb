@@ -34,14 +34,14 @@ class FavlinksController < ApplicationController
     @favlinks = @favlinks.paginate(page: params[:page], per_page: 10)
 
     set_meta_tags og: {
-      title: "Fav링크",
+      title: "Favlinks",
       description: "중요한 링크를 모아두는 즐겨찾기",
       image: root_url[0..-2] + ActionController::Base.helpers.asset_url('favlinks.png'),
       url: favlinks_url
-    }, title: "Fav링크"
+    }, title: "Favlinks"
 
     if request.xhr?
-      sleep(3)
+      sleep(1)
       render :partial => @favlinks
     end
   end
