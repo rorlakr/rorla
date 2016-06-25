@@ -16,7 +16,7 @@
 #
 
 class FavlinksController < ApplicationController
-  include ActionView::Helpers::TextHelper  
+  include ActionView::Helpers::TextHelper
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_bundlelink
   before_action :set_favlink, except: [:index, :new, :create]
@@ -76,12 +76,12 @@ class FavlinksController < ApplicationController
   def create
     authorize_action_for Favlink
     if @bundlelink
-      @favlink = @bundlelink.favlinks.new(favlink_params)
+      @favlink = @bundlelink.favlinks.build(favlink_params)
       @favlink.writer = current_user
     else
-      @favlink = current_user.favlinks.new(favlink_params)
+      @favlink = current_user.favlinks.build(favlink_params)
     end
-    @favlink.capture_loc = rand_str
+    @favlink.capture_loc = rand_str  if @favlink.with_screen_shot?
     respond_to do |format|
       if @favlink.save
         if @bundlelink
@@ -140,7 +140,7 @@ class FavlinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def favlink_params
-      params.require(:favlink).permit(:title, :description, :linkurl, :shared, :bundlelink_id, :with_screen_shot, :tag_list, :tag_tokens)
+      params.require(:favlink).permit(:title, :description, :linkurl, :shared, :bundlelink_id, :with_screen_shot, :tag_list, :tag_tokens, :capture_loc_manual, :remove_capture_loc_manual)
     end
 
     def rand_str(len=20)
