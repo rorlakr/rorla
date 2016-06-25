@@ -9,13 +9,34 @@
     <%= f.input :linkurl, placeholder: 'http://', input_html: { class: 'form-control' } %>
   </div>
 
-  <div class="checkbox">
-    <%= f.input :with_screen_shot, as: :boolean, inline_label: true, label: false %>
+  <div>
+    <%= f.label '화면캡쳐이미지' %>
   </div>
+
+  <div class='row no-gutter' style='padding-left:1em;border:1px solid #ccc;overflow:auto;border-radius: 5px;margin-bottom:1em;'>
+    <div class='col-xs-5 col-sm-3'>
+      <%= f.input :with_screen_shot, inline_label: true, label: "자동(링크주소)" %>
+    </div>
+    <div class='col-xs-7 col-sm-9'>
+      <div class='form-group checkbox'>
+        <%= f.file_field :capture_loc_manual %>
+      </div>
+    </div>
+  </div>
+
   <% if @favlink.persisted? && @favlink.with_screen_shot %>
-  <div class="form-group">
-  <%= link_to image_tag(@favlink.capture_image(action_name), width: (action_name == 'show' ? '100%' : ""), class: 'shadow_image'), @favlink.linkurl %>
-  </div>
+    <div class="form-group">
+    <%= link_to image_tag(@favlink.capture_image(action_name), width: (action_name == 'show' ? '100%' : ""), class: 'shadow_image'), @favlink.linkurl %>
+    </div>
+  <% else %>
+    <% if @favlink.capture_loc_manual_url.present? %>
+      <div class="form-group">
+        <div class='capture_loc'>
+          <%= image_tag @favlink.capture_loc_manual_url, class: 'shadow_image', width: '100%' %>
+          <%= f.input :remove_capture_loc_manual, label: '이미지삭제', as: :boolean %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
   <div class="form-group">
     <%= f.input :title, input_html: { class: 'form-control' } %>

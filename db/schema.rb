@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623110802) do
+ActiveRecord::Schema.define(version: 20160625084706) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -153,16 +153,17 @@ ActiveRecord::Schema.define(version: 20160623110802) do
   end
 
   create_table "favlinks", force: :cascade do |t|
-    t.string   "title",            limit: 255,                  null: false
-    t.text     "description",      limit: 65535
-    t.string   "linkurl",          limit: 255,                  null: false
-    t.integer  "writer_id",        limit: 4
-    t.boolean  "shared",                         default: true
-    t.integer  "bundlelink_id",    limit: 4
+    t.string   "title",              limit: 255,                  null: false
+    t.text     "description",        limit: 65535
+    t.string   "linkurl",            limit: 255,                  null: false
+    t.integer  "writer_id",          limit: 4
+    t.boolean  "shared",                           default: true
+    t.integer  "bundlelink_id",      limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "capture_loc",      limit: 255
-    t.boolean  "with_screen_shot",               default: true
+    t.string   "capture_loc",        limit: 255
+    t.boolean  "with_screen_shot",                 default: true
+    t.string   "capture_loc_manual", limit: 255
   end
 
   add_index "favlinks", ["bundlelink_id"], name: "index_favlinks_on_bundlelink_id", using: :btree

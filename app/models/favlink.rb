@@ -19,6 +19,8 @@ class Favlink < ActiveRecord::Base
 
   include TagTokenize
 
+  mount_uploader :capture_loc_manual, CaptureUploader
+
   resourcify
   include Authority::Abilities
   # include AttrSearchable
@@ -27,7 +29,7 @@ class Favlink < ActiveRecord::Base
   search_scope :search do
     attributes :title, :description
     attributes :bundlelink => "bundlelink.title"
-  end  
+  end
 
   acts_as_taggable
 
@@ -63,8 +65,8 @@ class Favlink < ActiveRecord::Base
   # end
 
   def capture_image(action)
-    kind = action == 'show' ? "" : "thumb_"
-    "/uploads/capture_loc/#{id}/#{kind}#{capture_loc}"
+    kind = (action == 'show' ? "" : "thumb_")
+    "/uploads/favlink/capture_loc/#{id}/#{kind}#{capture_loc}"
   end
 
   private
@@ -76,12 +78,12 @@ class Favlink < ActiveRecord::Base
   def save_capture_image
     tmp_capture_loc = Webshots::Processor.url_to_png linkurl, { 'height' => 768, 'width' => 1024}
     # capture_loc = tmp_capture_loc.split('/').last
-    FileUtils.mkdir_p("public/uploads/capture_loc/#{id}") unless Dir.exists?("public/uploads/capture_loc/#{id}")
-    FileUtils.rm_rf(Dir.glob("public/uploads/capture_loc/#{id}/*"))
+    FileUtils.mkdir_p("public/uploads/favlink/capture_loc/#{id}") unless Dir.exists?("public/uploads/capture_loc/#{id}")
+    FileUtils.rm_rf(Dir.glob("public/uploads/favlink/capture_loc/#{id}/*"))
     image = MiniMagick::Image.open(tmp_capture_loc)
     image.resize "200x150"
-    image.write  "public/uploads/capture_loc/#{id}/thumb_#{capture_loc}"
-    FileUtils.mv(tmp_capture_loc, "public/uploads/capture_loc/#{id}/#{capture_loc}")
+    image.write  "public/uploads/favlink/capture_loc/#{id}/thumb_#{capture_loc}"
+    FileUtils.mv(tmp_capture_loc, "public/uploads/favlink/capture_loc/#{id}/#{capture_loc}")
   end
 
   def set_plaza_favlink
@@ -96,4 +98,5 @@ class Favlink < ActiveRecord::Base
       self.plaza.save
     end
   end
+
 end

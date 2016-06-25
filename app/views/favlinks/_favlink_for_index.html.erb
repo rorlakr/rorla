@@ -19,25 +19,32 @@
   </div>
   <% if action_name == 'show' %>
     <div class='capture_loc'>
-    <%= link_to image_tag(favlink.capture_image(action_name), width: (action_name == 'show' ? '100%' : "")), favlink.linkurl, class: "thumbnail" if favlink.with_screen_shot %>
+    <% if favlink.with_screen_shot? %>
+      <%= link_to image_tag(favlink.capture_image(action_name), width: '100%'), favlink.linkurl, class: "thumbnail"  %>
+    <% else %>
+      <div class="form-group">
+        <div class='capture_loc'>
+          <%= image_tag favlink.capture_loc_manual_url, class: 'shadow_image', width: '100%' if favlink.capture_loc_manual_url.present? %>
+        </div>
+      </div>
+    <% end %>
     </div>
     <div class='description' style='margin-top: 1em;'><%= simple_format favlink.description %></div>
   <% else %>
+    <!-- index 액션 뷰-->
     <div class='row'>
-      <% if favlink.with_screen_shot %>
-        <div class='col-md-3'>
-          <div class='capture_loc'>
-          <%= link_to image_tag(favlink.capture_image(action_name), width: (action_name == 'show' ? '100%' : "")), favlink_path(favlink), class: "thumbnail" %>
-          </div>
+      <div class='col-md-3'>
+        <div class='capture_loc'>
+          <% if favlink.with_screen_shot? %>
+            <%= link_to image_tag(favlink.capture_image(action_name), width: (action_name == 'show' ? '100%' : "")), favlink_path(favlink), class: "thumbnail" %>
+          <% else %>
+            <%= link_to image_tag(favlink.capture_loc_manual_url(:thumb)), favlink_path(favlink), class: "thumbnail"  %>
+          <% end %>
         </div>
-        <div class='col-md-9'>
-          <div class='description'><%= truncate favlink.description, length: 100 %></div>
-        </div>
-      <% else %>
-        <div class='col-md-12'>
-          <div class='description'><%= truncate favlink.description, length: 100 %></div>
-        </div>
-      <% end %>
+      </div>
+      <div class='col-md-9'>
+        <div class='description'><%= truncate favlink.description, length: 100 %></div>
+      </div>
     </div>
   <% end %>
 </div>
