@@ -31,7 +31,7 @@ class RblogsController < ApplicationController
     end
     @rblogs = @rblogs.paginate(page: params[:page], per_page: 10)
     if request.xhr?
-      sleep(3)
+      sleep(1)
       render :partial => @rblogs
     end
   end

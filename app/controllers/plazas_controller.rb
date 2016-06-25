@@ -20,7 +20,7 @@ class PlazasController < ApplicationController
     @plazas = Plaza.all
     @plazas = @plazas.paginate(page: params[:page], per_page: 10)
     if request.xhr?
-      sleep(3)
+      sleep(1)
       render @plazas
     end
   end
