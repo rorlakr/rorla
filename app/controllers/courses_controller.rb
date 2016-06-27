@@ -23,8 +23,8 @@ class CoursesController < ApplicationController
     @my_courses = Course.my_courses(current_user)
 
     set_meta_tags og: {
-      title: "루비앤레일스강좌",
-      description: "RORLAB에서 제공하는 무료 온라일 강좌",
+      title: "루비앤레일스 온라인강좌",
+      description: "RORLAB에서 제공하는 온라인 무료 강좌",
       image: root_url[0..-2] + ActionController::Base.helpers.asset_url('lecture.png'),
       url: courses_url
     }, title: "루비앤레일스강좌"
