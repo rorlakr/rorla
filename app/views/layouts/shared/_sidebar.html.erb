@@ -22,7 +22,7 @@
 <% if controller_name == 'rblogs' %>
   <div>
     <p style="margin-top:4.5em;margin-bottom:2em;border:1px solid red; border-radius:5px;padding:1em;">
-      <%= link_to image_tag("rblog_no_border.png", width: '100%'), glossaries_path(page:nil, search:nil) %>
+      <%= link_to image_tag("rblog_no_border.png", width: '100%'), rblogs_path(page:nil, search:nil) %>
       <%= link_to icon_label('plus', '새글작성'), new_rblog_path, class: "btn btn-danger #{'disabled' if action_name == 'new'}", style:'margin-top:1em;display:block;'%>
     </p>
     <%= render "layouts/shared/sidebar/my_rblogs" %>
@@ -32,7 +32,7 @@
 <% if controller_name == "favlinks" %>
   <div>
     <p style="margin-top:4.5em;margin-bottom:2em;border:1px solid red; border-radius:5px;padding:1em;">
-      <%= link_to image_tag("favlinks_no_border.png", width: '100%'), glossaries_path(page:nil, search:nil) %>
+      <%= link_to image_tag("favlinks_no_border.png", width: '100%'), favlinks_path(page:nil, search:nil) %>
       <%= link_to icon_label('plus', '링크추가'), \
           ( params[:bundlelink_id] ? new_bundlelink_favlink_path(bundlelink_id: params[:bundlelink_id]) \
           : new_favlink_path ), \
