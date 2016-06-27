@@ -41,7 +41,7 @@ class LecturesController < ApplicationController
       title: @lecture.title,
       description: @lecture.content,
       image: root_url[0..-2] + ActionController::Base.helpers.asset_url('lecture.png'),
-      url: course_lectures_url(@lecture.course, @lecture)
+      url: course_lecture_url(@course, @lecture)
     }, title: @lecture.title
 
   end
