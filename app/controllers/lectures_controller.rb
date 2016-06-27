@@ -22,6 +22,13 @@ class LecturesController < ApplicationController
   def index
     @lectures = @course.lectures.published
     @my_lectures = @course.lectures.my_lectures(current_user)
+
+    set_meta_tags og: {
+      title: @course.title,
+      description: @course.summary,
+      image: root_url[0..-2] + ActionController::Base.helpers.asset_url('lecture.png'),
+      url: course_lectures_url(@course)
+    }, title: @course.title
   end
 
   def new
@@ -29,6 +36,14 @@ class LecturesController < ApplicationController
   end
 
   def show
+
+    set_meta_tags og: {
+      title: @lecture.title,
+      description: @lecture.content,
+      image: root_url[0..-2] + ActionController::Base.helpers.asset_url('lecture.png'),
+      url: course_lectures_url(@lecture.course, @lecture)
+    }, title: @lecture.title
+
   end
 
   def edit
