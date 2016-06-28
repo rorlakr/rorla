@@ -31,6 +31,13 @@ class CodebanksController < ApplicationController
     end
     @codebanks = @codebanks.paginate(page: params[:page], per_page: 10)
 
+    set_meta_tags og: {
+      title: "코드뱅크",
+      description: "함께 공유하면 좋은 코드조각들",
+      image: root_url[0..-2] + ActionController::Base.helpers.asset_url('codebank.png'),
+      url: codebanks_url
+    }, title: "코드뱅크"
+
   end
 
   # GET /codebanks/1
@@ -38,6 +45,14 @@ class CodebanksController < ApplicationController
   def show
     @comment = @codebank.comments.build
     impressionist(@codebank, "message...") if !user_signed_in? or (user_signed_in? and current_user != @codebank.writer)
+
+    set_meta_tags og: {
+      title: @codebank.title,
+      description: @codebank.summary,
+      image: root_url[0..-2] + ActionController::Base.helpers.asset_url('codbank.png'),
+      url: codebank_url(@codebank)
+    }, title: @codebank.title
+
   end
 
   # GET /codebanks/new
