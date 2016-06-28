@@ -20,6 +20,14 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.all
+
+    set_meta_tags og: {
+      title: "Q&A",
+      description: "루비와 레일스 관련 질문과 답변",
+      image: root_url[0..-2] + ActionController::Base.helpers.asset_url('q_&_a.png'),
+      url: questions_url
+    }, title: "Q&A"
+
   end
 
   # GET /questions/1
@@ -28,6 +36,14 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @answer = Answer.new
     impressionist(@question, "message...") if !user_signed_in? or (user_signed_in? and current_user != @question.user)
+
+    set_meta_tags og: {
+      title: @question.title,
+      description: @question.content,
+      image: root_url[0..-2] + ActionController::Base.helpers.asset_url('q_&_a.png'),
+      url: question_path(@question)
+    }, title: @question.title
+
   end
 
   # GET /questions/new
