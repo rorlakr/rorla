@@ -1,5 +1,9 @@
 <h2><%= @question.title %></h2>
-<div class="question-content"><%= simple_format @question.content %></div>
+<div class="question-content">
+  <div class='markdown-preview'>
+    <%= @question.content %>
+  </div>
+</div>
 <div class="question-questioner">
   by <%= account_with_tooltip @question.questioner %>
   <%= hit_count @question.impressionist_count %>
