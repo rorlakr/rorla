@@ -12,7 +12,7 @@
 <% if controller_name == 'codebanks' %>
 <div>
   <p style="margin-top:4.5em;margin-bottom:2em;border:1px solid red; border-radius:5px;padding:1em;">
-    <%= link_to image_tag("codebank_no_border.png", width: '100%'), rblogs_path(page:nil, search:nil) %>
+    <%= link_to image_tag("codebank_no_border.png", width: '100%'), codebanks_path(page:nil, search:nil) %>
     <%= link_to icon_label('plus', '코드작성'), new_codebank_path, class: "btn btn-danger #{'disabled' if action_name == 'new'}", style:'margin-top:1em;display:block;'%>
   </p>
 
