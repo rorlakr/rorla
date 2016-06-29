@@ -1,4 +1,4 @@
-<h2><%= @question.title %></h2>
+<h2><%= image_tag 'q.png', width: '50px' %> <%= @question.title %></h2>
 <div class="question-content">
   <div class='markdown-preview'>
     <%= @question.content %>
@@ -20,7 +20,7 @@
 
 <hr />
 
-<h4>답변 목록</h4>
+<h4><%= image_tag 'a.png', width: '50px' %> 답변 목록</h4>
 
 <table class="table">
   <tbody id="q_<%=@question.id %>_answers" >
