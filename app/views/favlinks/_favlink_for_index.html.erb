@@ -16,7 +16,9 @@
     <%= link_to icon_button('eye-open'), params[:bundlelink_id] ? [favlink.bundlelink, favlink] : favlink unless action_name == 'show' %>
     <%= link_to icon_button('edit'), params[:bundlelink_id] ? edit_bundlelink_favlink_path(favlink.bundlelink, favlink) :edit_favlink_path(favlink) %>
     <%= link_to icon_button('trash'), params[:bundlelink_id] ? [favlink.bundlelink, favlink] : favlink, method: :delete, data: { confirm: 'Are you sure?' } %>&nbsp;
-    <div class="fb-share-button pull-right" data-href="<%= favlink_url(favlink) %>" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= favlink_url(favlink) %>"><%= awesome_icon_label('facebook-official fa-lg', "공유하기") %></a></div>
+    <% if action_name == 'show' %>
+      <div class="fb-share-button pull-right" data-href="<%= favlink_url(favlink) %>" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= favlink_url(favlink) %>"><%= awesome_icon_label('facebook-official fa-lg', "공유하기") %></a></div>
+    <% end %>
   </div>
   <% if action_name == 'show' %>
     <div class='capture_loc'>
