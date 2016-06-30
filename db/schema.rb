@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160625084706) do
+ActiveRecord::Schema.define(version: 20160630124622) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -330,6 +330,18 @@ ActiveRecord::Schema.define(version: 20160625084706) do
     t.string  "category", limit: 255, default: "default"
   end
 
+  create_table "newsletters", force: :cascade do |t|
+    t.string   "title",        limit: 255,   null: false
+    t.text     "greeting",     limit: 65535
+    t.datetime "published_at"
+    t.integer  "editor_id",    limit: 4
+    t.string   "poster",       limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "newsletters", ["editor_id"], name: "index_newsletters_on_editor_id", using: :btree
+
   create_table "plazas", force: :cascade do |t|
     t.integer  "postitable_id",   limit: 4
     t.string   "postitable_type", limit: 255
@@ -631,6 +643,7 @@ ActiveRecord::Schema.define(version: 20160625084706) do
   add_foreign_key "items", "purchase_requests"
   add_foreign_key "lectures", "courses"
   add_foreign_key "lectures", "users"
+  add_foreign_key "newsletters", "users", column: "editor_id"
   add_foreign_key "purchase_requests", "group_purchases"
   add_foreign_key "purchase_requests", "users"
   add_foreign_key "purchase_requests", "users", column: "deleted_by_id"
