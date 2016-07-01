@@ -281,6 +281,12 @@ ko:
       glossary_definition:
         definition: 정의
         sentence: 예문
+      newsletter:
+        title: 제목
+        greeting: 인사말
+        published_at: 발송일자
+        editor: 편집인
+        poster: 포스터
 
   form_actions:
     edit: 수정

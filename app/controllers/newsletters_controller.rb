@@ -25,6 +25,7 @@ class NewslettersController < ApplicationController
   # POST /newsletters.json
   def create
     @newsletter = Newsletter.new(newsletter_params)
+    @newsletter.editor = current_user
 
     respond_to do |format|
       if @newsletter.save

@@ -1,29 +1,37 @@
-<p id="notice"><%= notice %></p>
+<h2 class='page_title'>뉴스레터 <small><%= action_name %></small></h2>
 
-<p>
-  <strong>Title:</strong>
-  <%= @newsletter.title %>
-</p>
+<table class="table">
 
-<p>
-  <strong>Greeting:</strong>
-  <%= @newsletter.greeting %>
-</p>
+  <tr>
+    <th class='col-xs-2 text-right'><%= t("activerecord.attributes.newsletter.title") %></th>
+    <td class='text-danger'><strong><%= @newsletter.title %></strong></td>
+  </tr>
 
-<p>
-  <strong>Published at:</strong>
-  <%= @newsletter.published_at %>
-</p>
+  <tr>
+    <th class='text-right'><%= t("activerecord.attributes.newsletter.greeting") %></th>
+    <td><%= @newsletter.greeting %></td>
+  </tr>
 
-<p>
-  <strong>Editor:</strong>
-  <%= @newsletter.editor %>
-</p>
+  <tr>
+    <th class='text-right'><%= t("activerecord.attributes.newsletter.published_at") %></th>
+    <td><%= @newsletter.published_at %></td>
+  </tr>
 
-<p>
-  <strong>Poster:</strong>
-  <%= @newsletter.poster %>
-</p>
+  <tr>
+    <th class='text-right'><%= t("activerecord.attributes.newsletter.editor") %></th>
+    <td><%= @newsletter.editor.email %></td>
+  </tr>
 
-<%= link_to 'Edit', edit_newsletter_path(@newsletter) %> |
-<%= link_to 'Back', newsletters_path %>
+  <tr>
+    <th class='text-right'><%= t("activerecord.attributes.newsletter.poster") %></th>
+    <td>
+      <p><em class='text-muted'><%= @newsletter.poster %></em></p>
+      <%= image_tag @newsletter.poster_url, width: '100%', style: 'border:1px solid #ccc;margintop:2em;border-radius:5px;' %>
+    </td>
+  </tr>
+</table>
+
+<div class="form-actions">
+  <%= link_to t('form_actions.edit'), edit_newsletter_path(@newsletter), class: 'btn btn-default' %>
+  <%= link_to t('form_actions.back'), newsletters_path, class: 'btn btn-default' %>
+</div>
