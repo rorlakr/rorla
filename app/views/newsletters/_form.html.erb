@@ -9,7 +9,7 @@
     <% if @newsletter.poster_url.present? %>
       <div>
         <%= image_tag @newsletter.poster_url, width: '100%', style: 'border:1px solid #ccc;border-radius:5px;' %>
-        <p class='text-right'><em class='text-muted'><%= @newsletter.poster %></em></p>
+        <%= f.input :remove_poster, label: raw("포스터이미지 삭제 <small><em>(#{@newsletter.poster})</em></small>"), as: :boolean %>
       </div>
     <% end %>
   </div>

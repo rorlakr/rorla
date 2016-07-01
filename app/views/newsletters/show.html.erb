@@ -9,8 +9,57 @@
 
   <tr>
     <th class='text-right'><%= t("activerecord.attributes.newsletter.greeting") %></th>
-    <td><%= @newsletter.greeting %></td>
+    <td><%= simple_format @newsletter.greeting %></td>
   </tr>
+
+  <!-- 행사안내  -->
+  <tr>
+    <th class="text-right">행사안내</th>
+    <td>
+      <%= link_to "추가", '#', class: 'btn btn-default btn-xs pull-right' %>
+    </td>
+  </tr>
+
+  <!-- 읽을꺼리 -->
+  <tr>
+    <th class="text-right">읽을꺼리</th>
+    <td>
+      <%= link_to "추가", '#', class: 'btn btn-default btn-xs pull-right' %>
+    </td>
+  </tr>
+
+  <!-- 볼꺼리 -->
+  <tr>
+    <th class="text-right">볼꺼리</th>
+    <td>
+      <%= link_to "추가", '#', class: 'btn btn-default btn-xs pull-right' %>
+    </td>
+  </tr>
+
+  <!-- 신간소개 -->
+  <tr>
+    <th class="text-right">신간소개</th>
+    <td>
+      <%= link_to "추가", '#', class: 'btn btn-default btn-xs pull-right' %>
+    </td>
+  </tr>
+
+  <!-- 채용공고 -->
+  <tr>
+    <th class="text-right">채용공고</th>
+    <td>
+      <%= link_to "추가", '#', class: 'btn btn-default btn-xs pull-right' %>
+    </td>
+  </tr>
+
+  <!-- 업체홍보 -->
+  <tr>
+    <th class="text-right">업체홍보</th>
+    <td>
+      <%= link_to "추가", '#', class: 'btn btn-default btn-xs pull-right' %>
+    </td>
+  </tr>
+
 
   <tr>
     <th class='text-right'><%= t("activerecord.attributes.newsletter.published_at") %></th>
@@ -25,8 +74,8 @@
   <tr>
     <th class='text-right'><%= t("activerecord.attributes.newsletter.poster") %></th>
     <td>
-      <p><em class='text-muted'><%= @newsletter.poster %></em></p>
-      <%= image_tag @newsletter.poster_url, width: '100%', style: 'border:1px solid #ccc;margintop:2em;border-radius:5px;' %>
+      <p><em class='text-muted'><%= @newsletter.poster.blank? ? "등록한 포스터 이미지가 없습니다." : @newsletter.poster %></em></p>
+      <%= image_tag @newsletter.poster_url, width: '100%', style: 'border:1px solid #ccc;margintop:2em;border-radius:5px;' if @newsletter.poster_url.present? %>
     </td>
   </tr>
 </table>

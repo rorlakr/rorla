@@ -70,6 +70,6 @@ class NewslettersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def newsletter_params
-      params.require(:newsletter).permit(:title, :greeting, :published_at, :editor_id, :poster)
+      params.require(:newsletter).permit(:title, :greeting, :published_at, :editor_id, :poster, :remove_poster )
     end
 end
