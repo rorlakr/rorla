@@ -1,35 +1,35 @@
-<p id="notice"><%= notice %></p>
+<h2 class='page_title'>뉴스레터 <small><%= action_name %></small></h2>
 
-<h1>Listing Newsletters</h1>
+<div class="panel panel-default table-responsive">
+  <table class='table table-bordered'>
+      <thead>
+          <tr>
+              <th class='col-xs-6 text-center'><%= t("activerecord.attributes.newsletter.title") %></th>
+              <th class='text-center'><%= t("activerecord.attributes.newsletter.published_at") %></th>
+              <th class='text-center'>데이터작업</th>
+          </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Greeting</th>
-      <th>Published at</th>
-      <th>Editor</th>
-      <th>Poster</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <tbody>
+          <% @newsletters.each do |newsletter| %>
+          <tr>
+              <td><%= link_to newsletter.title, newsletter %></td>
+              <td class='text-center'><%= newsletter.published_at %></td>
+              <td class='text-center'>
+                <%= link_to icon_button('eye-open', :success), newsletter %>
+                <% if user_signed_in? && current_user.can_update?(newsletter) %>
+                  <%= link_to icon_button('edit', :info), edit_glossary_path(newsletter) %>
+                <% end %>
+                <% if user_signed_in? && current_user.can_delete?(newsletter) %>
+                  <%= link_to icon_button('trash', :danger), newsletter, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
+              </td>
+          </tr>
+          <% end %>
+      </tbody>
+  </table>
+</div>
 
-  <tbody>
-    <% @newsletters.each do |newsletter| %>
-      <tr>
-        <td><%= newsletter.title %></td>
-        <td><%= newsletter.greeting %></td>
-        <td><%= newsletter.published_at %></td>
-        <td><%= newsletter.editor %></td>
-        <td><%= newsletter.poster %></td>
-        <td><%= link_to 'Show', newsletter %></td>
-        <td><%= link_to 'Edit', edit_newsletter_path(newsletter) %></td>
-        <td><%= link_to 'Destroy', newsletter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Newsletter', new_newsletter_path %>
+<div class="form-actions">
+  <%= link_to awesome_icon_label('plus', '뉴스레터'), new_newsletter_path, class: 'btn btn-default' %>
+</div>
