@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630124622) do
+ActiveRecord::Schema.define(version: 20160701114809) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -330,6 +330,16 @@ ActiveRecord::Schema.define(version: 20160630124622) do
     t.string  "category", limit: 255, default: "default"
   end
 
+  create_table "news_sections", force: :cascade do |t|
+    t.string   "title",       limit: 255,   null: false
+    t.text     "description", limit: 65535
+    t.integer  "user_id",     limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "news_sections", ["user_id"], name: "index_news_sections_on_user_id", using: :btree
+
   create_table "newsletters", force: :cascade do |t|
     t.string   "title",        limit: 255,   null: false
     t.text     "greeting",     limit: 65535
@@ -643,6 +653,7 @@ ActiveRecord::Schema.define(version: 20160630124622) do
   add_foreign_key "items", "purchase_requests"
   add_foreign_key "lectures", "courses"
   add_foreign_key "lectures", "users"
+  add_foreign_key "news_sections", "users"
   add_foreign_key "newsletters", "users", column: "editor_id"
   add_foreign_key "purchase_requests", "group_purchases"
   add_foreign_key "purchase_requests", "users"
