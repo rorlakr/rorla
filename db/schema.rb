@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160701120728) do
+ActiveRecord::Schema.define(version: 20160702110914) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -364,6 +364,7 @@ ActiveRecord::Schema.define(version: 20160701120728) do
     t.string   "poster",       limit: 255
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.string   "title_color",  limit: 255
   end
 
   add_index "newsletters", ["editor_id"], name: "index_newsletters_on_editor_id", using: :btree

@@ -2,7 +2,15 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
+    <div class='row'>
+      <div class='col-sm-9 col-xs-12'>
+        <%= f.input :title %>
+      </div>
+      <div class='col-sm-3 col-xs-12'>
+        <%= f.input :title_color, input_html: {data: {
+            minicolors: {theme: :bootstrap, position: :left}}}%>
+      </div>
+    </div>
     <%= f.input :greeting, input_html: { rows: 15 } %>
     <%= f.input :published_at %>
     <%= f.input :poster, as: :file %>

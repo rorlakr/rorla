@@ -1,6 +1,6 @@
 class NewslettersController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_newsletter, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show, :preview]
+  before_action :set_newsletter, only: [:show, :preview, :edit, :update, :destroy]
 
   # GET /newsletters
   # GET /newsletters.json
@@ -11,6 +11,9 @@ class NewslettersController < ApplicationController
   # GET /newsletters/1
   # GET /newsletters/1.json
   def show
+  end
+
+  def preview
   end
 
   # GET /newsletters/new
@@ -71,6 +74,6 @@ class NewslettersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def newsletter_params
-      params.require(:newsletter).permit(:title, :greeting, :published_at, :editor_id, :poster, :remove_poster )
+      params.require(:newsletter).permit(:title, :title_color, :greeting, :published_at, :editor_id, :poster, :remove_poster )
     end
 end

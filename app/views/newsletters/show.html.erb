@@ -138,4 +138,5 @@
 <div class="form-actions">
   <%= link_to t('form_actions.edit'), edit_newsletter_path(@newsletter), class: 'btn btn-default' if user_signed_in? %>
   <%= link_to t('form_actions.back'), newsletters_path, class: 'btn btn-default' %>
+  <%= link_to t('form_actions.preview'), preview_newsletter_path(@newsletter), class: 'btn btn-default' %>
 </div>

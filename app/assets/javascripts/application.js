@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.minicolors
+//= require jquery.minicolors.simple_form
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.remotipart
