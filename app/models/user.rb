@@ -24,7 +24,7 @@
 #
 
 class User < ActiveRecord::Base
-  
+
   has_merit
   acts_as_voter
 
@@ -55,6 +55,8 @@ class User < ActiveRecord::Base
   has_many :schedules, dependent: :nullify
   has_many :recommandations, dependent: :nullify, foreign_key: :recommander_id
   has_many :recommand_appliers, through: :recommandations, source: :applier
+  has_many :newsletters, foreign_key: :editor_id, dependent: :destroy
+  has_many :articles, foreign_key: :reporter_id, dependent: :destroy
 
   def confirm
     super

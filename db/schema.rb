@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160701114809) do
+ActiveRecord::Schema.define(version: 20160701120728) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -43,6 +43,22 @@ ActiveRecord::Schema.define(version: 20160701114809) do
 
   add_index "appliers", ["schedule_id"], name: "index_appliers_on_schedule_id", using: :btree
   add_index "appliers", ["user_id"], name: "index_appliers_on_user_id", using: :btree
+
+  create_table "articles", force: :cascade do |t|
+    t.integer  "newsletter_id",   limit: 4
+    t.integer  "news_section_id", limit: 4
+    t.string   "title",           limit: 255,   null: false
+    t.text     "content",         limit: 65535
+    t.string   "poster",          limit: 255
+    t.string   "reference_url",   limit: 255
+    t.integer  "reporter_id",     limit: 4
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "articles", ["news_section_id"], name: "index_articles_on_news_section_id", using: :btree
+  add_index "articles", ["newsletter_id"], name: "index_articles_on_newsletter_id", using: :btree
+  add_index "articles", ["reporter_id"], name: "index_articles_on_reporter_id", using: :btree
 
   create_table "auth_tokens", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -645,6 +661,9 @@ ActiveRecord::Schema.define(version: 20160701114809) do
 
   add_foreign_key "appliers", "schedules"
   add_foreign_key "appliers", "users"
+  add_foreign_key "articles", "news_sections"
+  add_foreign_key "articles", "newsletters"
+  add_foreign_key "articles", "users", column: "reporter_id"
   add_foreign_key "courses", "users", column: "tutor_id"
   add_foreign_key "glossaries", "users"
   add_foreign_key "glossary_definitions", "glossaries"

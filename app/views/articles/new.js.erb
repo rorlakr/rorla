@@ -1,0 +1,2 @@
+$("#add_article_link_<%= params[:news_section_id] %>").hide();
+$("#add_article_form_<%= params[:news_section_id] %>").html("<%=j render 'articles/form' %>").show();

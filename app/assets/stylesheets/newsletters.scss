@@ -1,3 +1,29 @@
 // Place all the styles related to the newsletters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.section_articles {
+  .media {
+    border: 1px solid #ccc;
+    margin-bottom:.5em;
+    .media-left {
+      border:1px solid #eaeaea;
+      padding: 2px;
+    }
+    .media-body {
+      padding: 5px;
+    }
+  }
+}
+
+.add_article {
+  overflow:auto;
+}
+.add_article_form {
+  // display: none;
+  overflow:auto;
+  border:1px solid #ccc;
+  border-radius: 5px;
+  padding:1em;
+}

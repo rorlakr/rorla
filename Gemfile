@@ -196,6 +196,10 @@ gem 'sdoc',           group: :doc
 # Puma is a simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby/Rack applications (http://puma.io)
 gem 'puma'
 
+gem 'remotipart', '~> 1.2'
+
+
+
 # Use Capistrano for deployment
 group :development do
   # Capistrano - Welcome to easy deployment with Ruby over SSH (http://capistranorb.com/)

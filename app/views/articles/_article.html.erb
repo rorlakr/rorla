@@ -1,0 +1,22 @@
+<div id="article_<%= article.id %>" class="media">
+  <%= link_to_if article.reference_url.present?, image_tag(article.poster_url(:thumb_plaza), class:'media-object'), article.reference_url, target: '_blank', class: 'media-left' do %>
+    <div class="media-left">
+      <%= image_tag(article.poster_url(:thumb_plaza), class:'media-object') %>
+    </div>
+  <% end %>
+  <div class="media-body">
+    <h4 class="media-heading">[<%= article.news_section.title %>] <%= article.title %></h4>
+    <%= simple_format truncate(article.content, length: 200) %>
+    <small><%= link_to article.reference_url, article.reference_url, target: '_blank' %></small>
+    <div style='padding:5px 0;'>
+      <%#= link_to icon_button('eye-open', :success), [article.newsletter, article] %>
+      <%= authored_by(article.reporter, article.created_at) %>
+      <% if user_signed_in? && current_user.can_update?(article) %>
+        <%= link_to icon_button('edit', :info), edit_polymorphic_path([article.newsletter, article]), remote: true %>
+      <% end %>
+      <% if user_signed_in? && current_user.can_delete?(article) %>
+        <%= link_to icon_button('trash', :danger), [article.newsletter, article], method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  </div>
+</div>

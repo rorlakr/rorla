@@ -1,5 +1,5 @@
 class Newsletter < ActiveRecord::Base
-  
+
   # Rolify and Authroization
   resourcify
   include Authority::Abilities
@@ -9,4 +9,7 @@ class Newsletter < ActiveRecord::Base
   belongs_to :editor, class_name: 'User'
 
   validates :title, presence: true
+
+  has_many :articles, dependent: :destroy
+
 end
