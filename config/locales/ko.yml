@@ -287,6 +287,13 @@ ko:
         published_at: 발송일자
         editor: 편집인
         poster: 포스터
+      article:
+        news_section: 섹션
+        title: 제목
+        content: 내용
+        reference_url: 레퍼런스URL
+        poster: 포스트 이미지
+        reporter_id: 제보자
 
   form_actions:
     edit: 수정

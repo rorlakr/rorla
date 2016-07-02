@@ -1,0 +1,15 @@
+<div class='add_article_form'>
+  <%= simple_form_for [@newsletter, @article], remote: true, authenticity_token: true do | f |  %>
+    <%= f.error_notification %>
+
+    <%= f.association :news_section %>
+    <%= f.input :title %>
+    <%= f.input :content, input_html: { rows: 10 } %>
+    <%= f.input :reference_url %>
+    <%= f.input :poster, as: :file %>
+    <div class="form-actions">
+      <%= f.button :submit %>
+      <%= link_to "취소", '#', class: 'btn btn-default' %>
+    </div>
+  <% end %>
+</div>
