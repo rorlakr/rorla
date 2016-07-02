@@ -1,4 +1,5 @@
 class NewslettersController < ApplicationController
+  include ActionView::Helpers::TextHelper  
   before_action :authenticate_user!, except: [:index, :show, :preview]
   before_action :set_newsletter, only: [:show, :preview, :edit, :update, :destroy]
 
@@ -6,6 +7,14 @@ class NewslettersController < ApplicationController
   # GET /newsletters.json
   def index
     @newsletters = Newsletter.all
+
+    set_meta_tags og: {
+      title: '뉴스레터',
+      description: "1주간의 루비와 레일스 관련기사를 공개 모집하여 발송하는 신개념의 뉴스레터",
+      image: root_url[0..-2] + ActionController::Base.helpers.asset_url('newsletter.png'),
+      url: newsletters_url
+    }, title: '뉴스레터'
+
   end
 
   # GET /newsletters/1
@@ -14,6 +23,14 @@ class NewslettersController < ApplicationController
   end
 
   def preview
+
+    set_meta_tags og: {
+      title: @newsletter.title,
+      description: truncate(@newsletter.greeting, :length   => 300, :separator => /\w/, :omission => "&hellip;"),
+      image: root_url[0..-2] + ActionController::Base.helpers.asset_url('newsletter.png'),
+      url: preview_newsletter_url(@newsletter)
+    }, title: @newsletter.title
+
   end
 
   # GET /newsletters/new
