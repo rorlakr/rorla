@@ -18,7 +18,7 @@
               <td class='text-center'>
                 <%= link_to icon_button('eye-open', :success), newsletter %>
                 <% if user_signed_in? && current_user.can_update?(newsletter) %>
-                  <%= link_to icon_button('edit', :info), edit_glossary_path(newsletter) %>
+                  <%= link_to icon_button('edit', :info), edit_newsletter_path(newsletter) %>
                 <% end %>
                 <% if user_signed_in? && current_user.can_delete?(newsletter) %>
                   <%= link_to icon_button('trash', :danger), newsletter, method: :delete, data: { confirm: 'Are you sure?' } %>
