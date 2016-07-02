@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   resources :newsletters do
+    member do
+      get 'preview'
+    end
     resources :articles
   end
 

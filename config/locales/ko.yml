@@ -283,6 +283,7 @@ ko:
         sentence: 예문
       newsletter:
         title: 제목
+        title_color: 제목글자색 
         greeting: 인사말
         published_at: 발송일자
         editor: 편집인

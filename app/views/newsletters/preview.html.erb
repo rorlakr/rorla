@@ -1,0 +1,89 @@
+<div style="padding:2em;border:1px solid #eaeae; background-image: url('<%= @newsletter.poster %>');background-position: center top;background-size: 100% auto;color:<%= @newsletter.title_color %>;">
+  <h2 class='page_title text-center'><%= @newsletter.title %></h2>
+
+  <div class="text-center">
+    <small>
+      발행일 : <%= @newsletter.published_at %> |
+      발행처 : RORLAB http://rorlab.org |
+      편집인 : <%= @newsletter.editor.email %>
+    </small>
+  </div>
+</div>
+<div style="border:1px solid #ccc;padding-top: 1em;">
+
+  <div style="padding:1em 2em;line-height: 2em;text-indent: 15px;">
+    <%= simple_format @newsletter.greeting %>
+    <div class='text-right'>
+      <%= image_tag "rorlab_emblem_gray_tone.png", width: "110px" %>
+    </div>
+  </div>
+
+  <table class="table table-striped">
+    <!-- 행사안내  -->
+    <tr>
+      <th class="col-md-2 text-right">행사안내</th>
+      <td class='section_articles'>
+        <div id='section_articles_1'>
+          <%= render @newsletter.articles.where( news_section_id: 1) %>
+        </div>
+      </td>
+    </tr>
+
+    <!-- 읽을꺼리 -->
+    <tr>
+      <th class="text-right">읽을꺼리</th>
+      <td class='section_articles'>
+        <div id='section_articles_2'>
+          <%= render @newsletter.articles.where( news_section_id: 2) %>
+        </div>
+      </td>
+    </tr>
+
+    <!-- 볼꺼리 -->
+    <tr>
+      <th class="text-right">볼꺼리</th>
+      <td class='section_articles'>
+        <div id='section_articles_3'>
+          <%= render @newsletter.articles.where( news_section_id: 3) %>
+        </div>
+      </td>
+    </tr>
+
+    <!-- 신간소개 -->
+    <tr>
+      <th class="text-right">신간소개</th>
+      <td class='section_articles'>
+        <div id='section_articles_4'>
+          <%= render @newsletter.articles.where( news_section_id: 4) %>
+        </div>
+      </td>
+    </tr>
+
+    <!-- 채용공고 -->
+    <tr>
+      <th class="text-right">채용공고</th>
+      <td class='section_articles'>
+        <div id='section_articles_5'>
+          <%= render @newsletter.articles.where( news_section_id: 5) %>
+        </div>
+      </td>
+    </tr>
+
+    <!-- 업체홍보 -->
+    <tr>
+      <th class="text-right">업체홍보</th>
+      <td class='section_articles'>
+        <div id='section_articles_6'>
+          <%= render @newsletter.articles.where( news_section_id: 6) %>
+        </div>
+      </td>
+    </tr>
+
+  </table>
+</div>
+
+<br />
+<div class="text-center">
+  <%= link_to "편집", newsletter_path(@newsletter), class: 'btn btn-default' if user_signed_in? %>
+  <%= link_to t('form_actions.back'), newsletters_path, class: 'btn btn-default' %>
+</div>

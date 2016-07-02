@@ -13,6 +13,10 @@
     }
     .media-body {
       padding: 5px;
+      p {
+        margin-bottom:0 !important;
+      }
+      h4 { font-weight: bolder; color: rgb(28, 59, 119); }
     }
   }
 }
