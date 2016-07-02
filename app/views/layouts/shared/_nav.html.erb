@@ -26,6 +26,9 @@
             <% end %>
 
             <li class="divider"></li>
+            <li class="<%= active_menu('newsletters', 'articles') %>"><%= link_to awesome_icon_label("paper","뉴스레터"), newsletters_path %></li>
+
+            <li class="divider"></li>
             <li class="<%= active_menu('schedules', 'appliers') %>"><%= link_to awesome_icon_label("calendar","RORLAB일정"), schedules_path %></li>
 
             <li class="divider"></li>

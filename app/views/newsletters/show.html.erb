@@ -19,11 +19,14 @@
       <div id='section_articles_1'>
         <%= render @newsletter.articles.where( news_section_id: 1) %>
       </div>
-      <div class='add_article'>
-        <%= link_to "추가", new_newsletter_article_path(@newsletter, news_section_id: 1), id: 'add_article_link_1', class: 'add_article_link btn btn-default btn-xs pull-right', remote: true %>
-      </div>
-      <div id='add_article_form_1'>
-      </div>
+      <% if user_signed_in? && current_user.can_create?(Article) %>
+        <div class='add_article'>
+          <%= link_to "추가", new_newsletter_article_path(@newsletter, news_section_id: 1), id: 'add_article_link_1', class: 'add_article_link btn btn-default btn-xs pull-right', remote: true %>
+        </div>
+        <div id='add_article_form_1'>
+        </div>
+      <% end %>
+
     </td>
   </tr>
 
@@ -34,11 +37,13 @@
       <div id='section_articles_2'>
         <%= render @newsletter.articles.where( news_section_id: 2) %>
       </div>
-      <div class='add_article'>
-        <%= link_to "추가", new_newsletter_article_path(@newsletter, news_section_id: 2), id: 'add_article_link_2', class: 'add_article_link btn btn-default btn-xs pull-right', remote: true %>
-      </div>
-      <div id='add_article_form_2'>
-      </div>
+      <% if user_signed_in? && current_user.can_create?(Article) %>
+        <div class='add_article'>
+          <%= link_to "추가", new_newsletter_article_path(@newsletter, news_section_id: 2), id: 'add_article_link_2', class: 'add_article_link btn btn-default btn-xs pull-right', remote: true %>
+        </div>
+        <div id='add_article_form_2'>
+        </div>
+      <% end %>
     </td>
   </tr>
 
@@ -49,11 +54,13 @@
       <div id='section_articles_3'>
         <%= render @newsletter.articles.where( news_section_id: 3) %>
       </div>
-      <div class='add_article'>
-        <%= link_to "추가", new_newsletter_article_path(@newsletter, news_section_id: 3), id: 'add_article_link_3', class: 'add_article_link btn btn-default btn-xs pull-right', remote: true %>
-      </div>
-      <div id='add_article_form_3'>
-      </div>
+      <% if user_signed_in? && current_user.can_create?(Article) %>
+        <div class='add_article'>
+          <%= link_to "추가", new_newsletter_article_path(@newsletter, news_section_id: 3), id: 'add_article_link_3', class: 'add_article_link btn btn-default btn-xs pull-right', remote: true %>
+        </div>
+        <div id='add_article_form_3'>
+        </div>
+      <% end %>
     </td>
   </tr>
 
@@ -64,11 +71,13 @@
       <div id='section_articles_4'>
         <%= render @newsletter.articles.where( news_section_id: 4) %>
       </div>
-      <div class='add_article'>
-        <%= link_to "추가", new_newsletter_article_path(@newsletter, news_section_id: 4), id: 'add_article_link_4', class: 'add_article_link btn btn-default btn-xs pull-right', remote: true %>
-      </div>
-      <div id='add_article_form_4'>
-      </div>
+      <% if user_signed_in? && current_user.can_create?(Article) %>
+        <div class='add_article'>
+          <%= link_to "추가", new_newsletter_article_path(@newsletter, news_section_id: 4), id: 'add_article_link_4', class: 'add_article_link btn btn-default btn-xs pull-right', remote: true %>
+        </div>
+        <div id='add_article_form_4'>
+        </div>
+      <% end %>
     </td>
   </tr>
 
@@ -79,11 +88,13 @@
       <div id='section_articles_5'>
         <%= render @newsletter.articles.where( news_section_id: 5) %>
       </div>
-      <div class='add_article'>
-        <%= link_to "추가", new_newsletter_article_path(@newsletter, news_section_id: 5), id: 'add_article_link_5', class: 'add_article_link btn btn-default btn-xs pull-right', remote: true %>
-      </div>
-      <div id='add_article_form_5'>
-      </div>
+      <% if user_signed_in? && current_user.can_create?(Article) %>
+        <div class='add_article'>
+          <%= link_to "추가", new_newsletter_article_path(@newsletter, news_section_id: 5), id: 'add_article_link_5', class: 'add_article_link btn btn-default btn-xs pull-right', remote: true %>
+        </div>
+        <div id='add_article_form_5'>
+        </div>
+      <% end %>
     </td>
   </tr>
 
@@ -94,11 +105,13 @@
       <div id='section_articles_6'>
         <%= render @newsletter.articles.where( news_section_id: 6) %>
       </div>
-      <div class='add_article'>
-        <%= link_to "추가", new_newsletter_article_path(@newsletter, news_section_id: 6), id: 'add_article_link_6', class: 'add_article_link btn btn-default btn-xs pull-right', remote: true %>
-      </div>
-      <div id='add_article_form_6'>
-      </div>
+      <% if user_signed_in? && current_user.can_create?(Article) %>
+        <div class='add_article'>
+          <%= link_to "추가", new_newsletter_article_path(@newsletter, news_section_id: 6), id: 'add_article_link_6', class: 'add_article_link btn btn-default btn-xs pull-right', remote: true %>
+        </div>
+        <div id='add_article_form_6'>
+        </div>
+      <% end %>
     </td>
   </tr>
 
@@ -123,6 +136,6 @@
 </table>
 
 <div class="form-actions">
-  <%= link_to t('form_actions.edit'), edit_newsletter_path(@newsletter), class: 'btn btn-default' %>
+  <%= link_to t('form_actions.edit'), edit_newsletter_path(@newsletter), class: 'btn btn-default' if user_signed_in? %>
   <%= link_to t('form_actions.back'), newsletters_path, class: 'btn btn-default' %>
 </div>
