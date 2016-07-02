@@ -13,7 +13,7 @@
       <tbody>
           <% @newsletters.each do |newsletter| %>
           <tr>
-              <td><%= link_to newsletter.title, newsletter %></td>
+              <td><%= link_to newsletter.title, preview_newsletter_url(newsletter) %></td>
               <td class='text-center'><%= newsletter.published_at %></td>
               <td class='text-center'>
                 <%= link_to icon_button('eye-open', :success), newsletter %>
