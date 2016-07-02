@@ -1,4 +1,9 @@
+<% if action_name == 'preview' %>
+  <div class="fb-share-button pull-right" data-href="<%= preview_newsletter_url(@newsletter) %>" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= preview_newsletter_url(@newsletter) %>"><%= awesome_icon_label('facebook-official fa-lg', "공유하기") %></a></div>
+<% end %>
+
 <div style="padding:2em;border:1px solid #eaeae; background-image: url('<%= @newsletter.poster %>');background-position: center top;background-size: 100% auto;color:<%= @newsletter.title_color %>;">
+
   <h2 class='page_title text-center'><%= @newsletter.title %></h2>
 
   <div class="text-center">
