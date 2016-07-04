@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.preview_title_box {
+  padding:2em;
+  border:1px solid #ccc;
+  color: white;
+  // background-color: #eaeaea;
+  // background-image: url('newsletter_background.png');
+  background-position: center top;
+  background-size: 100% auto;
+}
 
 .section_articles {
   .media {
@@ -25,9 +34,10 @@
   overflow:auto;
 }
 .add_article_form {
-  // display: none;
+  display: none;
   overflow:auto;
   border:1px solid #ccc;
   border-radius: 5px;
   padding:1em;
+  margin-bottom: .5em;
 }

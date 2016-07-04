@@ -1,2 +1,3 @@
 $("#add_article_link_<%= params[:news_section_id] %>").hide();
-$("#add_article_form_<%= params[:news_section_id] %>").html("<%=j render 'articles/form' %>").show();
+$("#section_articles_<%= params[:news_section_id] %>").append("<%=j render 'articles/form' %>");
+$("#section_articles_<%= params[:news_section_id] %>").find(".add_article_form:last").slideDown();

@@ -31,5 +31,6 @@
 </div>
 
 <div class="form-actions">
-  <%= link_to awesome_icon_label('plus', '뉴스레터'), new_newsletter_path, class: 'btn btn-default' %>
+  <%= link_to awesome_icon_label('plus', '뉴스레터'), new_newsletter_path, class: 'btn btn-default' if user_signed_in? && current_user.can_create?(Newsletter) %>
+  <%= link_to awesome_icon_label('user-plus', '구독하기'), 'http://weekly.rorlab.org', target: '_blank', class: 'btn btn-warning' %>
 </div>
