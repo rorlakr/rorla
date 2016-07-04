@@ -14,7 +14,7 @@ module NewslettersHelper
   def preview_sections
     content_tag(:table, class:'table table-striped') do
       %w(행사안내 읽을꺼리 볼꺼리 신간소개 채용공고 업체홍보).each_with_index do | section, index |
-        concat preview_section( '행사안내', index + 1  )
+        concat preview_section( section, index + 1  )
       end
     end
   end
