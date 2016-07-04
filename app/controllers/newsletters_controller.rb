@@ -6,7 +6,7 @@ class NewslettersController < ApplicationController
   # GET /newsletters
   # GET /newsletters.json
   def index
-    @newsletters = Newsletter.where( created_at: :desc )
+    @newsletters = Newsletter.order( created_at: :desc )
 
     set_meta_tags og: {
       title: '뉴스레터',
