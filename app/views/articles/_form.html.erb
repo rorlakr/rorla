@@ -7,9 +7,15 @@
     <%= f.input :content, input_html: { rows: 10 } %>
     <%= f.input :reference_url %>
     <%= f.input :poster, as: :file %>
+    <% if @article.poster_url.present? %>
+      <div>
+        <%= image_tag @article.poster_url(:thumb), style: 'border:1px solid #ccc;border-radius:5px;' %>
+        <%= f.input :remove_poster, label: raw("포스터이미지 삭제 <small><em>(#{@article.poster})</em></small>"), as: :boolean %>
+      </div>
+    <% end %>
     <div class="form-actions">
       <%= f.button :submit %>
-      <%= link_to "취소", '#', class: 'cancel_article btn btn-default' %>
+      <%= link_to "취소", '#', class: 'cancel_article btn btn-default', data:{ article: @article.id } %>
     </div>
   <% end %>
 </div>

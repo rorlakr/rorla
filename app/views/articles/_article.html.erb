@@ -11,7 +11,7 @@
     <% if action_name == 'preview' %>
       <small>제보자 : <%= article.reporter.email.split("@").first %></small>
     <% end %>
-    <% if action_name == 'show' %>
+    <% if action_name != 'preview' %>
       <div style='padding:5px 0;'>
         <%#= link_to icon_button('eye-open', :success), [article.newsletter, article] %>
         <%= authored_by(article.reporter, article.created_at) %>

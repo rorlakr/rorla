@@ -2,7 +2,7 @@
   <div class="fb-share-button pull-right" data-href="<%= preview_newsletter_url(@newsletter) %>" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= preview_newsletter_url(@newsletter) %>"><%= awesome_icon_label('facebook-official fa-lg', "공유하기") %></a></div>
 <% end %>
 
-<div style="padding:2em;border:1px solid #eaeae; background-image: url('<%= @newsletter.poster %>');background-position: center top;background-size: 100% auto;color:<%= @newsletter.title_color %>;">
+<div class="preview_title_box" style="background-image: url('<%= @newsletter.poster_url ||  image_url('newsletter_background.png') %>') !important;color:<%= @newsletter.title_color %> !important;">
 
   <h2 class='page_title text-center'><%= @newsletter.title %></h2>
 
@@ -23,68 +23,9 @@
     </div>
   </div>
 
-  <table class="table table-striped">
-    <!-- 행사안내  -->
-    <tr>
-      <th class="col-md-2 text-right">행사안내</th>
-      <td class='section_articles'>
-        <div id='section_articles_1'>
-          <%= render @newsletter.articles.where( news_section_id: 1) %>
-        </div>
-      </td>
-    </tr>
+  <!-- 모든 섹션 보여주기 -->
+  <%= preview_sections %>
 
-    <!-- 읽을꺼리 -->
-    <tr>
-      <th class="text-right">읽을꺼리</th>
-      <td class='section_articles'>
-        <div id='section_articles_2'>
-          <%= render @newsletter.articles.where( news_section_id: 2) %>
-        </div>
-      </td>
-    </tr>
-
-    <!-- 볼꺼리 -->
-    <tr>
-      <th class="text-right">볼꺼리</th>
-      <td class='section_articles'>
-        <div id='section_articles_3'>
-          <%= render @newsletter.articles.where( news_section_id: 3) %>
-        </div>
-      </td>
-    </tr>
-
-    <!-- 신간소개 -->
-    <tr>
-      <th class="text-right">신간소개</th>
-      <td class='section_articles'>
-        <div id='section_articles_4'>
-          <%= render @newsletter.articles.where( news_section_id: 4) %>
-        </div>
-      </td>
-    </tr>
-
-    <!-- 채용공고 -->
-    <tr>
-      <th class="text-right">채용공고</th>
-      <td class='section_articles'>
-        <div id='section_articles_5'>
-          <%= render @newsletter.articles.where( news_section_id: 5) %>
-        </div>
-      </td>
-    </tr>
-
-    <!-- 업체홍보 -->
-    <tr>
-      <th class="text-right">업체홍보</th>
-      <td class='section_articles'>
-        <div id='section_articles_6'>
-          <%= render @newsletter.articles.where( news_section_id: 6) %>
-        </div>
-      </td>
-    </tr>
-
-  </table>
 </div>
 
 <br />

@@ -1,3 +1,3 @@
 $("#section_articles_<%= @article.news_section_id %>").append("<%=j render(@article) %>");
-$("#add_article_form_<%= @article.news_section_id %>").hide();
+$("#section_articles_<%= @article.news_section_id %> .add_article_form").remove();
 $("#add_article_link_<%= @article.news_section_id %>").show();

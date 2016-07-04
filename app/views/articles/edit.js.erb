@@ -1,2 +1,4 @@
-$("#add_article_link_<%= @article.news_section_id %>").hide();
-$("#add_article_form_<%= @article.news_section_id %>").html("<%=j render 'articles/form' %>").show();
+// $("#add_article_link_<%= @article.news_section_id %>").hide();
+$("#article_<%= @article.id %>").after("<div id='edit_article_form_<%= @article.id %>'></div>");
+$("#article_<%= @article.id %>").slideUp();
+$("#edit_article_form_<%= @article.id %>").html("<%=j render 'articles/form' %>").slideDown();
