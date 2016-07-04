@@ -9,7 +9,8 @@
 
   <tr>
     <th class='text-right'><%= t("activerecord.attributes.newsletter.greeting") %></th>
-    <td><%= simple_format @newsletter.greeting %></td>
+    <% link_filter = AutoHtml::Link.new(target: '_blank') %>
+    <td><%= simple_format link_filter.call(@newsletter.greeting) %></td>
   </tr>
 
   <!-- 행사안내  -->
