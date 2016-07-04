@@ -1,8 +1,6 @@
 <div id="article_<%= article.id %>" class="media">
   <%= link_to_if article.reference_url.present?, image_tag(article.poster_url(:thumb_plaza), class:'media-object'), article.reference_url, target: '_blank', class: 'media-left' do %>
-    <div class="media-left">
-      <%= image_tag(article.poster_url(:thumb_plaza), class:'media-object') %>
-    </div>
+
   <% end %>
   <div class="media-body">
     <h4 class="media-heading"><%= article.title %></h4>
