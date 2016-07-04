@@ -6,7 +6,7 @@ class NewslettersController < ApplicationController
   # GET /newsletters
   # GET /newsletters.json
   def index
-    @newsletters = Newsletter.all
+    @newsletters = Newsletter.where( created_at: :desc )
 
     set_meta_tags og: {
       title: '뉴스레터',
@@ -27,7 +27,7 @@ class NewslettersController < ApplicationController
       image: root_url[0..-2] + ActionController::Base.helpers.asset_url('newsletter.png'),
       url: preview_newsletter_url(@newsletter)
     }, title: @newsletter.title
-        
+
   end
 
   def preview
