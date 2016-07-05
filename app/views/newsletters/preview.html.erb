@@ -17,7 +17,8 @@
 <div style="border:1px solid #ccc;padding-top: 1em;">
 
   <div style="padding:1em 2em;line-height: 2em;text-indent: 15px;">
-    <%= simple_format @newsletter.greeting %>
+    <% link_filter = AutoHtml::Link.new(target: '_blank') %>
+    <%= simple_format link_filter.call(@newsletter.greeting) %>
     <div class='text-right'>
       <%= image_tag "rorlab_emblem_gray_tone.png", width: "110px" %>
     </div>
