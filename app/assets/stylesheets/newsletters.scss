@@ -12,6 +12,13 @@
   background-size: 100% auto;
 }
 
+.section_head_mobile {
+   margin-bottom: .5em;
+   padding:.5em;
+   color:white;
+   background-color:darkred;
+}
+
 .section_articles {
   .media {
     border: 1px solid #ccc;
@@ -40,4 +47,24 @@
   border-radius: 5px;
   padding:1em;
   margin-bottom: .5em;
+}
+
+.dont-break-out {
+
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+
 }

@@ -2,11 +2,12 @@ module NewslettersHelper
   def preview_section( name, index )
     articles = @newsletter.articles.where( news_section_id: index)
     content_tag(:tr) do
-      concat content_tag(:th, name, class:'col-md-2 text-right')
+      concat(content_tag(:th, name, class:'col-md-2 text-right hidden-xs'))
       concat(content_tag(:td, class: 'section_articles') do
-        content_tag(:div, id: "section_articles_#{index}") do
+        concat(content_tag(:div, name, class:'section_head_mobile visible-xs'))
+        concat(content_tag(:div, id: "section_articles_#{index}") do
           concat render(articles)
-        end
+        end)
       end)
     end unless articles.size.zero?
   end

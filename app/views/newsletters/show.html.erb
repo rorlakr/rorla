@@ -3,20 +3,21 @@
 <table class="table">
 
   <tr>
-    <th class='col-xs-2 text-right'><%= t("activerecord.attributes.newsletter.title") %></th>
+    <th class='col-xs-2 text-right hidden-xs'><%= t("activerecord.attributes.newsletter.title") %></th>
     <td class='text-danger'><strong><%= @newsletter.title %></strong></td>
   </tr>
 
   <tr>
-    <th class='text-right'><%= t("activerecord.attributes.newsletter.greeting") %></th>
+    <th class='text-right hidden-xs'><%= t("activerecord.attributes.newsletter.greeting") %></th>
     <% link_filter = AutoHtml::Link.new(target: '_blank') %>
     <td><%= simple_format link_filter.call(@newsletter.greeting) %></td>
   </tr>
 
   <!-- 행사안내  -->
   <tr>
-    <th class="text-right">행사안내</th>
+    <th class="text-right hidden-xs">행사안내</th>
     <td class='section_articles'>
+      <div class='section_head_mobile visible-xs'>행사안내</div>
       <div id='section_articles_1'>
         <%= render @newsletter.articles.where( news_section_id: 1) %>
       </div>
@@ -33,8 +34,9 @@
 
   <!-- 읽을꺼리 -->
   <tr>
-    <th class="text-right">읽을꺼리</th>
+    <th class="text-right hidden-xs">읽을꺼리</th>
     <td class='section_articles'>
+      <div class='section_head_mobile visible-xs'>읽은꺼리</div>
       <div id='section_articles_2'>
         <%= render @newsletter.articles.where( news_section_id: 2) %>
       </div>
@@ -50,8 +52,9 @@
 
   <!-- 볼꺼리 -->
   <tr>
-    <th class="text-right">볼꺼리</th>
+    <th class="text-right hidden-xs">볼꺼리</th>
     <td class='section_articles'>
+      <div class='section_head_mobile visible-xs'>볼꺼리</div>
       <div id='section_articles_3'>
         <%= render @newsletter.articles.where( news_section_id: 3) %>
       </div>
@@ -67,8 +70,9 @@
 
   <!-- 신간소개 -->
   <tr>
-    <th class="text-right">신간소개</th>
+    <th class="text-right hidden-xs">신간소개</th>
     <td class='section_articles'>
+      <div class='section_head_mobile visible-xs'>신간소개</div>
       <div id='section_articles_4'>
         <%= render @newsletter.articles.where( news_section_id: 4) %>
       </div>
@@ -84,8 +88,9 @@
 
   <!-- 채용공고 -->
   <tr>
-    <th class="text-right">채용공고</th>
+    <th class="text-right hidden-xs">채용공고</th>
     <td class='section_articles'>
+      <div class='section_head_mobile visible-xs'>채용공고</div>
       <div id='section_articles_5'>
         <%= render @newsletter.articles.where( news_section_id: 5) %>
       </div>
@@ -101,8 +106,9 @@
 
   <!-- 업체홍보 -->
   <tr>
-    <th class="text-right">업체홍보</th>
+    <th class="text-right hidden-xs">업체홍보</th>
     <td class='section_articles'>
+      <div class='section_head_mobile visible-xs'>업체홍보</div>
       <div id='section_articles_6'>
         <%= render @newsletter.articles.where( news_section_id: 6) %>
       </div>
@@ -118,18 +124,25 @@
 
 
   <tr>
-    <th class='text-right'><%= t("activerecord.attributes.newsletter.published_at") %></th>
-    <td><%= @newsletter.published_at %></td>
-  </tr>
-
-  <tr>
-    <th class='text-right'><%= t("activerecord.attributes.newsletter.editor") %></th>
-    <td><%= @newsletter.editor.email %></td>
-  </tr>
-
-  <tr>
-    <th class='text-right'><%= t("activerecord.attributes.newsletter.poster") %></th>
+    <th class='text-right hidden-xs'><%= t("activerecord.attributes.newsletter.published_at") %></th>
     <td>
+      <div class='section_head_mobile visible-xs'>발행일자</div>
+      <%= @newsletter.published_at %>
+    </td>
+  </tr>
+
+  <tr>
+    <th class='text-right hidden-xs'><%= t("activerecord.attributes.newsletter.editor") %></th>
+    <td>
+      <div class='section_head_mobile visible-xs'>제보자</div>
+      <%= @newsletter.editor.email %>
+    </td>
+  </tr>
+
+  <tr>
+    <th class='text-right hidden-xs'><%= t("activerecord.attributes.newsletter.poster") %></th>
+    <td>
+      <div class='section_head_mobile visible-xs'>포스터</div>
       <p><em class='text-muted'><%= @newsletter.poster.blank? ? "등록한 포스터 이미지가 없습니다." : @newsletter.poster %></em></p>
       <%= image_tag @newsletter.poster_url, width: '100%', style: 'border:1px solid #ccc;margintop:2em;border-radius:5px;' if @newsletter.poster_url.present? %>
     </td>
