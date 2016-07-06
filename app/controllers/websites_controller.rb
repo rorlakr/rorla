@@ -4,8 +4,9 @@ class WebsitesController < ApplicationController
   # GET /websites
   # GET /websites.json
   def index
-    @websites_total = Website.count
-    @websites = Website.paginate(page: params[:page], per_page: 10)
+    @websites = Website.search(params[:search])
+    @websites_total = @websites.count
+    @websites = @websites.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /websites/1

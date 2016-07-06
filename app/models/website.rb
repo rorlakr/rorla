@@ -12,7 +12,17 @@ class Website < ActiveRecord::Base
   belongs_to :user
 
   validates :name, :site_url, presence: {message: "웹사이트명을 입력하세요."}
+  validates :name, uniqueness: {message: "이미 등록된 웹사이트명입니다."}
+  validates :site_url, uniqueness: {message: "이미 등록된 URL주소입니다."}
   validates :site_url, url: {:message => "URL형식에 오류가 있습니다."}
+
+  def self.search(search)
+    if search
+      where('site_url LIKE ?', "%#{search}%" )
+    else
+      all
+    end
+  end
 
   def self.import(file)
     CSV.foreach(file, headers: true, :col_sep => ', ') do |row|
