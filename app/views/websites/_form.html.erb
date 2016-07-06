@@ -6,7 +6,7 @@
     <%= f.input :site_url, placeholder: 'http:// or https://' %>
     <%= f.input :service_state, collection: enum_option_pairs(Website, :service_state) %>
     <%= f.input :service_type, collection: enum_option_pairs(Website, :service_type) %>
-    <%= f.input :memo, input_html: { rows: 5 } %>
+    <%= f.input :memo, placeholder:'서비스에 대한 설명을 간단하게 입력하세요.', input_html: { rows: 5 } %>
   </div>
 
   <div class="form-actions">
