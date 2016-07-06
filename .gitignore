@@ -30,8 +30,9 @@ public/screenshot.png
 .idea
 .DS_Store
 
-.sql
-.tar
+*.sql
+*.tar
+*.csv
 
 # Ignore application configuration
 /config/application.yml
