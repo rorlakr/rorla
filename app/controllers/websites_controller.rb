@@ -7,11 +7,27 @@ class WebsitesController < ApplicationController
     @websites = Website.search(params[:search])
     @websites_total = @websites.count
     @websites = @websites.paginate(page: params[:page], per_page: 10)
+
+    set_meta_tags og: {
+      title: "루비와 레일스 웹서비스",
+      description: "국내 레일스 웹서비스 DB",
+      image: root_url[0..-2] + ActionController::Base.helpers.asset_url('rails_sites.png'),
+      url: websites_url
+    }, title: "루비와 레일스 웹서비스"
+
   end
 
   # GET /websites/1
   # GET /websites/1.json
   def show
+
+    set_meta_tags og: {
+      title: @website.name,
+      description: truncate(@website.memo, :length   => 300, :separator => /\w/, :omission => "&hellip;"),
+      image: root_url[0..-2] + ActionController::Base.helpers.asset_url('rails_sites.png'),
+      url: website_url(@website)
+    }, title: @website.title
+
   end
 
   # GET /websites/new
