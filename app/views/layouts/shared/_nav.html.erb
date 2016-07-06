@@ -42,6 +42,8 @@
               <b class="caret"></b>
             </a>
           <ul class="dropdown-menu">
+            <li class="<%= active_menu('websites') %>"><%= link_to '루비와 레일스 웹서비스', websites_path %></li>
+            <li class="divider"></li>
             <li class="<%= active_menu('courses', 'lectures') %>"><%= link_to '레일스강좌', courses_path %></li>
             <li class="<%= active_menu('codebanks') %>"><%= link_to 'Codebanks', codebanks_path %></li>
             <li class="<%= active_menu('podcasts') %>"><%= link_to 'Podcasts', podcasts_path %></li>
