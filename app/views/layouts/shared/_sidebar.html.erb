@@ -1,123 +1,29 @@
-<% if controller_name == 'posts' %>
-  <div style="text-align:center;margin-top:4.5em;">
-    <%= link_to icon_label('plus', 'Add a Post'), new_bulletin_post_path(params[:bulletin_id]), class: 'well btn btn-default' %>
-  </div>
-  <div style="margin-top:4.5em;">
+<!-- 게시판 사이드바 -->
+<%= render 'layouts/shared/sidebar/sidebar_for_posts' %>
 
-  <%= render "layouts/shared/sidebar/my_posts" %>
-  </div>
+<!-- 코드뱅크 사이드바 -->
+<%= render 'layouts/shared/sidebar/sidebar_for_codebanks' %>
 
-<% end %>
+<!-- Q&A 사이드바 -->
+<%= render 'layouts/shared/sidebar/sidebar_for_questions' %>
 
-<% if controller_name == 'codebanks' %>
-<div>
-  <p style="margin-top:4.5em;margin-bottom:2em;border:1px solid red; border-radius:5px;padding:1em;">
-    <%= link_to image_tag("codebank_no_border.png", width: '100%'), codebanks_path(page:nil, search:nil) %>
-    <%= link_to icon_label('plus', '코드작성'), new_codebank_path, class: "btn btn-danger #{'disabled' if action_name == 'new'}", style:'margin-top:1em;display:block;'%>
-  </p>
+<!-- rBlog 사이드바 -->
+<%= render 'layouts/shared/sidebar/sidebar_for_rblogs' %>
 
-  <%= render "layouts/shared/sidebar/my_codes" %>
+<!-- 뉴스레터 사이트바 -->
+<%= render 'layouts/shared/sidebar/sidebar_for_newsletters' %>
 
-<% end %>
+<!-- 레일스강좌 사이드바 -->
+<%= render 'layouts/shared/sidebar/sidebar_for_lectures' %>
 
-<% if controller_name == 'questions' %>
-<div>
-  <p style="margin-top:4.5em;margin-bottom:2em;border:1px solid red; border-radius:5px;padding:1em;">
-    <%= link_to image_tag("q_&_a_no_border.png", width: '100%'), questions_path(page:nil, search:nil) %>
-    <%= link_to icon_label('plus', '질문 등록'), new_question_path, class: "btn btn-danger #{'disabled' if action_name == 'new'}", style:'margin-top:1em;display:block;'%>
-  </p>
+<!-- Favlinks 사이드바 -->
+<%= render 'layouts/shared/sidebar/sidebar_for_favlinks' %>
 
+<!-- 용어집 사이드바 -->
+<%= render 'layouts/shared/sidebar/sidebar_for_glossaries' %>
 
-<% end %>
-
-<% if controller_name == 'rblogs' %>
-  <div>
-    <p style="margin-top:4.5em;margin-bottom:2em;border:1px solid red; border-radius:5px;padding:1em;">
-      <%= link_to image_tag("rblog_no_border.png", width: '100%'), rblogs_path(page:nil, search:nil) %>
-      <%= link_to icon_label('plus', '새글작성'), new_rblog_path, class: "btn btn-danger #{'disabled' if action_name == 'new'}", style:'margin-top:1em;display:block;'%>
-    </p>
-    <%= render "layouts/shared/sidebar/my_rblogs" %>
-  </div>
-<% end %>
-
-<% if controller_name == 'newsletters' %>
-  <div>
-    <p style="margin-top:4.5em;margin-bottom:2em;border:1px solid red; border-radius:5px;padding:1em;">
-      <%= link_to image_tag("newsletter_no_border.png", width: '100%'), newsletters_path(page:nil, search:nil) %>
-      <%= link_to icon_label('plus', '기사추가'), Newsletter.last, class: "btn btn-danger #{'disabled' if action_name == 'new'}", style:'margin-top:1em;display:block;'%>
-    </p>
-    <%= render "layouts/shared/sidebar/my_rblogs" %>
-  </div>
-<% end %>
-
-<% if controller_name == 'courses' or controller_name == 'lectures' %>
-  <div>
-    <p style="margin-top:4.5em;margin-bottom:2em;border:1px solid red; border-radius:5px;padding:1em;">
-      <%= link_to image_tag("lecture_no_border.png", width: '100%'), courses_path(page:nil, search:nil) %>
-      <%= link_to icon_label('plus', '강좌개설'), new_course_path, class: "btn btn-danger #{'disabled' if action_name == 'new'}", style:'margin-top:1em;display:block;'%>
-    </p>
-    <%= render "layouts/shared/sidebar/my_rblogs" %>
-  </div>
-<% end %>
-
-<% if controller_name == "favlinks" %>
-  <div>
-    <p style="margin-top:4.5em;margin-bottom:2em;border:1px solid red; border-radius:5px;padding:1em;">
-      <%= link_to image_tag("favlinks_no_border.png", width: '100%'), favlinks_path(page:nil, search:nil) %>
-      <%= link_to icon_label('plus', '링크추가'), \
-          ( params[:bundlelink_id] ? new_bundlelink_favlink_path(bundlelink_id: params[:bundlelink_id]) \
-          : new_favlink_path ), \
-          class: 'btn btn btn-danger', style:'margin-top:1em;display:block;' %>
-    </p>
-  </div>
-  <div style="margin-top:2em;">
-    <form action="/favlinks" class="" style="margin-bottom:1.5em;">
-       <div class="input-group">
-           <input type="Search" name="search" placeholder="Search ..." class="form-control" value="<%= params[:search] %>" />
-           <div class="input-group-btn">
-               <button class="btn btn-info">
-               <span class="glyphicon glyphicon-search"></span>
-               </button>
-           </div>
-       </div>
-    </form>
-  </div>
-
-  <% if user_signed_in? %>
-    <p><%= link_to "All Favlinks", favlinks_path %> | <%= link_to "My Favlinks", favlinks_path(whose: current_user) %></p>
-  <% end %>
-
-  <div class='row'>
-    <div class='col-md-12'>
-    <p><%= link_to_if (user_signed_in? && current_user.has_role?(:admin)), "Public Bundlelinks :", bundlelinks_path %></p>
-    <ul style="list-style-type: none;padding-left:1.5em;">
-    <% bundles = Bundlelink.shared_bundles %>
-    <% bundles.each do |bundle| %>
-      <li><%= icon('book') %>&nbsp;&nbsp;<%= link_to bundle.title, bundlelink_favlinks_path(bundle)%> (<%= bundle.favlinks.size %>)</li>
-    <% end %>
-    </ul>
-    </div>
-  </div>
-
-  <%= render "layouts/shared/sidebar/my_bundles" %>
-
-  <%= render "layouts/shared/sidebar/tag_clouds_for_favlink" %>
-
-<% end %>
-
-<% if controller_name == "glossaries" %>
-  <div>
-    <p style="margin-top:4.5em;border:1px solid red; border-radius:5px;padding:1em;">
-      <%= link_to image_tag("glossary_no_border.png", width: '100%'), glossaries_path(page:nil, search:nil) %>
-      <%= link_to "용어추가", new_glossary_path, class: "btn btn-danger #{'disabled' if action_name == 'new'}", style:'margin-top:1em;display:block;'%>
-    </p>
-
-    <p><%= render "layouts/shared/sidebar/tag_clouds_for_glossary" %></p>
-  </div>
-<% end %>
-
+<!--Twitter Timeline-->
 <div class="hidden-xs hidden-sm" style="margin-top:5em;">
-	<!--Twitter Timeline-->
   <a class="twitter-timeline" href="https://twitter.com/rorlab" data-widget-id="340285058244022272">@rorlab 님의 트윗</a>
   <script src="//platform.twitter.com/widgets.js"></script>
 </div>
