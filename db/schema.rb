@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160702110914) do
+ActiveRecord::Schema.define(version: 20160706103822) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -649,6 +649,21 @@ ActiveRecord::Schema.define(version: 20160702110914) do
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
+  create_table "websites", force: :cascade do |t|
+    t.string   "name",             limit: 255,   null: false
+    t.string   "site_url",         limit: 255,   null: false
+    t.integer  "service_state",    limit: 4
+    t.integer  "service_type",     limit: 4
+    t.integer  "user_id",          limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "service_type_cd",  limit: 4
+    t.integer  "service_state_cd", limit: 4
+    t.text     "memo",             limit: 65535
+  end
+
+  add_index "websites", ["user_id"], name: "index_websites_on_user_id", using: :btree
+
   create_table "weeklynews", force: :cascade do |t|
     t.string   "uid",        limit: 255,   null: false
     t.string   "subject",    limit: 255,   null: false
@@ -690,4 +705,5 @@ ActiveRecord::Schema.define(version: 20160702110914) do
   add_foreign_key "survey_responses", "survey_requests"
   add_foreign_key "survey_responses", "users", column: "writer_id"
   add_foreign_key "user_profiles", "users"
+  add_foreign_key "websites", "users"
 end

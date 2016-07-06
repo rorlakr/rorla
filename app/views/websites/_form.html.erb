@@ -1,0 +1,17 @@
+<%= simple_form_for(@website) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :site_url, placeholder: 'http:// or https://' %>
+    <%= f.input :service_state, collection: enum_option_pairs(Website, :service_state) %>
+    <%= f.input :service_type, collection: enum_option_pairs(Website, :service_type) %>
+    <%= f.input :memo, input_html: { rows: 5 } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+    <%= link_to t('form_actions.show'), @website, class: 'btn btn-default' if @website.persisted? %>
+    <%= link_to t("form_actions.back"), websites_path, class: 'btn btn-default' %>
+  </div>
+<% end %>

@@ -2,6 +2,7 @@ Rails.application.routes.default_url_options[:host] = 'rorlab.org'
 
 Rails.application.routes.draw do
 
+  resources :websites
   root "welcome#index"
 
   resources :newsletters do
