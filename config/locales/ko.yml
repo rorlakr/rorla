@@ -283,7 +283,7 @@ ko:
         sentence: 예문
       newsletter:
         title: 제목
-        title_color: 제목글자색 
+        title_color: 제목글자색
         greeting: 인사말
         published_at: 발송일자
         editor: 편집인
@@ -295,7 +295,13 @@ ko:
         reference_url: 레퍼런스URL
         poster: 포스트 이미지
         reporter_id: 제보자
-
+      website:
+        name: 웹사이트명
+        site_url: URL주소
+        service_type: 서비스형태
+        service_state: 서비스상태
+        memo: 기타메모
+        user: 작성자
   form_actions:
     edit: 수정
     delete: 삭제

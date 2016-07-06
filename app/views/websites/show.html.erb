@@ -1,0 +1,40 @@
+<h2 class="page_title">루비와 레일스 웹서비스 <small><%= action_name %></small></h2>
+
+<div class='panel panel-default table-responsive'>
+  <table class='table table-bordered'>
+    <tr>
+      <th class='text-right col-xs-2'><%= t('activerecord.attributes.website.user') %></th>
+      <td><%= @website.name %></td>
+    </tr>
+
+    <tr>
+      <th class='text-right'><%= t('activerecord.attributes.website.site_url') %></th>
+      <td><%= @website.site_url %></td>
+    </tr>
+
+    <tr>
+      <th class='text-right'><%= t('activerecord.attributes.website.service_state') %></th>
+      <td><%= @website.service_state %></td>
+    </tr>
+
+    <tr>
+      <th class='text-right'><%= t('activerecord.attributes.website.service_type') %></th>
+      <td><%= @website.service_type %></td>
+    </tr>
+
+    <tr>
+      <th class='text-right'><%= t('activerecord.attributes.website.memo') %></th>
+      <td><%= @website.memo %></td>
+    </tr>
+
+    <tr>
+      <th class='text-right'><%= t('activerecord.attributes.website.user') %></th>
+      <td><%= @website.user.email %></td>
+    </tr>
+  </table>
+</div>
+
+<div class='form-actions'>
+  <%= link_to t('form_actions.edit'), edit_website_path(@website), class: 'btn btn-default' %>
+  <%= link_to t('form_actions.back'), websites_path, class: 'btn btn-default' %>
+</div>
