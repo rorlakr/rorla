@@ -1,4 +1,6 @@
 class WebsitesController < ApplicationController
+  include ActionView::Helpers::TextHelper
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_website, only: [:show, :edit, :update, :destroy]
 
   # GET /websites
@@ -26,22 +28,25 @@ class WebsitesController < ApplicationController
       description: truncate(@website.memo, :length   => 300, :separator => /\w/, :omission => "&hellip;"),
       image: root_url[0..-2] + ActionController::Base.helpers.asset_url('rails_sites.png'),
       url: website_url(@website)
-    }, title: @website.title
+    }, title: @website.name
 
   end
 
   # GET /websites/new
   def new
+    authorize_action_for Website
     @website = Website.new
   end
 
   # GET /websites/1/edit
   def edit
+    authorize_action_for @website
   end
 
   # POST /websites
   # POST /websites.json
   def create
+    authorize_action_for Website
     @website = Website.new(website_params)
     @website.user = current_user
 
@@ -59,6 +64,7 @@ class WebsitesController < ApplicationController
   # PATCH/PUT /websites/1
   # PATCH/PUT /websites/1.json
   def update
+    authorize_action_for @website
     respond_to do |format|
       if @website.update(website_params)
         format.html { redirect_to @website, notice: 'Website was successfully updated.' }
@@ -73,6 +79,7 @@ class WebsitesController < ApplicationController
   # DELETE /websites/1
   # DELETE /websites/1.json
   def destroy
+    authorize_action_for @website
     @website.destroy
     respond_to do |format|
       format.html { redirect_to websites_url, notice: 'Website was successfully destroyed.' }
