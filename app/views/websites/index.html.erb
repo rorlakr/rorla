@@ -21,6 +21,7 @@
       <th class='text-center col-xs-5'><%= t("activerecord.attributes.website.name") %></th>
       <th class='text-center'><%= t("activerecord.attributes.website.service_state") %></th>
       <th class='text-center'><%= t("activerecord.attributes.website.service_type") %></th>
+      <th class='text-center'><%= t("activerecord.attributes.website.updated_at") %></th>
       <th class='text-center'>데이터작업</th>
     </tr>
   </thead>
@@ -31,6 +32,7 @@
         <td><%= link_to raw("#{website.name} <small>#{website.site_url}</small>"), website.site_url, target: '_blank' %></td>
         <td class='text-center'><%= website.service_state %></td>
         <td class='text-center'><%= website.service_type %></td>
+        <td class='text-center'><%= time_ago_in_words(website.updated_at) %></td>
         <td class='text-center'>
           <%= link_to icon_button('eye-open', :success), website %>
           <% if user_signed_in? && current_user.can_update?(website) %>

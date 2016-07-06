@@ -11,6 +11,11 @@ class WebsitesController < ApplicationController
   # GET /websites.json
   def index
     @websites = Website.search(params[:search])
+    @websites = @websites.service_on if params[:state] == 'on'
+    @websites = @websites.service_off if params[:state] == 'off'
+    @websites = @websites.service_rails if params[:type] == 'rails'
+    @websites = @websites.service_api if params[:type] == 'api'
+    @websites = @websites.service_ruby if params[:type] == 'ruby'
     @websites_total = @websites.count
     @websites = @websites.paginate(page: params[:page], per_page: 10)
 
@@ -99,6 +104,6 @@ class WebsitesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def website_params
-      params.require(:website).permit(:name, :site_url, :service_state, :service_type, :user_id)
+      params.require(:website).permit(:name, :site_url, :service_state, :service_type, :user_id, :memo)
     end
 end
