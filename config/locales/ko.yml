@@ -302,6 +302,7 @@ ko:
         service_state: 서비스상태
         memo: 기타메모
         user: 작성자
+        updated_at: 최종갱신일
   form_actions:
     edit: 수정
     delete: 삭제

@@ -16,6 +16,13 @@ class Website < ActiveRecord::Base
   validates :site_url, uniqueness: {message: "이미 등록된 URL주소입니다."}
   validates :site_url, url: {:message => "URL형식에 오류가 있습니다."}
 
+  default_scope { order( updated_at: :desc )}
+  scope :service_on, -> { ons }
+  scope :service_off, -> { offs }
+  scope :service_rails, -> { rails }
+  scope :service_api, -> { rails_apis }
+  scope :service_ruby, -> { rubies }
+
   def self.search(search)
     if search
       where('site_url LIKE ?', "%#{search}%" )
