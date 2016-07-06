@@ -13,115 +13,7 @@
     <td><%= simple_format link_filter.call(@newsletter.greeting) %></td>
   </tr>
 
-  <!-- 행사안내  -->
-  <tr>
-    <th class="text-right hidden-xs">행사안내</th>
-    <td class='section_articles'>
-      <div class='section_head_mobile visible-xs'>행사안내</div>
-      <div id='section_articles_1'>
-        <%= render @newsletter.articles.where( news_section_id: 1) %>
-      </div>
-      <% if user_signed_in? && current_user.can_create?(Article) %>
-        <div class='add_article'>
-          <%= link_to "추가", new_newsletter_article_path(@newsletter, news_section_id: 1), id: 'add_article_link_1', class: 'add_article_link btn btn-default btn-xs pull-right', remote: true %>
-        </div>
-        <!-- <div id='add_article_form_1'>
-        </div> -->
-      <% end %>
-
-    </td>
-  </tr>
-
-  <!-- 읽을꺼리 -->
-  <tr>
-    <th class="text-right hidden-xs">읽을꺼리</th>
-    <td class='section_articles'>
-      <div class='section_head_mobile visible-xs'>읽은꺼리</div>
-      <div id='section_articles_2'>
-        <%= render @newsletter.articles.where( news_section_id: 2) %>
-      </div>
-      <% if user_signed_in? && current_user.can_create?(Article) %>
-        <div class='add_article'>
-          <%= link_to "추가", new_newsletter_article_path(@newsletter, news_section_id: 2), id: 'add_article_link_2', class: 'add_article_link btn btn-default btn-xs pull-right', remote: true %>
-        </div>
-        <!-- <div id='add_article_form_2'>
-        </div> -->
-      <% end %>
-    </td>
-  </tr>
-
-  <!-- 볼꺼리 -->
-  <tr>
-    <th class="text-right hidden-xs">볼꺼리</th>
-    <td class='section_articles'>
-      <div class='section_head_mobile visible-xs'>볼꺼리</div>
-      <div id='section_articles_3'>
-        <%= render @newsletter.articles.where( news_section_id: 3) %>
-      </div>
-      <% if user_signed_in? && current_user.can_create?(Article) %>
-        <div class='add_article'>
-          <%= link_to "추가", new_newsletter_article_path(@newsletter, news_section_id: 3), id: 'add_article_link_3', class: 'add_article_link btn btn-default btn-xs pull-right', remote: true %>
-        </div>
-        <!-- <div id='add_article_form_3'>
-        </div> -->
-      <% end %>
-    </td>
-  </tr>
-
-  <!-- 신간소개 -->
-  <tr>
-    <th class="text-right hidden-xs">신간소개</th>
-    <td class='section_articles'>
-      <div class='section_head_mobile visible-xs'>신간소개</div>
-      <div id='section_articles_4'>
-        <%= render @newsletter.articles.where( news_section_id: 4) %>
-      </div>
-      <% if user_signed_in? && current_user.can_create?(Article) %>
-        <div class='add_article'>
-          <%= link_to "추가", new_newsletter_article_path(@newsletter, news_section_id: 4), id: 'add_article_link_4', class: 'add_article_link btn btn-default btn-xs pull-right', remote: true %>
-        </div>
-        <!-- <div id='add_article_form_4'>
-        </div> -->
-      <% end %>
-    </td>
-  </tr>
-
-  <!-- 채용공고 -->
-  <tr>
-    <th class="text-right hidden-xs">채용공고</th>
-    <td class='section_articles'>
-      <div class='section_head_mobile visible-xs'>채용공고</div>
-      <div id='section_articles_5'>
-        <%= render @newsletter.articles.where( news_section_id: 5) %>
-      </div>
-      <% if user_signed_in? && current_user.can_create?(Article) %>
-        <div class='add_article'>
-          <%= link_to "추가", new_newsletter_article_path(@newsletter, news_section_id: 5), id: 'add_article_link_5', class: 'add_article_link btn btn-default btn-xs pull-right', remote: true %>
-        </div>
-        <!-- <div id='add_article_form_5'>
-        </div> -->
-      <% end %>
-    </td>
-  </tr>
-
-  <!-- 업체홍보 -->
-  <tr>
-    <th class="text-right hidden-xs">업체홍보</th>
-    <td class='section_articles'>
-      <div class='section_head_mobile visible-xs'>업체홍보</div>
-      <div id='section_articles_6'>
-        <%= render @newsletter.articles.where( news_section_id: 6) %>
-      </div>
-      <% if user_signed_in? && current_user.can_create?(Article) %>
-        <div class='add_article'>
-          <%= link_to "추가", new_newsletter_article_path(@newsletter, news_section_id: 6), id: 'add_article_link_6', class: 'add_article_link btn btn-default btn-xs pull-right', remote: true %>
-        </div>
-        <!-- <div id='add_article_form_6'>
-        </div> -->
-      <% end %>
-    </td>
-  </tr>
-
+  <%= show_sections %>
 
   <tr>
     <th class='text-right hidden-xs'><%= t("activerecord.attributes.newsletter.published_at") %></th>
@@ -134,7 +26,7 @@
   <tr>
     <th class='text-right hidden-xs'><%= t("activerecord.attributes.newsletter.editor") %></th>
     <td>
-      <div class='section_head_mobile visible-xs'>편집자</div>
+      <div class='section_head_mobile visible-xs'>편집인</div>
       <%= @newsletter.editor.email %>
     </td>
   </tr>
