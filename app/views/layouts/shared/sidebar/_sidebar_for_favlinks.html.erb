@@ -1,0 +1,39 @@
+<% if controller_name == "favlinks" %>
+  <div>
+    <p style="margin-top:4.5em;margin-bottom:2em;border:1px solid red; border-radius:5px;padding:1em;">
+      <%= link_to image_tag("favlinks_no_border.png", width: '100%'), favlinks_path(page:nil, search:nil) %>
+      <%= link_to icon_label('plus', '링크추가'), \
+          ( params[:bundlelink_id] ? new_bundlelink_favlink_path(bundlelink_id: params[:bundlelink_id]) \
+          : new_favlink_path ), \
+          class: 'btn btn btn-danger', style:'margin-top:1em;display:block;' %>
+    </p>
+  </div>
+  <div style="margin-top:2em;">
+    <form action="/favlinks" class="" style="margin-bottom:1.5em;">
+       <div class="input-group">
+           <input type="Search" name="search" placeholder="Search ..." class="form-control" value="<%= params[:search] %>" />
+           <div class="input-group-btn">
+               <button class="btn btn-info">
+               <span class="glyphicon glyphicon-search"></span>
+               </button>
+           </div>
+       </div>
+    </form>
+  </div>
+  <% if user_signed_in? %>
+    <p><%= link_to "All Favlinks", favlinks_path %> | <%= link_to "My Favlinks", favlinks_path(whose: current_user) %></p>
+  <% end %>
+  <div class='row'>
+    <div class='col-md-12'>
+    <p><%= link_to_if (user_signed_in? && current_user.has_role?(:admin)), "Public Bundlelinks :", bundlelinks_path %></p>
+    <ul style="list-style-type: none;padding-left:1.5em;">
+    <% bundles = Bundlelink.shared_bundles %>
+    <% bundles.each do |bundle| %>
+      <li><%= icon('book') %>&nbsp;&nbsp;<%= link_to bundle.title, bundlelink_favlinks_path(bundle)%> (<%= bundle.favlinks.size %>)</li>
+    <% end %>
+    </ul>
+    </div>
+  </div>
+  <%= render "layouts/shared/sidebar/my_bundles" %>
+  <%= render "layouts/shared/sidebar/tag_clouds_for_favlink" %>
+<% end %>
