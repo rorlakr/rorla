@@ -68,11 +68,11 @@
   <%= link_to awesome_icon_label('plus', '서비스등록'), new_website_path, class: 'btn btn-default' %>
   <div class='text-right' style='float:right;'>
 
-    <div class="btn-group" role="group" aria-label="...">
+    <div class="btn-group hidden-xs" role="group" >
       <%= link_to "페이지당", '#', class: 'btn btn-primary disabled', data: { role: 'button'} %>
-      <%= link_to "10개씩", url_for(per_page: 10), class: "btn btn-default #{params[:per_page] == '10' ? 'active' : '' }", data: { role: 'button'} %>
-      <%= link_to "50개씩", url_for(per_page: 50), class: "btn btn-default #{params[:per_page] == '50' ? 'active' : '' }", data: { role: 'button'} %>
-      <%= link_to "100개씩", url_for(per_page: 100), class: "btn btn-default #{params[:per_page] == '100' ? 'active' : '' }", data: { role: 'button'} %>
+      <%= link_to "10개씩", url_for(per_page: 10), class: "btn btn-default #{params[:per_page] == '10' ? 'active' : '' }" %>
+      <%= link_to "50개씩", url_for(per_page: 50), class: "btn btn-default #{params[:per_page] == '50' ? 'active' : '' }" %>
+      <%= link_to "100개씩", url_for(per_page: 100), class: "btn btn-default #{params[:per_page] == '100' ? 'active' : '' }" %>
     </div>
   </div>
 </div>
