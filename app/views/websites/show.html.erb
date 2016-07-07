@@ -29,7 +29,10 @@
 
     <tr>
       <th class='text-right'><%= t('activerecord.attributes.website.user') %></th>
-      <td><%= @website.user.email %></td>
+      <td>
+        <%= user_profile(@website.user)%>
+        <%= @website.user.email %>
+      </td>
     </tr>
   </table>
 </div>
