@@ -4,7 +4,7 @@ class WebsitesController < ApplicationController
   before_action :set_website, only: [:show, :edit, :update, :destroy]
 
   def default_url_options
-    { page: params[:page], search: params[:search] }
+    { page: params[:page], per_page: params[:per_page] || 50, search: params[:search] }
   end
 
   # GET /websites
@@ -17,7 +17,7 @@ class WebsitesController < ApplicationController
     @websites = @websites.service_api if params[:type] == 'api'
     @websites = @websites.service_ruby if params[:type] == 'ruby'
     @websites_total = @websites.count
-    @websites = @websites.paginate(page: params[:page], per_page: 10)
+    @websites = @websites.paginate(page: params[:page], per_page: params[:per_page] )
 
     set_meta_tags og: {
       title: "루비와 레일스 웹서비스",
