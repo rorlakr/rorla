@@ -1,9 +1,9 @@
 <h2 class="page_title">루비와 레일스 웹서비스 <small>Total : <%= @websites_total %></small></h2>
 
 <%= form_tag websites_path, :method => 'get' do %>
+<input type='hidden' name='per_page' value="<%= params[:per_page] %>">
 <div id="custom-search-input" style="margin-bottom:1.5em;">
   <div class="input-group col-md-6 col-md-push-3">
-    <input type='hidden' name='per_page' value="<%= params[:per_page] %>">
     <input type="text" name="search" class="form-control input-lg" placeholder="URL을 입력한 후 엔터키를 누르세요." value="<%= params[:search] %>" />
     <span class="input-group-btn">
       <%= link_to icon('refresh'), websites_path( page: nil, tag: nil, search: nil), class: 'btn btn-danger btn-lg' %>
