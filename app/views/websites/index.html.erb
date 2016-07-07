@@ -40,7 +40,7 @@
   <tbody>
     <% @websites.each do |website| %>
       <tr>
-        <td><%= link_to raw("#{website.name} <small>#{website.site_url}</small>"), website.site_url, target: '_blank' %></td>
+        <td><%= link_to raw("#{website.name} <small>#{website.site_url}  <em style='color:red;'>#{website.comments.size.zero? ? '' : website.comments.size}</em></small>"), website, target: '_blank' %> <%= link_to icon('link'), website.site_url, target:'_blank' %></td>
         <td class='text-center'><%= website.service_state %></td>
         <td class='text-center'><%= website.service_type %></td>
         <td class='text-center'><%= time_ago_in_words(website.updated_at) %></td>
