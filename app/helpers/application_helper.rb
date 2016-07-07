@@ -215,4 +215,10 @@ module ApplicationHelper
   def yesno(bool)
     bool ? "예" : "아니오"
   end
+
+  def user_profile(user, options={ width: '20px', class: 'img-circle'})
+    user_profile_url = user.user_profile.nil? ? Gravatar.new(user.email).image_url : user.user_profile.avatar_url
+    image_tag(user_profile_url, width: options[:width], class: options[:class], style:'background-color:#eaeaea;')
+  end
+
 end

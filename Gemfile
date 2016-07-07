@@ -96,6 +96,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'jquery-minicolors-rails'
 gem 'auto_html'
 gem "validate_url"
+gem 'gravatar-ultimate'
 
 group :development do
   # Annotates Rails Models, routes, fixtures, and others based on the database schema. (http://github.com/ctran/annotate_models)
