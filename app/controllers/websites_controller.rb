@@ -10,6 +10,7 @@ class WebsitesController < ApplicationController
   # GET /websites
   # GET /websites.json
   def index
+    params[:per_page] ||= '50'
     @websites = Website.search(params[:search])
     @websites = @websites.service_on if params[:state] == 'on'
     @websites = @websites.service_off if params[:state] == 'off'
