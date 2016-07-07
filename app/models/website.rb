@@ -10,6 +10,7 @@ class Website < ActiveRecord::Base
   as_enum :service_type, %i{rails rails_api ruby}
 
   belongs_to :user
+  has_many :comments, as: :commentable, dependent: :destroy 
 
   validates :name, :site_url, presence: {message: "웹사이트명을 입력하세요."}
   validates :name, uniqueness: {message: "이미 등록된 웹사이트명입니다."}
