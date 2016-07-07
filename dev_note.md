@@ -1,11 +1,11 @@
-# 용어집 기능 추가
+# 용어집
 
 2016-06-14 작업시작
 2016-06-?? 일차작업 종료
 
 `Glossary` Modeling
 
-```sh
+```shell  
 $ rails g scaffold Glossary user:references term:string word_class:integer idiomatic:boolean memo:text
 ```
 
@@ -47,6 +47,7 @@ exclamation
 ```sh
 $ rails g resource GlossaryDefinition glossary:references user:references definition sentence:text
 ```
+
 
 Attributes:
 
@@ -90,3 +91,74 @@ end
 ```sh
 $ rake import_glossary[~/railstutorial_glossary_main.csv]
 ```
+
+
+
+# 뉴스레터
+
+테이블명 : newsletters
+테이블속성 :
+
+* published_at 발행일
+* title 뉴스타이틀
+* greeting 인사말
+* editor 편집자
+* poster 포스터 이미지
+
+---
+
+테이블명 : articles
+테이블속성 :
+
+* newsletter:references
+* section: %w[행사안내 읽을꺼리 볼꺼리 신간소개 채용공고 업체홍보]
+* title 제목
+* content 내용
+* poster 포스터 이미지
+* reference_url 참고 URL
+* reporter 제보자
+
+---
+
+newsletter has_many :articles
+
+---
+
+
+* events행사안내
+
+  * 행사명
+  * 행사정보
+  * 제보자
+  * URL
+
+* 읽은꺼리
+  * 제목
+  * 내용요약
+  * 제보자
+  * URL
+
+* 볼꺼리
+  * 제목
+  * 내용요약
+  * 제보자
+  * URL
+
+* 신간소개
+  * 책이름
+  * 내용요약
+  * 제보자
+  * URL
+
+* 채용공고
+  * 업체명
+  * 채용안내
+  * 제보자
+  * URL
+  *
+
+* 업체홍보
+  * 업체명
+  * 홍보내용
+  * 제보자
+  * URL
