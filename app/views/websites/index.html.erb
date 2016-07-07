@@ -3,6 +3,7 @@
 <%= form_tag websites_path, :method => 'get' do %>
 <div id="custom-search-input" style="margin-bottom:1.5em;">
   <div class="input-group col-md-6 col-md-push-3">
+    <input type='hidden' name='per_page' value="<%= params[:per_page] %>">
     <input type="text" name="search" class="form-control input-lg" placeholder="URL을 입력한 후 엔터키를 누르세요." value="<%= params[:search] %>" />
     <span class="input-group-btn">
       <%= link_to icon('refresh'), websites_path( page: nil, tag: nil, search: nil), class: 'btn btn-danger btn-lg' %>
@@ -40,7 +41,7 @@
   <tbody>
     <% @websites.each do |website| %>
       <tr>
-        <td><%= link_to raw("#{website.name} <small>#{website.site_url}  <em style='color:red;'>#{website.comments.size.zero? ? '' : website.comments.size}</em></small>"), website, target: '_blank' %> <%= link_to icon('link'), website.site_url, target:'_blank' %></td>
+        <td><%= link_to raw("#{website.name} <small>#{website.site_url}  <em style='color:red;'>#{website.comments.size.zero? ? '' : website.comments.size}</em></small>"), website %> <%= link_to icon('link'), website.site_url, target:'_blank' %></td>
         <td class='text-center'><%= website.service_state %></td>
         <td class='text-center'><%= website.service_type %></td>
         <td class='text-center'><%= time_ago_in_words(website.updated_at) %></td>
@@ -65,4 +66,13 @@
 
 <div class='form-actions'>
   <%= link_to awesome_icon_label('plus', '서비스등록'), new_website_path, class: 'btn btn-default' %>
+  <div class='text-right' style='float:right;'>
+
+    <div class="btn-group" role="group" aria-label="...">
+      <%= link_to "페이지당", '#', class: 'btn btn-primary disabled', data: { role: 'button'} %>
+      <%= link_to "10개씩", url_for(per_page: 10), class: "btn btn-default #{params[:per_page] == '10' ? 'active' : '' }", data: { role: 'button'} %>
+      <%= link_to "50개씩", url_for(per_page: 50), class: "btn btn-default #{params[:per_page] == '50' ? 'active' : '' }", data: { role: 'button'} %>
+      <%= link_to "100개씩", url_for(per_page: 100), class: "btn btn-default #{params[:per_page] == '100' ? 'active' : '' }", data: { role: 'button'} %>
+    </div>
+  </div>
 </div>
