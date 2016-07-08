@@ -8,8 +8,6 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body style="padding: 10px;">
-  <div class="container">
-
     <div class="preview_title_box" style="background-image: url('<%= @newsletter.poster_url ||  image_url('newsletter_background.png') %>') !important;color:<%= @newsletter.title_color %> !important;">
 
       <h2 class='page_title text-center'><%= @newsletter.title %></h2>
@@ -41,6 +39,5 @@
     <p>RORLAB 담당자<br /><%= link_to "http://rorlab.org", "http://rorlab.org" %></p>
     <%= image_tag "rorlab_emblem.png", width: '150px' %>
 
-  </div>
   </body>
 </html>
