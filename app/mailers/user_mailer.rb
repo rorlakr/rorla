@@ -6,16 +6,16 @@ class UserMailer < ActionMailer::Base
   helper :mailer
   helper Devise::Controllers::Helpers
 
-  default :from => "rorlakr@gmail.com"
+  default :from => "mailer@rorlab.org"
 
   def password_reset(user)
     mail(:to => user.email,
          :subject => '[RORLAB] 비밀번호 재설정 요청')
   end
 
-  def send_newsletter(user, newsletter)
+  def send_newsletter(user_email, newsletter)
     @newsletter = newsletter
-    mail(:to      => user.email,
+    mail(:to      => user_email,
          :subject => "[RORLAB] #{newsletter.title}")
   end
 
