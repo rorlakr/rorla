@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :newsletters do
     member do
       get 'preview'
+      get 'sendmail'
     end
     resources :articles
   end

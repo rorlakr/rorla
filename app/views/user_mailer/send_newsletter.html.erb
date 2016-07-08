@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  </head>
+  <body style="padding: 10px;">
+  <div class="container">
+
+    <div class="preview_title_box" style="background-image: url('<%= @newsletter.poster_url ||  image_url('newsletter_background.png') %>') !important;color:<%= @newsletter.title_color %> !important;">
+
+      <h2 class='page_title text-center'><%= @newsletter.title %></h2>
+
+      <div class="text-center">
+        <small>
+          발행일 : <%= @newsletter.published_at %> |
+          발행처 : RORLAB http://rorlab.org |
+          편집인 : <%= @newsletter.editor.email %>
+        </small>
+      </div>
+    </div>
+    <div style="border:1px solid #ccc;padding-top: 1em;">
+
+      <div style="padding:1em 2em;line-height: 2em;text-indent: 15px;">
+        <% link_filter = AutoHtml::Link.new(target: '_blank') %>
+        <%= simple_format link_filter.call(@newsletter.greeting) %>
+        <div class='text-right'>
+          <%= image_tag "rorlab_emblem_gray_tone.png", width: "110px" %>
+        </div>
+      </div>
+
+      <!-- 모든 섹션 보여주기 -->
+      <%= preview_sections2 %>
+
+    </div>
+
+    <hr>
+    <p>RORLAB 담당자<br /><%= link_to "http://rorlab.org", "http://rorlab.org" %></p>
+    <%= image_tag "rorlab_emblem.png", width: '150px' %>
+
+  </div>
+  </body>
+</html>
