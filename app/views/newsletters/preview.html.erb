@@ -33,4 +33,5 @@
 <div class="text-center">
   <%= link_to "편집", newsletter_path(@newsletter), class: 'btn btn-default' if user_signed_in? %>
   <%= link_to t('form_actions.back'), newsletters_path, class: 'btn btn-default' %>
+  <%= link_to awesome_icon_label( 'envelope-o', "자신에게 메일발송"), sendmail_newsletter_path(@newsletter), remote: true, class: 'btn btn-success' if user_signed_in? %>
 </div>

@@ -1,7 +1,7 @@
 class NewslettersController < ApplicationController
   include ActionView::Helpers::TextHelper
-  before_action :authenticate_user!, except: [:index, :show, :preview]
-  before_action :set_newsletter, only: [:show, :preview, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show, :preview, :sendmail]
+  before_action :set_newsletter, only: [:show, :preview, :sendmail, :edit, :update, :destroy]
 
   # GET /newsletters
   # GET /newsletters.json
@@ -31,14 +31,20 @@ class NewslettersController < ApplicationController
   end
 
   def preview
-
     set_meta_tags og: {
       title: @newsletter.title,
       description: truncate(@newsletter.greeting, :length   => 300, :separator => /\w/, :omission => "&hellip;"),
       image: root_url[0..-2] + ActionController::Base.helpers.asset_url('newsletter.png'),
       url: preview_newsletter_url(@newsletter)
     }, title: @newsletter.title
+  end
 
+  def sendmail
+    UserMailer.send_newsletter(current_user, @newsletter).deliver_later
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /newsletters/new
