@@ -40,7 +40,8 @@ class NewslettersController < ApplicationController
   end
 
   def sendmail
-    UserMailer.send_newsletter(current_user, @newsletter).deliver_later
+    to = params[:to]
+    UserMailer.send_newsletter(to, @newsletter).deliver_later
     respond_to do |format|
       format.html
       format.js
