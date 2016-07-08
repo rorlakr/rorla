@@ -16,7 +16,7 @@ class UserMailer < ActionMailer::Base
   def send_newsletter(user, newsletter)
     @newsletter = newsletter
     mail(:to      => user.email,
-         :subject => '[RORLAB] 뉴스레터')
+         :subject => "[RORLAB] #{newsletter.title}")
   end
 
   def confirm_purchase_request(user)
