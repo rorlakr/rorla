@@ -20,6 +20,18 @@ class UserMailer < ActionMailer::Base
          :subject => "[RORLAB] #{newsletter.title}")
   end
 
+  def confirm_subscribe_newsletter(user_email)
+    @user_email = user_email
+    mail(:to      => user_email,
+    :subject => "[RORLAB] 뉴스레터 구독신청 완료")
+  end
+
+  def confirm_unsubscribe_newsletter(user_email)
+    @user_email = user_email
+    mail(:to      => user_email,
+    :subject => "[RORLAB] 뉴스레터 구독해제 완료")
+  end
+
   def confirm_purchase_request(user)
     mail(:to      => user.email,
          :subject => '[RORLAB] 구매신청이 완료되었습니다.')

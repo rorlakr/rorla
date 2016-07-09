@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
 
   get 'newsletters/unsubscribe/:email' => 'newsletters#unsubscribe', as: :eunsubscribe_newsletters
-  post 'newsletters/subscribe/(:email)' => 'newsletters#subscribe', as: :esubscribe_newsletters
+  get 'newsletters/subscribe/(:email)' => 'newsletters#subscribe', as: :esubscribe_newsletters
   post 'newsletters/:user_id/subscribe' => 'newsletters#subscribe', as: :subscribe_newsletters
   put 'newsletters/:user_id/unsubscribe' => 'newsletters#unsubscribe', as: :unsubscribe_newsletters
   resources :newsletters do
