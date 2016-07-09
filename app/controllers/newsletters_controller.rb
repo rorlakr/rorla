@@ -99,10 +99,15 @@ class NewslettersController < ApplicationController
   end
 
   def subscribe
-    user_email = params[:user_id] ? User.find(params[:user_id]).email : params[:email]
+    begin
+      user_email = params[:user_id] ? User.find(params[:user_id]).email : Base64.urlsafe_decode64(params[:email])
+    rescue => e
+      user_email = params[:email]
+    end
     if Newsletter.subscribe(user_email)
+      UserMailer.confirm_subscribe_newsletter(user_email).deliver_later
       respond_to do |format|
-        format.html { redirect_to newsletters_url, notice: '구독 신청이 완료되었습니다.' }
+        format.html { redirect_to newsletters_url, notice: '구독 신청이 완료되었습니다. 잠시 후 이메일을 확인하시기 바랍니다. ' }
         format.js
       end
     else
@@ -116,8 +121,9 @@ class NewslettersController < ApplicationController
   def unsubscribe
     user_email = params[:user_id] ? User.find(params[:user_id]).email : Base64.urlsafe_decode64(params[:email])
     if Newsletter.unsubscribe(user_email)
+      UserMailer.confirm_unsubscribe_newsletter(user_email).deliver_later
       respond_to do |format|
-        format.html { redirect_to newsletters_url, notice: '구독 신청이 헤제되었습니다.' }
+        format.html { redirect_to newsletters_url, notice: '구독 신청이 헤제되었습니다. 잠시 후 이메일을 확인하시기 바랍니다.' }
         format.js
       end
     else
