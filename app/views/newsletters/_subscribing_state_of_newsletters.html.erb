@@ -1,5 +1,17 @@
-<% if (user_signed_in? && Newsletter.subscribed?(current_user.email)) %>
-  <%= link_to "구독해제", unsubscribe_newsletters_path(current_user), method: :post, remote: true, data:{confirm:"Are you sure?"}, class: 'btn btn-info' %>
-<% else %>
-  <%= link_to "구독하기", subscribe_newsletters_path(current_user), method: :post, remote: true, data:{confirm:"Are you sure?"}, class: 'btn btn-success' %>
-<% end %>
+<fieldset>
+  <legend>뉴스레터 구독신청</legend>
+  <% if user_signed_in?  %>
+    <% if Newsletter.subscribed?(current_user.email) %>
+      <%= link_to "구독해제", unsubscribe_newsletters_path(current_user), method: :put, remote: true, data:{confirm:"Are you sure?"}, class: 'btn btn-info' %>
+    <% else %>
+      <%= link_to "구독하기", subscribe_newsletters_path(current_user), method: :post, remote: true, data:{confirm:"Are you sure?"}, class: 'btn btn-success' %>
+    <% end %>
+  <% else %>
+      <%= form_tag esubscribe_newsletters_path, method: :post, remote: true do %>
+        <div class='form-group'>
+          <%= text_field_tag :email, nil, placeholder: "이메일주소", class: 'form-control'  %>
+        </div>
+        <%= submit_tag "구독신청", :name => nil, class: 'btn btn-success', style:'width:100%;' %>
+      <% end %>
+  <% end %>
+</fieldset>
