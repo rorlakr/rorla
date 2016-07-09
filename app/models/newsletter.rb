@@ -12,7 +12,6 @@ class Newsletter < ActiveRecord::Base
 
   has_many :articles, dependent: :destroy
 
-
   def self.subscribed?(email)
     mailgun = Mailgun()
     members = Mailgun::MailingList::Member.new mailgun, "newsletter_subscribers@rorlab.org"

@@ -4,6 +4,11 @@ Rails.application.routes.draw do
 
   root "welcome#index"
 
+
+  get 'newsletters/unsubscribe/:email' => 'newsletters#unsubscribe', as: :eunsubscribe_newsletters
+  post 'newsletters/subscribe/(:email)' => 'newsletters#subscribe', as: :esubscribe_newsletters
+  post 'newsletters/:user_id/subscribe' => 'newsletters#subscribe', as: :subscribe_newsletters
+  put 'newsletters/:user_id/unsubscribe' => 'newsletters#unsubscribe', as: :unsubscribe_newsletters
   resources :newsletters do
     member do
       get 'preview'
@@ -12,8 +17,6 @@ Rails.application.routes.draw do
     resources :articles
   end
 
-  post 'newsletters/:user_id/subscribe' => 'newsletters#subscribe', as: :subscribe_newsletters
-  post 'newsletters/:user_id/unsubscribe' => 'newsletters#unsubscribe', as: :unsubscribe_newsletters
 
   post 'glossaries/:glossary_id/glossary_definitions/:id/like_toggle' => 'glossary_definitions#like_toggle', as: :like_glossary_definition
   match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
