@@ -1,2 +1,3 @@
 $("#subscribing_state_of_newsletters").html("<%=j render 'newsletters/subscribing_state_of_newsletters' %>")
-alert("구독신청이 해제되었습니다. ")
+
+alert("<%= flash[:notice] %>");
