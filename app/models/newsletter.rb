@@ -12,4 +12,34 @@ class Newsletter < ActiveRecord::Base
 
   has_many :articles, dependent: :destroy
 
+
+  def self.subscribed?(email)
+    mailgun = Mailgun()
+    members = Mailgun::MailingList::Member.new mailgun, "newsletter_subscribers@rorlab.org"
+    begin
+      members.find email
+    rescue => e
+       false
+    end
+  end
+
+  def self.subscribe(email)
+    mailgun = Mailgun()
+    if subscribed?(email)
+      false
+    else
+      members = Mailgun::MailingList::Member.new mailgun, "newsletter_subscribers@rorlab.org"
+      members.add(email)
+    end
+  end
+
+  def self.unsubscribe(email)
+    mailgun = Mailgun()
+    if subscribed?(email)
+      members = Mailgun::MailingList::Member.new mailgun, "newsletter_subscribers@rorlab.org"
+      members.remove(email)
+    else
+      false
+    end
+  end
 end

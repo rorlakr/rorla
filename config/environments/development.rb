@@ -36,8 +36,8 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   #
   config.action_mailer.default_url_options = { host: 'localhost', port: '3000' }
-  # config.action_mailer.delivery_method = :smtp
-  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.delivery_method = :letter_opener
 
   # SMTP email 설정
   # config.action_mailer.smtp_settings = {
@@ -52,6 +52,17 @@ Rails.application.configure do
   #   api_key: Rails.application.secrets.rorla_mailgun_api_key,
   #   domain: 'rorlab.org'
   # }
+
+
+  config.action_mailer.smtp_settings = {
+    :port           => 587,
+    :address        => 'smtp.mailgun.org',
+    :user_name      => 'rorlab@gmail.com',
+    :password       => 'rorlab1234',
+    :domain         => 'rorlab.org',
+    :authentication => :plain,
+  }
+
 
   config.action_mailer.asset_host = "http://localhost:3000"
 
