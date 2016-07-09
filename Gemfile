@@ -88,7 +88,8 @@ gem "meetup_client"
 # Add comments to your Gemfile with each dependency's description. (https://github.com/ivantsepp/annotate_gem)
 gem 'annotate_gem'
 # Rails Action Mailer adapter for Mailgun (https://github.com/jorgemanrubia/mailgun_rails/)
-gem 'mailgun_rails'
+# gem 'mailgun_rails'
+gem 'mailgun'
 gem 'placeholdit'
 gem 'cocoon'
 gem 'simple_enum', '~> 2.0.0'

@@ -1,6 +1,6 @@
 class NewslettersController < ApplicationController
   include ActionView::Helpers::TextHelper
-  before_action :authenticate_user!, except: [:index, :show, :preview, :sendmail]
+  before_action :authenticate_user!, except: [:index, :show, :preview ]
   before_action :set_newsletter, only: [:show, :preview, :sendmail, :edit, :update, :destroy]
 
   # GET /newsletters
@@ -95,6 +95,36 @@ class NewslettersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to newsletters_url, notice: 'Newsletter was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def subscribe
+    user = User.find(params[:user_id])
+    if Newsletter.subscribe(user.email)
+      respond_to do |format|
+        format.html { redirect_to @newsletter, notice: '구독 신청이 완료되었습니다.' }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to :back, notice: "이미 구독 중입니다."}
+        format.js
+      end
+    end
+  end
+
+  def unsubscribe
+    user = User.find(params[:user_id])
+    if Newsletter.unsubscribe(user.email)
+      respond_to do |format|
+        format.html { redirect_to @newsletter, notice: '구독 신청이 헤제되었습니다.' }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to :back, notice: "구독 중이지 않습니다."}
+        format.js
+      end
     end
   end
 

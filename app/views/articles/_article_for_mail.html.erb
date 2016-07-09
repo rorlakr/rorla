@@ -6,7 +6,7 @@
     <h4 class="media-heading"><%= article.title %></h4>
     <%= simple_format truncate(article.content, length: 200) %>
     <small><%= link_to article.reference_url, article.reference_url, target: '_blank' %></small><br />
-    <% if action_name == 'preview' %>
+    <% if action_name == 'preview' or action_name == 'sendmail' %>
       <small>제보자 : <%= article.reporter.email.split("@").first %> (<%= time_ago_in_words(article.created_at) %>전에 작성)</small>
     <% end %>
     <% if action_name != 'preview' %>

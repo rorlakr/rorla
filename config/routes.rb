@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resources :articles
   end
 
+  post 'newsletters/:user_id/subscribe' => 'newsletters#subscribe', as: :subscribe_newsletters
+  post 'newsletters/:user_id/unsubscribe' => 'newsletters#unsubscribe', as: :unsubscribe_newsletters
 
   post 'glossaries/:glossary_id/glossary_definitions/:id/like_toggle' => 'glossary_definitions#like_toggle', as: :like_glossary_definition
   match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]

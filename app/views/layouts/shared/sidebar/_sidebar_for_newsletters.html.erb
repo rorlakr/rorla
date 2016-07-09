@@ -4,5 +4,10 @@
       <%= link_to image_tag("newsletter_no_border.png", width: '100%'), newsletters_path(page:nil, search:nil) %>
       <%= link_to icon_label('plus', '기사추가'), Newsletter.last, class: "btn btn-danger #{'disabled' if action_name == 'new'}", style:'margin-top:1em;display:block;'%>
     </p>
+
+    <div id='subscribing_state_of_newsletters'>
+      <%= render 'newsletters/subscribing_state_of_newsletters' %>
+    </div>
+
   </div>
 <% end %>
