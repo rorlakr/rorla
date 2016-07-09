@@ -85,11 +85,20 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
 
-  # config.action_mailer.delivery_method = :smtp
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {
-    api_key: Rails.application.secrets.rorla_mailgun_api_key,
-    domain: 'rorlab.org'
+  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.delivery_method = :mailgun
+  # config.action_mailer.mailgun_settings = {
+  #   api_key: Rails.application.secrets.rorla_mailgun_api_key,
+  #   domain: 'rorlab.org'
+  # }
+
+  config.action_mailer.smtp_settings = {
+    :port           => 587,
+    :address        => 'smtp.mailgun.org',
+    :user_name      => 'rorlab@gmail.com',
+    :password       => 'rorlab1234',
+    :domain         => 'rorlab.org',
+    :authentication => :plain,
   }
 
   config.action_mailer.asset_host = "http://rorlab.org"
