@@ -99,7 +99,7 @@ class NewslettersController < ApplicationController
   end
 
   def subscribe
-    user_email = params[:user_id] ? User.find(params[:user_id]).email : Base64.urlsafe_decode64(params[:email])
+    user_email = params[:user_id] ? User.find(params[:user_id]).email : params[:email]
     if Newsletter.subscribe(user_email)
       respond_to do |format|
         format.html { redirect_to newsletters_url, notice: '구독 신청이 완료되었습니다.' }
