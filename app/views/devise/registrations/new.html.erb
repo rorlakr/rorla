@@ -14,6 +14,9 @@
       <div class="form-group">
         <%= f.input :password_confirmation, required: true, input_html: { class: 'form-control' } %>
       </div>
+      <div class="form-group">
+        <%= recaptcha_tags %>
+      </div>
       <%= f.button :submit, "Sign up", class: "btn btn-default" %>
     <% end %>
 

@@ -100,6 +100,7 @@ gem "validate_url"
 gem 'gravatar-ultimate'
 # Simple Rails app configuration (https://github.com/laserlemon/figaro)
 gem 'figaro'
+gem "recaptcha", require: "recaptcha/rails"
 
 group :development do
   # Annotates Rails Models, routes, fixtures, and others based on the database schema. (http://github.com/ctran/annotate_models)

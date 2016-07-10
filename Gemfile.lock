@@ -349,6 +349,8 @@ GEM
     rdiscount (1.6.8)
     rdoc (4.2.2)
       json (~> 1.4)
+    recaptcha (3.3.0)
+      json
     redcarpet (3.3.3)
     remotipart (1.2.1)
     responders (2.1.1)
@@ -543,6 +545,7 @@ DEPENDENCIES
   rails (= 4.2.6)
   rails-erd
   rails_12factor
+  recaptcha
   redcarpet
   remotipart (~> 1.2)
   rolify
