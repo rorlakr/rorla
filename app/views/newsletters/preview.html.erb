@@ -34,5 +34,5 @@
   <%= link_to "편집", newsletter_path(@newsletter), class: 'btn btn-default' if user_signed_in? %>
   <%= link_to t('form_actions.back'), newsletters_path, class: 'btn btn-default' %>
   <%= link_to awesome_icon_label( 'envelope-o', "자신에게 메일발송"), sendmail_newsletter_path(@newsletter, to: current_user.email ), remote: true, class: 'btn btn-success', data: { confirm: 'Are you sure?' } if user_signed_in? %>
-  <%= link_to awesome_icon_label( 'envelope-o', "구독자에게 발송하기"), sendmail_newsletter_path(@newsletter, to: 'newsletter_subscribers@rorlab.org'), remote: true, class: 'btn btn-primary', data: { confirm: 'Are you sure?' } if user_signed_in? and current_user.has_role?(:admin) %>
+  <%= link_to awesome_icon_label( 'envelope-o', "구독자에게 발송하기"), sendmail_newsletter_path(@newsletter, to: 'newsletter_subscribers@mg.rorlab.org'), remote: true, class: 'btn btn-primary', data: { confirm: 'Are you sure?' } if user_signed_in? and current_user.has_role?(:admin) %>
 </div>
