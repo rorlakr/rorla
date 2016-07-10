@@ -1,0 +1,16 @@
+<div class='panel panel-default' style="overflow:auto;padding:2em 1.5em;">
+    <div class="row text-center">
+  <div class="col-xs-12 col-sm-6 col-sm-push-3">
+      <h2 class="page_title">뉴스레터 구독신청폼</h2>
+      <%= form_tag esubscribe_newsletters_path do %>
+        <div class='form-group'>
+          <%= text_field_tag :email, @user_email, placeholder: "이메일주소", class: 'form-control', required: true  %>
+        </div>
+        <div class="form-group">
+          <%= recaptcha_tags %>
+        </div>
+        <%= submit_tag "구독신청", :name => nil, class: 'btn btn-success' %>
+      <% end %>
+    </div>
+  </div>
+</div>

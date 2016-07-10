@@ -1,6 +1,6 @@
 class NewslettersController < ApplicationController
   include ActionView::Helpers::TextHelper
-  before_action :authenticate_user!, except: [:index, :show, :preview, :subscribe, :unsubscribe ]
+  before_action :authenticate_user!, except: [:index, :show, :preview, :new_subscribe, :subscribe, :unsubscribe ]
   before_action :set_newsletter, only: [:show, :preview, :sendmail, :edit, :update, :destroy]
 
   # GET /newsletters
@@ -98,6 +98,16 @@ class NewslettersController < ApplicationController
     end
   end
 
+  def new_subscribe
+    if params[:email]
+      begin
+        @user_email = Base64.urlsafe_decode64(params[:email])
+      rescue => e
+        @user_email = params[:email]
+      end
+    end
+  end
+
   def subscribe
     if verify_recaptcha
       flash.delete :recaptcha_error
@@ -118,7 +128,7 @@ class NewslettersController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to newsletters_url }
+      format.html { redirect_to :back }
       format.js
     end
   end
