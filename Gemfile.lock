@@ -101,6 +101,9 @@ GEM
     capistrano-bundler (1.1.4)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
+    capistrano-figaro-yml (1.0.3)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2, >= 1.2.0)
     capistrano-rails (1.1.6)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
@@ -483,6 +486,7 @@ DEPENDENCIES
   bootstrap-sass
   capistrano (~> 3.4.1)
   capistrano-bundler
+  capistrano-figaro-yml
   capistrano-rails
   capistrano-rails-console
   capistrano-rails-tail-log

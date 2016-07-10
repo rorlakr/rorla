@@ -116,7 +116,7 @@ group :development do
   # Send User Notifications on Mac OS X 10.8 - with status icons. (https://github.com/Springest/terminal-notifier-guard)
   gem 'terminal-notifier-guard'
   # Capistrano tasks for automating figaro `application.yml` file handling for Rails 4+ apps. (https://github.com/ChouAndy/capistrano-figaro-yml)
-  # gem 'capistrano-figaro-yml'
+  gem 'capistrano-figaro-yml'
 end
 
 group :development, :test do
