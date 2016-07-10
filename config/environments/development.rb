@@ -53,17 +53,14 @@ Rails.application.configure do
   #   domain: 'rorlab.org'
   # }
 
-
-  config.action_mailer.smtp_settings = {
+  ActionMailer::Base.smtp_settings = {
     :port           => 587,
-    :address        => 'smtp.mailgun.org',
-    :user_name      => ENV['MAILGUN_USERNAME'],
-    :password       => ENV['MAINGUN_PASSWORD'],
-    :domain         => 'rorlab.org',
+    :address        => "smtp.mailgun.org",
+    :domain         => ENV['domain'],
+    :user_name      => ENV['username'],
+    :password       => ENV['password'],
     :authentication => :plain,
   }
-
-
   config.action_mailer.asset_host = "http://localhost:3000"
 
 end

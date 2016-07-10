@@ -98,6 +98,8 @@ gem 'jquery-minicolors-rails'
 gem 'auto_html'
 gem "validate_url"
 gem 'gravatar-ultimate'
+# Simple Rails app configuration (https://github.com/laserlemon/figaro)
+gem 'figaro'
 
 group :development do
   # Annotates Rails Models, routes, fixtures, and others based on the database schema. (http://github.com/ctran/annotate_models)
@@ -113,8 +115,6 @@ group :development do
   # gem 'docker_alias', '~> 0.0.2'
   # Send User Notifications on Mac OS X 10.8 - with status icons. (https://github.com/Springest/terminal-notifier-guard)
   gem 'terminal-notifier-guard'
-  # Simple Rails app configuration (https://github.com/laserlemon/figaro)
-  # gem 'figaro'
   # Capistrano tasks for automating figaro `application.yml` file handling for Rails 4+ apps. (https://github.com/ChouAndy/capistrano-figaro-yml)
   # gem 'capistrano-figaro-yml'
 end
