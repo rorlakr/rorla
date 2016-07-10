@@ -94,7 +94,7 @@ Rails.application.configure do
     :user_name      => ENV['username'],
     :password       => ENV['password'],
     :authentication => :plain,
-  }}
+  }
 
   config.action_mailer.asset_host = "http://rorlab.org"
 end
