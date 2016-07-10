@@ -14,7 +14,7 @@ class Newsletter < ActiveRecord::Base
 
   def self.subscribed?(email)
     mailgun = Mailgun()
-    members = Mailgun::MailingList::Member.new mailgun, "newsletter_subscribers@rorlab.org"
+    members = Mailgun::MailingList::Member.new mailgun, "newsletter_subscribers@#{ENV['domain']}"
     begin
       members.find email
     rescue => e
@@ -27,7 +27,7 @@ class Newsletter < ActiveRecord::Base
     if subscribed?(email)
       false
     else
-      members = Mailgun::MailingList::Member.new mailgun, "newsletter_subscribers@rorlab.org"
+      members = Mailgun::MailingList::Member.new mailgun, "newsletter_subscribers@#{ENV['domain']}"
       members.add(email)
     end
   end
@@ -35,7 +35,7 @@ class Newsletter < ActiveRecord::Base
   def self.unsubscribe(email)
     mailgun = Mailgun()
     if subscribed?(email)
-      members = Mailgun::MailingList::Member.new mailgun, "newsletter_subscribers@rorlab.org"
+      members = Mailgun::MailingList::Member.new mailgun, "newsletter_subscribers@#{ENV['domain']}"
       members.remove(email)
     else
       false
