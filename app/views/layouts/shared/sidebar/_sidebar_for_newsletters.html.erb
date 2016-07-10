@@ -6,7 +6,7 @@
     </p>
 
     <div id='subscribing_state_of_newsletters'>
-      <%= render 'newsletters/subscribing_state_of_newsletters' %>
+      <%= render 'newsletters/subscribing_state_of_newsletters' unless action_name == 'new_subscribe' %>
     </div>
 
   </div>

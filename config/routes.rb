@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post 'newsletters/subscribe/(:email)' => 'newsletters#subscribe', as: :esubscribe_newsletters
   post 'newsletters/:user_id/subscribe' => 'newsletters#subscribe', as: :subscribe_newsletters
   put 'newsletters/:user_id/unsubscribe' => 'newsletters#unsubscribe', as: :unsubscribe_newsletters
+  get 'newsletters/new/subscribe' => 'newsletters#new_subscribe', as: :new_subscribe_newsletters
   resources :newsletters do
     member do
       get 'preview'
