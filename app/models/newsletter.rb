@@ -28,7 +28,12 @@ class Newsletter < ActiveRecord::Base
       false
     else
       members = Mailgun::MailingList::Member.new mailgun, "newsletter_subscribers@#{ENV['domain']}"
-      members.add(email)
+      begin
+        members.add(email)
+        "added"
+      rescue => e
+        "이메일 주소를 확인하세요."
+      end
     end
   end
 

@@ -125,15 +125,19 @@ class NewslettersController < ApplicationController
         rescue => e
           user_email = params[:email]
         end
-        if Newsletter.subscribe(user_email)
-          UserMailer.confirm_subscribe_newsletter(user_email).deliver_later
-          flash[:notice] = '구독 신청이 완료되었습니다. 잠시 후 이메일을 확인하시기 바랍니다. '
+        if result = Newsletter.subscribe(user_email)
+          if result == 'added'
+            UserMailer.confirm_subscribe_newsletter(user_email).deliver_later
+            flash[:notice] = '구독 신청이 완료되었습니다. 잠시 후 이메일을 확인하시기 바랍니다. '
+          else
+            flash[:error] = result
+          end
         else
           flash[:notice] = "이미 구독 중입니다."
         end
       else
         flash.delete :recaptcha_error
-        flash[:notice] = "너 로봇이구나! 이 놈~"
+        flash[:error] = "로봇이 아니면 로봇여부를 체크해 주세요. "
       end
     end
 
