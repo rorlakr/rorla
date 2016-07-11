@@ -169,8 +169,8 @@ module ApplicationHelper
 
   def copyright_with_tooltip(resource, email)
     capture do
-      concat content_tag(:small, icon('user'))
-      concat ' '
+      # concat content_tag(:small, icon('user'))
+      # concat ' '
       concat t('authored_html', who: account_with_tooltip(email), ago: time_ago_in_words(resource.created_at))
     end
   end
