@@ -7,6 +7,7 @@
   </h2>
 
   <div class='authored_by'>
+    <%= user_profile rblog.writer %>
     <%= copyright_with_tooltip rblog, rblog.writer.email %>
     <%= comment_count(rblog.comments(true).size) %>
     <%= hit_count(rblog.impressionist_count) %>&nbsp;
