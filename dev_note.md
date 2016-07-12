@@ -162,6 +162,3 @@ newsletter has_many :articles
   * 홍보내용
   * 제보자
   * URL
-
-activate-power-mode 패키지입니다.
-재밌군요. ㅎㅎㅎ
