@@ -42,3 +42,4 @@ public/screenshot.png
 rorla_development_glossaries_and_glossary_definitions.sql
 
 *.vscode
+.rubocop.yml
