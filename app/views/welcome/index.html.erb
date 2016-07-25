@@ -96,3 +96,54 @@
 		</div>
 	</div>
 </div>
+
+
+<button id="liveButton" class='btn btn-default btn-xs'>
+  Create Live Stream To Facebook
+</button>
+
+<script>
+  // 페이스북 SDK 임포트 및 초기화
+  // https://developers.facebook.com/docs/javascript/quickstart
+  // 에서 최신 스크립트를 확인하고 사용하시길 권장한다.
+  // window.fbAsyncInit = function() {
+  //   FB.init({
+  //     appId: <%= ENV['FB_LIVE_STREAM_APP_ID'] %>,
+  //     xfbml: true,
+  //     version: 'v2.5'
+  //   });
+  // };
+
+  // (function(d, s, id){
+  //   var js, fjs = d.getElementsByTagName(s)[0];
+  //   if (d.getElementById(id)) {return;}
+  //   js = d.createElement(s); js.id = id;
+  //   js.src = "//connect.facebook.net/en_US/sdk.js";
+  //   fjs.parentNode.insertBefore(js, fjs);
+  // }(document, 'script', 'facebook-jssdk'));
+
+  // 페이스북 라이브 스트리밍 스타터
+  // https://developers.facebook.com/docs/videos/live-video-api#golivedialog
+  // 에서 최신 스크립트를 확인하고 사용하시길 권장한다.
+  document.getElementById('liveButton').onclick = function() {
+    FB.ui({
+      display: 'popup',
+      method: 'live_broadcast',
+      phase: 'create',
+    }, function(response) {
+      if (!response.id) {
+        alert('dialog canceled');
+        return;
+      }
+      alert('stream url:' + response.secure_stream_url);
+      FB.ui({
+        display: 'popup',
+        method: 'live_broadcast',
+        phase: 'publish',
+        broadcast_data: response,
+      }, function(response) {
+        alert("video status: \n" + response.status);
+      });
+    });
+  };
+</script>
