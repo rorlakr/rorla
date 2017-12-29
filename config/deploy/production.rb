@@ -3,7 +3,7 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server 'rorla2.rorlab.org', user: 'rorlab', roles: %w{app db web}
+server 'rorlab.org', user: 'deployer', roles: %w{app db web}
 
 # Configuration
 # =============

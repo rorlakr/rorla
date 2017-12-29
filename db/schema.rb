@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(version: 20160706103822) do
     t.datetime "updated_at"
   end
 
-  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
+  add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id", using: :btree
   add_index "comments", ["writer_id"], name: "index_comments_on_writer_id", using: :btree
 
   create_table "courses", force: :cascade do |t|
@@ -377,7 +377,7 @@ ActiveRecord::Schema.define(version: 20160706103822) do
     t.datetime "updated_at"
   end
 
-  add_index "plazas", ["postitable_id", "postitable_type"], name: "index_plazas_on_postitable_id_and_postitable_type", using: :btree
+  add_index "plazas", ["postitable_type", "postitable_id"], name: "index_plazas_on_postitable_type_and_postitable_id", using: :btree
 
   create_table "podcasts", force: :cascade do |t|
     t.string   "uid",            limit: 255
@@ -434,18 +434,6 @@ ActiveRecord::Schema.define(version: 20160706103822) do
   add_index "purchase_requests", ["deleted_by_id"], name: "index_purchase_requests_on_deleted_by_id", using: :btree
   add_index "purchase_requests", ["group_purchase_id"], name: "index_purchase_requests_on_group_purchase_id", using: :btree
   add_index "purchase_requests", ["user_id"], name: "index_purchase_requests_on_user_id", using: :btree
-
-  create_table "questionnaires", force: :cascade do |t|
-    t.string   "title",       limit: 255,   null: false
-    t.text     "description", limit: 65535
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.integer  "writer_id",   limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-  end
-
-  add_index "questionnaires", ["writer_id"], name: "index_questionnaires_on_writer_id", using: :btree
 
   create_table "questions", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -517,46 +505,6 @@ ActiveRecord::Schema.define(version: 20160706103822) do
   end
 
   add_index "schedules", ["user_id"], name: "index_schedules_on_user_id", using: :btree
-
-  create_table "survey_options", force: :cascade do |t|
-    t.integer  "survey_request_id", limit: 4
-    t.string   "item_key",          limit: 255, null: false
-    t.integer  "item_value",        limit: 4,   null: false
-    t.integer  "writer_id",         limit: 4
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-  end
-
-  add_index "survey_options", ["survey_request_id"], name: "index_survey_options_on_survey_request_id", using: :btree
-  add_index "survey_options", ["writer_id"], name: "index_survey_options_on_writer_id", using: :btree
-
-  create_table "survey_requests", force: :cascade do |t|
-    t.integer  "questionnaire_id", limit: 4
-    t.string   "title",            limit: 255,                   null: false
-    t.text     "description",      limit: 65535
-    t.boolean  "required",                       default: false
-    t.integer  "writer_id",        limit: 4
-    t.datetime "created_at",                                     null: false
-    t.datetime "updated_at",                                     null: false
-    t.integer  "pattern_cd",       limit: 4
-  end
-
-  add_index "survey_requests", ["questionnaire_id"], name: "index_survey_requests_on_questionnaire_id", using: :btree
-  add_index "survey_requests", ["writer_id"], name: "index_survey_requests_on_writer_id", using: :btree
-
-  create_table "survey_responses", force: :cascade do |t|
-    t.integer  "survey_request_id", limit: 4
-    t.string   "answer_short",      limit: 255
-    t.text     "answer_long",       limit: 65535
-    t.string   "answer_single",     limit: 255
-    t.string   "answer_multi",      limit: 255
-    t.integer  "writer_id",         limit: 4
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-  end
-
-  add_index "survey_responses", ["survey_request_id"], name: "index_survey_responses_on_survey_request_id", using: :btree
-  add_index "survey_responses", ["writer_id"], name: "index_survey_responses_on_writer_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id",        limit: 4
@@ -693,17 +641,10 @@ ActiveRecord::Schema.define(version: 20160706103822) do
   add_foreign_key "purchase_requests", "group_purchases"
   add_foreign_key "purchase_requests", "users"
   add_foreign_key "purchase_requests", "users", column: "deleted_by_id"
-  add_foreign_key "questionnaires", "users", column: "writer_id"
   add_foreign_key "recommandations", "appliers"
   add_foreign_key "recommandations", "schedules"
   add_foreign_key "recommandations", "users", column: "recommander_id"
   add_foreign_key "schedules", "users"
-  add_foreign_key "survey_options", "survey_requests"
-  add_foreign_key "survey_options", "users", column: "writer_id"
-  add_foreign_key "survey_requests", "questionnaires"
-  add_foreign_key "survey_requests", "users", column: "writer_id"
-  add_foreign_key "survey_responses", "survey_requests"
-  add_foreign_key "survey_responses", "users", column: "writer_id"
   add_foreign_key "user_profiles", "users"
   add_foreign_key "websites", "users"
 end

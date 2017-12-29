@@ -10,7 +10,7 @@ set :repo_url, 'git@github.com:rorlakr/rorla.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/home/rorlab/www/rorla'
+set :deploy_to, '/home/deployer/www/rorla'
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
