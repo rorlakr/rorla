@@ -163,7 +163,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 # Full-stack web application framework. (http://www.rubyonrails.org)
-gem 'rails', '4.2.6'
+gem 'rails', '4.2.10'
 # Use sqlite3 as the database for Active Record
 # This module allows Ruby programs to interface with the SQLite3 database engine (http://www.sqlite.org) (https://github.com/sparklemotion/sqlite3-ruby)
 gem 'sqlite3', group: :development
