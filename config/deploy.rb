@@ -20,7 +20,6 @@ set :deploy_to, '/home/deployer/www/rorla'
 # set :format_options, command_output: true, log_file: 'log/capistrano.log', color: :auto, truncate: :auto
 set :format_options, banner: :auto, command_output: false
 
-
 # rbenv
 set :rbenv_type, :user
 set :rbenv_ruby, '2.3.1'
@@ -34,10 +33,11 @@ set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/uploads')
 
-# before 'deploy:check:linked_files', 'config:push'
-#
+before 'deploy:check:linked_files', 'config:push'
+before 'deploy:starting', 'figaro_yml:setup'
+after 'figaro_yml:setup', 'puma:nginx_config'
 after 'deploy:publishing', 'deploy:restart'
-
+after 'deploy:restart', 'nginx:reload'
 
 namespace :deploy do
   task :restart do

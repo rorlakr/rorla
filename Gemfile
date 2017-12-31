@@ -48,7 +48,7 @@ gem 'pageless-rails', github: 'rorlab/pageless-rails'
 # Following best practices from http://12factor.net run a maintainable, clean, and scalable app on Rails (https://github.com/heroku/rails_12factor)
 gem 'rails_12factor', group: :production
 # A simple, fast Mysql library for Ruby, binding to libmysql (http://github.com/brianmario/mysql2)
-gem 'mysql2', '0.3.18', group: :production
+gem 'mysql2', '0.4.10', group: :production
 # speed, persistence, http(s) (https://github.com/excon/excon)
 gem 'excon', '~> 0.39.5'
 # General reputation Rails engine. (http://github.com/tute/merit)
@@ -209,7 +209,7 @@ gem 'remotipart', '~> 1.2'
 # Use Capistrano for deployment
 group :development do
   # Capistrano - Welcome to easy deployment with Ruby over SSH (http://capistranorb.com/)
-  gem 'capistrano', '~> 3.4.1'
+  gem 'capistrano', '~> 3.10.1'
   # gem 'capistrano', '~> 3.5.0'
   # Rails specific Capistrano tasks (https://github.com/capistrano/rails)
   gem 'capistrano-rails'
@@ -226,7 +226,7 @@ group :development do
   gem 'capistrano3-puma'
   # Capistrano 3.x tasks to upload shared config that is stored outside of SCM (https://github.com/rjocoleman/capistrano-upload-config)
   gem 'capistrano-upload-config'
-  gem 'capistrano3-nginx', '~> 2.0'
+  gem 'capistrano3-nginx', '~> 2.1.6'
 end
 
 # Use debugger

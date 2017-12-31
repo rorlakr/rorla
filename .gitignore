@@ -16,6 +16,7 @@
 /tmp
 
 /public/uploads/**/*
+/config/database.yml
 
 .ruby-version
 
