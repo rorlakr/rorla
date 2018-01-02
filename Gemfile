@@ -35,6 +35,7 @@ gem 'jquery-turbolinks'
 gem 'friendly_id'
 # Ruby file upload library (https://github.com/carrierwaveuploader/carrierwave)
 gem 'carrierwave'
+gem 'fog'
 # Manipulate images with minimal use of memory via ImageMagick / GraphicsMagick (https://github.com/minimagick/minimagick)
 gem 'mini_magick'
 gem 'webshots', github: 'rorlab/webshots'
@@ -75,7 +76,7 @@ gem 'multi_json', '~> 1.10.1'
 gem 'oj', '~> 2.10.2'
 
 gem 'delayed_job_active_record'
-gem "delayed_job_web"
+gem 'delayed_job_web'
 gem 'daemons'
 # Collection of SEO helpers for Ruby on Rails. (http://github.com/kpumuk/meta-tags)
 gem 'meta-tags', '~> 2.0.0'
@@ -84,7 +85,7 @@ gem 'gibbon'
 # yaml_db allows export/import of database into/from yaml files (https://github.com/yamldb/yaml_db)
 gem 'yaml_db'
 # Easy way to access the Meetup.com API (https://rubygems.org/gems/meetup_client)
-gem "meetup_client"
+gem 'meetup_client'
 # Add comments to your Gemfile with each dependency's description. (https://github.com/ivantsepp/annotate_gem)
 gem 'annotate_gem'
 # Rails Action Mailer adapter for Mailgun (https://github.com/jorgemanrubia/mailgun_rails/)
@@ -96,11 +97,11 @@ gem 'simple_enum', '~> 2.0.0'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'jquery-minicolors-rails'
 gem 'auto_html'
-gem "validate_url"
+gem 'validate_url'
 gem 'gravatar-ultimate'
 # Simple Rails app configuration (https://github.com/laserlemon/figaro)
 gem 'figaro'
-gem "recaptcha", require: "recaptcha/rails"
+gem 'recaptcha', require: 'recaptcha/rails'
 
 group :development do
   # Annotates Rails Models, routes, fixtures, and others based on the database schema. (http://github.com/ctran/annotate_models)
