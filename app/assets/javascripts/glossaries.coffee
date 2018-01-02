@@ -23,8 +23,8 @@ $(document).on 'click', "#add_tag_link", (event) ->
   $(this).fadeOut()
 
 $ ->
-  loadFacebookSDK()
-  bindFacebookEvents() unless window.fbEventsBound
+  # loadFacebookSDK()
+  # bindFacebookEvents() unless window.fbEventsBound
 
   ((d, s, id) ->
     js = undefined
@@ -33,7 +33,7 @@ $ ->
       return
     js = d.createElement(s)
     js.id = id
-    js.src = '//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.6&appId=140309816373762'
+    js.src = '//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8&appId=140309816373762'
     fjs.parentNode.insertBefore js, fjs
     return
   ) document, 'script', 'facebook-jssdk'
