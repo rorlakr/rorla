@@ -34,8 +34,7 @@ gem 'jquery-turbolinks'
 # A comprehensive slugging and pretty-URL plugin. (http://github.com/norman/friendly_id)
 gem 'friendly_id'
 # Ruby file upload library (https://github.com/carrierwaveuploader/carrierwave)
-gem 'carrierwave'
-gem "fog-aws"
+gem 'carrierwave-aws'
 
 # Manipulate images with minimal use of memory via ImageMagick / GraphicsMagick (https://github.com/minimagick/minimagick)
 gem 'mini_magick'
