@@ -35,7 +35,8 @@ gem 'jquery-turbolinks'
 gem 'friendly_id'
 # Ruby file upload library (https://github.com/carrierwaveuploader/carrierwave)
 gem 'carrierwave'
-gem 'fog'
+gem "fog-aws"
+
 # Manipulate images with minimal use of memory via ImageMagick / GraphicsMagick (https://github.com/minimagick/minimagick)
 gem 'mini_magick'
 gem 'webshots', github: 'rorlab/webshots'
