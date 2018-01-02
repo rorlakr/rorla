@@ -4,7 +4,7 @@ CarrierWave.configure do |config|
     config.storage = :file
   else
     config.storage    = :aws
-    config.aws_bucket = ENV.fetch('AWS_BUCKET_NAME')
+    config.aws_bucket = ENV['AWS_BUCKET_NAME']
     config.aws_acl    = 'public-read'
   
     # Optionally define an asset host for configurations that are fronted by a
@@ -21,9 +21,9 @@ CarrierWave.configure do |config|
     }
   
     config.aws_credentials = {
-      access_key_id:     ENV.fetch('AWS_ACCESS_KEY_ID'),
-      secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
-      region:            ENV.fetch('AWS_S3_REGION') # Required
+      access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+      region:            ENV['AWS_S3_REGION'] # Required
     }
   
     # Optional: Signing of download urls, e.g. for serving private content through
