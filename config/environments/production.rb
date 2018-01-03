@@ -81,7 +81,7 @@ Rails.application.configure do
 
   # ActionMailer Config
   # config.action_mailer.default_url_options = { :host => ENV['RORLA_HOST'] }
-  config.action_mailer.default_url_options = { :host => 'rorlab.org' }
+  config.action_mailer.default_url_options = { :host => 'www.rorlab.org' }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
 
@@ -96,5 +96,5 @@ Rails.application.configure do
     :authentication => :plain,
   }
 
-  config.action_mailer.asset_host = "http://rorlab.org"
+  config.action_mailer.asset_host = "https://www.rorlab.org"
 end

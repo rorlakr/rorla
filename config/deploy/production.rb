@@ -14,7 +14,7 @@ server 'rorlab.org', user: 'deployer', roles: %w{app db web}
 # Feel free to add new variables to customise your setup.
 
 set :rails_env, :production
-set :nginx_server_name, 'rorlab.org'
+set :nginx_server_name, 'www.rorlab.org'
 
 set :puma_threads, [1, 4]
 set :puma_workers, 4
