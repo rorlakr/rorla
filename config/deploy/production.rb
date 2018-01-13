@@ -2,8 +2,9 @@
 # ======================
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
+# 13.125.108.242 rorlab.dev
 
-server 'rorlab.org', user: 'deployer', roles: %w{app db web}
+server 'rorlab.dev', user: 'deployer', roles: %w{app db web}
 
 # Configuration
 # =============
@@ -14,7 +15,8 @@ server 'rorlab.org', user: 'deployer', roles: %w{app db web}
 # Feel free to add new variables to customise your setup.
 
 set :rails_env, :production
-set :nginx_server_name, 'www.rorlab.org rorlab.org'
+set :nginx_server_name, 'www.rorlab.org'
+set :nginx_domain_name, 'rorlab.org'
 
 set :puma_threads, [1, 4]
 set :puma_workers, 4
