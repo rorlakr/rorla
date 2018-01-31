@@ -14,6 +14,7 @@ server 'rorlab.dev', user: 'deployer', roles: %w{app db web}
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
+set :nginx_use_ssl, true
 set :rails_env, :production
 set :nginx_server_name, 'www.rorlab.org'
 set :nginx_domain_name, 'rorlab.org'
