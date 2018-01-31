@@ -1,8 +1,6 @@
 Rails.application.routes.default_url_options[:host] = 'rorlab.org'
 
 Rails.application.routes.draw do
-  match "*path" => redirect("https://www.rorlab.org/%{path}"), :constraints => { :protocol => "http://" }, via: [ :get, :post ]
-  match "*path" => redirect("https://www.rorlab.org/%{path}"), :constraints => { :subdomain => "" }, via: [ :get, :post ]
 
   root "welcome#index"
 
