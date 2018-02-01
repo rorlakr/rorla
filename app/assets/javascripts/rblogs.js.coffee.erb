@@ -6,7 +6,8 @@ $ ->
 
   # rblog-content 필드 입력창의 autosize 적용
   $ta = $('.rblog_content textarea')
-  $ta.autosize()
+  # $ta.autosize()
+  autosize($ta)
   # force a reflow before the class gets applied
   document.body.offsetWidth
   $ta.addClass('textarea-transition')

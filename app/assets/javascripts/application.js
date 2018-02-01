@@ -18,7 +18,7 @@
 //= require jquery.remotipart
 //= require jquery-ui
 //= require jquery.pageless
-//= require jquery.autosize
+//= require autosize
 //= require jquery.tokeninput
 //= require bootstrap-sprockets
 //= require pagedown_bootstrap

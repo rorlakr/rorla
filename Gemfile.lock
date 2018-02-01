@@ -78,8 +78,7 @@ GEM
       tag_helper (~> 0.5)
     autoprefixer-rails (7.2.3)
       execjs
-    autosize-rails (1.18.17)
-      rails (>= 3.1)
+    autosize (2.4.0.0)
     aws-partitions (1.53.0)
     aws-sdk-core (3.13.0)
       aws-partitions (~> 1.0)
@@ -508,7 +507,7 @@ DEPENDENCIES
   authority
   auto_html
   autoprefixer-rails
-  autosize-rails
+  autosize
   better_errors
   bh
   binding_of_caller

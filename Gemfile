@@ -16,7 +16,7 @@ gem 'font-awesome-sass'
 # Use Google Code Prettify with Rails 3 (http://rubygems.org/gems/google-code-prettify-rails)
 gem 'google-code-prettify-rails'
 # A plugin to enable automatic height for textarea elements. (https://github.com/calebthompson/autosize-rails)
-gem 'autosize-rails'
+gem 'autosize'
 # Whitelist-based HTML and CSS sanitizer. (https://github.com/rgrove/sanitize/)
 gem 'sanitize'
 # Use CodeMirror with Rails (https://rubygems.org/gems/codemirror-rails)
