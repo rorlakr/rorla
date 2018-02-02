@@ -65,6 +65,7 @@ gem 'validate_url'
 gem 'webshots', github: 'rorlab/webshots'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
+gem 'xmlrpc'
 gem 'yaml_db'
 
 group :development do
