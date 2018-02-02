@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160706103822) do
+ActiveRecord::Schema.define(version: 20180202113355) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content",     limit: 65535
@@ -99,6 +99,16 @@ ActiveRecord::Schema.define(version: 20160706103822) do
 
   add_index "bundlelinks", ["writer_id"], name: "index_bundlelinks_on_writer_id", using: :btree
 
+  create_table "buy_products", force: :cascade do |t|
+    t.integer  "group_purchase_id", limit: 4
+    t.integer  "product_id",        limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "buy_products", ["group_purchase_id"], name: "index_buy_products_on_group_purchase_id", using: :btree
+  add_index "buy_products", ["product_id"], name: "index_buy_products_on_product_id", using: :btree
+
   create_table "codebanks", force: :cascade do |t|
     t.string   "title",      limit: 255,   null: false
     t.text     "summary",    limit: 65535
@@ -120,7 +130,7 @@ ActiveRecord::Schema.define(version: 20160706103822) do
     t.datetime "updated_at"
   end
 
-  add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id", using: :btree
+  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
   add_index "comments", ["writer_id"], name: "index_comments_on_writer_id", using: :btree
 
   create_table "courses", force: :cascade do |t|
@@ -265,12 +275,14 @@ ActiveRecord::Schema.define(version: 20160706103822) do
     t.text     "referrer",            limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "params",              limit: 65535
   end
 
   add_index "impressions", ["controller_name", "action_name", "ip_address"], name: "controlleraction_ip_index", using: :btree
   add_index "impressions", ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index", using: :btree
   add_index "impressions", ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index", using: :btree
   add_index "impressions", ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "params"], name: "poly_params_request_index", length: {"impressionable_type"=>nil, "impressionable_id"=>nil, "params"=>100}, using: :btree
   add_index "impressions", ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index", using: :btree
   add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index", using: :btree
   add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index", length: {"impressionable_type"=>nil, "message"=>255, "impressionable_id"=>nil}, using: :btree
@@ -377,7 +389,7 @@ ActiveRecord::Schema.define(version: 20160706103822) do
     t.datetime "updated_at"
   end
 
-  add_index "plazas", ["postitable_type", "postitable_id"], name: "index_plazas_on_postitable_type_and_postitable_id", using: :btree
+  add_index "plazas", ["postitable_id", "postitable_type"], name: "index_plazas_on_postitable_id_and_postitable_type", using: :btree
 
   create_table "podcasts", force: :cascade do |t|
     t.string   "uid",            limit: 255
@@ -410,6 +422,19 @@ ActiveRecord::Schema.define(version: 20160706103822) do
 
   add_index "posts", ["bulletin_id"], name: "index_posts_on_bulletin_id", using: :btree
   add_index "posts", ["writer_id"], name: "index_posts_on_writer_id", using: :btree
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name",              limit: 255,                 null: false
+    t.integer  "unit_price",        limit: 4,   default: 0
+    t.integer  "total_stock_count", limit: 4,   default: 0
+    t.boolean  "sold_out",                      default: false
+    t.datetime "sold_out_at"
+    t.integer  "user_id",           limit: 4
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+  end
+
+  add_index "products", ["user_id"], name: "index_products_on_user_id", using: :btree
 
   create_table "purchase_requests", force: :cascade do |t|
     t.integer  "user_id",           limit: 4
@@ -628,6 +653,8 @@ ActiveRecord::Schema.define(version: 20160706103822) do
   add_foreign_key "articles", "news_sections"
   add_foreign_key "articles", "newsletters"
   add_foreign_key "articles", "users", column: "reporter_id"
+  add_foreign_key "buy_products", "group_purchases"
+  add_foreign_key "buy_products", "products"
   add_foreign_key "courses", "users", column: "tutor_id"
   add_foreign_key "glossaries", "users"
   add_foreign_key "glossary_definitions", "glossaries"
@@ -638,6 +665,7 @@ ActiveRecord::Schema.define(version: 20160706103822) do
   add_foreign_key "lectures", "users"
   add_foreign_key "news_sections", "users"
   add_foreign_key "newsletters", "users", column: "editor_id"
+  add_foreign_key "products", "users"
   add_foreign_key "purchase_requests", "group_purchases"
   add_foreign_key "purchase_requests", "users"
   add_foreign_key "purchase_requests", "users", column: "deleted_by_id"
