@@ -1,4 +1,4 @@
-require File.expand_path('../boot', __FILE__)
+require_relative 'boot'
 
 require 'rails/all'
 
@@ -9,6 +9,9 @@ Bundler.require(*Rails.groups)
 
 module Rorla
   class Application < Rails::Application
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 5.1
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -21,9 +24,9 @@ module Rorla
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ko
 
-    I18n.enforce_available_locales = true
+    # I18n.enforce_available_locales = true
 
-    config.autoload_paths += Dir["#{config.root}/lib/**/"]
+    # config.autoload_paths += Dir["#{config.root}/lib/**/"]
 
     config.generators do |g|
       g.test_framework :rspec,
@@ -36,9 +39,9 @@ module Rorla
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
 
-    config.exceptions_app = self.routes
+    # config.exceptions_app = self.routes
 
-    config.active_record.raise_in_transactional_callbacks = true
+    # config.active_record.raise_in_transactional_callbacks = true
 
     config.active_job.queue_adapter = :delayed_job
 
