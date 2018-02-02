@@ -14,7 +14,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :comment do
     content "abc edf"
     factory :comment_to_post do
@@ -37,7 +37,7 @@ FactoryGirl.define do
 
 end
 
-# FactoryGirl.define do
+# FactoryBot.define do
 #   factory :comment_to_post, class: "comment" do
 #     content "abc edf"
 

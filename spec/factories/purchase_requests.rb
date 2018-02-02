@@ -24,7 +24,7 @@
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :purchase_request do
     user nil
     req_date "2016-04-21"

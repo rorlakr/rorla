@@ -98,7 +98,7 @@ end
 #
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'factory_girl_rails', '4.9.0'
+  gem 'factory_bot_rails', '4.8.2'
   gem 'guard', '2.14.2'
   gem 'guard-rspec', '4.7.3', require: false
   gem 'letter_opener', '1.6.0'

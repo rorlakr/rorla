@@ -13,7 +13,7 @@
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :item do
     purchage_request nil
     shirts_color "MyString"

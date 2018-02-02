@@ -14,7 +14,7 @@
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :group_purchase do
     event_name "MyString"
     event_info "MyText"

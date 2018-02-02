@@ -21,7 +21,7 @@
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :event do
     name "제57회 ROR Lab."
     start_time "2014-03-18 20:00:00"

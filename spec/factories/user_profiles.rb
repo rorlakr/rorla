@@ -18,7 +18,7 @@
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :user_profile do
     user nil
     name "MyString"
