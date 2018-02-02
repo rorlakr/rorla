@@ -41,7 +41,7 @@ gem 'meta-tags', '~> 2.0.0'
 gem 'mini_magick'
 gem 'multi_json', '~> 1.10.1'
 gem 'mysql2', '0.4.10', group: :production
-gem 'oj', '~> 2.10.2'
+gem 'oj'
 gem 'pagedown-bootstrap-rails', github: 'rorlab/pagedown-bootstrap-rails'
 gem 'pageless-rails', github: 'rorlab/pageless-rails'
 gem 'placeholdit'
