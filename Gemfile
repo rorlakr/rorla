@@ -45,14 +45,12 @@ gem 'merit', '3.0.1'
 gem 'meta-tags', '2.7.1'
 gem 'mini_magick', '4.8.0'
 gem 'multi_json', '1.13.1'
-gem 'mysql2', '0.4.10', group: :production
 gem 'oj', '3.4.0'
 gem 'pagedown-bootstrap-rails', '2.1.0', github: 'rorlab/pagedown-bootstrap-rails'
 gem 'pageless-rails', '0.0.3', github: 'rorlab/pageless-rails'
 gem 'placeholdit', '0.0.5'
 gem 'puma', '~> 3.7'
-gem 'rails', '~> 5.1.2'
-gem 'rails_12factor', '0.0.3', group: :production
+gem 'rails', '~> 5.2.0.rc1'
 gem 'recaptcha', '4.6.4', require: 'recaptcha/rails'
 gem 'redcarpet', '3.4.0'
 gem 'remotipart', '1.3.1'
@@ -62,7 +60,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'search_cop', '1.0.9'
 gem 'simple_enum', '2.3.0'
 gem 'simple_form', '3.5.0'
-gem 'sqlite3', '1.3.13', group: :development
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'validate_url', '1.0.2'
@@ -71,7 +68,12 @@ gem 'will_paginate', '3.1.6'
 gem 'will_paginate-bootstrap', '1.0.1'
 gem 'xmlrpc', '0.3.0'
 gem 'yaml_db', '0.6.0'
-#
+
+group :production do
+  gem 'mysql2', '0.4.10', group: :production
+  gem 'rails_12factor', '0.0.3', group: :production
+end
+
 group :development do
   gem 'annotate', '2.7.2'
   gem 'better_errors', '2.4.0'
@@ -91,6 +93,7 @@ group :development do
   gem 'rails-erd', '1.5.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'sqlite3', '1.3.13'
   gem 'terminal-notifier-guard', '1.7.0'
   gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
   gem 'web-console', '>= 3.3.0'
