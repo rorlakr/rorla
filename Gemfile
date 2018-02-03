@@ -14,6 +14,7 @@ gem 'auto_html', '2.0.0'
 gem 'autoprefixer-rails', '7.2.5'
 gem 'autosize', '2.4.0.0'
 gem 'bh', '1.3.6'
+gem 'bootsnap', require: false
 gem 'bootstrap-sass', '3.3.7'
 gem 'carrierwave-aws', '1.3.0'
 gem 'clockwork', '2.0.2'
