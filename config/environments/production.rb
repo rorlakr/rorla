@@ -103,11 +103,11 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   ActionMailer::Base.smtp_settings = {
-    :port           => 587,
-    :address        => "smtp.mailgun.org",
-    :domain         => ENV['domain'],
-    :user_name      => ENV['username'],
-    :password       => ENV['password'],
+    :port           => Rails.application.credentials.dig(:mailgun, :port),
+    :address        => Rails.application.credentials.dig(:mailgun, :address),
+    :domain         => Rails.application.credentials.dig(:mailgun, :domain),
+    :user_name      => Rails.application.credentials.dig(:mailgun, :username),
+    :password       => Rails.application.credentials.dig(:mailgun, :password),
     :authentication => :plain,
   }
 
