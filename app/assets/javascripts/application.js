@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require activestorage
 //= require jquery.minicolors
 //= require jquery.minicolors.simple_form
 //= require jquery.remotipart

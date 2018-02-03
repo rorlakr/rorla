@@ -83,6 +83,8 @@ GEM
       rake (>= 10.4, < 13.0)
     annotate_gem (0.0.11)
       bundler (~> 1.1)
+    archive-zip (0.7.0)
+      io-like (~> 0.3.0)
     arel (9.0.0)
     authority (3.3.0)
       activesupport (>= 3.0.0)
@@ -184,6 +186,9 @@ GEM
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
     choice (0.2.0)
+    chromedriver-helper (1.1.0)
+      archive-zip (~> 0.7.0)
+      nokogiri (~> 1.6)
     clockwork (2.0.2)
       activesupport
       tzinfo
@@ -274,6 +279,7 @@ GEM
       concurrent-ruby (~> 1.0)
     impressionist (1.6.0)
       nokogiri (~> 1)
+    io-like (0.3.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -581,7 +587,7 @@ DEPENDENCIES
   better_errors (= 2.4.0)
   bh (= 1.3.6)
   binding_of_caller (= 0.8.0)
-  bootsnap
+  bootsnap (>= 1.1.0)
   bootstrap-sass (= 3.3.7)
   byebug
   capistrano (= 3.10.1)
@@ -595,9 +601,10 @@ DEPENDENCIES
   capistrano-upload-config (= 0.8.2)
   capistrano3-nginx (= 2.1.6)
   capistrano3-puma (= 3.1.1)
-  capybara (= 2.17.0)
+  capybara (~> 2.15)
   capybara-webkit (= 1.1.0)
   carrierwave-aws (= 1.3.0)
+  chromedriver-helper
   clockwork (= 2.0.2)
   cocoon (= 1.2.11)
   codemirror-rails (= 5.16.0)
@@ -633,14 +640,14 @@ DEPENDENCIES
   meetup_client (= 1.0.0)
   merit (= 3.0.1)
   meta-tags (= 2.7.1)
-  mini_magick (= 4.8.0)
+  mini_magick (~> 4.8)
   multi_json (= 1.13.1)
   mysql2 (= 0.4.10)
   oj (= 3.4.0)
   pagedown-bootstrap-rails (= 2.1.0)!
   pageless-rails (= 0.0.3)!
   placeholdit (= 0.0.5)
-  puma (~> 3.7)
+  puma (~> 3.11)
   rails (~> 5.2.0.rc1)
   rails-erd (= 1.5.2)
   rails_12factor (= 0.0.3)
@@ -652,7 +659,7 @@ DEPENDENCIES
   sanitize (= 4.6.0)
   sass-rails (~> 5.0)
   search_cop (= 1.0.9)
-  selenium-webdriver (= 3.8.0)
+  selenium-webdriver
   shoulda-matchers (= 3.1.2)
   simple_enum (= 2.3.0)
   simple_form (= 3.5.0)
@@ -674,6 +681,9 @@ DEPENDENCIES
   will_paginate-bootstrap (= 1.0.1)
   xmlrpc (= 0.3.0)
   yaml_db (= 0.6.0)
+
+RUBY VERSION
+   ruby 2.5.0p0
 
 BUNDLED WITH
    1.16.1

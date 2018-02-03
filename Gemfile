@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby '2.5.0'
 
 gem 'acts-as-taggable-on', '5.0.0'
 gem 'acts_as_votable', '0.11.1'
@@ -14,7 +13,7 @@ gem 'auto_html', '2.0.0'
 gem 'autoprefixer-rails', '7.2.5'
 gem 'autosize', '2.4.0.0'
 gem 'bh', '1.3.6'
-gem 'bootsnap', require: false
+gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap-sass', '3.3.7'
 gem 'carrierwave-aws', '1.3.0'
 gem 'clockwork', '2.0.2'
@@ -44,13 +43,13 @@ gem 'markdown-rails', '0.2.1'
 gem 'meetup_client', '1.0.0'
 gem 'merit', '3.0.1'
 gem 'meta-tags', '2.7.1'
-gem 'mini_magick', '4.8.0'
+gem 'mini_magick', '~> 4.8'
 gem 'multi_json', '1.13.1'
 gem 'oj', '3.4.0'
 gem 'pagedown-bootstrap-rails', '2.1.0', github: 'rorlab/pagedown-bootstrap-rails'
 gem 'pageless-rails', '0.0.3', github: 'rorlab/pageless-rails'
 gem 'placeholdit', '0.0.5'
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.0.rc1'
 gem 'recaptcha', '4.6.4', require: 'recaptcha/rails'
 gem 'redcarpet', '3.4.0'
@@ -106,17 +105,19 @@ group :development, :test do
   gem 'guard', '2.14.2'
   gem 'guard-rspec', '4.7.3', require: false
   gem 'letter_opener', '1.6.0'
+  # gem 'rails-env-credentials'
   gem 'rspec-rails', '3.7.2'
   gem 'spring-commands-rspec', '1.0.4'
 end
 #
 group :test do
-  gem 'capybara', '2.17.0'
+  gem 'capybara', '~> 2.15'
   gem 'capybara-webkit', '1.1.0'
+  gem 'chromedriver-helper'
   gem 'database_cleaner', '1.6.2'
   gem 'faker', '1.8.7'
   gem 'launchy', '2.4.3'
-  gem 'selenium-webdriver', '3.8.0'
+  gem 'selenium-webdriver'
   gem 'shoulda-matchers', '3.1.2', require: false
   gem 'simplecov', '0.15.1', require: false
   gem 'vcr', '4.0.0'
