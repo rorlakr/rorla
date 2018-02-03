@@ -22,20 +22,18 @@ set :format_options, banner: :auto, command_output: false
 
 # rbenv
 set :rbenv_type, :user
-set :rbenv_ruby, '2.3.1'
+set :rbenv_ruby, '2.5.0'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w{rake gem bundle ruby rails puma}
 set :rbenv_roles, :all
 
 # Default value for :linked_files is []
-set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml')
 
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/uploads')
 
 before 'deploy:check:linked_files', 'config:push'
-before 'deploy:starting', 'figaro_yml:setup'
-after 'figaro_yml:setup', 'puma:nginx_config'
 after 'deploy:publishing', 'deploy:restart'
 after 'deploy:restart', 'nginx:reload'
 

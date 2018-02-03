@@ -80,7 +80,6 @@ group :development do
   gem 'binding_of_caller', '0.8.0'
   gem 'capistrano', '3.10.1'
   gem 'capistrano-bundler', '1.3.0'
-  gem 'capistrano-figaro-yml', '1.0.5'
   gem 'capistrano-rails', '1.3.1'
   gem 'capistrano-rails-console', '2.2.1'
   gem 'capistrano-rails-tail-log', '0.1.0'
