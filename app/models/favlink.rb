@@ -47,7 +47,7 @@ class Favlink < ActiveRecord::Base
             :format => {:with => URI::regexp, :message => 'Incorrect URL format!'}
   after_save :save_capture_image, if: Proc.new { |link| link.linkurl_changed? && link.with_screen_shot }
   after_create :set_plaza_favlink
-  after_update :update_plaza_favlink, if: 'self.shared_changed?'
+  after_update :update_plaza_favlink, if: :shared_changed?
   after_destroy :delete_capture_image
 
   scope :shared, -> { Favlink.where(shared: true).order(created_at: :desc)}

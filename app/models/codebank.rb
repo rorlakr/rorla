@@ -29,7 +29,7 @@ class Codebank < ActiveRecord::Base
   scope :my_private_snippets, -> (user_id) { my_snippets(user_id).where(shared: false)}
 
   after_create :set_plaza_codebank
-  after_update :update_plaza_codebank, if: 'self.shared_changed?'
+  after_update :update_plaza_codebank, if: :shared_changed?
 
   # Model Impressionable
   is_impressionable

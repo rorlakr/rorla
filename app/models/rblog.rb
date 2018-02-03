@@ -33,7 +33,7 @@ class Rblog < ActiveRecord::Base
 
   # Callback
   after_create :set_plaza_rblog
-  after_update :update_plaza_rblog, if: 'self.shared_changed?'
+  after_update :update_plaza_rblog, if: :shared_changed?
 
   # Model Impressionable
   is_impressionable
