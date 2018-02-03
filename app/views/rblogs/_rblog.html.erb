@@ -9,7 +9,7 @@
   <div class='authored_by'>
     <%= user_profile rblog.writer %>
     <%= copyright_with_tooltip rblog, rblog.writer.email %>
-    <%= comment_count(rblog.comments(true).size) %>
+    <%= comment_count(rblog.comments.size) %>
     <%= hit_count(rblog.impressionist_count) %>&nbsp;
     <% if action_name == 'show' %>
     <div class="fb-share-button pull-right" data-href="<%= rblog_url(rblog) %>" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= rblog_url(rblog) %>"><%= awesome_icon_label('facebook-official fa-lg', "공유하기") %></a></div>
