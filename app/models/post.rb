@@ -34,7 +34,7 @@ class Post < ActiveRecord::Base
   before_save :set_published_at
 
   after_create :set_plaza_post
-  after_update :update_plaza_post, if: 'self.published_changed?'
+  after_update :update_plaza_post, if: :published_changed?
 
   has_one :plaza, :as => :postitable, :dependent => :destroy
   has_many :comments, :as => :commentable, :dependent => :destroy
