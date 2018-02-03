@@ -12,8 +12,6 @@
 #
 
 class Rblog < ActiveRecord::Base
-
-
   # Rolify and Authroization
   resourcify
   include Authority::Abilities
