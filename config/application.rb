@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module Rorla
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.1
+    config.load_defaults 5.2
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -36,8 +36,10 @@ module Rorla
     # When enqueuing jobs with the Inline adapter the job will be executed immediately.
     # To use the Inline set the queue_adapter config to :inline.
     # config.active_job.queue_adapter = :inline
-    
-    config.active_job.queue_adapter = :delayed_job
+
+    # Application configuration can go into files in config/initializers
+    # -- all .rb files in that directory are automatically loaded after loading
+    # the framework and any gems in your application.
 
   end
 end
