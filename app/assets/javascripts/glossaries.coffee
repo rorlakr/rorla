@@ -22,9 +22,7 @@ $(document).on 'click', "#add_tag_link", (event) ->
   $(".tag_list_form_of_glossary").slideToggle('fast')
   $(this).fadeOut()
 
-$ ->
-  # loadFacebookSDK()
-  # bindFacebookEvents() unless window.fbEventsBound
+$(document).on 'turbolinks:load', ->
 
   ((d, s, id) ->
     js = undefined

@@ -2,8 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$ ->
-  # CodeMirror for Textarea tag
+$(document).on 'turbolinks:load', ->  # CodeMirror for Textarea tag
   $("textarea.codemirror").each ->
     CodeMirror.fromTextArea $(this).get(0),
       lineNumbers: true
@@ -24,4 +23,3 @@ $ ->
       lineNumbers: not $this.is(".inline")
       readOnly: true
     return
-

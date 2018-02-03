@@ -1,4 +1,4 @@
-$ ->
+$(document).on 'turbolinks:load', ->
   $("#plazas").on
     mouseenter: ->
       $(this).find('.actions').fadeIn('fast')

@@ -1,4 +1,4 @@
-$ ->
+$(document).on 'turbolinks:load', ->
   bootstrapColorpicker = ->
     $('[data-minicolors]').each (i, elem) ->
       input = $(this)
