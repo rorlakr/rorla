@@ -24,9 +24,11 @@ require 'capistrano/rails_tail_log'
 require 'capistrano/rails/console'
 require 'capistrano/puma'
 install_plugin Capistrano::Puma  # Default puma tasks
+install_plugin Capistrano::Puma::Nginx  # if you want to upload a nginx site template
 require 'capistrano/puma/nginx'
 require 'capistrano/upload-config'
 require 'capistrano/nginx'
+require 'capistrano/figaro_yml'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
