@@ -23,6 +23,7 @@ require 'capistrano/rails/migrations'
 require 'capistrano/rails_tail_log'
 require 'capistrano/rails/console'
 require 'capistrano/puma'
+install_plugin Capistrano::Puma  # Default puma tasks
 require 'capistrano/puma/nginx'
 require 'capistrano/upload-config'
 require 'capistrano/nginx'
