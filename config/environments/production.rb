@@ -108,7 +108,7 @@ Rails.application.configure do
     :domain         => Rails.application.credentials.dig(:mailgun, :domain),
     :user_name      => Rails.application.credentials.dig(:mailgun, :username),
     :password       => Rails.application.credentials.dig(:mailgun, :password),
-    :authentication => :plain,
+    :authentication => :plain
   }
 
   config.action_mailer.asset_host = "https://www.rorlab.org"

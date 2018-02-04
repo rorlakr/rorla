@@ -90,20 +90,6 @@
 
 <div class="panel panel-default">
 	<div class="panel-body">
-		<div class="media">
-		  <a class="pull-left" href="http://developer.naver.com/wiki/pages/Community">
-        <%= image_tag("naver_d2_banner.png", class: "media-object", alt: "NAVER D2 커뮤니티 지원") %>
-		  </a>
-		  <div class="media-body">
-		    <h4 class="media-heading">NAVER D2의 지원을 받아 진행됩니다</h4>
-		    본 RORLab은 <%= link_to 'NAVER D2 개발자 커뮤니티 지원 프로그램', 'http://developer.naver.com/wiki/pages/Community' %>에서 후원합니다.
-		  </div>
-		</div>
-	</div>
-</div>
-
-<div class="panel panel-default">
-	<div class="panel-body">
     <p>
       <strong style='font-size:1.5em;vertical-align:middle;'>페이스북에서 실시간 방송하기 : </strong>
       <button id="liveButton" class='btn btn-primary btn-xs'>
@@ -123,7 +109,7 @@
   // 에서 최신 스크립트를 확인하고 사용하시길 권장한다.
   // window.fbAsyncInit = function() {
   //   FB.init({
-  //     appId: <%= ENV['FB_LIVE_STREAM_APP_ID'] %>,
+  //     appId: <%= Rails.application.credentials.dig(:facebook, :live_stream_app_id) %>,
   //     xfbml: true,
   //     version: 'v2.5'
   //   });
