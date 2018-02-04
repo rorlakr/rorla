@@ -113,4 +113,6 @@ Rails.application.configure do
 
   config.action_mailer.asset_host = "https://www.rorlab.org"
 
+  config.secret_key_base = Rails.application.credentials.dig(:production, :secret_key_base)
+
 end
