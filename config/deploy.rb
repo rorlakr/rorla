@@ -1,7 +1,5 @@
 # config valid only for current version of Capistrano
 lock Capistrano::VERSION
-# lock '3.5.0'
-# lock '3.4.1'
 
 set :application, 'rorla'
 set :repo_url, 'git@github.com:rorlakr/rorla.git'
@@ -24,7 +22,7 @@ set :format_options, banner: :auto, command_output: false
 set :rbenv_type, :user
 set :rbenv_ruby, '2.5.0'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-set :rbenv_map_bins, %w{rake gem bundle ruby rails puma}
+set :rbenv_map_bins, %w{rake gem bundle ruby rails puma pumactl}
 set :rbenv_roles, :all
 
 # Default value for :linked_files is []
