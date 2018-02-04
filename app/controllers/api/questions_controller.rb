@@ -1,6 +1,6 @@
 class Api::QuestionsController < ApplicationController
-  before_filter :set_question, only: [:show]
-  
+  before_action :set_question, only: [:show]
+
   def index
     @questions = Question.all
   end
