@@ -19,7 +19,7 @@ Rails.application.configure do
   config.require_master_key = true
 
   config.secret_key_base = Rails.application.credentials.dig(:production, :secret_key_base)
-  
+
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
@@ -106,7 +106,7 @@ Rails.application.configure do
 
   ActionMailer::Base.smtp_settings = {
     :port           => Rails.application.credentials.dig(:mailgun, :port),
-    :address        => Rails.application.credentials.dig(:mailgun, :address),
+    :address        => 'smtp.mailgun.org',
     :domain         => Rails.application.credentials.dig(:mailgun, :domain),
     :user_name      => Rails.application.credentials.dig(:mailgun, :username),
     :password       => Rails.application.credentials.dig(:mailgun, :password),
