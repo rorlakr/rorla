@@ -48,13 +48,3 @@ namespace :deploy do
     end
   end
 end
-
-# namespace :bundler do
-#   before :install, :bundle_config do
-#     on fetch(:bundle_servers) do
-#       within release_path do
-#         execute :bundle, 'config mirror.https://rubygems.org https://ruby.taobao.org'
-#       end
-#     end
-#   end
-# end

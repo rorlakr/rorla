@@ -25,7 +25,6 @@ gem 'delayed_job_active_record', '4.1.2'
 gem 'delayed_job_web', '1.4'
 gem 'devise', '4.4.1'
 gem 'excon', '0.60.0'
-# gem 'figaro', '1.1.1'
 gem 'font-awesome-sass', '4.7.0'
 gem 'friendly_id', '5.2.3'
 gem 'gibbon', '3.2.0'
@@ -71,7 +70,7 @@ gem 'yaml_db', '0.6.0'
 
 group :production do
   gem 'mysql2', '0.4.10', group: :production
-  gem 'rails_12factor', '0.0.3', group: :production
+  # gem 'rails_12factor', '0.0.3', group: :production
 end
 
 group :development do
@@ -97,18 +96,17 @@ group :development do
   gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
   gem 'web-console', '>= 3.3.0'
 end
-#
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails', '4.8.2'
   gem 'guard', '2.14.2'
   gem 'guard-rspec', '4.7.3', require: false
   gem 'letter_opener', '1.6.0'
-  # gem 'rails-env-credentials'
   gem 'rspec-rails', '3.7.2'
   gem 'spring-commands-rspec', '1.0.4'
 end
-#
+
 group :test do
   gem 'capybara', '~> 2.15'
   gem 'capybara-webkit', '1.1.0'
