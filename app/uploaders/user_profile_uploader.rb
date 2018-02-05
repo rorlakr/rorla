@@ -33,6 +33,7 @@ class UserProfileUploader < CarrierWave::Uploader::Base
   end
 
   process :resize_to_fit => [800, 800]
+  process :fix_exif_rotation
 
   version :thumb do
     process :resize_to_fill => [200,200]
@@ -42,6 +43,13 @@ class UserProfileUploader < CarrierWave::Uploader::Base
     # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
     ActionController::Base.helpers.asset_path("contributors/generic-user.png")
   end
+
+  def fix_exif_rotation #this is my attempted solution
+    manipulate! do |img|
+      img.tap(&:auto_orient)
+    end
+  end
+
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
