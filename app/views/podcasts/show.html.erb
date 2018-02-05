@@ -8,7 +8,7 @@
   <tr>
     <th>Author</th>
     <td><%= icon_label('user', @podcast.author) %>
-        <%= comment_count(@podcast.comments(true).size) %>
+        <%= comment_count(@podcast.comments.size) %>
         <%= hit_count(@podcast.impressionist_count) %>
     </td>
   </tr>

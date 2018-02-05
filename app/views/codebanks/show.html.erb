@@ -20,7 +20,7 @@
 
   <div class='writer'>
     <%= copyright_with_tooltip @codebank, @codebank.writer.email %>
-    <%= comment_count(@codebank.comments(true).size) %>
+    <%= comment_count(@codebank.comments.size) %>
     <%= hit_count @codebank.impressionist_count %>
   </div>
 
