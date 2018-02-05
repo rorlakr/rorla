@@ -9,7 +9,7 @@
   </div>
   <div class='writer'>
     <%= icon_label('user', t('authored_html', who: account_with_tooltip(favlink.writer.email), ago: time_ago_in_words(favlink.created_at))) %>
-    <%= comment_count(favlink.comments(true).size) %>
+    <%= comment_count(favlink.comments.size) %>
     <%= hit_count(favlink.impressionist_count) %>
   </div>
   <div class='actions'>
