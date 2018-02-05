@@ -103,6 +103,7 @@ group :development, :test do
   gem 'guard', '2.14.2'
   gem 'guard-rspec', '4.7.3', require: false
   gem 'letter_opener', '1.6.0'
+  gem 'rails-env-credentials'
   gem 'rspec-rails', '3.7.2'
   gem 'spring-commands-rspec', '1.0.4'
 end
