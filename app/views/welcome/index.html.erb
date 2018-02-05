@@ -9,9 +9,16 @@
 <div class="jumbotron">
   <div class="container">
     <h2>
-      RORLAB에 오신 것을 환영합니다.
+      RORLAB에 오신 것을 환영합니다.<br />
       <small>
-        <%= "Ruby v#{RUBY_VERSION} / Rails v#{Rails::VERSION::STRING}" %>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-danger btn-sm label label-danger">Ruby</button>
+          <button type="button" class="btn btn-info btn-sm label label-secondary">v<%= RUBY_VERSION %></button>
+        </div>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-danger btn-sm label label-danger">Rails</button>
+          <button type="button" class="btn btn-info btn-sm label label-secondary">v<%= Rails::VERSION::STRING %></button>
+        </div>
       </small>
     </h2>
     <p>: Ruby on Rails Korean Study Group with Free Offline Lectures</p>
