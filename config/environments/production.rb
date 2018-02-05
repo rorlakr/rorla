@@ -107,7 +107,6 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address:              Rails.application.credentials.dig(:ses, :smtp, :address),
     port:                 Rails.application.credentials.dig(:ses, :smtp, :port),
-    domain:               Rails.application.credentials.dig(:ses, :smtp, :domain),
     user_name:            Rails.application.credentials.dig(:ses, :smtp, :user_name),
     password:             Rails.application.credentials.dig(:ses, :smtp, :password),
     authentication:       :login,
