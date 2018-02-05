@@ -35,7 +35,7 @@ module Rorla
 
     # When enqueuing jobs with the Inline adapter the job will be executed immediately.
     # To use the Inline set the queue_adapter config to :inline.
-    # config.active_job.queue_adapter = :inline
+    config.active_job.queue_adapter = :delayed_job
 
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
