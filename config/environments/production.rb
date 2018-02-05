@@ -98,22 +98,29 @@ Rails.application.configure do
 
   # ActionMailer Config
   # config.action_mailer.default_url_options = { :host => ENV['RORLA_HOST'] }
+  config.action_mailer.asset_host = "https://www.rorlab.org"
   config.action_mailer.default_url_options = { :host => 'www.rorlab.org' }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.delivery_method = :smtp
-
-  ActionMailer::Base.smtp_settings = {
-    :port           => Rails.application.credentials.dig(:mailgun, :port),
-    :address        => 'smtp.mailgun.org',
-    :domain         => Rails.application.credentials.dig(:mailgun, :domain),
-    :user_name      => Rails.application.credentials.dig(:mailgun, :username),
-    :password       => Rails.application.credentials.dig(:mailgun, :password),
-    :authentication => :plain
+  config.action_mailer.smtp_settings = {
+    address:              Rails.application.credentials.dig(:ses, :smtp, :address),
+    port:                 Rails.application.credentials.dig(:ses, :smtp, :port),
+    domain:               Rails.application.credentials.dig(:ses, :smtp, :domain),
+    user_name:            Rails.application.credentials.dig(:ses, :smtp, :user_name),
+    password:             Rails.application.credentials.dig(:ses, :smtp, :password),
+    authentication:       :login,
+    enable_starttls_auto: true
   }
 
-  config.action_mailer.asset_host = "https://www.rorlab.org"
-
+  # ActionMailer::Base.smtp_settings = {
+  #   :port           => Rails.application.credentials.dig(:mailgun, :port),
+  #   :address        => 'smtp.mailgun.org',
+  #   :domain         => Rails.application.credentials.dig(:mailgun, :domain),
+  #   :user_name      => Rails.application.credentials.dig(:mailgun, :username),
+  #   :password       => Rails.application.credentials.dig(:mailgun, :password),
+  #   :authentication => :plain
+  # }
 
 end

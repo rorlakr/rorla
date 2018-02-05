@@ -63,13 +63,23 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   # config.action_mailer.delivery_method = :letter_opener
 
-  ActionMailer::Base.smtp_settings = {
-    :port           => 587,
-    :address        => "smtp.mailgun.org",
-    :domain         => ENV['domain'],
-    :user_name      => ENV['username'],
-    :password       => ENV['password'],
-    :authentication => :plain,
+  config.action_mailer.smtp_settings = {
+    address:              Rails.application.credentials.dig(:ses, :smtp, :address),
+    port:                 Rails.application.credentials.dig(:ses, :smtp, :port),
+    domain:               Rails.application.credentials.dig(:ses, :smtp, :domain),
+    user_name:            Rails.application.credentials.dig(:ses, :smtp, :user_name),
+    password:             Rails.application.credentials.dig(:ses, :smtp, :password),
+    authentication:       :login,
+    enable_starttls_auto: true
   }
+
+  # ActionMailer::Base.smtp_settings = {
+  #   :port           => 587,
+  #   :address        => "smtp.mailgun.org",
+  #   :domain         => ENV['domain'],
+  #   :user_name      => ENV['username'],
+  #   :password       => ENV['password'],
+  #   :authentication => :plain,
+  # }
   config.action_mailer.asset_host = "http://localhost:3000"
 end
