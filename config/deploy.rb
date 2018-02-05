@@ -33,6 +33,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 before 'deploy:check:linked_files', 'config:push'
 after 'deploy:publishing', 'deploy:restart'
+after 'deploy:published', 'master_key:upload'
 after 'deploy:restart', 'nginx:reload'
 
 namespace :deploy do
