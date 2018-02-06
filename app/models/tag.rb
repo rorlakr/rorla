@@ -6,9 +6,7 @@
 #  name           :string(255)
 #  taggings_count :integer          default(0)
 #
-
 class Tag < ActsAsTaggableOn::Tag
-
   def self.tokens(query)
     tags = where("name like ?", "%#{query}%")
     if tags.empty?

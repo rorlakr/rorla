@@ -16,22 +16,19 @@
 #
 
 class Favlink < ActiveRecord::Base
-
+  include Authority::Abilities
+  include SearchCop
   include TagTokenize
+  acts_as_taggable
 
   mount_uploader :capture_loc_manual, CaptureUploader
 
   resourcify
-  include Authority::Abilities
-  # include AttrSearchable
-  include SearchCop
 
   search_scope :search do
     attributes :title, :description
     attributes :bundlelink => "bundlelink.title"
   end
-
-  acts_as_taggable
 
   default_scope { order(created_at: :desc)}
 
