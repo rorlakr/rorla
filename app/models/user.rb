@@ -67,4 +67,10 @@ class User < ActiveRecord::Base
     email.split('@').first
   end
 
+  protected
+
+  def send_devise_notification(notification, *args)
+    logger.info "devise notification delayed_job"
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
 end

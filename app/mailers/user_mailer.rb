@@ -6,7 +6,7 @@ class UserMailer < ActionMailer::Base
   helper :mailer
   helper Devise::Controllers::Helpers
 
-  default :from => "mailer@rorlab.org"
+  # default :from => "no-reply@rorlab.org"
 
   def password_reset(user)
     mail(:to => user.email,
