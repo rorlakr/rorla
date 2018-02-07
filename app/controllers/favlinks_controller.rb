@@ -16,7 +16,6 @@
 #
 
 class FavlinksController < ApplicationController
-  protect_from_forgery with: :null_session
   include ActionView::Helpers::TextHelper
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_bundlelink
