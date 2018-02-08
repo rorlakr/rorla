@@ -1,20 +1,3 @@
-# == Schema Information
-#
-# Table name: favlinks
-#
-#  id               :integer          not null, primary key
-#  title            :string(255)      not null
-#  description      :text(65535)
-#  linkurl          :string(255)      not null
-#  writer_id        :integer
-#  shared           :boolean          default(TRUE)
-#  bundlelink_id    :integer
-#  created_at       :datetime
-#  updated_at       :datetime
-#  capture_loc      :string(255)
-#  with_screen_shot :boolean          default(TRUE)
-#
-
 class FavlinksController < ApplicationController
   include ActionView::Helpers::TextHelper
   before_action :authenticate_user!, except: [:index, :show]
@@ -24,7 +7,6 @@ class FavlinksController < ApplicationController
   # GET /favlinks
   # GET /favlinks.json
   def index
-
     @favlinks = Favlink.shared
     @favlinks = Favlink.search(params[:search]) if params[:search]
     @favlinks = @bundlelink.favlinks if params[:bundlelink_id]
@@ -34,15 +16,16 @@ class FavlinksController < ApplicationController
     @favlinks = @favlinks.paginate(page: params[:page], per_page: 10)
 
     set_meta_tags og: {
-      title: "Favlinks",
-      description: "중요한 링크를 모아두는 즐겨찾기",
-      image: root_url[0..-2] + ActionController::Base.helpers.asset_url('favlinks.png'),
+      title: 'Favlinks',
+      description: '중요한 링크를 모아두는 즐겨찾기',
+      image: root_url[0..-2] + ActionController::Base.helpers
+                                                     .asset_url('favlinks.png'),
       url: favlinks_url
-    }, title: "Favlinks"
+    }, title: 'Favlinks'
 
     if request.xhr?
       sleep(1)
-      render :partial => @favlinks
+      render @favlinks
     end
   end
 
@@ -144,7 +127,6 @@ class FavlinksController < ApplicationController
     end
 
     def rand_str(len=20)
-      rand(36**len).to_s(36) + ".png"
+      rand(36**len).to_s(36) + '.png'
     end
-
 end
