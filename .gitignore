@@ -62,3 +62,6 @@ rorla_development_glossaries_and_glossary_definitions.sql
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore master key for decrypting credentials and more.
+/config/master-development.key
