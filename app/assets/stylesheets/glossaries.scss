@@ -49,14 +49,14 @@
   position:absolute;
   bottom:7px;
   right:5px;
-  @extend .btn, .btn-success, .btn-xs;
+  @extend .btn, .btn-success, .btn-sm;
 }
 
 .add_tag_link {
   position:absolute;
   bottom:7px;
   right:5px;
-  @extend .btn, .btn-info, .btn-xs;
+  @extend .btn, .btn-info, .btn-sm;
 }
 
 

@@ -11,7 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+//= require rails-ujs
+//= requirr popper
+//= require bootstrap
 //= require activestorage
 //= require jquery.minicolors
 //= require jquery.minicolors.simple_form
@@ -20,7 +22,6 @@
 //= require jquery.pageless
 //= require autosize
 //= require jquery.tokeninput
-//= require bootstrap-sprockets
 //= require pagedown_bootstrap
 //= require google-code-prettify-rails/prettify
 //= require cocoon
