@@ -1,84 +1,77 @@
 <div class="navbar navbar-light navbar-expand-lg fixed-top" style="background-color: #302a2a;">
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/"><%= image_tag 'rorlab_logo_155x40_300dpi.png' %></a>
-    </div>
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li class="<%= active_menu('welcome') %>"><%= link_to "Home", root_path %></li>
-        <li class="<%= active_menu('plazas') %>"><%= link_to "Plaza", plazas_path %></li>
-        <li class='dropdown <%= active_menu('posts') %>'>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Bulletins
-              <b class="caret"></b>
-            </a>
-          <ul class="dropdown-menu">
+    <a class="navbar-brand" href="/"><%= image_tag 'rorlab_logo_155x40_300dpi.png' %></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item <%= active_menu('welcome') %>"><%= link_to "Home", root_path, class: 'nav-link' %></li>
+        <li class="nav-item <%= active_menu('plazas') %>"><%= link_to "Plaza", plazas_path, class: 'nav-link' %></li>
+        <li class='nav-item dropdown <%= active_menu('posts') %>'>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Bulletins
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
             <% @bulletin_titles.each do |bulletin| %>
-              <li class="<%= params[:bulletin_id] == bulletin ? 'active' : '' %>">
-                <%= link_to bulletin, bulletin_posts_path(bulletin) %>
-              </li>
+              <%= link_to bulletin, bulletin_posts_path(bulletin), class: "dropdown-item #{ params[:bulletin_id] == bulletin ? 'active' : '' }" %>
             <% end %>
+            <div class="dropdown-divider"></div>
+            <%= link_to awesome_icon_label("paper","뉴스레터"), newsletters_path, class: "dropdown-item #{ active_menu('newsletters', 'articles') }" %>
 
-            <li class="divider"></li>
-            <li class="<%= active_menu('newsletters', 'articles') %>"><%= link_to awesome_icon_label("paper","뉴스레터"), newsletters_path %></li>
+            <div class="dropdown-divider"></div>
+            <%= link_to awesome_icon_label("calendar","RORLAB일정"), schedules_path, class: "dropdown-item #{active_menu('schedules', 'appliers')}" %>
 
-            <li class="divider"></li>
-            <li class="<%= active_menu('schedules', 'appliers') %>"><%= link_to awesome_icon_label("calendar","RORLAB일정"), schedules_path %></li>
-
-            <li class="divider"></li>
-            <li class="<%= active_menu('group_purchases', 'purchase_requests') %>"><%= link_to awesome_icon_label("shopping-cart","공동구매"), group_purchases_path %></li>
-
-          </ul>
+            <div class="dropdown-divider"></div>
+            <%= link_to awesome_icon_label("shopping-cart","공동구매"), group_purchases_path, class: "dropdown-item #{active_menu('group_purchases', 'purchase_requests')}" %>
+          </div>
         </li>
-        <li class='dropdown <%= active_menu('codebanks', 'podcasts', 'weeklynews', 'favlinks', 'questions') %>'>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              DataRoom
-              <b class="caret"></b>
-            </a>
-          <ul class="dropdown-menu">
-            <li class="<%= active_menu('websites') %>"><%= link_to '루비와 레일스 웹서비스', websites_path %></li>
-            <li class="divider"></li>
-            <li class="<%= active_menu('courses', 'lectures') %>"><%= link_to '레일스강좌', courses_path %></li>
-            <li class="<%= active_menu('codebanks') %>"><%= link_to 'Codebanks', codebanks_path %></li>
-            <li class="<%= active_menu('podcasts') %>"><%= link_to 'Podcasts', podcasts_path %></li>
-            <li class="<%= active_menu('weeklynews') %>"><%= link_to '주간뉴스', weeklynews_path %></li>
-            <li class="<%= active_menu('favlinks') %>"><%= link_to "Favlinks", favlinks_path %></li>
-            <li class="<%= active_menu('questions') %>"><%= link_to 'Q&A', questions_path %></li>
-          </ul>
-        <li class="<%= active_menu('rblogs') %>"><%= link_to 'rBlogs', rblogs_path %></li>
-        <li class="<%= active_menu('glossaries') %>"><%= link_to 'Glossary', glossaries_path %></li>
+        <li class='nav-item dropdown <%= active_menu('codebanks', 'podcasts', 'weeklynews', 'favlinks', 'questions') %>'>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            DataRoom
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown2">  
+            <%= link_to '루비와 레일스 웹서비스', websites_path, class: "dropdown-item #{active_menu("websites")}" %>
+            <div class="dropdown-divider"></div>
+            <%= link_to '레일스강좌', courses_path, class: "dropdown-item #{active_menu('courses', 'lectures')}" %>
+            <%= link_to 'Codebanks', codebanks_path, class: "dropdown-item #{active_menu('codebanks')}" %>
+            <%= link_to 'Podcasts', podcasts_path, class: "dropdown-item #{active_menu('podcasts')}" %>
+            <%= link_to '주간뉴스', weeklynews_path, class: "dropdown-item #{active_menu('weeklynews')}" %>
+            <%= link_to "Favlinks", favlinks_path, class: "dropdown-item #{active_menu('favlinks')}" %>
+            <%= link_to 'Q&A', questions_path, class: "dropdown-item #{active_menu('questions')}" %>
+          </div>
+        </li>
+        <li class="nav-item <%= active_menu('rblogs') %>">
+          <%= link_to 'rBlogs', rblogs_path, class: 'nav-link' %></li>
+        <li class="nav-item <%= active_menu('glossaries') %>">
+          <%= link_to 'Glossary', glossaries_path, class: 'nav-link' %></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li><a href="#">Level : <%= current_user.level %> Point : <%= current_user.points %> </a></li>
-          <li class="dropdown <%= 'active' if devise_controller? %>">
+          <li class="nav-item dropdown <%= 'active' if devise_controller? %>">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <%= user_profile current_user %>
               <%= current_user.account_name %>
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li class="<%= active_menu('registrations') %>"><%= link_to "My Account", edit_user_registration_path %></li>
-              <li class="<%= active_menu('user_profile') %>"><%= link_to "My Profile", (current_user.user_profile.nil? ? new_user_profile_path : edit_user_profile_path) %></li>
+              <li class="<%= active_menu('registrations') %>"><%= link_to "My Account", edit_user_registration_path, class: 'nav-link' %></li>
+              <li class="<%= active_menu('user_profile') %>"><%= link_to "My Profile", (current_user.user_profile.nil? ? new_user_profile_path : edit_user_profile_path), class: 'nav-link' %></li>
               <li><%= link_to "Roles : " + user_roles(current_user), '#' %></li>
             </ul>
           </li>
           <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></li>
         <% else %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign in
-             <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "with RORLa", new_user_session_path %></li>
-            </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sign in
+            </a>            
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+              <%= link_to "with RORLa", new_user_session_path, class: "dropdown-item" %>
+            </div>
           </li>
-          <li><%= link_to "Sign up", new_user_registration_path %></li>
+          <li class='nav-item'><%= link_to "Sign up", new_user_registration_path, class: 'nav-link' %></li>
         <% end %>
       </ul>
     </div><!--/.nav-collapse -->

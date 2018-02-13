@@ -18,75 +18,89 @@ body {
 }
 
 .navbar-brand {
-	padding-top:7px!important;
-	padding-bottom:7px!important;
+	// padding-top:7px !important;
+	// padding-bottom:7px !important;
 	img {
 		width: 155px !important;
 		height: 40px !important;
 	}
 }
 
-.navbar-default {
-	border:none;
-	background-color:#302a2a;
-
-	.navbar-toggle {
-		border-color: #635959;
-		padding: 10px 10px;
-	}
-
-	.navbar-toggle:hover, .navbar-toggle:focus {
-		background-color: #524848;
-	}
-
-	.navbar-nav > li > a {
-		color: #ddd;
-	}
-
-
-
-	.navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
-		color: #fff;
-		background-color: #4f4545;
-	}
-
-	.navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
-		color: #fff;
-		background-color: #4f4545;
-	}
-
-	.navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
-		color: #c53434;
-		background-color: transparent;
-	}
-
-	.navbar-nav > li > .dropdown-menu {
-		border-radius: 0;
-		border-top:0;
-		box-shadow: none;
-		-webkit-box-shadow:none;
-		border-color:#eee;
-		padding: 10px 0;
-	}
+.navbar {
+	padding: 0;
+}
+.navbar-nav > .nav-item.active {
+	background-color: #4f4545;
 }
 
-.dropdown-menu > li > a {
-	padding:4px 20px;
+.navbar-nav > .nav-item > a {
+	color: white !important;
 }
+// .navbar-default {
+// 	border:none;
+// 	background-color:#302a2a;
 
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-	text-decoration: none;
-	color: #262626;
-	background-color: whitesmoke;
-}
+// 	.navbar-toggle {
+// 		border-color: #635959;
+// 		padding: 10px 10px;
+// 	}
+
+// 	.navbar-toggle:hover, .navbar-toggle:focus {
+// 		background-color: #524848;
+// 	}
+
+// 	// .navbar-nav > li > a.nav-link {
+// 	// 	color: #ddd !important;
+// 	// }
+
+// 	.navbar-nav > .active > a,
+// 	.navbar-nav > .active > a:hover, 
+// 	.navbar-nav > .active > a:focus {
+// 		color: #fff;
+// 		background-color: #4f4545;
+// 	}
+
+// 	.navbar-nav > .open > a, 
+// 	.navbar-nav > .open > a:hover, 
+// 	.navbar-nav > .open > a:focus {
+// 		color: #fff;
+// 		background-color: #4f4545;
+// 	}
+
+// 	.navbar-nav > li > a:hover, 
+// 	.navbar-nav > li > a:focus {
+// 		color: #c53434;
+// 		background-color: transparent;
+// 	}
+
+// 	.navbar-nav > li > .dropdown-menu {
+// 		border-radius: 0;
+// 		border-top:0;
+// 		box-shadow: none;
+// 		-webkit-box-shadow:none;
+// 		border-color:#eee;
+// 		padding: 10px 0;
+// 	}
+// }
+
+// .dropdown-menu > li > a {
+// 	padding:4px 20px;
+// }
+
+// .dropdown-menu > li > a:hover, 
+// .dropdown-menu > li > a:focus {
+// 	text-decoration: none;
+// 	color: #262626;
+// 	background-color: whitesmoke;
+// }
 
 
-.navbar-brand {
-	height: auto;
-	> img {
-		width:92px; height:23px;
-	}
-}
+// .navbar-brand {
+// 	height: auto;
+// 	> img {
+// 		width:92px; height:23px;
+// 	}
+// }
 
 // bootstrap override end
 
