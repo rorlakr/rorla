@@ -14,7 +14,7 @@ gem 'autoprefixer-rails', '7.2.5'
 gem 'autosize', '2.4.0.0'
 gem 'bh', '1.3.6'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap', '4.0.0'
 gem 'carrierwave-aws', '1.3.0'
 gem 'clockwork', '2.0.2'
 gem 'cocoon', '1.2.11'
