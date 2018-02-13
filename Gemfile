@@ -28,7 +28,8 @@ gem 'excon', '0.60.0'
 gem 'font-awesome-sass', '4.7.0'
 gem 'friendly_id', '5.2.3'
 gem 'gibbon', '3.2.0'
-gem 'google-code-prettify-rails', github: 'luciuschoi/google-code-prettify-rails'
+gem 'google-code-prettify-rails',
+    github: 'luciuschoi/google-code-prettify-rails'
 gem 'gravatar-ultimate', '2.0.0'
 gem 'impressionist', '1.6.0'
 gem 'jbuilder', '~> 2.5'
@@ -45,7 +46,8 @@ gem 'meta-tags', '2.7.1'
 gem 'mini_magick', '~> 4.8'
 gem 'multi_json', '1.13.1'
 gem 'oj', '3.4.0'
-gem 'pagedown-bootstrap-rails', '2.1.0', github: 'rorlab/pagedown-bootstrap-rails'
+gem 'pagedown-bootstrap-rails', '2.1.0',
+    github: 'rorlab/pagedown-bootstrap-rails'
 gem 'pageless-rails', '0.0.3', github: 'rorlab/pageless-rails'
 gem 'placeholdit', '0.0.5'
 gem 'puma', '~> 3.11'
@@ -64,13 +66,13 @@ gem 'uglifier', '>= 1.3.0'
 gem 'validate_url', '1.0.2'
 gem 'webshots', '0.0.1', github: 'rorlab/webshots'
 gem 'will_paginate', '3.1.6'
-gem 'will_paginate-bootstrap', '1.0.1', github: 'luciuschoi/will_paginate-bootstrap'
+gem 'will_paginate-bootstrap', '1.0.1',
+    github: 'luciuschoi/will_paginate-bootstrap'
 gem 'xmlrpc', '0.3.0'
 gem 'yaml_db', '0.6.0'
 
 group :production do
   gem 'mysql2', '0.4.10', group: :production
-  # gem 'rails_12factor', '0.0.3', group: :production
 end
 
 group :development do
@@ -93,12 +95,12 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'sqlite3', '1.3.13'
   gem 'terminal-notifier-guard', '1.7.0'
-  gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+  gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
   gem 'web-console', '>= 3.3.0'
 end
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '4.8.2'
   gem 'guard', '2.14.2'
   gem 'guard-rspec', '4.7.3', require: false
