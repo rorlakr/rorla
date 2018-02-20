@@ -3,9 +3,9 @@
 <table class='table'>
   <thead>
   <tr>
-    <th class="col-md-7 col-sm-7 col-xs-8"><%=t('activerecord.attributes.post.title')%></th>
-	  <th class="col-md-3 col-sm-3 col-xs-4"><%=t('activerecord.attributes.post.created_at')%></th>
-    <th class="col-md-2 col-sm-2 hidden-xs"><%=t('activerecord.attributes.post.data_actions')%></th>
+    <th class="col-sm-7 col-8"><%=t('activerecord.attributes.post.title')%></th>
+	  <th class="col-sm-3 col-4"><%=t('activerecord.attributes.post.created_at')%></th>
+    <th class="col-sm-2 d-none d-sm-block"><%=t('activerecord.attributes.post.data_actions')%></th>
   </tr>
   </thead>
 
@@ -13,9 +13,9 @@
   <% @posts.each do |post| %>
       <tr>
         <td><%= link_to post.title, [post.bulletin, post] %></td>
-	      <td class="hidden-xs"><%= post.created_at.strftime('%Y-%m-%d %l:%M:%S%P') %></td>
-	      <td class="visible-xs"><%= post.created_at.strftime('%Y-%m-%d') %></td>
-        <td class="hidden-xs">
+	      <td class="d-none d-sm-block"><%= post.created_at.strftime('%Y-%m-%d %l:%M:%S%P') %></td>
+	      <td class="d-block d-sm-none"><%= post.created_at.strftime('%Y-%m-%d') %></td>
+        <td class="d-none d-sm-block">
           <%= link_to icon_button('eye-open'), [post.bulletin, post], title: t('form_actions.show') , data:{toggle:'tooltip'}  %>
           <% if user_signed_in? %>
             <%= link_to icon_button('edit'), edit_bulletin_post_path(post.bulletin, post), title: t('form_actions.edit') , data:{toggle:'tooltip'}  if current_user.can_update? post %>

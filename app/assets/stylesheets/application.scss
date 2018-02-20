@@ -15,23 +15,12 @@ $screen-md:                  1200px !default;  //992
 $grid-gutter-width: 50px;
 $jumbotron-padding: 20px;
 
-// vertical spacing
-.spacer01 { height: 1em;}
-.spacer02 { height: 2em;}
-.spacer03 { height: 3em;}
-.spacer04 { height: 4em;}
-.spacer05 { height: 5em;}
-.spacer06 { height: 6em;}
-.spacer07 { height: 7em;}
-.spacer08 { height: 8em;}
-.spacer09 { height: 9em;}
-.spacer10 { height: 10em;}
-
 @import 'jquery.minicolors';
 @import 'jquery-ui';
 @import "bootstrap";
+@import "bootstrap_customized";
+@import "styles";
 @import "pagedown_bootstrap";
-@import "font-awesome-sprockets";
 @import "font-awesome";
 @import 'token-input';
 @import 'token-input-facebook';
@@ -55,6 +44,3 @@ $jumbotron-padding: 20px;
 @import "lectures";
 @import "glossaries";
 @import "newsletters";
-
-body { padding-top: 60px;  }
-blockquote { font-size: 1em; color:#686868; background-color: #f9f9f9; }

@@ -31,18 +31,18 @@ module ApplicationHelper
   end
 
   def icon_label(shape, label)
-    content_tag(:span, '', class: "glyphicon glyphicon-#{shape}") + ' ' + label
+    fa_icon(shape, text: label)
   end
 
-  def icon_button(shape, kind='default')
-    content_tag(:span, icon(shape), class: "label label-#{kind}")
+  def icon_button(shape, kind = 'primary')
+    content_tag(:span, fa_icon(shape), class: "badge badge-#{kind}")
   end
 
-  def icon_label_button(shape, label, kind='default')
-    content_tag(:span, icon(shape, label), class: "label label-#{kind}")
+  def icon_label_button(shape, label, kind='primary')
+    content_tag(:span, fa_icon(shape, text: label), class: "badge badge-#{kind}")
   end
 
-  def awesome_icon(shape, size="1x")
+  def awesome_icon(shape, size = '1x')
     content_tag(:span, '', class: "fa fa-#{shape} fa-#{size}")
   end
 

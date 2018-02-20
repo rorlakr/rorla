@@ -1,0 +1,23 @@
+.navbar-brand {
+	// rorlab_logo_155x40_300dpi.png resized for 300dpi
+	// Don't touch for 300 dpi
+	img {
+		width: 155px !important;
+		height: 40px !important;
+	}
+}
+
+.navbar {
+	// height of top navbar resized to be shrinked
+	padding: 0;
+}
+
+@media (min-width: 768px) {
+	.navbar-nav > li > a {
+		padding: 17px 13px;
+	}
+}
+
+.card {
+	margin-bottom: 1rem;
+}

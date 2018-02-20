@@ -1,28 +1,10 @@
 #plazas {
   // overflow: auto;
-  .plaza {
-    position:relative;
-    .content {
-      overflow:auto;
-      a:hover { text-decoration: none;}
-      .title {
-        h4, h4.media-heading { font-weight: bold; margin-top:0; }
-      }
-    }
-    .author {
-      border-top:1px solid #eaeaea;
-      margin-top:.5em;
-    }
-    .actions {
-      display:none;
-      position: absolute;
-      bottom:.5em; right: .5em;
+  .plaza.card {
+    .card-header, .card-body, .card-footer { 
+      padding: .5rem .7rem; 
     }
   }
-}
-
-.general, .blog, .gallery, .favlink{
-
 }
 
 .plaza-item-title-hover, h4.media-heading {

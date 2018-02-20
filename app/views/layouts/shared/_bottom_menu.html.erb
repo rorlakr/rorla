@@ -7,7 +7,9 @@
       <p>루비/루비온레일스를 위한 커뮤니티. </p>
       <p>since 2011</p>
     </div>
-    <div class='well' style='margin-top:1.3em;text-align:center;'><%= link_to awesome_icon_label('users','Contributors'), contributors_path %></div>
+    <div class='card py-3 text-center'>
+      <%= link_to awesome_icon_label('users','Contributors'), contributors_path %>
+    </div>
   </div>
 
   <div class='col-md-3'>
@@ -36,9 +38,11 @@
         <div class='menu_title'><%= awesome_icon_label "archive", "한글 및 문서화" %></div>
         <ul class='section'>
           <li><%= link_to '레일스가이드', 'http://guides.rorlab.org', target: '_blank' %></li>
-          <li><%= link_to '레일스튜토리얼', 'http://tutorial.rorlab.org', target: '_blank' %></li>
+          <li><%= link_to '초레가', 'https://www.railsguidebook.com/', target: '_blank' %></li>
           <li><%= link_to 'Railscasts', 'http://railscasts.com', target: '_blank' %></li>
-          <li><%= link_to 'Gitbook eBook', 'http://www.gitbook.io/book/rorlab/railsguidebook', target:'_blank' %></li>
+          <li><%= link_to 'GoRails', 'https://gorails.com/', target: '_blank' %></li>
+          <li><%= link_to 'Ruby Screencasts', 'https://www.driftingruby.com', target: '_blank' %></li>
+          <li><%= link_to 'Ruby on Rails Tutorial', 'https://www.railstutorial.org/', target:'_blank' %></li>
         </ul>
       </div>
 

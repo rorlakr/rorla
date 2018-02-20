@@ -1,3 +1,5 @@
+<%= link_to "Slack 가입", "https://join.slack.com/t/rorlab/shared_invite/enQtMzE3MTY1OTMzNjY1LTdkMjdjZjEzZDI5ZDJmZTYzODIzMWI4MDI5MTY0NjI4ZDE4ZGNkNDRmMGQ1ZjdkMTlmNjQ4YmM1MTFlOTQ3NWU", target: '_blank', class: 'btn btn-outline-primary btn-block mb-3' %>
+
 <!-- 게시판 사이드바 -->
 <%= render 'layouts/shared/sidebar/sidebar_for_posts' %>
 
@@ -26,7 +28,4 @@
 <%= render 'layouts/shared/sidebar/sidebar_for_websites' %>
 
 <!--Twitter Timeline-->
-<div class="hidden-xs hidden-sm" style="margin-top:5em;">
-  <a class="twitter-timeline"  href="https://twitter.com/rorlab" data-widget-id="340285058244022272">@rorlab 님의 트윗</a>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</div>
+<%= render 'layouts/shared/sidebar/sidebar_for_twitter' %>

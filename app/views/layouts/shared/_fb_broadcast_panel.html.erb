@@ -1,0 +1,60 @@
+<div class="card">
+	<div class="card-body">
+    <p>
+      <strong style='font-size:1.5em;vertical-align:middle;'>페이스북에서 실시간 방송하기 : </strong>
+      <button id="liveButton" class='btn btn-primary btn-sm'>
+        Start Live Stream
+      </button>
+    </p>
+      <b>주의:</b> 사용하기 전에 데스크톱에 OBS(<%= link_to "Open Broadcaster Software", "https://obsproject.com/download#mac", target: '_blank' %>)를 설치해 두어야 합니다. 데스트톱 브라우저 상에서만 사용할 수 있으며, 스마트디바이스에서는 페이스북 자체 <code>라이브방송</code>을 사용하세요.<br  />
+      <b>사용법:</b> <%= link_to "유투브동영상", "https://youtu.be/EB72C6CxiO0", target: '_blank' %><br />
+      <b>참고:</b> <%= link_to '페이스북으로 데스크탑 라이브 스트리밍 하기',  'http://blog.appkr.kr/work-n-play/facebook-live-streaming/', target: '_blank' %>
+
+  </div>
+</div>
+
+<script>
+  // 페이스북 SDK 임포트 및 초기화
+  // https://developers.facebook.com/docs/javascript/quickstart
+  // 에서 최신 스크립트를 확인하고 사용하시길 권장한다.
+  // window.fbAsyncInit = function() {
+  //   FB.init({
+  //     appId: <%= Rails.application.credentials.dig(:facebook, :live_stream_app_id) %>,
+  //     xfbml: true,
+  //     version: 'v2.5'
+  //   });
+  // };
+
+  // (function(d, s, id){
+  //   var js, fjs = d.getElementsByTagName(s)[0];
+  //   if (d.getElementById(id)) {return;}
+  //   js = d.createElement(s); js.id = id;
+  //   js.src = "//connect.facebook.net/en_US/sdk.js";
+  //   fjs.parentNode.insertBefore(js, fjs);
+  // }(document, 'script', 'facebook-jssdk'));
+
+  // 페이스북 라이브 스트리밍 스타터
+  // https://developers.facebook.com/docs/videos/live-video-api#golivedialog
+  // 에서 최신 스크립트를 확인하고 사용하시길 권장한다.
+  document.getElementById('liveButton').onclick = function() {
+    FB.ui({
+      display: 'popup',
+      method: 'live_broadcast',
+      phase: 'create',
+    }, function(response) {
+      if (!response.id) {
+        alert('dialog canceled');
+        return;
+      }
+      alert('stream url:' + response.secure_stream_url);
+      FB.ui({
+        display: 'popup',
+        method: 'live_broadcast',
+        phase: 'publish',
+        broadcast_data: response,
+      }, function(response) {
+        alert("video status: \n" + response.status);
+      });
+    });
+  };
+</script>
