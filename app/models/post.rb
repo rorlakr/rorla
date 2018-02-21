@@ -25,21 +25,21 @@ class Post < ActiveRecord::Base
   include Authority::Abilities
 
   default_scope { order(created_at: :desc)}
-  scope :my_posts, -> (user_id){ where(writer_id: user_id) }
+  scope :my_posts, ->(user_id) { where(writer_id: user_id) }
   scope :recent, -> { where(published: true).limit(5) }
 
-  validates :title, presence: true, :length => { :minimum => 3, :maximum => 255 }
-  validates :content, presence: true, :length => { :minimum => 0, :maximum => 10000 }
+  validates :title, presence: true, length: { minimum: 3, maximum: 255 }
+  validates :content, presence: true, length: { minimum: 0, maximum: 10_000 }
 
   before_save :set_published_at
 
   after_create :set_plaza_post
   after_update :update_plaza_post, if: :published_changed?
 
-  has_one :plaza, :as => :postitable, :dependent => :destroy
-  has_many :comments, :as => :commentable, :dependent => :destroy
+  has_one :plaza, as: :postitable, dependent: :destroy
+  has_many :comments, as: :commentable, dependent: :destroy
   belongs_to :bulletin
-  belongs_to :writer, class_name: "User"
+  belongs_to :writer, class_name: 'User'
 
   mount_uploader :picture, PictureUploader
 
@@ -48,23 +48,25 @@ class Post < ActiveRecord::Base
   private
 
   def set_published_at
-    if (published == true || published == "true" || published == "1") && published_at.nil?
+    if (published == true || published == 'true' || published == '1') &&
+       published_at.nil?
       self.published_at = Time.now
-    elsif (published != true && published != "true" && published != "1") && published_at
+    elsif (published != true && published != 'true' && published != '1') &&
+          published_at
       self.published_at = nil
     end
   end
 
   def set_plaza_post
-  	self.create_plaza(visible: self.published)
+    create_plaza(visible: published)
   end
 
   def update_plaza_post
-    if self.plaza.nil?
-      self.create_plaza(visible: self.published)
+    if plaza.nil?
+      create_plaza(visible: published)
     else
-      self.plaza.visible = self.published
-      self.plaza.save
+      plaza.visible = published
+      plaza.save
     end
   end
 end

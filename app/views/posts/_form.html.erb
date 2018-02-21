@@ -1,3 +1,6 @@
+<script src="/assets/tui-editor/dist/tui-editor-Editor.min"></script>
+<script src="/assets/tui-editor/dist/tui-editor-extScrollSync.min"></script>
+
 <%= render "layouts/shared/preview", title: @post.title, attribute: :content %>
 
 <%= simple_form_for([@post.bulletin, @post]) do |f| %>
@@ -8,7 +11,7 @@
     <%= f.input :title, input_html:{ class: 'form-control'} %>
   </div>
   <div class="form-group">
-    <%= f.input :content, :as => :pagedown, input_html: { rows: 22 } %>
+    <%= f.input :content, input_html: { data:{ editor: 'tui-editor'} }%>
   </div>
   <%= image_tag(@post.picture_url, style:'max-width:100%;') if @post.picture? %>
   <% if @post.bulletin.post_type == "gallery" %>
@@ -23,8 +26,8 @@
   </div>
 
   <div class='form-actions'>
-    <%= f.button :submit, class: 'btn btn-default' %>
-    <%= link_to t('form_actions.show'), [@post.bulletin, @post], class: 'btn btn-default' if @post.persisted? %>
-    <%= link_to t('form_actions.back'), bulletin_posts_path, class: 'btn btn-default' %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+    <%= link_to t('form_actions.show'), [@post.bulletin, @post], class: 'btn btn-outline-primary' if @post.persisted? %>
+    <%= link_to t('form_actions.back'), bulletin_posts_path, class: 'btn btn-outline-primary' %>
   </div>
 <% end %>

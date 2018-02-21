@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require rails-ujs
+
 //= requirr popper
 //= require bootstrap
 //= require activestorage
@@ -26,22 +27,15 @@
 //= require google-code-prettify-rails/prettify
 //= require cocoon
 //= require welcome
-//= require codemirror
-//= require codemirror/modes/ruby
-//= require codemirror/modes/sass
-//= require codemirror/modes/shell
-//= require codemirror/modes/sql
-//= require codemirror/modes/slim
-//= require codemirror/modes/nginx
-//= require codemirror/modes/markdown
-//= require codemirror/modes/javascript
-//= require codemirror/modes/http
-//= require codemirror/modes/htmlmixed
-//= require codemirror/modes/haml
-//= require codemirror/modes/xml
-//= require codemirror/modes/css
-//= require codemirror/modes/yaml
-//= require codemirror/modes/slim
-//= require codemirror/modes/php
+//= require tui-code-snippet/dist/tui-code-snippet
+//= require markdown-it/dist/markdown-it
+//= require to-mark/dist/to-mark
+//= require codemirror/lib/codemirror
+//= require highlightjs/highlight.pack
+//= require squire-rte/build/squire
 //= require turbolinks
+//= require init
+//= require app.tui_editor
+//= require app.tui_viewer
+//= require posts
 //= require_tree .

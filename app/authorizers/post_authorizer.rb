@@ -1,6 +1,6 @@
 class PostAuthorizer < ApplicationAuthorizer
 
-  def self.creatable_by?(user, options={})
+  def self.creatable_by?(user, options = {})
     if ["공지사항", "새소식"].include? options[:for].title
       user.has_role?(:admin)
     else

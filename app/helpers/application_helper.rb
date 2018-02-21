@@ -34,8 +34,8 @@ module ApplicationHelper
     fa_icon(shape, text: label)
   end
 
-  def icon_button(shape, kind = 'primary')
-    content_tag(:span, fa_icon(shape), class: "badge badge-#{kind}")
+  def icon_button(shape, kind = 'secondary')
+    content_tag(:i, fa_icon(shape), class: "badge badge-#{kind}")
   end
 
   def icon_label_button(shape, label, kind='primary')
@@ -216,7 +216,7 @@ module ApplicationHelper
     bool ? "예" : "아니오"
   end
 
-  def user_profile(user, options={ width: '20px', class: 'img-circle'})
+  def user_profile(user, options={ width: '20px', class: 'rounded-circle'})
     user_profile_url = user.user_profile.nil? ? Gravatar.new(user.email).image_url : user.user_profile.avatar_url(:thumb)
     image_tag(user_profile_url, width: options[:width], class: options[:class], style:'background-color:#eaeaea;')
   end

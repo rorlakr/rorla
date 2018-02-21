@@ -12,7 +12,7 @@
   <%= csrf_meta_tags %>
   <link rel="image_src" href="<%= image_url('rorlab_logo_158x158.png') %>" />
 </head>
-<body>
+<body class="<%= controller_name %> <%= action_name %>">
   <!-- Fixed navbar -->
   <%= render 'layouts/shared/nav' %>
 

@@ -33,6 +33,14 @@ GIT
   specs:
     webshots (0.0.1)
 
+GIT
+  remote: https://github.com/tamycova/merit.git
+  revision: f657596409d98fc7c8e3274b213b86cc47d87495
+  branch: f657596409d98fc7c8e3274b213b86cc47d87495
+  specs:
+    merit (2.4.0)
+      ambry (~> 1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -326,8 +334,6 @@ GEM
       rails
       rdiscount (>= 1.6.8, < 2.0)
     meetup_client (1.0.0)
-    merit (3.0.1)
-      ambry (~> 1.0.0)
     meta-tags (2.7.1)
       actionpack (>= 3.2.0, < 5.3)
     method_source (0.9.0)
@@ -529,6 +535,7 @@ GEM
     tilt (2.0.8)
     treetop (1.6.9)
       polyglot (~> 0.3)
+    tui_editor-rails (1.0.2.0)
     turbolinks (5.1.0)
       turbolinks-source (~> 5.1)
     turbolinks-source (5.1.0)
@@ -635,7 +642,7 @@ DEPENDENCIES
   mailgun (= 0.11)
   markdown-rails (= 0.2.1)
   meetup_client (= 1.0.0)
-  merit (= 3.0.1)
+  merit!
   meta-tags (= 2.7.1)
   mini_magick (~> 4.8)
   multi_json (= 1.13.1)
@@ -666,6 +673,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (= 1.3.13)
   terminal-notifier-guard (= 1.7.0)
+  tui_editor-rails
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
