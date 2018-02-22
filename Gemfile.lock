@@ -7,13 +7,6 @@ GIT
       thor (>= 0.14, < 2.0)
 
 GIT
-  remote: https://github.com/luciuschoi/will_paginate-bootstrap.git
-  revision: a00836827f0b03ee20483cbc70ced4c9b26f9f42
-  specs:
-    will_paginate-bootstrap (1.0.1)
-      will_paginate (>= 3.0.3)
-
-GIT
   remote: https://github.com/rorlab/pagedown-bootstrap-rails.git
   revision: 4114b63172f306fbc996c4f2fd4a8b9d2f36ff7c
   specs:
@@ -566,6 +559,8 @@ GEM
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
     will_paginate (3.1.6)
+    will_paginate-bootstrap4 (0.2.2)
+      will_paginate (~> 3.0, >= 3.0.0)
     xmlrpc (0.3.0)
     xpath (3.0.0)
       nokogiri (~> 1.8)
@@ -683,7 +678,7 @@ DEPENDENCIES
   webmock (= 3.3.0)
   webshots (= 0.0.1)!
   will_paginate (= 3.1.6)
-  will_paginate-bootstrap (= 1.0.1)!
+  will_paginate-bootstrap4
   xmlrpc (= 0.3.0)
   yaml_db (= 0.6.0)
 

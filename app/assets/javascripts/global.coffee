@@ -1,5 +1,8 @@
 $(document).on 'turbolinks:load', ->
-  $("body").tooltip { selector: '[data-toggle="tooltip"]', container: 'body'}
+
+  $("body").tooltip 
+    selector: '[data-toggle="tooltip"]'
+    container: 'body'
 
   $("#favlink_tag_tokens, #rblog_tag_tokens, #codebank_tag_tokens, #glossary_tag_tokens").tokenInput '/tags.json',
     hintText: "태그를 입력하세요."

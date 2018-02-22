@@ -4,10 +4,10 @@
       <p><%= link_to_if (user_signed_in? && current_user.has_role?(:user)), "All Shared rBlogs ", rblogs_path %><small>(<%= Rblog.shared.size %>)</small></p>
       <p><%= link_to_if (user_signed_in? && current_user.has_role?(:user)), "My Shared rBlogs ", rblogs_path(whose: current_user.id) %><small>(<%= Rblog.my_shared_blogs(current_user.id).size %>)</small></p>
       <p><%= link_to_if (user_signed_in? && current_user.has_role?(:user)), "My Private rBlogs ", rblogs_path(whose: current_user.id, private: 1) %><small>(<%= Rblog.my_private_blogs(current_user.id).size %>)</small></p>
-      <ul style="list-style-type: none;padding-left:1.5em;">
+      <ul style="list-style-type: none;padding-left:1.5rem;">
       <% rblogs = Rblog.my_private_blogs(current_user.id) %>
       <% rblogs.each do |blog| %>
-        <li><%= icon_shared(blog.shared) %>&nbsp;&nbsp;<%= link_to truncate(blog.title), rblog_path(blog)%></li>
+        <li style='text-indent:-.5rem;'><%= icon_shared(blog.shared) %>&nbsp;&nbsp;<%= link_to truncate(blog.title), rblog_path(blog)%></li>
       <% end %>
       </ul>
     </div>

@@ -46,22 +46,26 @@
         <li class="nav-item <%= active_menu('glossaries') %>">
           <%= link_to 'Glossary', glossaries_path, class: 'nav-link' %></li>
       </ul>
-      <ul class="navbar-nav navbar-right">
+      <ul class="navbar-nav navbar-right mt-2 mt-lg-0">
         <% if user_signed_in? %>
-          <li><a href="#">Level : <%= current_user.level %> Point : <%= current_user.points %> </a></li>
+          <li class='nav-item'>
+            <a class='nav-link' href="#">Level : <%= current_user.level %> Point : <%= current_user.points %> </a>
+          </li>
           <li class="nav-item dropdown <%= 'active' if devise_controller? %>">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id='navbarDropdown2' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= user_profile current_user %>
               <%= current_user.account_name %>
               <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu">
-              <li class="<%= active_menu('registrations') %>"><%= link_to "My Account", edit_user_registration_path, class: 'nav-link' %></li>
-              <li class="<%= active_menu('user_profile') %>"><%= link_to "My Profile", (current_user.user_profile.nil? ? new_user_profile_path : edit_user_profile_path), class: 'nav-link' %></li>
-              <li><%= link_to "Roles : " + user_roles(current_user), '#' %></li>
-            </ul>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown2">
+              <%= link_to "My Account", edit_user_registration_path, class: 'dropdown-item' %>
+              <%= link_to "My Profile", (current_user.user_profile.nil? ? new_user_profile_path : edit_user_profile_path), class: 'dropdown-item' %>
+              <%= link_to "Roles : " + user_roles(current_user), '#', class: 'dropdown-item' %>
+            </div>
           </li>
-          <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></li>
+          <li class='nav-item'>
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" }, class: 'nav-link' %>
+          </li>
         <% else %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

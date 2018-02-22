@@ -1,10 +1,9 @@
 <% if controller_name == 'posts' %>
-  <div style="text-align:center;margin-top:4.5em;">
-    <%= link_to icon_label('plus', 'Add a Post'), new_bulletin_post_path(params[:bulletin_id]), class: 'well btn btn-default' %>
+  <div style="">
+    <%= link_to icon_label('plus', 'Add a Post'), new_bulletin_post_path(params[:bulletin_id]), class: 'btn btn-outline-primary btn-block' %>
   </div>
-  <div style="margin-top:4.5em;">
-
-  <%= render "layouts/shared/sidebar/my_posts" %>
+  <div class='mt-4'>
+    <%= render "layouts/shared/sidebar/my_posts" %>
   </div>
 
 <% end %>

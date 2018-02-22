@@ -3,25 +3,26 @@
 <br />
 <div class='row'>
   <% @group_purchases.each do |group_purchase| %>
-    <div class='col-sm-4 col-xs-12'>
-      <div class="panel panel-info">
-        <div class="panel-heading text-center"><%= link_to group_purchase.event_name, group_purchase_purchase_requests_path(group_purchase), style:'display:block;'%></div>
-        <% if group_purchase.event_info.present? %>
-          <div class="panel-body">
-            <%= group_purchase.event_info %>
-          </div>
-        <% end %>
-        <div class="panel-footer">
+    <div class='col-sm-4 col-12'>
+      <div class="card">
+        <div class="card-heading text-center">
+          <%= link_to group_purchase.event_name, group_purchase_purchase_requests_path(group_purchase), class: 'btn btn-info btn-block', style: 'border-radius: 3px 3px 0 0;' %></div>
+          <% if group_purchase.event_info.present? %>
+            <div class="card-body">
+              <%= group_purchase.event_info %>
+            </div>
+          <% end %>
+        <div class="card-footer">
           <p>시작일 : <%= group_purchase.start_date.strftime("%Y-%m-%d %p%I:%M:%S") %></p>
           <p>종료일 : <%= group_purchase.end_date ? group_purchase.end_date.strftime("%Y-%m-%d %p%I:%M:%S") : '진행중' %></p>
           <div class='text-center'>
-            <%= link_to icon_button('eye-open'), group_purchase if user_signed_in? && current_user.can_read?(group_purchase) %>
+            <%= link_to icon_button('eye'), group_purchase if user_signed_in? && current_user.can_read?(group_purchase) %>
             <%= link_to icon_button('edit'), edit_group_purchase_path(group_purchase) if user_signed_in? && current_user.can_update?(group_purchase) %>
             <%= link_to icon_button('trash'), group_purchase, method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? && current_user.can_delete?(group_purchase) %>
           </div>
         </div>
-        <div class="panel-footer text-center">
-          <%= link_to "바로가기", group_purchase_purchase_requests_path(group_purchase), class: 'btn btn-default btn-xs'%>
+        <div class="card-footer text-center">
+          <%= link_to "바로가기", group_purchase_purchase_requests_path(group_purchase), class: 'btn btn-outline-info btn-sm'%>
         </div>
       </div>
     </div>

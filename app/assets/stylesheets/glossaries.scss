@@ -43,22 +43,30 @@
     font-weight: bolder;
     margin-bottom: .5em;
   }
+  .btn.btn-primary {
+    padding: 3px 12px;
+  }
 }
 
 .add_definition_link {
   position:absolute;
   bottom:7px;
   right:5px;
-  @extend .btn, .btn-success, .btn-sm;
+  @extend .btn, .btn-success, .btn-xs;
 }
 
 .add_tag_link {
   position:absolute;
   bottom:7px;
   right:5px;
-  @extend .btn, .btn-info, .btn-sm;
+  @extend .btn, .btn-info, .btn-xs;
 }
 
+// added a custom class for .btn-xs which has been removed since Bootstrap 4 
+.btn-xs {
+  font-size: .8rem;
+  padding: .15rem .3rem;
+}
 
 
 ul.definitions_horizontal_list {

@@ -1,45 +1,43 @@
 <h2>RORLAB일정</h2>
 <br />
-<div class='panel panel-default table-responsive'>
-<table class='table table-bordered'>
-  <thead>
-    <tr>
-      <th class='text-center'><%= t("activerecord.attributes.schedule.name") %></th>
-      <th class='text-center'><%= t("activerecord.attributes.schedule.venue") %></th>
-      <th class='text-center'><%= t("activerecord.attributes.schedule.start_date") %></th>
-      <th class='text-center'>수강료</th>
-      <th class='text-center'>데이터작업</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% if @schedules.empty? %>
-      <tr><td class='text-center text-primary' colspan='5'><%= awesome_icon_label "exclamation-triangle", '아직 등록된 일정이 없습니다.' %></td></tr>
-    <% end %>
-    <% @schedules.each do |schedule| %>
+<div class="card table-responsive-md">
+  <table class='table table-bordered mb-0'>
+    <thead>
       <tr>
-        <td><%= link_to schedule.name, schedule %> <small><%= schedule.appliers.size if user_signed_in? && current_user.has_role?(:contributor) %></small></td>
-        <td class='text-center'><%= schedule.venue %></td>
-        <td class='text-center'><%= schedule.start_date %></td>
-        <td class='text-center'><%= schedule.charged ? number_to_currency(schedule.charge_amount) : lecture_type(schedule.charged) %></td>
-        <td class='text-center'>
-          <%= link_to icon_button('eye-open', :success), schedule %>
-          <% if user_signed_in? && current_user.can_update?(schedule) %>
-            <%= link_to icon_button('edit', :info), edit_schedule_path(schedule) %>
-          <% end %>
-          <% if user_signed_in? && current_user.can_delete?(schedule) %>
-            <%= link_to icon_button('trash', :danger), schedule, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-        </td>
+        <th class='text-center'><%= t("activerecord.attributes.schedule.name") %></th>
+        <th class='text-center'><%= t("activerecord.attributes.schedule.venue") %></th>
+        <th class='text-center'><%= t("activerecord.attributes.schedule.start_date") %></th>
+        <th class='text-center'>수강료</th>
+        <th class='text-center'>데이터작업</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% if @schedules.empty? %>
+        <tr><td class='text-center text-primary'><%= awesome_icon_label "exclamation-triangle", '아직 등록된 일정이 없습니다.' %></td></tr>
+      <% end %>
+      <% @schedules.each do |schedule| %>
+        <tr>
+          <td><%= link_to schedule.name, schedule %> <small><%= schedule.appliers.size if user_signed_in? && current_user.has_role?(:contributor) %></small></td>
+          <td class='text-center'><%= schedule.venue %></td>
+          <td class='text-center'><%= schedule.start_date %></td>
+          <td class='text-center'><%= schedule.charged ? number_to_currency(schedule.charge_amount) : lecture_type(schedule.charged) %></td>
+          <td class='text-center'>
+            <%= link_to icon_button('eye', :success), schedule %>
+            <% if user_signed_in? && current_user.can_update?(schedule) %>
+              <%= link_to icon_button('edit', :info), edit_schedule_path(schedule) %>
+            <% end %>
+            <% if user_signed_in? && current_user.can_delete?(schedule) %>
+              <%= link_to icon_button('trash', :danger), schedule, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
-<center>
-  <%= will_paginate @schedules %>
-</center>
+<%= will_paginate @schedules %>
 
 <br>
 <%= link_to awesome_icon_label('calendar-plus-o','일정등록'), new_schedule_path, class: 'btn btn-success' %>

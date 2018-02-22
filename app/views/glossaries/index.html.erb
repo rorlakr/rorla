@@ -6,61 +6,60 @@
       <%= "tagged with <span class='badge badge-default'>#{params[:tag]}</span>".html_safe  %>
       <%= link_to awesome_icon('times-circle'), url_for(page: nil, tag: nil, search: nil) %>
     <% end %>
-
   </small>
 </h2>
 
 <%= form_tag glossaries_path, :method => 'get' do %>
-<div id="custom-search-input" style="margin-bottom:1.5em;">
-  <div class="input-group col-md-6 col-md-push-3">
-    <input type="text" name="search" class="form-control input-lg" placeholder="용어를 입력한 후 엔터키를 누르세요." value="<%= params[:search] %>" />
-    <span class="input-group-btn">
-      <%= link_to icon('refresh'), glossaries_path( page: nil, tag: nil, search: nil), class: 'btn btn-danger btn-lg' %>
-      <button class="btn btn-success btn-lg" type="submit">
-        <i class="glyphicon glyphicon-search"></i>
-      </button>
-    </span>
+  <div id="custom-search-input" style="margin-bottom:1.5em;">
+    <div class="input-group col-md-6 mx-auto">
+      <input type="text" name="search" class="form-control input-lg" placeholder="용어를 입력한 후 엔터키를 누르세요." value="<%= params[:search] %>" />
+      <div class="input-group-append">
+        <%= link_to icon('refresh'), glossaries_path( page: nil, tag: nil, search: nil), class: "btn btn-outline-primary" %>
+        <%= button_tag(type: "submit", class: "btn btn-outline-primary") do %>
+            <%= fa_icon('search') %>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
 <% end %>
 
 <div class='alphabet_box'>
-  <%= link_to "A", glossaries_path(search: "A", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "B", glossaries_path(search: "B", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "C", glossaries_path(search: "C", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "D", glossaries_path(search: "D", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "E", glossaries_path(search: "E", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "F", glossaries_path(search: "F", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "G", glossaries_path(search: "G", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "H", glossaries_path(search: "H", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "I", glossaries_path(search: "I", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "J", glossaries_path(search: "J", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "K", glossaries_path(search: "K", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "L", glossaries_path(search: "L", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "M", glossaries_path(search: "M", page: nil, tag: nil), class: 'btn btn-default' %><br />
-  <%= link_to "N", glossaries_path(search: "N", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "O", glossaries_path(search: "O", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "P", glossaries_path(search: "P", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "Q", glossaries_path(search: "Q", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "R", glossaries_path(search: "R", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "S", glossaries_path(search: "S", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "T", glossaries_path(search: "T", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "U", glossaries_path(search: "U", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "V", glossaries_path(search: "V", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "W", glossaries_path(search: "W", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "X", glossaries_path(search: "X", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "Y", glossaries_path(search: "Y", page: nil, tag: nil), class: 'btn btn-default' %>
-  <%= link_to "Z", glossaries_path(search: "Z", page: nil, tag: nil), class: 'btn btn-default' %>
+  <%= link_to "A", glossaries_path(search: "A", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "B", glossaries_path(search: "B", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "C", glossaries_path(search: "C", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "D", glossaries_path(search: "D", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "E", glossaries_path(search: "E", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "F", glossaries_path(search: "F", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "G", glossaries_path(search: "G", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "H", glossaries_path(search: "H", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "I", glossaries_path(search: "I", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "J", glossaries_path(search: "J", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "K", glossaries_path(search: "K", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "L", glossaries_path(search: "L", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "M", glossaries_path(search: "M", page: nil, tag: nil), class: 'btn btn-primary' %><br />
+  <%= link_to "N", glossaries_path(search: "N", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "O", glossaries_path(search: "O", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "P", glossaries_path(search: "P", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "Q", glossaries_path(search: "Q", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "R", glossaries_path(search: "R", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "S", glossaries_path(search: "S", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "T", glossaries_path(search: "T", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "U", glossaries_path(search: "U", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "V", glossaries_path(search: "V", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "W", glossaries_path(search: "W", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "X", glossaries_path(search: "X", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "Y", glossaries_path(search: "Y", page: nil, tag: nil), class: 'btn btn-primary' %>
+  <%= link_to "Z", glossaries_path(search: "Z", page: nil, tag: nil), class: 'btn btn-primary' %>
 </div>
 
-<div class="panel panel-default table-responsive">
-  <table id='glossaries_list' class='table table-bordered'>
+<div class="card table-responsive">
+  <table id='glossaries_list' class='table table-bordered mb-0'>
     <thead>
       <tr>
-        <th class='col-md-3 text-center'><%= t("activerecord.attributes.glossary.term") %></th>
-        <th class='text-center'><%= t("activerecord.attributes.glossary_definition.definition") %></th>
-        <th class='text-center'>업데이트</th>
-        <th class='col-md-2 text-center'>데이터작업</th>
+        <th scope='col' class='text-center'><%= t("activerecord.attributes.glossary.term") %></th>
+        <th scope='col' class='text-center'><%= t("activerecord.attributes.glossary_definition.definition") %></th>
+        <th scope='col' class='text-center'>업데이트</th>
+        <th scope='col' class='text-center'>데이터작업</th>
       </tr>
     </thead>
 
@@ -77,7 +76,7 @@
           </td>
           <td class='text-center text-nowrap'><%= time_ago_in_words glossary.updated_at %>전</td>
           <td class='text-center'>
-            <%= link_to icon_button('eye-open', :success), glossary %>
+            <%= link_to icon_button('eye', :success), glossary %>
             <% if user_signed_in? && current_user.can_update?(glossary) %>
               <%= link_to icon_button('edit', :info), edit_glossary_path(glossary) %>
             <% end %>
@@ -96,6 +95,6 @@
 </div>
 
 <div class="form-actions">
-  <%= link_to '용어추가', new_glossary_path, class: 'btn btn-default' %>
+  <%= link_to '용어추가', new_glossary_path, class: 'btn btn-primary' %>
 
 </div>

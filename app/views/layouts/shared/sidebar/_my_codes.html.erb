@@ -4,10 +4,10 @@
       <p><%= link_to_if (user_signed_in? && current_user.has_role?(:user)), "All Shared Snippets ", codebanks_path %><small>(<%= Codebank.shared.size %>)</small></p>
       <p><%= link_to_if (user_signed_in? && current_user.has_role?(:user)), "My Shared Snippets ", codebanks_path(whose: current_user.id) %><small>(<%= Codebank.my_shared_snippets(current_user.id).size %>)</small></p>
       <p><%= link_to_if (user_signed_in? && current_user.has_role?(:user)), "My Private Snippets ", codebanks_path(whose: current_user.id, private: 1) %><small>(<%= Codebank.my_private_snippets(current_user.id).size %>)</small></p>
-      <ul style="list-style-type: none;padding-left:1.5em;">
+      <ul style="list-style-type: none;padding-left:1.5rem;">
       <% codbanks = Codebank.my_private_snippets(current_user.id) %>
       <% codbanks.each do |snippet| %>
-        <li><%= icon_shared(snippet.shared) %>&nbsp;&nbsp;<%= link_to truncate(snippet.title), codebank_path(snippet)%></li>
+        <li style='text-indent:-.5rem;'><%= icon_shared(snippet.shared) %>&nbsp;&nbsp;<%= link_to truncate(snippet.title), codebank_path(snippet)%></li>
       <% end %>
       </ul>
     </div>

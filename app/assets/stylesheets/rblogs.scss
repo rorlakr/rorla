@@ -34,10 +34,20 @@
 .rblog_index {
   margin-top: 1em;
   margin-bottom: 1.5em;
+  h2 {
+    margin: 1rem 0 1rem;
+    font-size: 1.5rem;
+  }
   .title, .content, .authored_by, .rblog-actions { padding-left: 15px; }
   .title { border-left: 5px solid #eaeaea; }
   border-top: 1px solid #eaeaea;
   border-left: 1px solid #eaeaea;
+  .content {
+    margin: 1rem 0;
+  }
+  .rblog-actions {
+    margin: 1rem 0 0;
+  }
 
 }
 

@@ -12,10 +12,11 @@
 //
 //= require jquery
 //= require rails-ujs
-
+//= require turbolinks
 //= requirr popper
 //= require bootstrap
 //= require activestorage
+//= require cable
 //= require jquery.minicolors
 //= require jquery.minicolors.simple_form
 //= require jquery.remotipart
@@ -26,6 +27,14 @@
 //= require pagedown_bootstrap
 //= require google-code-prettify-rails/prettify
 //= require cocoon
+//= require articles
+//= require codebanks
+//= require colorpicker
+//= require global
+//= require glossaries
+//= require group_purchases
+//= require plazas
+//= require purchase_requests
 //= require welcome
 //= require tui-code-snippet/dist/tui-code-snippet
 //= require markdown-it/dist/markdown-it
@@ -33,9 +42,7 @@
 //= require codemirror/lib/codemirror
 //= require highlightjs/highlight.pack
 //= require squire-rte/build/squire
-//= require turbolinks
 //= require init
 //= require app.tui_editor
 //= require app.tui_viewer
 //= require posts
-//= require_tree .

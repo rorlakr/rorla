@@ -12,8 +12,8 @@
   <tbody>
     <tr>
       <th scope='row'><%=t('activerecord.attributes.post.content')%></th>
-      <td class='markdown-preview'  style="border-top:1px solid #ccc !important;">
-        <%= simple_format @post.content %>
+      <td>
+        <div data-viewer='tui-viewer'><%= @post.content %></div>
       </td>
     </tr>
     <tr>

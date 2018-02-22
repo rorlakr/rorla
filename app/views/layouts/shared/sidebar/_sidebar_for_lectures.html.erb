@@ -1,6 +1,6 @@
 <% if controller_name == 'courses' or controller_name == 'lectures' %>
   <div>
-    <p style="margin-top:4.5em;margin-bottom:2em;border:1px solid red; border-radius:5px;padding:1em;">
+    <p style="margin-top:2rem;margin-bottom:2em;border:1px solid red; border-radius:5px;padding:1em;">
       <%= link_to image_tag("lecture_no_border.png", width: '100%'), courses_path(page:nil, search:nil) %>
       <%= link_to icon_label('plus', '강좌개설'), new_course_path, class: "btn btn-danger #{'disabled' if action_name == 'new'}", style:'margin-top:1em;display:block;'%>
     </p>

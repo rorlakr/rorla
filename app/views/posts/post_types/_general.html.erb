@@ -1,35 +1,32 @@
 <%= render partial: "posts/post_types/bulletin_title" %>
 
-<div class="row">
-  <div class="col">
-    <table class='table table-bordered'>
-      <thead>
-      <tr>
-        <th class=""><%=t('activerecord.attributes.post.title')%></th>
-        <th class=""><%=t('activerecord.attributes.post.created_at')%></th>
-        <th class=""><%=t('activerecord.attributes.post.data_actions')%></th>
-      </tr>
-      </thead>
+<div class="card table-responsive-xl">
+  <table class='table table-bordered mb-0'>
+    <thead>
+    <tr>
+      <th class=""><%=t('activerecord.attributes.post.title')%></th>
+      <th class=""><%=t('activerecord.attributes.post.created_at')%></th>
+      <th class=""><%=t('activerecord.attributes.post.data_actions')%></th>
+    </tr>
+    </thead>
 
-      <tbody>
-      <% @posts.each do |post| %>
-          <tr>
-            <td><%= link_to post.title, [post.bulletin, post] %></td>
-            <td class=""><%= post.created_at.strftime('%Y-%m-%d %l:%M:%S%P') %></td>
-            <td class="">
-              <%= link_to icon_button('eye'), [post.bulletin, post], title: t('form_actions.show') , data:{toggle:'tooltip'}  %>
-              <% if user_signed_in? %>
-                <%= link_to icon_button('edit'), edit_bulletin_post_path(post.bulletin, post), title: t('form_actions.edit') , data:{toggle:'tooltip'}  if current_user.can_update? post %>
-                <%= link_to icon_button('trash'), [post.bulletin, post], method: :delete, data: { confirm: 'Are you sure?', toggle:'tooltip' }, title: t('form_actions.delete') if current_user.can_delete? post %>
-              <% end %>
-            </td>
-          </tr>
-      <% end %>
-      </tbody>
-    </table>
-  </div>    
-</div>
+    <tbody>
+    <% @posts.each do |post| %>
+        <tr>
+          <td><%= link_to post.title, [post.bulletin, post] %></td>
+          <td class=""><%= post.created_at.strftime('%Y-%m-%d %l:%M:%S%P') %></td>
+          <td class="">
+            <%= link_to icon_button('eye'), [post.bulletin, post], title: t('form_actions.show') , data:{toggle:'tooltip'}  %>
+            <% if user_signed_in? %>
+              <%= link_to icon_button('edit'), edit_bulletin_post_path(post.bulletin, post), title: t('form_actions.edit') , data:{toggle:'tooltip'}  if current_user.can_update? post %>
+              <%= link_to icon_button('trash'), [post.bulletin, post], method: :delete, data: { confirm: 'Are you sure?', toggle:'tooltip' }, title: t('form_actions.delete') if current_user.can_delete? post %>
+            <% end %>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>    
 
-<center>
-  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
-</center>
+<%= will_paginate @posts %>
+

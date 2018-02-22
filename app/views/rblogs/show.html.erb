@@ -1,5 +1,40 @@
+<script src="/assets/tui-editor/dist/tui-editor-Viewer.min"></script>
+
 <!-- @rblog 인스턴스 객채 뷰 렌더링 -->
-<%= render @rblog %>
+
+<div id="fb-root"></div>
+<div class='rblog'>
+
+  <h2>
+    <%= awesome_icon_shared(@rblog.shared) %>
+    <%= action_name == 'index' ? link_to(truncate(@rblog.title, length: 100), @rblog) : @rblog.title %>
+  </h2>
+
+  <div class='authored_by'>
+    <%= user_profile @rblog.writer %>
+    <%= copyright_with_tooltip @rblog, @rblog.writer.email %>
+    <%= comment_count(@rblog.comments.size) %>
+    <%= hit_count(@rblog.impressionist_count) %>&nbsp;
+    <% if action_name == 'show' %>
+    <div class="fb-share-button pull-right" data-href="<%= rblog_url(@rblog) %>" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= rblog_url(@rblog) %>"><%= awesome_icon_label('facebook-official fa-lg', "공유하기") %></a></div>
+      <% end  %>
+  </div>
+
+  <div class='content'>
+    <div data-viewer='tui-viewer'><%= @rblog.content %></div>
+  </div>
+
+
+  <div class="rblog-actions <%= "form-actions" if action_name == 'show' %>">
+    <% if defined?(user_signed_in?) && user_singed_in? %>
+      <%= link_to t('form_actions.edit'), edit_rblog_path(@rblog), class: 'btn btn-outline-primary' if current_user.can_update? rblog %>
+      <%= link_to t('form_actions.delete'), @rblog, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' if current_user.can_delete? rblog %>
+    <% end %>
+    <%= link_to t('form_actions.show'), rblog_path(@rblog), class: 'btn btn-outline-primary' if action_name == 'index' %>
+    <%= link_to t('form_actions.back'), rblogs_path, class: 'btn btn-outline-primary' if action_name == 'show' %>
+  </div>
+</div>
+
 
 <!-- 댓글 위젯 -->
 <%= render partial: "comments/comments_widget", locals: { resource: @rblog} %>

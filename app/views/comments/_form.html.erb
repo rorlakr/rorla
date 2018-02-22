@@ -1,5 +1,5 @@
 <div id='notice_comments_of_<%=commentable.id %>' class='notice_comments'></div>
 <%= simple_form_for :comment, url: polymorphic_url([commentable, commentable.comments.build]), html: {id: "comment_form_of_#{commentable.id}"}, remote: true do | f | %>
   <%= f.input :content, as: :text, label: false, placeholder: '댓글의 글자수는 최대 255를 넘을 수 없습니다.', input_html: { class: 'form-control', rows: 5 } %>
-  <%= f.submit class: 'btn btn-default pull-right', style:'margin-top:.5em;' %>
+  <%= f.submit class: 'btn btn-primary pull-right' %>
 <% end %>

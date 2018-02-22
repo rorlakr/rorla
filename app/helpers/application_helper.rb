@@ -1,12 +1,15 @@
 module ApplicationHelper
 
   # Always use the Twitter Bootstrap pagination renderer
-  def will_paginate(collection_or_options = nil, options = {})
+  def will_paginate(collection_or_options = nil,
+                    options = {
+                      list_classes: %w[pagination justify-content-center]
+                    })
     if collection_or_options.is_a? Hash
       options, collection_or_options = collection_or_options, nil
     end
     unless options[:renderer]
-      options = options.merge :renderer => BootstrapPagination::Rails
+      options = options.merge renderer: WillPaginate::ActionView::BootstrapLinkRenderer
     end
     super *[collection_or_options, options].compact
   end
@@ -28,6 +31,7 @@ module ApplicationHelper
 
   def icon(shape)
     content_tag(:span, '', class: "glyphicon glyphicon-#{shape}")
+    fa_icon(shape)
   end
 
   def icon_label(shape, label)
@@ -35,7 +39,7 @@ module ApplicationHelper
   end
 
   def icon_button(shape, kind = 'secondary')
-    content_tag(:i, fa_icon(shape), class: "badge badge-#{kind}")
+    content_tag(:i, fa_icon(shape), class: "action-btn badge badge-#{kind}")
   end
 
   def icon_label_button(shape, label, kind='primary')
@@ -43,7 +47,8 @@ module ApplicationHelper
   end
 
   def awesome_icon(shape, size = '1x')
-    content_tag(:span, '', class: "fa fa-#{shape} fa-#{size}")
+    # content_tag(:span, '', class: "fa fa-#{shape} fa-#{size}")
+    fa_icon(shape)
   end
 
   def awesome_icon_label(shape, label)
@@ -219,6 +224,11 @@ module ApplicationHelper
   def user_profile(user, options={ width: '20px', class: 'rounded-circle'})
     user_profile_url = user.user_profile.nil? ? Gravatar.new(user.email).image_url : user.user_profile.avatar_url(:thumb)
     image_tag(user_profile_url, width: options[:width], class: options[:class], style:'background-color:#eaeaea;')
+  end
+
+  def markdown_truncate(markdown_text, length_to_truncate = 300)
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    truncate(markdown.render(markdown_text).gsub(/<\/?[^>]*>/, ''), length: length_to_truncate)
   end
 
 end

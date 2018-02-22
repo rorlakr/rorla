@@ -1,12 +1,13 @@
 <%= render partial: "posts/post_types/bulletin_title" %>
 
-<div id="posts" class='media-list'>
+<div id="posts" class='mt-4'>
   <% @posts.each do | post | %>
-    <div class="media">
-      <%= link_to(image_tag(post.picture_url(:thumb), class:"media-object", style:'width:5em;'),[post.bulletin, post], class:'pull-left') if post.picture? %>
+    <div class="media mb-2">
+      <%#= link_to(image_tag(post.picture_url(:thumb), class:"media-object", style:'width:5em;'),[post.bulletin, post], class:'pull-left') if post.picture? %>
+      <%= image_tag post.picture_url(:thumb), style: 'width: 10rem;', class: 'mr-3' if post.picture? %>
       <div class="media-body">
-        <h4 class="media-heading"><%= post.title %></h4>
-        <div class="media-content"><%= truncate post.content %></div>
+        <h5 class="mt-0"><strong><%= post.title %></strong></h5>
+        <div class="media-content"><%= truncate post.content, length: 300 %></div>
         <%= copyright_with_tooltip post, post.writer.email %>
         <%= hit_count(post.impressionist_count) %>
         <span>
@@ -22,5 +23,5 @@
 </div>
 
 <center>
-  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+  <%= will_paginate @posts %>
 </center>

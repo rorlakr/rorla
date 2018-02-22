@@ -70,8 +70,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'validate_url', '1.0.2'
 gem 'webshots', '0.0.1', github: 'rorlab/webshots'
 gem 'will_paginate', '3.1.6'
-gem 'will_paginate-bootstrap', '1.0.1',
-    github: 'luciuschoi/will_paginate-bootstrap'
+# `gem 'will_paginate-bootstrap', '1.0.1',
+#     github: 'luciuschoi/will_paginate-bootstrap'`
+gem 'will_paginate-bootstrap4'    
 gem 'xmlrpc', '0.3.0'
 gem 'yaml_db', '0.6.0'
 
