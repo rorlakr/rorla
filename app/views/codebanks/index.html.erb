@@ -6,41 +6,42 @@
     <%= link_to icon('remove-circle'), codebanks_path if params[:whose] || params[:search] || params[:tag] %>
   </small>
 </h2>
-<table class='table'>
-  <thead>
-    <tr>
-      <th class='col-lg-4 col-md-5 col-sm-7 col-xs-8'><%=t('activerecord.attributes.codebank.title')%></th>
-      <th class='col-lg-3 col-md-3 hidden-sm hidden-xs'><%=t('activerecord.attributes.codebank.writer')%></th>
-      <th class='col-lg-3 col-md-2 col-sm-3 col-xs-4'><%=t('activerecord.attributes.codebank.created_at')%></th>
-      <th class='col-lg-2 col-md-2 hidden-xs'><%=t('activerecord.attributes.codebank.data_actions')%></th>
-    </tr>
-  </thead>
-
-  <tbody>
-  <% @codebanks.each do |codebank| %>
-      <tr>
-        <td class="">
-          <%= link_to awesome_icon_shared_label(codebank.shared, codebank.title), codebank %>
-          <%= comment_count(codebank.comments.size) %>
-          <%= hit_count(codebank.impressionist_count) %>
-        </td>
-        <td class="hidden-sm hidden-xs"><%= account_with_tooltip codebank.writer.email %></td>
-        <td class="hidden-xs"><span title='<%= codebank.created_at.strftime('%Y-%m-%d %l:%M:%S%P') %>' data-toggle='tooltip'><%= time_ago_in_words(codebank.created_at) %>전</span></td>
-        <td class="visible-xs"><%= codebank.created_at.strftime('%Y-%m-%d') %></td>
-        <td class="hidden-xs">
-          <%= link_to icon_button('eye-open'), codebank, title: t('form_actions.show'), data:{toggle:'tooltip'}  %>
-          <% if user_signed_in? %>
-            <%= link_to icon_button('edit'), edit_codebank_path(codebank), title: t('form_actions.edit'), data:{toggle:'tooltip'}  if current_user.can_update? codebank %>
-            <%= link_to icon_button('trash'), codebank, method: :delete, data: { confirm: 'Are you sure?', toggle:'tooltip' }, title: t('form_actions.delete')  if current_user.can_delete? codebank %>
-          <% end %>
-        </td>
+<div class="card table-responsive-sm">
+  <table class='table table-bordered m-0'>
+    <thead>
+      <tr class='d-flex'>
+        <th scope='col' class='col-6 text-center'><%=t('activerecord.attributes.codebank.title')%></th>
+        <th scope='col' class='col-3 col-lg-2 text-center'><%=t('activerecord.attributes.codebank.writer')%></th>
+        <th scope='col' class='col-3 col-lg-2 text-center'><%=t('activerecord.attributes.codebank.created_at')%></th>
+        <th scope='col' class='col-3 col-lg-2 d-none d-lg-block text-center'><%=t('activerecord.attributes.codebank.data_actions')%></th>
       </tr>
-  <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @codebanks.each do |codebank| %>
+          <tr class='d-flex'>
+            <td class="col-6">
+              <%= link_to awesome_icon_shared_label(codebank.shared, codebank.title), codebank %>
+              <%= comment_count(codebank.comments.size) %>
+              <%= hit_count(codebank.impressionist_count) %>
+            </td>
+            <td class="col-3 col-lg-2 text-center"><%= account_with_tooltip codebank.writer.email %></td>
+            <td class="col-3 col-lg-2 d-none d-lg-block text-center"><span title='<%= codebank.created_at.strftime('%Y-%m-%d %l:%M:%S%P') %>' data-toggle='tooltip'><%= time_ago_in_words(codebank.created_at) %>전</span></td>
+            <td class="col-3 col-lg-2 d-block d-lg-none text-center"><%= codebank.created_at.strftime('%Y-%m-%d') %></td>
+            <td class="col-3 col-lg-2 d-none d-lg-block text-center">
+              <%= link_to icon_button('eye'), codebank, title: t('form_actions.show'), data:{toggle:'tooltip'}  %>
+              <% if user_signed_in? %>
+                <%= link_to icon_button('edit'), edit_codebank_path(codebank), title: t('form_actions.edit'), data:{toggle:'tooltip'}  if current_user.can_update? codebank %>
+                <%= link_to icon_button('trash'), codebank, method: :delete, data: { confirm: 'Are you sure?', toggle:'tooltip' }, title: t('form_actions.delete')  if current_user.can_delete? codebank %>
+              <% end %>
+            </td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <center>
   <%= will_paginate @podcasts %>
 </center>
 
-<%= link_to icon_label('plus', 'Add a snippet'), new_codebank_path, class: 'btn btn-default' %>
+<%= link_to icon_label('plus', 'Add a snippet'), new_codebank_path, class: 'btn btn-outline-secondary' %>

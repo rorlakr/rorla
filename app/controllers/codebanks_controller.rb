@@ -49,7 +49,7 @@ class CodebanksController < ApplicationController
     set_meta_tags og: {
       title: @codebank.title,
       description: @codebank.summary,
-      image: root_url[0..-2] + ActionController::Base.helpers.asset_url('codbank.png'),
+      image: root_url[0..-2] + ActionController::Base.helpers.asset_url('codebank.png'),
       url: codebank_url(@codebank)
     }, title: @codebank.title
 

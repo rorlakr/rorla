@@ -12,10 +12,10 @@
 <%= form_tag glossaries_path, :method => 'get' do %>
   <div id="custom-search-input" style="margin-bottom:1.5em;">
     <div class="input-group col-md-6 mx-auto">
-      <input type="text" name="search" class="form-control input-lg" placeholder="용어를 입력한 후 엔터키를 누르세요." value="<%= params[:search] %>" />
+      <input type="text" name="search" class="form-control" placeholder="용어를 입력한 후 엔터키를 누르세요." value="<%= params[:search] %>" />
       <div class="input-group-append">
-        <%= link_to icon('refresh'), glossaries_path( page: nil, tag: nil, search: nil), class: "btn btn-outline-primary" %>
-        <%= button_tag(type: "submit", class: "btn btn-outline-primary") do %>
+        <%= link_to icon('refresh'), glossaries_path( page: nil, tag: nil, search: nil), class: "btn btn-danger" %>
+        <%= button_tag(type: "submit", class: "btn btn-success") do %>
             <%= fa_icon('search') %>
         <% end %>
       </div>

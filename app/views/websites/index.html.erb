@@ -1,27 +1,25 @@
 <h2 class="page_title">루비와 레일스 웹서비스 <small>Total : <%= @websites_total %></small></h2>
 
 <%= form_tag websites_path, :method => 'get' do %>
-<input type='hidden' name='per_page' value="<%= params[:per_page] %>">
-<div id="custom-search-input" style="margin-bottom:1.5em;">
-  <div class="input-group col-md-6 col-md-push-3">
-    <input type="text" name="search" class="form-control input-lg" placeholder="URL을 입력한 후 엔터키를 누르세요." value="<%= params[:search] %>" />
-    <span class="input-group-btn">
-      <%= link_to icon('refresh'), websites_path( page: nil, tag: nil, search: nil), class: 'btn btn-danger btn-lg' %>
-      <button class="btn btn-success btn-lg" type="submit">
-        <i class="glyphicon glyphicon-search"></i>
-      </button>
-    </span>
+  <input type='hidden' name='per_page' value="<%= params[:per_page] %>">
+  <div id="custom-search-input" class='input-group col-md-6 mx-auto' style="margin-bottom:1.5em;">
+    <input type="text" name="search" class="form-control" placeholder="URL을 입력한 후 엔터키를 누르세요." value="<%= params[:search] %>" />
+    <div class="input-group-append">
+      <%= link_to icon('refresh'), websites_path( page: nil, tag: nil, search: nil), class: 'btn btn-danger' %>
+      <%= button_tag(type: "submit", class: "btn btn-success") do %>
+          <%= fa_icon('search') %>
+      <% end %>
+    </div>
   </div>
-</div>
 <% end %>
 
 <div class='panel panel-default text-center'>
   <div style='padding:1em;'>
-    <%= link_to "운영중", websites_path(state: 'on', page: nil, search: nil), class: "btn btn-default btn-xs #{params[:state] == 'on' ? 'disabled btn-danger' : '' }" %>
-    <%= link_to "운영종료", websites_path(state: 'off', page: nil, search: nil), class: "btn btn-default btn-xs #{ params[:state] == 'off' ? 'disabled btn-danger' : '' }" %>
-    <%= link_to "레일스", websites_path(type: 'rails', page: nil, search: nil), class: "btn btn-default btn-xs #{ params[:type] == 'rails' ? 'disabled btn-danger' : '' }" %>
-    <%= link_to "레일스API", websites_path(type: 'api', page: nil, search: nil), class: "btn btn-default btn-xs #{ params[:type] == 'api' ? 'disabled btn-danger' : '' }" %>
-    <%= link_to "루비", websites_path(type: 'ruby', page: nil, search: nil), class: "btn btn-default btn-xs #{ params[:type] == 'ruby' ? 'disabled btn-danger' : '' }" %>
+    <%= link_to "운영중", websites_path(state: 'on', page: nil, search: nil), class: "btn btn-outline-secondary btn-xs #{params[:state] == 'on' ? 'disabled btn-danger' : '' }" %>
+    <%= link_to "운영종료", websites_path(state: 'off', page: nil, search: nil), class: "btn btn-outline-secondary btn-xs #{ params[:state] == 'off' ? 'disabled btn-danger' : '' }" %>
+    <%= link_to "레일스", websites_path(type: 'rails', page: nil, search: nil), class: "btn btn-outline-secondary btn-xs #{ params[:type] == 'rails' ? 'disabled btn-danger' : '' }" %>
+    <%= link_to "레일스API", websites_path(type: 'api', page: nil, search: nil), class: "btn btn-outline-secondary btn-xs #{ params[:type] == 'api' ? 'disabled btn-danger' : '' }" %>
+    <%= link_to "루비", websites_path(type: 'ruby', page: nil, search: nil), class: "btn btn-outline-secondary btn-xs #{ params[:type] == 'ruby' ? 'disabled btn-danger' : '' }" %>
     <%= link_to "필터해제", websites_path(page: nil, search: nil), class: "btn btn-success btn-xs" %>
   </div>
 </div>
@@ -46,7 +44,7 @@
         <td class='text-center'><%= website.service_type %></td>
         <td class='text-center'><%= time_ago_in_words(website.updated_at) %></td>
         <td class='text-center'>
-          <%= link_to icon_button('eye-open', :success), website %>
+          <%= link_to icon_button('eye', :success), website %>
           <% if user_signed_in? && current_user.can_update?(website) %>
             <%= link_to icon_button('edit', :info), edit_website_path(website) %>
           <% end %>
@@ -65,7 +63,7 @@
 </div>
 
 <div class='form-actions'>
-  <%= link_to awesome_icon_label('plus', '서비스등록'), new_website_path, class: 'btn btn-default' %>
+  <%= link_to awesome_icon_label('plus', '서비스등록'), new_website_path, class: 'btn btn-outline-secondary' %>
   <div class='text-right' style='float:right;'>
 
     <div class="btn-group hidden-xs" role="group" >

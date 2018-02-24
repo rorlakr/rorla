@@ -9,13 +9,12 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-default' %>
-    <%= link_to '보기', course_lectures_path(@course), class: 'btn btn-default' if @course.persisted? %> |
-    <%= link_to '강좌목록', courses_path, class: 'btn btn-default' %>
-    <span class='float:right;'>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+    <%= link_to '보기', course_lectures_path(@course), class: 'btn btn-outline-secondary' if @course.persisted? %> |
+    <%= link_to '강좌목록', courses_path, class: 'btn btn-outline-secondary' %>
+    <span class='ml-2'>
       <%= f.check_box :published %>
       <%= f.label :published %>
     </span>
-
   </div>
 <% end %>

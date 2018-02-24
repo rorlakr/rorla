@@ -26,14 +26,6 @@ GIT
   specs:
     webshots (0.0.1)
 
-GIT
-  remote: https://github.com/tamycova/merit.git
-  revision: f657596409d98fc7c8e3274b213b86cc47d87495
-  branch: f657596409d98fc7c8e3274b213b86cc47d87495
-  specs:
-    merit (2.4.0)
-      ambry (~> 1.0.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -89,8 +81,6 @@ GEM
     annotate (2.7.2)
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 13.0)
-    annotate_gem (0.0.11)
-      bundler (~> 1.1)
     archive-zip (0.7.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
@@ -327,6 +317,8 @@ GEM
       rails
       rdiscount (>= 1.6.8, < 2.0)
     meetup_client (1.0.0)
+    merit (3.0.1)
+      ambry (~> 1.0.0)
     meta-tags (2.7.1)
       actionpack (>= 3.2.0, < 5.3)
     method_source (0.9.0)
@@ -580,7 +572,6 @@ DEPENDENCIES
   acts_as_votable (= 0.11.1)
   ambry (= 1.0.0)
   annotate (= 2.7.2)
-  annotate_gem (= 0.0.11)
   authority (= 3.3.0)
   auto_html (= 2.0.0)
   autoprefixer-rails (= 7.2.5)
@@ -637,7 +628,7 @@ DEPENDENCIES
   mailgun (= 0.11)
   markdown-rails (= 0.2.1)
   meetup_client (= 1.0.0)
-  merit!
+  merit (= 3.0.1)
   meta-tags (= 2.7.1)
   mini_magick (~> 4.8)
   multi_json (= 1.13.1)
@@ -677,7 +668,6 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   webmock (= 3.3.0)
   webshots (= 0.0.1)!
-  will_paginate (= 3.1.6)
   will_paginate-bootstrap4
   xmlrpc (= 0.3.0)
   yaml_db (= 0.6.0)
