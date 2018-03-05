@@ -13,10 +13,10 @@
       <tr>
         <td><%= post.title %></td>
         <td>
-          <%= link_to 'Show', [post.bulletin, post], class:'btn btn-default' %>
+          <%= link_to 'Show', [post.bulletin, post], class:'btn btn-outline-secondary' %>
           <% if user_signed_in? %>
-            <%= link_to 'Edit', edit_bulletin_post_path(post.bulletin, post), class:'btn btn-default' if current_user.can_update? post %>
-            <%= link_to 'Destroy', [post.bulletin, post], method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default' if current_user.can_delete? post %>
+            <%= link_to 'Edit', edit_bulletin_post_path(post.bulletin, post), class:'btn btn-outline-secondary' if current_user.can_update? post %>
+            <%= link_to 'Destroy', [post.bulletin, post], method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-outline-secondary' if current_user.can_delete? post %>
           <% end %>
         </td>
       </tr>

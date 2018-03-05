@@ -1,6 +1,6 @@
 <% if controller_name == 'posts' %>
   <div style="">
-    <%= link_to icon_label('plus', 'Add a Post'), new_bulletin_post_path(params[:bulletin_id]), class: 'btn btn-outline-primary btn-block' %>
+    <%= link_to icon_label('plus', 'Add a Post'), new_bulletin_post_path(params[:bulletin_id]), 'data-turbolinks': false, class: 'btn btn-outline-primary btn-block' %>
   </div>
   <div class='mt-4'>
     <%= render "layouts/shared/sidebar/my_posts" %>

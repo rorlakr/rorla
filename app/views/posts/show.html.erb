@@ -2,45 +2,43 @@
 
 <h2><%= params[:bulletin_id] %></h2>
 
-<table class='table table-bordered'>
-  <thead>
-    <tr>
-      <th scope='col'><%=t('activerecord.attributes.post.title')%></th>
-      <td scope='col' class='text-danger'><strong><%= @post.title %></strong></td>
-    </tr>
-  </thead>
+<table class='table'>
   <tbody>
-    <tr>
-      <th scope='row'><%=t('activerecord.attributes.post.content')%></th>
-      <td>
+    <tr class='d-flex'>
+      <th class='col-2'><%=t('activerecord.attributes.post.title')%></th>
+      <td class='col-10' class='text-danger'><strong><%= @post.title %></strong></td>
+    </tr>
+    <tr class='d-flex'>
+      <th class='col-2'><%=t('activerecord.attributes.post.content')%></th>
+      <td class='col-10'>
         <div data-viewer='tui-viewer'><%= @post.content %></div>
       </td>
     </tr>
-    <tr>
-      <th scope='row'><%=t('activerecord.attributes.post.writer')%></th>
-      <td>
+    <tr class='d-flex'>
+      <th class='col-2'><%=t('activerecord.attributes.post.writer')%></th>
+      <td class='col-10'>
         <%= account_with_tooltip @post.writer.email %>
         <%= hit_count(@post.impressionist_count) %>
       </td>
     </tr>
-    <tr>
-      <th scope='row'><%=t('activerecord.attributes.post.created_at')%></th>
-      <td><%= @post.created_at %></td>
+    <tr class='d-flex'>
+      <th class='col-2'><%=t('activerecord.attributes.post.created_at')%></th>
+      <td class='col-10'><%= @post.created_at %></td>
     </tr>
     <% if @post.bulletin.post_type == "gallery" %>
-      <tr>
-        <th scope='row'><%=t('activerecord.attributes.post.picture')%></th>
-        <td><%= image_tag @post.picture_url, style: 'max-width:100%' %></td>
+      <tr class='d-flex'>
+        <th class='col-2'><%=t('activerecord.attributes.post.picture')%></th>
+        <td class='col-10'><%= image_tag @post.picture_url, style: 'max-width:100%' %></td>
       </tr>
     <% end %>
-    <tr>
-      <th scope='row'><%=t('activerecord.attributes.post.published')%></th>
-      <td><%= icon_shared @post.published %></td>
+    <tr class='d-flex'>
+      <th class='col-2'><%=t('activerecord.attributes.post.published')%></th>
+      <td class='col-10'><%= icon_shared @post.published %></td>
     </tr>
   </tbody>
 </table>
 
 <hr>
 
-<%= link_to t('form_actions.edit'), edit_bulletin_post_path(@post.bulletin, @post), class: 'btn btn-outline-primary' %>
+<%= link_to t('form_actions.edit'), edit_bulletin_post_path(@post.bulletin, @post), 'data-turbolinks': false, class: 'btn btn-outline-primary' %>
 <%= link_to t('form_actions.back'), bulletin_posts_path, class: 'btn btn-outline-primary' %>
