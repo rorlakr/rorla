@@ -26,9 +26,9 @@
 
 
   <div class="rblog-actions <%= "form-actions" if action_name == 'show' %>">
-    <% if defined?(user_signed_in?) && user_singed_in? %>
-      <%= link_to t('form_actions.edit'), edit_rblog_path(@rblog), class: 'btn btn-outline-primary' if current_user.can_update? rblog %>
-      <%= link_to t('form_actions.delete'), @rblog, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' if current_user.can_delete? rblog %>
+    <% if defined?(user_signed_in?) && user_signed_in? %>
+      <%= link_to t('form_actions.edit'), edit_rblog_path(@rblog), "data-turbolinks": false, class: 'btn btn-outline-primary' if current_user.can_update? @rblog %>
+      <%= link_to t('form_actions.delete'), @rblog, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' if current_user.can_delete? @rblog %>
     <% end %>
     <%= link_to t('form_actions.show'), rblog_path(@rblog), class: 'btn btn-outline-primary' if action_name == 'index' %>
     <%= link_to t('form_actions.back'), rblogs_path, class: 'btn btn-outline-primary' if action_name == 'show' %>
