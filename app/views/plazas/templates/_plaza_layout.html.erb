@@ -6,8 +6,12 @@
   <div class="card-body">
     <%= yield_content! :plaza_content %>
   </div>
-  <div class="card-footer">
-    <%= yield_content! :plaza_author %>
-    <%= yield_content! :plaza_actions %>&nbsp;
+  <div class="card-footer d-flex">
+    <div class="author">
+      <%= yield_content! :plaza_author %>
+    </div>
+    <div class='actions ml-auto' style='display:none;'>
+      <%= yield_content! :plaza_actions %>&nbsp;
+    </div>
   </div>
 </div>

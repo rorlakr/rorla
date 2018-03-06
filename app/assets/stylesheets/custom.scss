@@ -132,6 +132,15 @@ li.L1,li.L3,li.L5,li.L7,li.L9 { background-color: #f6f6f6 !important; }
     background-color: rgb(255, 255, 255) !important;
   }
 }
+.btn-outline-primary {  &:hover {  background-color: theme-color('primary') !important; } }
+.btn-outline-secondary {  &:hover {  background-color: theme-color('secondary') !important; } }
+.btn-outline-success {  &:hover { background-color: theme-color('success') !important; } }
+.btn-outline-danger {  &:hover { background-color: theme-color('danger') !important; } }
+.btn-outline-warning {  &:hover { background-color: theme-color('warning') !important; } }
+.btn-outline-info {  &:hover { background-color: theme-color('info') !important; } }
+.btn-outline-dark {  &:hover { background-color: theme-color('dark') !important; } }
+.btn-outline-muted {  &:hover { background-color: theme-color('muted') !important; } }
+.btn-outline-white {  &:hover { background-color: theme-color('white') !important; } }
 
 // Bottom Menu
 .bottom_menu {

@@ -1,5 +1,5 @@
 <div class='row'>
-  <div class='col-md-6 col-md-offset-3'>
+  <div class='col-md-6 offset-md-3'>
     <h2>Sign up</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -17,7 +17,7 @@
       <div class="form-group">
         <%= recaptcha_tags %>
       </div>
-      <%= f.button :submit, "Sign up", class: "btn btn-default" %>
+      <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
     <% end %>
 
     <%= render "devise/shared/links" %>

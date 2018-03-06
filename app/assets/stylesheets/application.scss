@@ -15,8 +15,8 @@ $screen-md:                  1200px !default;  //992
 $grid-gutter-width: 50px;
 $jumbotron-padding: 20px;
 
-@import 'jquery.minicolors';
 @import 'jquery-ui';
+@import 'jquery.minicolors';
 @import "bootstrap";
 @import "bootstrap_customized";
 @import 'codemirror/lib/codemirror';

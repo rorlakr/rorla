@@ -3,14 +3,19 @@
 <br />
 <div class="row">
   <div class='col-sm-6'>
-    <div class="form-group">
+    <div class="form-group mb-2">
+      <label>프로필사진</label>
       <% if @user_profile.avatar?  %>
-        <div class='img-rounded' style='border:1px solid #ccc;padding:0 0 0 10px;margin-bottom:10px;'>
-          <%= image_tag current_user.user_profile.avatar.url(:thumb), size: '100x100', style:'margin: 1em auto;', class: 'img-responsive img-rounded' %>
-          <%= f.input :remove_avatar, label: '프로필사진 삭제', as: :boolean %>
+        <div class='border rounded px-2 mb-2'>
+          <%= image_tag current_user.user_profile.avatar.url(:thumb), size: '100x100', class: 'img-responsive rounded d-block my-3 mx-auto' %>
+          <label for="user_profile_remove_avatar">
+          <%#= f.input :remove_avatar, label: '프로필사진 삭제', as: :boolean, input_html: { class: 'mr-1 mb-0'} %>
+            <input type='checkbox' id="user_profile_remove_avatar" name="user_profile[remove_avatar]">
+            프로필사진 삭제
+          </label>  
         </div>
       <% end %>
-      <%= f.input :avatar, as: :file, placeholder: '프로필사진', input_html: { class: 'form-control' } %>
+      <%= f.input :avatar, as: :file, label: false, input_html: { class: 'form-control' } %>
     </div>
     <div class="form-group">
       <%= f.input :name, placeholder: 'Real name', input_html: { class: 'form-control' } %>
@@ -38,9 +43,9 @@
   </div>
 </div>
   <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-default' %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
     <% if action_name == 'edit' %>
-      <%= link_to '보기', user_profile_path, class: 'btn btn-default'  %> |
+      <%= link_to '보기', user_profile_path, class: 'btn btn-outline-secondary'  %> |
       <%= link_to '삭제', user_profile_path, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
     <% end %>
   </div>

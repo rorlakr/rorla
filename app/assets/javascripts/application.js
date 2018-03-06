@@ -13,14 +13,15 @@
 //= require jquery
 //= require rails-ujs
 //= require turbolinks
-//= requirr popper
+//= require jquery-ui
+//= require popper
 //= require bootstrap
 //= require activestorage
+//= require global
 //= require cable
 //= require jquery.minicolors
 //= require jquery.minicolors.simple_form
 //= require jquery.remotipart
-//= require jquery-ui
 //= require jquery.pageless
 //= require autosize
 //= require jquery.tokeninput
@@ -30,7 +31,6 @@
 //= require articles
 //= require codebanks
 //= require colorpicker
-//= require global
 //= require glossaries
 //= require group_purchases
 //= require plazas

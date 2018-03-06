@@ -3,7 +3,7 @@
 
   <h2 class='title'>
     <%= awesome_icon_shared(rblog.shared) %>
-    <%= action_name == 'index' ? link_to(truncate(rblog.title, length: 100), rblog) : rblog.title %>
+    <%= action_name == 'index' ? link_to(truncate(rblog.title, length: 100), rblog, data: { turbolinks: false}) : rblog.title %>
   </h2>
 
   <div class='authored_by'>

@@ -22,7 +22,7 @@
 // plazas#index 에서 mouse hover on panel 시에 적용되는 CSS 클래스
 .inside {
   background-color: #e7f3ff; border-color: #93c6ff;
-  .panel-heading, .label { background-color: #93c6ff !important;}
+  .card-header, .label { background-color: #93c6ff !important;}
   .author { border-color: #d0d8f3 !important; }
   .category small { color: white !important; }
 }

@@ -15,3 +15,13 @@
 .te-markdown-tab-section {
   border-radius: 5px 0 0 0;
 }
+
+.tui-editor-contents {
+  ul {
+    padding-left: 2rem;
+  }
+  blockquote {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+} 

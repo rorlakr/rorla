@@ -1,11 +1,11 @@
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top" style="background-color: #302a2a;">
+<div class="navbar navbar-dark navbar-expand-lg fixed-top" style="background-color: #302a2a;">
   <div class="container">
-    <a class="navbar-brand" href="#"><%= image_tag 'rorlab_logo_155x40_300dpi.png', class: 'd-inline-block align-top' %></a>
+    <a class="navbar-brand" href="/"><%= image_tag 'rorlab_logo_155x40_300dpi.png' %></a>
     <button class="navbar-toggler mr-1" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav ml-1 mr-auto mt-2 mt-lg-0">
         <li class="nav-item <%= active_menu('welcome') %>"><%= link_to "Home", root_path, class: 'nav-link' %></li>
         <li class="nav-item <%= active_menu('plazas') %>"><%= link_to "Plaza", plazas_path, class: 'nav-link' %></li>
         <li class='nav-item dropdown <%= active_menu('posts') %>'>
@@ -46,7 +46,7 @@
         <li class="nav-item <%= active_menu('glossaries') %>">
           <%= link_to 'Glossary', glossaries_path, class: 'nav-link' %></li>
       </ul>
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav navbar-right ml-1 mt-2 mt-lg-0">
         <% if user_signed_in? %>
           <li class='nav-item'>
             <a class='nav-link' href="#">Level : <%= current_user.level %> Point : <%= current_user.points %> </a>
@@ -80,4 +80,4 @@
       </ul>
     </div><!--/.nav-collapse -->
   </div>
-</nav>
+</div>

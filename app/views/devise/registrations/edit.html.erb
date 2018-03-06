@@ -23,19 +23,17 @@
       <div class="form-group">
         <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true, input_html: { class: 'form-control' } %>
       </div>
-      <%= f.button :submit, "Update", class: 'btn btn-default' %>
+      <%= f.button :submit, "Update", class: 'btn btn-primary' %>
     <% end %>
   </div>
   <div class='col-sm-6'>
     <% if user_signed_in? %>
-      <h3>Badges</h3>
+      <h3 class=>Badges</h3>
         <% current_user.badges.each do |badge| %>
         <div class="media">
-          <a class="pull-left" href="#">
-            <img style="width: 60px;" class="media-object" src="<%= badge.custom_fields[:image_url] %>" alt="...">
-          </a>
+          <img class="mr-3" style="width: 60px;" src="<%= badge.custom_fields[:image_url] %>" alt="...">
           <div class="media-body">
-            <h4 class="media-heading"><%= badge.name %></h4>
+            <h5 class="mt-0 mb-0"><%= badge.name %></h5>
             <p><%= badge.custom_fields[:difficulty] %> <br> <%= badge.description %></p>
           </div>
         </div>
@@ -51,4 +49,4 @@
 </div>
 
 <hr>
-<%= link_to "Back", :back, class: "btn btn-default" %>
+<%= link_to "Back", :back, class: "btn btn-outline-secondary" %>

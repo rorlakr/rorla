@@ -8,14 +8,8 @@
 }
 
 .navbar {
-	// height of top navbar resized to be shrinked
-	padding: 0;
-}
-
-@media (min-width: 768px) {
-	.navbar-nav > li > a {
-		padding: 17px 13px;
-	}
+	padding-top: 0;
+	padding-bottom: 0;
 }
 
 .card {
