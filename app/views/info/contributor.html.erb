@@ -1,16 +1,7 @@
-<div class="visible-xs spacer01"></div>
-<div class="visible-sm spacer02"></div>
-<div class="visible-md spacer04"></div>
-<div class="visible-lg spacer05"></div>
 <div class='jumbotron'>
-  <h2 style="color:#800000;">기여자</h2>
-  <hr>
+  <h1 class="display-4">기여자</h1>
   <p>RORLAB은 여러 분의 헌신적인 참여로 운영됩니다.</p>
 </div>
-<div class="visible-xs spacer01"></div>
-<div class="visible-sm spacer02"></div>
-<div class="visible-md spacer04"></div>
-<div class="visible-lg spacer02"></div>
 
 <% contributor_role = Role.find_by_name :contributor %>
 <% contributors = contributor_role.nil? ? [] : contributor_role.users %>
