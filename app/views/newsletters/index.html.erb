@@ -34,12 +34,12 @@
             <%= newsletter.published_at %>
           </td>
           <td class='text-center'>
-            <%= link_to icon_button('eye', :success), newsletter %>
+            <%= link_to icon_button('eye', kind: :success), newsletter %>
             <% if user_signed_in? && current_user.can_update?(newsletter) %>
-              <%= link_to icon_button('edit', :info), edit_newsletter_path(newsletter) %>
+              <%= link_to icon_button('edit', kind: :info), edit_newsletter_path(newsletter) %>
             <% end %>
             <% if user_signed_in? && current_user.can_delete?(newsletter) %>
-              <%= link_to icon_button('trash', :danger), newsletter, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to icon_button('trash', kind: :danger), newsletter, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
           </td>
         </tr>
@@ -50,6 +50,6 @@
 
 <% if user_signed_in? && current_user.can_create?(Newsletter) %>
   <div class="form-actions">
-    <%= link_to fa_icon('plus', text: '뉴스레터'), new_newsletter_path, class: 'btn btn-primary' %>
+    <%= link_to fas_icon('plus', text: '뉴스레터'), new_newsletter_path, class: 'btn btn-primary' %>
   </div>
 <% end %>

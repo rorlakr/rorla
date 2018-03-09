@@ -17,13 +17,13 @@
               <%= link_to bulletin, bulletin_posts_path(bulletin), class: "dropdown-item #{ params[:bulletin_id] == bulletin ? 'active' : '' }" %>
             <% end %>
             <div class="dropdown-divider"></div>
-            <%= link_to awesome_icon_label("paper","뉴스레터"), newsletters_path, class: "dropdown-item #{ active_menu('newsletters', 'articles') }" %>
+            <%= link_to fas_icon("newspaper", text: "뉴스레터"), newsletters_path, class: "dropdown-item #{ active_menu('newsletters', 'articles') }" %>
 
             <div class="dropdown-divider"></div>
-            <%= link_to awesome_icon_label("calendar","RORLAB일정"), schedules_path, class: "dropdown-item #{active_menu('schedules', 'appliers')}" %>
+            <%= link_to fas_icon("calendar", text: "RORLAB일정"), schedules_path, class: "dropdown-item #{active_menu('schedules', 'appliers')}" %>
 
             <div class="dropdown-divider"></div>
-            <%= link_to awesome_icon_label("shopping-cart","공동구매"), group_purchases_path, class: "dropdown-item #{active_menu('group_purchases', 'purchase_requests')}" %>
+            <%= link_to fas_icon("shopping-cart", text: "공동구매"), group_purchases_path, class: "dropdown-item #{active_menu('group_purchases', 'purchase_requests')}" %>
           </div>
         </li>
         <li class='nav-item dropdown <%= active_menu('codebanks', 'podcasts', 'weeklynews', 'favlinks', 'questions') %>'>
@@ -35,7 +35,7 @@
             <div class="dropdown-divider"></div>
             <%= link_to '레일스강좌', courses_path, class: "dropdown-item #{active_menu('courses', 'lectures')}" %>
             <%= link_to 'Codebanks', codebanks_path, class: "dropdown-item #{active_menu('codebanks')}" %>
-            <%= link_to 'Podcasts', podcasts_path, class: "dropdown-item #{active_menu('podcasts')}" %>
+            <%#= link_to 'Podcasts', podcasts_path, class: "dropdown-item #{active_menu('podcasts')}" %>
             <%= link_to '주간뉴스', weeklynews_path, class: "dropdown-item #{active_menu('weeklynews')}" %>
             <%= link_to "Favlinks", favlinks_path, class: "dropdown-item #{active_menu('favlinks')}" %>
             <%= link_to 'Q&A', questions_path, class: "dropdown-item #{active_menu('questions')}" %>

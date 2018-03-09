@@ -7,7 +7,12 @@
       <ul style="list-style-type: none;padding-left:1.5rem;">
       <% codbanks = Codebank.my_private_snippets(current_user.id) %>
       <% codbanks.each do |snippet| %>
-        <li style='text-indent:-.5rem;'><%= icon_shared(snippet.shared) %>&nbsp;&nbsp;<%= link_to truncate(snippet.title), codebank_path(snippet)%></li>
+        <li style='text-indent:-1.2rem;'>
+          <span class="text-<%= snippet.shared ? 'success' : 'danger' %>">
+            <%= fas_icon_shared(snippet.shared) %>
+          </span>
+          <%= link_to truncate(snippet.title), codebank_path(snippet)%>
+        </li>
       <% end %>
       </ul>
     </div>

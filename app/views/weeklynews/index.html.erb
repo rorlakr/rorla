@@ -1,32 +1,34 @@
 <h2>
   주간뉴스
-  <%= link_to '구독하기', 'http://weekly.rorlab.org', class: 'btn btn-success btn-xs' %>
-  <% if user_signed_in? && current_user.has_role?(:admin) %>
-    <%= link_to '최신 데이터 수집', weeklynews_grap_path, remote: true, class: 'btn btn-default btn-xs' %>
-  <% end %>
+  <%#= link_to '구독하기', 'http://weekly.rorlab.org', class: 'btn btn-success btn-xs' %>
+  <%# if user_signed_in? && current_user.has_role?(:admin) %>
+    <%#= link_to '최신 데이터 수집', weeklynews_grap_path, remote: true, class: 'btn btn-default btn-xs' %>
+  <%# end %>
 </h2>
 
-<table class='table'>
-  <thead>
-    <tr>
-      <th class="col-md-9">제목</th>
-      <th class="col-md-2">발행일자</th>
-    </tr>
-  </thead>
-
-  <tbody>
-  <% @items.each do |news| %>
-      <tr>
-        <td>
-          <%= link_to news.subject, news.url %>
-        </td>
-        <td>
-          <%= news.sended_at.strftime('%Y-%m-%d(%a)') %>
-        </td>
+<div class="card table-responsive-md">
+  <table class='table table-bordered m-0'>
+    <thead>
+      <tr class='d-flex'>
+        <th class='col-8 text-center'>제목</th>
+        <th class='col-4 text-center'>발행일자</th>
       </tr>
-  <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+    <% @items.each do |news| %>
+        <tr class='d-flex'>
+          <td class='col-8'>
+            <%= link_to news.subject, news.url %>
+          </td>
+          <td class='col-4 text-center'>
+            <%= news.sended_at.strftime('%Y-%m-%d (%a)') %>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
 
 <center>
   <%= will_paginate @items %>

@@ -4,9 +4,9 @@
   <table class='table table-bordered mb-0'>
     <thead>
     <tr>
-      <th class=""><%=t('activerecord.attributes.post.title')%></th>
-      <th class=""><%=t('activerecord.attributes.post.created_at')%></th>
-      <th class=""><%=t('activerecord.attributes.post.data_actions')%></th>
+      <th class="text-center"><%=t('activerecord.attributes.post.title')%></th>
+      <th class="text-center"><%=t('activerecord.attributes.post.created_at')%></th>
+      <th class="text-center"><%=t('activerecord.attributes.post.data_actions')%></th>
     </tr>
     </thead>
 
@@ -14,8 +14,8 @@
     <% @posts.each do |post| %>
         <tr>
           <td><%= link_to post.title, [post.bulletin, post] %></td>
-          <td class=""><%= post.created_at.strftime('%Y-%m-%d %l:%M:%S%P') %></td>
-          <td class="">
+          <td class="text-center"><%= post.created_at.strftime('%Y-%m-%d %l:%M:%S%P') %></td>
+          <td class="text-center">
             <%= link_to icon_button('eye'), [post.bulletin, post], title: t('form_actions.show') , data:{toggle:'tooltip'}  %>
             <% if user_signed_in? %>
               <%= link_to icon_button('edit'), edit_bulletin_post_path(post.bulletin, post), title: t('form_actions.edit') , data:{toggle:'tooltip'}  if current_user.can_update? post %>

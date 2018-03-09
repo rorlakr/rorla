@@ -14,9 +14,9 @@
     <div class="input-group col-md-6 mx-auto">
       <input type="text" name="search" class="form-control" placeholder="용어를 입력한 후 엔터키를 누르세요." value="<%= params[:search] %>" />
       <div class="input-group-append">
-        <%= link_to icon('refresh'), glossaries_path( page: nil, tag: nil, search: nil), class: "btn btn-danger" %>
+        <%= link_to fas_icon('sync-alt'), glossaries_path( page: nil, tag: nil, search: nil), class: "btn btn-danger" %>
         <%= button_tag(type: "submit", class: "btn btn-success") do %>
-            <%= fa_icon('search') %>
+            <%= fas_icon('search') %>
         <% end %>
       </div>
     </div>
@@ -76,12 +76,12 @@
           </td>
           <td class='text-center text-nowrap'><%= time_ago_in_words glossary.updated_at %>전</td>
           <td class='text-center'>
-            <%= link_to icon_button('eye', :success), glossary %>
+            <%= link_to icon_button('eye', kind: :success), glossary %>
             <% if user_signed_in? && current_user.can_update?(glossary) %>
-              <%= link_to icon_button('edit', :info), edit_glossary_path(glossary) %>
+              <%= link_to icon_button('edit', kind: :info), edit_glossary_path(glossary) %>
             <% end %>
             <% if user_signed_in? && current_user.can_delete?(glossary) %>
-              <%= link_to icon_button('trash', :danger), glossary, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to icon_button('trash', kind: :danger), glossary, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
           </td>
         </tr>
@@ -95,6 +95,6 @@
 </div>
 
 <div class="form-actions">
-  <%= link_to '용어추가', new_glossary_path, class: 'btn btn-primary' %>
+  <%= link_to fas_icon('plus', text: '용어추가'), new_glossary_path, class: 'btn btn-primary' %>
 
 </div>

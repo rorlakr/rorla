@@ -23,12 +23,12 @@
           <td class='text-center'><%= schedule.start_date %></td>
           <td class='text-center'><%= schedule.charged ? number_to_currency(schedule.charge_amount) : lecture_type(schedule.charged) %></td>
           <td class='text-center'>
-            <%= link_to icon_button('eye', :success), schedule %>
+            <%= link_to icon_button('eye', kind: :success), schedule %>
             <% if user_signed_in? && current_user.can_update?(schedule) %>
-              <%= link_to icon_button('edit', :info), edit_schedule_path(schedule) %>
+              <%= link_to icon_button('edit', kind: :info), edit_schedule_path(schedule) %>
             <% end %>
             <% if user_signed_in? && current_user.can_delete?(schedule) %>
-              <%= link_to icon_button('trash', :danger), schedule, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to icon_button('trash', kind: :danger), schedule, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
           </td>
         </tr>
@@ -40,4 +40,4 @@
 <%= will_paginate @schedules %>
 
 <br>
-<%= link_to awesome_icon_label('calendar-plus-o','일정등록'), new_schedule_path, class: 'btn btn-success' %>
+<%= link_to fas_icon('calendar-plus', text: '일정등록'), new_schedule_path, class: 'btn btn-success' %>

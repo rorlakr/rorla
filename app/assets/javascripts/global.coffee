@@ -1,4 +1,6 @@
 $(document).on 'turbolinks:load', ->
+  FontAwesome.dom.i2svg()
+  
   $("body").tooltip 
     selector: '[data-toggle="tooltip"]'
     container: 'body'

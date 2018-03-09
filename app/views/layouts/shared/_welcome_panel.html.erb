@@ -17,11 +17,11 @@
     <hr style="border:1px solid #850000;">
       <% if user_signed_in? %>
         <p>Hello, <em><%= current_user.account_name.capitalize! %></em></p>
-        <%= link_to icon_label("log-out", "로그아웃"), destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-primary' %>
+        <%= link_to fas_icon("sign-out-alt", text: "로그아웃"), destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-primary' %>
       <% else %>
-        <%= link_to icon_label("log-in","로그인"), new_user_session_path, class: 'btn btn-primary' %>
-        <%= link_to awesome_icon_label("users","회원가입"), new_user_registration_path, class: 'btn btn-success' %>
+        <%= link_to fas_icon("sign-in-alt", text: "로그인"), new_user_session_path, class: 'btn btn-primary' %>
+        <%= link_to fas_icon("users", text: "회원가입"), new_user_registration_path, class: 'btn btn-success d-none d-sm-inline-block ' %>
       <% end %>
-      <%= link_to awesome_icon_label("search","용어집검색"), glossaries_path, class: 'btn btn-success pull-right' %>
+      <%= link_to fas_icon("search", text: "용어집검색"), glossaries_path, class: 'btn btn-success float-right' %>
   </div>
 </div>

@@ -5,7 +5,12 @@
       <ul style="list-style-type: none;padding-left:1.5rem;">
       <% bundles = Bundlelink.my_private_bundles(current_user) %>
       <% bundles.each do |bundle| %>
-        <li style='text-indent:-.5rem;'><%= icon_shared(bundle.shared) %>&nbsp;&nbsp;<%= link_to bundle.title, bundlelink_favlinks_path(bundle)%> (<%= bundle.favlinks.size %>)</li>
+        <li style='text-indent:-1.2rem;'>
+          <span class="text-<%= bundle.shared ? 'success' : 'danger' %>">
+            <%= fas_icon_shared(bundle.shared) %>
+          </span>
+          <%= link_to bundle.title, bundlelink_favlinks_path(bundle)%> (<%= bundle.favlinks.size %>)
+        </li>
       <% end %>
       </ul>
     </div>

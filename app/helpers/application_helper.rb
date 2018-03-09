@@ -29,49 +29,57 @@ module ApplicationHelper
     end
   end
 
-  def icon(shape)
-    content_tag(:span, '', class: "glyphicon glyphicon-#{shape}")
-    fa_icon(shape)
-  end
-
   def icon_label(shape, label)
-    fa_icon(shape, text: label)
+    # fas_icon(shape, text: label)
+    content_tag(:i, label, class: "fas fa-#{shape}") do
+      label
+    end
   end
 
-  def icon_button(shape, kind = 'secondary')
-    content_tag(:i, fa_icon(shape), class: "action-btn badge badge-#{kind}")
-  end
-
-  def icon_label_button(shape, label, kind='primary')
-    content_tag(:span, fa_icon(shape, text: label), class: "badge badge-#{kind}")
-  end
-
-  def awesome_icon(shape, size = '1x')
-    # content_tag(:span, '', class: "fa fa-#{shape} fa-#{size}")
-    fa_icon(shape)
-  end
-
-  def awesome_icon_label(shape, label)
-    content_tag(:span, '', class: "fa fa-#{shape}") + ' ' + label
-  end
-
-  def awesome_icon_button(shape, kind='default')
-    content_tag(:span, awesome_icon(shape), class: "label label-#{kind}")
-  end
-
-  def awesome_icon_label_button(shape, label, kind='default')
-    content_tag(:span, awesome_icon_label(shape, label), class: "label label-#{kind}")
-  end
-
-  def awesome_icon_shared(shared)
-    shared ? awesome_icon('share-alt-square') : icon('lock')
-  end
-
-  def awesome_icon_shared_label(shared, label)
+  def icon_button(shape, options = {})
+    options.reverse_merge!(text: '', size: '1x', kind: 'secondary')
     capture do
-      concat(shared ? awesome_icon('share-alt-square') : icon('lock'))
+      content_tag(:span, class: "action-#{options[:text].blank? ? 'btn' : 'text-btn'} badge badge-#{options[:kind]}") do
+        concat(content_tag(:i, '', class: "fas fa-#{shape} fa-#{options[:size]} mr-#{options[:text].blank? ? '0' : '1'} "))
+        concat(options[:text])
+      end
+    end
+  end
+
+  def icon_label_button(shape, label, kind = 'primary')
+    content_tag(:span, fas_icon(shape, text: label), class: "badge badge-#{kind}")
+  end
+
+  def fas_icon(shape, options = { text: '', size: '1x' })
+    capture do 
+      concat(content_tag(:i, '', class: "fas fa-#{shape} fa-#{options[:size]} mr-1"))
+      concat(options[:text])
+    end
+  end
+
+  def fab_icon(shape, options = { text: '', size: '1x' })
+    capture do 
+      concat(content_tag(:i, '', class: "fab fa-#{shape} fa-#{options[:size]} mr-1"))
+      concat(options[:text])
+    end
+  end
+
+  def far_icon(shape, options = { text: '', size: '1x' })
+    capture do 
+      concat(content_tag(:i, '', class: "far fa-#{shape} fa-#{options[:size]} mr-1"))
+      concat(options[:text])
+    end
+  end
+
+  def fas_icon_shared(shared)
+    shared ? fas_icon('share') : fas_icon('lock')
+  end
+
+  def fas_icon_shared_text(shared, text)
+    capture do
+      concat(fas_icon_shared(shared))
       concat ' '
-      concat label
+      concat text
     end
   end
 
@@ -86,14 +94,14 @@ module ApplicationHelper
   def icon_tags(tags_array, resource)
     label_tags = ""
     tags_array.each do |tag|
-      label_tags += "<a href='/#{resource}?tag=#{CGI::escape(tag)}'><span class='badge badge-default'>#{tag}</span></a> "
+      label_tags += "<a href='/#{resource}?tag=#{CGI::escape(tag)}'><span class='badge badge-secondary'>#{tag}</span></a> "
     end
-    icon('tag') + " " + label_tags.html_safe unless tags_array.blank?
+   fas_icon('tag') + " " + label_tags.html_safe unless tags_array.blank?
   end
 
-  def icon_shared(shared)
-    shared ? icon('share') : icon('lock')
-  end
+  # def icon_shared(shared)
+  #   shared ? fas_icon('share') : fas_icon('lock')
+  # end
 
   def active_menu(*target_controller)
     target_controller.include?(controller_name) ? 'active' : ''
@@ -174,7 +182,7 @@ module ApplicationHelper
 
   def copyright_with_tooltip(resource, email)
     capture do
-      # concat content_tag(:small, icon('user'))
+      # concat content_tag(:small,fas_icon('user'))
       # concat ' '
       concat t('authored_html', who: account_with_tooltip(email), ago: time_ago_in_words(resource.created_at))
     end
@@ -182,13 +190,13 @@ module ApplicationHelper
 
   def hit_count(count)
     content_tag(:small, '', title:'뷰갯수', class:'text-muted', data:{toggle:'tooltip', placement: 'top'}) do
-      awesome_icon_label('bullseye', content_tag(:i, " #{count}", style:'font-weight:bold;'))
+      fas_icon('bullseye', text: content_tag(:i, "#{count}", style:'font-weight:bold;'))
     end
   end
 
   def comment_count(count)
     content_tag(:small, '', title:'댓글갯수', class:'text-muted', data:{toggle:'tooltip', placement: 'top'}) do
-      icon_label('comment', content_tag(:i, " #{count}", style:'font-weight:bold;'))
+      fas_icon('comment', text: content_tag(:i, "#{count}", style:'font-weight:bold;'))
     end
   end
 

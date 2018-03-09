@@ -7,7 +7,12 @@
       <ul style="list-style-type: none;padding-left:1.5rem;">
       <% rblogs = Rblog.my_private_blogs(current_user.id) %>
       <% rblogs.each do |blog| %>
-        <li style='text-indent:-.5rem;'><%= icon_shared(blog.shared) %>&nbsp;&nbsp;<%= link_to truncate(blog.title), rblog_path(blog)%></li>
+        <li style='text-indent:-1.2rem;'>
+          <span class="text-<%= blog.shared ? 'success' : 'danger' %>">
+            <%= fas_icon_shared(blog.shared) %>
+          </span>
+          <%= link_to truncate(blog.title), rblog_path(blog)%>
+        </li>
       <% end %>
       </ul>
     </div>

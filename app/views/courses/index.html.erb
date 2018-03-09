@@ -24,10 +24,10 @@
             </ul>
           </td>
           <td class='text-center'>
-            <%= link_to (my_course.published ? awesome_icon_button('share-alt', 'success') : icon_button('lock', 'danger') ), edit_course_path(my_course)  %>
+            <%= link_to (my_course.published ? icon_button('share', kind: 'success') : icon_button('lock', kind: 'danger') ), edit_course_path(my_course)  %>
             <% if current_user.can_update?(my_course) %>
             <%= link_to icon_button('edit'), edit_course_path(my_course) %>
-            <%= link_to icon_button('trash', 'danger'), my_course, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to icon_button('trash', kind: :danger), my_course, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
 
           </td>
@@ -41,13 +41,13 @@
           <td><%= course.tutor.email %></td>
           <td class='text-center'>
             <% if user_signed_in? %>
-              <%= link_to icon_button('eye-open'), course %>
+              <%= link_to icon_button('eye'), course %>
               <% if current_user.can_update?(course) %>
                 <%= link_to icon_button('edit'), edit_course_path(course) %>
                 <%= link_to icon_button('trash', 'danger'), course, method: :delete, data: { confirm: 'Are you sure?' } %>
               <% end %>
             <% else %>
-              <%= link_to icon('eye-open'), course_lectures_path(course) %>
+              <%= link_to fas_icon('eye'), course_lectures_path(course) %>
             <% end %>
           </td>
         </tr>
@@ -57,6 +57,6 @@
 </div>
 
 <div class="form-actions">
-    <%= link_to '강좌개설', new_course_path, class: 'btn btn-primary' %>
+    <%= link_to fas_icon('plus', text: '강좌개설'), new_course_path, class: 'btn btn-primary' %>
 
 </div>

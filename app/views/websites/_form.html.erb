@@ -10,8 +10,8 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
-    <%= link_to t('form_actions.show'), @website, class: 'btn btn-default' if @website.persisted? %>
-    <%= link_to t("form_actions.back"), websites_path, class: 'btn btn-default' %>
+    <%= f.button :submit, nil, class: 'btn btn-primary' %>
+    <%= link_to t('form_actions.show'), @website, class: 'btn btn-secondary' if @website.persisted? %>
+    <%= link_to t("form_actions.back"), websites_path, class: 'btn btn-secondary' %>
   </div>
 <% end %>

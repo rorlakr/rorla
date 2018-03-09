@@ -3,7 +3,7 @@
   <small>
     <%= params[:private] == '1' ? "<span class='badge badge-private'>private</span>".html_safe : (params[:whose] ? "<span class='badge badge-shared'>shared</span>".html_safe : "") %>
     <span title='스니펫갯수' data-toggle='tooltip'>(<%= @codebanks.total_entries %>)</span>
-    <%= link_to icon('remove-circle'), codebanks_path if params[:whose] || params[:search] || params[:tag] %>
+    <%= link_to fas_icon('remove-circle'), codebanks_path if params[:whose] || params[:search] || params[:tag] %>
   </small>
 </h2>
 <div class="card table-responsive-sm">
@@ -20,7 +20,7 @@
       <% @codebanks.each do |codebank| %>
           <tr class='d-flex'>
             <td class="col-6">
-              <%= link_to awesome_icon_shared_label(codebank.shared, codebank.title), codebank %>
+              <%= link_to fas_icon_shared_text(codebank.shared, codebank.title), codebank %>
               <%= comment_count(codebank.comments.size) %>
               <%= hit_count(codebank.impressionist_count) %>
             </td>
@@ -44,4 +44,4 @@
   <%= will_paginate @podcasts %>
 </center>
 
-<%= link_to icon_label('plus', 'Add a snippet'), new_codebank_path, class: 'btn btn-outline-secondary' %>
+<%= link_to fas_icon('plus', text: 'Add a snippet'), new_codebank_path, class: 'btn btn-primary' %>

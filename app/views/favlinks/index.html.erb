@@ -3,9 +3,9 @@
   <small>
     <%= "of #{@bundlelink.title}" if params[:bundlelink_id] %>
     <%= "filtered by <strong style=color:red;>'<u>#{params[:search]}</u>'</strong>".html_safe if params[:search] %>
-    <%= "tagged with <span class='badge badge-default'>#{params[:tag]}</span>".html_safe if params[:tag] %>
+    <%= "tagged with <span class='badge badge-success'>#{params[:tag]}</span>".html_safe if params[:tag] %>
     (<%= @favlinks.total_entries %>)
-    <%= link_to icon('remove-circle'), favlinks_path if params[:bundlelink_id] || params[:search] || params[:tag] %>
+    <%= link_to far_icon('times-circle'), favlinks_path if params[:bundlelink_id] || params[:search] || params[:tag] %>
   </small>
 </h2>
 
