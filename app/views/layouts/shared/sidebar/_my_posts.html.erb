@@ -4,7 +4,7 @@
       <p><strong>My Posts <small>(<%= Post.my_posts(current_user.id).size %>)</small></strong></p>
       <ul style="list-style-type: none;padding-left:1.5rem;">
       <% Post.my_posts(current_user).each do |post| %>
-        <li style='text-indent:-.5rem;'><%= awesome_icon_shared(post.published).html_safe %> <%= link_to "#{post.bulletin.title} / #{truncate(post.title, length: 20)}", [post.bulletin, post] %></li>
+        <li style='text-indent:-.5rem;'><%= fas_icon_shared(post.published).html_safe %> <%= link_to "#{post.bulletin.title} / #{truncate(post.title, length: 20)}", [post.bulletin, post] %></li>
       <% end %>
       </ul>
 

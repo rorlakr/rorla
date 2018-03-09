@@ -48,9 +48,6 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
-          <li class='nav-item'>
-            <a class='nav-link' href="#">Level : <%= current_user.level %> Point : <%= current_user.points %> </a>
-          </li>
           <li class="nav-item dropdown <%= 'active' if devise_controller? %>">
             <a class="nav-link dropdown-toggle" href="#" id='navbarDropdown2' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= user_profile current_user %>
@@ -58,9 +55,11 @@
               <b class="caret"></b>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown2">
+              <h6 class="dropdown-header">Level : <%= current_user.level %> / Point : <%= current_user.points %></h6>
+              <h6 class="dropdown-header">Roles : <%= user_roles(current_user) %></h6>
+              <div class="dropdown-divider"></div>
               <%= link_to "My Account", edit_user_registration_path, class: 'dropdown-item' %>
               <%= link_to "My Profile", (current_user.user_profile.nil? ? new_user_profile_path : edit_user_profile_path), class: 'dropdown-item' %>
-              <%= link_to "Roles : " + user_roles(current_user), '#', class: 'dropdown-item' %>
             </div>
           </li>
           <li class='nav-item'>

@@ -27,8 +27,10 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-default' %>
-    <%= link_to '보기', @group_purchase, class: 'btn btn-default' if @group_purchase.persisted? %> |
-    <%= link_to '행사목록', group_purchases_path, class: 'btn btn-default' %>
+    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+      <%= fas_icon("plus", text: '등록') %>
+    <% end %>      
+    <%= link_to fas_icon('eye', text: '보기'), @group_purchase, class: 'btn btn-secondary' if @group_purchase.persisted? %>
+    <%= link_to fas_icon('list', text: '행사목록'), group_purchases_path, class: 'btn btn-secondary' %>
   </div>
 <% end %>
