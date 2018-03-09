@@ -1,28 +1,29 @@
 <h2>Q&A</h2>
 
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>질문</th>
-      <th class="questioner">질문자</th>
-      <th>작성일</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr class="item-<%= question.id %>">
-        <td>
-          <%= link_to question.title, question %>
-          <span class="badge"><%= question.no_answers %></span>
-        </td>
-        <td class="questioner"><%= account_with_tooltip question.questioner %></td>
-        <td><span title="<%= question.created_at %>" data-toggle="tooltip"><%= distance_of_time_in_words_to_now(question.created_at) %> 전</span></td>
+<div class="card table-responsive-sm">
+  <table class="table table-bordered table-hover mb-0">
+    <thead>
+      <tr>
+        <th class='text-center'>질문</th>
+        <th class="text-center">질문자</th>
+        <th class="text-center">작성일</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @questions.each do |question| %>
+        <tr class="item-<%= question.id %>">
+          <td>
+            <%= link_to question.title, question %>
+            <span class="badge"><%= question.no_answers %></span>
+          </td>
+          <td class="text-center"><%= account_with_tooltip question.questioner %></td>
+          <td class='text-center'><span title="<%= question.created_at %>" data-toggle="tooltip"><%= distance_of_time_in_words_to_now(question.created_at) %> 전</span></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
-<%= link_to '질문 등록', new_question_path, class: 'btn btn-default' %>
+<%= link_to fas_icon('plus', text: '질문 등록'), new_question_path, class: 'btn btn-primary' %>

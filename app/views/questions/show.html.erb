@@ -7,11 +7,11 @@
 <div class="question-questioner">
   by <%= account_with_tooltip @question.questioner %>
   <%= hit_count @question.impressionist_count %>&nbsp;
-  <div class="fb-share-button pull-right" data-href="<%= question_url(@question) %>" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= question_url(@question) %>"><%= awesome_icon_label('facebook-official fa-lg', "공유하기") %></a></div>
+  <div class="fb-share-button pull-right" data-href="<%= question_url(@question) %>" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= question_url(@question) %>"><%= fas_icon('facebook-official fa-lg', text: "공유하기") %></a></div>
 
 </div>
 
-<%= link_to '목록보기', questions_path, class: 'btn btn-default' %>
+<%= link_to fas_icon('list', text: '목록보기'), questions_path, class: 'btn btn-primary' %>
 <% if @question.is_owner?(current_user) %>
   <%= link_to '수정', edit_question_path(@question), class: 'btn btn-default' %>
   <%= link_to '삭제', @question, method: :delete, data: {confirm: "삭제하시겠습니까?"}, class: 'btn btn-danger' %>

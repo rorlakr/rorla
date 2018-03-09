@@ -1,7 +1,7 @@
 <h1>공동구매 신청 <small><%= @group_purchase.event_name %></small></h1>
 
 <div style="margin:2em 0;">
-  <%= image_tag 'T-shirts-black-and-white-wide.png', class: 'img-responsive img-rounded' %>
+  <%= image_tag 'T-shirts-black-and-white-wide.png', class: 'img-fluid rounded' %>
 </div>
 
 <p class='alert alert-warning'>
@@ -39,7 +39,7 @@
         </td>
         <td class='text-center'>
           <% if user_signed_in? && current_user.can_read?(purchase_request) %>
-            <%= link_to icon_button('eye-open'), (params[:group_purchase_id] ? [purchase_request.group_purchase, purchase_request] : purchase_request), title: t('form_actions.show'), data:{toggle:'tooltip'}  %>
+            <%= link_to icon_button('eye'), (params[:group_purchase_id] ? [purchase_request.group_purchase, purchase_request] : purchase_request), title: t('form_actions.show'), data:{toggle:'tooltip'}  %>
           <% else %>
             <%= icon_button("ban-circle") %>
           <% end %>
@@ -56,8 +56,8 @@
 <%= will_paginate @purchase_requests %>
 </div>
 
-<%= link_to '신청하기', (params[:group_purchase_id] ? new_group_purchase_purchase_request_path : new_purchase_request_path), class: 'btn btn-primary' %>
-<%= link_to "공동구매행사", group_purchases_path, class: 'btn btn-default' %>
+<%= link_to fas_icon('plus', text: '신청하기'), (params[:group_purchase_id] ? new_group_purchase_purchase_request_path : new_purchase_request_path), class: 'btn btn-primary' %>
+<%= link_to fas_icon('list', text: "공동구매행사"), group_purchases_path, class: 'btn btn-secondary' %>
 
 <!-- 댓글 위젯 -->
 <%= render partial: "comments/comments_widget", locals: { resource: @group_purchase}  %>
