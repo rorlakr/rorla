@@ -3,7 +3,7 @@
     <li id="definition_li_<%= definition.id %>">
       <span id="definition_<%= definition.id %>" class='text-<%= index == 0 ? "danger" : "muted" %>'><%= definition.definition %>
           <small title="<%= likers(definition) %>">
-            <%= link_to_if user_signed_in?, awesome_icon_label('thumbs-o-up', definition.get_likes.size.to_s), like_glossary_definition_path(definition.glossary, definition), method: :post, remote: true %>
+            <%= link_to_if user_signed_in?, far_icon('thumbs-o-up', text: definition.get_likes.size.to_s), like_glossary_definition_path(definition.glossary, definition), method: :post, remote: true %>
             <% if user_signed_in? %>
               <%= link_to awesome_icon('edit'), edit_glossary_glossary_definition_path(definition.glossary, definition), id: "edit_definition_#{definition.id}_link", remote: true if current_user.can_update?(definition) %>
               <%= link_to awesome_icon('trash-o'), [definition.glossary, definition], method: :delete, data:{confirm:'Are you sure?'}, remote: true if current_user.can_delete?(definition) %>

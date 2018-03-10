@@ -9,9 +9,11 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-primary' %>
-    <%= link_to '보기', course_lectures_path(@course), class: 'btn btn-outline-secondary' if @course.persisted? %> |
-    <%= link_to '강좌목록', courses_path, class: 'btn btn-outline-secondary' %>
+    <%= button_tag type: :button, class: 'btn btn-primary' do %>
+      <%= fas_icon('save', text: "등록") %>
+    <% end %>
+    <%= link_to fas_icon('eye', text: '보기'), course_lectures_path(@course), class: 'btn btn-outline-secondary' if @course.persisted? %>
+    <%= link_to fas_icon('list', text: '강좌목록'), courses_path, class: 'btn btn-outline-secondary' %>
     <span class='ml-2'>
       <%= f.check_box :published %>
       <%= f.label :published %>

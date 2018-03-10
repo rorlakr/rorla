@@ -26,7 +26,7 @@
   <div class='col-md-6'>
     <div class='row'>
       <div class='col-md-4 col-sm-4'>
-        <div class='menu_title'><%= fas_icon "calendar", text: "행사 및 일정" %></div>
+        <div class='menu_title'><%= far_icon "calendar", text: "행사 및 일정" %></div>
         <ul class='section'>
           <% Schedule.all.order(id: :desc).limit(5).each do | schedule | %>
             <li><%= link_to schedule.name, schedule %></li>

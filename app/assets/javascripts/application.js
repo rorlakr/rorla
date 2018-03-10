@@ -17,7 +17,6 @@
 //= require popper
 //= require bootstrap
 //= require activestorage
-//= require svg-with-js
 //= require global
 //= require cable
 //= require jquery.minicolors

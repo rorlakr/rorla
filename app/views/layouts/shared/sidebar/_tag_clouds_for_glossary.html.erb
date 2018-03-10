@@ -1,5 +1,5 @@
 <% @tags = Glossary.tag_counts_on(:tags) if @tags.blank? %>
 <p>Tag Cloud :</p>
 <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-  <span class='badge badge-default'><%= link_to tag.name, glossaries_path(page: nil, search: nil, tag: tag.name), :class => css_class %></span>
+  <span class='badge badge-secondary'><%= link_to tag.name, glossaries_path(page: nil, search: nil, tag: tag.name), :class => css_class %></span>
 <% end %>

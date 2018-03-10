@@ -26,10 +26,13 @@
   <div class='row'>
     <div class='col-md-12'>
     <p><%= link_to_if (user_signed_in? && current_user.has_role?(:admin)), "Public Bundlelinks :", bundlelinks_path %></p>
-    <ul style="list-style-type: none;padding-left:1.5em;">
+    <ul class='fa-ul ml-4'>
     <% bundles = Bundlelink.shared_bundles %>
     <% bundles.each do |bundle| %>
-      <li><%=fas_icon('book') %>&nbsp;&nbsp;<%= link_to bundle.title, bundlelink_favlinks_path(bundle)%> (<%= bundle.favlinks.size %>)</li>
+      <li>
+        <span class="fa-li"><%= fas_icon('book') %></span><%= link_to bundle.title, bundlelink_favlinks_path(bundle) %>
+        (<%= bundle.favlinks.size %>) 
+      </li>
     <% end %>
     </ul>
     </div>

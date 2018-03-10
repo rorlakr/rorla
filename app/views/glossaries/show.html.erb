@@ -4,53 +4,53 @@
   용어보기
 </h2>
 
-<div class="card table-responsive">
+<div class="card table-responsive-sm">
   <table class='table table-bordered table-hover table-striped mb-0'>
     <thead style="background-color: #dc354526">
-      <tr>
-        <th class='text-right vcenter'><%= t('activerecord.attributes.glossary.term') %></th>
-        <td class='text-danger vcenter'>
+      <tr class='d-flex'>
+        <th class='col-3 text-right vcenter'><%= t('activerecord.attributes.glossary.term') %></th>
+        <td class='col-9 text-danger vcenter'>
           <strong style="font-size:2em;"><%= @glossary.term %></strong>
-          <div class="fb-share-button pull-right" data-href="<%= glossary_url(@glossary) %>" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= glossary_url(@glossary) %>"><%= awesome_icon_label('facebook-official fa-lg', "공유하기") %></a></div>
+          <div class="fb-share-button float-right" data-href="<%= glossary_url(@glossary) %>" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= glossary_url(@glossary) %>"><%= fab_icon('facebook-f fa-lg', text: "공유하기") %></a></div>
         </td>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th class='text-right'><%= t('activerecord.attributes.glossary_definition.definition') %></th>
-        <td id="glossary_<%= @glossary.id %>" style="position:relative;">
+      <tr class='d-flex'>
+        <th class='col-3 text-right'><%= t('activerecord.attributes.glossary_definition.definition') %></th>
+        <td id="glossary_<%= @glossary.id %>" class='col-9' style="position:relative;">
           <%= render "glossaries/glossary_definitions" %>
         </td>
       </tr>
-      <tr>
-        <th class="text-right"><%= t('activerecord.attributes.favlink.tag_list') %></th>
-        <td id="tag_list_of_glossary_<%= @glossary.id %>" style="position:relative;">
+      <tr class='d-flex'>
+        <th class="col-3 text-right"><%= t('activerecord.attributes.favlink.tag_list') %></th>
+        <td id="tag_list_of_glossary_<%= @glossary.id %>" class='col-9' style="position:relative;">
           <%= render "glossaries/tag_list" %>
         </td>
       </tr>
-      <tr>
-        <th class='text-right'><%= t('activerecord.attributes.applier.memo') %></th>
-        <td><%= @glossary.memo %></td>
+      <tr class='d-flex'>
+        <th class='col-3 text-right'><%= t('activerecord.attributes.applier.memo') %></th>
+        <td class='col-9'><%= @glossary.memo %></td>
       </tr>
-      <tr>
-        <th class='text-right'><%= t('activerecord.attributes.glossary.word_class') %></th>
-        <td><%= @glossary.word_class %></td>
+      <tr class='d-flex'>
+        <th class='col-3 text-right'><%= t('activerecord.attributes.glossary.word_class') %></th>
+        <td class='col-9'><%= @glossary.word_class %></td>
       </tr>
-      <tr>
-        <th class='text-right'><%= t('activerecord.attributes.glossary.idiomatic') %></th>
-        <td><%= @glossary.idiomatic %></td>
+      <tr class='d-flex'>
+        <th class='col-3 text-right'><%= t('activerecord.attributes.glossary.idiomatic') %></th>
+        <td class='col-9'><%= @glossary.idiomatic %></td>
       </tr>
-      <tr>
-        <th class='text-right'><%= t('activerecord.attributes.schedule.user') %></th>
-        <td><%= @glossary.user.email %></td>
+      <tr class='d-flex'>
+        <th class='col-3 text-right'><%= t('activerecord.attributes.schedule.user') %></th>
+        <td class='col-9'><%= @glossary.user.email %></td>
       </tr>
-      <tr>
-        <th class='text-right'><%= t('activerecord.attributes.post.created_at') %></th>
-        <td><%= "#{@glossary.created_at} ( #{time_ago_in_words(@glossary.created_at)}전 )" %></td>
+      <tr class='d-flex'>
+        <th class='col-3 text-right'><%= t('activerecord.attributes.post.created_at') %></th>
+        <td class='col-9'><%= "#{@glossary.created_at} ( #{time_ago_in_words(@glossary.created_at)}전 )" %></td>
       </tr>
-      <tr>
-        <th class='text-right'><%= t('activerecord.attributes.post.updated_at') %></th>
-        <td><%= "#{@glossary.updated_at} ( #{time_ago_in_words(@glossary.updated_at)}전 )" %></td>
+      <tr class='d-flex'>
+        <th class='col-3 text-right'><%= t('activerecord.attributes.post.updated_at') %></th>
+        <td class='col-9'><%= "#{@glossary.updated_at} ( #{time_ago_in_words(@glossary.updated_at)}전 )" %></td>
       </tr>
     </tbody>
   </table>

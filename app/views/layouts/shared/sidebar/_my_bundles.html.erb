@@ -2,11 +2,11 @@
   <div class='row'>
     <div class='col-md-12'>
       <p><%= link_to_if (user_signed_in? && current_user.has_role?(:user)), "My Bundlelinks :", bundlelinks_path %></p>
-      <ul style="list-style-type: none;padding-left:1.5rem;">
+      <ul class='fa-ul ml-4'>
       <% bundles = Bundlelink.my_private_bundles(current_user) %>
       <% bundles.each do |bundle| %>
-        <li style='text-indent:-1.2rem;'>
-          <span class="text-<%= bundle.shared ? 'success' : 'danger' %>">
+        <li>
+          <span class="fa-li text-<%= bundle.shared ? 'success' : 'danger' %>">
             <%= fas_icon_shared(bundle.shared) %>
           </span>
           <%= link_to bundle.title, bundlelink_favlinks_path(bundle)%> (<%= bundle.favlinks.size %>)

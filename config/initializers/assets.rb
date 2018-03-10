@@ -14,3 +14,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Rails.application.config.assets.precompile = %w( admin.js admin.css )
 
 Rails.application.config.assets.precompile += %w( load1.gif T-shirts-white-color.png T-shirts-black-color.png T-shirts-black-and-white-wide.png tshirts-size-table.png rails_guide_cover.jpg rorlab_emblem.png rorlab_logo_750x750.png )
+
+Rails.application.config.assets.precompile += %w( web-fonts-with-css/scss/fontawesome.css )

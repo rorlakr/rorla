@@ -3,7 +3,7 @@
   <small>
     <%= @glossaries_total.size %>
     <% if params[:tag].present? %>
-      <%= "tagged with <span class='badge badge-default'>#{params[:tag]}</span>".html_safe  %>
+      <%= "tagged with <span class='badge badge-secondary'>#{params[:tag]}</span>".html_safe  %>
       <%= link_to awesome_icon('times-circle'), url_for(page: nil, tag: nil, search: nil) %>
     <% end %>
   </small>

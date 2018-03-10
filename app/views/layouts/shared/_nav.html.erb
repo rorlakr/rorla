@@ -17,13 +17,13 @@
               <%= link_to bulletin, bulletin_posts_path(bulletin), class: "dropdown-item #{ params[:bulletin_id] == bulletin ? 'active' : '' }" %>
             <% end %>
             <div class="dropdown-divider"></div>
-            <%= link_to fas_icon("newspaper", text: "뉴스레터"), newsletters_path, class: "dropdown-item #{ active_menu('newsletters', 'articles') }" %>
+            <%= link_to far_icon("newspaper", text: "뉴스레터"), newsletters_path, class: "dropdown-item #{ active_menu('newsletters', 'articles') }" %>
 
             <div class="dropdown-divider"></div>
-            <%= link_to fas_icon("calendar", text: "RORLAB일정"), schedules_path, class: "dropdown-item #{active_menu('schedules', 'appliers')}" %>
+            <%= link_to far_icon("calendar", text: "RORLAB일정"), schedules_path, class: "dropdown-item #{active_menu('schedules', 'appliers')}" %>
 
             <div class="dropdown-divider"></div>
-            <%= link_to fas_icon("shopping-cart", text: "공동구매"), group_purchases_path, class: "dropdown-item #{active_menu('group_purchases', 'purchase_requests')}" %>
+            <%= link_to far_icon("shopping-cart", text: "공동구매"), group_purchases_path, class: "dropdown-item #{active_menu('group_purchases', 'purchase_requests')}" %>
           </div>
         </li>
         <li class='nav-item dropdown <%= active_menu('codebanks', 'podcasts', 'weeklynews', 'favlinks', 'questions') %>'>

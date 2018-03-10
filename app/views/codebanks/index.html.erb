@@ -3,7 +3,7 @@
   <small>
     <%= params[:private] == '1' ? "<span class='badge badge-private'>private</span>".html_safe : (params[:whose] ? "<span class='badge badge-shared'>shared</span>".html_safe : "") %>
     <span title='스니펫갯수' data-toggle='tooltip'>(<%= @codebanks.total_entries %>)</span>
-    <%= link_to fas_icon('remove-circle'), codebanks_path if params[:whose] || params[:search] || params[:tag] %>
+    <%= link_to far_icon('remove-circle'), codebanks_path if params[:whose] || params[:search] || params[:tag] %>
   </small>
 </h2>
 <div class="card table-responsive-sm">
