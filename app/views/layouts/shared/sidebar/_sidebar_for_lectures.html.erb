@@ -2,7 +2,7 @@
   <div>
     <p style="margin-top:2rem;margin-bottom:2em;border:1px solid red; border-radius:5px;padding:1em;">
       <%= link_to image_tag("lecture_no_border.png", width: '100%'), courses_path(page:nil, search:nil) %>
-      <%= link_to fas_icon('plus', text: '강좌개설'), new_course_path, class: "btn btn-danger #{'disabled' if action_name == 'new'}", style:'margin-top:1em;display:block;'%>
+      <%= link_to fas_icon_text('plus', '강좌개설'), new_course_path, class: "btn btn-danger #{'disabled' if action_name == 'new'}", style:'margin-top:1em;display:block;'%>
     </p>
     <%= render "layouts/shared/sidebar/my_rblogs" %>
   </div>

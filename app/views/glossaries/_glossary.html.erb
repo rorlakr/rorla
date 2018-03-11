@@ -4,7 +4,7 @@
     <li id="definition_li_<%= definition.id %>">
       <span id="definition_<%= definition.id %>" class='text-<%= index == 0 ? "danger" : "muted" %>'><%= definition.definition %>
           <small title="<%= likers(definition) %>">
-            <%= awesome_icon_label('thumbs-o-up', definition.get_likes.size.to_s) %>
+            <%= far_icon_text('thumbs-o-up', definition.get_likes.size.to_s) %>
           </small>
       </span>
     <br />

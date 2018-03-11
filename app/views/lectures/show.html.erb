@@ -14,8 +14,8 @@
 <br />
 <div class="form-actions">
   <% if user_signed_in? && current_user.can_update?(@lecture) %>
-    <%= link_to far_icon('edit', text: "수정"), edit_course_lecture_path(@course, @lecture), class: 'btn btn-default' %>
-    <%= link_to "삭제", [@course, @lecture], method: :delete, data:{confirm:"Are you sure?"}, class: 'btn btn-danger' %> |
+    <%= link_to far_icon_text('edit', "수정"), edit_course_lecture_path(@course, @lecture), class: 'btn btn-default' %>
+    <%= link_to far_icon_text('times-circle',"삭제"), [@course, @lecture], method: :delete, data:{confirm:"Are you sure?"}, class: 'btn btn-danger' %> |
   <% end %>
   <%= link_to "목차", course_lectures_path(@course), class: 'btn btn-default' %>
 </div>

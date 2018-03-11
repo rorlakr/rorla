@@ -44,10 +44,9 @@ gem 'delayed_job_web', '1.4'
 gem 'devise', '4.4.1'
 # speed, persistence, http(s) (https://github.com/excon/excon)
 gem 'excon', '0.60.0'
-# gem 'font-awesome-sass', '4.7.0'
-# an asset gemification of the font-awesome icon font library (https://github.com/bokmann/font-awesome-rails)
-# gem 'font-awesome-rails'
+# an asset gemification of the Font Awesome 5 Free icon font library (https://github.com/luciuschoi/fontawesome5-rails)
 gem 'fontawesome5-rails'
+# gem 'fontawesome5-rails', path: '/Users/lucius/myrails/gemify/fontawesome5-rails'
 # A comprehensive slugging and pretty-URL plugin. (https://github.com/norman/friendly_id)
 gem 'friendly_id', '5.2.3'
 # A wrapper for MailChimp API 3.0 and Export API (http://github.com/amro/gibbon)

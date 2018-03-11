@@ -1,15 +1,15 @@
 <% content_for :plaza_category do %>
-  <%= far_icon('folder-open',  text: "Favlinks") %>
+  <%= far_icon_text('folder-open', "Favlinks") %>
 <% end %>
 <% content_for :plaza_category do %>
   <%= t("updated_html", time_ago: resource.updated_at, ago: time_ago_in_words(resource.updated_at)) %>
 <% end %>
 <% content_for :plaza_content do %>
 <div class='favlink'>
-  <div class='title'><h4><%= link_to fas_icon('share', text: resource.title), resource, style:'display:block;' %></h4></div>
-  <div class='linkurl'><%= fas_icon('link', text: link_to(resource.linkurl, resource.linkurl)) %></div>
+  <div class='title'><h4><%= link_to fas_icon_text('share', resource.title), resource, style:'display:block;' %></h4></div>
+  <div class='linkurl'><%= fas_icon_text('link', link_to(resource.linkurl, resource.linkurl)) %></div>
   <% if resource.bundlelink %>
-    <div class='bundle'><%= fas_icon('book', text: link_to(resource.bundlelink.try(:title), bundlelink_favlinks_path(resource.bundlelink))) %></div>
+    <div class='bundle'><%= fas_icon_text('book', link_to(resource.bundlelink.try(:title), bundlelink_favlinks_path(resource.bundlelink))) %></div>
   <% end %>
 </div>
 <% end %>

@@ -30,4 +30,4 @@
 </div>
 <br>
 
-<%= link_to fas_icon('plus', text: '행사등록'), new_group_purchase_path, class: 'btn btn-primary' if user_signed_in? && current_user.can_create?(GroupPurchase)%>
+<%= link_to fas_icon_text('plus', '행사등록'), new_group_purchase_path, class: 'btn btn-primary' if user_signed_in? && current_user.can_create?(GroupPurchase)%>

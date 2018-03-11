@@ -2,11 +2,11 @@
   <% @glossary.glossary_definitions.sort{|x, y| y.cached_votes_up <=> x.cached_votes_up}.each_with_index do | definition, index | %>
     <li id="definition_li_<%= definition.id %>">
       <span id="definition_<%= definition.id %>" class='text-<%= index == 0 ? "danger" : "muted" %>'><%= definition.definition %>
-          <small title="<%= likers(definition) %>">
-            <%= link_to_if user_signed_in?, far_icon('thumbs-o-up', text: definition.get_likes.size.to_s), like_glossary_definition_path(definition.glossary, definition), method: :post, remote: true %>
+          <small data-toggle='tooltip' title="<%= likers(definition) %>">
+            <%= link_to_if user_signed_in?, far_icon_text('thumbs-up', definition.get_likes.size.to_s, class: 'mr-1'), like_glossary_definition_path(definition.glossary, definition), method: :post, remote: true %>
             <% if user_signed_in? %>
-              <%= link_to awesome_icon('edit'), edit_glossary_glossary_definition_path(definition.glossary, definition), id: "edit_definition_#{definition.id}_link", remote: true if current_user.can_update?(definition) %>
-              <%= link_to awesome_icon('trash-o'), [definition.glossary, definition], method: :delete, data:{confirm:'Are you sure?'}, remote: true if current_user.can_delete?(definition) %>
+              · <%= link_to far_icon('edit'), edit_glossary_glossary_definition_path(definition.glossary, definition), id: "edit_definition_#{definition.id}_link", remote: true if current_user.can_update?(definition) %>
+              · <%= link_to fas_icon('times-circle', class: 'mr-1'), [definition.glossary, definition], method: :delete, data:{confirm:'Are you sure?'}, remote: true if current_user.can_delete?(definition) %>
               <%= definition.user&.email %>
             <% end %>
           </small>
@@ -20,7 +20,7 @@
 </ol>
 
 <% if user_signed_in? %>
-  <%= link_to "정의추가", new_glossary_glossary_definition_path(@glossary), id: 'add_definition_link', class: 'add_definition_link', remote: true %>
+  <%= link_to fas_icon_text('plus', "정의추가", class: 'mr-1'), new_glossary_glossary_definition_path(@glossary), id: 'add_definition_link', class: 'add_definition_link', remote: true %>
   <div id="glossary_definition_form" class="show_glossary_definitions">
     <%= render "glossaries/dynamic_definition_form" %>
   </div>

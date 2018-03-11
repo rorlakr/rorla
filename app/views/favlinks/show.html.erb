@@ -5,8 +5,8 @@
 </div>
 
 <div class='form-actions'>
-<%= link_to 'Edit', @bundlelink ? edit_bundlelink_favlink_path(@bundlelink, @favlink) : edit_favlink_path(@favlink), class: 'btn btn-primary' %>
-<%= link_to 'Back', @bundlelink ? bundlelink_favlinks_path(@bundlelink) : favlinks_path, class: 'btn btn-secondary' %>
+<%= link_to fas_icon_text('edit','Edit'), @bundlelink ? edit_bundlelink_favlink_path(@bundlelink, @favlink) : edit_favlink_path(@favlink), class: 'btn btn-primary' %>
+<%= link_to fas_icon_text('list', 'Back'), @bundlelink ? bundlelink_favlinks_path(@bundlelink) : favlinks_path, class: 'btn btn-secondary' %>
 </div>
 
 <!-- 댓글 위젯 -->

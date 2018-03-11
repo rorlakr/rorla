@@ -1,7 +1,7 @@
 <%= icon_tags(@glossary.tag_list, 'glossaries')  %>
 
 <% if user_signed_in? %>
-  <%= link_to "태그추가", '#', id: 'add_tag_link', class: 'add_tag_link', remote: true %>
+  <%= link_to fas_icon('plus', text: "태그추가", class: 'mr-1'), '#', id: 'add_tag_link', class: 'add_tag_link'%>
   <div id="tag_list_form_of_glossary_<%= @glossary.id %>" class="tag_list_form_of_glossary">
     <%= render "glossaries/dynamic_tag_list_form" %>
   </div>

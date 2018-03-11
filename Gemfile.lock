@@ -240,7 +240,7 @@ GEM
     ffi (1.9.18-java)
     ffi (1.9.18-x64-mingw32)
     ffi (1.9.18-x86-mingw32)
-    fontawesome5-rails (5.0.8.0)
+    fontawesome5-rails (5.0.8.1)
     formatador (0.2.5)
     friendly_id (5.2.3)
       activerecord (>= 4.0.0)

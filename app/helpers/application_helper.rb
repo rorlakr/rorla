@@ -75,7 +75,7 @@ module ApplicationHelper
     tags_array.each do |tag|
       label_tags += "<a href='/#{resource}?tag=#{CGI::escape(tag)}'><span class='badge badge-secondary'>#{tag}</span></a> "
     end
-    fas_icon('tag') + label_tags.html_safe unless tags_array.blank?
+    fas_icon_text('tag', label_tags.html_safe) unless tags_array.blank?
   end
 
   # def icon_shared(shared)
@@ -169,13 +169,13 @@ module ApplicationHelper
 
   def hit_count(count)
     content_tag(:small, '', title:'뷰갯수', class:'text-muted', data:{toggle:'tooltip', placement: 'top'}) do
-    fas_icon('bullseye', text: content_tag(:i, "#{count}", style:'font-weight:bold;'))
+    fas_icon_text('bullseye', content_tag(:i, "#{count}", style:'font-weight:bold;'))
     end
   end
 
   def comment_count(count)
     content_tag(:small, '', title:'댓글갯수', class:'text-muted', data:{toggle:'tooltip', placement: 'top'}) do
-    far_icon('comment', text: content_tag(:i, "#{count}", style:'font-weight:bold;'))
+    far_icon_text('comment', content_tag(:i, "#{count}", style:'font-weight:bold;'))
     end
   end
 

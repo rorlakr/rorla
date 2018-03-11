@@ -23,9 +23,11 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
-    <%= link_to t('form_actions.show'), @glossary, class: 'btn btn-ourline-primary' if @glossary.persisted? %>
-    <%= link_to t('form_actions.back'), glossaries_path, class: 'btn btn-ourline-primary' %>
-    <%= link_to_add_association "정의 추가", f, :glossary_definitions, partial: 'glossary_definition',  'data-association-insertion-node': '.glossary_definitions', "data-association-insertion-method": 'append', class: 'btn btn-primary pull-right' %>
+    <%= button_tag type: 'submit', class: 'btn btn-primary' do %>
+      <%= fas_icon_text('save', '저장') %>
+    <% end %>
+    <%= link_to fas_icon_text('eye', t('form_actions.show')), @glossary, class: 'btn btn-outline-primary' if @glossary.persisted? %>
+    <%= link_to fas_icon_text('list', t('form_actions.back')), glossaries_path, class: 'btn btn-outline-primary' %>
+    <%= link_to_add_association fas_icon_text('plus', "정의 추가"), f, :glossary_definitions, partial: 'glossary_definition',  'data-association-insertion-node': '.glossary_definitions', "data-association-insertion-method": 'append', class: 'btn btn-primary pull-right' %>
   </div>
 <% end %>

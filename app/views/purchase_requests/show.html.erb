@@ -35,8 +35,8 @@
 
 
 <div class='form-actions'>
-<%= link_to far_icon('edit', text: '수정'), (params[:group_purchase_id] ? edit_group_purchase_purchase_request_path(@group_purchase, @purchase_request) : edit_purchase_request_path(@purchase_request)), class:'btn btn-primary' %>
-<%= link_to fas_icon('list', text: '신청목록'), (params[:group_purchase_id] ? group_purchase_purchase_requests_path : purchase_requests_path), class:'btn btn-secondary' %>
+<%= link_to far_icon_text('edit', '수정'), (params[:group_purchase_id] ? edit_group_purchase_purchase_request_path(@group_purchase, @purchase_request) : edit_purchase_request_path(@purchase_request)), class:'btn btn-primary' %>
+<%= link_to fas_icon_text('list', '신청목록'), (params[:group_purchase_id] ? group_purchase_purchase_requests_path : purchase_requests_path), class:'btn btn-secondary' %>
 </div>
 
 <!-- 댓글 위젯 -->

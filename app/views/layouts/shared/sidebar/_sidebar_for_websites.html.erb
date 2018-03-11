@@ -2,7 +2,7 @@
 <div>
   <p style="margin-top:2rem;margin-bottom:2em;border:1px solid red; border-radius:5px;padding:1em;">
     <%= link_to image_tag("rails_sites.png", width: '100%'), websites_path(page:nil, search:nil) %>
-    <%= link_to icon_label('plus', '서비스추가'), new_website_path, class: "btn btn-danger #{'disabled' if action_name == 'new'}", style:'margin-top:1em;display:block;'%>
+    <%= link_to fas_icon_text('plus', '서비스추가'), new_website_path, class: "btn btn-danger #{'disabled' if action_name == 'new'}", style:'margin-top:1em;display:block;'%>
   </p>
 </div>
 <% end %>

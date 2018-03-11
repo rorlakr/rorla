@@ -12,7 +12,7 @@
     <%= comment_count(rblog.comments.size) %>&nbsp;
     <%= hit_count(rblog.impressionist_count) %>&nbsp;
     <% if action_name == 'show' %>
-    <div class="fb-share-button pull-right" data-href="<%= rblog_url(rblog) %>" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= rblog_url(rblog) %>"><%= awesome_icon_label('facebook-official fa-lg', "공유하기") %></a></div>
+    <div class="fb-share-button pull-right" data-href="<%= rblog_url(rblog) %>" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= rblog_url(rblog) %>"><%= far_icon_text('facebook-official fa-lg', "공유하기") %></a></div>
       <% end  %>
   </div>
 

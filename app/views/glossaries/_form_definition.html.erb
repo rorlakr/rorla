@@ -3,5 +3,7 @@
 <div class="form-group">
   <div class='disabled text-right text-muted'><em>created by <%= f.object.user.try(:email) || current_user.email %></em></div>
 </div>
-<%= f.button :submit, nil, class: 'btn btn-primary' %>
-<%= link_to "취소", '#', id: 'cancel_definition_link', class: 'btn btn-danger' %>
+<%= button_tag f, type: 'submit', class: 'btn btn-primary' do %>
+  <%= far_icon_text('save', '등록') %>
+<% end %>
+<%= link_to fas_icon_text('ban', "취소"), '#', id: 'cancel_definition_link', class: 'ml-2 btn btn-danger' %>

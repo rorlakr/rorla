@@ -2,7 +2,7 @@
   <div>
     <p style="margin-top:2rem;margin-bottom:2em;border:1px solid red; border-radius:5px;padding:1em;">
       <%= link_to image_tag("favlinks_no_border.png", width: '100%'), favlinks_path(page:nil, search:nil) %>
-      <%= link_to fas_icon('plus', text: '링크추가'), \
+      <%= link_to fas_icon_text('plus', '링크추가'), \
           ( params[:bundlelink_id] ? new_bundlelink_favlink_path(bundlelink_id: params[:bundlelink_id]) \
           : new_favlink_path ), \
           class: 'btn btn btn-danger', style:'margin-top:1em;display:block;' %>

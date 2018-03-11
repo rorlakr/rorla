@@ -6,6 +6,6 @@
     <div class='disabled text-right text-muted'><em>created by <%= f.object.user.try(:email) %></em></div>
   </div>
   <div class='remove'>
-    <%= link_to_remove_association awesome_icon_label('trash-o', t('form_actions.delete')), f, wrapper_class: 'task_fields',  class: 'btn btn-danger' %>
+    <%= link_to_remove_association fas_icon_text('trash-o', t('form_actions.delete')), f, wrapper_class: 'task_fields',  class: 'btn btn-danger' %>
   </div>
 </div>
