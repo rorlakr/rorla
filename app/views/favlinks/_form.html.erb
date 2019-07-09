@@ -13,14 +13,14 @@
     <%= f.label '화면캡쳐이미지' %>
   </div>
 
-  <div class='row no-gutter' style='padding-left:1em;border:1px solid #ccc;overflow:auto;border-radius: 5px;margin-bottom:1em;'>
-    <div class='col-xs-5 col-sm-3'>
-      <%= f.input :with_screen_shot, inline_label: true, label: "자동(링크주소)" %>
+  <div class='row no-gutter border rounded p-2 mb-2'>
+    <div class='col-5 col-sm-3'>
+      <label for="favlink_with_screen_shot" class='mb-0'>
+        <%= f.check_box :with_screen_shot, name: 'favlink[with_screen_shot]', id: 'favlink_with_screen_shot' %> 자동(링크주소)
+      </label>
     </div>
-    <div class='col-xs-7 col-sm-9'>
-      <div class='form-group checkbox'>
-        <%= f.file_field :capture_loc_manual %>
-      </div>
+    <div class='col-7 col-sm-9'>
+      <%= f.file_field :capture_loc_manual %>
     </div>
   </div>
 
@@ -32,8 +32,10 @@
     <% if @favlink.capture_loc_manual_url.present? %>
       <div class="form-group">
         <div class='capture_loc'>
-          <%= image_tag @favlink.capture_loc_manual_url, class: 'shadow_image', width: '100%' %>
-          <%= f.input :remove_capture_loc_manual, label: '이미지삭제', as: :boolean %>
+          <%= image_tag @favlink.capture_loc_manual_url, class: 'shadow_image mb-2', width: '100%' %>
+          <label for="favlink_remove_capture_loc_manual" class='mb-0'>
+            <%= f.check_box :remove_capture_loc_manual, name: 'favlink[remove_capture_loc_manual]', id: 'favlink_remove_capture_loc_manual' %> 이미지삭제
+          </label>          
         </div>
       </div>
     <% end %>
@@ -52,5 +54,10 @@
     <%= f.input :shared, as: :boolean, inline_label: "공유", label: false %>
   </div>
 
-  <%= f.button :submit, class: 'btn btn-default' %>
+  <%= button_tag f, type: 'submit', class: 'btn btn-primary' do %>
+    <%= fas_icon_text 'save', 'Save' %>
+  <% end %>
+  <%= link_to fas_icon_text('eye', t('form_actions.show')), @favlink, class: 'btn btn-outline-primary' if @favlink.persisted? %>
+  <%= link_to fas_icon_text('list', t('form_actions.back')), favlinks_path, class: 'btn btn-outline-primary' %>
+  
 <% end %>
