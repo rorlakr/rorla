@@ -163,6 +163,7 @@ group :development do
   # Adds suuport to nginx for Capistrano 3.x (https://github.com/platanus/capistrano3-nginx)
   gem 'capistrano3-nginx', '2.1.6'
   # Puma integration for Capistrano (https://github.com/seuros/capistrano-puma)
+  gem 'capistrano-yarn'
   gem 'capistrano3-puma', '3.1.1'
   # Listen to file modifications (https://github.com/guard/listen)
   gem 'listen', '>= 3.0.5', '< 3.2'
