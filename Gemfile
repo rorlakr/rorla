@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.0'
 
 # Advanced tagging for Rails. (https://github.com/mbleigh/acts-as-taggable-on)
-gem 'acts-as-taggable-on', '~> 4.0'
+gem 'acts-as-taggable-on', '~> 6.0'
 # Rails gem to allowing records to be votable (http://rubygems.org/gems/acts_as_votable)
 gem 'acts_as_votable', '0.11.1'
 # An ActiveModel-compatible ORM-like library for storing model instances in an in-memory Hash. (http://github.com/norman/ambry)
@@ -141,7 +141,7 @@ group :development do
   # Annotates Rails Models, routes, fixtures, and others based on the database schema. (http://github.com/ctran/annotate_models)
   # gem 'annotate', '~> 2.7', '>= 2.7.5'
   # Better error page for Rails and other Rack apps (https://github.com/charliesome/better_errors)
-  gem 'better_errors', '2.4.0'
+  gem 'better_errors', '~> 2.5', '>= 2.5.1'
   # Retrieve the binding of a method's caller. Can also retrieve bindings even further up the stack. (http://github.com/banister/binding_of_caller)
   gem 'binding_of_caller', '0.8.0'
   # Capistrano - Welcome to easy deployment with Ruby over SSH (http://capistranorb.com/)
