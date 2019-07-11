@@ -46,7 +46,7 @@ fieldset.purchase_items, fieldset.product_addition_form {
 }
 
 fieldset.request_items {
-  @extend fieldset.purchase_items;
+  @extend fieldset, .purchase_items;
   background-color: white;
   legend {
     background-color: green;
@@ -56,5 +56,4 @@ fieldset.request_items {
     background-color: red;
     color: white;
   }
-
 }

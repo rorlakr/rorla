@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.0'
 
 # Advanced tagging for Rails. (https://github.com/mbleigh/acts-as-taggable-on)
-gem 'acts-as-taggable-on', '5.0.0'
+gem 'acts-as-taggable-on', '~> 4.0'
 # Rails gem to allowing records to be votable (http://rubygems.org/gems/acts_as_votable)
 gem 'acts_as_votable', '0.11.1'
 # An ActiveModel-compatible ORM-like library for storing model instances in an in-memory Hash. (http://github.com/norman/ambry)
@@ -15,7 +15,7 @@ gem 'authority', '3.3.0'
 # Plain text to HTML conversion (https://github.com/dejan/auto_html)
 gem 'auto_html', '2.0.0'
 # Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use website. (https://github.com/ai/autoprefixer-rails)
-gem 'autoprefixer-rails', '7.2.5'
+gem 'autoprefixer-rails', '>= 6.0.3'
 # This gem allows you to use Autosize plugin (http://www.jacklmoore.com/autosize/)
 gem 'autosize', '2.4.0.0'
 # Bh provides a set of powerful helpers that streamlines the use of Bootstrap components in Rails views. (http://github.com/Fullscreen/bh)
@@ -37,18 +37,18 @@ gem 'coffee-rails', '~> 4.2'
 # A toolkit to create and control daemons in different ways (https://github.com/thuehlinger/daemons)
 gem 'daemons', '1.2.6'
 # ActiveRecord backend for DelayedJob (http://github.com/collectiveidea/delayed_job_active_record)
-gem 'delayed_job_active_record', '4.1.2'
+gem 'delayed_job_active_record', '~> 4.1', '>= 4.1.3'
 # Web interface for delayed_job inspired by resque (https://github.com/ejschmitt/delayed_job_web)
-gem 'delayed_job_web', '1.4'
+gem 'delayed_job_web', '1.4.3'
 # Flexible authentication solution for Rails with Warden (https://github.com/plataformatec/devise)
-gem 'devise', '4.4.1'
+gem 'devise', '~> 4.6', '>= 4.6.2'
 # speed, persistence, http(s) (https://github.com/excon/excon)
 gem 'excon', '0.60.0'
 # an asset gemification of the Font Awesome 5 Free icon font library (https://github.com/luciuschoi/fontawesome5-rails)
 gem 'fontawesome5-rails'
 # gem 'fontawesome5-rails', path: '/Users/lucius/myrails/gemify/fontawesome5-rails'
 # A comprehensive slugging and pretty-URL plugin. (https://github.com/norman/friendly_id)
-gem 'friendly_id', '5.2.3'
+gem 'friendly_id', '~> 5.2', '>= 5.2.5'
 # A wrapper for MailChimp API 3.0 and Export API (http://github.com/amro/gibbon)
 gem 'gibbon', '3.2.0'
 # Use Google Code Prettify with Rails 3 (http://rubygems.org/gems/google-code-prettify-rails)
@@ -61,9 +61,9 @@ gem 'impressionist', '1.6.0'
 # Create JSON structures via a Builder-style DSL (https://github.com/rails/jbuilder)
 gem 'jbuilder', '~> 2.5'
 # This gem embeddes the jQuery colorpicker in the Rails asset pipeline. (https://github.com/kostia/jquery-minicolors-rails)
-gem 'jquery-minicolors-rails', '2.2.6.0'
+gem 'jquery-minicolors-rails', '~> 2.2', '>= 2.2.6.1'
 # Use jQuery with Rails 4+ (https://github.com/rails/jquery-rails)
-gem 'jquery-rails', '4.3.1'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 # Integration with the asset pipeline
 gem 'jquery-tokeninput-rails', '1.6.0'
 # jQuery plugin for drop-in fix binded events problem caused by Turbolinks (https://github.com/kossnocorp/jquery.turbolinks)
@@ -97,7 +97,7 @@ gem 'placeholdit', '0.0.5'
 # Puma is a simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby/Rack applications (http://puma.io)
 gem 'puma', '~> 3.11'
 # Full-stack web application framework. (http://rubyonrails.org)
-gem 'rails', '~> 5.2.0.rc1'
+gem 'rails', '~> 5.2.3'
 # Helpers for the reCAPTCHA API (http://github.com/ambethia/recaptcha)
 gem 'recaptcha', '4.6.4', require: 'recaptcha/rails'
 # Markdown that smells nice (http://github.com/vmg/redcarpet)
@@ -115,7 +115,7 @@ gem 'search_cop', '1.0.9'
 # Simple enum-like field support for models. (http://lwe.github.com/simple_enum/)
 gem 'simple_enum', '2.3.0'
 # Forms made easy! (https://github.com/plataformatec/simple_form)
-gem 'simple_form', '3.5.0'
+gem 'simple_form', '~> 4.1'
 # To wrap tui-editor resource to rails asset-pipeline (https://github.com/luciuschoi/tui_editor-rails)
 gem 'tui_editor-rails'
 # Turbolinks makes navigating your web application faster (https://github.com/turbolinks/turbolinks)
@@ -130,7 +130,7 @@ gem 'will_paginate-bootstrap4'
 # XMLRPC is a lightweight protocol that enables remote procedure calls over HTTP. (https://github.com/ruby/xmlrpc)
 gem 'xmlrpc', '0.3.0'
 # yaml_db allows export/import of database into/from yaml files (https://github.com/yamldb/yaml_db)
-gem 'yaml_db', '0.6.0'
+gem 'yaml_db', '~> 0.7.0'
 
 group :production do
   # A simple, fast Mysql library for Ruby, binding to libmysql (http://github.com/brianmario/mysql2)
@@ -139,23 +139,23 @@ end
 
 group :development do
   # Annotates Rails Models, routes, fixtures, and others based on the database schema. (http://github.com/ctran/annotate_models)
-  gem 'annotate', '2.7.2'
+  # gem 'annotate', '~> 2.7', '>= 2.7.5'
   # Better error page for Rails and other Rack apps (https://github.com/charliesome/better_errors)
   gem 'better_errors', '2.4.0'
   # Retrieve the binding of a method's caller. Can also retrieve bindings even further up the stack. (http://github.com/banister/binding_of_caller)
   gem 'binding_of_caller', '0.8.0'
   # Capistrano - Welcome to easy deployment with Ruby over SSH (http://capistranorb.com/)
-  gem 'capistrano', '3.10.1'
+  gem "capistrano", "~> 3.11", require: false
   # Bundler support for Capistrano 3.x (https://github.com/capistrano/bundler)
-  gem 'capistrano-bundler', '1.3.0'
+  gem 'capistrano-bundler', '~> 1.1'
   # Rails specific Capistrano tasks (https://github.com/capistrano/rails)
-  gem 'capistrano-rails', '1.3.1'
+  gem 'capistrano-rails', '~> 1.4'
   # Remote rails console for capistrano (https://github.com/ydkn/capistrano-rails-console)
-  gem 'capistrano-rails-console', '2.2.1'
+  gem 'capistrano-rails-console', require: false
   # Tail rails logs from server.
   gem 'capistrano-rails-tail-log', '0.1.0'
   # rbenv integration for Capistrano (https://github.com/capistrano/rbenv)
-  gem 'capistrano-rbenv', '2.1.3'
+  gem 'capistrano-rbenv', '~> 2.1'
   # Capistrano plugin for lightweight rubies managment with rbenv. (https://github.com/capistrano-plugins/capistrano-rbenv-install)
   gem 'capistrano-rbenv-install', '1.2.0'
   # Capistrano 3.x tasks to upload shared config that is stored outside of SCM (https://github.com/rjocoleman/capistrano-upload-config)
@@ -168,7 +168,7 @@ group :development do
   # Listen to file modifications (https://github.com/guard/listen)
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Entity-relationship diagram for your Rails models. (https://github.com/voormedia/rails-erd)
-  gem 'rails-erd', '1.5.2'
+  # gem 'rails-erd', '1.5.2'
   # Rails application preloader (https://github.com/rails/spring)
   gem 'spring'
   # Makes spring watch files using the listen gem. (https://github.com/jonleighton/spring-watcher-listen)
@@ -189,7 +189,7 @@ group :development, :test do
   # factory_bot_rails provides integration between factory_bot and rails 3 or newer (http://github.com/thoughtbot/factory_bot_rails)
   gem 'factory_bot_rails', '4.8.2'
   # Guard keeps an eye on your file modifications (http://guardgem.org)
-  gem 'guard', '2.14.2'
+  gem 'guard', '~> 2.1'
   # Guard gem for RSpec (https://github.com/guard/guard-rspec)
   gem 'guard-rspec', '4.7.3', require: false
   # Preview mail in browser instead of sending. (http://github.com/ryanb/letter_opener)
@@ -204,9 +204,9 @@ end
 
 group :test do
   # Capybara aims to simplify the process of integration testing Rack applications, such as Rails, Sinatra or Merb (https://github.com/teamcapybara/capybara)
-  gem 'capybara', '~> 2.15'
+  gem 'capybara', '~> 3.25'
   # Headless Webkit driver for Capybara (http://github.com/thoughtbot/capybara-webkit)
-  gem 'capybara-webkit', '1.1.0'
+  gem 'capybara-webkit'
   # Easy installation and use of chromedriver. (https://github.com/flavorjones/chromedriver-helper)
   gem 'chromedriver-helper'
   # Strategies for cleaning databases.  Can be used to ensure a clean state for testing. (http://github.com/DatabaseCleaner/database_cleaner)
