@@ -53,14 +53,14 @@
   position:absolute;
   bottom:7px;
   right:5px;
-  @extend .btn, .btn-success, .btn-xs;
+  // @extend .btn, .btn-success, .btn-xs;
 }
 
 .add_tag_link {
   position:absolute;
   bottom:7px;
   right:5px;
-  @extend .btn, .btn-info, .btn-xs;
+  // @extend .btn, .btn-info, .btn-xs;
 }
 
 // added a custom class for .btn-xs which has been removed since Bootstrap 4 

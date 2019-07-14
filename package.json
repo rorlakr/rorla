@@ -1,5 +1,24 @@
 {
   "name": "rorla",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
+    "@rails/actioncable": "^6.0.0-alpha",
+    "@rails/activestorage": "^6.0.0-alpha",
+    "@rails/ujs": "^6.0.0-alpha",
+    "@rails/webpacker": "^4.0.7",
+    "bootstrap": "^4.3.1",
+    "coffee-loader": "^0.9.0",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
+    "stimulus": "^1.1.1",
+    "sweetalert2": "^8.13.4",
+    "toastr": "^2.1.4",
+    "tui-editor": "^1.4.4-alpha.1",
+    "turbolinks": "^5.2.0"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "webpack-dev-server": "^3.7.2"
+  }
 }

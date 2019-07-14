@@ -17,12 +17,9 @@
 !/log/.keep
 !/tmp/.keep
 
-# Ignore uploaded files in development
+# Ignore uploaded files in development.
 /storage/*
 !/storage/.keep
-
-/node_modules
-/yarn-error.log
 
 /public/assets
 .byebug_history
@@ -66,3 +63,10 @@ rorla_development_glossaries_and_glossary_definitions.sql
 
 # Ignore master key for decrypting credentials and more.
 /config/master-development.key
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>RORLAB Website</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <%= display_meta_tags :site => 'RORLAB' %>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%# <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet"> %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= favicon_link_tag 'rorlab_logo_100x100.png' %>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
   <link rel="image_src" href="<%= image_url('rorlab_logo_158x158.png') %>" />
 </head>
 <body class="<%= controller_name %> <%= action_name %>">
@@ -19,8 +20,9 @@
   <%= render 'layouts/shared/nav' %>
 
   <div id="container" class="container">
-
-    <%= render partial: "shared/flash_messages", flash: flash %>
+    <div data-controller='flash' 
+     data-flash-messages='<%= flash[:notice] || notice %>'></div>
+    <%#= render partial: "shared/flash_messages", flash: flash %>
 
     <%= content_for?(:devise) ? yield(:devise) : yield(:general) %>
 
