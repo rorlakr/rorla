@@ -17,7 +17,6 @@ export default class extends Controller {
             </div>
           </div>
           `)
-          sleep(5);
           return $.getScript(url);
         }
       });
