@@ -2,6 +2,7 @@ $('#plazas').append('<%= j render(@plazas) %>');
 <% if @plazas.next_page %>
   $('#plazas').append("<hr style='border-style:dashed;'>");
   $('.pagination').replaceWith('<%= j will_paginate(@plazas) %>');
+  $('.pagination').hide();
 <% else %>
   $('#plazas').append("<a href='#' onclick='document.body.scrollTop=0;document.documentElement.scrollTop=0;event.preventDefault()'>Back to top</a>");
   $('.pagination').remove();
