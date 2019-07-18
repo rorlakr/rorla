@@ -289,9 +289,6 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     jquery-tokeninput-rails (1.6.0)
-    jquery-turbolinks (2.1.0)
-      railties (>= 3.1.0)
-      turbolinks
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
     json (2.2.0)
@@ -588,7 +585,6 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-minicolors-rails (~> 2.2, >= 2.2.6.1)
   jquery-tokeninput-rails (= 1.6.0)
-  jquery-turbolinks (= 2.1.0)
   jquery-ui-rails (= 6.0.1)
   launchy (= 2.4.3)
   letter_opener (= 1.6.0)
