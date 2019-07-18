@@ -29,13 +29,6 @@ GIT
       railties (> 3.1)
 
 GIT
-  remote: https://github.com/rorlab/pageless-rails.git
-  revision: 6bc646321b139846f7db7679e57992973d8f36ed
-  specs:
-    pageless-rails (0.0.3)
-      railties (>= 3.1)
-
-GIT
   remote: https://github.com/rorlab/webshots.git
   revision: 421f6d1d7b1c69a066a85836f2fc2171f0bad217
   specs:
@@ -609,7 +602,6 @@ DEPENDENCIES
   mysql2 (= 0.4.10)
   oj (= 3.4.0)
   pagedown-bootstrap-rails (= 2.1.0)!
-  pageless-rails (= 0.0.3)!
   placeholdit (= 0.0.5)
   puma (~> 3.11)
   rails (~> 6.0.0.rc1)

@@ -68,7 +68,7 @@ gem 'jquery-minicolors-rails', '~> 2.2', '>= 2.2.6.1'
 # Integration with the asset pipeline
 gem 'jquery-tokeninput-rails', '1.6.0'
 # jQuery plugin for drop-in fix binded events problem caused by Turbolinks (https://github.com/kossnocorp/jquery.turbolinks)
-gem 'jquery-turbolinks', '2.1.0'
+# gem 'jquery-turbolinks', '2.1.0'
 # jQuery UI packaged for the Rails asset pipeline (https://github.com/joliss/jquery-ui-rails)
 gem 'jquery-ui-rails', '6.0.1'
 # Idiomatic library for using the mailgun API from within ruby (http://github.com/HashNuke/mailgun)
@@ -91,7 +91,7 @@ gem 'oj', '3.4.0'
 # This gem makes PageDown Bootstrap available in the Rails asset pipeline. (http://github.com/hughevans/pagedown-bootstrap-rails)
 gem 'pagedown-bootstrap-rails', '2.1.0',
     github: 'rorlab/pagedown-bootstrap-rails'
-gem 'pageless-rails', '0.0.3', github: 'rorlab/pageless-rails'
+# gem 'pageless-rails', '0.0.3', github: 'rorlab/pageless-rails'
 # A Rails view helper for placeholder images via http://placehold.it (http://github.com/ohokay/placeholdit)
 gem 'placeholdit', '0.0.5'
 # Puma is a simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby/Rack applications (http://puma.io)

@@ -9,22 +9,4 @@ $fa-font-path: '~@fortawesome/fontawesome-free-webfonts/webfonts';
 @import "~toastr/toastr.scss";
 
 
-// $navbar-default-link-hover-color: #bc0000;
-$code-color: #004080;
-$code-bg: #eaf2ff;
-
-//== Media queries breakpoints
-
-// Small screen / tablet
-//** Deprecated `$screen-sm` as of v3.0.1
-$screen-sm:                  1199px !default;   //768
-
-// Medium screen / desktop
-//** Deprecated `$screen-md` as of v3.0.1
-$screen-md:                  1200px !default;  //992
-
-$grid-gutter-width: 50px;
-$jumbotron-padding: 20px;
-
-
 

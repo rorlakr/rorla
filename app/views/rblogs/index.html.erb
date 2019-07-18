@@ -8,7 +8,7 @@
     <%= link_to far_icon('remove-circle'), rblogs_path if params[:whose] || params[:search] || params[:tag] %>
   </small>
 </h2>
-<div id='rblogs'>
+<div id='rblogs' data-controller='endless'>
   <% if @rblogs.size > 0 %>
     <%= render @rblogs %>
   <% else %>
@@ -16,6 +16,4 @@
   <% end %>
 </div>
 
-<div id="last_page"></div>
 <%= will_paginate @rblogs %>
-<%= pageless(@rblogs.total_pages, url_for, '#rblogs') %>

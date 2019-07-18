@@ -30,10 +30,10 @@ class RblogsController < ApplicationController
       @rblogs = Rblog.shared
     end
     @rblogs = @rblogs.paginate(page: params[:page], per_page: 10)
-    if request.xhr?
-      sleep(1)
-      render :partial => @rblogs
-    end
+    # if request.xhr?
+    #   sleep(1)
+    #   render :partial => @rblogs
+    # end
   end
 
   # GET /rblogs/1

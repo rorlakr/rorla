@@ -1,0 +1,9 @@
+$('#rblogs').append('<%= j render(@rblogs) %>');
+<% if @rblogs.next_page %>
+  $('#rblogs').append("<hr style='border-style:dashed;'>");
+  $('.pagination').replaceWith('<%= j will_paginate(@rblogs) %>');
+  $('.pagination').hide();
+<% else %>
+  $('#rblogs').append("<a href='#' onclick='document.body.scrollTop=0;document.documentElement.scrollTop=0;event.preventDefault()'>Back to top</a>");
+  $('.pagination').remove();
+<% end %>

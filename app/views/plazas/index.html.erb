@@ -1,9 +1,7 @@
 <h2>Plaza</h2>
 
-<div id="plazas">
+<div id='plazas' data-controller='endless'>
   <%= render @plazas %>
 </div>
 
-<div id="last_page"></div>
-<%= will_paginate @favlinks %>
-<%= pageless(@plazas.total_pages, url_for, '#plazas') %>
+<%= will_paginate @plazas %>
