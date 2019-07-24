@@ -14,7 +14,7 @@
     "stimulus": "^1.1.1",
     "sweetalert2": "^8.13.4",
     "toastr": "^2.1.4",
-    "tui-editor": "^1.4.4-alpha.1",
+    "tui-editor": "^1.4.4",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",

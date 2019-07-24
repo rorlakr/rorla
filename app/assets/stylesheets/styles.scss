@@ -1,7 +1,15 @@
 body {
-	font-family:'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	padding-top: 5rem;
 }
 
-blockquote { font-size: 1em; color:#686868; background-color: #f9f9f9; }
+blockquote {
+	font-size: 1em;
+	color: #686868;
+	background-color: #f9f9f9;
+}
+
+.field {
+	margin-bottom: 1rem;
+}

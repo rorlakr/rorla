@@ -1,4 +1,7 @@
-import { Controller } from 'stimulus'
+import $ from 'jquery';
+import {
+  Controller
+} from 'stimulus'
 
 // import 'tui-editor';
 import "tui-editor/dist/tui-editor-Editor-all"
@@ -17,9 +20,9 @@ require('tui-color-picker/dist/tui-color-picker.css');
 require('tui-chart/dist/tui-chart.css');
 
 export default class extends Controller {
-  static targets = [ 'content' ]
+  static targets = ['content']
 
-	connect(){
+  connect() {
     console.log("tuiEditor connected!")
     $("[data-editor='tui-editor']").hide().after("<div id='editSection'></div>")
     $("#editSection").tuiEditor({
@@ -31,8 +34,8 @@ export default class extends Controller {
     })
   }
 
-  submit(event){
+  submit(event) {
     console.log('submitted....')
-    this.contentTarget.textContent =$("#editSection").tuiEditor('getValue')
+    this.contentTarget.textContent = $("#editSection").tuiEditor('getValue')
   }
 }

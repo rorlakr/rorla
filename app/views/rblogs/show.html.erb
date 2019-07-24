@@ -20,8 +20,8 @@
       <% end  %>
   </div>
 
-  <div class='content'>
-    <div id='rblog-<%= @rblog.id %>' data-viewer='tui-viewer'>
+  <div data-controller='tui-viewer'>
+    <div data-viewer='tui-viewer'>
       <%= @rblog.content %>
     </div>
   </div>
