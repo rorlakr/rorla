@@ -1,9 +1,3 @@
-<script src="/assets/tui-editor/dist/tui-editor-Editor.min"></script>
-<script src="/assets/tui-editor/dist/tui-editor-extScrollSync.min"></script>
-
-
-<%#= render "layouts/shared/preview", title: @rblog.title, attribute: :content %>
-
 <%= form_with(model: rblog, local: true, data: {controller: 'tui-editor', action: 'submit->tui-editor#submit'}) do |f| %>
   <% if @rblog.errors.any? %>
     <%#= alert_box_multiple('danger', "문제가 발생했습니다:", f.object.errors.messages) %>

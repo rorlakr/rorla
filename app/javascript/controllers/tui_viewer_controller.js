@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import {
   Controller
 } from 'stimulus'

@@ -1,10 +1,9 @@
-import $ from 'jquery';
 import {
   Controller
-} from 'stimulus'
+} from 'stimulus';
 
 // import 'tui-editor';
-import "tui-editor/dist/tui-editor-Editor-all"
+import 'tui-editor/dist/tui-editor-Editor-all';
 import 'tui-chart';
 import 'raphael';
 import 'plantuml-encoder';
@@ -20,22 +19,24 @@ require('tui-color-picker/dist/tui-color-picker.css');
 require('tui-chart/dist/tui-chart.css');
 
 export default class extends Controller {
-  static targets = ['content']
+  static targets = ['content'];
 
   connect() {
-    console.log("tuiEditor connected!")
-    $("[data-editor='tui-editor']").hide().after("<div id='editSection'></div>")
-    $("#editSection").tuiEditor({
+    console.log('tuiEditor connected!');
+    $("[data-editor='tui-editor']")
+      .hide()
+      .after("<div id='editSection'></div>");
+    $('#editSection').tuiEditor({
       initialEditType: 'markdown',
       initialValue: this.contentTarget.value,
       previewStyle: 'vertical',
       height: '500px',
       exts: ['scrollSync', 'colorSyntax', 'uml', 'chart', 'mark', 'table']
-    })
+    });
   }
 
   submit(event) {
-    console.log('submitted....')
-    this.contentTarget.textContent = $("#editSection").tuiEditor('getValue')
+    console.log('submitted....');
+    this.contentTarget.textContent = $('#editSection').tuiEditor('getValue');
   }
 }
