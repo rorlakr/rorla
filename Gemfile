@@ -95,7 +95,7 @@ gem 'pagedown-bootstrap-rails', '2.1.0',
 # A Rails view helper for placeholder images via http://placehold.it (http://github.com/ohokay/placeholdit)
 gem 'placeholdit', '0.0.5'
 # Puma is a simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby/Rack applications (http://puma.io)
-gem 'puma', '~> 3.11'
+gem 'puma', '4.0.1'
 # Full-stack web application framework. (http://rubyonrails.org)
 gem 'rails', '~> 6.0.0.rc2'
 # Helpers for the reCAPTCHA API (http://github.com/ambethia/recaptcha)
@@ -161,10 +161,10 @@ group :development do
   # Capistrano 3.x tasks to upload shared config that is stored outside of SCM (https://github.com/rjocoleman/capistrano-upload-config)
   gem 'capistrano-upload-config', '0.8.2'
   # Adds suuport to nginx for Capistrano 3.x (https://github.com/platanus/capistrano3-nginx)
-  gem 'capistrano3-nginx', '2.1.6'
+  gem 'capistrano3-nginx', '3.0.4'
   # Puma integration for Capistrano (https://github.com/seuros/capistrano-puma)
   gem 'capistrano-yarn'
-  gem 'capistrano3-puma', '3.1.1'
+  gem 'capistrano3-puma', '4.0.0'
   # Listen to file modifications (https://github.com/guard/listen)
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Entity-relationship diagram for your Rails models. (https://github.com/voormedia/rails-erd)
