@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.0'
+ruby '2.6.3'
 
 # Advanced tagging for Rails. (https://github.com/mbleigh/acts-as-taggable-on)
 gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
@@ -97,7 +97,7 @@ gem 'placeholdit', '0.0.5'
 # Puma is a simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby/Rack applications (http://puma.io)
 gem 'puma', '~> 3.11'
 # Full-stack web application framework. (http://rubyonrails.org)
-gem 'rails', '~> 6.0.0.rc1'
+gem 'rails', '~> 6.0.0.rc2'
 # Helpers for the reCAPTCHA API (http://github.com/ambethia/recaptcha)
 gem 'recaptcha', '4.6.4', require: 'recaptcha/rails'
 # Markdown that smells nice (http://github.com/vmg/redcarpet)
@@ -134,7 +134,7 @@ gem 'yaml_db', '~> 0.7.0'
 
 group :production do
   # A simple, fast Mysql library for Ruby, binding to libmysql (http://github.com/brianmario/mysql2)
-  gem 'mysql2', '0.4.10', group: :production
+  gem 'mysql2', '0.5.2', group: :production
 end
 
 group :development do
