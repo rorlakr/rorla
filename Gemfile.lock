@@ -34,6 +34,14 @@ GIT
   specs:
     webshots (0.0.1)
 
+GIT
+  remote: https://github.com/virgoproz/capistrano-master-key.git
+  revision: aa99a50e41733288a5d4e1884af16385855847de
+  specs:
+    capistrano-master-key (1.0.2)
+      capistrano (~> 3.11)
+      sshkit (~> 1.17)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -550,6 +558,7 @@ DEPENDENCIES
   byebug
   capistrano (~> 3.11)
   capistrano-bundler (~> 1.1)
+  capistrano-master-key!
   capistrano-rails (~> 1.4)
   capistrano-rails-console
   capistrano-rails-tail-log (= 0.1.0)
