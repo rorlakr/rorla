@@ -31,11 +31,9 @@ set :linked_files, fetch(:linked_files, []).push('config/database.yml')
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/uploads')
 
-set :master_key_local_path, "/Users/lucius/myrails/r5/rorla/config/master.key"
-
 before 'deploy:check:linked_files', 'config:push'
 after 'deploy:publishing', 'deploy:restart'
-# after 'deploy:published', 'master_key:upload'
+after 'deploy:published', 'master_key:upload'
 after 'deploy:restart', 'nginx:reload'
 
 namespace :deploy do

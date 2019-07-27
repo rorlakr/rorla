@@ -26,7 +26,7 @@ require 'capistrano/puma/nginx'
 require 'capistrano/upload-config'
 require 'capistrano/nginx'
 require 'capistrano/yarn'
-require 'capistrano/master_key'
+
 install_plugin Capistrano::SCM::Git
 install_plugin Capistrano::Puma  # Default puma tasks
 install_plugin Capistrano::Puma::Nginx  # if you want to upload a nginx site template

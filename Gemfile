@@ -149,7 +149,6 @@ group :development do
   # Bundler support for Capistrano 3.x (https://github.com/capistrano/bundler)
   gem 'capistrano-bundler', '~> 1.1'
   # Rails specific Capistrano tasks (https://github.com/capistrano/rails)
-  gem 'capistrano-master-key', github: 'virgoproz/capistrano-master-key'
   gem 'capistrano-rails', '~> 1.4'
   # Remote rails console for capistrano (https://github.com/ydkn/capistrano-rails-console)
   gem 'capistrano-rails-console', require: false
