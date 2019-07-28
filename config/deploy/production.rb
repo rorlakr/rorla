@@ -15,6 +15,9 @@ server 'rorlab1.dev', user: 'deployer', roles: %w{app db web}
 # Feel free to add new variables to customise your setup.
 
 set :nginx_use_ssl, true
+set :nginx_ssl_certificate, 'rorlab.org.crt'
+set :nginx_ssl_certificate_key, 'server.key'
+
 set :rails_env, :production
 set :nginx_server_name, 'www.rorlab.org'
 set :nginx_domain_name, 'rorlab.org'

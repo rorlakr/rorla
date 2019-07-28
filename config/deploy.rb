@@ -9,6 +9,7 @@ set :repo_url, 'git@github.com:rorlakr/rorla.git'
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/deployer/www/rorla'
+set :user, 'deployer'
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -35,7 +36,7 @@ set :master_key_local_path, "/Users/lucius/myrails/r5/rorla/config/master.key"
 
 before 'deploy:check:linked_files', 'config:push'
 after 'deploy:publishing', 'deploy:restart'
-# after 'deploy:published', 'master_key:upload'
+after 'deploy:published', 'master_key:upload'
 after 'deploy:restart', 'nginx:reload'
 
 namespace :deploy do
