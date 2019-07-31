@@ -36,7 +36,7 @@ set :master_key_local_path, "/Users/lucius/myrails/r5/rorla/config/master.key"
 
 before 'deploy:check:linked_files', 'config:push'
 after 'deploy:publishing', 'deploy:restart'
-after 'deploy:published', 'master_key:upload'
+# after 'deploy:published', 'master_key:upload'
 after 'deploy:restart', 'nginx:reload'
 
 namespace :deploy do
