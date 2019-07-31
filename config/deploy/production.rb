@@ -4,7 +4,7 @@
 # You can define all roles on a single server, or split them:
 # 13.125.108.242 rorlab.dev
 
-server 'rorlab1.dev', user: 'deployer', roles: %w{app db web}
+server 'rorlab.dev', user: 'deployer', roles: %w{app db web}
 
 # Configuration
 # =============
