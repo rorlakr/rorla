@@ -4,7 +4,7 @@
 # You can define all roles on a single server, or split them:
 # 13.125.108.242 rorlab.dev
 
-server 'rorlab.dev', user: 'deployer', roles: %w{app db web}
+server 'rorlab.local', user: 'deployer', roles: %w[app db web]
 
 # Configuration
 # =============
@@ -14,16 +14,16 @@ server 'rorlab.dev', user: 'deployer', roles: %w{app db web}
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
-set :nginx_use_ssl, false
+# set :nginx_use_ssl, false
 # set :nginx_ssl_certificate, 'rorlab.org.crt'
 # set :nginx_ssl_certificate_key, 'server.key'
 
-set :rails_env, :production
+# set :rails_env, :production
 set :nginx_server_name, 'www.rorlab.org'
 set :nginx_domain_name, 'rorlab.org'
 
-set :puma_threads, [1, 4]
-set :puma_workers, 4
+# set :puma_threads, [1, 4]
+# set :puma_workers, 4
 
 # Custom SSH Options
 # ==================

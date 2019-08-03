@@ -17,13 +17,13 @@ set :user, 'deployer'
 # You can configure the Airbrussh format using :format_options.
 # These are the defaults.
 # set :format_options, command_output: true, log_file: 'log/capistrano.log', color: :auto, truncate: :auto
-set :format_options, banner: :auto, command_output: false
+# set :format_options, banner: :auto, command_output: false
 
 # rbenv
 set :rbenv_type, :user
-set :rbenv_ruby, '2.6.3'
+set :rbenv_ruby, File.read('.ruby-version').strip
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-set :rbenv_map_bins, %w{rake gem bundle ruby rails puma pumactl}
+set :rbenv_map_bins, %w[rake gem bundle ruby rails puma pumactl]
 set :rbenv_roles, :all
 
 # Default value for :linked_files is []
@@ -35,20 +35,20 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # For capistrano-master-key gem
 set :master_key_local_path, "/Users/lucius/myrails/r5/rorla/config/master.key"
 
-before 'deploy:check:linked_files', 'config:push'
-after 'deploy:publishing', 'deploy:restart'
-after 'deploy:restart', 'nginx:reload'
+# before 'deploy:check:linked_files', 'config:push'
+# after 'deploy:publishing', 'deploy:restart'
+# after 'deploy:restart', 'nginx:reload'
 
-namespace :deploy do
-  task :restart do
-    invoke 'delayed_job:restart'
-  end
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
-    end
-  end
-end
+# namespace :deploy do
+#   task :restart do
+#     invoke 'delayed_job:restart'
+#   end
+#   after :restart, :clear_cache do
+#     on roles(:web), in: :groups, limit: 3, wait: 10 do
+#       # Here we can do anything such as:
+#       # within release_path do
+#       #   execute :rake, 'cache:clear'
+#       # end
+#     end
+#   end
+# end
