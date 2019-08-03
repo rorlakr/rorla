@@ -1,0 +1,19 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: rorla_development
+  username: root
+  password: 
+  host: 127.0.0.1
+  port: 3306
+
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 40 } %>
+  database: <%= Rails.application.credentials.dig(:rds, :db_name) %>
+  username: <%= Rails.application.credentials.dig(:rds, :username) %>
+  password: <%= Rails.application.credentials.dig(:rds, :password) %>
+  host: <%= Rails.application.credentials.dig(:rds, :hostname) %>
+  port: <%= Rails.application.credentials.dig(:rds, :port) %>
