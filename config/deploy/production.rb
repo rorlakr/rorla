@@ -4,7 +4,7 @@
 # You can define all roles on a single server, or split them:
 # 13.125.108.242 rorlab.dev
 
-server 'rorlab.local', user: 'deployer', roles: %w[app db web]
+server 'rorlab.ec2', user: 'ubuntu', roles: %w[app db web]
 
 # Configuration
 # =============
@@ -19,8 +19,8 @@ server 'rorlab.local', user: 'deployer', roles: %w[app db web]
 # set :nginx_ssl_certificate_key, 'server.key'
 
 # set :rails_env, :production
-set :nginx_server_name, 'www.rorlab.org'
-set :nginx_domain_name, 'rorlab.org'
+# set :nginx_server_name, 'www.rorlab.org'
+# set :nginx_domain_name, 'rorlab.org'
 
 # set :puma_threads, [1, 4]
 # set :puma_workers, 4
@@ -52,8 +52,8 @@ set :nginx_domain_name, 'rorlab.org'
 #     # password: 'please use keys'
 #   }
 
-set :ssh_options, {
-  keys: [File.join(ENV["HOME"], ".ssh", "id_rsa")],
-  forward_agent: true,
-  auth_methods: %w(publickey)
-}
+# set :ssh_options, {
+#   keys: [File.join(ENV["HOME"], ".ssh", "id_rsa")],
+#   forward_agent: true,
+#   auth_methods: %w(publickey)
+# }

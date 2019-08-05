@@ -9,7 +9,7 @@ set :repo_url, 'git@github.com:rorlakr/rorla.git'
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/deployer/www/rorla'
-set :user, 'deployer'
+set :user, 'ubuntu'
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
