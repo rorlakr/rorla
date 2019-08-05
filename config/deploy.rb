@@ -1,6 +1,7 @@
 # config valid only for current version of Capistrano
 lock Capistrano::VERSION
 
+set :nginx_server_name, 'rorlab.org www.rorlab.org'
 set :application, 'rorla'
 set :repo_url, 'git@github.com:rorlakr/rorla.git'
 
@@ -8,7 +9,7 @@ set :repo_url, 'git@github.com:rorlakr/rorla.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/home/deployer/www/rorla'
+set :deploy_to, '/home/ubuntu/www/rorla'
 set :user, 'ubuntu'
 
 # Default value for :format is :airbrussh.
@@ -23,14 +24,17 @@ set :user, 'ubuntu'
 set :rbenv_type, :user
 set :rbenv_ruby, File.read('.ruby-version').strip
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-set :rbenv_map_bins, %w[rake gem bundle ruby rails puma pumactl]
+set :rbenv_map_bins, %w[rake gem bundle ruby rails]
+append :rbenv_map_bins, 'puma', 'pumactl'
 set :rbenv_roles, :all
 
 # Default value for :linked_files is []
 # set :linked_files, fetch(:linked_files, []).push('config/database.yml')
 
 # Default value for linked_dirs is []
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/uploads')
+# set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/uploads')
+
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/uploads", "public/system"
 
 # For capistrano-master-key gem
 set :master_key_local_path, "/Users/lucius/myrails/r5/rorla/config/master.key"

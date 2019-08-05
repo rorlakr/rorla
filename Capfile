@@ -14,6 +14,8 @@ require 'capistrano/deploy'
 #
 
 require "capistrano/scm/git"
+install_plugin Capistrano::SCM::Git
+
 require 'capistrano/rbenv'
 require 'capistrano/rbenv_install'
 require 'capistrano/bundler'
@@ -21,17 +23,15 @@ require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 require 'capistrano/rails_tail_log'
 require 'capistrano/rails/console'
-require 'capistrano/puma'
-require 'capistrano/puma/nginx'
-require 'capistrano/upload-config'
 require 'capistrano/nginx'
+install_plugin Capistrano::Nginx  # Default puma tasks
+require 'capistrano/puma'
+install_plugin Capistrano::Puma  # Default puma tasks
+install_plugin Capistrano::Puma::Nginx  # if you want to upload a nginx site template
+require 'capistrano/upload-config'
 require 'capistrano/yarn'
 require 'capistrano/master_key'
 
-install_plugin Capistrano::SCM::Git
-install_plugin Capistrano::Puma  # Default puma tasks
-install_plugin Capistrano::Puma::Nginx  # if you want to upload a nginx site template
-install_plugin Capistrano::Nginx 
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
