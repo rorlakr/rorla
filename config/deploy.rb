@@ -20,8 +20,6 @@ set :rbenv_map_bins, %w[rake gem bundle ruby rails]
 append :rbenv_map_bins, 'puma', 'pumactl'
 set :rbenv_roles, :all # default value
 
-set :puma_bind, 
-
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
