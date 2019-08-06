@@ -2,13 +2,23 @@
 lock "~> 3.11.0"
 
 set :application, "rorla"
+set :user, 'ubuntu'
 set :repo_url, "git@github.com:rorlakr/rorla.git"
+set :nginx_server_name, 'rorlab.org www.rorlab.org'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/ubuntu/www/rorla"
+
+set :rbenv_type, :user # or :system, depends on your rbenv setup
+set :rbenv_ruby, File.read('.ruby-version').strip
+
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w[rake gem bundle ruby rails]
+append :rbenv_map_bins, 'puma', 'pumactl'
+set :rbenv_roles, :all # default value
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
