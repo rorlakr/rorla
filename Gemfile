@@ -74,6 +74,9 @@ gem 'capistrano-upload-config', '0.8.2'
 gem 'capistrano3-nginx', '3.0.4'
 gem 'capistrano-yarn'
 gem 'capistrano3-puma', '4.0.0'
+gem 'capistrano-nc', '~> 0.2'
+gem 'capistrano-rails-db'
+gem "capistrano-db-tasks", require: false
 
 group :production do
   gem 'mysql2', '0.5.2', group: :production
