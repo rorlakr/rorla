@@ -1,3 +1,6 @@
+> RORLAB 공식 웹사이트(rorlab.org)는 중단되었습니다.
+> 2023년 7월 5일 부터 rorlab.kr 도메인으로 블로그 운영을 위해 준비 중에 있습니다. [https://www.rorlab.kr](https://www.rorlab.kr)
+
 # RORLAB Renewal Project
 
 : a.k.a, `rorla('로라')`
